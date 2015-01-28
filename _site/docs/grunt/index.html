@@ -49,40 +49,40 @@
                     <a href="#grunt-install" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
                 <p>First, you&#39;ll need to install the BrowserSync Plugin...</p>
-<pre><code class="html">$ npm install grunt-browser-sync --save-dev</code></pre>
+<div class="highlight"><pre><code class="html">$ npm install grunt-browser-sync --save-dev</code></pre></div>
 <p>... and then add this line to your <code>Gruntfile.js</code></p>
-<pre><code class="js">grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
-</code></pre>
+<div class="highlight"><pre><code class="js">grunt.loadNpmTasks(<span class="hljs-string">&#39;grunt-browser-sync&#39;</span>);
+</code></pre></div>
                 <h3 id="grunt-server">Static File Server
                     <a href="#grunt-server" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
                 The simplest example would be watching CSS files and using the built-in server for static
                 HTML/CSS/JS files. This config alone will launch a mini-server (using your current working directory
-                as the base), watch your CSS files for changes & auto-inject those changes into all connected browsers. 
-<pre><code class="js">browserSync: {
+                as the base), watch your CSS files for changes &amp; auto-inject those changes into all connected browsers. 
+<div class="highlight"><pre><code class="js">browserSync: {
     bsFiles: {
-        src : <span class="hljs-string">'assets/css/*.css'</span>
+        src : <span class="hljs-string">&#39;assets/css/*.css&#39;</span>
     },
     options: {
         server: {
-            baseDir: <span class="hljs-string">"./"</span>
+            baseDir: <span class="hljs-string">&quot;./&quot;</span>
         }
     }
-}</code></pre>
+}</code></pre></div>
                 <h3 id="grunt-proxy">Proxy
                     <a href="#grunt-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
                 <p>If you already have a local server setup (with your vhosts etc), just tell BrowserSync all about it &amp; it will do the rest for you.</p>
-<pre><code class="js">browserSync: {
+<div class="highlight"><pre><code class="js">browserSync: {
     dev: {
         bsFiles: {
-            src : <span class="hljs-string">'assets/css/style.css'</span>
+            src : <span class="hljs-string">&#39;assets/css/style.css&#39;</span>
         },
         options: {
-            proxy: <span class="hljs-string">"local.dev"</span>
+            proxy: <span class="hljs-string">&quot;local.dev&quot;</span>
         }
     }
-}</code></pre>
+}</code></pre></div>
                 <h3 id="grunt-watch">+ other watch tasks
                     <a href="#grunt-watch" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
@@ -90,26 +90,26 @@
                 they are designed to be used together. If you intend to do this, you&#39;ll need to set <code>watchTask: true</code> and be sure to call 
                 the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers 
                 (without a page refresh), your config for all three tasks might look something like this:</p>
-<pre><code class="js"><span class="hljs-comment">// This shows a full config file!</span>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// This shows a full config file!</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(grunt)</span> </span>{
     grunt.initConfig({
         watch: {
-            files: <span class="hljs-string">"assets/scss/**/*.scss"</span>,
-            tasks: [<span class="hljs-string">'compass'</span>]
+            files: <span class="hljs-string">&quot;assets/scss/<em>*/</em>.scss&quot;</span>,
+            tasks: [<span class="hljs-string">&#39;compass&#39;</span>]
         },
         compass: {
             dist: {
                 options: {
-                    sassDir: <span class="hljs-string">'assets/scss'</span>,
-                    cssDir: <span class="hljs-string">'assets/css'</span>,
-                    outputStyle: <span class="hljs-string">'compressed'</span>
+                    sassDir: <span class="hljs-string">&#39;assets/scss&#39;</span>,
+                    cssDir: <span class="hljs-string">&#39;assets/css&#39;</span>,
+                    outputStyle: <span class="hljs-string">&#39;compressed&#39;</span>
                 }
             }
         },
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : <span class="hljs-string">'assets/css/*.css'</span>
+                    src : <span class="hljs-string">&#39;assets/css/*.css&#39;</span>
                 },
                 options: {
                     watchTask: <span class="hljs-literal">true</span> <span class="hljs-comment">// &lt; VERY important</span>
@@ -118,12 +118,12 @@
         }
     });
     <span class="hljs-comment">// load npm tasks</span>
-    grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-compass'</span>);
-    grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-watch'</span>);
-    grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
+    grunt.loadNpmTasks(<span class="hljs-string">&#39;grunt-contrib-compass&#39;</span>);
+    grunt.loadNpmTasks(<span class="hljs-string">&#39;grunt-contrib-watch&#39;</span>);
+    grunt.loadNpmTasks(<span class="hljs-string">&#39;grunt-browser-sync&#39;</span>);
     <span class="hljs-comment">// define default task</span>
-    grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">"browserSync"</span>, <span class="hljs-string">"watch"</span>]);
-};</code></pre>
+    grunt.registerTask(<span class="hljs-string">&#39;default&#39;</span>, [<span class="hljs-string">&quot;browserSync&quot;</span>, <span class="hljs-string">&quot;watch&quot;</span>]);
+};</code></pre></div>
             </article>
         </div>
     </section>

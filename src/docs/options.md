@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: "documentation.hbs"
 title: "BrowserSync options"
 page-label: "options"
 ---
@@ -8,19 +8,13 @@ These are all the options that you can configure when using BrowserSync. Create 
 it as the [first argument](/docs/api/#api-browserSync) (for GulpJS and normal API usage). If you're using Grunt, you can 
 still use all of these options, but you need to provide them as detailed in the [BrowserSync Grunt Documentation]({{site.links.grunt}})
 
-{% highlight javascript %}
-{% include snippets/options/require.js %}
-{% endhighlight %}
-
+{{ hl src="snippets/options/require.js" }}
 
 <h3 id="option-files">files <a href="#option-files" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Array | String</span>
-    
     </li>
-    
     <li class="default">Default: <span class="color-teal">false</span></li>
-    
 </ul>
 
 <p>BrowserSync can watch your files as you work. Changes you make will either
@@ -28,7 +22,7 @@ be injected into the page (CSS &amp; images) or will cause all browsers to do
 a full-page refresh. See <a href="https://github.com/isaacs/minimatch">isaacs&#39;s minimatch</a> for more information on glob patterns.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // single file
 files: "app/css/style.css"
 
@@ -40,7 +34,7 @@ files: "app/css/**"
 
 // multiple globs
 files: ["app/css/*.css", "app/**.*.html", "app/js/**/*.js"]
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-watchOptions">watchOptions <a href="#option-watchOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
@@ -58,12 +52,12 @@ section of their docs to see which options they support.
 for availbable options</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Options passed to Gaze
 watchOptions: {
     debounceDelay: 1000
 }
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object | Boolean</span>
@@ -77,7 +71,7 @@ watchOptions: {
 <p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Serve files from the app directory
 server: {
     baseDir: "app"
@@ -131,7 +125,7 @@ server: {
         }
     ]
 }
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-proxy">proxy <a href="#option-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Boolean</span>
@@ -145,7 +139,7 @@ server: {
 <p>Proxy an EXISTING vhost. BrowserSync will wrap your existing url and provide a different one to use.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Using a vhost-based url
 proxy: "local.dev"
 
@@ -154,7 +148,7 @@ proxy: "localhost:8888"
 
 // Using localhost sub directories
 proxy: "localhost/site1"
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-port">port <a href="#option-port" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Number</span>
@@ -167,10 +161,10 @@ proxy: "localhost/site1"
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Use a specific port (instead of the one auto-detected by BrowserSync)
 port: 8080
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-https">https <a href="#option-https" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -186,10 +180,10 @@ port: 8080
 <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Enable HTTPS for static file server
 https: true
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
@@ -210,7 +204,7 @@ https: true
 <p>Clicks, scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Here you can disable/enable each feature individually
 ghostMode: {
     clicks: true,
@@ -220,7 +214,7 @@ ghostMode: {
 
 // Or switch them all off in one go
 ghostMode: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-logLevel">logLevel <a href="#option-logLevel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
@@ -234,7 +228,7 @@ ghostMode: false
 <p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Show me additional info about the process
 logLevel: "debug"
 
@@ -243,7 +237,7 @@ logLevel: "info"
 
 // output NOTHING to the commandline
 logLevel: "silent"
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-logPrefix">logPrefix <a href="#option-logPrefix" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
@@ -260,13 +254,13 @@ logLevel: "silent"
 own project based on BrowserSync</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 logPrefix: "My Awesome Project"
 
 // [My Awesome Project] Local URL: http://localhost:3000
 // [My Awesome Project] Watching files....
 // [My Awesome Project] File changed: "index.html"
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -279,13 +273,13 @@ logPrefix: "My Awesome Project"
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Log connections
 logConnections: true
 
 // Don't log connections
 logConnections: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -298,13 +292,13 @@ logConnections: false
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Log information about changed files
 logFileChanges: true
 
 // Don't log file changes
 logFileChanges: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-logSnippet">logSnippet <a href="#option-logSnippet" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">: Boolean</span>
@@ -320,10 +314,10 @@ logFileChanges: false
 <p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Don't ever log the snippet
 logSnippet: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-snippetOptions">snippetOptions <a href="#option-snippetOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
@@ -347,7 +341,7 @@ You can also provide patterns for certain urls
 that should be ignored from the snippet injection.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Customise the placement of the snippet
 // and ignore certain paths
 snippetOptions: {
@@ -363,7 +357,7 @@ snippetOptions: {
         }
     }
 }
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Boolean</span>
@@ -376,14 +370,14 @@ snippetOptions: {
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Tunnel the BrowserSync server through a random Public URL
 // -> http://randomstring23232.localtunnel.me
 tunnel: true
 
 // Attempt to use the URL "http://my-private-site.localtunnel.me"
 tunnel: "my-private-site"
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-online">online <a href="#option-online" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -398,13 +392,13 @@ tunnel: "my-private-site"
 working offline, you can reduce start-up time by setting this option to <code>false</code></p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Will not attempt to determine your network status, assumes you're ONLINE.
 online: true
 
 // Will not attempt to determine your network status, assumes you're OFFLINE
 online: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean | String</span>
@@ -419,7 +413,7 @@ online: false
 Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Stop the browser from automatically opening
 open: false
 
@@ -433,7 +427,7 @@ open: "external"
 
 // Open the tunnel URL - must also set the `tunnel` option
 open: "tunnel"
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Array</span>
@@ -446,13 +440,13 @@ open: "tunnel"
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Open the site in Chrome
 browser: "google chrome"
 
 // Open the site in Chrome & Firefox
 browser: ["google chrome", "firefox"]
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-xip">xip <a href="#option-xip" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -467,10 +461,10 @@ browser: ["google chrome", "firefox"]
 as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)
 xip: true
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -484,10 +478,10 @@ xip: true
 <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Don't show any notifications in the browser.
 notify: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -500,9 +494,9 @@ notify: false
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 scrollProportionally: false // Sync viewports to TOP position
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Number</span>
@@ -515,9 +509,9 @@ scrollProportionally: false // Sync viewports to TOP position
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 scrollThrottle: 100 // only send scroll events every 100 milliseconds
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Number</span>
@@ -530,10 +524,10 @@ scrollThrottle: 100 // only send scroll events every 100 milliseconds
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Wait for 2 seconds before any browsers should try to inject/reload a file.
 reloadDelay: 2000
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-injectChanges">injectChanges <a href="#option-injectChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -546,13 +540,13 @@ reloadDelay: 2000
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Inject CSS changes
 injectChanges: true,
 
 // Don't try to inject, just do a page refresh
 injectChanges: false,
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-startPath">startPath <a href="#option-startPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Null</span>
@@ -565,10 +559,10 @@ injectChanges: false,
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Open the first browser window at URL + "/info.php"
 startPath: "/info.php"
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-minify">minify <a href="#option-minify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -582,10 +576,10 @@ startPath: "/info.php"
 <p>Whether to minify client script, or not.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Don't minify the client-side JS
 minify: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
@@ -598,10 +592,10 @@ minify: false
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Override host detection if you know the correct IP to use
 host: "192.168.1.1"
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-codeSync">codeSync <a href="#option-codeSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -614,10 +608,10 @@ host: "192.168.1.1"
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Don't send any file-change events to browsers
 codeSync: true,
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-timestamps">timestamps <a href="#option-timestamps" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
@@ -630,10 +624,10 @@ codeSync: true,
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // Don't append timestamps to injected files
 timestamps: false
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-scriptPath">scriptPath <a href="#option-scriptPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Function</span>
@@ -651,13 +645,13 @@ Javascript is served from. Whatever you return from this function
 will be used as the script path.</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // This will result in something like
 // <script src="localhost:3002/browser-sync/browser-sync-client.1.6.0.js" />
 scriptPath: function (path) {
     return "localhost:3002" + path;
 }
-{% endhighlight %}
+{{/hl}}
 <h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
@@ -669,7 +663,6 @@ scriptPath: function (path) {
                 <li><b>clientPath</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
             
                 <li><b>namespace</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
-            
         </ul>
     </li>
     
@@ -678,7 +671,7 @@ scriptPath: function (path) {
 <p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // This will result in something like this in
 // the socket connector code
 // browserSync.io('localhost:3003/browser-sync')
@@ -687,4 +680,4 @@ socket: {
         return "localhost:3003" + namespace;
     }
 }
-{% endhighlight %}
+{{/hl}}

@@ -46,7 +46,7 @@
                 tiny node program for local development or integrate with other tools. To use it, 
                 simply <code>require</code> the BrowserSync module like you would any other. This will give 
                 you access to the public methods detailed below.</p>
-<pre><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);</code></pre>
+<div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browser-sync&quot;</span>);</code></pre></div>
 <h3 id="api-browserSync">browserSync( config, cb ) <a href="#api-browserSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list" id="api-browserSync-config">
     <li class="name">config <a href="#api-browserSync-config" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
@@ -66,9 +66,9 @@
 is useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.</p>
 </li>
 </ul>
-<pre><code class="js"><span class="hljs-keyword">var</span> config = {
+<div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> config = {
     server: {
-        baseDir: <span class="hljs-string">"./"</span>
+        baseDir: <span class="hljs-string">&quot;./&quot;</span>
     }
 };
 <span class="hljs-comment">// config only</span>
@@ -76,10 +76,10 @@ browserSync(config);
 <span class="hljs-comment">// config + callback</span>
 browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-keyword">if</span> (!err) {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is ready!"</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;BrowserSync is ready!&quot;</span>);
     }
 });
-</code></pre>
+</code></pre></div>
                 <p><h3 id="api-reload">.reload( arg ) <a href="#api-reload" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
                 <p>The <code>reload</code> method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
                 <ul class="param-list" id="api-reload-arg">
@@ -91,15 +91,15 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                 details and examples of Streams support, please see the <a href="/docs/gulp">GulpJS</a> examples</p>
                 </li>
                 </ul>
-<pre><code class="js"><span class="hljs-comment">// browser reload</span>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// browser reload</span>
 browserSync.reload();
 <span class="hljs-comment">// single file</span>
-browserSync.reload( <span class="hljs-string">"styles.css"</span> );
+browserSync.reload( <span class="hljs-string">&quot;styles.css&quot;</span> );
 <span class="hljs-comment">// multiple files</span>
-browserSync.reload( [<span class="hljs-string">"styles.css"</span>, <span class="hljs-string">"ie.css"</span>] );
+browserSync.reload( [<span class="hljs-string">&quot;styles.css&quot;</span>, <span class="hljs-string">&quot;ie.css&quot;</span>] );
 <span class="hljs-comment">// streams support</span>
 browserSync.reload( { stream: <span class="hljs-literal">true</span> } );
-</code></pre>
+</code></pre></div>
                 <p><h3 id="api-notify">.notify( msg, timeout ) <a href="#api-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
                 <p>Helper method for browser notifications</p>
                 <ul class="param-list" id="api-notify-msg">
@@ -117,33 +117,33 @@ browserSync.reload( { stream: <span class="hljs-literal">true</span> } );
                     <li class="desc"><p>How long the message will remain in the browser. @since 1.3.0</p>
                 </li>
                 </ul>
-<pre><code class="js">browserSync.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
-browserSync.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is supported&lt;/span&gt; too!"</span>);
+<div class="highlight"><pre><code class="js">browserSync.notify(<span class="hljs-string">&quot;Compiling, please wait!&quot;</span>);
+browserSync.notify(<span class="hljs-string">&quot;HTML &lt;span color=&#39;green&#39;&gt;is supported&lt;/span&gt; too!&quot;</span>);
 <span class="hljs-comment">// Since 1.3.0, specify a timeout</span>
-browserSync.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);
-</code></pre>
+browserSync.notify(<span class="hljs-string">&quot;This message will only last a second&quot;</span>, <span class="hljs-number">1000</span>);
+</code></pre></div>
                 <p><h3 id="api-exit">.exit() <a href="#api-exit" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
                 <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
-<pre><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
+<div class="highlight"><pre><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     browserSync.exit();
 });
-</code></pre>
+</code></pre></div>
                 <h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
-<pre><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
+<div class="highlight"><pre><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
 browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
 });
-</code></pre>
+</code></pre></div>
                 <h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
                 You can use this to emit your own events, such as changed files, logging etc.</p>
-<pre><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;
-evt.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is running!"</span>);
+<div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;
+evt.on(<span class="hljs-string">&quot;init&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;BrowserSync is running!&quot;</span>);
 });
 browserSync(config);
-</code></pre>
+</code></pre></div>
             </article>
         </div>
     </section>

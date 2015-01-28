@@ -44,8 +44,8 @@
                 <h1 class="text--center">BrowserSync Command Line Usage</h1>
                 <p>For <em>tinkering</em> or quick examples and playing around, the command-line usage can be quite helpful. 
                 After install BrowserSync globally, you can run it like this:</p>
-<pre><code class="bash">$ browser-sync start &lt;options&gt;
-</code></pre>
+<div class="highlight"><pre><code class="bash">$ browser-sync start &lt;options&gt;
+</code></pre></div>
                 <h3 id="command-line-options">Options
                     <a href="#command-line-options" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <p>These are the options you can use when running BrowserSync</p>
@@ -116,7 +116,7 @@
                         </tr>
                         <tr>
                             <td>--no-open</td>
-                            <td>Don't open a new browser window</td>
+                            <td>Don&#39;t open a new browser window</td>
                         </tr>
                         <tr>
                             <td>--no-ghost</td>
@@ -129,27 +129,27 @@
                 </table>
                 <h3 id="command-line-Files Examples-examples">Files Examples
                     <a href="#command-line-Files Examples-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<pre><code class="bash"><span class="hljs-comment"># Single file</span>
-$ browser-sync start --files <span class="hljs-string">"css/core.css"</span>
+<div class="highlight"><pre><code class="bash"><span class="hljs-comment"># Single file</span>
+$ browser-sync start --files <span class="hljs-string">&quot;css/core.css&quot;</span>
 <span class="hljs-comment"># Single Pattern</span>
-$ browser-sync start --files <span class="hljs-string">"css/*.css"</span>
+$ browser-sync start --files <span class="hljs-string">&quot;css/<em>.css&quot;</span>
 <span class="hljs-comment"># Multiple files</span>
-$ browser-sync start --files <span class="hljs-string">"css/core.css, css/ie.css"</span>
+$ browser-sync start --files <span class="hljs-string">&quot;css/core.css, css/ie.css&quot;</span>
 <span class="hljs-comment"># Multiple Patterns</span>
-$ browser-sync start --files <span class="hljs-string">"css/*.css, *.html"</span>
-</code></pre>
+$ browser-sync start --files <span class="hljs-string">&quot;css/</em>.css, <em>.html&quot;</span>
+</code></pre></div>
                 <h3 id="command-line-Server Examples-examples">Server Examples
                     <a href="#command-line-Server Examples-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<pre><code class="bash"><span class="hljs-comment"># Static server using current directory as the root</span>
+<div class="highlight"><pre><code class="bash"><span class="hljs-comment"># Static server using current directory as the root</span>
 $ browser-sync start --server
-<span class="hljs-comment"># Static server using the 'app' directory as the root</span>
+<span class="hljs-comment"># Static server using the &#39;app&#39; directory as the root</span>
 $ browser-sync start --server app
 <span class="hljs-comment"># Static server using current directory as the root with directory listing</span>
 $ browser-sync start --server --directory
-</code></pre>
+</code></pre></div>
                 <h3 id="command-line-Proxy Examples-examples">Proxy Examples
                     <a href="#command-line-Proxy Examples-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<pre><code class="bash"><span class="hljs-comment"># Using a local.dev vhost</span>
+<div class="highlight"><pre><code class="bash"><span class="hljs-comment"># Using a local.dev vhost</span>
 $ browser-sync start --proxy
 <span class="hljs-comment"># Using a local.dev vhost with PORT</span>
 $ browser-sync start --proxy local.dev:<span class="hljs-number">8001</span>
@@ -157,14 +157,14 @@ $ browser-sync start --proxy local.dev:<span class="hljs-number">8001</span>
 $ browser-sync start --proxy localhost:<span class="hljs-number">8001</span>
 <span class="hljs-comment"># Using a localhost address in a sub-dir</span>
 $ browser-sync start --proxy localhost:<span class="hljs-number">8080</span>/site1
-</code></pre>
+</code></pre></div>
                 <h3 id="command-line-Watching Files + Server-examples">Watching Files + Server
                     <a href="#command-line-Watching Files + Server-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<pre><code class="bash"><span class="hljs-comment"># Watch ALL CSS files for changes with a static server</span>
-$ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --server
-<span class="hljs-comment">#  Watch ALL CSS files for changes with a static server using "app" as the base directory</span>
-$ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --server <span class="hljs-string">"app"</span>
-</code></pre>
+<div class="highlight"><pre><code class="bash"><span class="hljs-comment"># Watch ALL CSS files for changes with a static server</span>
+$ browser-sync start --files <span class="hljs-string">&quot;app/css/</em>.css&quot;</span> --server
+<span class="hljs-comment">#  Watch ALL CSS files for changes with a static server using &quot;app&quot; as the base directory</span>
+$ browser-sync start --files <span class="hljs-string">&quot;app/css/*.css&quot;</span> --server <span class="hljs-string">&quot;app&quot;</span>
+</code></pre></div>
             </article>
         </div>
     </section>

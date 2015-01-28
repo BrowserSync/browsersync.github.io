@@ -1,685 +1,482 @@
+<!DOCTYPE html>
+<html>
 
-These are all the options that you can configure when using BrowserSync. Create a single object and pass 
-it as the [first argument](/docs/api/#api-browserSync) (for GulpJS and normal API usage). If you're using Grunt, you can 
-still use all of these options, but you need to provide them as detailed in the [BrowserSync Grunt Documentation]({{site.links.grunt}})
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js ffly" lang="en"> <!--<![endif]-->
+<head>
+    <title>BrowserSync options</title>
+    <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICONS -->
+    <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
+    <!-- CSS Includes (PRODUCTION) -->
+    <link rel="stylesheet" href="/css/core.min.css"/>
+</head>
 
-{% highlight javascript %}
-{% include snippets/options/require.js %}
-{% endhighlight %}
+<body>
 
+<header class="wrapper site-header alt" role="banner">
+    <div class="container">
+            <h1 class="site-title alt"><a href="/">BrowserSync</a> / <span><a href="/docs">documentation</a></span></h1>
+            <ul class="nav--inline docs-nav">
+                    <li><a href="/docs/gulp" >+ Gulp</a></li>
+                    <li><a href="/docs/grunt" >+ Grunt</a></li>
+                    <li><a href="/docs/api" >API</a></li>
+                    <li><a href="/docs/command-line" >Command line</a></li>
+                    <li><a href="/docs/options" class="active">Options</a></li>
+            </ul>
+    </div>
+</header><!-- .end .site-header -->
 
-<h3 id="option-files">files <a href="#option-files" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Array | String</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">false</span></li>
-    
-</ul>
-
-<p>BrowserSync can watch your files as you work. Changes you make will either
-be injected into the page (CSS &amp; images) or will cause all browsers to do
-a full-page refresh. See <a href="https://github.com/isaacs/minimatch">isaacs&#39;s minimatch</a> for more information on glob patterns.</p>
-
-
-{% highlight javascript %}
-// single file
-files: "app/css/style.css"
-
-// multiple files
-files: ["app/css/style.css", "app/css/ie.css"]
-
-// watch all files under app/css (including sub directories)
-files: "app/css/**"
-
-// multiple globs
-files: ["app/css/*.css", "app/**.*.html", "app/js/**/*.js"]
-{% endhighlight %}
-<h3 id="option-watchOptions">watchOptions <a href="#option-watchOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Object</span>
-    
-    </li>
-    
-    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
-    
-    <li class="default">Default: <span class="color-teal">undefined</span></li>
-    
-</ul>
-
-<p>File watching options that get passed along to <a href="https://github.com/shama/gaze">Gaze</a>. Check out the <a href="https://github.com/shama/gaze#properties">properties</a>
-section of their docs to see which options they support.
-for availbable options</p>
-
-
-{% highlight javascript %}
-// Options passed to Gaze
+<div class="site-body" role="main">
+    <section id="page-top" class="wrapper code-example options">
+        <div class="container">
+            <article class="doc-wrapper">
+                <h1 class="text--center">BrowserSync options</h1>
+                <p>These are all the options that you can configure when using BrowserSync. Create a single object and pass 
+                it as the <a href="/docs/api/#api-browserSync">first argument</a> (for GulpJS and normal API usage). If you&#39;re using Grunt, you can 
+                still use all of these options, but you need to provide them as detailed in the <a href="/docs/grunt">BrowserSync Grunt Documentation</a></p>
+<div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browser-sync&quot;</span>);
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-comment">/<em> All config/options here </em>/</span>
+};
+browserSync(config);</code></pre></div>
+                <p><h3 id="option-files">files <a href="#option-files" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Array | String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
+                <p>BrowserSync can watch your files as you work. Changes you make will either
+                be injected into the page (CSS &amp; images) or will cause all browsers to do
+                a full-page refresh. See <a href="https://github.com/isaacs/minimatch">isaacs&#39;s minimatch</a> for more information on glob patterns.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// single file</span>
+files: <span class="hljs-string">&quot;app/css/style.css&quot;</span>
+<span class="hljs-comment">// multiple files</span>
+files: [<span class="hljs-string">&quot;app/css/style.css&quot;</span>, <span class="hljs-string">&quot;app/css/ie.css&quot;</span>]
+<span class="hljs-comment">// watch all files under app/css (including sub directories)</span>
+files: <span class="hljs-string">&quot;app/css/<strong>&quot;</span>
+<span class="hljs-comment">// multiple globs</span>
+files: [<span class="hljs-string">&quot;app/css/*.css&quot;</span>, <span class="hljs-string">&quot;app/</strong>.<em>.html&quot;</span>, <span class="hljs-string">&quot;app/js/**/</em>.js&quot;</span>]
+</code></pre></div><h3 id="option-watchOptions">watchOptions <a href="#option-watchOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                    </li>
+                    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
+                <p>File watching options that get passed along to <a href="https://github.com/shama/gaze">Gaze</a>. Check out the <a href="https://github.com/shama/gaze#properties">properties</a>
+                section of their docs to see which options they support.
+                for availbable options</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Options passed to Gaze</span>
 watchOptions: {
-    debounceDelay: 1000
+    debounceDelay: <span class="hljs-number">1000</span>
 }
-{% endhighlight %}
-<h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Object | Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">false</span></li>
-    
-</ul>
-
-<p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
-
-
-{% highlight javascript %}
-// Serve files from the app directory
+</code></pre></div><h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object | Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
+                <p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Serve files from the app directory</span>
 server: {
-    baseDir: "app"
+    baseDir: <span class="hljs-string">&quot;app&quot;</span>
 }
-
-// Serve files from the app directory with directory listing
+<span class="hljs-comment">// Serve files from the app directory with directory listing</span>
 server: {
-    baseDir: "app",
-    directory: true
+    baseDir: <span class="hljs-string">&quot;app&quot;</span>,
+    directory: <span class="hljs-literal">true</span>
 }
-
-// Multiple base directories
+<span class="hljs-comment">// Multiple base directories</span>
 server: {
-    baseDir: ["app", "dist"]
+    baseDir: [<span class="hljs-string">&quot;app&quot;</span>, <span class="hljs-string">&quot;dist&quot;</span>]
 }
-
-// Serve files from the app directory, with a specific index filename
+<span class="hljs-comment">// Serve files from the app directory, with a specific index filename</span>
 server: {
-    baseDir: "app",
-    index: "index.htm"
+    baseDir: <span class="hljs-string">&quot;app&quot;</span>,
+    index: <span class="hljs-string">&quot;index.htm&quot;</span>
 }
-
-// Since version 1.2.1
+<span class="hljs-comment">// Since version 1.2.1</span>
 server: {
-    baseDir: "app",
+    baseDir: <span class="hljs-string">&quot;app&quot;</span>,
     routes: {
-        "/bower_components": "../bower_components"
+        <span class="hljs-string">&quot;/bower_components&quot;</span>: <span class="hljs-string">&quot;../bower_components&quot;</span>
     }
 }
-
-// Custom Middleware
+<span class="hljs-comment">// Custom Middleware</span>
 server: {
-    baseDir: "./",
-    middleware: function (req, res, next) {
-        console.log("Hi from middleware");
+    baseDir: <span class="hljs-string">&quot;./&quot;</span>,
+    middleware: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hi from middleware&quot;</span>);
         next();
     }
 }
-
-// Multiple custom Middlewares
+<span class="hljs-comment">// Multiple custom Middlewares</span>
 server: {
-    baseDir: "./",
+    baseDir: <span class="hljs-string">&quot;./&quot;</span>,
     middleware: [
-        function (req, res, next) {
-            console.log("Hi from first middleware");
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hi from first middleware&quot;</span>);
             next();
         },
-        function (req, res, next) {
-            console.log("Hi from the second middleware");
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hi from the second middleware&quot;</span>);
             next();
         }
     ]
 }
-{% endhighlight %}
-<h3 id="option-proxy">proxy <a href="#option-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">false</span></li>
-    
-</ul>
-
-<p>Proxy an EXISTING vhost. BrowserSync will wrap your existing url and provide a different one to use.</p>
-
-
-{% highlight javascript %}
-// Using a vhost-based url
-proxy: "local.dev"
-
-// Using a localhost address with a port
-proxy: "localhost:8888"
-
-// Using localhost sub directories
-proxy: "localhost/site1"
-{% endhighlight %}
-<h3 id="option-port">port <a href="#option-port" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">3000</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Use a specific port (instead of the one auto-detected by BrowserSync)
-port: 8080
-{% endhighlight %}
-<h3 id="option-https">https <a href="#option-https" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
-    
-    <li class="default">Default: <span class="color-teal">undefined</span></li>
-    
-</ul>
-
-<p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
-
-
-{% highlight javascript %}
-// Enable HTTPS for static file server
-https: true
-{% endhighlight %}
-<h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Object</span>
-    
-        <ul class="nav nav--stacked subprops">
-            
-                <li><b>clicks</b> - Default: <span class="color-teal">true</span></li>
-            
-                <li><b>scroll</b> - Default: <span class="color-teal">true</span></li>
-            
-                <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
-            
-        </ul>
-    </li>
-    
-</ul>
-
-<p>Clicks, scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
-
-
-{% highlight javascript %}
-// Here you can disable/enable each feature individually
+</code></pre></div><h3 id="option-proxy">proxy <a href="#option-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
+                <p>Proxy an EXISTING vhost. BrowserSync will wrap your existing url and provide a different one to use.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Using a vhost-based url</span>
+proxy: <span class="hljs-string">&quot;local.dev&quot;</span>
+<span class="hljs-comment">// Using a localhost address with a port</span>
+proxy: <span class="hljs-string">&quot;localhost:8888&quot;</span>
+<span class="hljs-comment">// Using localhost sub directories</span>
+proxy: <span class="hljs-string">&quot;localhost/site1&quot;</span>
+</code></pre></div><h3 id="option-port">port <a href="#option-port" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Number</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">3000</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Use a specific port (instead of the one auto-detected by BrowserSync)</span>
+port: <span class="hljs-number">8080</span>
+</code></pre></div><h3 id="option-https">https <a href="#option-https" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
+                <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Enable HTTPS for static file server</span>
+https: <span class="hljs-literal">true</span>
+</code></pre></div><h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                        <ul class="nav nav--stacked subprops">
+                                <li><b>clicks</b> - Default: <span class="color-teal">true</span></li>
+                                <li><b>scroll</b> - Default: <span class="color-teal">true</span></li>
+                                <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Clicks, scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Here you can disable/enable each feature individually</span>
 ghostMode: {
-    clicks: true,
-    forms: true,
-    scroll: false
+    clicks: <span class="hljs-literal">true</span>,
+    forms: <span class="hljs-literal">true</span>,
+    scroll: <span class="hljs-literal">false</span>
 }
-
-// Or switch them all off in one go
-ghostMode: false
-{% endhighlight %}
-<h3 id="option-logLevel">logLevel <a href="#option-logLevel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">info</span></li>
-    
-</ul>
-
-<p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
-
-
-{% highlight javascript %}
-// Show me additional info about the process
-logLevel: "debug"
-
-// Just show basic info
-logLevel: "info"
-
-// output NOTHING to the commandline
-logLevel: "silent"
-{% endhighlight %}
-<h3 id="option-logPrefix">logPrefix <a href="#option-logPrefix" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String</span>
-    
-    </li>
-    
-    <li class="since">Since: <span class="color-teal">1.5.1</span></li>
-    
-    <li class="default">Default: <span class="color-teal">BS</span></li>
-    
-</ul>
-
-<p>Change the console logging prefix. Useful if you&#39;re creating your
-own project based on BrowserSync</p>
-
-
-{% highlight javascript %}
-logPrefix: "My Awesome Project"
-
-// [My Awesome Project] Local URL: http://localhost:3000
-// [My Awesome Project] Watching files....
-// [My Awesome Project] File changed: "index.html"
-{% endhighlight %}
-<h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">false</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Log connections
-logConnections: true
-
-// Don't log connections
-logConnections: false
-{% endhighlight %}
-<h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Log information about changed files
-logFileChanges: true
-
-// Don't log file changes
-logFileChanges: false
-{% endhighlight %}
-<h3 id="option-logSnippet">logSnippet <a href="#option-logSnippet" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">: Boolean</span>
-    
-    </li>
-    
-    <li class="since">Since: <span class="color-teal">1.5.2</span></li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-<p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
-
-
-{% highlight javascript %}
-// Don't ever log the snippet
-logSnippet: false
-{% endhighlight %}
-<h3 id="option-snippetOptions">snippetOptions <a href="#option-snippetOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Object</span>
-    
-        <ul class="nav nav--stacked subprops">
-            
-                <li><b>ignorePaths</b> - Default: <span class="color-teal">undefined</span></li>
-            
-                <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body&#91;^&gt;&#93;*&gt;/i</span></li>
-            
-                <li><b>rule.fn</b> - Default: <span class="color-teal">Function</span></li>
-            
-        </ul>
-    </li>
-    
-</ul>
-
-<p>SINCE 1.7.0! You can control how the snippet is injected
-onto each page via a custom regex + function.
-You can also provide patterns for certain urls
-that should be ignored from the snippet injection.</p>
-
-
-{% highlight javascript %}
-// Customise the placement of the snippet
-// and ignore certain paths
+<span class="hljs-comment">// Or switch them all off in one go</span>
+ghostMode: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-logLevel">logLevel <a href="#option-logLevel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">info</span></li>
+                </ul>
+                <p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Show me additional info about the process</span>
+logLevel: <span class="hljs-string">&quot;debug&quot;</span>
+<span class="hljs-comment">// Just show basic info</span>
+logLevel: <span class="hljs-string">&quot;info&quot;</span>
+<span class="hljs-comment">// output NOTHING to the commandline</span>
+logLevel: <span class="hljs-string">&quot;silent&quot;</span>
+</code></pre></div><h3 id="option-logPrefix">logPrefix <a href="#option-logPrefix" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String</span>
+                    </li>
+                    <li class="since">Since: <span class="color-teal">1.5.1</span></li>
+                    <li class="default">Default: <span class="color-teal">BS</span></li>
+                </ul>
+                <p>Change the console logging prefix. Useful if you&#39;re creating your
+                own project based on BrowserSync</p>
+<div class="highlight"><pre><code class="js">logPrefix: <span class="hljs-string">&quot;My Awesome Project&quot;</span>
+<span class="hljs-comment">// [My Awesome Project] Local URL: <a href="http://localhost:3000">http://localhost:3000</a></span>
+<span class="hljs-comment">// [My Awesome Project] Watching files....</span>
+<span class="hljs-comment">// [My Awesome Project] File changed: &quot;index.html&quot;</span>
+</code></pre></div><h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Log connections</span>
+logConnections: <span class="hljs-literal">true</span>
+<span class="hljs-comment">// Don&#39;t log connections</span>
+logConnections: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Log information about changed files</span>
+logFileChanges: <span class="hljs-literal">true</span>
+<span class="hljs-comment">// Don&#39;t log file changes</span>
+logFileChanges: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-logSnippet">logSnippet <a href="#option-logSnippet" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">: Boolean</span>
+                    </li>
+                    <li class="since">Since: <span class="color-teal">1.5.2</span></li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+                <p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don&#39;t ever log the snippet</span>
+logSnippet: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-snippetOptions">snippetOptions <a href="#option-snippetOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                        <ul class="nav nav--stacked subprops">
+                                <li><b>ignorePaths</b> - Default: <span class="color-teal">undefined</span></li>
+                                <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body&#91;^&gt;&#93;<em>&gt;/i</span></li>
+                                <li><b>rule.fn</b> - Default: <span class="color-teal">Function</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>SINCE 1.7.0! You can control how the snippet is injected
+                onto each page via a custom regex + function.
+                You can also provide patterns for certain urls
+                that should be ignored from the snippet injection.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Customise the placement of the snippet</span>
+<span class="hljs-comment">// and ignore certain paths</span>
 snippetOptions: {
-
-    // Ignore all HTML files within the templates folder
-    ignorePaths: "templates/*.html",
-
-    // Provide a custom Regex for inserting the snippet.
+    <span class="hljs-comment">// Ignore all HTML files within the templates folder</span>
+    ignorePaths: <span class="hljs-string">&quot;templates/</em>.html&quot;</span>,
+    <span class="hljs-comment">// Provide a custom Regex for inserting the snippet.</span>
     rule: {
-        match: /<\/body>/i,
-        fn: function (snippet, match) {
-            return snippet + match;
+        match: <span class="hljs-regexp">/&lt;\/body&gt;/i</span>,
+        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(snippet, match)</span> </span>{
+            <span class="hljs-keyword">return</span> snippet + match;
         }
     }
 }
-{% endhighlight %}
-<h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">null</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Tunnel the BrowserSync server through a random Public URL
-// -> http://randomstring23232.localtunnel.me
-tunnel: true
-
-// Attempt to use the URL "http://my-private-site.localtunnel.me"
-tunnel: "my-private-site"
-{% endhighlight %}
-<h3 id="option-online">online <a href="#option-online" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">undefined</span></li>
-    
-</ul>
-
-<p>Some features of BrowserSync (such as <code>xip</code> &amp; <code>tunnel</code>) require an internet connection, but if you&#39;re
-working offline, you can reduce start-up time by setting this option to <code>false</code></p>
-
-
-{% highlight javascript %}
-// Will not attempt to determine your network status, assumes you're ONLINE.
-online: true
-
-// Will not attempt to determine your network status, assumes you're OFFLINE
-online: false
-{% endhighlight %}
-<h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean | String</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-<p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
-Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
-
-
-{% highlight javascript %}
-// Stop the browser from automatically opening
-open: false
-
-// Open the localhost URL
-open: true
-
-// The following availble since v1.3.0
-
-// Open the external URL - must be online.
-open: "external"
-
-// Open the tunnel URL - must also set the `tunnel` option
-open: "tunnel"
-{% endhighlight %}
-<h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Array</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">default</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Open the site in Chrome
-browser: "google chrome"
-
-// Open the site in Chrome & Firefox
-browser: ["google chrome", "firefox"]
-{% endhighlight %}
-<h3 id="option-xip">xip <a href="#option-xip" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">false</span></li>
-    
-</ul>
-
-<p>Requires an internet connection - useful for services such as <a href="https://typekit.com/">Typekit</a>
-as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
-
-
-{% highlight javascript %}
-// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)
-xip: true
-{% endhighlight %}
-<h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-<p>The small pop-over notifications in the browser are not always needed/wanted.</p>
-
-
-{% highlight javascript %}
-// Don't show any notifications in the browser.
-notify: false
-{% endhighlight %}
-<h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-scrollProportionally: false // Sync viewports to TOP position
-{% endhighlight %}
-<h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">0</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-scrollThrottle: 100 // only send scroll events every 100 milliseconds
-{% endhighlight %}
-<h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">0</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Wait for 2 seconds before any browsers should try to inject/reload a file.
-reloadDelay: 2000
-{% endhighlight %}
-<h3 id="option-injectChanges">injectChanges <a href="#option-injectChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Inject CSS changes
-injectChanges: true,
-
-// Don't try to inject, just do a page refresh
-injectChanges: false,
-{% endhighlight %}
-<h3 id="option-startPath">startPath <a href="#option-startPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Null</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">null</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Open the first browser window at URL + "/info.php"
-startPath: "/info.php"
-{% endhighlight %}
-<h3 id="option-minify">minify <a href="#option-minify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-<p>Whether to minify client script, or not.</p>
-
-
-{% highlight javascript %}
-// Don't minify the client-side JS
-minify: false
-{% endhighlight %}
-<h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">null</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Override host detection if you know the correct IP to use
-host: "192.168.1.1"
-{% endhighlight %}
-<h3 id="option-codeSync">codeSync <a href="#option-codeSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Don't send any file-change events to browsers
-codeSync: true,
-{% endhighlight %}
-<h3 id="option-timestamps">timestamps <a href="#option-timestamps" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Don't append timestamps to injected files
-timestamps: false
-{% endhighlight %}
-<h3 id="option-scriptPath">scriptPath <a href="#option-scriptPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Function</span>
-    
-    </li>
-    
-    <li class="since">Since: <span class="color-teal">1.5.0</span></li>
-    
-    <li class="default">Default: <span class="color-teal">undefined</span></li>
-    
-</ul>
-
-<p>Alter the script path for complete control over where the BrowserSync
-Javascript is served from. Whatever you return from this function
-will be used as the script path.</p>
-
-
-{% highlight javascript %}
-// This will result in something like
-// <script src="localhost:3002/browser-sync/browser-sync-client.1.6.0.js" />
-scriptPath: function (path) {
-    return "localhost:3002" + path;
+</code></pre></div><h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">null</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Tunnel the BrowserSync server through a random Public URL</span>
+<span class="hljs-comment">// -&gt; <a href="http://randomstring23232.localtunnel.me">http://randomstring23232.localtunnel.me</a></span>
+tunnel: <span class="hljs-literal">true</span>
+<span class="hljs-comment">// Attempt to use the URL &quot;<a href="http://my-private-site.localtunnel.me">http://my-private-site.localtunnel.me</a>&quot;</span>
+tunnel: <span class="hljs-string">&quot;my-private-site&quot;</span>
+</code></pre></div><h3 id="option-online">online <a href="#option-online" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
+                <p>Some features of BrowserSync (such as <code>xip</code> &amp; <code>tunnel</code>) require an internet connection, but if you&#39;re
+                working offline, you can reduce start-up time by setting this option to <code>false</code></p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Will not attempt to determine your network status, assumes you&#39;re ONLINE.</span>
+online: <span class="hljs-literal">true</span>
+<span class="hljs-comment">// Will not attempt to determine your network status, assumes you&#39;re OFFLINE</span>
+online: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean | String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+                <p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
+                Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Stop the browser from automatically opening</span>
+open: <span class="hljs-literal">false</span>
+<span class="hljs-comment">// Open the localhost URL</span>
+open: <span class="hljs-literal">true</span>
+<span class="hljs-comment">// The following availble since v1.3.0</span>
+<span class="hljs-comment">// Open the external URL - must be online.</span>
+open: <span class="hljs-string">&quot;external&quot;</span>
+<span class="hljs-comment">// Open the tunnel URL - must also set the <code>tunnel</code> option</span>
+open: <span class="hljs-string">&quot;tunnel&quot;</span>
+</code></pre></div><h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Array</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">default</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Open the site in Chrome</span>
+browser: <span class="hljs-string">&quot;google chrome&quot;</span>
+<span class="hljs-comment">// Open the site in Chrome &amp; Firefox</span>
+browser: [<span class="hljs-string">&quot;google chrome&quot;</span>, <span class="hljs-string">&quot;firefox&quot;</span>]
+</code></pre></div><h3 id="option-xip">xip <a href="#option-xip" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
+                <p>Requires an internet connection - useful for services such as <a href="https://typekit.com/">Typekit</a>
+                as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Append &#39;.xip.io&#39; to the hostname. (eg: <a href="http://192.168.0.4.xip.io:3002">http://192.168.0.4.xip.io:3002</a>)</span>
+xip: <span class="hljs-literal">true</span>
+</code></pre></div><h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+                <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don&#39;t show any notifications in the browser.</span>
+notify: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js">scrollProportionally: <span class="hljs-literal">false</span> <span class="hljs-comment">// Sync viewports to TOP position</span>
+</code></pre></div><h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Number</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">0</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js">scrollThrottle: <span class="hljs-number">100</span> <span class="hljs-comment">// only send scroll events every 100 milliseconds</span>
+</code></pre></div><h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Number</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">0</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Wait for 2 seconds before any browsers should try to inject/reload a file.</span>
+reloadDelay: <span class="hljs-number">2000</span>
+</code></pre></div><h3 id="option-injectChanges">injectChanges <a href="#option-injectChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Inject CSS changes</span>
+injectChanges: <span class="hljs-literal">true</span>,
+<span class="hljs-comment">// Don&#39;t try to inject, just do a page refresh</span>
+injectChanges: <span class="hljs-literal">false</span>,
+</code></pre></div><h3 id="option-startPath">startPath <a href="#option-startPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Null</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">null</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Open the first browser window at URL + &quot;/info.php&quot;</span>
+startPath: <span class="hljs-string">&quot;/info.php&quot;</span>
+</code></pre></div><h3 id="option-minify">minify <a href="#option-minify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+                <p>Whether to minify client script, or not.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don&#39;t minify the client-side JS</span>
+minify: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">null</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Override host detection if you know the correct IP to use</span>
+host: <span class="hljs-string">&quot;192.168.1.1&quot;</span>
+</code></pre></div><h3 id="option-codeSync">codeSync <a href="#option-codeSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don&#39;t send any file-change events to browsers</span>
+codeSync: <span class="hljs-literal">true</span>,
+</code></pre></div><h3 id="option-timestamps">timestamps <a href="#option-timestamps" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don&#39;t append timestamps to injected files</span>
+timestamps: <span class="hljs-literal">false</span>
+</code></pre></div><h3 id="option-scriptPath">scriptPath <a href="#option-scriptPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Function</span>
+                    </li>
+                    <li class="since">Since: <span class="color-teal">1.5.0</span></li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
+                <p>Alter the script path for complete control over where the BrowserSync
+                Javascript is served from. Whatever you return from this function
+                will be used as the script path.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// This will result in something like</span>
+<span class="hljs-comment">// &lt;script src=&quot;localhost:3002/browser-sync/browser-sync-client.1.6.0.js&quot; /&gt;</span>
+scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(path)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;localhost:3002&quot;</span> + path;
 }
-{% endhighlight %}
-<h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Object</span>
-    
-        <ul class="nav nav--stacked subprops">
-            
-                <li><b>path</b> - Default: <span class="color-teal">"/browser-sync/socket.io"</span></li>
-            
-                <li><b>clientPath</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
-            
-                <li><b>namespace</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
-            
-        </ul>
-    </li>
-    
-</ul>
-
-<p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
-
-
-{% highlight javascript %}
-// This will result in something like this in
-// the socket connector code
-// browserSync.io('localhost:3003/browser-sync')
+</code></pre></div><h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                        <ul class="nav nav--stacked subprops">
+                                <li><b>path</b> - Default: <span class="color-teal">&quot;/browser-sync/socket.io&quot;</span></li>
+                                <li><b>clientPath</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
+                                <li><b>namespace</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// This will result in something like this in</span>
+<span class="hljs-comment">// the socket connector code</span>
+<span class="hljs-comment">// browserSync.io(&#39;localhost:3003/browser-sync&#39;)</span>
 socket: {
-    namespace: function (namespace) {
-        return "localhost:3003" + namespace;
+    namespace: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(namespace)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;localhost:3003&quot;</span> + namespace;
     }
 }
-{% endhighlight %}
+</code></pre></div>
+            </article>
+        </div>
+    </section>
+</div>
+
+<footer class="wrapper site-footer" role="contentinfo">
+    <div class="container">
+        <p class="text--center">
+            <a href="http://www.wearejh.com/">
+                <img src="/img/jh.jpg" alt="We are JH"/>
+            </a>
+        </p>
+        <p>BrowserSync is developed & maintained internally at <a href="http://www.wearejh.com/">JH</a></p>
+        <p class="flush">Created by <a href="http://shakyshane.com/">Shane Osbourne</a>. Design is by <a href="http://www.josephrussell.co.uk/">Joseph Russell</a>.<br> BrowserSync is available for use and modification under the <a href="https://github.com/shakyShane/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
+        <p class="social-links">
+            <a href="https://github.com/shakyShane/browser-sync">
+                <i class="icon icon-github"></i>
+            </a>
+            <a href="https://twitter.com/browsersync">
+                <i class="icon icon-twitter"></i>
+            </a>
+        </p>
+    </div>
+</footer><!-- end .site-footer -->
+    <script>
+        !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
+        (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),
+        t=y.getElementsByTagName(n)[0],I.src="//www.google-analytics.com/analytics.js",
+        t.parentNode.insertBefore(I,t)}(window,document,"script","ga");
+        ga('create', 'UA-48819865-1', 'browsersync.io');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

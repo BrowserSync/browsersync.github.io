@@ -1,0 +1,62 @@
+# Site settings
+title: BrowserSync
+tagline: "Time-saving synchronised browser testing."
+description: "BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&rsquo;s wicked-fast and totally free."
+baseurl: "http://browsersync.io/"
+highlighter: pygments
+url: "http://browsersync.io"
+twitter_username: browsersync
+github_username: shakshane
+
+# Files config
+exclude: ["node_modules", "gulpfile.js", "package.json", "bower.json", "bower_components"]
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Assets
+cssFile: "/css/core.min.css"
+
+env: "production"
+
+navigation:
+ - page-label: home
+   label: "Get Started"
+   url: "#install"
+ - page-label: docs
+   label: "Documentation"
+   url: /docs
+ - page-label: source
+   label: "Source Code"
+   url: https://github.com/shakyShane/browser-sync
+
+docs-navigation:
+  - page-label: gulp
+    label: "+ Gulp"
+    url: "/docs/gulp"
+  - page-label: grunt
+    label: "+ Grunt"
+    url: "/docs/grunt"
+  - page-label: api
+    label: "API"
+    url: "/docs/api"
+  - page-label: command-line
+    label: "Command line"
+    url: "/docs/command-line"
+  - page-label: options
+    label: "Options"
+    url: "/docs/options"
+
+links:
+  docs:         "https://github.com/shakyShane/browser-sync/wiki"
+  source:       "https://github.com/shakyShane/browser-sync"
+  twitter:      "https://twitter.com/browsersync"
+  npm:          "https://npmjs.org/shakyshane/browser-sync"
+  site-github:  "https://github.com/shakyShane/browser-sync-website"
+  grunt-github: "https://github.com/shakyShane/grunt-browser-sync"
+  gulp:         "/docs/gulp"
+  grunt:        "/docs/grunt"
+  options:      "/docs/options"
+  command-line: "/docs/command-line"
+  api:          "/docs/api"

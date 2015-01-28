@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js ffly" lang="en"> <!--<![endif]-->
+<head>
+    <title>BrowserSync + Grunt.js</title>
+    <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICONS -->
+    <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
+    <!-- CSS Includes (PRODUCTION) -->
+    <link rel="stylesheet" href="/css/core.min.css"/>
+</head>
+
+<body>
+
+<header class="wrapper site-header alt" role="banner">
+    <div class="container">
+            <h1 class="site-title alt"><a href="/">BrowserSync</a> / <span><a href="/docs">documentation</a></span></h1>
+            <ul class="nav--inline docs-nav">
+                    <li><a href="/docs/gulp" >+ Gulp</a></li>
+                    <li><a href="/docs/grunt" class="active">+ Grunt</a></li>
+                    <li><a href="/docs/api" >API</a></li>
+                    <li><a href="/docs/command-line" >Command line</a></li>
+                    <li><a href="/docs/options" >Options</a></li>
+            </ul>
+    </div>
+</header><!-- .end .site-header -->
+
+<div class="site-body" role="main">
+    <section id="page-top" class="wrapper code-example grunt">
+        <div class="container">
+            <article class="doc-wrapper">
+                <h1 class="text--center">BrowserSync + Grunt.js</h1>
+                <p>We have an <a href="https://github.com/shakyShane/grunt-browser-sync">official Plugin</a> for Grunt that makes it easy to incorporate
+                BrowserSync into your development workflow. Below are a few examples of common configurations to get you started - use them
+                as a jump-start but don&#39;t forget you can also use any of the other <a href="/docs/options">BrowserSync options</a> as well.</p>
+                <p>First, you&#39;ll need to install the BrowserSync Plugin...</p>
+<pre><code class="html">$ npm install grunt-browser-sync --save-dev</code></pre>
+<p>... and then add this line to your <code>Gruntfile.js</code></p>
+<pre><code class="js">grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
+</code></pre>
+                <p>The simplest example would be watching CSS files and using the built-in server for static
+                HTML/CSS/JS files. This config alone will launch a mini-server (using your current working directory
+                as the base), watch your CSS files for changes &amp; auto-inject those changes into all connected browsers. </p>
+<pre><code class="js">browserSync: {
+    bsFiles: {
+        src : <span class="hljs-string">'assets/css/*.css'</span>
+    },
+    options: {
+        server: {
+            baseDir: <span class="hljs-string">"./"</span>
+        }
+    }
+}</code></pre>
+                <p>If you already have a local server setup (with your vhosts etc), just tell BrowserSync all about it &amp; it will do the rest for you.</p>
+<pre><code class="js">browserSync: {
+    dev: {
+        bsFiles: {
+            src : <span class="hljs-string">'assets/css/style.css'</span>
+        },
+        options: {
+            proxy: <span class="hljs-string">"local.dev"</span>
+        }
+    }
+}</code></pre>
+                <p>Browser Sync is not a replacement for regular <code>watch</code> tasks (such as compiling SASS, LESS etc), 
+                they are designed to be used together. If you intend to do this, you&#39;ll need to set <code>watchTask: true</code> and be sure to call 
+                the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers 
+                (without a page refresh), your config for all three tasks might look something like this:</p>
+<pre><code class="js"><span class="hljs-comment">// This shows a full config file!</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(grunt)</span> </span>{
+    grunt.initConfig({
+        watch: {
+            files: <span class="hljs-string">"assets/scss/**/*.scss"</span>,
+            tasks: [<span class="hljs-string">'compass'</span>]
+        },
+        compass: {
+            dist: {
+                options: {
+                    sassDir: <span class="hljs-string">'assets/scss'</span>,
+                    cssDir: <span class="hljs-string">'assets/css'</span>,
+                    outputStyle: <span class="hljs-string">'compressed'</span>
+                }
+            }
+        },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : <span class="hljs-string">'assets/css/*.css'</span>
+                },
+                options: {
+                    watchTask: <span class="hljs-literal">true</span> <span class="hljs-comment">// &lt; VERY important</span>
+                }
+            }
+        }
+    });
+    <span class="hljs-comment">// load npm tasks</span>
+    grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-compass'</span>);
+    grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-watch'</span>);
+    grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
+    <span class="hljs-comment">// define default task</span>
+    grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">"browserSync"</span>, <span class="hljs-string">"watch"</span>]);
+};</code></pre>
+            </article>
+        </div>
+    </section>
+</div>
+
+<footer class="wrapper site-footer" role="contentinfo">
+    <div class="container">
+        <p class="text--center">
+            <a href="http://www.wearejh.com/">
+                <img src="/img/jh.jpg" alt="We are JH"/>
+            </a>
+        </p>
+        <p>BrowserSync is developed & maintained internally at <a href="http://www.wearejh.com/">JH</a></p>
+        <p class="flush">Created by <a href="http://shakyshane.com/">Shane Osbourne</a>. Design is by <a href="http://www.josephrussell.co.uk/">Joseph Russell</a>.<br> BrowserSync is available for use and modification under the <a href="https://github.com/shakyShane/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
+        <p class="social-links">
+            <a href="https://github.com/shakyShane/browser-sync">
+                <i class="icon icon-github"></i>
+            </a>
+            <a href="https://twitter.com/browsersync">
+                <i class="icon icon-twitter"></i>
+            </a>
+        </p>
+    </div>
+</footer><!-- end .site-footer -->
+    <script>
+        !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
+        (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),
+        t=y.getElementsByTagName(n)[0],I.src="//www.google-analytics.com/analytics.js",
+        t.parentNode.insertBefore(I,t)}(window,document,"script","ga");
+        ga('create', 'UA-48819865-1', 'browsersync.io');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

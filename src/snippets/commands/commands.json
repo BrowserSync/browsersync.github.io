@@ -1,0 +1,62 @@
+{
+    "Files Examples": [
+        {
+            "desc": "Single file",
+            "args": ["--files", "\"css/core.css\""]
+        },
+        {
+            "desc": "Single Pattern",
+            "args": ["--files", "\"css/*.css\""]
+        },
+        {
+            "desc": "Multiple files",
+            "args": ["--files", "\"css/core.css, css/ie.css\""]
+        },
+        {
+            "desc": "Multiple Patterns",
+            "args": ["--files", "\"css/*.css, *.html\""]
+        }
+    ],
+    "Server Examples": [
+        {
+            "desc": "Static server using current directory as the root",
+            "args": ["--server"]
+        },
+        {
+            "desc": "Static server using the 'app' directory as the root",
+            "args": ["--server", "app"]
+        },
+        {
+            "desc": "Static server using current directory as the root with directory listing",
+            "args": ["--server", "--directory"]
+        }
+    ],
+    "Proxy Examples": [
+        {
+            "desc": "Using a local.dev vhost",
+            "args": ["--proxy"]
+        },
+        {
+            "desc": "Using a local.dev vhost with PORT",
+            "args": ["--proxy", "local.dev:8001"]
+        },
+        {
+            "desc": "Using a localhost address",
+            "args": ["--proxy", "localhost:8001"]
+        },
+        {
+            "desc": "Using a localhost address in a sub-dir",
+            "args": ["--proxy", "localhost:8080/site1"]
+        }
+    ],
+    "Watching Files + Server": [
+        {
+            "desc": "Watch ALL CSS files for changes with a static server",
+            "args": ["--files", "\"app/css/*.css\"", "--server"]
+        },
+        {
+            "desc": " Watch ALL CSS files for changes with a static server using \"app\" as the base directory",
+            "args": ["--files", "\"app/css/*.css\"", "--server", "\"app\""]
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+---
+layout: "default.hbs"
+page-label: "home"
+---
+<section class="wrapper">
+    <div class="container">
+        <h2 class="text--center">Why use BrowserSync?</h2>
+
+        <p class="lede text--center">When you&rsquo;re making responsive websites, there&rsquo;s a lot of tweaking and testing to do. BrowserSync makes your workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&rsquo;s wicked-fast and totally free.</p>
+        <hr>
+        <ul class="grid">
+            <li class="grid__item desk--one-half lap--one-half">
+                <h3><i class="icon icon-hand-o-up"></i> Action Sync</h3>
+                <p>Your scroll, click, refresh and form actions are mirrored to browsers while you test.</p>
+            </li>
+            <li class="grid__item desk--one-half lap--one-half">
+                <h3><i class="icon icon-code"></i> Code Sync</h3>
+
+                <p>Browsers are automatically updated as you change HTML, CSS, images and other project files.</p>
+            </li>
+            <li class="grid__item desk--one-half lap--one-half">
+                <h3><i class="icon icon-puzzle-piece"></i> Build Ready</h3>
+
+                <p>Easily integrated with task runners. Try our Grunt plugin or write your own.</p>
+            </li>
+            <li class="grid__item desk--one-half lap--one-half">
+                <h3><i class="icon icon-check-square-o"></i> Browser Support</h3>
+
+                <p>Instantly sync between your desktop, tablet and phone. Perfect for responsive designs.</p>
+            </li>
+            <li class="grid__item desk--one-half lap--one-half">
+                <h3><i class="icon icon-cogs"></i> Back-end Independence</h3>
+
+                <p>Ready to use with websites running on PHP, ASP, Rails and more. Fine with static files too.</p>
+            </li>
+            <li class="grid__item desk--one-half lap--one-half">
+                <h3><i class="icon icon-laptop"></i> Runs Anywhere</h3>
+
+                <p>Built on Node.js to support Windows, MacOS and Linux. Setup in less than 5 minutes.</p>
+            </li>
+        </ul>
+        <hr>
+        <p class="text--center"><strong>Tested with:</strong>
+            Chrome (latest),
+            Firefox (latest),
+            Internet Explorer 7/8/9/10,
+            Safari (latest),
+            Opera (latest),
+            Android,
+            Blackberry,
+            FireFox Mobile,
+            iOS,
+            Opera Mobile,
+            Windows Phone.
+        </p>
+    </div>
+</section>
+
+<section id="install" class="wrapper wrapper--alt">
+    <div class="container">
+
+        <h2 class="text--center">Get started in 5 minutes</h2>
+
+        <p class="lede"></p>
+        <ol class="steps">
+            <li>
+                <h3>1. Install Node.js</h3>
+
+                <p>BrowserSync is a module for Node.js, a platform for fast network applications. There are convenient <a href="http://nodejs.org/download/">installers for MacOS, Windows and Linux</a>.</p>
+            </li>
+            <li>
+                <h3>2. Install BrowserSync</h3>
+
+                <p>The Node.js package manager (npm) is used to install BrowserSync from <a href="https://npmjs.org/package/browser-sync">a repository</a>. Open a terminal window and run the following command:</p>
+                <pre><code>npm install -g browser-sync</code></pre>
+                <p>You&rsquo;re telling the package manager to download the BrowserSync files and install them globally so they&rsquo;re available to all your projects.</p>
+            </li>
+            <li>
+                <h3>3. Start BrowserSync</h3>
+
+                <p>A basic use is to watch all CSS files in the <code>css</code> directory and update connected browsers if a change occurs. Navigate your terminal window to a project and run the appropriate command:</p>
+                <h4>Static sites</h4>
+
+                <p>If you&rsquo;re only using <code>.html</code> files, you&rsquo;ll need to use the <em>server mode</em>. BrowserSync will start a mini-server and provide a URL to view your site.</p>
+                <pre><code>browser-sync start --server --files "css/*.css"</code></pre>
+                <h4>Dynamic sites</h4>
+
+                <p>If you&rsquo;re already running a local server with PHP or similar, you&rsquo;ll need to use the <em>proxy mode</em>. BrowserSync will wrap your vhost with a proxy URL to view your site.</p>
+                <pre><code>browser-sync start --proxy "myproject.dev" --files "css/*.css"</code></pre>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="wrapper">
+    <div class="container">
+
+        <h2 class="text--center">Further reading</h2>
+
+        <p class="lede text--center"><a href="{{site.links.command-line}}">Learn command line settings</a> to control BrowserSync.</p>
+        <p class="lede text--center">Use our <a href="{{site.links.grunt}}">Grunt plugin</a> or <a href="{{site.links.gulp}}">Gulp Guide</a> to integrate with your build process.</p>
+        <p class="lede text--center">Use the <a href="{{site.links.api}}">API</a> to configure <a href="{{site.links.options}}"> Options</a></p>
+
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<header class="wrapper site-header{{#if_eq page.url "/index.html"}}{{else}} alt{{/if_eq}}" role="banner">
+    <div class="container">
+        {{#if_eq page.url "/index.html"}}
+            <h1 class="site-title">{{site.title}}</h1>
+            <p class="site-lede">{{site.tagline}}</p>
+            <ul class="nav--inline">
+                {{#loop site.navigation}}
+                    <li><a href="{{this.url}}" {{#if @first}}class="button button--primary"{{/if}}>{{ this.label }}</a></li>
+                {{/loop}}
+            </ul>
+        {{else}}
+            <h1 class="site-title alt"><a href="/">{{site.title}}</a> / <span><a href="/docs">documentation</a></span></h1>
+            <ul class="nav--inline docs-nav">
+                {{#loop site.docs-navigation}}
+                    <li><a href="{{this.url}}" {{#current this.url}}class="active"{{/current}}>{{ this.label }}</a></li>
+                {{/loop}}
+            </ul>
+        {{/if_eq}}
+    </div>
+</header><!-- .end .site-header -->

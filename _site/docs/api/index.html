@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js ffly" lang="en"> <!--<![endif]-->
+<head>
+    <title>BrowserSync API</title>
+    <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICONS -->
+    <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
+    <!-- CSS Includes (PRODUCTION) -->
+    <link rel="stylesheet" href="/css/core.min.css"/>
+</head>
+
+<body>
+
+<header class="wrapper site-header alt" role="banner">
+    <div class="container">
+            <h1 class="site-title alt"><a href="/">BrowserSync</a> / <span><a href="/docs">documentation</a></span></h1>
+            <ul class="nav--inline docs-nav">
+                    <li><a href="/docs/gulp" >+ Gulp</a></li>
+                    <li><a href="/docs/grunt" >+ Grunt</a></li>
+                    <li><a href="/docs/api" class="active">API</a></li>
+                    <li><a href="/docs/command-line" >Command line</a></li>
+                    <li><a href="/docs/options" >Options</a></li>
+            </ul>
+    </div>
+</header><!-- .end .site-header -->
+
+<div class="site-body" role="main">
+    <section id="page-top" class="wrapper code-example api">
+        <div class="container">
+            <article class="doc-wrapper">
+                <h1 class="text--center">BrowserSync API</h1>
+                <p>Our API is incredibly simple &amp; powerful. You can use it to create your own
+                tiny node program for local development or integrate with other tools. To use it, 
+                simply <code>require</code> the BrowserSync module like you would any other. This will give 
+                you access to the public methods detailed below.</p>
+<pre><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);</code></pre>
+<h3 id="api-browserSync">browserSync( config, cb ) <a href="#api-browserSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list" id="api-browserSync-config">
+    <li class="name">config <a href="#api-browserSync-config" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="type">Type: <span class="color-teal">Object</span>
+        <span class="recede">[optional]</span>
+    </li>
+    <li class="desc"><p>This is the main configuration for your BrowserSync instance and can contain any of the <a href="/docs/options">available options</a>
+ If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the <code>snippet</code> mode</p>
+</li>
+</ul>
+<ul class="param-list" id="api-browserSync-cb">
+    <li class="name">cb <a href="#api-browserSync-cb" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="type">Type: <span class="color-teal">Function</span>
+        <span class="recede">[optional]</span>
+    </li>
+    <li class="desc"><p>If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This
+is useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.</p>
+</li>
+</ul>
+<p>{% highlight javascript %}
+var config = {
+    server: {
+        baseDir: &quot;./&quot;
+    }
+};</p>
+<p>// config only
+browserSync(config);</p>
+<p>// config + callback
+browserSync(config, function (err, bs) {
+    if (!err) {
+        console.log(&quot;BrowserSync is ready!&quot;);
+    }
+});
+{% endhighlight %}</p>
+<p><h3 id="api-reload">.reload( arg ) <a href="#api-reload" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>The <code>reload</code> method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
+<ul class="param-list" id="api-reload-arg">
+    <li class="name">arg <a href="#api-reload-arg" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="type">Type: <span class="color-teal">String | Array | Object</span>
+        <span class="recede">[optional]</span>
+    </li>
+    <li class="desc"><p>The file or files to be reloaded. For
+details and examples of Streams support, please see the <a href="/docs/gulp">GulpJS</a> examples</p>
+</li>
+</ul>
+<p>{% highlight javascript %}
+// browser reload
+browserSync.reload();</p>
+<p>// single file
+browserSync.reload( &quot;styles.css&quot; );</p>
+<p>// multiple files
+browserSync.reload( [&quot;styles.css&quot;, &quot;ie.css&quot;] );</p>
+<p>// streams support
+browserSync.reload( { stream: true } );
+{% endhighlight %}</p>
+<p><h3 id="api-notify">.notify( msg, timeout ) <a href="#api-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>Helper method for browser notifications</p>
+<ul class="param-list" id="api-notify-msg">
+    <li class="name">msg <a href="#api-notify-msg" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="type">Type: <span class="color-teal">String | HTML</span>
+    </li>
+    <li class="desc"><p>Can be a simple message such as &#39;Connected&#39; or HTML</p>
+</li>
+</ul>
+<ul class="param-list" id="api-notify-timeout">
+    <li class="name">timeout <a href="#api-notify-timeout" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="type">Type: <span class="color-teal">Number</span>
+        <span class="recede">[optional]</span>
+    </li>
+    <li class="desc"><p>How long the message will remain in the browser. @since 1.3.0</p>
+</li>
+</ul>
+<p>{% highlight javascript %}
+browserSync.notify(&quot;Compiling, please wait!&quot;);</p>
+<p>browserSync.notify(&quot;HTML <span color='green'>is supported</span> too!&quot;);</p>
+<p>// Since 1.3.0, specify a timeout
+browserSync.notify(&quot;This message will only last a second&quot;, 1000);
+{% endhighlight %}</p>
+<p><h3 id="api-exit">.exit() <a href="#api-exit" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>This method will close any running server, stop file watching &amp; exit the current process.</p>
+<p>{% highlight javascript %}
+browserSync(config, function (err, bs) {
+    browserSync.exit();
+});
+{% endhighlight %}</p>
+<p><h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
+<p>{% highlight javascript %}
+console.log(browserSync.active); // false</p>
+<p>browserSync(config, function (err, bs) {
+    console.log(browserSync.active); // true
+});
+{% endhighlight %}</p>
+<p><h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
+You can use this to emit your own events, such as changed files, logging etc.</p>
+<p>{% highlight javascript %}
+var evt = browserSync.emitter;</p>
+<p>evt.on(&quot;init&quot;, function () {
+    console.log(&quot;BrowserSync is running!&quot;);
+});</p>
+<p>browserSync(config);
+{% endhighlight %}</p>
+        </article>
+    </div>
+</section>
+</div>
+
+<footer class="wrapper site-footer" role="contentinfo">
+    <div class="container">
+        <p class="text--center">
+            <a href="http://www.wearejh.com/">
+                <img src="/img/jh.jpg" alt="We are JH"/>
+            </a>
+        </p>
+        <p>BrowserSync is developed & maintained internally at <a href="http://www.wearejh.com/">JH</a></p>
+        <p class="flush">Created by <a href="http://shakyshane.com/">Shane Osbourne</a>. Design is by <a href="http://www.josephrussell.co.uk/">Joseph Russell</a>.<br> BrowserSync is available for use and modification under the <a href="https://github.com/shakyShane/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
+        <p class="social-links">
+            <a href="https://github.com/shakyShane/browser-sync">
+                <i class="icon icon-github"></i>
+            </a>
+            <a href="https://twitter.com/browsersync">
+                <i class="icon icon-twitter"></i>
+            </a>
+        </p>
+    </div>
+</footer><!-- end .site-footer -->
+    <script>
+        !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
+        (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),
+        t=y.getElementsByTagName(n)[0],I.src="//www.google-analytics.com/analytics.js",
+        t.parentNode.insertBefore(I,t)}(window,document,"script","ga");
+        ga('create', 'UA-48819865-1', 'browsersync.io');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

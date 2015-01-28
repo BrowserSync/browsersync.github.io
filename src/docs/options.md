@@ -10,11 +10,15 @@ still use all of these options, but you need to provide them as detailed in the 
 
 {{ hl src="snippets/options/require.js" }}
 
+
 <h3 id="option-files">files <a href="#option-files" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Array | String</span>
+    
     </li>
+    
     <li class="default">Default: <span class="color-teal">false</span></li>
+    
 </ul>
 
 <p>BrowserSync can watch your files as you work. Changes you make will either
@@ -22,7 +26,7 @@ be injected into the page (CSS &amp; images) or will cause all browsers to do
 a full-page refresh. See <a href="https://github.com/isaacs/minimatch">isaacs&#39;s minimatch</a> for more information on glob patterns.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // single file
 files: "app/css/style.css"
 
@@ -52,7 +56,7 @@ section of their docs to see which options they support.
 for availbable options</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Options passed to Gaze
 watchOptions: {
     debounceDelay: 1000
@@ -71,7 +75,7 @@ watchOptions: {
 <p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Serve files from the app directory
 server: {
     baseDir: "app"
@@ -139,7 +143,7 @@ server: {
 <p>Proxy an EXISTING vhost. BrowserSync will wrap your existing url and provide a different one to use.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Using a vhost-based url
 proxy: "local.dev"
 
@@ -161,7 +165,7 @@ proxy: "localhost/site1"
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Use a specific port (instead of the one auto-detected by BrowserSync)
 port: 8080
 {{/hl}}
@@ -180,7 +184,7 @@ port: 8080
 <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Enable HTTPS for static file server
 https: true
 {{/hl}}
@@ -201,10 +205,10 @@ https: true
     
 </ul>
 
-<p>Clicks, scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
+<p>Clicks, Scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Here you can disable/enable each feature individually
 ghostMode: {
     clicks: true,
@@ -228,7 +232,7 @@ ghostMode: false
 <p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Show me additional info about the process
 logLevel: "debug"
 
@@ -254,7 +258,7 @@ logLevel: "silent"
 own project based on BrowserSync</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 logPrefix: "My Awesome Project"
 
 // [My Awesome Project] Local URL: http://localhost:3000
@@ -273,7 +277,7 @@ logPrefix: "My Awesome Project"
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Log connections
 logConnections: true
 
@@ -292,7 +296,7 @@ logConnections: false
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Log information about changed files
 logFileChanges: true
 
@@ -314,7 +318,7 @@ logFileChanges: false
 <p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Don't ever log the snippet
 logSnippet: false
 {{/hl}}
@@ -341,7 +345,7 @@ You can also provide patterns for certain urls
 that should be ignored from the snippet injection.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Customise the placement of the snippet
 // and ignore certain paths
 snippetOptions: {
@@ -370,7 +374,7 @@ snippetOptions: {
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Tunnel the BrowserSync server through a random Public URL
 // -> http://randomstring23232.localtunnel.me
 tunnel: true
@@ -392,7 +396,7 @@ tunnel: "my-private-site"
 working offline, you can reduce start-up time by setting this option to <code>false</code></p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Will not attempt to determine your network status, assumes you're ONLINE.
 online: true
 
@@ -413,7 +417,7 @@ online: false
 Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Stop the browser from automatically opening
 open: false
 
@@ -440,7 +444,7 @@ open: "tunnel"
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Open the site in Chrome
 browser: "google chrome"
 
@@ -461,9 +465,25 @@ browser: ["google chrome", "firefox"]
 as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)
 xip: true
+{{/hl}}
+<h3 id="option-reloadOnRestart">reloadOnRestart <a href="#option-reloadOnRestart" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Boolean</span>
+    
+    </li>
+    
+    <li class="default">Default: <span class="color-teal">true</span></li>
+    
+</ul>
+
+<p>Reload each browser when BrowserSync is restarted.</p>
+
+
+{{#hl lang="js" }}
+
 {{/hl}}
 <h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
@@ -478,7 +498,7 @@ xip: true
 <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Don't show any notifications in the browser.
 notify: false
 {{/hl}}
@@ -494,7 +514,7 @@ notify: false
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 scrollProportionally: false // Sync viewports to TOP position
 {{/hl}}
 <h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -509,7 +529,7 @@ scrollProportionally: false // Sync viewports to TOP position
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 scrollThrottle: 100 // only send scroll events every 100 milliseconds
 {{/hl}}
 <h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -524,7 +544,7 @@ scrollThrottle: 100 // only send scroll events every 100 milliseconds
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Wait for 2 seconds before any browsers should try to inject/reload a file.
 reloadDelay: 2000
 {{/hl}}
@@ -540,7 +560,7 @@ reloadDelay: 2000
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Inject CSS changes
 injectChanges: true,
 
@@ -559,7 +579,7 @@ injectChanges: false,
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Open the first browser window at URL + "/info.php"
 startPath: "/info.php"
 {{/hl}}
@@ -576,7 +596,7 @@ startPath: "/info.php"
 <p>Whether to minify client script, or not.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Don't minify the client-side JS
 minify: false
 {{/hl}}
@@ -592,7 +612,7 @@ minify: false
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Override host detection if you know the correct IP to use
 host: "192.168.1.1"
 {{/hl}}
@@ -608,7 +628,7 @@ host: "192.168.1.1"
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Don't send any file-change events to browsers
 codeSync: true,
 {{/hl}}
@@ -624,7 +644,7 @@ codeSync: true,
 
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // Don't append timestamps to injected files
 timestamps: false
 {{/hl}}
@@ -645,7 +665,7 @@ Javascript is served from. Whatever you return from this function
 will be used as the script path.</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // This will result in something like
 // <script src="localhost:3002/browser-sync/browser-sync-client.1.6.0.js" />
 scriptPath: function (path) {
@@ -663,6 +683,9 @@ scriptPath: function (path) {
                 <li><b>clientPath</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
             
                 <li><b>namespace</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
+            
+                <li><b>clients.heartbeatTimeout</b> - Default: <span class="color-teal">5000</span></li>
+            
         </ul>
     </li>
     
@@ -671,7 +694,7 @@ scriptPath: function (path) {
 <p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
 
 
-{{#hl lang="js"}}
+{{#hl lang="js" }}
 // This will result in something like this in
 // the socket connector code
 // browserSync.io('localhost:3003/browser-sync')

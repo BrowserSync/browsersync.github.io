@@ -1,7 +1,6 @@
 ---
 layout: "documentation.hbs"
 title: "BrowserSync Command Line Usage"
-page-label: "command-line"
 ---
 
 For *tinkering* or quick examples and playing around, the command-line usage can be quite helpful. 
@@ -19,98 +18,118 @@ $ browser-sync start <options>
 <table>
     
         <tr>
-            <td>--files</td>
+            <td>help</td>
+            <td>Output usage information</td>
+        </tr>
+    
+        <tr>
+            <td>version</td>
+            <td>utput the version number</td>
+        </tr>
+    
+        <tr>
+            <td>files</td>
             <td>File paths to watch</td>
         </tr>
     
         <tr>
-            <td>--exclude</td>
+            <td>exclude</td>
             <td>File patterns to ignore</td>
         </tr>
     
         <tr>
-            <td>--server</td>
+            <td>server</td>
             <td>Run a Local server (uses your cwd as the web root)</td>
         </tr>
     
         <tr>
-            <td>--index</td>
+            <td>index</td>
             <td>Specify which file should be used as the index page</td>
         </tr>
     
         <tr>
-            <td>--startPath</td>
+            <td>startPath</td>
             <td>Specify the start path for the opened browser</td>
         </tr>
     
         <tr>
-            <td>--https</td>
+            <td>https</td>
             <td>Enable SSL for local development</td>
         </tr>
     
         <tr>
-            <td>--directory</td>
+            <td>directory</td>
             <td>Show a directory listing for the server</td>
         </tr>
     
         <tr>
-            <td>--proxy</td>
+            <td>proxy</td>
             <td>Proxy an existing server</td>
         </tr>
     
         <tr>
-            <td>--xip</td>
+            <td>xip</td>
             <td>Use xip.io domain routing</td>
         </tr>
     
         <tr>
-            <td>--tunnel</td>
+            <td>tunnel</td>
             <td>Use a public URL</td>
         </tr>
     
         <tr>
-            <td>--open</td>
+            <td>open</td>
             <td>Choose which URL is auto-opened (local, external or tunnel)</td>
         </tr>
     
         <tr>
-            <td>--config</td>
+            <td>config</td>
             <td>Specify a path to a bs-config.js file</td>
         </tr>
     
         <tr>
-            <td>--host</td>
+            <td>host</td>
             <td>Specify a hostname to use</td>
         </tr>
     
         <tr>
-            <td>--logLevel</td>
+            <td>logLevel</td>
             <td>Set the logger output level (silent, info or debug)</td>
         </tr>
     
         <tr>
-            <td>--port</td>
+            <td>port</td>
             <td>Specify a port to use</td>
         </tr>
     
         <tr>
-            <td>--no-notify</td>
+            <td>no-notify</td>
             <td>Disable the notify element in browsers</td>
         </tr>
     
         <tr>
-            <td>--no-open</td>
+            <td>no-open</td>
             <td>Don't open a new browser window</td>
         </tr>
     
         <tr>
-            <td>--no-ghost</td>
+            <td>no-online</td>
+            <td>Force offline usage</td>
+        </tr>
+    
+        <tr>
+            <td>no-ui</td>
+            <td>Don't start the user interface</td>
+        </tr>
+    
+        <tr>
+            <td>no-ghost-mode</td>
             <td>Disable Ghost Mode</td>
         </tr>
     
         <tr>
-            <td>--no-online</td>
-            <td>Force offline usage</td>
+            <td>no-reload-on-restart</td>
+            <td>Don't auto-reload all browsers following a restart</td>
         </tr>
     
 </table>

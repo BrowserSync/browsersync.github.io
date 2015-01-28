@@ -38,7 +38,7 @@
 </header><!-- .end .site-header -->
 
 <div class="site-body" role="main">
-    <section id="page-top" class="wrapper code-example api">
+    <section id="page-top" class="wrapper code-example ">
         <div class="container">
             <article class="doc-wrapper">
                 <h1 class="text--center">BrowserSync API</h1>
@@ -128,14 +128,23 @@ browserSync.notify(<span class="hljs-string">&quot;This message will only last a
     browserSync.exit();
 });
 </code></pre></div>
-                <h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-                <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
+                <p><h3 id="api-pause">.pause() <a href="#api-pause" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+                <p>Method to pause file change events</p>
+<div class="highlight"><pre><code class="js"></code></pre></div>
+<p><h3 id="api-resume">.resume() <a href="#api-resume" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>Method to resume paused watchers</p>
+<div class="highlight"><pre><code class="js"></code></pre></div>
+<p><h3 id="api-paused">.paused <a href="#api-paused" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>A simple true/false flag to determine if the current instance is paused</p>
+<div class="highlight"><pre><code class="js"></code></pre></div>
+<p><h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
+<p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
 browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
 });
 </code></pre></div>
-                <h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <p><h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3></p>
                 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
                 You can use this to emit your own events, such as changed files, logging etc.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;

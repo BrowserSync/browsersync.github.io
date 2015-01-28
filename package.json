@@ -1,12 +1,12 @@
 {
-  "name": "browser-sync-jekyll",
+  "name": "browser-sync-website",
   "version": "0.0.1",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp build"
   },
-  "homepage": "https://github.com/shakyshane/browser-sync-site",
+  "homepage": "https://github.com/BrowserSync/website",
   "author": {
     "name": "Shane Osbourne"
   },
@@ -15,12 +15,12 @@
     "url": "git://github.com/shakyshane/browser-sync-site.git"
   },
   "bugs": {
-    "url": "https://github.com/shakyshane/browser-sync-site/issues"
+    "url": "https://github.com/BrowserSync/website/issues"
   },
   "licenses": [
     {
       "type": "GPL",
-      "url": "https://github.com/shakyshane/browser-sync-site/blob/master/LICENSE-GPL"
+      "url": "https://github.com/BrowserSync/website/blob/master/LICENSE-GPL"
     }
   ],
   "license": "ISC",

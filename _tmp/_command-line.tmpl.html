@@ -17,10 +17,10 @@
 <h3 id="command-line-{: example.title :}-examples">{: example.title :}
     <a href="#command-line-{: example.title :}-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 
-{% highlight bash %}
+{{#hl lang="bash" }}
 <% loop example.items as item %>
 # {: item.desc :}
 $ browser-sync start<% loop item.args as arg %> {:arg:}<% /loop %>
 <% /loop %>
-{% endhighlight %}
+{{/hl}}
 <% /loop %>

@@ -176,7 +176,7 @@ https: <span class="hljs-literal">true</span>
                         </ul>
                     </li>
                 </ul>
-                <p>Clicks, scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
+                <p>Clicks, Scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Here you can disable/enable each feature individually</span>
 ghostMode: {
     clicks: <span class="hljs-literal">true</span>,
@@ -328,13 +328,20 @@ browser: [<span class="hljs-string">&quot;google chrome&quot;</span>, <span clas
                 as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Append &#39;.xip.io&#39; to the hostname. (eg: <a href="http://192.168.0.4.xip.io:3002">http://192.168.0.4.xip.io:3002</a>)</span>
 xip: <span class="hljs-literal">true</span>
-</code></pre></div><h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div><h3 id="option-reloadOnRestart">reloadOnRestart <a href="#option-reloadOnRestart" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     </li>
                     <li class="default">Default: <span class="color-teal">true</span></li>
                 </ul>
-                <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
+                <p>Reload each browser when BrowserSync is restarted.</p>
+<div class="highlight"><pre><code class="js"></code></pre></div><h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Boolean</span>
+    </li>
+    <li class="default">Default: <span class="color-teal">true</span></li>
+</ul>
+<p>The small pop-over notifications in the browser are not always needed/wanted.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don&#39;t show any notifications in the browser.</span>
 notify: <span class="hljs-literal">false</span>
 </code></pre></div><h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -432,6 +439,7 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
                                 <li><b>path</b> - Default: <span class="color-teal">&quot;/browser-sync/socket.io&quot;</span></li>
                                 <li><b>clientPath</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
                                 <li><b>namespace</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
+                                <li><b>clients.heartbeatTimeout</b> - Default: <span class="color-teal">5000</span></li>
                         </ul>
                     </li>
                 </ul>

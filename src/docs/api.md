@@ -1,7 +1,6 @@
 ---
 layout: "documentation.hbs"
 title: "BrowserSync API"
-page-label: "api"
 ---
 
 Our API is incredibly simple & powerful. You can use it to create your own
@@ -11,7 +10,10 @@ you access to the public methods detailed below.
 
 {{ hl src="snippets/api/require.js" }}
 
+
 <h3 id="api-browserSync">browserSync( config, cb ) <a href="#api-browserSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+
+
 
 <ul class="param-list" id="api-browserSync-config">
     <li class="name">config <a href="#api-browserSync-config" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
@@ -32,6 +34,9 @@ you access to the public methods detailed below.
 is useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.</p>
 </li>
 </ul>
+
+
+
 
 {{#hl lang="js"}}
 var config = {
@@ -132,8 +137,41 @@ browserSync(config, function (err, bs) {
 });
 {{/hl}}
 
+
+<h3 id="api-pause">.pause() <a href="#api-pause" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<p>Method to pause file change events</p>
+
+
+
+{{#hl lang="js"}}
+
+{{/hl}}
+
+
+<h3 id="api-resume">.resume() <a href="#api-resume" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<p>Method to resume paused watchers</p>
+
+
+
+{{#hl lang="js"}}
+
+{{/hl}}
+
+
+<h3 id="api-paused">.paused <a href="#api-paused" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<p>A simple true/false flag to determine if the current instance is paused</p>
+
+
+
+{{#hl lang="js"}}
+
+{{/hl}}
+
+
 <h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
+
+
 
 {{#hl lang="js"}}
 console.log(browserSync.active); // false
@@ -143,9 +181,11 @@ browserSync(config, function (err, bs) {
 });
 {{/hl}}
 
+
 <h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
 You can use this to emit your own events, such as changed files, logging etc.</p>
+
 
 
 {{#hl lang="js"}}

@@ -52,10 +52,21 @@ gulp.task("crossbow", function () {
 /**
  * Wait for crossbow-build, then launch the Server
  */
-gulp.task("browser-sync", ["sass", "crossbow"], function() {
+gulp.task("serve", ["sass", "crossbow"], function() {
     browserSync({
         server: {
             baseDir: ["_site", "src"]
+        }
+    });
+});
+
+/**
+ * Wait for crossbow-build, then launch the Server
+ */
+gulp.task("dist", ["build"], function() {
+    browserSync({
+        server: {
+            baseDir: "_site"
         }
     });
 });
@@ -96,7 +107,7 @@ gulp.task("watch", function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task("default", ["browser-sync", "watch"]);
+gulp.task("default", ["serve", "watch"]);
 
 gulp.task("copy", function () {
     gulp.src(["src/img/**/*", "src/fonts/**/*"], {base: "./src"})
@@ -113,4 +124,4 @@ gulp.task("docs", function () {
         .pipe(gulp.dest("./doc"));
 });
 
-gulp.task("build", ["crossbow", "sass", "copy"]);
+gulp.task("build", ["docs", "docs-build", "crossbow", "sass", "copy"]);

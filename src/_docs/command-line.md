@@ -1,14 +1,13 @@
 ---
-layout: documentation
+layout: "documentation.hbs"
 title: "BrowserSync Command Line Usage"
-page-label: "command-line"
 ---
 
 For *tinkering* or quick examples and playing around, the command-line usage can be quite helpful. 
 After install BrowserSync globally, you can run it like this:
 
-{% highlight bash %}
+{{#hl lang="bash" }}
 $ browser-sync start <options>
-{% endhighlight %}
+{{/hl}}
 
 {: data :}

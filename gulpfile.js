@@ -63,13 +63,15 @@ gulp.task("serve", ["sass", "crossbow"], function() {
 /**
  * Wait for crossbow-build, then launch the Server
  */
-gulp.task("dist", ["build"], function() {
+gulp.task("serve-dist", function() {
     browserSync({
         server: {
             baseDir: "_site"
         }
     });
 });
+
+gulp.task("dist", ["build", "serve-dist"]);
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)

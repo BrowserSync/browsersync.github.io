@@ -25,9 +25,7 @@ Streams are supported in BrowserSync, so you can call reload at specific points 
 all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it's 
 *finished* compiling - make sure you call reload *after* `gulp.dest`
 
-{% highlight javascript %}
 {{ hl src="snippets/gulp/sass.js" }}
-{% endhighlight %}
 
 {{ inc src="_includes/headerlink.html" title="SASS & Source Maps" slug="gulp-sass-maps" }}
 

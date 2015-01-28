@@ -74,7 +74,6 @@ gulp.task(<span class="hljs-string">&#39;browser-sync&#39;</span>, <span class="
                 <p>Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
                 all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it&#39;s 
                 <em>finished</em> compiling - make sure you call reload <em>after</em> <code>gulp.dest</code></p>
-                <p>{% highlight javascript %}</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;gulp&#39;</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;browser-sync&#39;</span>);
 <span class="hljs-keyword">var</span> reload      = browserSync.reload;
@@ -90,33 +89,32 @@ gulp.task(<span class="hljs-string">&#39;browser-sync&#39;</span>, <span class="
 <span class="hljs-comment">// Sass task, will run when any SCSS files change &amp; BrowserSync</span>
 <span class="hljs-comment">// will auto-update browsers</span>
 gulp.task(<span class="hljs-string">&#39;sass&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;scss/<strong>/<em>.scss&#39;</span>)
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;scss/<em>*/</em>.scss&#39;</span>)
         .pipe(sass())
         .pipe(gulp.dest(<span class="hljs-string">&#39;css&#39;</span>))
         .pipe(reload({stream:<span class="hljs-literal">true</span>}));
 });
 <span class="hljs-comment">// Default task to be run with <code>gulp</code></span>
 gulp.task(<span class="hljs-string">&#39;default&#39;</span>, [<span class="hljs-string">&#39;sass&#39;</span>, <span class="hljs-string">&#39;browser-sync&#39;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    gulp.watch(<span class="hljs-string">&quot;scss/</em>.scss&quot;</span>, [<span class="hljs-string">&#39;sass&#39;</span>]);
+    gulp.watch(<span class="hljs-string">&quot;scss/*.scss&quot;</span>, [<span class="hljs-string">&#39;sass&#39;</span>]);
 });</code></pre></div>
-                {% endhighlight %}
                 <h3 id="gulp-sass-maps">SASS &amp; Source Maps
                     <a href="#gulp-sass-maps" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
-                If you use <a href="https://www.npmjs.org/package/gulp-ruby-sass">gulp-ruby-sass</a> with the <code>sourcemap: true</code> option, additional <code>.map</code> 
+                <p>If you use <a href="https://www.npmjs.org/package/gulp-ruby-sass">gulp-ruby-sass</a> with the <code>sourcemap: true</code> option, additional <code>.map</code> 
                 files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
-                a full page reload (as it will not find any <code>.map</code> files in the DOM).
-                To fix this problem, you can use the <a href="https://www.npmjs.org/package/gulp-filter">gulp-filter</a> package to ensure that only <code>*.css</code>
-                 files ever reach <code>.reload</code> - this way you&#39;ll still get CSS injecting.
+                a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
+                <p>To fix this problem, you can use the <a href="https://www.npmjs.org/package/gulp-filter">gulp-filter</a> package to ensure that only <code>*.css</code>
+                 files ever reach <code>.reload</code> - this way you&#39;ll still get CSS injecting.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-ruby-sass&quot;</span>);
 <span class="hljs-keyword">var</span> filter      = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;gulp-filter&#39;</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browser-sync&quot;</span>);
 gulp.task(<span class="hljs-string">&#39;sass&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;scss/</strong>/<em>.scss&#39;</span>)
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;scss/<strong>/*.scss&#39;</span>)
         .pipe(sass({sourcemap: <span class="hljs-literal">true</span>}))
         .pipe(gulp.dest(<span class="hljs-string">&#39;css&#39;</span>))<span class="hljs-comment">// Write the CSS &amp; Source maps</span>
-        .pipe(filter(<span class="hljs-string">&#39;**/</em>.css&#39;</span>)) <span class="hljs-comment">// Filtering stream to only css files</span>
+        .pipe(filter(<span class="hljs-string">&#39;</strong>/*.css&#39;</span>)) <span class="hljs-comment">// Filtering stream to only css files</span>
         .pipe(browserSync.reload({stream:<span class="hljs-literal">true</span>}));
 });</code></pre></div>
                 <h3 id="gulp-reload">Browser Reloading

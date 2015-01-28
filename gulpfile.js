@@ -96,4 +96,9 @@ gulp.task("watch", function () {
  */
 gulp.task("default", ["browser-sync", "watch"]);
 
-gulp.task("build", ["sass", "docs-build", "jekyll-build"]);
+gulp.task("copy", function () {
+    gulp.src(["src/img/**/*", "src/fonts/**/*"], {base: "./src"})
+        .pipe(gulp.dest("_site"));
+});
+
+gulp.task("build", ["crossbow", "sass", "copy"]);

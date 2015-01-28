@@ -1,0 +1,25 @@
+
+<h3 id="option-{:name:}">{: name :} <a href="#option-{:name:}" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">{: type :}</span>
+    <% if subprops %>
+        <ul class="nav nav--stacked subprops">
+            <% loop subprops as item %>
+                <li><b>{: item.name :}</b> - Default: <span class="color-teal">{: item.defaultValue :}</span></li>
+            <% /loop %>
+        </ul>
+    </li>
+    <% else %>
+    </li>
+    <% if since %>
+    <li class="since">Since: <span class="color-teal">{: since :}</span></li>
+    <% /if %>
+    <li class="default">Default: <span class="color-teal">{: defaultValue :}</span></li>
+    <% /if %>
+</ul>
+
+{: description :}
+
+{% highlight javascript %}
+{: snippet :}
+{% endhighlight %}

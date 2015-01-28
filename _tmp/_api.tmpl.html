@@ -1,0 +1,20 @@
+
+<h3 id="api-{:name:}">{: preview :} <a href="#api-{:name:}" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+{: description :}
+<% if (params.length) { %>
+<% params.forEach(function(param) { %>
+<ul class="param-list" id="api-{:name:}-{: param.name :}">
+    <li class="name">{: param.name :} <a href="#api-{:name:}-{: param.name :}" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="type">Type: <span class="color-teal">{: param.type :}</span>
+        <% if (param.optional) { %><span class="recede">[optional]</span><% } %>
+    </li>
+    <li class="desc">{: param.description :}</li>
+</ul>
+<% }); // endforeach %>
+
+<% }; %>
+
+{% highlight javascript %}
+{: snippet :}
+{% endhighlight %}
+

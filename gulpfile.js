@@ -9,6 +9,8 @@ var prefix      = require("gulp-autoprefixer");
 var cp          = require("child_process");
 var filter      = require("gulp-filter");
 var crossbow    = require("crossbow");
+var vinyl       = require("vinyl");
+var prettify = require('gulp-jsbeautifier');
 
 /**
  * Build documentation
@@ -99,6 +101,16 @@ gulp.task("default", ["browser-sync", "watch"]);
 gulp.task("copy", function () {
     gulp.src(["src/img/**/*", "src/fonts/**/*"], {base: "./src"})
         .pipe(gulp.dest("_site"));
+});
+
+gulp.task("docs", function () {
+
+    var yuidoc = require("gulp-yuidoc");
+
+    gulp.src(["./node_modules/browser-sync/index.js", "./node_modules/browser-sync/lib/default-config.js"])
+        .pipe(yuidoc.parser())
+        .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))
+        .pipe(gulp.dest("./doc"));
 });
 
 gulp.task("build", ["crossbow", "sass", "copy"]);

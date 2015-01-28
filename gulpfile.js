@@ -24,9 +24,9 @@ gulp.task("crossbow", function () {
 
     crossbow.clearCache();
 
-    crossbow.emitter.on("_error", function (err) {
-        crossbow.logger.info(err.error.message);
-    });
+    //crossbow.emitter.on("_error", function (err) {
+    //    crossbow.logger.info(err.error.message);
+    //});
 
     return gulp.src([
         "src/*.hbs",
@@ -38,11 +38,11 @@ gulp.task("crossbow", function () {
             siteConfig: "_config.yml",
             prettyUrls: true
         }))
-        .on("error", function(err){
-            browserSync.notify(err.message, 3000);
-            console.log(err.message);
-            this.emit("end");
-        })
+        //.on("error", function(err){
+        //    browserSync.notify(err.message, 3000);
+        //    console.log(err.message);
+        //    this.emit("end");
+        //})
         .pipe(gulp.dest("./_site"));
 
 });

@@ -33,10 +33,7 @@ is useful when you need to wait for information (for example: urls, port etc) or
 </li>
 </ul>
 
-
-
-
-{% highlight javascript %}
+{{#hl lang="js"}}
 var config = {
     server: {
         baseDir: "./"
@@ -52,7 +49,7 @@ browserSync(config, function (err, bs) {
         console.log("BrowserSync is ready!");
     }
 });
-{% endhighlight %}
+{{/hl}}
 
 
 <h3 id="api-reload">.reload( arg ) <a href="#api-reload" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -73,7 +70,7 @@ details and examples of Streams support, please see the <a href="{{site.links.gu
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 // browser reload
 browserSync.reload();
 
@@ -85,7 +82,7 @@ browserSync.reload( ["styles.css", "ie.css"] );
 
 // streams support
 browserSync.reload( { stream: true } );
-{% endhighlight %}
+{{/hl}}
 
 
 <h3 id="api-notify">.notify( msg, timeout ) <a href="#api-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -114,14 +111,14 @@ browserSync.reload( { stream: true } );
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 browserSync.notify("Compiling, please wait!");
 
 browserSync.notify("HTML <span color='green'>is supported</span> too!");
 
 // Since 1.3.0, specify a timeout
 browserSync.notify("This message will only last a second", 1000);
-{% endhighlight %}
+{{/hl}}
 
 
 <h3 id="api-exit">.exit() <a href="#api-exit" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -129,34 +126,29 @@ browserSync.notify("This message will only last a second", 1000);
 
 
 
-{% highlight javascript %}
+{{#hl lang="js"}}
 browserSync(config, function (err, bs) {
     browserSync.exit();
 });
-{% endhighlight %}
-
+{{/hl}}
 
 <h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
 
-
-
-{% highlight javascript %}
+{{#hl lang="js"}}
 console.log(browserSync.active); // false
 
 browserSync(config, function (err, bs) {
     console.log(browserSync.active); // true
 });
-{% endhighlight %}
-
+{{/hl}}
 
 <h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
 You can use this to emit your own events, such as changed files, logging etc.</p>
 
 
-
-{% highlight javascript %}
+{{#hl lang="js"}}
 var evt = browserSync.emitter;
 
 evt.on("init", function () {
@@ -164,5 +156,5 @@ evt.on("init", function () {
 });
 
 browserSync(config);
-{% endhighlight %}
+{{/hl}}
 

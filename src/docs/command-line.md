@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: "documentation.hbs"
 title: "BrowserSync Command Line Usage"
 page-label: "command-line"
 ---
@@ -7,9 +7,9 @@ page-label: "command-line"
 For *tinkering* or quick examples and playing around, the command-line usage can be quite helpful. 
 After install BrowserSync globally, you can run it like this:
 
-{% highlight bash %}
+{{#hl lang="bash" }}
 $ browser-sync start <options>
-{% endhighlight %}
+{{/hl}}
 
 <h3 id="command-line-options">Options
     <a href="#command-line-options" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -120,7 +120,7 @@ $ browser-sync start <options>
 <h3 id="command-line-Files Examples-examples">Files Examples
     <a href="#command-line-Files Examples-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 
-{% highlight bash %}
+{{#hl lang="bash" }}
 
 # Single file
 $ browser-sync start --files "css/core.css"
@@ -134,12 +134,12 @@ $ browser-sync start --files "css/core.css, css/ie.css"
 # Multiple Patterns
 $ browser-sync start --files "css/*.css, *.html"
 
-{% endhighlight %}
+{{/hl}}
 
 <h3 id="command-line-Server Examples-examples">Server Examples
     <a href="#command-line-Server Examples-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 
-{% highlight bash %}
+{{#hl lang="bash" }}
 
 # Static server using current directory as the root
 $ browser-sync start --server
@@ -150,12 +150,12 @@ $ browser-sync start --server app
 # Static server using current directory as the root with directory listing
 $ browser-sync start --server --directory
 
-{% endhighlight %}
+{{/hl}}
 
 <h3 id="command-line-Proxy Examples-examples">Proxy Examples
     <a href="#command-line-Proxy Examples-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 
-{% highlight bash %}
+{{#hl lang="bash" }}
 
 # Using a local.dev vhost
 $ browser-sync start --proxy
@@ -169,12 +169,12 @@ $ browser-sync start --proxy localhost:8001
 # Using a localhost address in a sub-dir
 $ browser-sync start --proxy localhost:8080/site1
 
-{% endhighlight %}
+{{/hl}}
 
 <h3 id="command-line-Watching Files + Server-examples">Watching Files + Server
     <a href="#command-line-Watching Files + Server-examples" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 
-{% highlight bash %}
+{{#hl lang="bash" }}
 
 # Watch ALL CSS files for changes with a static server
 $ browser-sync start --files "app/css/*.css" --server
@@ -182,6 +182,6 @@ $ browser-sync start --files "app/css/*.css" --server
 #  Watch ALL CSS files for changes with a static server using "app" as the base directory
 $ browser-sync start --files "app/css/*.css" --server "app"
 
-{% endhighlight %}
+{{/hl}}
 
 

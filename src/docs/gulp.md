@@ -29,7 +29,7 @@ all browsers will be informed of the changes. Because BrowserSync only cares abo
 {{ hl src="snippets/gulp/sass.js" }}
 {% endhighlight %}
 
-{{ inc src="headerlink.html" title="SASS & Source Maps" slug="gulp-sass-maps" }}
+{{ inc src="_includes/headerlink.html" title="SASS & Source Maps" slug="gulp-sass-maps" }}
 
 If you use [gulp-ruby-sass](https://www.npmjs.org/package/gulp-ruby-sass) with the `sourcemap: true` option, additional `.map` 
 files will be generated. These files end up being sent down stream and when `browserSync.reload()` receives them, it will attempt
@@ -40,7 +40,7 @@ To fix this problem, you can use the [gulp-filter](https://www.npmjs.org/package
 
 {{ hl src="snippets/gulp/sass.maps.js" }}
 
-{{ inc src="headerlink.html" title="Browser Reloading" slug="gulp-reload" }}
+{{ inc src="_includes/headerlink.html" title="Browser Reloading" slug="gulp-reload" }}
 
 Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you 
 can do that easily by adding `.reload` to the array of tasks that will be run when files change. (make sure you `return`
@@ -48,7 +48,7 @@ can do that easily by adding `.reload` to the array of tasks that will be run wh
 
 {{ hl src="snippets/gulp/reload.js" }}
 
-{{ inc src="headerlink.html" title="Manual Reloading" slug="gulp-manual-reload" }}
+{{ inc src="_includes/headerlink.html" title="Manual Reloading" slug="gulp-manual-reload" }}
 
 If the streams support doesn't suit your needs, you can fire the reload method manually 
 by wrapping it in a task. This example will compile & auto-inject CSS just as before, but when HTML files are 

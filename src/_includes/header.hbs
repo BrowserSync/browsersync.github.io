@@ -4,9 +4,9 @@
             <h1 class="site-title">{{site.title}}</h1>
             <p class="site-lede">{{site.tagline}}</p>
             <ul class="nav--inline">
-                {{#loop site.navigation}}
+                {{#each site.navigation}}
                     <li><a href="{{this.url}}" {{#if @first}}class="button button--primary"{{/if}}>{{ this.label }}</a></li>
-                {{/loop}}
+                {{/each}}
             </ul>
         {{else}}
             <h1 class="site-title alt"><a href="/">{{site.title}}</a> / <span><a href="/docs">documentation</a></span></h1>

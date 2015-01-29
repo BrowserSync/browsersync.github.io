@@ -102,7 +102,7 @@ gulp.task("sass", function () {
  */
 gulp.task("watch", function () {
     gulp.watch("src/scss/**/*", ["sass"]);
-    gulp.watch(["src/**"], ["docs", "docs-build", "crossbow", browserSync.reload]);
+    gulp.watch(["src/**"], ["crossbow", browserSync.reload]);
 });
 
 /**

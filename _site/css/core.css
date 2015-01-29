@@ -1172,6 +1172,11 @@ body {
   font-size: 20px;
   font-size: 1.25rem; }
 
+.warning {
+  padding: 6px 12px;
+  background: -webkit-repeating-linear-gradient(45deg, #ffffff, #ffffff 10px, #f5f5f5 10px, #f5f5f5 20px);
+  background: repeating-linear-gradient(45deg, #ffffff, #ffffff 10px, #f5f5f5 10px, #f5f5f5 20px); }
+
 table tr td:first-child {
   white-space: nowrap;
   font-weight: bold; }

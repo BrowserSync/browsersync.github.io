@@ -51,12 +51,42 @@
     <span class="hljs-comment">/* All config/options here */</span>
 };
 browserSync(config);</code></pre></div>
+                <h3 id="option-ui">ui <a href="#option-ui" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                    
+                        <ul class="nav nav--stacked subprops">
+                            
+                                <li><b>port</b> - Default: <span class="color-teal">3001</span></li>
+                            
+                                <li><b>weinre.port</b> - Default: <span class="color-teal">8080</span></li>
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
+                <p>BrowserSync includes a user-interface that is accessed via a separate port.
+                The UI allows to controls all devices, push sync updates and much more.</p>
+<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Change the default port</span>
+ui: {
+    port: <span class="hljs-number">8080</span>
+}
+<span class="hljs-comment">// Change the default weinre port</span>
+ui: {
+    port: <span class="hljs-number">8080</span>,
+    weinre: {
+        port: <span class="hljs-number">9090</span>
+    }
+}
+<span class="hljs-comment">// Disable UI completely</span>
+ui: <span class="hljs-literal">false</span>
+</code></pre></div>
                 <h3 id="option-files">files <a href="#option-files" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Array | String</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">false</span></li>
                     
                 </ul>
@@ -71,17 +101,16 @@ files: [<span class="hljs-string">"app/css/style.css"</span>, <span class="hljs-
 files: <span class="hljs-string">"app/css/**"</span>
 <span class="hljs-comment">// multiple globs</span>
 files: [<span class="hljs-string">"app/css/*.css"</span>, <span class="hljs-string">"app/**.*.html"</span>, <span class="hljs-string">"app/js/**/*.js"</span>]
-</code></pre></div><h3 id="option-watchOptions">watchOptions <a href="#option-watchOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-watchOptions">watchOptions <a href="#option-watchOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Object</span>
                     
                     </li>
-                    
-                    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
-                    
                     <li class="default">Default: <span class="color-teal">undefined</span></li>
                     
                 </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.3.0</p>
                 <p>File watching options that get passed along to <a href="https://github.com/shama/gaze">Gaze</a>. Check out the <a href="https://github.com/shama/gaze#properties">properties</a>
                 section of their docs to see which options they support.
                 for availbable options</p>
@@ -89,12 +118,12 @@ files: [<span class="hljs-string">"app/css/*.css"</span>, <span class="hljs-stri
 watchOptions: {
     debounceDelay: <span class="hljs-number">1000</span>
 }
-</code></pre></div><h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Object | Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">false</span></li>
                     
                 </ul>
@@ -146,12 +175,12 @@ server: {
         }
     ]
 }
-</code></pre></div><h3 id="option-proxy">proxy <a href="#option-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-proxy">proxy <a href="#option-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String | Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">false</span></li>
                     
                 </ul>
@@ -162,32 +191,32 @@ proxy: <span class="hljs-string">"local.dev"</span>
 proxy: <span class="hljs-string">"localhost:8888"</span>
 <span class="hljs-comment">// Using localhost sub directories</span>
 proxy: <span class="hljs-string">"localhost/site1"</span>
-</code></pre></div><h3 id="option-port">port <a href="#option-port" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-port">port <a href="#option-port" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Number</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">3000</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Use a specific port (instead of the one auto-detected by BrowserSync)</span>
 port: <span class="hljs-number">8080</span>
-</code></pre></div><h3 id="option-https">https <a href="#option-https" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-https">https <a href="#option-https" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
-                    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
-                    
                     <li class="default">Default: <span class="color-teal">undefined</span></li>
                     
                 </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.3.0</p>
                 <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Enable HTTPS for static file server</span>
 https: <span class="hljs-literal">true</span>
-</code></pre></div><h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Object</span>
                     
@@ -212,12 +241,12 @@ ghostMode: {
 }
 <span class="hljs-comment">// Or switch them all off in one go</span>
 ghostMode: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-logLevel">logLevel <a href="#option-logLevel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-logLevel">logLevel <a href="#option-logLevel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">info</span></li>
                     
                 </ul>
@@ -228,29 +257,28 @@ logLevel: <span class="hljs-string">"debug"</span>
 logLevel: <span class="hljs-string">"info"</span>
 <span class="hljs-comment">// output NOTHING to the commandline</span>
 logLevel: <span class="hljs-string">"silent"</span>
-</code></pre></div><h3 id="option-logPrefix">logPrefix <a href="#option-logPrefix" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-logPrefix">logPrefix <a href="#option-logPrefix" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String</span>
                     
                     </li>
-                    
-                    <li class="since">Since: <span class="color-teal">1.5.1</span></li>
-                    
                     <li class="default">Default: <span class="color-teal">BS</span></li>
                     
                 </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.5.1</p>
                 <p>Change the console logging prefix. Useful if you&#39;re creating your
                 own project based on BrowserSync</p>
 <div class="highlight"><pre><code class="js">logPrefix: <span class="hljs-string">"My Awesome Project"</span>
 <span class="hljs-comment">// [My Awesome Project] Local URL: http://localhost:3000</span>
 <span class="hljs-comment">// [My Awesome Project] Watching files....</span>
 <span class="hljs-comment">// [My Awesome Project] File changed: "index.html"</span>
-</code></pre></div><h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">false</span></li>
                     
                 </ul>
@@ -258,12 +286,12 @@ logLevel: <span class="hljs-string">"silent"</span>
 logConnections: <span class="hljs-literal">true</span>
 <span class="hljs-comment">// Don't log connections</span>
 logConnections: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
@@ -271,21 +299,21 @@ logConnections: <span class="hljs-literal">false</span>
 logFileChanges: <span class="hljs-literal">true</span>
 <span class="hljs-comment">// Don't log file changes</span>
 logFileChanges: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-logSnippet">logSnippet <a href="#option-logSnippet" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-logSnippet">logSnippet <a href="#option-logSnippet" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">: Boolean</span>
                     
                     </li>
-                    
-                    <li class="since">Since: <span class="color-teal">1.5.2</span></li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.5.2</p>
                 <p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don't ever log the snippet</span>
 logSnippet: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-snippetOptions">snippetOptions <a href="#option-snippetOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-snippetOptions">snippetOptions <a href="#option-snippetOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Object</span>
                     
@@ -301,6 +329,7 @@ logSnippet: <span class="hljs-literal">false</span>
                     </li>
                     
                 </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.7.0</p>
                 <p>SINCE 1.7.0! You can control how the snippet is injected
                 onto each page via a custom regex + function.
                 You can also provide patterns for certain urls
@@ -318,12 +347,12 @@ snippetOptions: {
         }
     }
 }
-</code></pre></div><h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String | Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">null</span></li>
                     
                 </ul>
@@ -332,12 +361,12 @@ snippetOptions: {
 tunnel: <span class="hljs-literal">true</span>
 <span class="hljs-comment">// Attempt to use the URL "http://my-private-site.localtunnel.me"</span>
 tunnel: <span class="hljs-string">"my-private-site"</span>
-</code></pre></div><h3 id="option-online">online <a href="#option-online" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-online">online <a href="#option-online" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">undefined</span></li>
                     
                 </ul>
@@ -347,12 +376,12 @@ tunnel: <span class="hljs-string">"my-private-site"</span>
 online: <span class="hljs-literal">true</span>
 <span class="hljs-comment">// Will not attempt to determine your network status, assumes you're OFFLINE</span>
 online: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean | String</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
@@ -367,12 +396,12 @@ open: <span class="hljs-literal">true</span>
 open: <span class="hljs-string">"external"</span>
 <span class="hljs-comment">// Open the tunnel URL - must also set the `tunnel` option</span>
 open: <span class="hljs-string">"tunnel"</span>
-</code></pre></div><h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String | Array</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">default</span></li>
                     
                 </ul>
@@ -380,12 +409,12 @@ open: <span class="hljs-string">"tunnel"</span>
 browser: <span class="hljs-string">"google chrome"</span>
 <span class="hljs-comment">// Open the site in Chrome &amp; Firefox</span>
 browser: [<span class="hljs-string">"google chrome"</span>, <span class="hljs-string">"firefox"</span>]
-</code></pre></div><h3 id="option-xip">xip <a href="#option-xip" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-xip">xip <a href="#option-xip" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">false</span></li>
                     
                 </ul>
@@ -393,65 +422,65 @@ browser: [<span class="hljs-string">"google chrome"</span>, <span class="hljs-st
                 as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)</span>
 xip: <span class="hljs-literal">true</span>
-</code></pre></div><h3 id="option-reloadOnRestart">reloadOnRestart <a href="#option-reloadOnRestart" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-reloadOnRestart">reloadOnRestart <a href="#option-reloadOnRestart" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
                 <p>Reload each browser when BrowserSync is restarted.</p>
-<div class="highlight"><pre><code class="js"></code></pre></div><h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<div class="highlight"><pre><code class="js"></code></pre></div>
+<h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
-    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
 <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don't show any notifications in the browser.</span>
 notify: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js">scrollProportionally: <span class="hljs-literal">false</span> <span class="hljs-comment">// Sync viewports to TOP position</span>
-</code></pre></div><h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Number</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">0</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js">scrollThrottle: <span class="hljs-number">100</span> <span class="hljs-comment">// only send scroll events every 100 milliseconds</span>
-</code></pre></div><h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Number</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">0</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Wait for 2 seconds before any browsers should try to inject/reload a file.</span>
 reloadDelay: <span class="hljs-number">2000</span>
-</code></pre></div><h3 id="option-injectChanges">injectChanges <a href="#option-injectChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-injectChanges">injectChanges <a href="#option-injectChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
@@ -459,73 +488,72 @@ reloadDelay: <span class="hljs-number">2000</span>
 injectChanges: <span class="hljs-literal">true</span>,
 <span class="hljs-comment">// Don't try to inject, just do a page refresh</span>
 injectChanges: <span class="hljs-literal">false</span>,
-</code></pre></div><h3 id="option-startPath">startPath <a href="#option-startPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-startPath">startPath <a href="#option-startPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String | Null</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">null</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Open the first browser window at URL + "/info.php"</span>
 startPath: <span class="hljs-string">"/info.php"</span>
-</code></pre></div><h3 id="option-minify">minify <a href="#option-minify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-minify">minify <a href="#option-minify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
                 <p>Whether to minify client script, or not.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don't minify the client-side JS</span>
 minify: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">null</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Override host detection if you know the correct IP to use</span>
 host: <span class="hljs-string">"192.168.1.1"</span>
-</code></pre></div><h3 id="option-codeSync">codeSync <a href="#option-codeSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-codeSync">codeSync <a href="#option-codeSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don't send any file-change events to browsers</span>
 codeSync: <span class="hljs-literal">true</span>,
-</code></pre></div><h3 id="option-timestamps">timestamps <a href="#option-timestamps" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-timestamps">timestamps <a href="#option-timestamps" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Boolean</span>
                     
                     </li>
-                    
                     <li class="default">Default: <span class="color-teal">true</span></li>
                     
                 </ul>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// Don't append timestamps to injected files</span>
 timestamps: <span class="hljs-literal">false</span>
-</code></pre></div><h3 id="option-scriptPath">scriptPath <a href="#option-scriptPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-scriptPath">scriptPath <a href="#option-scriptPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Function</span>
                     
                     </li>
-                    
-                    <li class="since">Since: <span class="color-teal">1.5.0</span></li>
-                    
                     <li class="default">Default: <span class="color-teal">undefined</span></li>
                     
                 </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.5.0</p>
                 <p>Alter the script path for complete control over where the BrowserSync
                 Javascript is served from. Whatever you return from this function
                 will be used as the script path.</p>
@@ -534,7 +562,8 @@ timestamps: <span class="hljs-literal">false</span>
 scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(path)</span> </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3002"</span> + path;
 }
-</code></pre></div><h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+</code></pre></div>
+                <h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Object</span>
                     
@@ -552,6 +581,7 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
                     </li>
                     
                 </ul>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.6.2</p>
                 <p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-comment">// This will result in something like this in</span>
 <span class="hljs-comment">// the socket connector code</span>

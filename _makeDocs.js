@@ -36,7 +36,9 @@ fs.writeFileSync("./src/docs/api.md", mdTemp({data: apiItems}));
 
 /**
  * Process OPTIONS
+ *
  */
+
 var optItems = docGen.prepareOptions(data.classitems)
     .reduce(optionsMarkup, "");
 
@@ -139,6 +141,7 @@ function optionsMarkup (combined, item) {
     }
 
     return combined;
+
 }
 
 /**

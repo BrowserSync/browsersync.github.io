@@ -11,12 +11,13 @@
     </li>
     <% else %>
     </li>
-    <% if since %>
-    <li class="since">Since: <span class="color-teal">{: since :}</span></li>
-    <% /if %>
     <li class="default">Default: <span class="color-teal">{: defaultValue :}</span></li>
     <% /if %>
 </ul>
+
+<% if since %>
+<p class="lede warning"><b>Note: </b> requires at least version {: since :}</p>
+<% /if %>
 
 {: description :}
 

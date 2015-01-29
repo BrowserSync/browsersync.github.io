@@ -155,6 +155,7 @@ function addSubprops(item) {
     } else {
         item.subprops = item.subprops.map(fixDefaults);
     }
+
     return item;
 }
 
@@ -164,6 +165,7 @@ function addSubprops(item) {
  * @returns {*}
  */
 function prepareOptions(items) {
+
     if (items.length) {
         return items
             .filter(isOption)

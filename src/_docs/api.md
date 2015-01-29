@@ -1,6 +1,7 @@
 ---
 layout: "documentation.hbs"
 title: "BrowserSync API"
+markdown: false
 ---
 
 Our API is incredibly simple & powerful. You can use it to create your own

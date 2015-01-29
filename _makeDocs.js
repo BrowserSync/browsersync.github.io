@@ -9,11 +9,11 @@ _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
 var mdTemp          = _.template(fs.readFileSync("./src/_docs/api.md", "utf-8"));
 var optTemp         = _.template(fs.readFileSync("./src/_docs/options.md", "utf-8"));
-var commandLineTemp = _.template(fs.readFileSync("./src/_docs/command-line.md", "utf-8"));
+//var commandLineTemp = _.template(fs.readFileSync("./src/_docs/command-line.md", "utf-8"));
 
 function getTemplate(name) {
 
-    var source = fs.readFileSync("./_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
+    var source = fs.readFileSync("./src/_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
     var template = pretemplater(source);
     return  _.template(template);
 }
@@ -42,26 +42,12 @@ var optItems = docGen.prepareOptions(data.classitems)
 
 fs.writeFileSync("./src/docs/options.md", optTemp({data: optItems}));
 
-/**
- * Process Command-line args
- */
-
-var commands = require("./src/_includes/snippets/commands/commands.json");
-
-var formattedCommands = _.map(commands, function (value, key) {
-    return {
-        title: key,
-        items: value
-    }
-});
-
-
-var commandOpts = docGen.prepareCommandLineOptions(opts);
-var temp = getTemplate("command-line")({options: commandOpts, examples: formattedCommands});
-
-fs.writeFileSync("./src/docs/command-line.md", commandLineTemp({
-    data: temp
-}));
+//var commandOpts = docGen.prepareCommandLineOptions(opts);
+//var temp = getTemplate("command-line")({options: commandOpts});
+//
+//fs.writeFileSync("./src/docs/command-line.md", commandLineTemp({
+//    data: temp
+//}));
 
 /**
  * Resolve path to snippets

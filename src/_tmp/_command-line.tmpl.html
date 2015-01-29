@@ -1,0 +1,18 @@
+<h3 id="command-line-options">Options
+    <a href="#command-line-options" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+
+<p>These are the options you can use when running BrowserSync</p>
+
+<table>
+    <% loop options as opt %>
+        <tr>
+            <td>--{: opt.name :}</td>
+            <td>{: opt.desc :}</td>
+        </tr>
+    <% /loop %>
+</table>
+
+{{#loop page.items}}
+{{inc src="_includes/headerlink.html" title=this.title slug=this.slug }}
+{{hl src=this.file}}
+{{/loop}}

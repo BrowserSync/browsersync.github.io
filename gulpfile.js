@@ -10,7 +10,7 @@ var cp          = require("child_process");
 var filter      = require("gulp-filter");
 var crossbow    = require("crossbow");
 var vinyl       = require("vinyl");
-var prettify = require('gulp-jsbeautifier');
+var prettify    = require('gulp-jsbeautifier');
 
 /**
  * Build documentation
@@ -54,6 +54,7 @@ gulp.task("crossbow", function () {
  */
 gulp.task("serve", ["sass", "crossbow"], function() {
     browserSync({
+        open: false,
         server: {
             baseDir: ["_site", "src"]
         }
@@ -65,6 +66,7 @@ gulp.task("serve", ["sass", "crossbow"], function() {
  */
 gulp.task("serve-dist", function() {
     browserSync({
+        open: false,
         server: {
             baseDir: "_site"
         }
@@ -100,9 +102,7 @@ gulp.task("sass", function () {
  */
 gulp.task("watch", function () {
     gulp.watch("src/scss/**/*", ["sass"]);
-    gulp.watch([
-        "src/**"
-    ], ["crossbow", browserSync.reload]);
+    gulp.watch(["src/**"], ["docs", "docs-build", "crossbow", browserSync.reload]);
 });
 
 /**
@@ -112,7 +112,7 @@ gulp.task("watch", function () {
 gulp.task("default", ["serve", "watch"]);
 
 gulp.task("copy", function () {
-    gulp.src(["src/img/**/*", "src/fonts/**/*"], {base: "./src"})
+    return gulp.src(["src/img/**/*", "src/fonts/**/*"], {base: "./src"})
         .pipe(gulp.dest("_site"));
 });
 
@@ -120,7 +120,7 @@ gulp.task("docs", function () {
 
     var yuidoc = require("gulp-yuidoc");
 
-    gulp.src(["./node_modules/browser-sync/index.js", "./node_modules/browser-sync/lib/default-config.js"])
+    return gulp.src(["./node_modules/browser-sync/index.js", "./node_modules/browser-sync/lib/default-config.js"])
         .pipe(yuidoc.parser())
         .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))
         .pipe(gulp.dest("./doc"));

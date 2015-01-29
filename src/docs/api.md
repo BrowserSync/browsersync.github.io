@@ -39,6 +39,7 @@ is useful when you need to wait for information (for example: urls, port etc) or
 
 
 
+
 {{#hl lang="js"}}
 var config = {
     server: {
@@ -56,6 +57,8 @@ browserSync(config, function (err, bs) {
     }
 });
 {{/hl}}
+
+
 
 
 <h3 id="api-reload">.reload( arg ) <a href="#api-reload" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -76,6 +79,7 @@ details and examples of Streams support, please see the <a href="{{site.links.gu
 
 
 
+
 {{#hl lang="js"}}
 // browser reload
 browserSync.reload();
@@ -89,6 +93,8 @@ browserSync.reload( ["styles.css", "ie.css"] );
 // streams support
 browserSync.reload( { stream: true } );
 {{/hl}}
+
+
 
 
 <h3 id="api-notify">.notify( msg, timeout ) <a href="#api-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -117,6 +123,7 @@ browserSync.reload( { stream: true } );
 
 
 
+
 {{#hl lang="js"}}
 browserSync.notify("Compiling, please wait!");
 
@@ -127,8 +134,11 @@ browserSync.notify("This message will only last a second", 1000);
 {{/hl}}
 
 
+
+
 <h3 id="api-exit">.exit() <a href="#api-exit" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
+
 
 
 
@@ -139,14 +149,15 @@ browserSync(config, function (err, bs) {
 {{/hl}}
 
 
+
+
 <h3 id="api-pause">.pause() <a href="#api-pause" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>Method to pause file change events</p>
 
 
 
-{{#hl lang="js"}}
 
-{{/hl}}
+
 
 
 <h3 id="api-resume">.resume() <a href="#api-resume" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -154,9 +165,8 @@ browserSync(config, function (err, bs) {
 
 
 
-{{#hl lang="js"}}
 
-{{/hl}}
+
 
 
 <h3 id="api-paused">.paused <a href="#api-paused" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
@@ -164,13 +174,13 @@ browserSync(config, function (err, bs) {
 
 
 
-{{#hl lang="js"}}
 
-{{/hl}}
+
 
 
 <h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
+
 
 
 
@@ -183,9 +193,12 @@ browserSync(config, function (err, bs) {
 {{/hl}}
 
 
+
+
 <h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
 You can use this to emit your own events, such as changed files, logging etc.</p>
+
 
 
 
@@ -198,4 +211,6 @@ evt.on("init", function () {
 
 browserSync(config);
 {{/hl}}
+
+
 

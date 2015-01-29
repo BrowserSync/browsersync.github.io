@@ -36,7 +36,6 @@ still use all of these options, but you need to provide them as detailed in the 
 <p>BrowserSync includes a user-interface that is accessed via a separate port.
 The UI allows to controls all devices, push sync updates and much more.</p>
 
-
 {{#hl lang="js" }}
 // Change the default port
 ui: {
@@ -71,7 +70,6 @@ ui: false
 be injected into the page (CSS &amp; images) or will cause all browsers to do
 a full-page refresh. See <a href="https://github.com/isaacs/minimatch">isaacs&#39;s minimatch</a> for more information on glob patterns.</p>
 
-
 {{#hl lang="js" }}
 // single file
 files: "app/css/style.css"
@@ -103,7 +101,6 @@ files: ["app/css/*.css", "app/**.*.html", "app/js/**/*.js"]
 section of their docs to see which options they support.
 for availbable options</p>
 
-
 {{#hl lang="js" }}
 // Options passed to Gaze
 watchOptions: {
@@ -123,7 +120,6 @@ watchOptions: {
 
 
 <p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
-
 
 {{#hl lang="js" }}
 // Serve files from the app directory
@@ -194,7 +190,6 @@ server: {
 
 <p>Proxy an EXISTING vhost. BrowserSync will wrap your existing url and provide a different one to use.</p>
 
-
 {{#hl lang="js" }}
 // Using a vhost-based url
 proxy: "local.dev"
@@ -218,7 +213,6 @@ proxy: "localhost/site1"
 
 
 
-
 {{#hl lang="js" }}
 // Use a specific port (instead of the one auto-detected by BrowserSync)
 port: 8080
@@ -238,7 +232,6 @@ port: 8080
 
 
 <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
-
 
 {{#hl lang="js" }}
 // Enable HTTPS for static file server
@@ -266,7 +259,6 @@ https: true
 
 <p>Clicks, Scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
 
-
 {{#hl lang="js" }}
 // Here you can disable/enable each feature individually
 ghostMode: {
@@ -291,7 +283,6 @@ ghostMode: false
 
 
 <p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
-
 
 {{#hl lang="js" }}
 // Show me additional info about the process
@@ -320,7 +311,6 @@ logLevel: "silent"
 <p>Change the console logging prefix. Useful if you&#39;re creating your
 own project based on BrowserSync</p>
 
-
 {{#hl lang="js" }}
 logPrefix: "My Awesome Project"
 
@@ -341,7 +331,6 @@ logPrefix: "My Awesome Project"
 
 
 
-
 {{#hl lang="js" }}
 // Log connections
 logConnections: true
@@ -358,7 +347,6 @@ logConnections: false
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
-
 
 
 
@@ -385,7 +373,6 @@ logFileChanges: false
 
 
 <p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
-
 
 {{#hl lang="js" }}
 // Don't ever log the snippet
@@ -418,7 +405,6 @@ onto each page via a custom regex + function.
 You can also provide patterns for certain urls
 that should be ignored from the snippet injection.</p>
 
-
 {{#hl lang="js" }}
 // Customise the placement of the snippet
 // and ignore certain paths
@@ -449,7 +435,6 @@ snippetOptions: {
 
 
 
-
 {{#hl lang="js" }}
 // Tunnel the BrowserSync server through a random Public URL
 // -> http://randomstring23232.localtunnel.me
@@ -473,7 +458,6 @@ tunnel: "my-private-site"
 <p>Some features of BrowserSync (such as <code>xip</code> &amp; <code>tunnel</code>) require an internet connection, but if you&#39;re
 working offline, you can reduce start-up time by setting this option to <code>false</code></p>
 
-
 {{#hl lang="js" }}
 // Will not attempt to determine your network status, assumes you're ONLINE.
 online: true
@@ -495,7 +479,6 @@ online: false
 
 <p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
 Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
-
 
 {{#hl lang="js" }}
 // Stop the browser from automatically opening
@@ -525,7 +508,6 @@ open: "tunnel"
 
 
 
-
 {{#hl lang="js" }}
 // Open the site in Chrome
 browser: "google chrome"
@@ -548,7 +530,6 @@ browser: ["google chrome", "firefox"]
 <p>Requires an internet connection - useful for services such as <a href="https://typekit.com/">Typekit</a>
 as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 
-
 {{#hl lang="js" }}
 // Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)
 xip: true
@@ -567,7 +548,6 @@ xip: true
 
 <p>Reload each browser when BrowserSync is restarted.</p>
 
-
 {{#hl lang="js" }}
 
 {{/hl}}
@@ -585,7 +565,6 @@ xip: true
 
 <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
 
-
 {{#hl lang="js" }}
 // Don't show any notifications in the browser.
 notify: false
@@ -599,7 +578,6 @@ notify: false
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
-
 
 
 
@@ -620,7 +598,6 @@ scrollProportionally: false // Sync viewports to TOP position
 
 
 
-
 {{#hl lang="js" }}
 scrollThrottle: 100 // only send scroll events every 100 milliseconds
 {{/hl}}
@@ -633,7 +610,6 @@ scrollThrottle: 100 // only send scroll events every 100 milliseconds
     <li class="default">Default: <span class="color-teal">0</span></li>
     
 </ul>
-
 
 
 
@@ -651,7 +627,6 @@ reloadDelay: 2000
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
-
 
 
 
@@ -676,7 +651,6 @@ injectChanges: false,
 
 
 
-
 {{#hl lang="js" }}
 // Open the first browser window at URL + "/info.php"
 startPath: "/info.php"
@@ -695,7 +669,6 @@ startPath: "/info.php"
 
 <p>Whether to minify client script, or not.</p>
 
-
 {{#hl lang="js" }}
 // Don't minify the client-side JS
 minify: false
@@ -709,7 +682,6 @@ minify: false
     <li class="default">Default: <span class="color-teal">null</span></li>
     
 </ul>
-
 
 
 
@@ -731,7 +703,6 @@ host: "192.168.1.1"
 
 
 
-
 {{#hl lang="js" }}
 // Don't send any file-change events to browsers
 codeSync: true,
@@ -745,7 +716,6 @@ codeSync: true,
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
-
 
 
 
@@ -771,7 +741,6 @@ timestamps: false
 <p>Alter the script path for complete control over where the BrowserSync
 Javascript is served from. Whatever you return from this function
 will be used as the script path.</p>
-
 
 {{#hl lang="js" }}
 // This will result in something like
@@ -805,7 +774,6 @@ scriptPath: function (path) {
 
 
 <p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
-
 
 {{#hl lang="js" }}
 // This will result in something like this in

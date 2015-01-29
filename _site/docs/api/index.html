@@ -132,15 +132,12 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
 </code></pre></div>
                 <h3 id="api-pause">.pause() <a href="#api-pause" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
                 <p>Method to pause file change events</p>
-<div class="highlight"><pre><code class="js"></code></pre></div>
-<h3 id="api-resume">.resume() <a href="#api-resume" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<p>Method to resume paused watchers</p>
-<div class="highlight"><pre><code class="js"></code></pre></div>
-<h3 id="api-paused">.paused <a href="#api-paused" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<p>A simple true/false flag to determine if the current instance is paused</p>
-<div class="highlight"><pre><code class="js"></code></pre></div>
-<h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
+                <h3 id="api-resume">.resume() <a href="#api-resume" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <p>Method to resume paused watchers</p>
+                <h3 id="api-paused">.paused <a href="#api-paused" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <p>A simple true/false flag to determine if the current instance is paused</p>
+                <h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+                <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
 <div class="highlight"><pre><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
 browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>

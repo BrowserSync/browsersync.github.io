@@ -90,7 +90,7 @@ function previewTweaks(item) {
  */
 function buildMarkup (combined, item) {
 
-    item.snippet = getSnippet(item, "api");
+    item.snippet = getSnippet(item, "api") || false;
 
     if (!item.description) {
         item.description = "";

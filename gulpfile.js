@@ -23,21 +23,17 @@ gulp.task("crossbow", function () {
 
     crossbow.clearCache();
 
-    //crossbow.emitter.on("_error", function (err) {
-    //    crossbow.logger.info(err.error.message);
-    //});
-
     return gulp.src([
         "_src/*.hbs",
         "_src/*.html",
         "_src/docs/*"
     ])
-        .pipe(crossbow.stream({
-            cwd: "_src",
-            siteConfig: "_config.yml",
-            prettyUrls: true
-        }))
-        .pipe(gulp.dest("./"));
+    .pipe(crossbow.stream({
+        cwd: "_src",
+        siteConfig: "_config.yml",
+        prettyUrls: true
+    }))
+    .pipe(gulp.dest("./"));
 
 });
 

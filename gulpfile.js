@@ -1,15 +1,12 @@
 var gulp        = require("gulp");
 var browserSync = require("browser-sync");
-var plumber     = require('gulp-plumber');
 var sass        = require("gulp-sass");
-var jshint      = require("gulp-jshint");
 var minifyCSS   = require("gulp-minify-css");
 var rename      = require("gulp-rename");
 var prefix      = require("gulp-autoprefixer");
 var cp          = require("child_process");
 var filter      = require("gulp-filter");
 var crossbow    = require("crossbow");
-var vinyl       = require("vinyl");
 var prettify    = require('gulp-jsbeautifier');
 
 /**
@@ -31,21 +28,16 @@ gulp.task("crossbow", function () {
     //});
 
     return gulp.src([
-        "src/*.hbs",
-        "src/*.html",
-        "src/docs/*"
+        "_src/*.hbs",
+        "_src/*.html",
+        "_src/docs/*"
     ])
         .pipe(crossbow.stream({
-            cwd: "src",
+            cwd: "_src",
             siteConfig: "_config.yml",
             prettyUrls: true
         }))
-        //.on("error", function(err){
-        //    browserSync.notify(err.message, 3000);
-        //    console.log(err.message);
-        //    this.emit("end");
-        //})
-        .pipe(gulp.dest("./_site"));
+        .pipe(gulp.dest("./"));
 
 });
 
@@ -56,7 +48,7 @@ gulp.task("serve", ["sass", "crossbow"], function() {
     browserSync({
         open: false,
         server: {
-            baseDir: ["_site", "src"]
+            baseDir: ["./"]
         }
     });
 });
@@ -68,7 +60,7 @@ gulp.task("serve-dist", function() {
     browserSync({
         open: false,
         server: {
-            baseDir: "_site"
+            baseDir: "./"
         }
     });
 });
@@ -80,7 +72,7 @@ gulp.task("dist", ["build", "serve-dist"]);
  */
 gulp.task("sass", function () {
     browserSync.notify("Compiling SASS...");
-    return gulp.src(["src/scss/core.scss"])
+    return gulp.src(["_src/scss/core.scss"])
         .pipe(sass())
         .on("error", function(err){
             browserSync.notify(err.message, 3000);
@@ -88,11 +80,11 @@ gulp.task("sass", function () {
             this.emit("end");
         })
         .pipe(prefix())
-        .pipe(gulp.dest("_site/css"))
+        .pipe(gulp.dest("css"))
         .pipe(minifyCSS({keepBreaks:true}))
         .pipe(filter("**/*.css"))
         .pipe(rename("core.min.css"))
-        .pipe(gulp.dest("_site/css"))
+        .pipe(gulp.dest("css"))
         .pipe(browserSync.reload({stream:true}));
 });
 
@@ -101,8 +93,8 @@ gulp.task("sass", function () {
  * Watch html/md files, run crossbow & reload BrowserSync
  */
 gulp.task("watch", function () {
-    gulp.watch("src/scss/**/*", ["sass"]);
-    gulp.watch(["src/**"], ["crossbow", browserSync.reload]);
+    gulp.watch("_src/scss/**/*", ["sass"]);
+    gulp.watch(["_src/**"], ["crossbow", browserSync.reload]);
 });
 
 /**
@@ -111,11 +103,9 @@ gulp.task("watch", function () {
  */
 gulp.task("default", ["serve", "watch"]);
 
-gulp.task("copy", function () {
-    return gulp.src(["src/img/**/*", "src/fonts/**/*"], {base: "./src"})
-        .pipe(gulp.dest("_site"));
-});
-
+/**
+ * Create documentation from the BrowserSync Source code
+ */
 gulp.task("docs", function () {
 
     var yuidoc = require("gulp-yuidoc");
@@ -126,4 +116,4 @@ gulp.task("docs", function () {
         .pipe(gulp.dest("./doc"));
 });
 
-gulp.task("build", ["docs", "docs-build", "crossbow", "sass", "copy"]);
+gulp.task("build", ["docs", "docs-build", "crossbow", "sass"]);

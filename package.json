@@ -25,7 +25,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "git://github.com/shakyshane/browser-sync#v2-rc3.5",
+    "browser-sync": "^2.0.0-rc3",
     "crossbow": "0.0.9",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",
@@ -44,5 +44,6 @@
     "pretemplater": "^1.1.2",
     "through2": "^0.6.3",
     "vinyl": "^0.4.6"
-  }
+  },
+  "dependencies": {}
 }

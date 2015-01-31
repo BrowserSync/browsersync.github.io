@@ -1,5 +1,5 @@
 var fs           = require("fs");
-var doc          = "./doc/yuidoc.json";
+var doc          = "./_doc/yuidoc.json";
 var docGen       = require("./_docgen");
 var opts         = require("browser-sync/lib/cli/opts.json");
 var pretemplater = require("pretemplater");
@@ -7,13 +7,13 @@ var marked       = require('marked');
 var _            = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
-var mdTemp          = _.template(fs.readFileSync("./src/_docs/api.md", "utf-8"));
-var optTemp         = _.template(fs.readFileSync("./src/_docs/options.md", "utf-8"));
-//var commandLineTemp = _.template(fs.readFileSync("./src/_docs/command-line.md", "utf-8"));
+var mdTemp          = _.template(fs.readFileSync("./_src/_docs/api.md", "utf-8"));
+var optTemp         = _.template(fs.readFileSync("./_src/_docs/options.md", "utf-8"));
+//var commandLineTemp = _.template(fs.readFileSync("./_src/_docs/command-line.md", "utf-8"));
 
 function getTemplate(name) {
 
-    var source = fs.readFileSync("./src/_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
+    var source = fs.readFileSync("./_src/_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
     var template = pretemplater(source);
     return  _.template(template);
 }
@@ -32,7 +32,7 @@ var apiItems = docGen.prepareClassitems(data.classitems)
     .map(previewTweaks)
     .reduce(buildMarkup, "");
 
-fs.writeFileSync("./src/docs/api.md", mdTemp({data: apiItems}));
+fs.writeFileSync("./_src/docs/api.md", mdTemp({data: apiItems}));
 
 /**
  * Process OPTIONS
@@ -42,12 +42,12 @@ fs.writeFileSync("./src/docs/api.md", mdTemp({data: apiItems}));
 var optItems = docGen.prepareOptions(data.classitems)
     .reduce(optionsMarkup, "");
 
-fs.writeFileSync("./src/docs/options.md", optTemp({data: optItems}));
+fs.writeFileSync("./_src/docs/options.md", optTemp({data: optItems}));
 
 //var commandOpts = docGen.prepareCommandLineOptions(opts);
 //var temp = getTemplate("command-line")({options: commandOpts});
 //
-//fs.writeFileSync("./src/docs/command-line.md", commandLineTemp({
+//fs.writeFileSync("./_src/docs/command-line.md", commandLineTemp({
 //    data: temp
 //}));
 
@@ -58,7 +58,7 @@ fs.writeFileSync("./src/docs/options.md", optTemp({data: optItems}));
  * @returns {string}
  */
 function getSnippetPath(name, path) {
-    return "./src/_includes/snippets/%p/%s.js".replace("%s", name).replace("%p", path);
+    return "./_src/_includes/snippets/%p/%s.js".replace("%s", name).replace("%p", path);
 }
 
 /**

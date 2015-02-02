@@ -1,4 +1,5 @@
 var gulp        = require("gulp");
+var fs          = require("fs");
 var browserSync = require("browser-sync");
 var sass        = require("gulp-sass");
 var minifyCSS   = require("gulp-minify-css");
@@ -8,6 +9,7 @@ var cp          = require("child_process");
 var filter      = require("gulp-filter");
 var crossbow    = require("crossbow");
 var prettify    = require('gulp-jsbeautifier');
+var yaml        = require('js-yaml');
 
 /**
  * Build documentation
@@ -21,8 +23,6 @@ gulp.task("docs-build", function (cb) {
  */
 gulp.task("crossbow", function () {
 
-    crossbow.clearCache();
-
     return gulp.src([
         "_src/*.hbs",
         "_src/*.html",
@@ -30,8 +30,10 @@ gulp.task("crossbow", function () {
     ])
     .pipe(crossbow.stream({
         cwd: "_src",
-        siteConfig: "_config.yml",
-        prettyUrls: true
+        prettyUrls: true,
+        data: {
+            site: yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'))
+        }
     }))
     .pipe(gulp.dest("./"));
 

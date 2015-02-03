@@ -16,7 +16,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-    color: $hn-color;
+    // color: $hn-color;
     font-weight: $hn-font-weight;
     line-height: $hn-line-height;
     font-family: $hn-font-family;
@@ -42,14 +42,7 @@ h3, .h3 {
     padding-top: $half-spacing;
     @include font-size($h3-size);
 }
-h4, .h4 {
-    margin-bottom: 0;
-    @include font-size($h4-size);
-    line-height: $base-line-height;
-}
-h5, .h5 {
-    @include font-size($h5-size);
-}
-h6, .h6 {
-    @include font-size($h6-size);
+
+.lede {
+    @include font-size($lede-size);
 }

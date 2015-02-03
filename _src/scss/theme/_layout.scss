@@ -1,35 +1,370 @@
-.wrapper {
+/* General purpose
+======================================== */
 
+.wrapper {
     clear: both;
     width: 100%;
     padding-top: $base-spacing;
     padding-bottom: $base-spacing;
-}
-    .wrapper--alt {
 
-        background: $smoke;
+    @include media-query(min, $desk-start) {
+        padding-top: 2*$base-spacing;
+        padding-bottom: 2*$base-spacing;
     }
+}
+
+.wrapper--alt {
+    background: $smoke;
+}
+
+.wrapper--dark {
+    background: $navy;
+    color: $white;
+
+    a {
+        color: $white;
+    }
+}
 
 .container {
-
     @extend .clearfix;
     margin: 0 auto;
     padding-right: $half-spacing;
     padding-left: $half-spacing;
     width: auto;
-    max-width: $page-width;
+    max-width: 1020px;
     list-style: none;
 
-    @include media-query(lap) {
+    @include media-query(min, $lap-start) {
         padding-right: $base-spacing;
         padding-left: $base-spacing;
     }
 
-    @include media-query(min, ($page-width + 2*$base-spacing)) {
-        width: $page-width;
+    // @include media-query(min, ($page-width + 2*$base-spacing)) {
+    //     width: $page-width;
+    // }
+}
+
+.container--skinny {
+    max-width: 800px;
+}
+
+.grid {
+    @include clearfix();
+    @include list-reset();
+    margin-bottom: 0;
+    margin-left: -4%;
+}
+
+.grid__cell {
+    float: left;
+    padding-left: 4%;
+    width: 100%;
+}
+
+@include media-query(max, $lap-start) {
+    .palm-2up {
+        .grid__cell {
+            width: 50%;
+
+            &:nth-child(2n+1) {
+                clear: left;
+            }
+        }
+    }
+
+    .palm-4up {
+        .grid__cell {
+            width: 25%;
+
+            &:nth-child(4n+1) {
+                clear: left;
+            }
+        }
     }
 }
+
+@include media-query-bracket($lap-start, $desk-start) {
+    .lap-2up {
+        .grid__cell {
+            width: 50%;
+
+            &:nth-child(2n+1) {
+                clear: left;
+            }
+        }
+    }
+
+    .lap-4up {
+        .grid__cell {
+            width: 25%;
+
+            &:nth-child(4n+1) {
+                clear: left;
+            }
+        }
+    }
+}
+
+@include media-query(min, $desk-start) {
+    .desk-2up {
+        .grid__cell {
+            width: 50%;
+
+            &:nth-child(2n+1) {
+                clear: left;
+            }
+        }
+    }
+
+    .desk-4up {
+        .grid__cell {
+            width: 25%;
+
+            &:nth-child(4n+1) {
+                clear: left;
+            }
+        }
+    }
+}
+
+
+/* Content
+======================================== */
 
 .text--center {
     text-align: center;
 }
+
+.section-title {
+    padding-top: $half-spacing;
+    text-align: center;
+    @include font-size(24px);
+
+    @include media-query(min, $desk-start) {
+        margin-bottom: 2*$base-spacing;
+        padding-top: $base-spacing;
+        font-weight: normal;
+        @include font-size(36px);
+    }
+}
+
+
+/* Sections
+======================================== */
+
+// Introduction
+
+.intro {
+    padding-top: 0;
+    text-align: center;
+}
+
+.hook {
+    margin: 0 auto $base-spacing;
+    padding-top: 0;
+
+    @include media-query(min, $lap-start) {
+        padding-top: $base-spacing;
+    }
+
+    @include media-query(min, $desk-start) {
+        padding-top: 2*$base-spacing;
+        @include font-size(48px);
+    }
+}
+
+.ronseal {
+    margin: 0 auto $base-spacing;
+    @include font-size(18px);
+
+
+    @include media-query(min, $desk-start) {
+        // margin-bottom: 2*$base-spacing;
+        @include font-size(24px);
+    }
+}
+
+.cta {
+    margin: 0 0 $base-spacing;
+
+    .stat {
+        display: block;
+        margin-top: $half-spacing;
+        @include font-size(12px);
+    }
+
+    @include media-query(min, $desk-start) {
+        .button {
+            padding: 1.5*$half-spacing 1.5*$base-spacing;
+            @include font-size(24px);
+        }
+    }
+}
+
+.hero {
+    border: $half-spacing/2 solid rgba(0,0,0,0.5);
+
+    @include media-query(min, $desk-start) {
+        margin: 0 auto $base-spacing;
+        max-width: 75%;
+    }
+}
+
+
+// USP Overview
+
+.overview {}
+
+.usp {
+    @include clearfix();
+    margin-bottom: $base-spacing;
+}
+
+.usp__thumb {
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    @include media-query(min, $lap-start) {
+        float: left;
+        width: 48%;
+    }
+}
+
+.usp__content {
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    @include media-query(min, $lap-start) {
+        float: right;
+        width: 48%;
+    }
+}
+
+.usp__title {
+    @include media-query(min, $desk-start) {
+        @include font-size(24px);
+    }
+}
+
+
+// Feature list
+
+.features {}
+
+.feature-list {
+    // @include clearfix();
+    // @include list-reset();
+    // margin: 0;
+
+    @include media-query(min, $desk-start) {
+        margin-bottom: $base-spacing;
+    }
+}
+
+.feature {
+    @include clearfix();
+    margin-bottom: $base-spacing;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        display: none;
+        float: left;
+        margin-right: $base-spacing;
+        width: 50px;
+        border-radius: 100%;
+    }
+
+    p {
+        overflow: hidden;
+    }
+
+    @include media-query(min, $lap-start) {
+        img {
+            display: block;
+            width: 100px;
+        }
+    }
+}
+
+.feature__title {
+    // overflow: hidden;
+}
+
+.new {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 3px;
+    padding: 3px 5px;
+    background: #4FA83D;
+    color: white;
+    @include font-size(12px);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+}
+
+.support {
+    position: relative;
+    margin-bottom: $base-spacing;
+    // border-top: 1px solid $smoke;
+    padding-top: $base-spacing;
+    @include font-size(12px);
+    text-align: center;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        margin-left: -25%;
+        height: 1px;
+        background: $smoke;
+    }
+
+    li {
+        display: inline;
+        margin: 0 $half-spacing 0 0;
+    }
+
+    @include media-query(min, $desk-start) {
+        padding-top: 2*$base-spacing;
+    }
+}
+
+
+// User testimony
+
+.users {}
+
+.quote {
+    margin-bottom: $base-spacing;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    .quote__source {
+        @include font-size(12px);
+
+        &:before {
+            content: "\2014";
+            margin-right: 0.5em;
+        }
+    }
+
+    @include media-query(min, $desk-start) {
+        @include font-size(18px);
+    }
+}
+
+.install {}
+
+.credit {}

@@ -1,15 +1,4 @@
-hr {
-
-    clear: both;
-    margin-bottom: $base-spacing;
-    border: none;
-    border-bottom: 1px solid $silver;
-    padding-bottom: $half-spacing;
-    height: 1px;
-}
-
 html {
-
     overflow-y: scroll;
     overflow-x: hidden;
     min-height: 100%;
@@ -22,16 +11,11 @@ html {
 }
 
 body {
-
     max-width: 100%;
     overflow-x: hidden;
     background: $white;
     color: $base-color;
     text-rendering: optimizeLegibility;
-}
-
-.lede {
-    @include font-size($lede-size);
 }
 
 .warning {
@@ -60,4 +44,17 @@ table {
             background: #fafafa;
         }
     }
+}
+
+hr {
+    clear: both;
+    margin-bottom: $base-spacing;
+    border: none;
+    border-bottom: 1px solid $silver;
+    padding-bottom: $half-spacing;
+    height: 1px;
+}
+
+img {
+    max-width: 100%;
 }

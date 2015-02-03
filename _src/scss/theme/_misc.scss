@@ -1,3 +1,7 @@
+.clearfix {
+    @include clearfix();
+}
+
 section + section {
 
     border-top: 1px solid $silver-lt;
@@ -42,5 +46,33 @@ pre {
     code {
         color: $white;
         line-height: 1.25;
+    }
+}
+
+
+
+
+.fl {
+    float: left;
+    margin-right: $base-spacing;
+}
+
+.ct {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.player {
+    position: relative;
+    height: 0;
+    padding-top: (9 / 16) * 100%;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }

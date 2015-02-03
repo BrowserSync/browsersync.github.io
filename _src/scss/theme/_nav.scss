@@ -1,20 +1,16 @@
-/**
- * Inline using floats
- */
 .nav {
-
-    @extend .clearfix;
-
-    margin-left: 0;
-    list-style: none;
+    @include clearfix();
+    @include list-reset();
 
     > li {
-
         + li {
+
         }
+
         > a {
-            display: block;
+            // display: block;
         }
+
         &.active > a {
             cursor: default;
         }
@@ -25,7 +21,6 @@
  * Horizontal using inline-block
  */
 .nav--inline {
-
     @extend .nav;
 
     > li {
@@ -42,10 +37,13 @@
  * Horizontal using float
  */
 .nav--float {
-
     @extend .nav;
 
     > li {
         float: left;
+
+        > a {
+            display: block;
+        }
     }
 }

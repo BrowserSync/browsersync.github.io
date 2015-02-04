@@ -1,12 +1,11 @@
 a {
     color: $link;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
 
     &:hover,
-    &:active,
-    &:focus{
-        text-decoration:underline;
+    &:focus {
         color: $link-hover;
+        text-decoration: underline;
     }
 
     [class^="icon-"],

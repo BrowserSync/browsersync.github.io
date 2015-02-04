@@ -533,7 +533,18 @@ hr {
   height: 1px; }
 
 img {
+  display: block;
   max-width: 100%; }
+
+a {
+  color: #da4453;
+  -webkit-transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+          transition: border 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  a:hover, a:focus {
+    color: #000;
+    text-decoration: underline; }
+  a [class^="icon-"], a [class*=" icon-"] {
+    text-decoration: none; }
 
 .nav, .nav--inline, .nav--float {
   zoom: 1;
@@ -595,7 +606,7 @@ img {
     background: #de5967;
     color: #fff; }
   .button--primary:active {
-    background: #c42737;
+    background: #d62f3f;
     color: #fff; }
 
 /**
@@ -634,16 +645,6 @@ h3, .h3 {
   font-size: 24px;
   font-size: 1.5rem; }
 
-a {
-  color: #da4453;
-  -webkit-transition: background 0.3s ease, color 0.3s ease;
-          transition: background 0.3s ease, color 0.3s ease; }
-  a:hover, a:active, a:focus {
-    text-decoration: underline;
-    color: #000; }
-  a [class^="icon-"], a [class*=" icon-"] {
-    text-decoration: none; }
-
 /* General purpose
 ======================================== */
 .wrapper {
@@ -663,7 +664,11 @@ a {
   background: #1b2032;
   color: #fff; }
   .wrapper--dark a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     color: #fff; }
+    .wrapper--dark a:hover {
+      text-decoration: none;
+      border-color: #fff; }
 
 .container {
   margin: 0 auto;
@@ -774,6 +779,8 @@ a {
 
 .cta {
   margin: 0 0 24px; }
+  .cta .button {
+    border: 0 !important; }
   .cta .stat {
     display: block;
     margin-top: 12px;
@@ -801,29 +808,23 @@ a {
   .usp:after {
     clear: both; }
 
-.usp__thumb img {
-  display: block;
-  width: 100%; }
 @media only screen and (min-width: 700px) {
   .usp__thumb {
     float: left;
-    width: 48%; } }
+    width: 50%; } }
 
-.usp__content > :last-child {
-  margin-bottom: 0; }
-@media only screen and (min-width: 700px) {
-  .usp__content {
-    float: right;
-    width: 48%; } }
+.usp__content {
+  overflow: hidden; }
+  .usp__content > :last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: 700px) {
+    .usp__content {
+      padding-left: 24px; } }
 
 @media only screen and (min-width: 900px) {
   .usp__title {
     font-size: 24px;
     font-size: 1.5rem; } }
-
-@media only screen and (min-width: 900px) {
-  .feature-list {
-    margin-bottom: 24px; } }
 
 .feature {
   zoom: 1;
@@ -833,20 +834,20 @@ a {
     display: table; }
   .feature:after {
     clear: both; }
-  .feature > :last-child {
+
+.feature__thumb {
+  float: left;
+  margin-right: 24px;
+  width: 100px;
+  border-radius: 100%; }
+  @media only screen and (max-width: 699px) {
+    .feature__thumb {
+      display: none; } }
+
+.feature__content {
+  overflow: hidden; }
+  .feature__content > :last-child {
     margin-bottom: 0; }
-  .feature img {
-    display: none;
-    float: left;
-    margin-right: 24px;
-    width: 50px;
-    border-radius: 100%; }
-  .feature p {
-    overflow: hidden; }
-  @media only screen and (min-width: 700px) {
-    .feature img {
-      display: block;
-      width: 100px; } }
 
 .new {
   display: inline-block;
@@ -876,28 +877,36 @@ a {
     width: 50%;
     margin-left: -25%;
     height: 1px;
-    background: #f2f2f2; }
+    background: #e6e6e6; }
   .support li {
     display: inline;
     margin: 0 12px 0 0; }
   @media only screen and (min-width: 900px) {
     .support {
+      margin-top: 24px;
       padding-top: 48px; } }
+
+.logo {
+  margin: 0 auto 24px; }
+  @media only screen and (min-width: 900px) {
+    .logo {
+      margin-bottom: 48px; } }
 
 .quote {
   margin-bottom: 24px; }
   .quote > :last-child {
     margin-bottom: 0; }
-  .quote .quote__source {
-    font-size: 12px;
-    font-size: 0.75rem; }
-    .quote .quote__source:before {
-      content: "\2014";
-      margin-right: 0.5em; }
   @media only screen and (min-width: 900px) {
     .quote {
       font-size: 18px;
       font-size: 1.125rem; } }
+
+.quote__source {
+  font-size: 12px;
+  font-size: 0.75rem; }
+  .quote__source:before {
+    content: "\2014";
+    margin-right: 0.5em; }
 
 .site-header {
   text-align: center;
@@ -906,34 +915,15 @@ a {
   .site-header.alt {
     padding-top: 0;
     padding-bottom: 0; }
-  .site-header a {
-    color: #fff; }
 
 .site-logo {
+  border: 0 !important;
   font-weight: bold;
   font-size: 24px;
   font-size: 1.5rem; }
-  .site-logo:hover {
-    text-decoration: none; }
   @media only screen and (min-width: 700px) {
     .site-logo {
       float: left; } }
-
-.site-title.alt {
-  padding-top: 12px;
-  font-size: 20px;
-  font-size: 1.25rem; }
-  @media (min-width: 700px) {
-    .site-title.alt {
-      font-size: 24px;
-      font-size: 1.5rem; } }
-  .site-title.alt a {
-    font-weight: normal; }
-  .site-title.alt span a {
-    color: #D3ED13; }
-    .site-title.alt span a:hover {
-      text-decoration: none;
-      color: white; }
 
 .site-nav {
   margin: 12px 0 0; }
@@ -964,22 +954,23 @@ a {
         .docs-nav li a.active:hover {
           text-decoration: none; }
 
-.site-footer {
-  background: #1b2032;
-  color: #fff;
-  text-align: center; }
-  .site-footer a {
-    color: #fff;
-    font-weight: bold; }
+.credit__thumb {
+  float: right;
+  border: 0 !important;
+  width: 100px;
+  margin: 0 0 12px 24px; }
+  .credit__thumb img {
+    border: 1px solid rgba(255, 255, 255, 0.1); }
+  .credit__thumb:hover {
+    background: #e0180b; }
+  @media only screen and (min-width: 700px) {
+    .credit__thumb {
+      float: left;
+      margin: 0 24px 0 0; } }
 
-.social-links {
-  font-size: 30px;
-  font-size: 1.875rem; }
-  .social-links a {
-    padding: 0 12px; }
-    .social-links a:hover, .social-links a:focus {
-      text-decoration: none;
-      color: #da4453; }
+@media only screen and (min-width: 700px) {
+  .credit__content {
+    overflow: hidden; } }
 
 /**
  * Base typography styles

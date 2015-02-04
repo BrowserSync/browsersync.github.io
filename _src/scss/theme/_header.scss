@@ -8,55 +8,18 @@
         padding-bottom: 0;
     }
 
-    a {
-        color: $white;
-        // font-weight: bold;
-    }
+    // @include media-query(min, $lap-start) {
+    //     line-height: 1.5*$base-spacing;
+    // }
 }
 
 .site-logo {
+    border: 0!important;
     font-weight: bold;
     @include font-size(24px);
 
-    &:hover {
-        text-decoration: none;
-    }
-
     @include media-query(min, $lap-start) {
         float: left;
-    }
-}
-
-.site-title {
-
-    // float: left;
-    // margin-bottom: $half-spacing;
-    // padding-top: 2*$base-spacing;
-    // color: $white;
-    // font-weight: 400;
-    // @include font-size(58px);
-
-    &.alt {
-        padding-top: $half-spacing;
-        @include font-size(20px);
-
-        @media (min-width: $lap-start) {
-            @include font-size(24px);
-        }
-
-        a {
-            font-weight: normal;
-        }
-
-        span {
-            a {
-                color: $lime;
-                &:hover {
-                    text-decoration: none;
-                    color: white;
-                }
-            }
-        }
     }
 }
 
@@ -69,50 +32,13 @@
 
     @include media-query(min, $lap-start) {
         float: right;
+        // margin-top: $half-spacing/2;
 
         li {
             margin-right: 0;
             margin-left: $base-spacing;
         }
     }
-}
-
-// .site-lede {
-//     margin-bottom: $base-spacing;
-//     @include font-size(32px);
-// }
-
-@include media-query(palm) {
-
-    // .site-title {
-    //     padding-top: $half-spacing;
-    //     @include font-size(32px);
-    // }
-    // .site-lede {
-    //     margin-bottom: $half-spacing;
-    //     @include font-size(20px);
-    // }
-    // .site-header li:first-child {
-    //     display: block;
-    //     margin-bottom: $half-spacing;
-    // }
-    // .site-header .button {
-    //     display: block;
-    // }
-
-    // h2 {
-    //     margin-bottom: $half-spacing;
-    //     padding-top: $half-spacing;
-    //     @include font-size(20px);
-    // }
-
-    // h3 {
-    //     @include font-size(16px);
-    // }
-
-    // .lede {
-    //     @include font-size(16px);
-    // }
 }
 
 .docs-nav {

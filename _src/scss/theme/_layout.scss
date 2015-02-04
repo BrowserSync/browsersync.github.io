@@ -22,7 +22,13 @@
     color: $white;
 
     a {
+        border-bottom: 1px solid rgba($white, 0.25);
         color: $white;
+
+        &:hover {
+            text-decoration: none;
+            border-color: $white;
+        }
     }
 }
 
@@ -188,6 +194,10 @@
 .cta {
     margin: 0 0 $base-spacing;
 
+    .button {
+        border: 0!important;
+    }
+
     .stat {
         display: block;
         margin-top: $half-spacing;
@@ -222,25 +232,21 @@
 }
 
 .usp__thumb {
-    img {
-        display: block;
-        width: 100%;
-    }
-
     @include media-query(min, $lap-start) {
         float: left;
-        width: 48%;
+        width: 50%;
     }
 }
 
 .usp__content {
+    overflow: hidden;
+
     > :last-child {
         margin-bottom: 0;
     }
 
     @include media-query(min, $lap-start) {
-        float: right;
-        width: 48%;
+        padding-left: $base-spacing;
     }
 }
 
@@ -255,47 +261,31 @@
 
 .features {}
 
-.feature-list {
-    // @include clearfix();
-    // @include list-reset();
-    // margin: 0;
-
-    @include media-query(min, $desk-start) {
-        margin-bottom: $base-spacing;
-    }
-}
-
 .feature {
     @include clearfix();
     margin-bottom: $base-spacing;
+}
+
+.feature__thumb {
+    float: left;
+    margin-right: $base-spacing;
+    width: 100px;
+    border-radius: 100%;
+
+    @include media-query(max, $lap-start) {
+        display: none;
+    }
+}
+
+.feature__content {
+    overflow: hidden;
 
     > :last-child {
         margin-bottom: 0;
     }
-
-    img {
-        display: none;
-        float: left;
-        margin-right: $base-spacing;
-        width: 50px;
-        border-radius: 100%;
-    }
-
-    p {
-        overflow: hidden;
-    }
-
-    @include media-query(min, $lap-start) {
-        img {
-            display: block;
-            width: 100px;
-        }
-    }
 }
 
-.feature__title {
-    // overflow: hidden;
-}
+.feature__title {}
 
 .new {
     display: inline-block;
@@ -313,7 +303,6 @@
 .support {
     position: relative;
     margin-bottom: $base-spacing;
-    // border-top: 1px solid $smoke;
     padding-top: $base-spacing;
     @include font-size(12px);
     text-align: center;
@@ -326,7 +315,7 @@
         width: 50%;
         margin-left: -25%;
         height: 1px;
-        background: $smoke;
+        background: $silver-lt;
     }
 
     li {
@@ -335,6 +324,7 @@
     }
 
     @include media-query(min, $desk-start) {
+        margin-top: $base-spacing;
         padding-top: 2*$base-spacing;
     }
 }
@@ -344,6 +334,14 @@
 
 .users {}
 
+.logo {
+    margin: 0 auto $base-spacing;
+
+    @include media-query(min, $desk-start) {
+        margin-bottom: 2*$base-spacing;
+    }
+}
+
 .quote {
     margin-bottom: $base-spacing;
 
@@ -351,20 +349,23 @@
         margin-bottom: 0;
     }
 
-    .quote__source {
-        @include font-size(12px);
-
-        &:before {
-            content: "\2014";
-            margin-right: 0.5em;
-        }
-    }
-
     @include media-query(min, $desk-start) {
         @include font-size(18px);
     }
 }
 
-.install {}
+.quote__text {}
 
-.credit {}
+.quote__source {
+    @include font-size(12px);
+
+    &:before {
+        content: "\2014";
+        margin-right: 0.5em;
+    }
+}
+
+
+// Install instructions
+
+.install {}

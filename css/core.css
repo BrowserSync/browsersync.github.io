@@ -787,10 +787,12 @@ h3, .h3 {
     font-size: 12px;
     font-size: 0.75rem; }
   @media only screen and (min-width: 900px) {
-    .cta .button {
-      padding: 18px 36px;
-      font-size: 24px;
-      font-size: 1.5rem; } }
+    .cta {
+      margin-bottom: 48px; }
+      .cta .button {
+        padding: 18px 36px;
+        font-size: 24px;
+        font-size: 1.5rem; } }
 
 .hero {
   border: 6px solid rgba(0, 0, 0, 0.5); }
@@ -808,10 +810,12 @@ h3, .h3 {
   .usp:after {
     clear: both; }
 
-@media only screen and (min-width: 700px) {
-  .usp__thumb {
-    float: left;
-    width: 50%; } }
+.usp__thumb {
+  border: 1px solid #cccccc; }
+  @media only screen and (min-width: 700px) {
+    .usp__thumb {
+      float: left;
+      width: 50%; } }
 
 .usp__content {
   overflow: hidden; }

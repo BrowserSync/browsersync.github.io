@@ -205,6 +205,8 @@
     }
 
     @include media-query(min, $desk-start) {
+        margin-bottom: 2*$base-spacing;
+
         .button {
             padding: 1.5*$half-spacing 1.5*$base-spacing;
             @include font-size(24px);
@@ -232,6 +234,8 @@
 }
 
 .usp__thumb {
+    border: 1px solid $silver;
+
     @include media-query(min, $lap-start) {
         float: left;
         width: 50%;

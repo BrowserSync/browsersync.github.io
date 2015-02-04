@@ -127,12 +127,14 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .cta{margin:0 0 24px}
 .cta .button{border:0!important}
 .cta .stat{display:block;margin-top:12px;font-size:12px;font-size:.75rem}
-@media only screen and (min-width:900px){.cta .button{padding:18px 36px;font-size:24px;font-size:1.5rem}}
+@media only screen and (min-width:900px){.cta{margin-bottom:48px}
+.cta .button{padding:18px 36px;font-size:24px;font-size:1.5rem}}
 .hero{border:6px solid rgba(0,0,0,.5)}
 @media only screen and (min-width:900px){.hero{margin:0 auto 24px;max-width:75%}}
 .usp{zoom:1;margin-bottom:24px}
 .usp:after,.usp:before{content:"";display:table}
 .usp:after{clear:both}
+.usp__thumb{border:1px solid #ccc}
 @media only screen and (min-width:700px){.usp__thumb{float:left;width:50%}}
 .usp__content{overflow:hidden}
 .usp__content>:last-child{margin-bottom:0}

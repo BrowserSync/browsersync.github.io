@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * Project variables
  */
@@ -44,14 +43,12 @@ LAYOUT
 /**
  * Grids
  */
-.clearfix, .nav, .nav--inline, .nav--float, .container {
-  zoom: 1; }
-  .clearfix:before, .nav:before, .nav--inline:before, .nav--float:before, .container:before, .clearfix:after, .nav:after, .nav--inline:after, .nav--float:after, .container:after {
-    content: "";
-    display: table; }
-  .clearfix:after, .nav:after, .nav--inline:after, .nav--float:after, .container:after {
-    clear: both; }
-
+/**
+ * Output clearfix rules
+ *
+   `@include clearfix();`
+ *
+ */
 /**
  * Output media query block
  *
@@ -59,9 +56,21 @@ LAYOUT
  *
  */
 /**
+ * Output media query block with min and max limits
+ *
+   `@include media-query-bracket(640px, 960px);`
+ *
+ */
+/**
  * Output font size using rem and px fallback
  *
    `@include font-size(10px);`
+ *
+ */
+/**
+ * Output unstyled list properties
+ *
+   `@include list-reset();`
  *
  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -432,664 +441,6 @@ label, input, textarea, button, select, option {
   cursor: text;
   outline: none; }
 
-/*------------------------------------*\
-    $CSSWIZARDRY-GRIDS
-\*------------------------------------*/
-/**
- * CONTENTS
- * INTRODUCTION.........How the grid system works.
- * VARIABLES............Your settings.
- * MIXINS...............Library mixins.
- * GRID SETUP...........Build the grid structure.
- * WIDTHS...............Build our responsive widths around our breakpoints.
- * PUSH.................Push classes.
- * PULL.................Pull classes.
- */
-/*------------------------------------*\
-    $INTRODUCTION
-\*------------------------------------*/
-/**
- * csswizardry grids provides you with widths to suit a number of breakpoints
- * designed around devices of a size you specify. Out of the box, csswizardry
- * grids caters to the following types of device:
- *
- * palm     --  palm-based devices, like phones and small tablets
- * lap      --  lap-based devices, like iPads or laptops
- * portable --  all of the above
- * desk     --  stationary devices, like desktop computers
- * regular  --  any/all types of device
- *
- * These namespaces are then used in the library to give you the ability to
- * manipulate your layouts based around them, for example:
- *
-   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
- *
- * This would give you a grid item which is 100% width unless it is on a lap
- * device, at which point it become 50% wide, or it is on a desktop device, at
- * which point it becomes 33.333% width.
- *
- * csswizardry grids also has push and pull classes which allow you to nudge
- * grid items left and right by a defined amount. These follow the same naming
- * convention as above, but are prepended by either `push--` or `pull--`, for
- * example:
- *
-   `class="grid__item  one-half  push--one-half"`
- *
- * This would give you a grid item which is 50% width and pushed over to the
- * right by 50%.
- *
- * All classes in csswizardry grids follow this patten, so you should fairly
- * quickly be able to piece together any combinations you can imagine, for
- * example:
- *
-   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
- *
-   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
- *
-   `class="grid__item  palm--one-third  desk--five-twelfths"`
- */
-/*------------------------------------*\
-    $VARIABLES
-\*------------------------------------*/
-/**
- * If you are building a non-responsive site but would still like to use
- * csswizardry-grids, set this to ‘false’:
- */
-/**
- * Is this build mobile first? Setting to ‘true’ means that all grids will be
- * 100% width if you do not apply a more specific class to them.
- */
-/**
- * Set the spacing between your grid items.
- */
-/**
- * Would you like Sass’ silent classes, or regular CSS classes?
- */
-/**
- * Would you like push and pull classes enabled?
- */
-/**
- * Would you like to use 'float: left' instead of 'display: inline-block'?
- */
-/**
- * Using `inline-block` means that the grid items need their whitespace removing
- * in order for them to work correctly. Set the following to true if you are
- * going to achieve this by manually removing/commenting out any whitespace in
- * your HTML yourself.
- *
- * Setting this to false invokes a hack which cannot always be guaranteed,
- * please see the following for more detail:
- *
- * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
- * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
- */
-/**
- * Define your breakpoints. The first value is the prefix that shall be used for
- * your classes (e.g. `.palm--one-half`), the second value is the media query
- * that the breakpoint fires at.
- */
-/**
- * Define which namespaced breakpoints you would like to generate for each of
- * widths, push and pull. This is handy if you only need pull on, say, desk, or
- * you only need a new width breakpoint at mobile sizes. It allows you to only
- * compile as much CSS as you need. All are turned on by default, but you can
- * add and remove breakpoints at will.
- *
- * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
- * have been set to ‘true’.
- */
-/**
- * You do not need to edit anything from this line onward; csswizardry-grids is
- * good to go. Happy griddin’!
- */
-/*------------------------------------*\
-    $MIXINS
-\*------------------------------------*/
-/**
- * These mixins are for the library to use only, you should not need to modify
- * them at all.
- *
- * Enclose a block of code with a media query as named in `$breakpoints`.
- */
-/**
- * Drop relative positioning into silent classes which can’t take advantage of
- * the `[class*="push--"]` and `[class*="pull--"]` selectors.
- */
-/*------------------------------------*\
-    $GRID SETUP
-\*------------------------------------*/
-/**
- * 1. Allow the grid system to be used on lists.
- * 2. Remove any margins and paddings that might affect the grid system.
- * 3. Apply a negative `margin-left` to negate the columns’ gutters.
- */
-.grid {
-  list-style: none;
-  /* [1] */
-  margin: 0;
-  /* [2] */
-  padding: 0;
-  /* [2] */
-  margin-left: -24px;
-  /* [3] */ }
-
-/**
-     * 1. Cause columns to stack side-by-side.
-     * 2. Space columns apart.
-     * 3. Align columns to the tops of each other.
-     * 4. Full-width unless told to behave otherwise.
-     * 5. Required to combine fluid widths and fixed gutters.
-     */
-.grid__item {
-  float: left;
-  padding-left: 24px;
-  /* [2] */
-  vertical-align: top;
-  /* [3] */
-  width: 100%;
-  /* [4] */
-  /* [5] */
-  /* [5] */
-  box-sizing: border-box;
-  /* [5] */ }
-  .grid__item else {
-    display: inline-block;
-    /* [1] */ }
-
-/**
- * Reversed grids allow you to structure your source in the opposite order to
- * how your rendered layout will appear. Extends `.grid`.
- */
-.grid--rev {
-  direction: rtl;
-  text-align: left; }
-  .grid--rev > .grid__item {
-    direction: ltr;
-    text-align: left; }
-
-/**
- * Gutterless grids have all the properties of regular grids, minus any spacing.
- * Extends `.grid`.
- */
-.grid--full {
-  margin-left: 0; }
-  .grid--full > .grid__item {
-    padding-left: 0; }
-
-/**
- * Align the entire grid to the right. Extends `.grid`.
- */
-.grid--right {
-  text-align: right; }
-  .grid--right > .grid__item {
-    text-align: left; }
-
-/**
- * Centered grids align grid items centrally without needing to use push or pull
- * classes. Extends `.grid`.
- */
-.grid--center {
-  text-align: center; }
-  .grid--center > .grid__item {
-    text-align: left; }
-
-/**
- * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
- * `.grid`.
- */
-.grid--middle > .grid__item {
-  vertical-align: middle; }
-
-.grid--bottom > .grid__item {
-  vertical-align: bottom; }
-
-/**
- * Create grids with narrower gutters. Extends `.grid`.
- */
-.grid--narrow {
-  margin-left: -12px; }
-  .grid--narrow > .grid__item {
-    padding-left: 12px; }
-
-/**
- * Create grids with wider gutters. Extends `.grid`.
- */
-.grid--wide {
-  margin-left: -48px; }
-  .grid--wide > .grid__item {
-    padding-left: 48px; }
-
-/*------------------------------------*\
-    $WIDTHS
-\*------------------------------------*/
-/**
- * Create our width classes, prefixed by the specified namespace.
- */
-/**
- * Our regular, non-responsive width classes.
- */
-/**
-     * Whole
-     */
-.one-whole {
-  width: 100%; }
-
-/**
-     * Halves
-     */
-.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
-  width: 50%; }
-
-/**
-     * Thirds
-     */
-.one-third, .two-sixths, .four-twelfths {
-  width: 33.333%; }
-
-.two-thirds, .four-sixths, .eight-twelfths {
-  width: 66.666%; }
-
-/**
-     * Quarters
-     */
-.one-quarter, .two-eighths, .three-twelfths {
-  width: 25%; }
-
-.three-quarters, .six-eighths, .nine-twelfths {
-  width: 75%; }
-
-/**
-     * Fifths
-     */
-.one-fifth, .two-tenths {
-  width: 20%; }
-
-.two-fifths, .four-tenths {
-  width: 40%; }
-
-.three-fifths, .six-tenths {
-  width: 60%; }
-
-.four-fifths, .eight-tenths {
-  width: 80%; }
-
-/**
-     * Sixths
-     */
-.one-sixth, .two-twelfths {
-  width: 16.666%; }
-
-.five-sixths, .ten-twelfths {
-  width: 83.333%; }
-
-/**
-     * Eighths
-     */
-.one-eighth {
-  width: 12.5%; }
-
-.three-eighths {
-  width: 37.5%; }
-
-.five-eighths {
-  width: 62.5%; }
-
-.seven-eighths {
-  width: 87.5%; }
-
-/**
-     * Tenths
-     */
-.one-tenth {
-  width: 10%; }
-
-.three-tenths {
-  width: 30%; }
-
-.seven-tenths {
-  width: 70%; }
-
-.nine-tenths {
-  width: 90%; }
-
-/**
-     * Twelfths
-     */
-.one-twelfth {
-  width: 8.333%; }
-
-.five-twelfths {
-  width: 41.666%; }
-
-.seven-twelfths {
-  width: 58.333%; }
-
-.eleven-twelfths {
-  width: 91.666%; }
-
-/**
- * Our responsive classes, if we have enabled them.
- */
-@media only screen and (max-width: 480px) {
-  /**
-     * Whole
-     */
-  .palm--one-whole {
-    width: 100%; }
-  /**
-     * Halves
-     */
-  .palm--one-half, .palm--two-quarters, .palm--three-sixths, .palm--four-eighths, .palm--five-tenths, .palm--six-twelfths {
-    width: 50%; }
-  /**
-     * Thirds
-     */
-  .palm--one-third, .palm--two-sixths, .palm--four-twelfths {
-    width: 33.333%; }
-  .palm--two-thirds, .palm--four-sixths, .palm--eight-twelfths {
-    width: 66.666%; }
-  /**
-     * Quarters
-     */
-  .palm--one-quarter, .palm--two-eighths, .palm--three-twelfths {
-    width: 25%; }
-  .palm--three-quarters, .palm--six-eighths, .palm--nine-twelfths {
-    width: 75%; }
-  /**
-     * Fifths
-     */
-  .palm--one-fifth, .palm--two-tenths {
-    width: 20%; }
-  .palm--two-fifths, .palm--four-tenths {
-    width: 40%; }
-  .palm--three-fifths, .palm--six-tenths {
-    width: 60%; }
-  .palm--four-fifths, .palm--eight-tenths {
-    width: 80%; }
-  /**
-     * Sixths
-     */
-  .palm--one-sixth, .palm--two-twelfths {
-    width: 16.666%; }
-  .palm--five-sixths, .palm--ten-twelfths {
-    width: 83.333%; }
-  /**
-     * Eighths
-     */
-  .palm--one-eighth {
-    width: 12.5%; }
-  .palm--three-eighths {
-    width: 37.5%; }
-  .palm--five-eighths {
-    width: 62.5%; }
-  .palm--seven-eighths {
-    width: 87.5%; }
-  /**
-     * Tenths
-     */
-  .palm--one-tenth {
-    width: 10%; }
-  .palm--three-tenths {
-    width: 30%; }
-  .palm--seven-tenths {
-    width: 70%; }
-  .palm--nine-tenths {
-    width: 90%; }
-  /**
-     * Twelfths
-     */
-  .palm--one-twelfth {
-    width: 8.333%; }
-  .palm--five-twelfths {
-    width: 41.666%; }
-  .palm--seven-twelfths {
-    width: 58.333%; }
-  .palm--eleven-twelfths {
-    width: 91.666%; } }
-
-@media only screen and (min-width: 481px) and (max-width: 1023px) {
-  /**
-     * Whole
-     */
-  .lap--one-whole {
-    width: 100%; }
-  /**
-     * Halves
-     */
-  .lap--one-half, .lap--two-quarters, .lap--three-sixths, .lap--four-eighths, .lap--five-tenths, .lap--six-twelfths {
-    width: 50%; }
-  /**
-     * Thirds
-     */
-  .lap--one-third, .lap--two-sixths, .lap--four-twelfths {
-    width: 33.333%; }
-  .lap--two-thirds, .lap--four-sixths, .lap--eight-twelfths {
-    width: 66.666%; }
-  /**
-     * Quarters
-     */
-  .lap--one-quarter, .lap--two-eighths, .lap--three-twelfths {
-    width: 25%; }
-  .lap--three-quarters, .lap--six-eighths, .lap--nine-twelfths {
-    width: 75%; }
-  /**
-     * Fifths
-     */
-  .lap--one-fifth, .lap--two-tenths {
-    width: 20%; }
-  .lap--two-fifths, .lap--four-tenths {
-    width: 40%; }
-  .lap--three-fifths, .lap--six-tenths {
-    width: 60%; }
-  .lap--four-fifths, .lap--eight-tenths {
-    width: 80%; }
-  /**
-     * Sixths
-     */
-  .lap--one-sixth, .lap--two-twelfths {
-    width: 16.666%; }
-  .lap--five-sixths, .lap--ten-twelfths {
-    width: 83.333%; }
-  /**
-     * Eighths
-     */
-  .lap--one-eighth {
-    width: 12.5%; }
-  .lap--three-eighths {
-    width: 37.5%; }
-  .lap--five-eighths {
-    width: 62.5%; }
-  .lap--seven-eighths {
-    width: 87.5%; }
-  /**
-     * Tenths
-     */
-  .lap--one-tenth {
-    width: 10%; }
-  .lap--three-tenths {
-    width: 30%; }
-  .lap--seven-tenths {
-    width: 70%; }
-  .lap--nine-tenths {
-    width: 90%; }
-  /**
-     * Twelfths
-     */
-  .lap--one-twelfth {
-    width: 8.333%; }
-  .lap--five-twelfths {
-    width: 41.666%; }
-  .lap--seven-twelfths {
-    width: 58.333%; }
-  .lap--eleven-twelfths {
-    width: 91.666%; } }
-
-@media only screen and (max-width: 1023px) {
-  /**
-     * Whole
-     */
-  .portable--one-whole {
-    width: 100%; }
-  /**
-     * Halves
-     */
-  .portable--one-half, .portable--two-quarters, .portable--three-sixths, .portable--four-eighths, .portable--five-tenths, .portable--six-twelfths {
-    width: 50%; }
-  /**
-     * Thirds
-     */
-  .portable--one-third, .portable--two-sixths, .portable--four-twelfths {
-    width: 33.333%; }
-  .portable--two-thirds, .portable--four-sixths, .portable--eight-twelfths {
-    width: 66.666%; }
-  /**
-     * Quarters
-     */
-  .portable--one-quarter, .portable--two-eighths, .portable--three-twelfths {
-    width: 25%; }
-  .portable--three-quarters, .portable--six-eighths, .portable--nine-twelfths {
-    width: 75%; }
-  /**
-     * Fifths
-     */
-  .portable--one-fifth, .portable--two-tenths {
-    width: 20%; }
-  .portable--two-fifths, .portable--four-tenths {
-    width: 40%; }
-  .portable--three-fifths, .portable--six-tenths {
-    width: 60%; }
-  .portable--four-fifths, .portable--eight-tenths {
-    width: 80%; }
-  /**
-     * Sixths
-     */
-  .portable--one-sixth, .portable--two-twelfths {
-    width: 16.666%; }
-  .portable--five-sixths, .portable--ten-twelfths {
-    width: 83.333%; }
-  /**
-     * Eighths
-     */
-  .portable--one-eighth {
-    width: 12.5%; }
-  .portable--three-eighths {
-    width: 37.5%; }
-  .portable--five-eighths {
-    width: 62.5%; }
-  .portable--seven-eighths {
-    width: 87.5%; }
-  /**
-     * Tenths
-     */
-  .portable--one-tenth {
-    width: 10%; }
-  .portable--three-tenths {
-    width: 30%; }
-  .portable--seven-tenths {
-    width: 70%; }
-  .portable--nine-tenths {
-    width: 90%; }
-  /**
-     * Twelfths
-     */
-  .portable--one-twelfth {
-    width: 8.333%; }
-  .portable--five-twelfths {
-    width: 41.666%; }
-  .portable--seven-twelfths {
-    width: 58.333%; }
-  .portable--eleven-twelfths {
-    width: 91.666%; } }
-
-@media only screen and (min-width: 1024px) {
-  /**
-     * Whole
-     */
-  .desk--one-whole {
-    width: 100%; }
-  /**
-     * Halves
-     */
-  .desk--one-half, .desk--two-quarters, .desk--three-sixths, .desk--four-eighths, .desk--five-tenths, .desk--six-twelfths {
-    width: 50%; }
-  /**
-     * Thirds
-     */
-  .desk--one-third, .desk--two-sixths, .desk--four-twelfths {
-    width: 33.333%; }
-  .desk--two-thirds, .desk--four-sixths, .desk--eight-twelfths {
-    width: 66.666%; }
-  /**
-     * Quarters
-     */
-  .desk--one-quarter, .desk--two-eighths, .desk--three-twelfths {
-    width: 25%; }
-  .desk--three-quarters, .desk--six-eighths, .desk--nine-twelfths {
-    width: 75%; }
-  /**
-     * Fifths
-     */
-  .desk--one-fifth, .desk--two-tenths {
-    width: 20%; }
-  .desk--two-fifths, .desk--four-tenths {
-    width: 40%; }
-  .desk--three-fifths, .desk--six-tenths {
-    width: 60%; }
-  .desk--four-fifths, .desk--eight-tenths {
-    width: 80%; }
-  /**
-     * Sixths
-     */
-  .desk--one-sixth, .desk--two-twelfths {
-    width: 16.666%; }
-  .desk--five-sixths, .desk--ten-twelfths {
-    width: 83.333%; }
-  /**
-     * Eighths
-     */
-  .desk--one-eighth {
-    width: 12.5%; }
-  .desk--three-eighths {
-    width: 37.5%; }
-  .desk--five-eighths {
-    width: 62.5%; }
-  .desk--seven-eighths {
-    width: 87.5%; }
-  /**
-     * Tenths
-     */
-  .desk--one-tenth {
-    width: 10%; }
-  .desk--three-tenths {
-    width: 30%; }
-  .desk--seven-tenths {
-    width: 70%; }
-  .desk--nine-tenths {
-    width: 90%; }
-  /**
-     * Twelfths
-     */
-  .desk--one-twelfth {
-    width: 8.333%; }
-  .desk--five-twelfths {
-    width: 41.666%; }
-  .desk--seven-twelfths {
-    width: 58.333%; }
-  .desk--eleven-twelfths {
-    width: 91.666%; } }
-
-/*------------------------------------*\
-    $PUSH
-\*------------------------------------*/
-/**
- * Push classes, to move grid items over to the right by certain amounts.
- */
-/*------------------------------------*\
-    $PULL
-\*------------------------------------*/
-/**
- * Pull classes, to move grid items back to the left by certain amounts.
- */
 /*
   IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
 */
@@ -1143,14 +494,6 @@ label, input, textarea, button, select, option {
 .coffeescript .javascript, .javascript .xml, .tex .hljs-formula, .xml .javascript, .xml .vbscript, .xml .css, .xml .hljs-cdata {
   opacity: 0.7; }
 
-hr {
-  clear: both;
-  margin-bottom: 24px;
-  border: none;
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 12px;
-  height: 1px; }
-
 html {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -1168,10 +511,6 @@ body {
   color: #333333;
   text-rendering: optimizeLegibility; }
 
-.lede {
-  font-size: 20px;
-  font-size: 1.25rem; }
-
 .warning {
   padding: 6px 12px;
   background: -webkit-repeating-linear-gradient(45deg, #ffffff, #ffffff 10px, #f5f5f5 10px, #f5f5f5 20px);
@@ -1185,14 +524,37 @@ table td {
 table tbody tr:nth-child(odd) {
   background: #fafafa; }
 
-/**
- * Inline using floats
- */
+hr {
+  clear: both;
+  margin-bottom: 24px;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 12px;
+  height: 1px; }
+
+img {
+  display: block;
+  max-width: 100%; }
+
+a {
+  color: #da4453;
+  -webkit-transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+          transition: border 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  a:hover, a:focus {
+    color: #000;
+    text-decoration: underline; }
+  a [class^="icon-"], a [class*=" icon-"] {
+    text-decoration: none; }
+
 .nav, .nav--inline, .nav--float {
+  zoom: 1;
   margin-left: 0;
   list-style: none; }
-  .nav > li > a, .nav--inline > li > a, .nav--float > li > a {
-    display: block; }
+  .nav:before, .nav--inline:before, .nav--float:before, .nav:after, .nav--inline:after, .nav--float:after {
+    content: "";
+    display: table; }
+  .nav:after, .nav--inline:after, .nav--float:after {
+    clear: both; }
   .nav > li.active > a, .nav--inline > li.active > a, .nav--float > li.active > a {
     cursor: default; }
 
@@ -1209,6 +571,8 @@ table tbody tr:nth-child(odd) {
  */
 .nav--float > li {
   float: left; }
+  .nav--float > li > a {
+    display: block; }
 
 .button {
   display: inline-block;
@@ -1242,7 +606,7 @@ table tbody tr:nth-child(odd) {
     background: #de5967;
     color: #fff; }
   .button--primary:active {
-    background: #c42737;
+    background: #d62f3f;
     color: #fff; }
 
 /**
@@ -1252,7 +616,6 @@ h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, address, ul, ol, dl, table, field
   margin-bottom: 12px; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  color: #1b2032;
   font-weight: 700;
   line-height: 1;
   font-family: "Titillium Web", "Lucida Grande", "Lucida Sans", sans-serif;
@@ -1264,110 +627,318 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 h1, .h1 {
   margin-bottom: 24px;
   padding-top: 24px;
-  font-size: 48px;
-  font-size: 3rem; }
+  font-size: 36px;
+  font-size: 2.25rem; }
 
 h2, .h2 {
   margin-bottom: 24px;
   padding-top: 24px;
-  font-size: 32px;
-  font-size: 2rem; }
+  font-size: 24px;
+  font-size: 1.5rem; }
 
 h3, .h3 {
   padding-top: 12px;
-  font-size: 20px;
-  font-size: 1.25rem; }
+  font-size: 18px;
+  font-size: 1.125rem; }
 
-h4, .h4 {
+.lede {
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+/* General purpose
+======================================== */
+.wrapper {
+  clear: both;
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px; }
+  @media only screen and (min-width: 900px) {
+    .wrapper {
+      padding-top: 48px;
+      padding-bottom: 48px; } }
+
+.wrapper--alt {
+  background: #f2f2f2; }
+
+.wrapper--dark {
+  background: #1b2032;
+  color: #fff; }
+  .wrapper--dark a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff; }
+    .wrapper--dark a:hover {
+      text-decoration: none;
+      border-color: #fff; }
+
+.container {
+  margin: 0 auto;
+  padding-right: 12px;
+  padding-left: 12px;
+  width: auto;
+  max-width: 1020px;
+  list-style: none; }
+  @media only screen and (min-width: 700px) {
+    .container {
+      padding-right: 24px;
+      padding-left: 24px; } }
+
+.container--skinny {
+  max-width: 800px; }
+
+.grid {
+  zoom: 1;
+  margin-left: 0;
+  list-style: none;
   margin-bottom: 0;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5; }
+  margin-left: -4%; }
+  .grid:before, .grid:after {
+    content: "";
+    display: table; }
+  .grid:after {
+    clear: both; }
 
-h5, .h5 {
-  font-size: 16px;
-  font-size: 1rem; }
+.grid__cell {
+  float: left;
+  padding-left: 4%;
+  width: 100%; }
 
-h6, .h6 {
-  font-size: 16px;
-  font-size: 1rem; }
+@media only screen and (max-width: 699px) {
+  .palm-2up .grid__cell {
+    width: 50%; }
+    .palm-2up .grid__cell:nth-child(2n+1) {
+      clear: left; }
+  .palm-4up .grid__cell {
+    width: 25%; }
+    .palm-4up .grid__cell:nth-child(4n+1) {
+      clear: left; } }
 
-a {
-  color: #da4453;
-  -webkit-transition: background 0.3s ease, color 0.3s ease;
-          transition: background 0.3s ease, color 0.3s ease; }
-  a:hover, a:active, a:focus {
-    text-decoration: underline;
-    color: #000; }
-  a [class^="icon-"], a [class*=" icon-"] {
-    text-decoration: none; }
+@media only screen and (min-width: 700px) and (max-width: 899px) {
+  .lap-2up .grid__cell {
+    width: 50%; }
+    .lap-2up .grid__cell:nth-child(2n+1) {
+      clear: left; }
+  .lap-4up .grid__cell {
+    width: 25%; }
+    .lap-4up .grid__cell:nth-child(4n+1) {
+      clear: left; } }
+
+@media only screen and (min-width: 900px) {
+  .desk-2up .grid__cell {
+    width: 50%; }
+    .desk-2up .grid__cell:nth-child(2n+1) {
+      clear: left; }
+  .desk-4up .grid__cell {
+    width: 25%; }
+    .desk-4up .grid__cell:nth-child(4n+1) {
+      clear: left; } }
+
+/* Content
+======================================== */
+.text--center {
+  text-align: center; }
+
+.section-title {
+  padding-top: 12px;
+  text-align: center;
+  font-size: 24px;
+  font-size: 1.5rem; }
+  @media only screen and (min-width: 900px) {
+    .section-title {
+      margin-bottom: 48px;
+      padding-top: 24px;
+      font-weight: normal;
+      font-size: 36px;
+      font-size: 2.25rem; } }
+
+/* Sections
+======================================== */
+.intro {
+  padding-top: 0;
+  text-align: center; }
+
+.hook {
+  margin: 0 auto 24px;
+  padding-top: 0; }
+  @media only screen and (min-width: 700px) {
+    .hook {
+      padding-top: 24px; } }
+  @media only screen and (min-width: 900px) {
+    .hook {
+      padding-top: 48px;
+      font-size: 48px;
+      font-size: 3rem; } }
+
+.ronseal {
+  margin: 0 auto 24px;
+  font-size: 18px;
+  font-size: 1.125rem; }
+  @media only screen and (min-width: 900px) {
+    .ronseal {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+
+.cta {
+  margin: 0 0 24px; }
+  .cta .button {
+    border: 0 !important; }
+  .cta .stat {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-size: 0.75rem; }
+  @media only screen and (min-width: 900px) {
+    .cta {
+      margin-bottom: 48px; }
+      .cta .button {
+        padding: 18px 36px;
+        font-size: 24px;
+        font-size: 1.5rem; } }
+
+.hero {
+  border: 6px solid rgba(0, 0, 0, 0.5); }
+  @media only screen and (min-width: 900px) {
+    .hero {
+      margin: 0 auto 24px;
+      max-width: 75%; } }
+
+.usp {
+  zoom: 1;
+  margin-bottom: 24px; }
+  .usp:before, .usp:after {
+    content: "";
+    display: table; }
+  .usp:after {
+    clear: both; }
+
+.usp__thumb {
+  border: 1px solid #cccccc; }
+  @media only screen and (min-width: 700px) {
+    .usp__thumb {
+      float: left;
+      width: 50%; } }
+
+.usp__content {
+  overflow: hidden; }
+  .usp__content > :last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: 700px) {
+    .usp__content {
+      padding-left: 24px; } }
+
+@media only screen and (min-width: 900px) {
+  .usp__title {
+    font-size: 24px;
+    font-size: 1.5rem; } }
+
+.feature {
+  zoom: 1;
+  margin-bottom: 24px; }
+  .feature:before, .feature:after {
+    content: "";
+    display: table; }
+  .feature:after {
+    clear: both; }
+
+.feature__thumb {
+  float: left;
+  margin-right: 24px;
+  width: 100px;
+  border-radius: 100%; }
+  @media only screen and (max-width: 699px) {
+    .feature__thumb {
+      display: none; } }
+
+.feature__content {
+  overflow: hidden; }
+  .feature__content > :last-child {
+    margin-bottom: 0; }
+
+.new {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 3px;
+  padding: 3px 5px;
+  background: #4FA83D;
+  color: white;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px; }
+
+.support {
+  position: relative;
+  margin-bottom: 24px;
+  padding-top: 24px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-align: center; }
+  .support:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    margin-left: -25%;
+    height: 1px;
+    background: #e6e6e6; }
+  .support li {
+    display: inline;
+    margin: 0 12px 0 0; }
+  @media only screen and (min-width: 900px) {
+    .support {
+      margin-top: 24px;
+      padding-top: 48px; } }
+
+.logo {
+  margin: 0 auto 24px; }
+  @media only screen and (min-width: 900px) {
+    .logo {
+      margin-bottom: 48px; } }
+
+.quote {
+  margin-bottom: 24px; }
+  .quote > :last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: 900px) {
+    .quote {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+.quote__source {
+  font-size: 12px;
+  font-size: 0.75rem; }
+  .quote__source:before {
+    content: "\2014";
+    margin-right: 0.5em; }
 
 .site-header {
-  background: #1b2032;
-  color: #fff;
-  text-align: center; }
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 24px; }
   .site-header.alt {
     padding-top: 0;
     padding-bottom: 0; }
-  .site-header a {
-    color: #fff;
-    font-weight: bold; }
-  .site-header li {
+
+.site-logo {
+  border: 0 !important;
+  font-weight: bold;
+  font-size: 24px;
+  font-size: 1.5rem; }
+  @media only screen and (min-width: 700px) {
+    .site-logo {
+      float: left; } }
+
+.site-nav {
+  margin: 12px 0 0; }
+  .site-nav li {
     margin: 0 12px; }
-
-.site-title {
-  margin-bottom: 12px;
-  padding-top: 48px;
-  color: #fff;
-  font-weight: 400;
-  font-size: 58px;
-  font-size: 3.625rem; }
-  .site-title.alt {
-    padding-top: 12px;
-    font-size: 20px;
-    font-size: 1.25rem; }
-    @media (min-width: 600px) {
-      .site-title.alt {
-        font-size: 24px;
-        font-size: 1.5rem; } }
-    .site-title.alt a {
-      font-weight: normal; }
-    .site-title.alt span a {
-      color: #D3ED13; }
-      .site-title.alt span a:hover {
-        text-decoration: none;
-        color: white; }
-
-.site-lede {
-  margin-bottom: 24px;
-  font-size: 32px;
-  font-size: 2rem; }
-
-@media only screen and (max-width: 599px) {
-  .site-title {
-    padding-top: 12px;
-    font-size: 32px;
-    font-size: 2rem; }
-  .site-lede {
-    margin-bottom: 12px;
-    font-size: 20px;
-    font-size: 1.25rem; }
-  .site-header li:first-child {
-    display: block;
-    margin-bottom: 12px; }
-  .site-header .button {
-    display: block; }
-  h2 {
-    margin-bottom: 12px;
-    padding-top: 12px;
-    font-size: 20px;
-    font-size: 1.25rem; }
-  h3 {
-    font-size: 16px;
-    font-size: 1rem; }
-  .lede {
-    font-size: 16px;
-    font-size: 1rem; } }
+  @media only screen and (min-width: 700px) {
+    .site-nav {
+      float: right; }
+      .site-nav li {
+        margin-right: 0;
+        margin-left: 24px; } }
 
 .docs-nav {
   display: inline-block; }
@@ -1387,49 +958,23 @@ a {
         .docs-nav li a.active:hover {
           text-decoration: none; }
 
-.site-footer {
-  background: #1b2032;
-  color: #fff;
-  text-align: center; }
-  .site-footer a {
-    color: #fff;
-    font-weight: bold; }
+.credit__thumb {
+  float: right;
+  border: 0 !important;
+  width: 100px;
+  margin: 0 0 12px 24px; }
+  .credit__thumb img {
+    border: 1px solid rgba(255, 255, 255, 0.1); }
+  .credit__thumb:hover {
+    background: #e0180b; }
+  @media only screen and (min-width: 700px) {
+    .credit__thumb {
+      float: left;
+      margin: 0 24px 0 0; } }
 
-.social-links {
-  font-size: 30px;
-  font-size: 1.875rem; }
-  .social-links a {
-    padding: 0 12px; }
-    .social-links a:hover, .social-links a:focus {
-      text-decoration: none;
-      color: #da4453; }
-
-.wrapper {
-  clear: both;
-  width: 100%;
-  padding-top: 24px;
-  padding-bottom: 24px; }
-
-.wrapper--alt {
-  background: #f2f2f2; }
-
-.container {
-  margin: 0 auto;
-  padding-right: 12px;
-  padding-left: 12px;
-  width: auto;
-  max-width: 740px;
-  list-style: none; }
-  @media only screen and (min-width: 600px) and (max-width: 899px) {
-    .container {
-      padding-right: 24px;
-      padding-left: 24px; } }
-  @media only screen and (min-width: 788px) {
-    .container {
-      width: 740px; } }
-
-.text--center {
-  text-align: center; }
+@media only screen and (min-width: 700px) {
+  .credit__content {
+    overflow: hidden; } }
 
 /**
  * Base typography styles
@@ -1453,7 +998,7 @@ pre code {
   background: white;
   padding: 12px;
   border-radius: 0px; }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     .doc-wrapper {
       border-radius: 5px;
       border: 1px solid #CCC;
@@ -1462,7 +1007,7 @@ pre code {
     font-size: 20px;
     font-size: 1.25rem;
     text-align: left; }
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .doc-wrapper h1 {
         font-size: 34px;
         font-size: 2.125rem;
@@ -1473,7 +1018,7 @@ pre code {
     margin-right: -12px;
     border-radius: 0;
     padding: 12px; }
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .doc-wrapper > pre {
         padding: 36px;
         margin-bottom: 48px;
@@ -1494,11 +1039,11 @@ pre code {
   margin-top: 40px; }
   .highlight:last-child {
     margin-bottom: 0; }
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .highlight:last-child {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px; } }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     .highlight {
       padding: 36px;
       margin-left: -36px;
@@ -1506,7 +1051,7 @@ pre code {
       margin-bottom: 48px; } }
   .highlight pre {
     padding: 0;
-    max-width: 740px;
+    max-width: 1000px;
     display: block;
     white-space: pre;
     word-wrap: normal;
@@ -1520,14 +1065,14 @@ pre code {
   padding-top: 0; }
   .code-example p, .code-example h2, .code-example h3 {
     margin-bottom: 24px; }
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .code-example p, .code-example h2, .code-example h3 {
         margin-bottom: 24px; }
         .code-example p.flush, .code-example h2.flush, .code-example h3.flush {
           margin-bottom: 24px; } }
     .code-example p.flush, .code-example h2.flush, .code-example h3.flush {
       margin-bottom: 12px; }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     .code-example {
       padding-top: 24px; } }
   .code-example .container {
@@ -1539,7 +1084,7 @@ pre code {
     font-size: 1.375rem;
     padding-top: 12px;
     margin-bottom: 12px; }
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .code-example h3 {
         font-size: 30px;
         font-size: 1.875rem;
@@ -1612,25 +1157,33 @@ pre code {
   margin-top: 12px;
   padding-left: 12px; }
 
-.steps {
+.step-list {
   margin-left: 0;
   list-style: none; }
-  .steps > li {
-    position: relative;
-    border: 1px solid #cccccc;
-    padding: 12px 24px;
-    background: #fff;
-    border-radius: 5px; }
-    .steps > li + li {
-      margin-top: 24px; }
-      .steps > li + li:before {
-        content: "";
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        width: 1px;
-        height: 24px;
-        background: #cccccc; }
+
+.step {
+  position: relative;
+  margin-bottom: 24px;
+  border: 1px solid #cccccc;
+  padding: 12px 24px;
+  background: #fff;
+  border-radius: 5px; }
+  .step + .step:before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    width: 1px;
+    height: 24px;
+    background: #cccccc; }
+
+.clearfix, .container {
+  zoom: 1; }
+  .clearfix:before, .container:before, .clearfix:after, .container:after {
+    content: "";
+    display: table; }
+  .clearfix:after, .container:after {
+    clear: both; }
 
 section + section {
   border-top: 1px solid #e6e6e6; }
@@ -1663,6 +1216,26 @@ pre {
   pre code {
     color: #fff;
     line-height: 1.25; }
+
+.fl {
+  float: left;
+  margin-right: 24px; }
+
+.ct {
+  display: block;
+  margin-right: auto;
+  margin-left: auto; }
+
+.player {
+  position: relative;
+  height: 0;
+  padding-top: 56.25%; }
+  .player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome

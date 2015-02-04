@@ -1,5 +1,4 @@
 .button {
-
     display: inline-block;
     border: 0;
     padding: $half-spacing $base-spacing;
@@ -33,7 +32,6 @@
 }
 
 .button--primary {
-
     background: $red;
     color: $white;
 
@@ -44,7 +42,7 @@
     }
 
     &:active {
-        background: darken($red, 10%);
+        background: darken($red, 5%);
         color: $white;
     }
 }

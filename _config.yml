@@ -21,9 +21,6 @@ cssFile: "/css/core.min.css"
 env: "production"
 
 navigation:
- - page-label: home
-   label: "Get Started"
-   url: "#install"
  - page-label: docs
    label: "Documentation"
    url: /docs
@@ -49,8 +46,8 @@ docs-navigation:
     url: "/docs/options"
 
 links:
-  docs:         "https://github.com/shakyShane/browser-sync/wiki"
-  source:       "https://github.com/shakyShane/browser-sync"
+  docs:         "https://github.com/BrowserSync/browser-sync/wiki"
+  source:       "https://github.com/BrowserSync/browser-sync"
   twitter:      "https://twitter.com/browsersync"
   npm:          "https://npmjs.org/shakyshane/browser-sync"
   site-github:  "https://github.com/BrowserSync/website"
@@ -60,3 +57,6 @@ links:
   options:      "/docs/options"
   command-line: "/docs/command-line"
   api:          "/docs/api"
+  issues:       "https://github.com/BrowserSync/browser-sync/issues"
+  help:         "http://stackoverflow.com/questions/tagged/browser-sync"
+  videos:       "https://github.com/BrowserSync/browser-sync/wiki/Screencasts"

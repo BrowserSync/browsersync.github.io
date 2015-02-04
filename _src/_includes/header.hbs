@@ -1,11 +1,10 @@
-<header class="wrapper site-header{{#if_eq page.url "/index.html"}}{{else}} alt{{/if_eq}}" role="banner">
+<header class="wrapper wrapper--dark site-header{{#if_eq page.url "/index.html"}}{{else}} alt{{/if_eq}}" role="banner">
     <div class="container">
         {{#if_eq page.url "/index.html"}}
-            <h1 class="site-title">{{site.title}}</h1>
-            <p class="site-lede">{{site.tagline}}</p>
-            <ul class="nav--inline">
+            <a class="site-logo" href="/">{{site.title}}</a>
+            <ul class="nav--inline site-nav">
                 {{#each site.navigation}}
-                    <li><a href="{{this.url}}" {{#if @first}}class="button button--primary"{{/if}}>{{ this.label }}</a></li>
+                    <li><a href="{{this.url}}">{{ this.label }}</a></li>
                 {{/each}}
             </ul>
         {{else}}

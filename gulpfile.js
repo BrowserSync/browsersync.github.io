@@ -92,7 +92,7 @@ gulp.task("sass", function () {
  */
 gulp.task("watch", function () {
     gulp.watch("_src/scss/**/*", ["sass"]);
-    gulp.watch(["_src/**"], ["crossbow", browserSync.reload]);
+    gulp.watch(["_src/**", "_config.yml"], ["crossbow", browserSync.reload]);
 });
 
 /**

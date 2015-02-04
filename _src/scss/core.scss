@@ -9,20 +9,18 @@
 @import "vendor/normalize";
 @import "modules/reset";
 
-
-$float: true;
-@import "vendor/csswizardry-grids";
+// $float: true;
+// @import "vendor/csswizardry-grids";
 @import "highlighting/ir_black";
 
 @import "theme/base";
-
+@import "theme/links";
 @import "theme/nav";
 @import "theme/buttons";
 @import "theme/headings";
-@import "theme/links";
+@import "theme/layout";
 @import "theme/header";
 @import "theme/footer";
-@import "theme/layout";
 @import "theme/code";
 @import "theme/steps";
 @import "theme/misc";

@@ -12,6 +12,12 @@ var prettify    = require('gulp-jsbeautifier');
 var yaml        = require('js-yaml');
 
 /**
+ * Default task, running just `gulp` will compile the sass,
+ * compile the jekyll site, launch BrowserSync & watch files.
+ */
+gulp.task("default", ["serve", "watch"]);
+
+/**
  * Build documentation
  */
 gulp.task("docs-build", function (cb) {
@@ -94,12 +100,6 @@ gulp.task("watch", function () {
     gulp.watch("_src/scss/**/*", ["sass"]);
     gulp.watch(["_src/**", "_config.yml"], ["crossbow", browserSync.reload]);
 });
-
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
- */
-gulp.task("default", ["serve", "watch"]);
 
 /**
  * Create documentation from the BrowserSync Source code

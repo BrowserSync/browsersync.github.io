@@ -25,7 +25,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.0.0-rc3",
+    "browser-sync": "^2.0.0-rc6",
     "crossbow": "git://github.com/shakyshane/crossbow.js#v1-test",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",

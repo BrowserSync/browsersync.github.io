@@ -48,7 +48,7 @@ TYPOGRAPHY
 
 $sans: "Titillium Web", "Lucida Grande", "Lucida Sans",sans-serif;
 $serif: Georgia, serif;
-$mono: Consolas, Monaco, monospace;
+$mono: monospace;
 
 
 /**
@@ -78,7 +78,7 @@ $h6-size: 16px;
 /**
  * Fixed width
  */
-$mono-size: 14px;
+$mono-size: 16px;
 $mono-line-height: $base-line-height;
 $mono-font-family: $mono;
 

@@ -50,6 +50,7 @@ gulp.task("crossbow", function () {
  */
 gulp.task("serve", ["sass", "crossbow"], function() {
     browserSync({
+        files: "css/*.css",
         open: false,
         server: {
             baseDir: ["./"]
@@ -62,10 +63,15 @@ gulp.task("serve", ["sass", "crossbow"], function() {
  */
 gulp.task("serve-dist", function() {
     browserSync({
+        files: "css/**",
         open: false,
         server: {
             baseDir: "./"
         }
+    }, function (err, bs) {
+        bs.events.on("file:changed", function (data) {
+                console.log(data);
+        })
     });
 });
 
@@ -76,7 +82,7 @@ gulp.task("dist", ["build", "serve-dist"]);
  */
 gulp.task("sass", function () {
     browserSync.notify("Compiling SASS...");
-    return gulp.src(["_src/scss/core.scss"])
+    return gulp.src(["scss/core.scss"])
         .pipe(sass())
         .on("error", function(err){
             browserSync.notify(err.message, 3000);
@@ -84,12 +90,9 @@ gulp.task("sass", function () {
             this.emit("end");
         })
         .pipe(prefix())
-        .pipe(gulp.dest("css"))
         .pipe(minifyCSS({keepBreaks:true}))
-        .pipe(filter("**/*.css"))
         .pipe(rename("core.min.css"))
-        .pipe(gulp.dest("css"))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(gulp.dest("css"));
 });
 
 /**
@@ -97,8 +100,10 @@ gulp.task("sass", function () {
  * Watch html/md files, run crossbow & reload BrowserSync
  */
 gulp.task("watch", function () {
-    gulp.watch("_src/scss/**/*", ["sass"]);
-    gulp.watch(["_src/**", "_config.yml"], ["crossbow", browserSync.reload]);
+    gulp.watch("scss/**", ["sass"]);
+    gulp.watch(["_src/**", "_config.yml"], ["crossbow", function () {
+        browserSync.reload();
+    }]);
 });
 
 /**

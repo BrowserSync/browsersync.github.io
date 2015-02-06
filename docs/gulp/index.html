@@ -50,54 +50,54 @@
                     <a href="#gulp-install" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
                 <p>First, you&#39;ll need to install BrowserSync &amp; Gulp as development dependencies.</p>
-<div class="highlight"><pre><code class="html">$ npm install browser-sync gulp --save-dev</code></pre></div>
+<pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre>
 <p>Then, use them within your <code>gulpfile.js</code>:</p>
-<div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;gulp&#39;</span>);
-<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;browser-sync&#39;</span>);
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>);
 <span class="hljs-comment">// Static server</span>
-gulp.task(<span class="hljs-string">&#39;browser-sync&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
         server: {
-            baseDir: <span class="hljs-string">&quot;./&quot;</span>
+            baseDir: <span class="hljs-string">"./"</span>
         }
     });
 });
 <span class="hljs-comment">// or...</span>
-gulp.task(<span class="hljs-string">&#39;browser-sync&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
-        proxy: <span class="hljs-string">&quot;yourlocal.dev&quot;</span>
+        proxy: <span class="hljs-string">"yourlocal.dev"</span>
     });
-});</code></pre></div>
+});</code></pre>
                 <h3 id="gulp-sass-css">SASS + CSS Injecting
                     <a href="#gulp-sass-css" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
                 <p>Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
                 all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it&#39;s 
                 <em>finished</em> compiling - make sure you call reload <em>after</em> <code>gulp.dest</code></p>
-<div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;gulp&#39;</span>);
-<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;browser-sync&#39;</span>);
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>);
 <span class="hljs-keyword">var</span> reload      = browserSync.reload;
-<span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;gulp-sass&#39;</span>);
+<span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sass'</span>);
 <span class="hljs-comment">// browser-sync task for starting the server.</span>
-gulp.task(<span class="hljs-string">&#39;browser-sync&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
         server: {
-            baseDir: <span class="hljs-string">&quot;./&quot;</span>
+            baseDir: <span class="hljs-string">"./"</span>
         }
     });
 });
 <span class="hljs-comment">// Sass task, will run when any SCSS files change &amp; BrowserSync</span>
 <span class="hljs-comment">// will auto-update browsers</span>
-gulp.task(<span class="hljs-string">&#39;sass&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;scss/<em>*/</em>.scss&#39;</span>)
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/**/*.scss'</span>)
         .pipe(sass())
-        .pipe(gulp.dest(<span class="hljs-string">&#39;css&#39;</span>))
+        .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
         .pipe(reload({stream:<span class="hljs-literal">true</span>}));
 });
-<span class="hljs-comment">// Default task to be run with <code>gulp</code></span>
-gulp.task(<span class="hljs-string">&#39;default&#39;</span>, [<span class="hljs-string">&#39;sass&#39;</span>, <span class="hljs-string">&#39;browser-sync&#39;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    gulp.watch(<span class="hljs-string">&quot;scss/*.scss&quot;</span>, [<span class="hljs-string">&#39;sass&#39;</span>]);
-});</code></pre></div>
+<span class="hljs-comment">// Default task to be run with `gulp`</span>
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'sass'</span>, <span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    gulp.watch(<span class="hljs-string">"scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
+});</code></pre>
                 <h3 id="gulp-sass-maps">SASS &amp; Source Maps
                     <a href="#gulp-sass-maps" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
@@ -106,74 +106,74 @@ gulp.task(<span class="hljs-string">&#39;default&#39;</span>, [<span class="hljs
                 a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
                 <p>To fix this problem, you can use the <a href="https://www.npmjs.org/package/gulp-filter">gulp-filter</a> package to ensure that only <code>*.css</code>
                  files ever reach <code>.reload</code> - this way you&#39;ll still get CSS injecting.</p>
-<div class="highlight"><pre><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
-<span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-ruby-sass&quot;</span>);
-<span class="hljs-keyword">var</span> filter      = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;gulp-filter&#39;</span>);
-<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browser-sync&quot;</span>);
-gulp.task(<span class="hljs-string">&#39;sass&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;scss/<strong>/*.scss&#39;</span>)
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
+<span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-ruby-sass"</span>);
+<span class="hljs-keyword">var</span> filter      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-filter'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/**/*.scss'</span>)
         .pipe(sass({sourcemap: <span class="hljs-literal">true</span>}))
-        .pipe(gulp.dest(<span class="hljs-string">&#39;css&#39;</span>))<span class="hljs-comment">// Write the CSS &amp; Source maps</span>
-        .pipe(filter(<span class="hljs-string">&#39;</strong>/*.css&#39;</span>)) <span class="hljs-comment">// Filtering stream to only css files</span>
+        .pipe(gulp.dest(<span class="hljs-string">'css'</span>))<span class="hljs-comment">// Write the CSS &amp; Source maps</span>
+        .pipe(filter(<span class="hljs-string">'**/*.css'</span>)) <span class="hljs-comment">// Filtering stream to only css files</span>
         .pipe(browserSync.reload({stream:<span class="hljs-literal">true</span>}));
-});</code></pre></div>
+});</code></pre>
                 <h3 id="gulp-reload">Browser Reloading
                     <a href="#gulp-reload" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
                 <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you 
                 can do that easily by adding <code>.reload</code> to the array of tasks that will be run when files change. (make sure you <code>return</code>
                  the stream from your tasks to ensure the browser is reloaded at the correct time)</p>
-<div class="highlight"><pre><code class="js"><span class="hljs-comment">// start server</span>
-gulp.task(<span class="hljs-string">&#39;browser-sync&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<pre class='highlight'><code class="js"><span class="hljs-comment">// start server</span>
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
         server: {
-            baseDir: <span class="hljs-string">&quot;./&quot;</span>
+            baseDir: <span class="hljs-string">"./"</span>
         }
     });
 });
 <span class="hljs-comment">// process JS files and return the stream.</span>
-gulp.task(<span class="hljs-string">&#39;js&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;js/<em>js&#39;</span>)
+gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'js/*js'</span>)
         .pipe(browserify())
         .pipe(uglify())
-        .pipe(gulp.dest(<span class="hljs-string">&#39;dist/js&#39;</span>));
+        .pipe(gulp.dest(<span class="hljs-string">'dist/js'</span>));
 });
 <span class="hljs-comment">// use default task to launch BrowserSync and watch JS files</span>
-gulp.task(<span class="hljs-string">&#39;default&#39;</span>, [<span class="hljs-string">&#39;browser-sync&#39;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-comment">// add browserSync.reload to the tasks array to make</span>
     <span class="hljs-comment">// all browsers reload after tasks are complete.</span>
-    gulp.watch(<span class="hljs-string">&quot;js/</em>.js&quot;</span>, [<span class="hljs-string">&#39;js&#39;</span>, browserSync.reload]);
-});</code></pre></div>
+    gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js'</span>, browserSync.reload]);
+});</code></pre>
                 <h3 id="gulp-manual-reload">Manual Reloading
                     <a href="#gulp-manual-reload" class="page-anchor"><i class="icon icon-external-link"></i></a>
                 </h3>
                 <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually 
                 by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are 
                 changed, the browsers will be reloaded instead.</p>
-<div class="highlight"><pre><code class="js"><span class="hljs-comment">// Start the server</span>
-gulp.task(<span class="hljs-string">&#39;browser-sync&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Start the server</span>
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
         server: {
-            baseDir: <span class="hljs-string">&quot;./&quot;</span>
+            baseDir: <span class="hljs-string">"./"</span>
         }
     });
 });
 <span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
-gulp.task(<span class="hljs-string">&#39;sass&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&#39;scss/styles.scss&#39;</span>)
-        .pipe(sass({includePaths: [<span class="hljs-string">&#39;scss&#39;</span>]}))
-        .pipe(gulp.dest(<span class="hljs-string">&#39;css&#39;</span>))
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/styles.scss'</span>)
+        .pipe(sass({includePaths: [<span class="hljs-string">'scss'</span>]}))
+        .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
         .pipe(browserSync.reload({stream:<span class="hljs-literal">true</span>}));
 });
 <span class="hljs-comment">// Reload all Browsers</span>
-gulp.task(<span class="hljs-string">&#39;bs-reload&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'bs-reload'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     browserSync.reload();
 });
 <span class="hljs-comment">// Watch scss AND html files, doing different things with each.</span>
-gulp.task(<span class="hljs-string">&#39;default&#39;</span>, [<span class="hljs-string">&#39;browser-sync&#39;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    gulp.watch(<span class="hljs-string">&quot;scss/<em>.scss&quot;</span>, [<span class="hljs-string">&#39;sass&#39;</span>]);
-    gulp.watch(<span class="hljs-string">&quot;</em>.html&quot;</span>, [<span class="hljs-string">&#39;bs-reload&#39;</span>]);
-});</code></pre></div>
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    gulp.watch(<span class="hljs-string">"scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
+    gulp.watch(<span class="hljs-string">"*.html"</span>, [<span class="hljs-string">'bs-reload'</span>]);
+});</code></pre>
             </article>
         </div>
     </section>

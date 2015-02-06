@@ -1,16 +1,19 @@
 .site-header {
+
     text-align: center;
     padding-top: $base-spacing;
-    padding-bottom: $base-spacing;
+    padding-bottom: $base-spacing*2;
+
 
     &.alt {
+
         padding-top: 0;
         padding-bottom: 0;
-    }
 
-    // @include media-query(min, $lap-start) {
-    //     line-height: 1.5*$base-spacing;
-    // }
+        a {
+            border-bottom: 0;
+        }
+    }
 }
 
 .site-logo {

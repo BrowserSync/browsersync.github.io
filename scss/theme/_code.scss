@@ -62,7 +62,13 @@ $spacing: $base-spacing+$half-spacing;
 /**
  * The wrapper that is provided by the syntax highlighter
  */
-.highlight {
+pre.highlight {
+
+    padding: 0;
+    max-width: $page-width;
+    display: block;
+    white-space: pre;
+    word-wrap: normal;
 
     background: $navy;
     padding: $half-spacing;
@@ -71,6 +77,7 @@ $spacing: $base-spacing+$half-spacing;
     margin-bottom: $base-spacing;
     border: 1px solid lighten($navy, 10%);
     border-radius: 0;
+
     margin-top: 40px;
 
     &:last-child {
@@ -92,15 +99,6 @@ $spacing: $base-spacing+$half-spacing;
         margin-bottom: $base-spacing*2;
     }
 
-    pre {
-
-        padding: 0;
-        max-width: $page-width;
-        display: block;
-        white-space: pre;
-        word-wrap: normal;
-        margin: 0 auto;
-    }
 }
 
 /**

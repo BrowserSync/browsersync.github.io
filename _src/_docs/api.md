@@ -2,6 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync API"
 markdown: false
+sidebar: "_includes/api-sidebar.hbs"
 ---
 
 Our API is incredibly simple & powerful. You can use it to create your own

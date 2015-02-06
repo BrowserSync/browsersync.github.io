@@ -97,6 +97,8 @@ a [class*=" icon-"],a [class^=icon-]{text-decoration:none}
 .back-to-top{position:absolute;top:12px;right:0;font-size:14px;font-size:.875rem}
 @media only screen and (min-width:700px){.back-to-top{top:24px}}
 .sticky-nav{padding:12px}
+.sticky-nav .lede{display:none}
+@media only screen and (min-width:700px){.sticky-nav .lede{display:block}}
 .sticky-nav .nav,.sticky-nav .nav--float,.sticky-nav .nav--inline{margin-bottom:0}
 .sticky-nav li{display:none;border-bottom:1px solid #e1e1e1}
 .sticky-nav li a{padding:4px 0 4px 6px;display:block;color:#1b2032}

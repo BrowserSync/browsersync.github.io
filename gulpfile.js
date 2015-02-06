@@ -13,7 +13,8 @@ var yaml        = require('js-yaml');
 var siteData    = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
 
 siteData.docs = {
-    options: require("./_doc/options.json")
+    options: require("./_doc/options.json"),
+    api: require("./_doc/api.json")
 };
 
 /**

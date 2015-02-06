@@ -1,0 +1,168 @@
+[
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 24,
+        "itemtype": "method",
+        "name": "browserSync",
+        "params": [
+            {
+                "name": "config",
+                "description": "This is the main configuration for your BrowserSync instance and can contain any of the [available options]({{site.links.options}})\n If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the `snippet` mode",
+                "type": "Object",
+                "optional": true
+            },
+            {
+                "name": "cb",
+                "description": "If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This\nis useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.",
+                "type": "Function",
+                "optional": true
+            }
+        ],
+        "return": {
+            "description": "",
+            "type": "BrowserSync"
+        },
+        "class": "",
+        "module": "BrowserSync",
+        "preview": ".browserSync( config, cb )"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 35,
+        "description": "Register a plugin. Must implement at least a 'plugin' method that returns a\ncallable function.",
+        "itemtype": "method",
+        "name": "use",
+        "params": [
+            {
+                "name": "name",
+                "description": "The name of the plugin",
+                "type": "String"
+            },
+            {
+                "name": "module",
+                "description": "The object to be `required`.",
+                "type": "Object"
+            },
+            {
+                "name": "cb",
+                "description": "A callback function that will return any errors.",
+                "type": "Function",
+                "optional": true
+            }
+        ],
+        "class": "",
+        "module": "BrowserSync",
+        "preview": ".use( name, module, cb )"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 51,
+        "description": "The `reload` method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.",
+        "itemtype": "method",
+        "name": "reload",
+        "params": [
+            {
+                "name": "arg",
+                "description": "The file or files to be reloaded. For\ndetails and examples of Streams support, please see the [GulpJS]({{site.links.gulp}}) examples",
+                "type": "String | Array | Object",
+                "optional": true
+            }
+        ],
+        "return": {
+            "description": "",
+            "type": "*"
+        },
+        "class": "",
+        "module": "BrowserSync",
+        "preview": ".reload( arg )"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 61,
+        "description": "Helper method for browser notifications",
+        "itemtype": "method",
+        "name": "notify",
+        "params": [
+            {
+                "name": "msg",
+                "description": "Can be a simple message such as 'Connected' or HTML",
+                "type": "String | HTML"
+            },
+            {
+                "name": "timeout",
+                "description": "How long the message will remain in the browser. @since 1.3.0",
+                "type": "Number",
+                "optional": true
+            }
+        ],
+        "class": "",
+        "module": "BrowserSync",
+        "preview": ".notify( msg, timeout )"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 70,
+        "description": "This method will close any running server, stop file watching & exit the current process.",
+        "itemtype": "method",
+        "name": "exit",
+        "class": "",
+        "module": "BrowserSync",
+        "params": [],
+        "preview": ".exit()"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 77,
+        "description": "Method to pause file change events",
+        "itemtype": "method",
+        "name": "pause",
+        "class": "",
+        "module": "BrowserSync",
+        "params": [],
+        "preview": ".pause()"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 84,
+        "description": "Method to resume paused watchers",
+        "itemtype": "method",
+        "name": "resume",
+        "class": "",
+        "module": "BrowserSync",
+        "params": [],
+        "preview": ".resume()"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 118,
+        "description": "A simple true/false flag to determine if the current instance is paused",
+        "itemtype": "property",
+        "name": "paused",
+        "class": "",
+        "module": "BrowserSync",
+        "params": [],
+        "preview": ".paused"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 110,
+        "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
+        "itemtype": "property",
+        "name": "active",
+        "class": "",
+        "module": "BrowserSync",
+        "params": [],
+        "preview": ".active"
+    },
+    {
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "line": 95,
+        "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
+        "itemtype": "property",
+        "name": "emitter",
+        "class": "",
+        "module": "BrowserSync",
+        "params": [],
+        "preview": ".emitter"
+    }
+]

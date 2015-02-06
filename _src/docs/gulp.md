@@ -2,6 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync + Gulp.js"
 page-label: "gulp"
+sidebar: "_includes/gulp-sidebar.hbs"
 ---
 
 There's no official BrowserSync plugin for Gulp, because it's not needed! You simply `require` the module, utilise 

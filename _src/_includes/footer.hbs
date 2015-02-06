@@ -18,23 +18,6 @@
     </div>
 </footer><!-- end .site-footer -->
 
-<script type="text/javascript">
-    var nav = document.querySelector('.sticky-nav');
-    var toggle = document.querySelector('.nav-toggle-btn');
-    var toggleBtn = toggle.querySelector('a');
-
-    toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        nav.classList.toggle("active");
-        var state = toggle.classList.toggle("active");
-        if (state) {
-            toggleBtn.innerHTML = "Close X";
-        } else {
-            toggleBtn.innerHTML = "Menu";
-        }
-    });
-</script>
-
 {{#if_eq site.env "production"}}
     {{inc src="_includes/analytics.html" }}
 {{/if_eq}}

@@ -2,6 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync Command Line Usage"
 markdown: false
+sidebar: "_includes/cli-sidebar.hbs"
 items:
     - title: Files Examples
       slug: "files-example"
@@ -24,7 +25,7 @@ After install BrowserSync globally, you can run it like this:
 $ browser-sync start <options>
 {{/hl}}
 
-{{inc src="_includes/headerlink.html" title="Options" slug="#command-line-options" }}
+{{inc src="_includes/headerlink.html" title="Options" slug="command-line-options" }}
 
 {{inc src="_includes/snippets/commands/options.html" }}
 

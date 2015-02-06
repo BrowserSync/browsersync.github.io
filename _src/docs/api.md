@@ -2,6 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync API"
 markdown: false
+sidebar: "_includes/api-sidebar.hbs"
 ---
 
 Our API is incredibly simple & powerful. You can use it to create your own
@@ -12,7 +13,7 @@ you access to the public methods detailed below.
 {{ hl src="snippets/api/require.js" }}
 
 
-<h3 id="api-browserSync">browserSync( config, cb ) <a href="#api-browserSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-browserSync"><a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a></h3>
 
 
 
@@ -61,7 +62,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-reload">.reload( arg ) <a href="#api-reload" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-reload"><a href="#api-reload" class="page-anchor">.reload( arg )</a></h3>
 <p>The <code>reload</code> method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
 
 
@@ -97,7 +98,7 @@ browserSync.reload( { stream: true } );
 
 
 
-<h3 id="api-notify">.notify( msg, timeout ) <a href="#api-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-notify"><a href="#api-notify" class="page-anchor">.notify( msg, timeout )</a></h3>
 <p>Helper method for browser notifications</p>
 
 
@@ -136,7 +137,7 @@ browserSync.notify("This message will only last a second", 1000);
 
 
 
-<h3 id="api-exit">.exit() <a href="#api-exit" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-exit"><a href="#api-exit" class="page-anchor">.exit()</a></h3>
 <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
 
 
@@ -151,7 +152,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-pause">.pause() <a href="#api-pause" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-pause"><a href="#api-pause" class="page-anchor">.pause()</a></h3>
 <p>Method to pause file change events</p>
 
 
@@ -160,7 +161,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-resume">.resume() <a href="#api-resume" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-resume"><a href="#api-resume" class="page-anchor">.resume()</a></h3>
 <p>Method to resume paused watchers</p>
 
 
@@ -169,7 +170,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-paused">.paused <a href="#api-paused" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-paused"><a href="#api-paused" class="page-anchor">.paused</a></h3>
 <p>A simple true/false flag to determine if the current instance is paused</p>
 
 
@@ -178,7 +179,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-active"><a href="#api-active" class="page-anchor">.active</a></h3>
 <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
 
 
@@ -195,7 +196,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-emitter"><a href="#api-emitter" class="page-anchor">.emitter</a></h3>
 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
 You can use this to emit your own events, such as changed files, logging etc.</p>
 

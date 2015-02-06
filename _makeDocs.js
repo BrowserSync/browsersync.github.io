@@ -26,12 +26,16 @@ var data = require(doc);
 /**
  * Process API
  */
-var apiItems = docGen.prepareClassitems(data.classitems)
+var apiItems = docGen.prepareClassitems(data.classitems);
+
+fs.writeFileSync("./_doc/api.json", JSON.stringify(apiItems, null, 4));
+
+var compiledApi = apiItems
     .filter(removeExcluded)
     .map(previewTweaks)
     .reduce(buildMarkup, "");
 
-fs.writeFileSync("./_src/docs/api.md", mdTemp({data: apiItems}));
+fs.writeFileSync("./_src/docs/api.md", mdTemp({data: compiledApi}));
 
 /**
  * Process OPTIONS

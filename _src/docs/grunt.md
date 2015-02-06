@@ -2,6 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync + Grunt.js"
 page-label: "grunt"
+sidebar: "_includes/grunt-sidebar.hbs"
 ---
 
 We have an [official Plugin]({{site.links.grunt-github}}) for Grunt that makes it easy to incorporate

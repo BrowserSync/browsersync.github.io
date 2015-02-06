@@ -38,18 +38,34 @@
 </header><!-- .end .site-header -->
 
 <div class="site-body" role="main">
-    <section id="page-top" class="wrapper code-example gulp">
+    <section id="top" class="wrapper code-example gulp">
     <div class="container">
-        <article class="doc-wrapper">
-            <h1 class="text--center">BrowserSync + Gulp.js</h1>
-            <p>There&#39;s no official BrowserSync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise 
-            the <a href="/docs/api">API</a> and configure it with <a href="/docs/options">options</a>. The following are some common 
-            use-cases as seen in popular projects such as <a href="https://developers.google.com/web/starter-kit/">Google&#39;s web starter kit</a>
-            and many others.</p>
-            <h3 id="gulp-install" class="section-link">
-                <a href="#gulp-install" class="page-anchor">Install</a>
-            </h3>
-            <p>First, you&#39;ll need to install BrowserSync &amp; Gulp as development dependencies.</p>
+        <div class="grid">
+            <div class="grid__cell one-quarter">
+                <div class="sticky-nav">
+                    <p class="lede">Jump to...</p>
+                    <ul class="nav nav--stacked" id="sticky-nav">
+                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
+                        <li><a href="#gulp-install">Install</a></li>
+                        <li><a href="#gulp-sass-css">SASS + CSS Injecting</a></li>
+                        <li><a href="#gulp-sass-maps">SASS & Source Maps</a></li>
+                        <li><a href="#gulp-reload">Browser Reloading</a></li>
+                        <li><a href="#gulp-manual-reload">Manual Reloading</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid__cell three-quarters">
+                <article class="doc-wrapper">
+                    <h1 class="text--center">BrowserSync + Gulp.js</h1>
+                    <p>There&#39;s no official BrowserSync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise 
+                    the <a href="/docs/api">API</a> and configure it with <a href="/docs/options">options</a>. The following are some common 
+                    use-cases as seen in popular projects such as <a href="https://developers.google.com/web/starter-kit/">Google&#39;s web starter kit</a>
+                    and many others.</p>
+                    <h3 id="gulp-install" class="section-link">
+                        <a href="#gulp-install" class="page-anchor">Install</a>
+                        <a href="#top" class="back-to-top">^ TOP</a>
+                    </h3>
+                    <p>First, you&#39;ll need to install BrowserSync &amp; Gulp as development dependencies.</p>
 <pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre>
 <p>Then, use them within your <code>gulpfile.js</code>:</p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
@@ -68,12 +84,13 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
         proxy: <span class="hljs-string">"yourlocal.dev"</span>
     });
 });</code></pre>
-            <h3 id="gulp-sass-css" class="section-link">
-                <a href="#gulp-sass-css" class="page-anchor">SASS + CSS Injecting</a>
-            </h3>
-            <p>Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
-            all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it&#39;s 
-            <em>finished</em> compiling - make sure you call reload <em>after</em> <code>gulp.dest</code></p>
+                    <h3 id="gulp-sass-css" class="section-link">
+                        <a href="#gulp-sass-css" class="page-anchor">SASS + CSS Injecting</a>
+                        <a href="#top" class="back-to-top">^ TOP</a>
+                    </h3>
+                    <p>Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
+                    all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it&#39;s 
+                    <em>finished</em> compiling - make sure you call reload <em>after</em> <code>gulp.dest</code></p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>);
 <span class="hljs-keyword">var</span> reload      = browserSync.reload;
@@ -98,14 +115,15 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
 gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'sass'</span>, <span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     gulp.watch(<span class="hljs-string">"scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
 });</code></pre>
-            <h3 id="gulp-sass-maps" class="section-link">
-                <a href="#gulp-sass-maps" class="page-anchor">SASS &amp; Source Maps</a>
-            </h3>
-            <p>If you use <a href="https://www.npmjs.org/package/gulp-ruby-sass">gulp-ruby-sass</a> with the <code>sourcemap: true</code> option, additional <code>.map</code> 
-            files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
-            a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
-            <p>To fix this problem, you can use the <a href="https://www.npmjs.org/package/gulp-filter">gulp-filter</a> package to ensure that only <code>*.css</code>
-             files ever reach <code>.reload</code> - this way you&#39;ll still get CSS injecting.</p>
+                    <h3 id="gulp-sass-maps" class="section-link">
+                        <a href="#gulp-sass-maps" class="page-anchor">SASS &amp; Source Maps</a>
+                        <a href="#top" class="back-to-top">^ TOP</a>
+                    </h3>
+                    <p>If you use <a href="https://www.npmjs.org/package/gulp-ruby-sass">gulp-ruby-sass</a> with the <code>sourcemap: true</code> option, additional <code>.map</code> 
+                    files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
+                    a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
+                    <p>To fix this problem, you can use the <a href="https://www.npmjs.org/package/gulp-filter">gulp-filter</a> package to ensure that only <code>*.css</code>
+                     files ever reach <code>.reload</code> - this way you&#39;ll still get CSS injecting.</p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-ruby-sass"</span>);
 <span class="hljs-keyword">var</span> filter      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-filter'</span>);
@@ -117,12 +135,13 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
         .pipe(filter(<span class="hljs-string">'**/*.css'</span>)) <span class="hljs-comment">// Filtering stream to only css files</span>
         .pipe(browserSync.reload({stream:<span class="hljs-literal">true</span>}));
 });</code></pre>
-            <h3 id="gulp-reload" class="section-link">
-                <a href="#gulp-reload" class="page-anchor">Browser Reloading</a>
-            </h3>
-            <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you 
-            can do that easily by adding <code>.reload</code> to the array of tasks that will be run when files change. (make sure you <code>return</code>
-             the stream from your tasks to ensure the browser is reloaded at the correct time)</p>
+                    <h3 id="gulp-reload" class="section-link">
+                        <a href="#gulp-reload" class="page-anchor">Browser Reloading</a>
+                        <a href="#top" class="back-to-top">^ TOP</a>
+                    </h3>
+                    <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you 
+                    can do that easily by adding <code>.reload</code> to the array of tasks that will be run when files change. (make sure you <code>return</code>
+                     the stream from your tasks to ensure the browser is reloaded at the correct time)</p>
 <pre class='highlight'><code class="js"><span class="hljs-comment">// start server</span>
 gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
@@ -144,12 +163,13 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
     <span class="hljs-comment">// all browsers reload after tasks are complete.</span>
     gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js'</span>, browserSync.reload]);
 });</code></pre>
-            <h3 id="gulp-manual-reload" class="section-link">
-                <a href="#gulp-manual-reload" class="page-anchor">Manual Reloading</a>
-            </h3>
-            <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually 
-            by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are 
-            changed, the browsers will be reloaded instead.</p>
+                    <h3 id="gulp-manual-reload" class="section-link">
+                        <a href="#gulp-manual-reload" class="page-anchor">Manual Reloading</a>
+                        <a href="#top" class="back-to-top">^ TOP</a>
+                    </h3>
+                    <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually 
+                    by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are 
+                    changed, the browsers will be reloaded instead.</p>
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Start the server</span>
 gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
@@ -174,9 +194,26 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
     gulp.watch(<span class="hljs-string">"scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
     gulp.watch(<span class="hljs-string">"*.html"</span>, [<span class="hljs-string">'bs-reload'</span>]);
 });</code></pre>
-        </article>
+                </article>
+            </div>
+        </div>
     </div>
     </section>
+    <script type="text/javascript">
+        var nav = document.querySelector('.sticky-nav');
+        var toggle = document.querySelector('.nav-toggle-btn');
+        var toggleBtn = toggle.querySelector('a');
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            nav.classList.toggle("active");
+            var state = toggle.classList.toggle("active");
+            if (state) {
+                toggleBtn.innerHTML = "Close X";
+            } else {
+                toggleBtn.innerHTML = "Menu";
+            }
+        });
+    </script>
 </div>
 
 <footer class="wrapper wrapper--dark site-footer" role="contentinfo">
@@ -198,21 +235,6 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
         </div>
     </div>
 </footer><!-- end .site-footer -->
-<script type="text/javascript">
-    var nav = document.querySelector('.sticky-nav');
-    var toggle = document.querySelector('.nav-toggle-btn');
-    var toggleBtn = toggle.querySelector('a');
-    toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        nav.classList.toggle("active");
-        var state = toggle.classList.toggle("active");
-        if (state) {
-            toggleBtn.innerHTML = "Close X";
-        } else {
-            toggleBtn.innerHTML = "Menu";
-        }
-    });
-</script>
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
         (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),

@@ -38,12 +38,12 @@
 </header><!-- .end .site-header -->
 
 <div class="site-body" role="main">
-    <section id="page-top" class="wrapper code-example options">
+    <section id="top" class="wrapper code-example options">
     <div class="container">
         <div class="grid">
             <div class="grid__cell one-quarter">
                 <div class="sticky-nav">
-                    <p class="lede">Available Options</p>
+                    <p class="lede">Jump to...</p>
                     <ul class="nav nav--stacked" id="sticky-nav">
                         <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
                         <li><a href="#option-ui">ui</a></li>
@@ -639,6 +639,21 @@ socket: {
         </div>
     </div>
     </section>
+    <script type="text/javascript">
+        var nav = document.querySelector('.sticky-nav');
+        var toggle = document.querySelector('.nav-toggle-btn');
+        var toggleBtn = toggle.querySelector('a');
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            nav.classList.toggle("active");
+            var state = toggle.classList.toggle("active");
+            if (state) {
+                toggleBtn.innerHTML = "Close X";
+            } else {
+                toggleBtn.innerHTML = "Menu";
+            }
+        });
+    </script>
 </div>
 
 <footer class="wrapper wrapper--dark site-footer" role="contentinfo">
@@ -660,21 +675,6 @@ socket: {
         </div>
     </div>
 </footer><!-- end .site-footer -->
-<script type="text/javascript">
-    var nav = document.querySelector('.sticky-nav');
-    var toggle = document.querySelector('.nav-toggle-btn');
-    var toggleBtn = toggle.querySelector('a');
-    toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        nav.classList.toggle("active");
-        var state = toggle.classList.toggle("active");
-        if (state) {
-            toggleBtn.innerHTML = "Close X";
-        } else {
-            toggleBtn.innerHTML = "Menu";
-        }
-    });
-</script>
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
         (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),

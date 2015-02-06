@@ -62,6 +62,13 @@
 
     padding: $half-spacing;
 
+    .lede {
+        display: none;
+        @include media-query(min, $lap-start) {
+            display: block;
+        }
+    }
+
     .nav {
         margin-bottom: 0;
     }

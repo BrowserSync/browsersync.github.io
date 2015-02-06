@@ -214,16 +214,6 @@
     }
 }
 
-.hero {
-    border: $half-spacing/2 solid rgba(0,0,0,0.5);
-
-    @include media-query(min, $desk-start) {
-        margin: 0 auto $base-spacing;
-        max-width: 75%;
-    }
-}
-
-
 // USP Overview
 
 .overview {}

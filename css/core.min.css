@@ -129,8 +129,6 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .cta .stat{display:block;margin-top:12px;font-size:12px;font-size:.75rem}
 @media only screen and (min-width:900px){.cta{margin-bottom:48px}
 .cta .button{padding:18px 36px;font-size:24px;font-size:1.5rem}}
-.hero{border:6px solid rgba(0,0,0,.5)}
-@media only screen and (min-width:900px){.hero{margin:0 auto 24px;max-width:75%}}
 .usp{zoom:1;margin-bottom:24px}
 .usp:after,.usp:before{content:"";display:table}
 .usp:after{clear:both}
@@ -234,8 +232,8 @@ pre{overflow:auto;white-space:pre;white-space:pre-wrap;word-wrap:break-word;padd
 pre code{color:#fff;line-height:1.25}
 .fl{float:left;margin-right:24px}
 .ct{display:block;margin-right:auto;margin-left:auto}
-.player{position:relative;height:0;padding-top:56.25%}
-.player iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.player{font-size:0;border:6px solid rgba(0,0,0,.5)}
+@media only screen and (min-width:900px){.player{max-width:700px;margin:0 auto}}
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

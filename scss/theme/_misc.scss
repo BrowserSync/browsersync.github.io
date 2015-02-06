@@ -64,15 +64,13 @@ pre {
 }
 
 .player {
-    position: relative;
-    height: 0;
-    padding-top: (9 / 16) * 100%;
 
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    font-size: 0;
+
+    border: $half-spacing/2 solid rgba(0,0,0,0.5);
+
+    @include media-query(min, $desk-start) {
+        max-width: 700px;
+        margin: 0 auto;
     }
 }

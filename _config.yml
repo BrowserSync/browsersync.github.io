@@ -8,9 +8,6 @@ url: "http://browsersync.io"
 twitter_username: browsersync
 github_username: shakshane
 
-# Files config
-exclude: ["node_modules", "gulpfile.js", "package.json", "bower.json", "bower_components"]
-
 # Build settings
 markdown: kramdown
 permalink: pretty
@@ -46,6 +43,7 @@ docs-navigation:
     url: "/docs/options"
 
 links:
+  jh:           "http://www.wearejh.com/"
   docs:         "https://github.com/BrowserSync/browser-sync/wiki"
   source:       "https://github.com/BrowserSync/browser-sync"
   twitter:      "https://twitter.com/browsersync"
@@ -57,6 +55,11 @@ links:
   options:      "/docs/options"
   command-line: "/docs/command-line"
   api:          "/docs/api"
+  license:      "https://github.com/shakyShane/browser-sync/blob/master/LICENSE"
   issues:       "https://github.com/BrowserSync/browser-sync/issues"
   help:         "http://stackoverflow.com/questions/tagged/browser-sync"
   videos:       "https://github.com/BrowserSync/browser-sync/wiki/Screencasts"
+  crossbow:     "https://github.com/shakyShane/crossbow.js"
+
+img:
+  jh: "/img/jh-300-trans.png"

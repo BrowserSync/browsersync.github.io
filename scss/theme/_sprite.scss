@@ -1,0 +1,1943 @@
+.icon {
+    font-size: 16px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../img/icons/svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 1.25em 401.25em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../img/icons/svg/sprite.png");
+}
+
+.icon.add-to-list:before {
+    background-position: 0em 0em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.add-user:before {
+    background-position: 0em -1.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.address:before {
+    background-position: 0em -2.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.adjust:before {
+    background-position: 0em -3.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.air:before {
+    background-position: 0em -5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.aircraft:before {
+    background-position: 0em -6.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.aircraft-landing:before {
+    background-position: 0em -7.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.aircraft-take-off:before {
+    background-position: 0em -8.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.align-bottom:before {
+    background-position: 0em -10em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.align-horizontal-middle:before {
+    background-position: 0em -11.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.align-left:before {
+    background-position: 0em -12.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.align-right:before {
+    background-position: 0em -13.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.align-top:before {
+    background-position: 0em -15em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.align-vertical-middle:before {
+    background-position: 0em -16.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.archive:before {
+    background-position: 0em -17.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.area-graph:before {
+    background-position: 0em -18.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-bold-down:before {
+    background-position: 0em -20em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-bold-left:before {
+    background-position: 0em -21.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-bold-right:before {
+    background-position: 0em -22.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-bold-up:before {
+    background-position: 0em -23.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-down:before {
+    background-position: 0em -25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-left:before {
+    background-position: 0em -26.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-long-down:before {
+    background-position: 0em -27.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-long-left:before {
+    background-position: 0em -28.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-long-right:before {
+    background-position: 0em -30em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-long-up:before {
+    background-position: 0em -31.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-right:before {
+    background-position: 0em -32.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-up:before {
+    background-position: 0em -33.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-with-circle-down:before {
+    background-position: 0em -35em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-with-circle-left:before {
+    background-position: 0em -36.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-with-circle-right:before {
+    background-position: 0em -37.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.arrow-with-circle-up:before {
+    background-position: 0em -38.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.attachment:before {
+    background-position: 0em -40em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.awareness-ribbon:before {
+    background-position: 0em -41.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.back:before {
+    background-position: 0em -42.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.back-in-time:before {
+    background-position: 0em -43.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.bar-graph:before {
+    background-position: 0em -45em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.battery:before {
+    background-position: 0em -46.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.beamed-note:before {
+    background-position: 0em -47.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.bell:before {
+    background-position: 0em -48.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.blackboard:before {
+    background-position: 0em -50em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.block:before {
+    background-position: 0em -51.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.book:before {
+    background-position: 0em -52.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.bookmark:before {
+    background-position: 0em -53.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.bookmarks:before {
+    background-position: 0em -55em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.bowl:before {
+    background-position: 0em -56.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.box:before {
+    background-position: 0em -57.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.briefcase:before {
+    background-position: 0em -58.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.browser:before {
+    background-position: 0em -60em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.brush:before {
+    background-position: 0em -61.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.bucket:before {
+    background-position: 0em -62.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.cake:before {
+    background-position: 0em -63.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.calculator:before {
+    background-position: 0em -65em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.calendar:before {
+    background-position: 0em -66.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.camera:before {
+    background-position: 0em -67.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.ccw:before {
+    background-position: 0em -68.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chat:before {
+    background-position: 0em -70em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.check:before {
+    background-position: 0em -71.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-down:before {
+    background-position: 0em -72.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-left:before {
+    background-position: 0em -73.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-right:before {
+    background-position: 0em -75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-small-down:before {
+    background-position: 0em -76.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-small-left:before {
+    background-position: 0em -77.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-small-right:before {
+    background-position: 0em -78.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-small-up:before {
+    background-position: 0em -80em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-thin-down:before {
+    background-position: 0em -81.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-thin-left:before {
+    background-position: 0em -82.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-thin-right:before {
+    background-position: 0em -83.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-thin-up:before {
+    background-position: 0em -85em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-up:before {
+    background-position: 0em -86.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-with-circle-down:before {
+    background-position: 0em -87.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-with-circle-left:before {
+    background-position: 0em -88.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-with-circle-right:before {
+    background-position: 0em -90em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.chevron-with-circle-up:before {
+    background-position: 0em -91.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.circle:before {
+    background-position: 0em -92.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.circle-with-cross:before {
+    background-position: 0em -93.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.circle-with-minus:before {
+    background-position: 0em -95em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.circle-with-plus:before {
+    background-position: 0em -96.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.circular-graph:before {
+    background-position: 0em -97.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.clapperboard:before {
+    background-position: 0em -98.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.classic-computer:before {
+    background-position: 0em -100em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.clipboard:before {
+    background-position: 0em -101.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.clock:before {
+    background-position: 0em -102.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.cloud:before {
+    background-position: 0em -103.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.code:before {
+    background-position: 0em -105em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.cog:before {
+    background-position: 0em -106.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.colours:before {
+    background-position: 0em -107.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.compass:before {
+    background-position: 0em -108.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-fast-backward:before {
+    background-position: 0em -110em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-fast-forward:before {
+    background-position: 0em -111.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-jump-to-start:before {
+    background-position: 0em -112.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-next:before {
+    background-position: 0em -113.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-paus:before {
+    background-position: 0em -115em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-play:before {
+    background-position: 0em -116.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-record:before {
+    background-position: 0em -117.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-stop:before {
+    background-position: 0em -118.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.controller-volume:before {
+    background-position: 0em -120em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.copy:before {
+    background-position: 0em -121.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons:before {
+    background-position: 0em -122.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-attribution:before {
+    background-position: 0em -123.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-noderivs:before {
+    background-position: 0em -125em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-noncommercial-eu:before {
+    background-position: 0em -126.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-noncommercial-us:before {
+    background-position: 0em -127.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-public-domain:before {
+    background-position: 0em -128.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-remix:before {
+    background-position: 0em -130em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-share:before {
+    background-position: 0em -131.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.creative-commons-sharealike:before {
+    background-position: 0em -132.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.credit:before {
+    background-position: 0em -133.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.credit-card:before {
+    background-position: 0em -135em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.cross:before {
+    background-position: 0em -136.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.cup:before {
+    background-position: 0em -137.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.cw:before {
+    background-position: 0em -138.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.cycle:before {
+    background-position: 0em -140em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.database:before {
+    background-position: 0em -141.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.dial-pad:before {
+    background-position: 0em -142.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.direction:before {
+    background-position: 0em -143.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.document:before {
+    background-position: 0em -145em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.document-landscape:before {
+    background-position: 0em -146.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.documents:before {
+    background-position: 0em -147.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.dot-single:before {
+    background-position: 0em -148.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.dots-three-horizontal:before {
+    background-position: 0em -150em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.dots-three-vertical:before {
+    background-position: 0em -151.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.dots-two-horizontal:before {
+    background-position: 0em -152.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.dots-two-vertical:before {
+    background-position: 0em -153.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.download:before {
+    background-position: 0em -155em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.drink:before {
+    background-position: 0em -156.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.drive:before {
+    background-position: 0em -157.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.drop:before {
+    background-position: 0em -158.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.edit:before {
+    background-position: 0em -160em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.email:before {
+    background-position: 0em -161.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.emoji-flirt:before {
+    background-position: 0em -162.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.emoji-happy:before {
+    background-position: 0em -163.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.emoji-neutral:before {
+    background-position: 0em -165em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.emoji-sad:before {
+    background-position: 0em -166.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.erase:before {
+    background-position: 0em -167.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.eraser:before {
+    background-position: 0em -168.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.export:before {
+    background-position: 0em -170em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.eye:before {
+    background-position: 0em -171.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.eye-with-line:before {
+    background-position: 0em -172.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.feather:before {
+    background-position: 0em -173.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flag:before {
+    background-position: 0em -175em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flash:before {
+    background-position: 0em -176.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flashlight:before {
+    background-position: 0em -177.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flat-brush:before {
+    background-position: 0em -178.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flow-branch:before {
+    background-position: 0em -180em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flow-cascade:before {
+    background-position: 0em -181.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flow-line:before {
+    background-position: 0em -182.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flow-parallel:before {
+    background-position: 0em -183.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flow-tree:before {
+    background-position: 0em -185em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.flower:before {
+    background-position: 0em -186.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.folder:before {
+    background-position: 0em -187.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.folder-images:before {
+    background-position: 0em -188.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.folder-music:before {
+    background-position: 0em -190em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.folder-video:before {
+    background-position: 0em -191.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.forward:before {
+    background-position: 0em -192.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.funnel:before {
+    background-position: 0em -193.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.game-controller:before {
+    background-position: 0em -195em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.gauge:before {
+    background-position: 0em -196.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.globe:before {
+    background-position: 0em -197.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.graduation-cap:before {
+    background-position: 0em -198.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.grid:before {
+    background-position: 0em -200em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.hair-cross:before {
+    background-position: 0em -201.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.hand:before {
+    background-position: 0em -202.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.heart:before {
+    background-position: 0em -203.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.heart-outlined:before {
+    background-position: 0em -205em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.help:before {
+    background-position: 0em -206.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.help-with-circle:before {
+    background-position: 0em -207.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.home:before {
+    background-position: 0em -208.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.hour-glass:before {
+    background-position: 0em -210em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.image:before {
+    background-position: 0em -211.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.image-inverted:before {
+    background-position: 0em -212.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.images:before {
+    background-position: 0em -213.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.inbox:before {
+    background-position: 0em -215em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.infinity:before {
+    background-position: 0em -216.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.info:before {
+    background-position: 0em -217.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.info-with-circle:before {
+    background-position: 0em -218.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.install:before {
+    background-position: 0em -220em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.key:before {
+    background-position: 0em -221.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.keyboard:before {
+    background-position: 0em -222.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.lab-flask:before {
+    background-position: 0em -223.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.landline:before {
+    background-position: 0em -225em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.language:before {
+    background-position: 0em -226.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.laptop:before {
+    background-position: 0em -227.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.layers:before {
+    background-position: 0em -228.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.leaf:before {
+    background-position: 0em -230em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.level-down:before {
+    background-position: 0em -231.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.level-up:before {
+    background-position: 0em -232.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.lifebuoy:before {
+    background-position: 0em -233.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.light-bulb:before {
+    background-position: 0em -235em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.light-down:before {
+    background-position: 0em -236.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.light-up:before {
+    background-position: 0em -237.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.line-graph:before {
+    background-position: 0em -238.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.link:before {
+    background-position: 0em -240em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.list:before {
+    background-position: 0em -241.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.location:before {
+    background-position: 0em -242.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.location-pin:before {
+    background-position: 0em -243.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.lock:before {
+    background-position: 0em -245em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.lock-open:before {
+    background-position: 0em -246.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.log-out:before {
+    background-position: 0em -247.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.login:before {
+    background-position: 0em -248.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.loop:before {
+    background-position: 0em -250em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.magnet:before {
+    background-position: 0em -251.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.magnifying-glass:before {
+    background-position: 0em -252.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.mail:before {
+    background-position: 0em -253.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.man:before {
+    background-position: 0em -255em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.map:before {
+    background-position: 0em -256.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.mask:before {
+    background-position: 0em -257.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.medal:before {
+    background-position: 0em -258.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.megaphone:before {
+    background-position: 0em -260em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.menu:before {
+    background-position: 0em -261.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.merge:before {
+    background-position: 0em -262.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.message:before {
+    background-position: 0em -263.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.mic:before {
+    background-position: 0em -265em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.minus:before {
+    background-position: 0em -266.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.mobile:before {
+    background-position: 0em -267.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.modern-mic:before {
+    background-position: 0em -268.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.moon:before {
+    background-position: 0em -270em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.mouse:before {
+    background-position: 0em -271.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.music:before {
+    background-position: 0em -272.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.network:before {
+    background-position: 0em -273.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.new:before {
+    background-position: 0em -275em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.new-message:before {
+    background-position: 0em -276.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.news:before {
+    background-position: 0em -277.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.note:before {
+    background-position: 0em -278.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.notification:before {
+    background-position: 0em -280em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.old-mobile:before {
+    background-position: 0em -281.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.old-phone:before {
+    background-position: 0em -282.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.open-book:before {
+    background-position: 0em -283.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.palette:before {
+    background-position: 0em -285em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.paper-plane:before {
+    background-position: 0em -286.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.pencil:before {
+    background-position: 0em -287.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.phone:before {
+    background-position: 0em -288.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.pie-chart:before {
+    background-position: 0em -290em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.pin:before {
+    background-position: 0em -291.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.plus:before {
+    background-position: 0em -292.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.popup:before {
+    background-position: 0em -293.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.power-plug:before {
+    background-position: 0em -295em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.price-ribbon:before {
+    background-position: 0em -296.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.price-tag:before {
+    background-position: 0em -297.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.print:before {
+    background-position: 0em -298.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.progress-empty:before {
+    background-position: 0em -300em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.progress-full:before {
+    background-position: 0em -301.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.progress-one:before {
+    background-position: 0em -302.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.progress-two:before {
+    background-position: 0em -303.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.publish:before {
+    background-position: 0em -305em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.quote:before {
+    background-position: 0em -306.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.radio:before {
+    background-position: 0em -307.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.remove-user:before {
+    background-position: 0em -308.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.reply:before {
+    background-position: 0em -310em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.reply-all:before {
+    background-position: 0em -311.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.resize-100:before {
+    background-position: 0em -312.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.resize-full-screen:before {
+    background-position: 0em -313.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.retweet:before {
+    background-position: 0em -315em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.rocket:before {
+    background-position: 0em -316.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.round-brush:before {
+    background-position: 0em -317.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.rss:before {
+    background-position: 0em -318.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.ruler:before {
+    background-position: 0em -320em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.save:before {
+    background-position: 0em -321.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.scissors:before {
+    background-position: 0em -322.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.select-arrows:before {
+    background-position: 0em -323.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.share:before {
+    background-position: 0em -325em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.share-alternitive:before {
+    background-position: 0em -326.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.shareable:before {
+    background-position: 0em -327.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.shield:before {
+    background-position: 0em -328.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.shop:before {
+    background-position: 0em -330em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.shopping-bag:before {
+    background-position: 0em -331.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.shopping-basket:before {
+    background-position: 0em -332.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.shopping-cart:before {
+    background-position: 0em -333.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.shuffle:before {
+    background-position: 0em -335em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.signal:before {
+    background-position: 0em -336.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.sound:before {
+    background-position: 0em -337.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.sound-mix:before {
+    background-position: 0em -338.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.sound-mute:before {
+    background-position: 0em -340em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.sports-club:before {
+    background-position: 0em -341.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.spreadsheet:before {
+    background-position: 0em -342.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.squared-cross:before {
+    background-position: 0em -343.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.squared-minus:before {
+    background-position: 0em -345em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.squared-plus:before {
+    background-position: 0em -346.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.star:before {
+    background-position: 0em -347.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.star-outlined:before {
+    background-position: 0em -348.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.stopwatch:before {
+    background-position: 0em -350em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.suitcase:before {
+    background-position: 0em -351.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.swap:before {
+    background-position: 0em -352.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.sweden:before {
+    background-position: 0em -353.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.switch:before {
+    background-position: 0em -355em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.tablet:before {
+    background-position: 0em -356.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.tag:before {
+    background-position: 0em -357.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.text:before {
+    background-position: 0em -358.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.text-document:before {
+    background-position: 0em -360em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.text-document-inverted:before {
+    background-position: 0em -361.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.thermometer:before {
+    background-position: 0em -362.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.thumbs-down:before {
+    background-position: 0em -363.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.thumbs-up:before {
+    background-position: 0em -365em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.thunder-cloud:before {
+    background-position: 0em -366.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.ticket:before {
+    background-position: 0em -367.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.time-slot:before {
+    background-position: 0em -368.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.tools:before {
+    background-position: 0em -370em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.traffic-cone:before {
+    background-position: 0em -371.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.trash:before {
+    background-position: 0em -372.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.tree:before {
+    background-position: 0em -373.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.triangle-down:before {
+    background-position: 0em -375em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.triangle-left:before {
+    background-position: 0em -376.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.triangle-right:before {
+    background-position: 0em -377.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.triangle-up:before {
+    background-position: 0em -378.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.trophy:before {
+    background-position: 0em -380em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.tv:before {
+    background-position: 0em -381.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.typing:before {
+    background-position: 0em -382.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.uninstall:before {
+    background-position: 0em -383.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.unread:before {
+    background-position: 0em -385em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.untag:before {
+    background-position: 0em -386.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.upload:before {
+    background-position: 0em -387.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.upload-to-cloud:before {
+    background-position: 0em -388.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.user:before {
+    background-position: 0em -390em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.users:before {
+    background-position: 0em -391.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.v-card:before {
+    background-position: 0em -392.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.video:before {
+    background-position: 0em -393.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.vinyl:before {
+    background-position: 0em -395em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.voicemail:before {
+    background-position: 0em -396.25em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.wallet:before {
+    background-position: 0em -397.5em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.warning:before {
+    background-position: 0em -398.75em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.water:before {
+    background-position: 0em -400em;
+    width: 1.25em;
+    height: 1.25em;
+}
+

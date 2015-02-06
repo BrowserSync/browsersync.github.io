@@ -192,13 +192,28 @@
     }
 }
 
+
+
 .feature__content {
+    position: relative;
+    padding-left: 100px;
     overflow: hidden;
 
     > :last-child {
         margin-bottom: 0;
     }
 }
+
+.feature__icon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    .icon {
+        @include font-size(40px);
+    }
+}
+
 
 .feature__title {}
 

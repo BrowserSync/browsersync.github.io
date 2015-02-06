@@ -7,15 +7,11 @@ var rename      = require("gulp-rename");
 var prefix      = require("gulp-autoprefixer");
 var cp          = require("child_process");
 var filter      = require("gulp-filter");
+var svgSprite   = require("gulp-svg-sprites");
 var crossbow    = require("crossbow");
 var prettify    = require('gulp-jsbeautifier');
 var yaml        = require('js-yaml');
-var siteData    = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
 
-siteData.docs = {
-    options: require("./_doc/options.json"),
-    api: require("./_doc/api.json")
-};
 
 /**
  * Default task, running just `gulp` will compile the sass,
@@ -34,6 +30,13 @@ gulp.task("docs-build", function (cb) {
  * Build the Crossbow Site
  */
 gulp.task("crossbow", function () {
+
+    var siteData    = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
+
+    siteData.docs = {
+        options: require("./_doc/options.json"),
+        api: require("./_doc/api.json")
+    };
 
     return gulp.src([
         "_src/*.hbs",
@@ -75,9 +78,7 @@ gulp.task("serve-dist", function() {
             baseDir: "./"
         }
     }, function (err, bs) {
-        bs.events.on("file:changed", function (data) {
-                console.log(data);
-        })
+
     });
 });
 
@@ -99,6 +100,17 @@ gulp.task("sass", function () {
         .pipe(minifyCSS({keepBreaks:true}))
         .pipe(rename("core.min.css"))
         .pipe(gulp.dest("css"));
+});
+
+gulp.task('sprites', function () {
+    return gulp.src('img/svg/*.svg')
+        .pipe(svgSprite({
+            baseSize: 16,
+            cssFile: "../../scss/theme/_sprite.scss",
+            svgPath: "../img/icons/svg/sprite.svg",
+            pngPath: "../img/icons/svg/sprite.png"
+        }))
+        .pipe(gulp.dest("img/icons"));
 });
 
 /**

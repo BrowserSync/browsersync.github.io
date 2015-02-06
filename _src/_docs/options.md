@@ -2,6 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync options"
 page-label: "options"
+sidebar: "_includes/options-sidebar.hbs"
 markdown: false
 ---
 
@@ -11,6 +12,6 @@ it as the [first argument](/docs/api/#api-browserSync) (for GulpJS and normal AP
 still use all of these options, but you need to provide them as detailed in the [BrowserSync Grunt Documentation]({{site.links.grunt}})
 {{/md}}
 
-{{hl src="snippets/options/require.js"}}
+{{hl src="snippets/options/require.js" }}
 
 {: data :}

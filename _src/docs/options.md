@@ -2,6 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync options"
 page-label: "options"
+sidebar: "_includes/options-sidebar.hbs"
 markdown: false
 ---
 
@@ -11,10 +12,10 @@ it as the [first argument](/docs/api/#api-browserSync) (for GulpJS and normal AP
 still use all of these options, but you need to provide them as detailed in the [BrowserSync Grunt Documentation]({{site.links.grunt}})
 {{/md}}
 
-{{hl src="snippets/options/require.js"}}
+{{hl src="snippets/options/require.js" }}
 
 
-<h3 id="option-ui">ui <a href="#option-ui" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-ui"><a href="#option-ui" class="page-anchor">ui</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
     
@@ -55,7 +56,7 @@ ui: false
 
 {{/hl}}
 
-<h3 id="option-files">files <a href="#option-files" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-files"><a href="#option-files" class="page-anchor">files</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Array | String</span>
     
@@ -84,7 +85,7 @@ files: "app/css/**"
 files: ["app/css/*.css", "app/**.*.html", "app/js/**/*.js"]
 {{/hl}}
 
-<h3 id="option-watchOptions">watchOptions <a href="#option-watchOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-watchOptions"><a href="#option-watchOptions" class="page-anchor">watchOptions</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
     
@@ -108,7 +109,7 @@ watchOptions: {
 }
 {{/hl}}
 
-<h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-server"><a href="#option-server" class="page-anchor">server</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object | Boolean</span>
     
@@ -177,7 +178,7 @@ server: {
 }
 {{/hl}}
 
-<h3 id="option-proxy">proxy <a href="#option-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-proxy"><a href="#option-proxy" class="page-anchor">proxy</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Boolean</span>
     
@@ -201,7 +202,7 @@ proxy: "localhost:8888"
 proxy: "localhost/site1"
 {{/hl}}
 
-<h3 id="option-port">port <a href="#option-port" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-port"><a href="#option-port" class="page-anchor">port</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Number</span>
     
@@ -218,7 +219,7 @@ proxy: "localhost/site1"
 port: 8080
 {{/hl}}
 
-<h3 id="option-https">https <a href="#option-https" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-https"><a href="#option-https" class="page-anchor">https</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -238,7 +239,7 @@ port: 8080
 https: true
 {{/hl}}
 
-<h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-ghostMode"><a href="#option-ghostMode" class="page-anchor">ghostMode</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
     
@@ -271,7 +272,7 @@ ghostMode: {
 ghostMode: false
 {{/hl}}
 
-<h3 id="option-logLevel">logLevel <a href="#option-logLevel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-logLevel"><a href="#option-logLevel" class="page-anchor">logLevel</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
     
@@ -295,7 +296,7 @@ logLevel: "info"
 logLevel: "silent"
 {{/hl}}
 
-<h3 id="option-logPrefix">logPrefix <a href="#option-logPrefix" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-logPrefix"><a href="#option-logPrefix" class="page-anchor">logPrefix</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
     
@@ -319,7 +320,7 @@ logPrefix: "My Awesome Project"
 // [My Awesome Project] File changed: "index.html"
 {{/hl}}
 
-<h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-logConnections"><a href="#option-logConnections" class="page-anchor">logConnections</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -339,7 +340,7 @@ logConnections: true
 logConnections: false
 {{/hl}}
 
-<h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-logFileChanges"><a href="#option-logFileChanges" class="page-anchor">logFileChanges</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -359,7 +360,7 @@ logFileChanges: true
 logFileChanges: false
 {{/hl}}
 
-<h3 id="option-logSnippet">logSnippet <a href="#option-logSnippet" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-logSnippet"><a href="#option-logSnippet" class="page-anchor">logSnippet</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">: Boolean</span>
     
@@ -379,7 +380,7 @@ logFileChanges: false
 logSnippet: false
 {{/hl}}
 
-<h3 id="option-snippetOptions">snippetOptions <a href="#option-snippetOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-snippetOptions"><a href="#option-snippetOptions" class="page-anchor">snippetOptions</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
     
@@ -423,7 +424,7 @@ snippetOptions: {
 }
 {{/hl}}
 
-<h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-tunnel"><a href="#option-tunnel" class="page-anchor">tunnel</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Boolean</span>
     
@@ -444,7 +445,7 @@ tunnel: true
 tunnel: "my-private-site"
 {{/hl}}
 
-<h3 id="option-online">online <a href="#option-online" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-online"><a href="#option-online" class="page-anchor">online</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -466,7 +467,7 @@ online: true
 online: false
 {{/hl}}
 
-<h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-open"><a href="#option-open" class="page-anchor">open</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean | String</span>
     
@@ -496,7 +497,7 @@ open: "external"
 open: "tunnel"
 {{/hl}}
 
-<h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-browser"><a href="#option-browser" class="page-anchor">browser</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Array</span>
     
@@ -516,7 +517,7 @@ browser: "google chrome"
 browser: ["google chrome", "firefox"]
 {{/hl}}
 
-<h3 id="option-xip">xip <a href="#option-xip" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-xip"><a href="#option-xip" class="page-anchor">xip</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -535,7 +536,7 @@ as it allows you to configure domains such as <code>*.xip.io</code> in your kit 
 xip: true
 {{/hl}}
 
-<h3 id="option-reloadOnRestart">reloadOnRestart <a href="#option-reloadOnRestart" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-reloadOnRestart"><a href="#option-reloadOnRestart" class="page-anchor">reloadOnRestart</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -552,7 +553,7 @@ xip: true
 
 {{/hl}}
 
-<h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-notify"><a href="#option-notify" class="page-anchor">notify</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -570,7 +571,7 @@ xip: true
 notify: false
 {{/hl}}
 
-<h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-scrollProportionally"><a href="#option-scrollProportionally" class="page-anchor">scrollProportionally</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -586,7 +587,7 @@ notify: false
 scrollProportionally: false // Sync viewports to TOP position
 {{/hl}}
 
-<h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-scrollThrottle"><a href="#option-scrollThrottle" class="page-anchor">scrollThrottle</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Number</span>
     
@@ -602,7 +603,7 @@ scrollProportionally: false // Sync viewports to TOP position
 scrollThrottle: 100 // only send scroll events every 100 milliseconds
 {{/hl}}
 
-<h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-reloadDelay"><a href="#option-reloadDelay" class="page-anchor">reloadDelay</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Number</span>
     
@@ -619,7 +620,7 @@ scrollThrottle: 100 // only send scroll events every 100 milliseconds
 reloadDelay: 2000
 {{/hl}}
 
-<h3 id="option-injectChanges">injectChanges <a href="#option-injectChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-injectChanges"><a href="#option-injectChanges" class="page-anchor">injectChanges</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -639,7 +640,7 @@ injectChanges: true,
 injectChanges: false,
 {{/hl}}
 
-<h3 id="option-startPath">startPath <a href="#option-startPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-startPath"><a href="#option-startPath" class="page-anchor">startPath</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Null</span>
     
@@ -656,7 +657,7 @@ injectChanges: false,
 startPath: "/info.php"
 {{/hl}}
 
-<h3 id="option-minify">minify <a href="#option-minify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-minify"><a href="#option-minify" class="page-anchor">minify</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -674,7 +675,7 @@ startPath: "/info.php"
 minify: false
 {{/hl}}
 
-<h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-host"><a href="#option-host" class="page-anchor">host</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
     
@@ -691,7 +692,7 @@ minify: false
 host: "192.168.1.1"
 {{/hl}}
 
-<h3 id="option-codeSync">codeSync <a href="#option-codeSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-codeSync"><a href="#option-codeSync" class="page-anchor">codeSync</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -708,7 +709,7 @@ host: "192.168.1.1"
 codeSync: true,
 {{/hl}}
 
-<h3 id="option-timestamps">timestamps <a href="#option-timestamps" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-timestamps"><a href="#option-timestamps" class="page-anchor">timestamps</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
@@ -725,7 +726,7 @@ codeSync: true,
 timestamps: false
 {{/hl}}
 
-<h3 id="option-scriptPath">scriptPath <a href="#option-scriptPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-scriptPath"><a href="#option-scriptPath" class="page-anchor">scriptPath</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Function</span>
     
@@ -750,7 +751,7 @@ scriptPath: function (path) {
 }
 {{/hl}}
 
-<h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="option-socket"><a href="#option-socket" class="page-anchor">socket</a> <a href="#top" class="back-to-top">^ TOP</a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
     

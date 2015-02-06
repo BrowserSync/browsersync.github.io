@@ -2,10 +2,28 @@
 layout: "default.hbs"
 ---
 <section id="page-top" class="wrapper code-example {{page.page-label}}">
-    <div class="container">
-        <article class="doc-wrapper">
-            <h1 class="text--center">{{page.title}}</h1>
-            {{ content }}
-        </article>
+
+{{#if page.sidebar}}
+<div class="container">
+    <div class="grid">
+        <div class="grid__cell one-quarter">
+            {{inc src=page.sidebar}}
+        </div>
+        <div class="grid__cell three-quarters">
+            <article class="doc-wrapper">
+                <h1 class="text--center">{{page.title}}</h1>
+                {{ content }}
+            </article>
+        </div>
     </div>
+</div>
+{{else}}
+<div class="container">
+    <article class="doc-wrapper">
+        <h1 class="text--center">{{page.title}}</h1>
+        {{ content }}
+    </article>
+</div>
+{{/if}}
+
 </section>

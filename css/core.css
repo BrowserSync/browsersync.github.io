@@ -94,18 +94,9 @@ a [class*=" icon-"],a [class^=icon-]{text-decoration:none}
 .nav--inline>li,.nav--inline>li>a{display:inline-block}
 .nav--float>li{float:left}
 .nav--float>li>a{display:block}
-.back-to-top{position:absolute;top:12px;right:0;font-size:14px;font-size:.875rem}
-@media only screen and (min-width:700px){.back-to-top{top:24px}}
 .sticky-nav{padding:12px}
-.sticky-nav .nav,.sticky-nav .nav--float,.sticky-nav .nav--inline{margin-bottom:0}
-.sticky-nav li{display:none;border-bottom:1px solid #e1e1e1}
-.sticky-nav li a{padding:4px 0 4px 6px;display:block;color:#1b2032}
-.sticky-nav li a:focus,.sticky-nav li a:hover{text-decoration:none;background:#eee}
-.sticky-nav li.nav-toggle-btn{display:block}
-.sticky-nav li.nav-toggle-btn a{background:#e1e1e1}
-@media only screen and (min-width:700px){.sticky-nav li{display:block}
-.sticky-nav li.nav-toggle-btn{display:none}}
-.sticky-nav.active ul li{display:block}
+.sticky-nav ul li{display:none}
+.sticky-nav ul li a,.sticky-nav ul li.nav-toggle-btn,.sticky-nav.active ul li{display:block}
 .button{display:inline-block;border:0;padding:12px 24px;width:auto;vertical-align:middle;background:#ccc;color:#da4453;font-weight:700;font-size:16px;font-size:1rem;line-height:1;text-align:center;cursor:pointer;border-radius:3px}
 .button:focus,.button:hover{background:#ccc;color:#000;text-decoration:none}
 .button:active{background:#000;color:#fff}
@@ -210,7 +201,7 @@ pre.highlight:last-child{margin-bottom:0}
 .code-example h2.flush,.code-example h3.flush,.code-example p.flush{margin-bottom:12px}
 @media (min-width:700px){.code-example{padding-top:24px}}
 .code-example .container{padding-top:0;padding-left:0;padding-right:0}
-.code-example h3{font-size:22px;font-size:1.375rem;padding-top:12px;margin-bottom:12px;position:relative}
+.code-example h3{font-size:22px;font-size:1.375rem;padding-top:12px;margin-bottom:12px}
 .code-example h3 a{color:#1b2032}
 @media (min-width:700px){.code-example h3{font-size:30px;font-size:1.875rem;padding-top:36px;margin-bottom:12px;border-top:0}}
 .code-example h3 .icon{font-size:20px;font-size:1.25rem;margin-left:6px}

@@ -143,6 +143,11 @@ pre.highlight {
         @include font-size(22px);
         padding-top: $half-spacing;
         margin-bottom: $half-spacing;
+        position: relative;
+
+        a {
+            color: $navy;
+        }
 
         @media (min-width: $lap-start) {
 
@@ -170,7 +175,6 @@ pre.highlight {
 
         ul {
 
-//            margin-left: $base-spacing;
             margin-bottom: $base-spacing*2;
 
             li {

@@ -9,7 +9,6 @@ _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
 var mdTemp          = _.template(fs.readFileSync("./_src/_docs/api.md", "utf-8"));
 var optTemp         = _.template(fs.readFileSync("./_src/_docs/options.md", "utf-8"));
-//var commandLineTemp = _.template(fs.readFileSync("./_src/_docs/command-line.md", "utf-8"));
 
 function getTemplate(name) {
 
@@ -39,17 +38,15 @@ fs.writeFileSync("./_src/docs/api.md", mdTemp({data: apiItems}));
  *
  */
 
-var optItems = docGen.prepareOptions(data.classitems)
+var out = docGen.prepareOptions(data.classitems);
+
+fs.writeFileSync("./_doc/options.json", JSON.stringify(out, null, 4));
+
+var optItems = out
     .reduce(optionsMarkup, "");
 
 fs.writeFileSync("./_src/docs/options.md", optTemp({data: optItems}));
 
-//var commandOpts = docGen.prepareCommandLineOptions(opts);
-//var temp = getTemplate("command-line")({options: commandOpts});
-//
-//fs.writeFileSync("./_src/docs/command-line.md", commandLineTemp({
-//    data: temp
-//}));
 
 /**
  * Resolve path to snippets

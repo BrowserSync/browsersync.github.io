@@ -39,21 +39,21 @@
 
 <div class="site-body" role="main">
     <section id="page-top" class="wrapper code-example docs">
-        <div class="container">
-            <article class="doc-wrapper">
-                <h1 class="text--center">BrowserSync Documentation</h1>
-                <p>Here you can find all the information you&#39;ll need to begin using BrowserSync. We have extensive information covering 
-                command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
-                <ul>
-                <li><a href="/docs/gulp">+ Gulp</a></li>
-                <li><a href="/docs/grunt">+ Grunt</a></li>
-                <li><a href="/docs/api">API</a></li>
-                <li><a href="/docs/command-line">Command line</a></li>
-                <li><a href="/docs/options">Options</a></li>
-                </ul>
-                <p>This site is <a href="https://github.com/BrowserSync/website">open source on Github</a> &amp; we welcome corrections/improvements.</p>
-            </article>
-        </div>
+    <div class="container">
+        <article class="doc-wrapper">
+            <h1 class="text--center">BrowserSync Documentation</h1>
+            <p>Here you can find all the information you&#39;ll need to begin using BrowserSync. We have extensive information covering 
+            command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
+            <ul>
+            <li><a href="/docs/gulp">+ Gulp</a></li>
+            <li><a href="/docs/grunt">+ Grunt</a></li>
+            <li><a href="/docs/api">API</a></li>
+            <li><a href="/docs/command-line">Command line</a></li>
+            <li><a href="/docs/options">Options</a></li>
+            </ul>
+            <p>This site is <a href="https://github.com/BrowserSync/website">open source on Github</a> &amp; we welcome corrections/improvements.</p>
+        </article>
+    </div>
     </section>
 </div>
 
@@ -76,6 +76,21 @@
         </div>
     </div>
 </footer><!-- end .site-footer -->
+<script type="text/javascript">
+    var nav = document.querySelector('.sticky-nav');
+    var toggle = document.querySelector('.nav-toggle-btn');
+    var toggleBtn = toggle.querySelector('a');
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        nav.classList.toggle("active");
+        var state = toggle.classList.toggle("active");
+        if (state) {
+            toggleBtn.innerHTML = "Close X";
+        } else {
+            toggleBtn.innerHTML = "Menu";
+        }
+    });
+</script>
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
         (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),

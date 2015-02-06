@@ -10,6 +10,11 @@ var filter      = require("gulp-filter");
 var crossbow    = require("crossbow");
 var prettify    = require('gulp-jsbeautifier');
 var yaml        = require('js-yaml');
+var siteData    = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
+
+siteData.docs = {
+    options: require("./_doc/options.json")
+};
 
 /**
  * Default task, running just `gulp` will compile the sass,
@@ -38,7 +43,7 @@ gulp.task("crossbow", function () {
         cwd: "_src",
         prettyUrls: true,
         data: {
-            site: yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'))
+            site: siteData
         }
     }))
     .pipe(gulp.dest("./"));

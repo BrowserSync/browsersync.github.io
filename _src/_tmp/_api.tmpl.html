@@ -1,10 +1,10 @@
 
-<h3 id="api-{:name:}"><a href="#api-{:name:}" class="page-anchor">{: preview :}</a></h3>
+<h3 id="api-{:name:}"><a href="#api-{:name:}" class="page-anchor">{: preview :}</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 {: description :}
 <% if (params.length) { %>
 <% params.forEach(function(param) { %>
 <ul class="param-list" id="api-{:name:}-{: param.name :}">
-    <li class="name">{: param.name :} <a href="#api-{:name:}-{: param.name :}" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="name"><a href="#api-{:name:}-{: param.name :}" class="page-anchor">{: param.name :}</a></li>
     <li class="type">Type: <span class="color-teal">{: param.type :}</span>
         <% if (param.optional) { %><span class="recede">[optional]</span><% } %>
     </li>

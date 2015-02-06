@@ -13,12 +13,12 @@ you access to the public methods detailed below.
 {{ hl src="snippets/api/require.js" }}
 
 
-<h3 id="api-browserSync"><a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a></h3>
+<h3 id="api-browserSync"><a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 
 
 
 <ul class="param-list" id="api-browserSync-config">
-    <li class="name">config <a href="#api-browserSync-config" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="name"><a href="#api-browserSync-config" class="page-anchor">config</a></li>
     <li class="type">Type: <span class="color-teal">Object</span>
         <span class="recede">[optional]</span>
     </li>
@@ -28,7 +28,7 @@ you access to the public methods detailed below.
 </ul>
 
 <ul class="param-list" id="api-browserSync-cb">
-    <li class="name">cb <a href="#api-browserSync-cb" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="name"><a href="#api-browserSync-cb" class="page-anchor">cb</a></li>
     <li class="type">Type: <span class="color-teal">Function</span>
         <span class="recede">[optional]</span>
     </li>
@@ -62,13 +62,13 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-reload"><a href="#api-reload" class="page-anchor">.reload( arg )</a></h3>
+<h3 id="api-reload"><a href="#api-reload" class="page-anchor">.reload( arg )</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>The <code>reload</code> method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
 
 
 
 <ul class="param-list" id="api-reload-arg">
-    <li class="name">arg <a href="#api-reload-arg" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="name"><a href="#api-reload-arg" class="page-anchor">arg</a></li>
     <li class="type">Type: <span class="color-teal">String | Array | Object</span>
         <span class="recede">[optional]</span>
     </li>
@@ -98,13 +98,13 @@ browserSync.reload( { stream: true } );
 
 
 
-<h3 id="api-notify"><a href="#api-notify" class="page-anchor">.notify( msg, timeout )</a></h3>
+<h3 id="api-notify"><a href="#api-notify" class="page-anchor">.notify( msg, timeout )</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>Helper method for browser notifications</p>
 
 
 
 <ul class="param-list" id="api-notify-msg">
-    <li class="name">msg <a href="#api-notify-msg" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="name"><a href="#api-notify-msg" class="page-anchor">msg</a></li>
     <li class="type">Type: <span class="color-teal">String | HTML</span>
         
     </li>
@@ -113,7 +113,7 @@ browserSync.reload( { stream: true } );
 </ul>
 
 <ul class="param-list" id="api-notify-timeout">
-    <li class="name">timeout <a href="#api-notify-timeout" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="name"><a href="#api-notify-timeout" class="page-anchor">timeout</a></li>
     <li class="type">Type: <span class="color-teal">Number</span>
         <span class="recede">[optional]</span>
     </li>
@@ -137,7 +137,7 @@ browserSync.notify("This message will only last a second", 1000);
 
 
 
-<h3 id="api-exit"><a href="#api-exit" class="page-anchor">.exit()</a></h3>
+<h3 id="api-exit"><a href="#api-exit" class="page-anchor">.exit()</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
 
 
@@ -152,7 +152,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-pause"><a href="#api-pause" class="page-anchor">.pause()</a></h3>
+<h3 id="api-pause"><a href="#api-pause" class="page-anchor">.pause()</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>Method to pause file change events</p>
 
 
@@ -161,7 +161,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-resume"><a href="#api-resume" class="page-anchor">.resume()</a></h3>
+<h3 id="api-resume"><a href="#api-resume" class="page-anchor">.resume()</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>Method to resume paused watchers</p>
 
 
@@ -170,7 +170,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-paused"><a href="#api-paused" class="page-anchor">.paused</a></h3>
+<h3 id="api-paused"><a href="#api-paused" class="page-anchor">.paused</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>A simple true/false flag to determine if the current instance is paused</p>
 
 
@@ -179,7 +179,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-active"><a href="#api-active" class="page-anchor">.active</a></h3>
+<h3 id="api-active"><a href="#api-active" class="page-anchor">.active</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
 
 
@@ -196,7 +196,7 @@ browserSync(config, function (err, bs) {
 
 
 
-<h3 id="api-emitter"><a href="#api-emitter" class="page-anchor">.emitter</a></h3>
+<h3 id="api-emitter"><a href="#api-emitter" class="page-anchor">.emitter</a><a href="#top" class="back-to-top">^ TOP</a></h3>
 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
 You can use this to emit your own events, such as changed files, logging etc.</p>
 

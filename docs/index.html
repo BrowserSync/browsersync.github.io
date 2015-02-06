@@ -38,21 +38,31 @@
 </header><!-- .end .site-header -->
 
 <div class="site-body" role="main">
-    <section id="top" class="wrapper code-example docs">
+    <section id="top" class="wrapper code-example">
     <div class="container">
-        <article class="doc-wrapper">
-            <h1 class="text--center">BrowserSync Documentation</h1>
-            <p>Here you can find all the information you&#39;ll need to begin using BrowserSync. We have extensive information covering 
-            command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
-            <ul>
-            <li><a href="/docs/gulp">+ Gulp</a></li>
-            <li><a href="/docs/grunt">+ Grunt</a></li>
-            <li><a href="/docs/api">API</a></li>
-            <li><a href="/docs/command-line">Command line</a></li>
-            <li><a href="/docs/options">Options</a></li>
-            </ul>
-            <p>This site is <a href="https://github.com/BrowserSync/website">open source on Github</a> &amp; we welcome corrections/improvements.</p>
-        </article>
+        <div class="grid">
+            <div class="grid__cell one-quarter">
+                <div class="sticky-nav">
+                    <p class="lede">Sections</p>
+                    <ul class="nav nav--stacked" id="sticky-nav">
+                        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                        <li><a href="/docs/gulp">+ Gulp</a></li>
+                        <li><a href="/docs/grunt">+ Grunt</a></li>
+                        <li><a href="/docs/api">API</a></li>
+                        <li><a href="/docs/command-line">Command line</a></li>
+                        <li><a href="/docs/options">Options</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid__cell three-quarters">
+                <article class="doc-wrapper">
+                    <h1 class="text--center">BrowserSync Documentation</h1>
+                    <p>Here you can find all the information you&#39;ll need to begin using BrowserSync. We have extensive information covering 
+                    command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
+                    <p>This site is <a href="https://github.com/BrowserSync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
+                </article>
+            </div>
+        </div>
     </div>
     </section>
     <script type="text/javascript">

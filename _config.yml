@@ -48,7 +48,7 @@ links:
   source:       "https://github.com/BrowserSync/browser-sync"
   twitter:      "https://twitter.com/browsersync"
   npm:          "https://npmjs.org/shakyshane/browser-sync"
-  site-github:  "https://github.com/BrowserSync/website"
+  site-github:  "https://github.com/BrowserSync/browsersync.github.io"
   grunt-github: "https://github.com/shakyShane/grunt-browser-sync"
   gulp:         "/docs/gulp"
   grunt:        "/docs/grunt"

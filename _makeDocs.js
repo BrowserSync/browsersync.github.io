@@ -26,16 +26,15 @@ var data = require(doc);
 /**
  * Process API
  */
-var apiItems = docGen.prepareClassitems(data.classitems);
+var apiItems = docGen.prepareClassitems(data.classitems)
+    .filter(removeExcluded)
+    .map(previewTweaks);
 
 fs.writeFileSync("./_doc/api.json", JSON.stringify(apiItems, null, 4));
 
-var compiledApi = apiItems
-    .filter(removeExcluded)
-    .map(previewTweaks)
-    .reduce(buildMarkup, "");
+//var compiledApi .reduce(buildMarkup, "");
 
-fs.writeFileSync("./_src/docs/api.md", mdTemp({data: compiledApi}));
+//fs.writeFileSync("./_src/docs/api.md", mdTemp({data: compiledApi}));
 
 /**
  * Process OPTIONS
@@ -49,7 +48,7 @@ fs.writeFileSync("./_doc/options.json", JSON.stringify(out, null, 4));
 var optItems = out
     .reduce(optionsMarkup, "");
 
-fs.writeFileSync("./_src/docs/options.md", optTemp({data: optItems}));
+//fs.writeFileSync("./_src/docs/options.md", optTemp({data: optItems}));
 
 
 /**

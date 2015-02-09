@@ -11,5 +11,3 @@ simply `require` the BrowserSync module like you would any other. This will give
 you access to the public methods detailed below.
 
 {{ hl src="snippets/api/require.js" }}
-
-{: data :}

@@ -24,35 +24,8 @@
         },
         "class": "",
         "module": "BrowserSync",
-        "preview": ".browserSync( config, cb )"
-    },
-    {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
-        "line": 35,
-        "description": "Register a plugin. Must implement at least a 'plugin' method that returns a\ncallable function.",
-        "itemtype": "method",
-        "name": "use",
-        "params": [
-            {
-                "name": "name",
-                "description": "The name of the plugin",
-                "type": "String"
-            },
-            {
-                "name": "module",
-                "description": "The object to be `required`.",
-                "type": "Object"
-            },
-            {
-                "name": "cb",
-                "description": "A callback function that will return any errors.",
-                "type": "Function",
-                "optional": true
-            }
-        ],
-        "class": "",
-        "module": "BrowserSync",
-        "preview": ".use( name, module, cb )"
+        "preview": "browserSync( config, cb )",
+        "snippetpath": "_includes/snippets/api/browserSync.js"
     },
     {
         "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
@@ -74,7 +47,8 @@
         },
         "class": "",
         "module": "BrowserSync",
-        "preview": ".reload( arg )"
+        "preview": ".reload( arg )",
+        "snippetpath": "_includes/snippets/api/reload.js"
     },
     {
         "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
@@ -97,7 +71,8 @@
         ],
         "class": "",
         "module": "BrowserSync",
-        "preview": ".notify( msg, timeout )"
+        "preview": ".notify( msg, timeout )",
+        "snippetpath": "_includes/snippets/api/notify.js"
     },
     {
         "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
@@ -108,7 +83,8 @@
         "class": "",
         "module": "BrowserSync",
         "params": [],
-        "preview": ".exit()"
+        "preview": ".exit()",
+        "snippetpath": "_includes/snippets/api/exit.js"
     },
     {
         "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
@@ -152,7 +128,8 @@
         "class": "",
         "module": "BrowserSync",
         "params": [],
-        "preview": ".active"
+        "preview": ".active",
+        "snippetpath": "_includes/snippets/api/active.js"
     },
     {
         "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
@@ -163,6 +140,7 @@
         "class": "",
         "module": "BrowserSync",
         "params": [],
-        "preview": ".emitter"
+        "preview": ".emitter",
+        "snippetpath": "_includes/snippets/api/emitter.js"
     }
 ]

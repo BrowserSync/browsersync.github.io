@@ -1,4 +1,6 @@
 var _    = require("lodash");
+var fs   = require("fs");
+var path = require("path");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
 /**
@@ -96,6 +98,12 @@ function isApiMethod(item) {
     return item.module === "BrowserSync";
 }
 
+function addSnippetPath(item) {
+    if (fs.existsSync(path.resolve("./_src/_includes/snippets/api/%s.js".replace("%s", item.name)))) {
+        item.snippetpath = "_includes/snippets/api/%s.js".replace("%s", item.name);
+    }
+    return item;
+}
 /**
  * Main exported function for preparing view data
  * @param items
@@ -109,6 +117,7 @@ function prepareClassitems(items) {
             .map(addParams)
             .map(addPreview)
             .map(fixParams)
+            .map(addSnippetPath)
             .sort(sortItems);
     }
     return items;

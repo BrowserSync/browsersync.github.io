@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/css/core.min.css"/>
 </head>
 
-<body>
+<body id="page-top">
 
 <header class="wrapper wrapper--dark site-header alt" role="banner">
     <div class="container">
@@ -56,21 +56,22 @@
             <div class="grid__cell three-quarters">
                 <article class="doc-wrapper">
                     <h1 class="text--center">BrowserSync + Grunt.js</h1>
-                    <p>We have an <a href="https://github.com/shakyShane/grunt-browser-sync">official Plugin</a> for Grunt that makes it easy to incorporate
+                    
+                    We have an [official Plugin](https://github.com/shakyShane/grunt-browser-sync) for Grunt that makes it easy to incorporate
                     BrowserSync into your development workflow. Below are a few examples of common configurations to get you started - use them
-                    as a jump-start but don&#39;t forget you can also use any of the other <a href="/docs/options">BrowserSync options</a> as well.</p>
+                    as a jump-start but don't forget you can also use any of the other [BrowserSync options](/docs/options) as well.
                     <h3 id="grunt-install" class="section-link">
                         <a href="#grunt-install" class="page-anchor">Install</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>First, you&#39;ll need to install the BrowserSync Plugin...</p>
+                    First, you'll need to install the BrowserSync Plugin...
 <pre class='highlight'><code class="html">$ npm install grunt-browser-sync --save-dev</code></pre>
-<p>... and then add this line to your <code>Gruntfile.js</code></p>
+... and then add this line to your `Gruntfile.js`
 <pre class='highlight'><code class="js">grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
 </code></pre>
                     <h3 id="grunt-server" class="section-link">
                         <a href="#grunt-server" class="page-anchor">Static File Server</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     The simplest example would be watching CSS files and using the built-in server for static
                     HTML/CSS/JS files. This config alone will launch a mini-server (using your current working directory
@@ -87,9 +88,9 @@
 }</code></pre>
                     <h3 id="grunt-proxy" class="section-link">
                         <a href="#grunt-proxy" class="page-anchor">Proxy</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>If you already have a local server setup (with your vhosts etc), just tell BrowserSync all about it &amp; it will do the rest for you.</p>
+                    If you already have a local server setup (with your vhosts etc), just tell BrowserSync all about it & it will do the rest for you.
 <pre class='highlight'><code class="js">browserSync: {
     dev: {
         bsFiles: {
@@ -102,12 +103,12 @@
 }</code></pre>
                     <h3 id="grunt-watch" class="section-link">
                         <a href="#grunt-watch" class="page-anchor">+ other watch tasks</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>Browser Sync is not a replacement for regular <code>watch</code> tasks (such as compiling SASS, LESS etc), 
-                    they are designed to be used together. If you intend to do this, you&#39;ll need to set <code>watchTask: true</code> and be sure to call 
+                    Browser Sync is not a replacement for regular `watch` tasks (such as compiling SASS, LESS etc), 
+                    they are designed to be used together. If you intend to do this, you'll need to set `watchTask: true` and be sure to call 
                     the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers 
-                    (without a page refresh), your config for all three tasks might look something like this:</p>
+                    (without a page refresh), your config for all three tasks might look something like this:
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This shows a full config file!</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(grunt)</span> </span>{
     grunt.initConfig({

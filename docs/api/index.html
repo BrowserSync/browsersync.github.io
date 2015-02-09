@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/css/core.min.css"/>
 </head>
 
-<body>
+<body id="page-top">
 
 <header class="wrapper wrapper--dark site-header alt" role="banner">
     <div class="container">
@@ -67,9 +67,9 @@
                     simply `require` the BrowserSync module like you would any other. This will give 
                     you access to the public methods detailed below.
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);</code></pre>
-<h3 id="browserSync" class="section-link">
+<h3 id="api-browserSync" class="section-link">
     <a href="#browserSync" class="page-anchor">browserSync( config, cb )</a>
-    <a href="#top" class="back-to-top">^ TOP</a>
+    <a href="#page-top" class="back-to-top">^ TOP</a>
 </h3>
 <ul class="param-list" id="api-config">
     <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
@@ -103,9 +103,9 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
     }
 });</code></pre>
                         
-                    <h3 id="reload" class="section-link">
+                    <h3 id="api-reload" class="section-link">
                         <a href="#reload" class="page-anchor">.reload( arg )</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.
                     <ul class="param-list" id="api-arg">
@@ -126,9 +126,9 @@ browserSync.reload( [<span class="hljs-string">"styles.css"</span>, <span class=
 <span class="hljs-comment">// streams support</span>
 browserSync.reload( { stream: <span class="hljs-literal">true</span> } );</code></pre>
                         
-                    <h3 id="notify" class="section-link">
+                    <h3 id="api-notify" class="section-link">
                         <a href="#notify" class="page-anchor">.notify( msg, timeout )</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     Helper method for browser notifications
                     <ul class="param-list" id="api-msg">
@@ -152,36 +152,36 @@ browserSync.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is 
 <span class="hljs-comment">// Since 1.3.0, specify a timeout</span>
 browserSync.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre>
                         
-                    <h3 id="exit" class="section-link">
+                    <h3 id="api-exit" class="section-link">
                         <a href="#exit" class="page-anchor">.exit()</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     This method will close any running server, stop file watching &amp; exit the current process.
 <pre class='highlight'><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     browserSync.exit();
 });</code></pre>
                         
-                    <h3 id="pause" class="section-link">
+                    <h3 id="api-pause" class="section-link">
                         <a href="#pause" class="page-anchor">.pause()</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     Method to pause file change events
                         
-                    <h3 id="resume" class="section-link">
+                    <h3 id="api-resume" class="section-link">
                         <a href="#resume" class="page-anchor">.resume()</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     Method to resume paused watchers
                         
-                    <h3 id="paused" class="section-link">
+                    <h3 id="api-paused" class="section-link">
                         <a href="#paused" class="page-anchor">.paused</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     A simple true/false flag to determine if the current instance is paused
                         
-                    <h3 id="active" class="section-link">
+                    <h3 id="api-active" class="section-link">
                         <a href="#active" class="page-anchor">.active</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.
 <pre class='highlight'><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
@@ -189,9 +189,9 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
     <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
 });</code></pre>
                         
-                    <h3 id="emitter" class="section-link">
+                    <h3 id="api-emitter" class="section-link">
                         <a href="#emitter" class="page-anchor">.emitter</a>
-                        <a href="#top" class="back-to-top">^ TOP</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
                     The internal Event Emitter used by the running BrowserSync instance (if there is one).
                     You can use this to emit your own events, such as changed files, logging etc.

@@ -25,8 +25,8 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.0.0-rc8",
-    "crossbow": "^0.3.0",
+    "browser-sync": "^2.0.0-rc10",
+    "crossbow": "^0.3.1",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-copy": "0.0.2",

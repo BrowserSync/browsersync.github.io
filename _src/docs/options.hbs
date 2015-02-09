@@ -1,0 +1,46 @@
+---
+layout: "documentation.hbs"
+title: "BrowserSync options"
+page-label: "options"
+sidebar: "_includes/options-sidebar.hbs"
+---
+
+{{#md}}
+These are all the options that you can configure when using BrowserSync. Create a single object and pass 
+it as the [first argument](/docs/api/#api-browserSync) (for GulpJS and normal API usage). If you're using Grunt, you can 
+still use all of these options, but you need to provide them as detailed in the [BrowserSync Grunt Documentation]({{site.links.grunt}})
+{{/md}}
+
+{{hl src="snippets/options/require.js" }}
+
+{{#loop site.docs.options}}
+
+{{inc src="_includes/headerlink.html" slug=this.name title=this.name prefix="option-"}}
+
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">{{this.type}}</span>
+    {{#if this.subprops.length}}
+    <ul class="nav nav--stacked subprops">
+        {{#loop this.subprops}}
+        <li><b>{{ this.name }}</b> - Default: <span class="color-teal">{{ this.defaultValue }}</span></li>
+        {{/loop}}
+    </ul>
+    </li>
+    {{else}}
+    </li>
+    <li class="default">Default: <span class="color-teal">{{ this.defaultValue }}</span></li>
+    {{/if}}
+</ul>
+
+{{#if this.since}}
+<p class="lede warning"><b>Note: </b> requires at least version {{ since }}</p>
+{{/if}}
+
+{{#md}}{{compile this.description }}{{/md}}
+
+{{#if this.snippetpath}}
+{{hl src=this.snippetpath}}
+{{/if}}
+
+{{/loop}}
+

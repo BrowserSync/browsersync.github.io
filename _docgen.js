@@ -104,6 +104,13 @@ function addSnippetPath(item) {
     }
     return item;
 }
+
+function addOptionsSnippetPath(item) {
+    if (fs.existsSync(path.resolve("./_src/_includes/snippets/options/%s.js".replace("%s", item.name)))) {
+        item.snippetpath = "_includes/snippets/options/%s.js".replace("%s", item.name);
+    }
+    return item;
+}
 /**
  * Main exported function for preparing view data
  * @param items
@@ -187,6 +194,7 @@ function prepareOptions(items) {
                 }
                 return item;
             })
+            .map(addOptionsSnippetPath)
             .map(fixDefaults);
     }
     return items;

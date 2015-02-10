@@ -1,0 +1,22 @@
+<section class="wrapper features">
+    <div class="container">
+        <h2 class="section-title">More features added, still free.</h2>
+        <ul class="grid lap-2up desk-2up">
+        {{#each site.icons}}
+            <li class="grid__cell">
+                <div class="feature">
+                    <div class="feature__icon"><span class="icon {{this.icon}}"></span></div>
+                    <div class="feature__content">
+                        <h3 class="feature__title">{{this.title}} {{#if this.new}}<span class="new">New</span>{{/if}}</h3>
+                        <p>{{this.tagline}}</p>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+        </ul>
+        <aside class="support">
+            <p><strong>Supported browsers:</strong> Chrome, Firefox, Internet Explorer 8+, Safari, Opera, Android, Blackberry, FireFox Mobile, iOS, Opera Mobile, Windows Phone.</p>
+        </aside>
+
+    </div>
+</section>

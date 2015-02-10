@@ -18,44 +18,37 @@ cssFile: "/css/core.min.css"
 env: "production"
 
 navigation:
- - page-label: docs
-   label: "Documentation"
+ - label: "Documentation"
    url: /docs
- - page-label: source
-   label: "Source Code"
+ - label: "Source Code"
    url: https://github.com/shakyShane/browser-sync
 
 docs-navigation:
-  - page-label: gulp
-    label: "+ Gulp"
+  - label: "+ Gulp"
     url: "/docs/gulp"
-  - page-label: grunt
-    label: "+ Grunt"
+  - label: "+ Grunt"
     url: "/docs/grunt"
-  - page-label: api
-    label: "API"
+  - label: "API"
     url: "/docs/api"
-  - page-label: command-line
-    label: "Command line"
+  - label: "Command line"
     url: "/docs/command-line"
-  - page-label: options
-    label: "Options"
+  - label: "Options"
     url: "/docs/options"
 
 links:
   jh:           "http://www.wearejh.com/"
-  docs:         "https://github.com/BrowserSync/browser-sync/wiki"
   source:       "https://github.com/BrowserSync/browser-sync"
   twitter:      "https://twitter.com/browsersync"
   npm:          "https://npmjs.org/shakyshane/browser-sync"
   site-github:  "https://github.com/BrowserSync/browsersync.github.io"
   grunt-github: "https://github.com/shakyShane/grunt-browser-sync"
+  docs:         "/docs"
   gulp:         "/docs/gulp"
   grunt:        "/docs/grunt"
   options:      "/docs/options"
   command-line: "/docs/command-line"
   api:          "/docs/api"
-  license:      "https://github.com/shakyShane/browser-sync/blob/master/LICENSE"
+  license:      "https://github.com/BrowserSync/browser-sync/blob/master/LICENSE"
   issues:       "https://github.com/BrowserSync/browser-sync/issues"
   help:         "http://stackoverflow.com/questions/tagged/browser-sync"
   videos:       "https://github.com/BrowserSync/browser-sync/wiki/Screencasts"

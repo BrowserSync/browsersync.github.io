@@ -7,9 +7,6 @@ var marked       = require('marked');
 var _            = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
-var mdTemp          = _.template(fs.readFileSync("./_src/_docs/api.md", "utf-8"));
-var optTemp         = _.template(fs.readFileSync("./_src/_docs/options.md", "utf-8"));
-
 function getTemplate(name) {
 
     var source = fs.readFileSync("./_src/_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");

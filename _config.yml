@@ -21,7 +21,7 @@ navigation:
  - label: "Documentation"
    url: /docs
  - label: "Source Code"
-   url: https://github.com/shakyShane/browser-sync
+   url: "https://github.com/BrowserSync/browser-sync"
 
 docs-navigation:
   - label: "+ Gulp"

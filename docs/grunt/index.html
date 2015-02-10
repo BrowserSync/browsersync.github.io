@@ -56,10 +56,9 @@
             <div class="grid__cell three-quarters">
                 <article class="doc-wrapper">
                     <h1 class="text--center">BrowserSync + Grunt.js</h1>
-                    
-                    We have an [official Plugin](https://github.com/shakyShane/grunt-browser-sync) for Grunt that makes it easy to incorporate
+                    <p>We have an <a href="https://github.com/shakyShane/grunt-browser-sync">official Plugin</a> for Grunt that makes it easy to incorporate
                     BrowserSync into your development workflow. Below are a few examples of common configurations to get you started - use them
-                    as a jump-start but don't forget you can also use any of the other [BrowserSync options](/docs/options) as well.
+                    as a jump-start but don&#39;t forget you can also use any of the other <a href="/docs/options">BrowserSync options</a> as well.</p>
                     <h3 id="grunt-install" class="section-link">
                         <a href="#grunt-install" class="page-anchor">Install</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
@@ -75,7 +74,7 @@
                     </h3>
                     The simplest example would be watching CSS files and using the built-in server for static
                     HTML/CSS/JS files. This config alone will launch a mini-server (using your current working directory
-                    as the base), watch your CSS files for changes & auto-inject those changes into all connected browsers. 
+                    as the base), watch your CSS files for changes & auto-inject those changes into all connected browsers.
 <pre class='highlight'><code class="js">browserSync: {
     bsFiles: {
         src : <span class="hljs-string">'assets/css/*.css'</span>
@@ -105,9 +104,9 @@
                         <a href="#grunt-watch" class="page-anchor">+ other watch tasks</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    Browser Sync is not a replacement for regular `watch` tasks (such as compiling SASS, LESS etc), 
-                    they are designed to be used together. If you intend to do this, you'll need to set `watchTask: true` and be sure to call 
-                    the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers 
+                    Browser Sync is not a replacement for regular `watch` tasks (such as compiling SASS, LESS etc),
+                    they are designed to be used together. If you intend to do this, you'll need to set `watchTask: true` and be sure to call
+                    the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers
                     (without a page refresh), your config for all three tasks might look something like this:
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This shows a full config file!</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(grunt)</span> </span>{

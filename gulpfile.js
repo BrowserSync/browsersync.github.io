@@ -102,8 +102,17 @@ gulp.task("sass", function () {
         .pipe(gulp.dest("css"));
 });
 
+/**
+ * Only build/serve svgs from the icon set that are actually used in the site.
+ */
 gulp.task('sprites', function () {
-    return gulp.src('img/svg/*.svg')
+    var sitedata = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
+
+    var usedsvgs = sitedata.icons.map(function (item) {
+        return "img/svg/" + item.icon + ".svg";
+    });
+
+    return gulp.src(usedsvgs)
         .pipe(svgSprite({
             baseSize: 16,
             cssFile: "../../scss/theme/_sprite.scss",

@@ -65,9 +65,9 @@
                         <a href="#gulp-install" class="page-anchor">Install</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    First, you'll need to install BrowserSync & Gulp as development dependencies.
+                    <p>First, you&#39;ll need to install BrowserSync &amp; Gulp as development dependencies.</p>
 <pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre>
-Then, use them within your `gulpfile.js`:
+<p>Then, use them within your <code>gulpfile.js</code>:</p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>);
 <span class="hljs-comment">// Static server</span>
@@ -88,9 +88,9 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
                         <a href="#gulp-sass-css" class="page-anchor">SASS + CSS Injecting</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
-                    all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it's
-                    *finished* compiling - make sure you call reload *after* `gulp.dest`
+                    <p>Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
+                    all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it&#39;s
+                    <em>finished</em> compiling - make sure you call reload <em>after</em> <code>gulp.dest</code></p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>);
 <span class="hljs-keyword">var</span> reload      = browserSync.reload;
@@ -119,11 +119,11 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
                         <a href="#gulp-sass-maps" class="page-anchor">SASS &amp; Source Maps</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    If you use [gulp-ruby-sass](https://www.npmjs.org/package/gulp-ruby-sass) with the `sourcemap: true` option, additional `.map`
-                    files will be generated. These files end up being sent down stream and when `browserSync.reload()` receives them, it will attempt
-                    a full page reload (as it will not find any `.map` files in the DOM).
-                    To fix this problem, you can use the [gulp-filter](https://www.npmjs.org/package/gulp-filter) package to ensure that only `*.css`
-                     files ever reach `.reload` - this way you'll still get CSS injecting.
+                    <p>If you use <a href="https://www.npmjs.org/package/gulp-ruby-sass">gulp-ruby-sass</a> with the <code>sourcemap: true</code> option, additional <code>.map</code>
+                    files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
+                    a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
+                    <p>To fix this problem, you can use the <a href="https://www.npmjs.org/package/gulp-filter">gulp-filter</a> package to ensure that only <code>*.css</code>
+                     files ever reach <code>.reload</code> - this way you&#39;ll still get CSS injecting.</p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-ruby-sass"</span>);
 <span class="hljs-keyword">var</span> filter      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-filter'</span>);
@@ -139,9 +139,9 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
                         <a href="#gulp-reload" class="page-anchor">Browser Reloading</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you
-                    can do that easily by adding `.reload` to the array of tasks that will be run when files change. (make sure you `return`
-                     the stream from your tasks to ensure the browser is reloaded at the correct time)
+                    <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you
+                    can do that easily by adding <code>.reload</code> to the array of tasks that will be run when files change. (make sure you <code>return</code>
+                     the stream from your tasks to ensure the browser is reloaded at the correct time)</p>
 <pre class='highlight'><code class="js"><span class="hljs-comment">// start server</span>
 gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
@@ -167,9 +167,9 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
                         <a href="#gulp-manual-reload" class="page-anchor">Manual Reloading</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    If the streams support doesn't suit your needs, you can fire the reload method manually
-                    by wrapping it in a task. This example will compile & auto-inject CSS just as before, but when HTML files are
-                    changed, the browsers will be reloaded instead.
+                    <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually
+                    by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are
+                    changed, the browsers will be reloaded instead.</p>
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Start the server</span>
 gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({

@@ -63,9 +63,9 @@
                         <a href="#grunt-install" class="page-anchor">Install</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    First, you'll need to install the BrowserSync Plugin...
+                    <p>First, you&#39;ll need to install the BrowserSync Plugin...</p>
 <pre class='highlight'><code class="html">$ npm install grunt-browser-sync --save-dev</code></pre>
-... and then add this line to your `Gruntfile.js`
+<p>... and then add this line to your <code>Gruntfile.js</code></p>
 <pre class='highlight'><code class="js">grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
 </code></pre>
                     <h3 id="grunt-server" class="section-link">
@@ -89,7 +89,7 @@
                         <a href="#grunt-proxy" class="page-anchor">Proxy</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    If you already have a local server setup (with your vhosts etc), just tell BrowserSync all about it & it will do the rest for you.
+                    <p>If you already have a local server setup (with your vhosts etc), just tell BrowserSync all about it &amp; it will do the rest for you.</p>
 <pre class='highlight'><code class="js">browserSync: {
     dev: {
         bsFiles: {
@@ -104,10 +104,10 @@
                         <a href="#grunt-watch" class="page-anchor">+ other watch tasks</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    Browser Sync is not a replacement for regular `watch` tasks (such as compiling SASS, LESS etc),
-                    they are designed to be used together. If you intend to do this, you'll need to set `watchTask: true` and be sure to call
+                    <p>Browser Sync is not a replacement for regular <code>watch</code> tasks (such as compiling SASS, LESS etc),
+                    they are designed to be used together. If you intend to do this, you&#39;ll need to set <code>watchTask: true</code> and be sure to call
                     the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers
-                    (without a page refresh), your config for all three tasks might look something like this:
+                    (without a page refresh), your config for all three tasks might look something like this:</p>
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This shows a full config file!</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(grunt)</span> </span>{
     grunt.initConfig({

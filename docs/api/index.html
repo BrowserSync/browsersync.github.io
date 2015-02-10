@@ -105,7 +105,7 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                         <a href="#reload" class="page-anchor">.reload( arg )</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.
+                    <p>The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
                     <ul class="param-list" id="api-arg">
                         <li class="name"><a href="#api-arg" class="page-anchor">arg</a></li>
                         <li class="type">Type: <span class="color-teal">String | Array | Object</span>
@@ -127,11 +127,10 @@ browserSync.reload( { stream: <span class="hljs-literal">true</span> } );</code>
                         <a href="#notify" class="page-anchor">.notify( msg, timeout )</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    Helper method for browser notifications
+                    <p>Helper method for browser notifications</p>
                     <ul class="param-list" id="api-msg">
                         <li class="name"><a href="#api-msg" class="page-anchor">msg</a></li>
                         <li class="type">Type: <span class="color-teal">String | HTML</span>
-                            
                         </li>
                         <li class="desc"><p>Can be a simple message such as &#x27;Connected&#x27; or HTML</p>
                     </li>
@@ -152,7 +151,7 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#exit" class="page-anchor">.exit()</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    This method will close any running server, stop file watching &amp; exit the current process.
+                    <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
 <pre class='highlight'><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     browserSync.exit();
 });</code></pre>
@@ -160,22 +159,22 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#pause" class="page-anchor">.pause()</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    Method to pause file change events
+                    <p>Method to pause file change events</p>
                     <h3 id="api-resume" class="section-link">
                         <a href="#resume" class="page-anchor">.resume()</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    Method to resume paused watchers
+                    <p>Method to resume paused watchers</p>
                     <h3 id="api-paused" class="section-link">
                         <a href="#paused" class="page-anchor">.paused</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    A simple true/false flag to determine if the current instance is paused
+                    <p>A simple true/false flag to determine if the current instance is paused</p>
                     <h3 id="api-active" class="section-link">
                         <a href="#active" class="page-anchor">.active</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.
+                    <p>A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.</p>
 <pre class='highlight'><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
 browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
@@ -184,8 +183,8 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                         <a href="#emitter" class="page-anchor">.emitter</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    The internal Event Emitter used by the running BrowserSync instance (if there is one).
-                    You can use this to emit your own events, such as changed files, logging etc.
+                    <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
+                    You can use this to emit your own events, such as changed files, logging etc.</p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;
 evt.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is running!"</span>);

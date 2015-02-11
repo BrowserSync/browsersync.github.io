@@ -5,7 +5,7 @@ Source code for [browsersync.io](http://browsersync.io/)
 To contribute, you'll need to fork this repo & install the following system-wide tools:
 
 1. [NodeJS](http://nodejs.org) - use the installer.
-2. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (mac users may need sudo)
+2. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (mac users may need to [fix npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions))
 
 Next, you need to install the *local* development tools
 
@@ -15,7 +15,7 @@ $ npm install
 
 ##Development Server + BrowserSync
 As you can probably imagine, this project actually uses BrowserSync along with Gulp, Crossbow & a few other awesome projects
-to make development a joy. To experience the awesomeness, just run the run the following command
+to make development a joy. To experience the awesomeness, just run the following command
 
 ```
 $ gulp

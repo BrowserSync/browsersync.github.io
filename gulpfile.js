@@ -60,7 +60,7 @@ gulp.task("crossbow", function () {
 gulp.task("serve", ["sass", "crossbow"], function() {
     browserSync({
         files: "css/*.css",
-        open: false,
+        open: "ui",
         server: {
             baseDir: ["./"]
         }

@@ -9,7 +9,7 @@ _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
 function getTemplate(name) {
 
-    var source = fs.readFileSync("./_src/_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
+    var source   = fs.readFileSync("./_src/_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
     var template = pretemplater(source);
     return  _.template(template);
 }

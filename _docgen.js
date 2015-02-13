@@ -169,9 +169,18 @@ function addSubprops(item) {
     if (_.isUndefined(item.subprops)) {
         item.subprops = null;
     } else {
-        item.subprops = item.subprops.map(fixDefaults);
+        item.subprops = item.subprops
+            .map(fixDefaults)
+            .map(fixHtml)
     }
 
+    return item;
+}
+
+function fixHtml (item) {
+    if (item.name === "rule.match") {
+        item.defaultValue = makeUnsafe(item.defaultValue);
+    }
     return item;
 }
 
@@ -210,3 +219,15 @@ module.exports.prepareCommandLineOptions = function (opts) {
         }
     });
 };
+
+/**
+ * @param unsafe
+ * @returns {XML|string}
+ */
+function makeUnsafe (unsafe) {
+    return unsafe
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&#91;/g, "[")
+        .replace(/&#93;/g, "]")
+}

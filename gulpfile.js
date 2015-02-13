@@ -31,9 +31,7 @@ gulp.task("docs-build", function (cb) {
  */
 gulp.task("crossbow", function () {
 
-    var siteData    = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
-
-    siteData.docs = {
+    var docs =  {
         options: require("./_doc/options.json"),
         api: require("./_doc/api.json")
     };
@@ -47,7 +45,8 @@ gulp.task("crossbow", function () {
         cwd: "_src",
         prettyUrls: true,
         data: {
-            site: siteData
+            site: "file:_config.yml",
+            docs: docs
         }
     }))
     .pipe(gulp.dest("./"));

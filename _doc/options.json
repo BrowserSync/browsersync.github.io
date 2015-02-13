@@ -280,7 +280,7 @@
                 "type": "RegExp",
                 "optional": true,
                 "optdefault": "/&lt;body&#91;^&gt;&#93;*&gt;/i",
-                "defaultValue": "/&lt;body&#91;^&gt;&#93;*&gt;/i"
+                "defaultValue": "/<body[^>]*>/i"
             },
             {
                 "name": "rule.fn",

@@ -14,12 +14,15 @@
     <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrowserSync + Grunt.js</title>
+
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
+
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
 </head>
+
 
 <body id="page-top">
 
@@ -35,6 +38,7 @@
         </ul>
     </div>
 </header><!-- .end .site-header -->
+
 
 <div class="site-body" role="main">
     <section id="top" class="wrapper code-example">
@@ -62,8 +66,11 @@
                         <a href="#grunt-install" class="page-anchor">Install</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>First, you&#39;ll need to install the BrowserSync Plugin...</p>
 <pre class='highlight'><code class="html">$ npm install grunt-browser-sync --save-dev</code></pre>
+
 <p>... and then add this line to your <code>Gruntfile.js</code></p>
 <pre class='highlight'><code class="js">grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
 </code></pre>
@@ -71,9 +78,12 @@
                         <a href="#grunt-server" class="page-anchor">Static File Server</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     The simplest example would be watching CSS files and using the built-in server for static
                     HTML/CSS/JS files. This config alone will launch a mini-server (using your current working directory
                     as the base), watch your CSS files for changes & auto-inject those changes into all connected browsers.
+
 <pre class='highlight'><code class="js">browserSync: {
     bsFiles: {
         src : <span class="hljs-string">'assets/css/*.css'</span>
@@ -84,10 +94,13 @@
         }
     }
 }</code></pre>
+
                     <h3 id="grunt-proxy" class="section-link">
                         <a href="#grunt-proxy" class="page-anchor">Proxy</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>If you already have a local server setup (with your vhosts etc), just tell BrowserSync all about it &amp; it will do the rest for you.</p>
 <pre class='highlight'><code class="js">browserSync: {
     dev: {
@@ -99,10 +112,13 @@
         }
     }
 }</code></pre>
+
                     <h3 id="grunt-watch" class="section-link">
                         <a href="#grunt-watch" class="page-anchor">+ other watch tasks</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>Browser Sync is not a replacement for regular <code>watch</code> tasks (such as compiling SASS, LESS etc),
                     they are designed to be used together. If you intend to do this, you&#39;ll need to set <code>watchTask: true</code> and be sure to call
                     the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers
@@ -134,22 +150,29 @@
             }
         }
     });
+
     <span class="hljs-comment">// load npm tasks</span>
     grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-compass'</span>);
     grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-watch'</span>);
     grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
+
     <span class="hljs-comment">// define default task</span>
     grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">"browserSync"</span>, <span class="hljs-string">"watch"</span>]);
 };</code></pre>
+
                 </article>
             </div>
         </div>
     </div>
+
     </section>
+
+
     <script type="text/javascript">
         var nav = document.querySelector('.sticky-nav');
         var toggle = document.querySelector('.nav-toggle-btn');
         var toggleBtn = toggle.querySelector('a');
+
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
             nav.classList.toggle("active");
@@ -182,14 +205,17 @@
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
         (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),
         t=y.getElementsByTagName(n)[0],I.src="//www.google-analytics.com/analytics.js",
         t.parentNode.insertBefore(I,t)}(window,document,"script","ga");
+
         ga('create', 'UA-48819865-1', 'browsersync.io');
         ga('send', 'pageview');
     </script>
+
 
 </body>
 </html>

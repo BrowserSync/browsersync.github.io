@@ -14,12 +14,15 @@
     <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrowserSync + Gulp.js</title>
+
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
+
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
 </head>
+
 
 <body id="page-top">
 
@@ -35,6 +38,7 @@
         </ul>
     </div>
 </header><!-- .end .site-header -->
+
 
 <div class="site-body" role="main">
     <section id="top" class="wrapper code-example">
@@ -52,6 +56,7 @@
                         <li><a href="#gulp-manual-reload">Manual Reloading</a></li>
                     </ul>
                 </div>
+
             </div>
             <div class="grid__cell three-quarters">
                 <article class="doc-wrapper">
@@ -64,11 +69,15 @@
                         <a href="#gulp-install" class="page-anchor">Install</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>First, you&#39;ll need to install BrowserSync &amp; Gulp as development dependencies.</p>
 <pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre>
+
 <p>Then, use them within your <code>gulpfile.js</code>:</p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>);
+
 <span class="hljs-comment">// Static server</span>
 gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
@@ -77,16 +86,21 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
         }
     });
 });
+
 <span class="hljs-comment">// or...</span>
+
 gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
         proxy: <span class="hljs-string">"yourlocal.dev"</span>
     });
 });</code></pre>
+
                     <h3 id="gulp-sass-css" class="section-link">
                         <a href="#gulp-sass-css" class="page-anchor">SASS + CSS Injecting</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
                     all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it&#39;s
                     <em>finished</em> compiling - make sure you call reload <em>after</em> <code>gulp.dest</code></p>
@@ -94,6 +108,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>);
 <span class="hljs-keyword">var</span> reload      = browserSync.reload;
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sass'</span>);
+
 <span class="hljs-comment">// browser-sync task for starting the server.</span>
 gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     browserSync({
@@ -102,6 +117,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
         }
     });
 });
+
 <span class="hljs-comment">// Sass task, will run when any SCSS files change &amp; BrowserSync</span>
 <span class="hljs-comment">// will auto-update browsers</span>
 gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
@@ -110,14 +126,18 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
         .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
         .pipe(reload({stream:<span class="hljs-literal">true</span>}));
 });
+
 <span class="hljs-comment">// Default task to be run with `gulp`</span>
 gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'sass'</span>, <span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     gulp.watch(<span class="hljs-string">"scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
 });</code></pre>
+
                     <h3 id="gulp-sass-maps" class="section-link">
                         <a href="#gulp-sass-maps" class="page-anchor">SASS &amp; Source Maps</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>If you use <a href="https://www.npmjs.org/package/gulp-ruby-sass">gulp-ruby-sass</a> with the <code>sourcemap: true</code> option, additional <code>.map</code>
                     files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
                     a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
@@ -127,6 +147,7 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-ruby-sass"</span>);
 <span class="hljs-keyword">var</span> filter      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-filter'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);
+
 gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/**/*.scss'</span>)
         .pipe(sass({sourcemap: <span class="hljs-literal">true</span>}))
@@ -134,10 +155,13 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
         .pipe(filter(<span class="hljs-string">'**/*.css'</span>)) <span class="hljs-comment">// Filtering stream to only css files</span>
         .pipe(browserSync.reload({stream:<span class="hljs-literal">true</span>}));
 });</code></pre>
+
                     <h3 id="gulp-reload" class="section-link">
                         <a href="#gulp-reload" class="page-anchor">Browser Reloading</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you
                     can do that easily by adding <code>.reload</code> to the array of tasks that will be run when files change. (make sure you <code>return</code>
                      the stream from your tasks to ensure the browser is reloaded at the correct time)</p>
@@ -149,6 +173,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
         }
     });
 });
+
 <span class="hljs-comment">// process JS files and return the stream.</span>
 gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'js/*js'</span>)
@@ -156,16 +181,21 @@ gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><sp
         .pipe(uglify())
         .pipe(gulp.dest(<span class="hljs-string">'dist/js'</span>));
 });
+
 <span class="hljs-comment">// use default task to launch BrowserSync and watch JS files</span>
 gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+
     <span class="hljs-comment">// add browserSync.reload to the tasks array to make</span>
     <span class="hljs-comment">// all browsers reload after tasks are complete.</span>
     gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js'</span>, browserSync.reload]);
 });</code></pre>
+
                     <h3 id="gulp-manual-reload" class="section-link">
                         <a href="#gulp-manual-reload" class="page-anchor">Manual Reloading</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
+
+
                     <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually
                     by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are
                     changed, the browsers will be reloaded instead.</p>
@@ -177,6 +207,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
         }
     });
 });
+
 <span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
 gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/styles.scss'</span>)
@@ -184,10 +215,12 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
         .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
         .pipe(browserSync.reload({stream:<span class="hljs-literal">true</span>}));
 });
+
 <span class="hljs-comment">// Reload all Browsers</span>
 gulp.task(<span class="hljs-string">'bs-reload'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     browserSync.reload();
 });
+
 <span class="hljs-comment">// Watch scss AND html files, doing different things with each.</span>
 gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     gulp.watch(<span class="hljs-string">"scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
@@ -197,11 +230,15 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
             </div>
         </div>
     </div>
+
     </section>
+
+
     <script type="text/javascript">
         var nav = document.querySelector('.sticky-nav');
         var toggle = document.querySelector('.nav-toggle-btn');
         var toggleBtn = toggle.querySelector('a');
+
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
             nav.classList.toggle("active");
@@ -234,14 +271,17 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
         (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),
         t=y.getElementsByTagName(n)[0],I.src="//www.google-analytics.com/analytics.js",
         t.parentNode.insertBefore(I,t)}(window,document,"script","ga");
+
         ga('create', 'UA-48819865-1', 'browsersync.io');
         ga('send', 'pageview');
     </script>
+
 
 </body>
 </html>

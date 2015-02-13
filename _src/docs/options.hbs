@@ -2,7 +2,7 @@
 layout: "documentation.hbs"
 title: "BrowserSync options"
 page-label: "options"
-sidebar: "_includes/options-sidebar.hbs"
+sidebar: "options-sidebar.hbs"
 ---
 
 {{#md}}
@@ -13,9 +13,9 @@ still use all of these options, but you need to provide them as detailed in the 
 
 {{hl src="snippets/options/require.js" }}
 
-{{#loop site.docs.options}}
+{{#each docs.options}}
 
-{{inc src="_includes/headerlink.html" slug=this.name title=this.name prefix="option-"}}
+{{inc src="headerlink.html" slug=this.name title=this.name prefix="option-"}}
 
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">{{this.type}}</span>
@@ -42,5 +42,5 @@ still use all of these options, but you need to provide them as detailed in the 
 {{hl src=this.snippetpath}}
 {{/if}}
 
-{{/loop}}
+{{/each}}
 

@@ -1,8 +1,8 @@
 ---
 layout: "documentation.hbs"
 title: "BrowserSync API"
-sidebar: "_includes/api-sidebar.hbs"
-markdown: true
+sidebar: "api-sidebar.hbs"
+markdown: false
 ---
 
 Our API is incredibly simple & powerful. You can use it to create your own
@@ -10,31 +10,26 @@ tiny node program for local development or integrate with other tools. To use it
 simply `require` the BrowserSync module like you would any other. This will give
 you access to the public methods detailed below.
 
-{{ hl src="snippets/api/require.js" }}
+{{hl src="snippets/api/require.js" }}
 
-{{#loop site.docs.api}}
+
+{{#each docs.api}}
 
 {{inc src="_includes/headerlink.html" slug=this.name title=this.preview prefix="api-"}}
-
-{{this.description}}
-
 {{#if this.params.length}}
-{{#loop this.params}}
-<ul class="param-list" id="api-{{this.name}}">
-    <li class="name"><a href="#api-{{ this.name }}" class="page-anchor">{{ this.name }}</a></li>
-    <li class="type">Type: <span class="color-teal">{{ this.type }}</span>
-        {{#if this.optional}}<span class="recede">[optional]</span>{{/if}}
-    </li>
-    <li class="desc">{{#md}}{{compile this.description }}{{/md}}</li>
-</ul>
-{{/loop}}
+    {{#loop this.params}}
+    <ul class="param-list" id="api-{{this.name}}">
+        <li class="name"><a href="#api-{{ this.name }}" class="page-anchor">{{ this.name }}</a></li>
+        <li class="type">Type: <span class="color-teal">{{ this.type }}</span>
+            {{#if this.optional}}<span class="recede">[optional]</span>{{/if}}
+        </li>
+        <li class="desc">{{#md}}{{compile this.description }}{{/md}}</li>
+    </ul>
+    {{/loop}}
 {{/if}}
 
 {{#if this.snippetpath}}
 {{hl src=this.snippetpath}}
 {{/if}}
 
-{{/loop}}
-
-
-
+{{/each}}

@@ -1,6 +1,6 @@
-<header class="wrapper wrapper--dark site-header{{#if_eq page.url "/index.html"}}{{else}} alt{{/if_eq}}" role="banner">
+<header class="wrapper wrapper--dark site-header{{#if_eq page.url "/"}}{{else}} alt{{/if_eq}}" role="banner">
     <div class="container">
-        {{#if_eq page.url "/index.html"}}
+        {{#if_eq page.url "/"}}
         <a class="site-logo" href="/">{{site.title}}</a>
         <ul class="nav--inline site-nav">
             {{#each site.navigation}}
@@ -10,9 +10,9 @@
         {{else}}
         <h1 class="site-title alt"><a href="/">{{site.title}}</a> / <span><a href="/docs">documentation</a></span></h1>
         <ul class="nav--inline docs-nav">
-            {{#loop site.docs-navigation}}
+            {{#each site.docs-navigation}}
             <li><a href="{{this.url}}" {{#current this.url}}class="active"{{/current}}>{{ this.label }}</a></li>
-            {{/loop}}
+            {{/each}}
         </ul>
         {{/if_eq}}
     </div>

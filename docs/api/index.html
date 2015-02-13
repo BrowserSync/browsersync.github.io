@@ -14,12 +14,15 @@
     <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrowserSync API</title>
+
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
+
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
 </head>
+
 
 <body id="page-top">
 
@@ -35,6 +38,7 @@
         </ul>
     </div>
 </header><!-- .end .site-header -->
+
 
 <div class="site-body" role="main">
     <section id="top" class="wrapper code-example">
@@ -56,148 +60,197 @@
                             <li><a href="#api-emitter">.emitter</a></li>
                     </ul>
                 </div>
+
             </div>
             <div class="grid__cell three-quarters">
                 <article class="doc-wrapper">
                     <h1 class="text--center">BrowserSync API</h1>
-                    <p>Our API is incredibly simple &amp; powerful. You can use it to create your own
+                    
+
+                    Our API is incredibly simple & powerful. You can use it to create your own
                     tiny node program for local development or integrate with other tools. To use it,
-                    simply <code>require</code> the BrowserSync module like you would any other. This will give
-                    you access to the public methods detailed below.</p>
+                    simply `require` the BrowserSync module like you would any other. This will give
+                    you access to the public methods detailed below.
+
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);</code></pre>
+
+
+
 <h3 id="api-browserSync" class="section-link">
-    <a href="#browserSync" class="page-anchor">browserSync( config, cb )</a>
+    <a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a>
     <a href="#page-top" class="back-to-top">^ TOP</a>
 </h3>
-<ul class="param-list" id="api-config">
-    <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
-    <li class="type">Type: <span class="color-teal">Object</span>
-        <span class="recede">[optional]</span>
-    </li>
-    <li class="desc"><p>This is the main configuration for your BrowserSync instance and can contain any of the <a href="/docs/options">available options</a>
+
+    <ul class="param-list" id="api-config">
+        <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
+        <li class="type">Type: <span class="color-teal">Object</span>
+            <span class="recede">[optional]</span>
+        </li>
+        <li class="desc"><p>This is the main configuration for your BrowserSync instance and can contain any of the <a href="/docs/options">available options</a>
  If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the &#x60;snippet&#x60; mode</p>
 </li>
-</ul>
-<ul class="param-list" id="api-cb">
-    <li class="name"><a href="#api-cb" class="page-anchor">cb</a></li>
-    <li class="type">Type: <span class="color-teal">Function</span>
-        <span class="recede">[optional]</span>
-    </li>
-    <li class="desc"><p>If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This
+    </ul>
+    <ul class="param-list" id="api-cb">
+        <li class="name"><a href="#api-cb" class="page-anchor">cb</a></li>
+        <li class="type">Type: <span class="color-teal">Function</span>
+            <span class="recede">[optional]</span>
+        </li>
+        <li class="desc"><p>If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This
 is useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.</p>
 </li>
-</ul>
+    </ul>
+
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> config = {
     server: {
         baseDir: <span class="hljs-string">"./"</span>
     }
 };
+
 <span class="hljs-comment">// config only</span>
 browserSync(config);
+
 <span class="hljs-comment">// config + callback</span>
 browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-keyword">if</span> (!err) {
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is ready!"</span>);
     }
 });</code></pre>
+
+
                     <h3 id="api-reload" class="section-link">
-                        <a href="#reload" class="page-anchor">.reload( arg )</a>
+                        <a href="#api-reload" class="page-anchor">.reload( arg )</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
-                    <ul class="param-list" id="api-arg">
-                        <li class="name"><a href="#api-arg" class="page-anchor">arg</a></li>
-                        <li class="type">Type: <span class="color-teal">String | Array | Object</span>
-                            <span class="recede">[optional]</span>
-                        </li>
-                        <li class="desc"><p>The file or files to be reloaded. For
+
+                        <ul class="param-list" id="api-arg">
+                            <li class="name"><a href="#api-arg" class="page-anchor">arg</a></li>
+                            <li class="type">Type: <span class="color-teal">String | Array | Object</span>
+                                <span class="recede">[optional]</span>
+                            </li>
+                            <li class="desc"><p>The file or files to be reloaded. For
                     details and examples of Streams support, please see the <a href="/docs/gulp">GulpJS</a> examples</p>
                     </li>
-                    </ul>
+                        </ul>
+
 <pre class='highlight'><code class="js"><span class="hljs-comment">// browser reload</span>
 browserSync.reload();
+
 <span class="hljs-comment">// single file</span>
 browserSync.reload( <span class="hljs-string">"styles.css"</span> );
+
 <span class="hljs-comment">// multiple files</span>
 browserSync.reload( [<span class="hljs-string">"styles.css"</span>, <span class="hljs-string">"ie.css"</span>] );
+
 <span class="hljs-comment">// streams support</span>
 browserSync.reload( { stream: <span class="hljs-literal">true</span> } );</code></pre>
+
+
                     <h3 id="api-notify" class="section-link">
-                        <a href="#notify" class="page-anchor">.notify( msg, timeout )</a>
+                        <a href="#api-notify" class="page-anchor">.notify( msg, timeout )</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>Helper method for browser notifications</p>
-                    <ul class="param-list" id="api-msg">
-                        <li class="name"><a href="#api-msg" class="page-anchor">msg</a></li>
-                        <li class="type">Type: <span class="color-teal">String | HTML</span>
-                        </li>
-                        <li class="desc"><p>Can be a simple message such as &#x27;Connected&#x27; or HTML</p>
+
+                        <ul class="param-list" id="api-msg">
+                            <li class="name"><a href="#api-msg" class="page-anchor">msg</a></li>
+                            <li class="type">Type: <span class="color-teal">String | HTML</span>
+                                
+                            </li>
+                            <li class="desc"><p>Can be a simple message such as &#x27;Connected&#x27; or HTML</p>
                     </li>
-                    </ul>
-                    <ul class="param-list" id="api-timeout">
-                        <li class="name"><a href="#api-timeout" class="page-anchor">timeout</a></li>
-                        <li class="type">Type: <span class="color-teal">Number</span>
-                            <span class="recede">[optional]</span>
-                        </li>
-                        <li class="desc"><p>How long the message will remain in the browser. @since 1.3.0</p>
+                        </ul>
+                        <ul class="param-list" id="api-timeout">
+                            <li class="name"><a href="#api-timeout" class="page-anchor">timeout</a></li>
+                            <li class="type">Type: <span class="color-teal">Number</span>
+                                <span class="recede">[optional]</span>
+                            </li>
+                            <li class="desc"><p>How long the message will remain in the browser. @since 1.3.0</p>
                     </li>
-                    </ul>
+                        </ul>
+
 <pre class='highlight'><code class="js">browserSync.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
+
 browserSync.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is supported&lt;/span&gt; too!"</span>);
+
 <span class="hljs-comment">// Since 1.3.0, specify a timeout</span>
 browserSync.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre>
+
+
                     <h3 id="api-exit" class="section-link">
-                        <a href="#exit" class="page-anchor">.exit()</a>
+                        <a href="#api-exit" class="page-anchor">.exit()</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
+
+
 <pre class='highlight'><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     browserSync.exit();
 });</code></pre>
+
+
                     <h3 id="api-pause" class="section-link">
-                        <a href="#pause" class="page-anchor">.pause()</a>
+                        <a href="#api-pause" class="page-anchor">.pause()</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>Method to pause file change events</p>
+
+
+
+
                     <h3 id="api-resume" class="section-link">
-                        <a href="#resume" class="page-anchor">.resume()</a>
+                        <a href="#api-resume" class="page-anchor">.resume()</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>Method to resume paused watchers</p>
+
+
+
+
                     <h3 id="api-paused" class="section-link">
-                        <a href="#paused" class="page-anchor">.paused</a>
+                        <a href="#api-paused" class="page-anchor">.paused</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>A simple true/false flag to determine if the current instance is paused</p>
+
+
+
+
                     <h3 id="api-active" class="section-link">
-                        <a href="#active" class="page-anchor">.active</a>
+                        <a href="#api-active" class="page-anchor">.active</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.</p>
+
+
 <pre class='highlight'><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
+
 browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
 });</code></pre>
+
+
                     <h3 id="api-emitter" class="section-link">
-                        <a href="#emitter" class="page-anchor">.emitter</a>
+                        <a href="#api-emitter" class="page-anchor">.emitter</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
-                    <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
-                    You can use this to emit your own events, such as changed files, logging etc.</p>
+
+
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;
+
 evt.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is running!"</span>);
 });
+
 browserSync(config);</code></pre>
+
+
                 </article>
             </div>
         </div>
     </div>
+
     </section>
+
+
     <script type="text/javascript">
         var nav = document.querySelector('.sticky-nav');
         var toggle = document.querySelector('.nav-toggle-btn');
         var toggleBtn = toggle.querySelector('a');
+
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
             nav.classList.toggle("active");
@@ -230,14 +283,17 @@ browserSync(config);</code></pre>
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){
         (s[c].q=s[c].q||[]).push(arguments)}),s[c].l=+new Date,I=y.createElement(n),
         t=y.getElementsByTagName(n)[0],I.src="//www.google-analytics.com/analytics.js",
         t.parentNode.insertBefore(I,t)}(window,document,"script","ga");
+
         ga('create', 'UA-48819865-1', 'browsersync.io');
         ga('send', 'pageview');
     </script>
+
 
 </body>
 </html>

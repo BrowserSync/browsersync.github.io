@@ -1,20 +1,20 @@
 ---
 layout: "documentation.hbs"
 title: "BrowserSync Command Line Usage"
-sidebar: "_includes/cli-sidebar.hbs"
+sidebar: "cli-sidebar.hbs"
 items:
     - title: "Files Examples"
       slug:  "files-example"
-      file:  "_includes/snippets/commands/files.sh"
+      file:  "snippets/commands/files.sh"
     - title: "Server Examples"
       slug:  "server-example"
-      file:  "_includes/snippets/commands/server.sh"
+      file:  "snippets/commands/server.sh"
     - title: "Proxy Examples"
       slug:  "proxy-example"
-      file:  "_includes/snippets/commands/proxy.sh"
+      file:  "snippets/commands/proxy.sh"
     - title: "Watching files + Server"
       slug:  "watching-files-example"
-      file:  "_includes/snippets/commands/watching.sh"
+      file:  "snippets/commands/watching.sh"
 markdown: true
 ---
 
@@ -25,11 +25,11 @@ After install BrowserSync globally, you can run it like this:
 $ browser-sync start <options>
 {{/hl}}
 
-{{inc src="_includes/headerlink.html" title="Options" slug="command-line-options" }}
+{{inc src="headerlink.html" title="Options" slug="command-line-options" }}
 
-{{inc src="_includes/snippets/commands/options.html" }}
+{{inc src="snippets/commands/options.html" }}
 
 {{#loop page.items}}
-{{inc src="_includes/headerlink.html" title=this.title slug=this.slug }}
+{{inc src="headerlink.html" title=this.title slug=this.slug }}
 {{hl src=this.file}}
 {{/loop}}

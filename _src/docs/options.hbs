@@ -22,7 +22,7 @@ still use all of these options, but you need to provide them as detailed in the 
     {{#if this.subprops.length}}
     <ul class="nav nav--stacked subprops">
         {{#loop this.subprops}}
-        <li><b>{{ this.name }}</b> - Default: <span class="color-teal">{{ this.defaultValue }}</span></li>
+            <li><b>{{ this.name }}</b> - Default: <span class="color-teal">{{#if this.defaultValue}}{{this.defaultValue}}{{else}}undefined{{/if}}</span></li>
         {{/loop}}
     </ul>
     </li>

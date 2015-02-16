@@ -133,12 +133,7 @@ function optionsMarkup (combined, item) {
         item.description = marked(item.description);
     }
 
-    if (item.type) {
-        return combined + getTemplate("option")(item);
-    }
-
     return combined;
-
 }
 
 /**

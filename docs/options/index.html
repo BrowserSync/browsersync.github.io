@@ -53,7 +53,7 @@
                         <li><a href="#option-files">files</a></li>
                         <li><a href="#option-watchOptions">watchOptions</a></li>
                         <li><a href="#option-server">server</a></li>
-                        <li><a href="#option-proxy">proxy</a></li>
+                        <li><a href="#option-"></a></li>
                         <li><a href="#option-port">port</a></li>
                         <li><a href="#option-https">https</a></li>
                         <li><a href="#option-ghostMode">ghostMode</a></li>
@@ -112,8 +112,8 @@ browserSync(config);</code></pre>
                     <ul class="param-list">
                         <li class="type">Type: <span class="color-teal">Object</span>
                         <ul class="nav nav--stacked subprops">
-                            <li><b>port</b> - Default: <span class="color-teal">3001</span></li>
-                            <li><b>weinre.port</b> - Default: <span class="color-teal">8080</span></li>
+                                <li><b>port</b> - Default: <span class="color-teal">3001</span></li>
+                                <li><b>weinre.port</b> - Default: <span class="color-teal">8080</span></li>
                         </ul>
                         </li>
                     </ul>
@@ -269,30 +269,22 @@ server: {
 }</code></pre>
 
 
-                    <h3 id="option-proxy" class="section-link">
-                        <a href="#option-proxy" class="page-anchor">proxy</a>
+                    <h3 id="option-" class="section-link">
+                        <a href="#option-" class="page-anchor"></a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
 
                     <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String | Boolean</span>
+                        <li class="type">Type: <span class="color-teal">String|Object|Boolean</span>
                         </li>
                         <li class="default">Default: <span class="color-teal">false</span></li>
                     </ul>
 
 
-                    <p>Proxy an EXISTING vhost. BrowserSync will wrap your existing url and provide a different one to use.</p>
+                    <p>Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Using a vhost-based url</span>
-proxy: <span class="hljs-string">"local.dev"</span>
-
-<span class="hljs-comment">// Using a localhost address with a port</span>
-proxy: <span class="hljs-string">"localhost:8888"</span>
-
-<span class="hljs-comment">// Using localhost sub directories</span>
-proxy: <span class="hljs-string">"localhost/site1"</span></code></pre>
 
 
                     <h3 id="option-port" class="section-link">
@@ -344,9 +336,9 @@ https: <span class="hljs-literal">true</span></code></pre>
                     <ul class="param-list">
                         <li class="type">Type: <span class="color-teal">Object</span>
                         <ul class="nav nav--stacked subprops">
-                            <li><b>clicks</b> - Default: <span class="color-teal">true</span></li>
-                            <li><b>scroll</b> - Default: <span class="color-teal">true</span></li>
-                            <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
+                                <li><b>clicks</b> - Default: <span class="color-teal">true</span></li>
+                                <li><b>scroll</b> - Default: <span class="color-teal">true</span></li>
+                                <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
                         </ul>
                         </li>
                     </ul>
@@ -491,14 +483,15 @@ logSnippet: <span class="hljs-literal">false</span></code></pre>
                     <ul class="param-list">
                         <li class="type">Type: <span class="color-teal">Object</span>
                         <ul class="nav nav--stacked subprops">
-                            <li><b>ignorePaths</b> - Default: <span class="color-teal">undefined</span></li>
-                            <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body[^&gt;]*&gt;/i</span></li>
-                            <li><b>rule.fn</b> - Default: <span class="color-teal">Function</span></li>
+                                <li><b>blacklist</b> - Default: <span class="color-teal">undefined</span></li>
+                                <li><b>whitelist</b> - Default: <span class="color-teal">undefined</span></li>
+                                <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body[^&gt;]*&gt;/i</span></li>
+                                <li><b>rule.fn</b> - Default: <span class="color-teal">Function</span></li>
                         </ul>
                         </li>
                     </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 1.7.0</p>
+                    <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
 
                     <p>SINCE 1.7.0! You can control how the snippet is injected
                     onto each page via a custom regex + function.
@@ -584,7 +577,7 @@ online: <span class="hljs-literal">false</span></code></pre>
 
 
                     <p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
-                    Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
+                    Can be true, &quot;local&quot;, &quot;external&quot;, &quot;ui&quot;, &quot;ui-external&quot; or &quot;tunnel&quot;</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Stop the browser from automatically opening</span>
@@ -891,10 +884,10 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
                     <ul class="param-list">
                         <li class="type">Type: <span class="color-teal">Object</span>
                         <ul class="nav nav--stacked subprops">
-                            <li><b>path</b> - Default: <span class="color-teal">&quot;/browser-sync/socket.io&quot;</span></li>
-                            <li><b>clientPath</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
-                            <li><b>namespace</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
-                            <li><b>clients.heartbeatTimeout</b> - Default: <span class="color-teal">5000</span></li>
+                                <li><b>path</b> - Default: <span class="color-teal">&quot;/browser-sync/socket.io&quot;</span></li>
+                                <li><b>clientPath</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
+                                <li><b>namespace</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
+                                <li><b>clients.heartbeatTimeout</b> - Default: <span class="color-teal">5000</span></li>
                         </ul>
                         </li>
                     </ul>

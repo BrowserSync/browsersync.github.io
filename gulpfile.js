@@ -22,7 +22,7 @@ gulp.task("default", ["serve", "watch"]);
 /**
  * Build documentation
  */
-gulp.task("docs-build", function (cb) {
+gulp.task("docs-build", ["docs"], function (cb) {
     return cp.spawn("node", ["_makeDocs"], {stdio: "inherit"}).on("close", cb);
 });
 
@@ -142,7 +142,7 @@ gulp.task("docs", function () {
     return gulp.src(["./node_modules/browser-sync/index.js", "./node_modules/browser-sync/lib/default-config.js"])
         .pipe(yuidoc.parser())
         .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))
-        .pipe(gulp.dest("./doc"));
+        .pipe(gulp.dest("./_doc"));
 });
 
 gulp.task("build", ["docs", "docs-build", "crossbow", "sass"]);

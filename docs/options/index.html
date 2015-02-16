@@ -53,7 +53,7 @@
                         <li><a href="#option-files">files</a></li>
                         <li><a href="#option-watchOptions">watchOptions</a></li>
                         <li><a href="#option-server">server</a></li>
-                        <li><a href="#option-"></a></li>
+                        <li><a href="#option-proxy">proxy</a></li>
                         <li><a href="#option-port">port</a></li>
                         <li><a href="#option-https">https</a></li>
                         <li><a href="#option-ghostMode">ghostMode</a></li>
@@ -269,22 +269,56 @@ server: {
 }</code></pre>
 
 
-                    <h3 id="option-" class="section-link">
-                        <a href="#option-" class="page-anchor"></a>
+                    <h3 id="option-proxy" class="section-link">
+                        <a href="#option-proxy" class="page-anchor">proxy</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
 
                     <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String|Object|Boolean</span>
+                        <li class="type">Type: <span class="color-teal">String | Object | Boolean</span>
+                        <ul class="nav nav--stacked subprops">
+                                <li><b>target</b> - Default: <span class="color-teal">undefined</span></li>
+                                <li><b>middleware</b> - Default: <span class="color-teal">undefined</span></li>
+                                <li><b>reqHeaders</b> - Default: <span class="color-teal">undefined</span></li>
+                        </ul>
                         </li>
-                        <li class="default">Default: <span class="color-teal">false</span></li>
                     </ul>
 
 
                     <p>Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.</p>
 
 
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Using a vhost-based url</span>
+proxy: <span class="hljs-string">"local.dev"</span>
+
+<span class="hljs-comment">// Using a localhost address with a port</span>
+proxy: <span class="hljs-string">"localhost:8888"</span>
+
+<span class="hljs-comment">// Using localhost sub directories</span>
+proxy: <span class="hljs-string">"localhost/site1"</span>
+
+<span class="hljs-comment">// With middleware - Requires v2.1.0</span>
+proxy: {
+    target: <span class="hljs-string">"http://yourlocal.dev"</span>,
+    middeware: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+        <span class="hljs-built_in">console</span>.log(req.url);
+        next();
+    }
+}
+
+<span class="hljs-comment">// With custom request headers - Requires v2.1.0</span>
+proxy: {
+    target: <span class="hljs-string">"localhost:8000"</span>,
+    reqHeaders: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(config)</span> </span>{
+        <span class="hljs-keyword">return</span> {
+            <span class="hljs-string">"host"</span>:            config.urlObj.host,
+            <span class="hljs-string">"accept-encoding"</span>: <span class="hljs-string">"identity"</span>,
+            <span class="hljs-string">"agent"</span>:           <span class="hljs-literal">false</span>
+        }
+    }
+}
+</code></pre>
 
 
                     <h3 id="option-port" class="section-link">

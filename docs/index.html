@@ -107,12 +107,17 @@
                     </h3>
 
 
-                    <p>Having trouble installing BrowserSync on Windows? It appears that the most reliable way to solve this
-                    is for you to <em>first</em> install a version of Visual Studio (even the free ones). This will install some system-wide tools that
-                    will enable you to install BrowserSync without a problem. Alternatively, it has been pointed out that the following
-                    command will also work for Windows users.</p>
+                    <p>Having trouble installing BrowserSync on Windows? The most common reason for  <code>npm</code> to throw
+                    errors when compiling BrowserSync is that some of the dependencies
+                    (e.g. <a href="https://github.com/TooTallNate/node-gyp">node-gyp</a> need Visual C++ runtime libraries.</p>
+                    <p>The way to resolve this is to install <a href="http://www.visualstudio.com/">Visual Studio</a>.
+                    At the time of this writing (Feb 2015) the compilation works fine with
+                    <a href="http://www.visualstudio.com/en-us/news/vs2013-update4-rc-vs.aspx">Visual Studio 2013 Update 4</a>.
+                    You can then tell <code>npm</code> which version of Visual Studio you are using by the following command:</p>
 <pre><code class="lang-bash">npm install -g browser-sync --msvs_version=<span class="hljs-number">2013</span>
 </code></pre>
+                    <p>After installation of Visual Studio <code>npm</code> should not throw errors any longer, but only issue warnings.
+                    As far as we can tell, they do not impact BrowserSync.</p>
                     <h3 id="external-url" class="section-link">
                         <a href="#external-url" class="page-anchor">Incorrect External URL</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>

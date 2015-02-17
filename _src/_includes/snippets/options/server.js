@@ -21,6 +21,8 @@ server: {
 }
 
 // Since version 1.2.1
+// The key is the url to match
+// The value is which folder to serve (relative to your current working directory)
 server: {
     baseDir: "app",
     routes: {

@@ -237,6 +237,8 @@ server: {
 }
 
 <span class="hljs-comment">// Since version 1.2.1</span>
+<span class="hljs-comment">// The key is the url to match</span>
+<span class="hljs-comment">// The value is which folder to serve (relative to your current working directory)</span>
 server: {
     baseDir: <span class="hljs-string">"app"</span>,
     routes: {
@@ -266,7 +268,8 @@ server: {
             next();
         }
     ]
-}</code></pre>
+}
+</code></pre>
 
 
                     <h3 id="option-proxy" class="section-link">

@@ -11,6 +11,7 @@ var svgSprite   = require("gulp-svg-sprites");
 var crossbow    = require("crossbow");
 var prettify    = require('gulp-jsbeautifier');
 var yaml        = require('js-yaml');
+var htmlinjector = require("bs-html-injector")
 
 
 /**
@@ -57,6 +58,9 @@ gulp.task("crossbow", function () {
  * Wait for crossbow-build, then launch the Server
  */
 gulp.task("serve", ["sass", "crossbow"], function() {
+    browserSync.use(htmlinjector, {
+        excludedTags: ["HTML", "HEAD", "BODY"]
+    });
     browserSync({
         files: "css/*.css",
         open: "ui",
@@ -128,7 +132,8 @@ gulp.task('sprites', function () {
 gulp.task("watch", function () {
     gulp.watch("scss/**", ["sass"]);
     gulp.watch(["_src/**", "_config.yml"], ["crossbow", function () {
-        browserSync.reload();
+        htmlinjector();
+        //browserSync.reload();
     }]);
 });
 

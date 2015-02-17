@@ -224,6 +224,7 @@ pre.highlight:last-child{margin-bottom:0}
 @media (min-width:700px){pre.highlight:last-child{border-bottom-left-radius:5px;border-bottom-right-radius:5px}}
 @media (min-width:700px){pre.highlight{padding:36px;margin-left:-36px;margin-right:-36px;margin-bottom:48px}}
 .code-example{background:#F2F2F2;padding-top:0}
+.code-example h2{font-size:32px;font-size:2rem;color:#1b2032}
 .code-example h2,.code-example h3,.code-example p{margin-bottom:24px}
 @media (min-width:700px){.code-example h2,.code-example h2.flush,.code-example h3,.code-example h3.flush,.code-example p,.code-example p.flush{margin-bottom:24px}}
 .code-example h2.flush,.code-example h3.flush,.code-example p.flush{margin-bottom:12px}
@@ -231,7 +232,7 @@ pre.highlight:last-child{margin-bottom:0}
 .code-example .container{padding-top:0;padding-left:0;padding-right:0}
 .code-example h3{font-size:22px;font-size:1.375rem;padding-top:12px;margin-bottom:12px;position:relative}
 .code-example h3 a{color:#1b2032}
-@media (min-width:700px){.code-example h3{font-size:30px;font-size:1.875rem;padding-top:36px;margin-bottom:12px;border-top:0}}
+@media (min-width:700px){.code-example h3{font-size:30px;font-size:1.875rem;padding-top:36px;margin-bottom:24px;border-top:0}}
 .code-example h3 .icon{font-size:20px;font-size:1.25rem;margin-left:6px}
 .code-example h4{font-weight:400;font-size:20px;font-size:1.25rem;color:#256b8d;margin-bottom:24px}
 .code-example.docs{text-align:center}

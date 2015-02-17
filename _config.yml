@@ -53,6 +53,8 @@ links:
   help:         "http://stackoverflow.com/questions/tagged/browser-sync"
   videos:       "https://github.com/BrowserSync/browser-sync/wiki/Screencasts"
   crossbow:     "https://github.com/shakyShane/crossbow.js"
+  npmdocs:      "https://docs.npmjs.com/getting-started/fixing-npm-permissions"
+  snippet:      "/docs/options/#option-snippetOptions"
 
 img:
   jh: "/img/jh-300-trans.png"

@@ -70,6 +70,7 @@
                         <li><a href="#installation">Installation</a></li>
                         <li><a href="#requirements">Requirements</a></li>
                         <li><a href="#windows-users">Windows Users</a></li>
+                        <li><a href="#external-url">Incorrect external url</a></li>
                     </ul>
 
                     <h3 id="installation" class="section-link">
@@ -112,6 +113,16 @@
                     command will also work for Windows users.</p>
 <pre><code class="lang-bash">npm install -g browser-sync --msvs_version=<span class="hljs-number">2013</span>
 </code></pre>
+                    <h3 id="external-url" class="section-link">
+                        <a href="#external-url" class="page-anchor">Incorrect External URL</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+
+                    <p>Sometimes, depending on your network, your OS will report multiple external IP addresses. If this happens, currently
+                    BrowserSync just picks the first one and hopes for the best.</p>
+                    <p>You could use a tool like <a href="https://github.com/shakyshane/dev-ip">dev-ip</a> to list all possible external URLs on your
+                    machine, and then provide the <a href="/docs/options/#option-host">host option</a> in your configuration</p>
                     <p>This site is <a href="https://github.com/BrowserSync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
 
                 </article>

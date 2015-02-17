@@ -4,6 +4,7 @@
     <li><a href="#installation">Installation</a></li>
     <li><a href="#requirements">Requirements</a></li>
     <li><a href="#windows-users">Windows Users</a></li>
+    <li><a href="#external-url">Incorrect external url</a></li>
 </ul>
 
 {{inc src="headerlink" title="Installation" slug="installation"}}
@@ -45,3 +46,11 @@ command will also work for Windows users.
 ```bash
 npm install -g browser-sync --msvs_version=2013
 ```
+
+{{inc src="headerlink" title="Incorrect External URL" slug="external-url"}}
+
+Sometimes, depending on your network, your OS will report multiple external IP addresses. If this happens, currently
+BrowserSync just picks the first one and hopes for the best.
+
+You could use a tool like [dev-ip](https://github.com/shakyshane/dev-ip) to list all possible external URLs on your
+machine, and then provide the [host option](/docs/options/#option-host) in your configuration

@@ -109,6 +109,11 @@ pre.highlight {
     background: #F2F2F2;
     padding-top: 0;
 
+    h2 {
+        @include font-size(32px);
+        color: $navy;
+    }
+
     p, h2, h3 {
 
         margin-bottom: $base-spacing;
@@ -153,7 +158,7 @@ pre.highlight {
 
             @include font-size(30px);
             padding-top: $base-spacing+$half-spacing;
-            margin-bottom: $half-spacing;
+            margin-bottom: $base-spacing;
             border-top: 0;
         }
 

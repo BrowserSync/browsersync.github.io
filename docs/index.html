@@ -48,12 +48,14 @@
                 <div class="sticky-nav">
                     <p class="lede">Sections</p>
                     <ul class="nav nav--stacked" id="sticky-nav">
+                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
+
                         <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
-                        <li><a href="/docs/gulp">+ Gulp</a></li>
-                        <li><a href="/docs/grunt">+ Grunt</a></li>
-                        <li><a href="/docs/api">API</a></li>
-                        <li><a href="/docs/command-line">Command line</a></li>
-                        <li><a href="/docs/options">Options</a></li>
+                            <li><a href="/docs/gulp">+ Gulp</a></li>
+                            <li><a href="/docs/grunt">+ Grunt</a></li>
+                            <li><a href="/docs/api">API</a></li>
+                            <li><a href="/docs/command-line">Command line</a></li>
+                            <li><a href="/docs/options">Options</a></li>
                     </ul>
                 </div>
 
@@ -63,6 +65,53 @@
                     <h1 class="text--center">BrowserSync Documentation</h1>
                     <p>Here you can find all the information you&#39;ll need to begin using BrowserSync. We have extensive information covering
                     command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
+                    <p><strong>In this section:</strong></p>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#requirements">Requirements</a></li>
+                        <li><a href="#windows-users">Windows Users</a></li>
+                    </ul>
+
+                    <h3 id="installation" class="section-link">
+                        <a href="#installation" class="page-anchor">Installation</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+
+                    <h4 id="global-install">Global Install</h4>
+                    <p>If you would like to run BrowserSync from the command line in any directory, it
+                    can be installed <code>globally</code> with the following command.</p>
+<pre><code class="lang-bash">$ npm install -g browser-sync
+</code></pre>
+                    <h4 id="local-install">Local Install</h4>
+                    <p>This is the prefered way to use BrowserSync - installing it locally to each project. This
+                    way the dependency can be added to your package.json file and everyone on your team.</p>
+<pre><code class="lang-bash">$ npm install browser-sync --save-dev
+</code></pre>
+                    <p><strong>WARNING - do not use sudo!</strong> If you&#39;re running <code>Mac OSX</code> and encounter problems when trying to install BrowserSync - either
+                    globally or locally, it&#39;s almost always because you have problems with NPM permissions. Checkout <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">their docs</a>
+                    for a guide on how to fix this once and for all - it only takes 2 minutes :)</p>
+                    <h3 id="requirements" class="section-link">
+                        <a href="#requirements" class="page-anchor">Requirements</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+
+                    <p>BrowserSync works by injecting an asynchronous script tag (<code>&lt;script async&gt;...&lt;/script&gt;</code>) right after the <code>&lt;body&gt;</code> tag
+                    during initial request. In order for this to work properly the <code>&lt;body&gt;</code> tag must be present. Alternatively you
+                    can provide a custom rule for the snippet using <a href="/docs/options/#option-snippetOptions">snippetOptions</a></p>
+                    <h3 id="windows-users" class="section-link">
+                        <a href="#windows-users" class="page-anchor">Windows users</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+
+                    <p>Having trouble installing BrowserSync on Windows? It appears that the most reliable way to solve this
+                    is for you to <em>first</em> install a version of Visual Studio (even the free ones). This will install some system-wide tools that
+                    will enable you to install BrowserSync without a problem. Alternatively, it has been pointed out that the following
+                    command will also work for Windows users.</p>
+<pre><code class="lang-bash">npm install -g browser-sync --msvs_version=<span class="hljs-number">2013</span>
+</code></pre>
                     <p>This site is <a href="https://github.com/BrowserSync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
 
                 </article>

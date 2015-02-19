@@ -906,9 +906,16 @@ timestamps: <span class="hljs-literal">false</span></code></pre>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This will result in something like</span>
-<span class="hljs-comment">// &lt;script src="localhost:3002/browser-sync/browser-sync-client.1.6.0.js" /&gt;</span>
+<span class="hljs-comment">// localhost:3002/browser-sync/browser-sync-client.1.6.0.js</span>
 scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(path)</span> </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3002"</span> + path;
+}
+
+<span class="hljs-comment">// NOTE: Since 2.2.0</span>
+<span class="hljs-comment">// If you're using &lt;base&gt; in your html, you may need the absolute path to the script</span>
+<span class="hljs-comment">// http://localhost:3002/browser-sync/browser-sync-client.1.6.0.js</span>
+scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(path, port, options)</span> </span>{
+    <span class="hljs-keyword">return</span> options.get(<span class="hljs-string">"absolute"</span>);
 }</code></pre>
 
 

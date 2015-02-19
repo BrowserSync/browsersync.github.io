@@ -32,22 +32,20 @@ gulp.task("docs-build", ["docs"], function (cb) {
  */
 gulp.task("crossbow", function () {
 
-    var docs =  {
-        options: require("./_doc/options.json"),
-        api: require("./_doc/api.json")
-    };
-
     return gulp.src([
         "_src/*.hbs",
         "_src/*.html",
         "_src/docs/*"
     ])
     .pipe(crossbow.stream({
-        cwd: "_src",
-        prettyUrls: true,
+        config: {
+            cwd: "_src",
+            prettyUrls: true
+        },
         data: {
-            site: "file:_config.yml",
-            docs: docs
+            site:    "file:_config.yml",
+            options: "file:_doc/options.json",
+            api:     "file:_doc/api.json"
         }
     }))
     .pipe(gulp.dest("./"));

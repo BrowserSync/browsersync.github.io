@@ -11,10 +11,10 @@ simply `require` the BrowserSync module like you would any other. This will give
 you access to the public methods detailed below.
 
 {{hl src="snippets/api/require.js" }}
-
-{{#each docs.api}}
+{{#each api}}
 
 {{inc src="_includes/headerlink.html" slug=this.name title=this.preview prefix="api-"}}
+<p>{{this.description}}</p>
 {{#if this.params.length}}
     {{#loop this.params}}
     <ul class="param-list" id="api-{{this.name}}">

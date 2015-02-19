@@ -2,7 +2,7 @@
     <p class="lede">Jump to...</p>
     <ul class="nav nav--stacked" id="sticky-nav">
         <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-        {{#loop docs.options}}
+        {{#loop options}}
         <li><a href="#option-{{this.name}}">{{this.name}}</a></li>
         {{/loop}}
     </ul>

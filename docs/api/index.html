@@ -74,12 +74,12 @@
 
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);</code></pre>
 
-
 <h3 id="api-browserSync" class="section-link">
     <a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a>
     <a href="#page-top" class="back-to-top">^ TOP</a>
 </h3>
 
+<p></p>
     <ul class="param-list" id="api-config">
         <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
         <li class="type">Type: <span class="color-teal">Object</span>
@@ -121,6 +121,7 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
                         <ul class="param-list" id="api-arg">
                             <li class="name"><a href="#api-arg" class="page-anchor">arg</a></li>
                             <li class="type">Type: <span class="color-teal">String | Array | Object</span>
@@ -149,6 +150,7 @@ browserSync.reload( { stream: <span class="hljs-literal">true</span> } );</code>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>Helper method for browser notifications</p>
                         <ul class="param-list" id="api-msg">
                             <li class="name"><a href="#api-msg" class="page-anchor">msg</a></li>
                             <li class="type">Type: <span class="color-teal">String | HTML</span>
@@ -179,6 +181,7 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
 
 <pre class='highlight'><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     browserSync.exit();
@@ -190,6 +193,7 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>Method to pause file change events</p>
 
 
 
@@ -198,6 +202,7 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>Method to resume paused watchers</p>
 
 
 
@@ -206,6 +211,7 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>A simple true/false flag to determine if the current instance is paused</p>
 
 
 
@@ -214,6 +220,7 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.</p>
 
 <pre class='highlight'><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
 
@@ -227,6 +234,8 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
+                    <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
+                    You can use this to emit your own events, such as changed files, logging etc.</p>
 
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;
 

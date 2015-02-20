@@ -1,27 +1,25 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
 var sass        = require('gulp-sass');
+var reload      = browserSync.reload;
 
-// browser-sync task for starting the server.
-gulp.task('browser-sync', function() {
+// Static Server + watching scss/html files
+gulp.task('serve', ['sass'], function() {
+
     browserSync({
-        server: {
-            baseDir: "./"
-        }
+        server: "./app"
     });
+
+    gulp.watch("app/scss/*.scss", ['sass']);
+    gulp.watch("app/*.html").on('change', reload);
 });
 
-// Sass task, will run when any SCSS files change & BrowserSync
-// will auto-update browsers
-gulp.task('sass', function () {
-    return gulp.src('scss/**/*.scss')
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass', function() {
+    return gulp.src("app/scss/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest('css'))
-        .pipe(reload({stream:true}));
+        .pipe(gulp.dest("app/css"))
+        .pipe(reload({stream: true}));
 });
 
-// Default task to be run with `gulp`
-gulp.task('default', ['sass', 'browser-sync'], function () {
-    gulp.watch("scss/*.scss", ['sass']);
-});
+gulp.task('default', ['serve']);

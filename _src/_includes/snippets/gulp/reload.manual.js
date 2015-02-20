@@ -1,3 +1,6 @@
+// Save a reference to the `reload` method
+var reload = browserSync.reload;
+
 // Start the server
 gulp.task('browser-sync', function() {
     browserSync({
@@ -12,7 +15,7 @@ gulp.task('sass', function () {
     return gulp.src('scss/styles.scss')
         .pipe(sass({includePaths: ['scss']}))
         .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(reload({stream:true}));
 });
 
 // Reload all Browsers
@@ -23,5 +26,5 @@ gulp.task('bs-reload', function () {
 // Watch scss AND html files, doing different things with each.
 gulp.task('default', ['browser-sync'], function () {
     gulp.watch("scss/*.scss", ['sass']);
-    gulp.watch("*.html", ['bs-reload']);
+    gulp.watch("*.html").on("change", browserSync.reload);
 });

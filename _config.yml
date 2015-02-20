@@ -34,6 +34,8 @@ docs-navigation:
     url: "/docs/command-line"
   - label: "Options"
     url: "/docs/options"
+  - label: "Recipes"
+    url: "/docs/recipes"
 
 links:
   jh:           "http://www.wearejh.com/"
@@ -55,6 +57,7 @@ links:
   crossbow:     "https://github.com/shakyShane/crossbow.js"
   npmdocs:      "https://docs.npmjs.com/getting-started/fixing-npm-permissions"
   snippet:      "/docs/options/#option-snippetOptions"
+  recipes:      "https://github.com/BrowserSync/recipes"
 
 img:
   jh: "/img/jh-300-trans.png"

@@ -1,0 +1,27 @@
+---
+layout: "documentation.hbs"
+title: "BrowserSync Recipes"
+sidebar: "docs-sidebar.hbs"
+markdown: true
+---
+
+We have an [official project on Github]({{site.links.recipes}}) that contains full
+working examples of how to use Browser Sync in a number of different ways. Each example
+can be run separately and is a great way for newcomers to get their heads around
+the different use-cases that are possible.
+
+### Current recipes (links to github)
+
+<ul class="nav nav--stacked">
+{{#each recipes}}
+    <li><a href="{{this.link}}">{{this.title}}</a></li>
+{{/each}}
+</ul>
+
+### Contribute
+
+The concept of **recipes**, showing exactly how a feature or use-case works is something
+we'd like to expand on using feedback & contributions from you, the BrowserSync Users.
+
+So if you have a kind of workflow that is not already listed in the recipes, you
+should send us a pull request so that other people can benefit from what you've learnt.

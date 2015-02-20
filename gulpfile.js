@@ -45,7 +45,8 @@ gulp.task("crossbow", function () {
         data: {
             site:    "file:_config.yml",
             options: "file:_doc/options.json",
-            api:     "file:_doc/api.json"
+            api:     "file:_doc/api.json",
+            recipes: require("bs-recipes/manifest.json")
         }
     }))
     .pipe(gulp.dest("./"));
@@ -130,8 +131,8 @@ gulp.task('sprites', function () {
 gulp.task("watch", function () {
     gulp.watch("scss/**", ["sass"]);
     gulp.watch(["_src/**", "_config.yml"], ["crossbow", function () {
+        browserSync.notify("<span style='color: magenta'>Crossbow:</span> Injecting new HTML");
         htmlinjector();
-        //browserSync.reload();
     }]);
 });
 

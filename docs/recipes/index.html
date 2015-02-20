@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrowserSync Documentation</title>
+    <title>BrowserSync Recipes</title>
 
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
@@ -35,7 +35,7 @@
             <li><a href="/docs/api" >API</a></li>
             <li><a href="/docs/command-line" >Command line</a></li>
             <li><a href="/docs/options" >Options</a></li>
-            <li><a href="/docs/recipes" >Recipes</a></li>
+            <li><a href="/docs/recipes" class="active">Recipes</a></li>
         </ul>
     </div>
 </header><!-- .end .site-header -->
@@ -64,73 +64,24 @@
             </div>
             <div class="grid__cell three-quarters">
                 <article class="doc-wrapper">
-                    <h1 class="text--center">BrowserSync Documentation</h1>
-                    <p>Here you can find all the information you&#39;ll need to begin using BrowserSync. We have extensive information covering
-                    command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
-                    <p><strong>In this section:</strong></p>
-                    <ul class="nav nav-stacked">
-                        <li><a href="#installation">Installation</a></li>
-                        <li><a href="#requirements">Requirements</a></li>
-                        <li><a href="#windows-users">Windows Users</a></li>
-                        <li><a href="#external-url">Incorrect external url</a></li>
+                    <h1 class="text--center">BrowserSync Recipes</h1>
+                    <p>We have an <a href="https://github.com/BrowserSync/recipes">official project on Github</a> that contains full
+                    working examples of how to use Browser Sync in a number of different ways. Each example
+                    can be run separately and is a great way for newcomers to get their heads around
+                    the different use-cases that are possible.</p>
+                    <h3 id="current-recipes-links-to-github-">Current recipes (links to github)</h3>
+                    <ul class="nav nav--stacked">
+                        <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/grunt.sass">Grunt Sass</a></li>
+                        <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/middleware.css.injection">Middleware Css Injection</a></li>
+                        <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/server">Server</a></li>
+                        <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/server.middleware">Server Middleware</a></li>
                     </ul>
 
-                    <h3 id="installation" class="section-link">
-                        <a href="#installation" class="page-anchor">Installation</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
-
-
-                    <h4 id="global-install">Global Install</h4>
-                    <p>If you would like to run BrowserSync from the command line in any directory, it
-                    can be installed <code>globally</code> with the following command.</p>
-<pre><code class="lang-bash">$ npm install -g browser-sync
-</code></pre>
-                    <h4 id="local-install">Local Install</h4>
-                    <p>This is the prefered way to use BrowserSync - installing it locally to each project. This
-                    way the dependency can be added to your package.json file and everyone on your team.</p>
-<pre><code class="lang-bash">$ npm install browser-sync --save-dev
-</code></pre>
-                    <p><strong>WARNING - do not use sudo!</strong> If you&#39;re running <code>Mac OSX</code> and encounter problems when trying to install BrowserSync - either
-                    globally or locally, it&#39;s almost always because you have problems with NPM permissions. Checkout <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">their docs</a>
-                    for a guide on how to fix this once and for all - it only takes 2 minutes :)</p>
-                    <h3 id="requirements" class="section-link">
-                        <a href="#requirements" class="page-anchor">Requirements</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
-
-
-                    <p>BrowserSync works by injecting an asynchronous script tag (<code>&lt;script async&gt;...&lt;/script&gt;</code>) right after the <code>&lt;body&gt;</code> tag
-                    during initial request. In order for this to work properly the <code>&lt;body&gt;</code> tag must be present. Alternatively you
-                    can provide a custom rule for the snippet using <a href="/docs/options/#option-snippetOptions">snippetOptions</a></p>
-                    <h3 id="windows-users" class="section-link">
-                        <a href="#windows-users" class="page-anchor">Windows users</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
-
-
-                    <p>Having trouble installing BrowserSync on Windows? The most common reason for  <code>npm</code> to throw
-                    errors when compiling BrowserSync is that some of the dependencies
-                    (e.g. <a href="https://github.com/TooTallNate/node-gyp">node-gyp</a> need Visual C++ runtime libraries.</p>
-                    <p>The way to resolve this is to install <a href="http://www.visualstudio.com/">Visual Studio</a>.
-                    At the time of this writing (Feb 2015) the compilation works fine with
-                    <a href="http://www.visualstudio.com/en-us/news/vs2013-update4-rc-vs.aspx">Visual Studio 2013 Update 4</a>.
-                    You can then tell <code>npm</code> which version of Visual Studio you are using by the following command:</p>
-<pre><code class="lang-bash">npm install -g browser-sync --msvs_version=<span class="hljs-number">2013</span>
-</code></pre>
-                    <p>After installation of Visual Studio <code>npm</code> should not throw errors any longer, but only issue warnings.
-                    As far as we can tell, they do not impact BrowserSync.</p>
-                    <h3 id="external-url" class="section-link">
-                        <a href="#external-url" class="page-anchor">Incorrect External URL</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
-
-
-                    <p>Sometimes, depending on your network, your OS will report multiple external IP addresses. If this happens, currently
-                    BrowserSync just picks the first one and hopes for the best.</p>
-                    <p>You could use a tool like <a href="https://github.com/shakyshane/dev-ip">dev-ip</a> to list all possible external URLs on your
-                    machine, and then provide the <a href="/docs/options/#option-host">host option</a> in your configuration</p>
-                    <p>This site is <a href="https://github.com/BrowserSync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
+                    <h3 id="contribute">Contribute</h3>
+                    <p>The concept of <strong>recipes</strong>, showing exactly how a feature or use-case works is something
+                    we&#39;d like to expand on using feedback &amp; contributions from you, the BrowserSync Users.</p>
+                    <p>So if you have a kind of workflow that is not already listed in the recipes, you
+                    should send us a pull request so that other people can benefit from what you&#39;ve learnt.</p>
 
                 </article>
             </div>

@@ -27,6 +27,7 @@
   "devDependencies": {
     "browser-sync": "^2.1.1",
     "bs-html-injector": "^1.2.1",
+    "bs-recipes": "git://github.com/BrowserSync/recipes",
     "crossbow": "git://github.com/shakyshane/crossbow.js",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",

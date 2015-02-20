@@ -2,35 +2,37 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         watch: {
-            files: "assets/scss/**/*.scss",
-            tasks: ['compass']
+            files: 'app/scss/**/*.scss',
+            tasks: ['sass']
         },
-        compass: {
-            dist: {
-                options: {
-                    sassDir: 'assets/scss',
-                    cssDir: 'assets/css',
-                    outputStyle: 'compressed'
+        sass: {
+            dev: {
+                files: {
+                    'app/css/main.css': 'app/scss/main.scss'
                 }
             }
         },
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : 'assets/css/*.css'
+                    src : [
+                        'app/css/*.css',
+                        'app/*.html'
+                    ]
                 },
                 options: {
-                    watchTask: true // < VERY important
+                    watchTask: true,
+                    server: './app'
                 }
             }
         }
     });
 
     // load npm tasks
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
     // define default task
-    grunt.registerTask('default', ["browserSync", "watch"]);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 };

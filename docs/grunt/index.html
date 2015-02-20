@@ -127,37 +127,39 @@
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(grunt)</span> </span>{
     grunt.initConfig({
         watch: {
-            files: <span class="hljs-string">"assets/scss/**/*.scss"</span>,
-            tasks: [<span class="hljs-string">'compass'</span>]
+            files: <span class="hljs-string">'app/scss/**/*.scss'</span>,
+            tasks: [<span class="hljs-string">'sass'</span>]
         },
-        compass: {
-            dist: {
-                options: {
-                    sassDir: <span class="hljs-string">'assets/scss'</span>,
-                    cssDir: <span class="hljs-string">'assets/css'</span>,
-                    outputStyle: <span class="hljs-string">'compressed'</span>
+        sass: {
+            dev: {
+                files: {
+                    <span class="hljs-string">'app/css/main.css'</span>: <span class="hljs-string">'app/scss/main.scss'</span>
                 }
             }
         },
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : <span class="hljs-string">'assets/css/*.css'</span>
+                    src : [
+                        <span class="hljs-string">'app/css/*.css'</span>,
+                        <span class="hljs-string">'app/*.html'</span>
+                    ]
                 },
                 options: {
-                    watchTask: <span class="hljs-literal">true</span> <span class="hljs-comment">// &lt; VERY important</span>
+                    watchTask: <span class="hljs-literal">true</span>,
+                    server: <span class="hljs-string">'./app'</span>
                 }
             }
         }
     });
 
     <span class="hljs-comment">// load npm tasks</span>
-    grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-compass'</span>);
+    grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-sass'</span>);
     grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-watch'</span>);
     grunt.loadNpmTasks(<span class="hljs-string">'grunt-browser-sync'</span>);
 
     <span class="hljs-comment">// define default task</span>
-    grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">"browserSync"</span>, <span class="hljs-string">"watch"</span>]);
+    grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'browserSync'</span>, <span class="hljs-string">'watch'</span>]);
 };</code></pre>
 
                 </article>

@@ -1,6 +1,6 @@
 [
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 24,
         "itemtype": "method",
         "name": "browserSync",
@@ -28,7 +28,7 @@
         "snippetpath": "_includes/snippets/api/browserSync.js"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 51,
         "description": "The `reload` method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.",
         "itemtype": "method",
@@ -51,7 +51,7 @@
         "snippetpath": "_includes/snippets/api/reload.js"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 61,
         "description": "Helper method for browser notifications",
         "itemtype": "method",
@@ -75,7 +75,7 @@
         "snippetpath": "_includes/snippets/api/notify.js"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 70,
         "description": "This method will close any running server, stop file watching & exit the current process.",
         "itemtype": "method",
@@ -87,7 +87,7 @@
         "snippetpath": "_includes/snippets/api/exit.js"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 77,
         "description": "Method to pause file change events",
         "itemtype": "method",
@@ -98,7 +98,7 @@
         "preview": ".pause()"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 84,
         "description": "Method to resume paused watchers",
         "itemtype": "method",
@@ -109,7 +109,7 @@
         "preview": ".resume()"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 118,
         "description": "A simple true/false flag to determine if the current instance is paused",
         "itemtype": "property",
@@ -120,7 +120,7 @@
         "preview": ".paused"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 110,
         "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
         "itemtype": "property",
@@ -132,7 +132,7 @@
         "snippetpath": "_includes/snippets/api/active.js"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
         "line": 95,
         "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
         "itemtype": "property",

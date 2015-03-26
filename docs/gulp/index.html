@@ -182,12 +182,16 @@ gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><sp
         .pipe(gulp.dest(<span class="hljs-string">'dist/js'</span>));
 });
 
+<span class="hljs-comment">// create a task that ensures the `js` task is complete before</span>
+<span class="hljs-comment">// reloading browsers</span>
+gulp.task(<span class="hljs-string">'js-watch'</span>, [<span class="hljs-string">'js'</span>], browserSync.reload);
+
 <span class="hljs-comment">// use default task to launch BrowserSync and watch JS files</span>
 gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'browser-sync'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
 
     <span class="hljs-comment">// add browserSync.reload to the tasks array to make</span>
     <span class="hljs-comment">// all browsers reload after tasks are complete.</span>
-    gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js'</span>, browserSync.reload]);
+    gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js-watch'</span>]);
 });</code></pre>
 
                     <h3 id="gulp-manual-reload" class="section-link">

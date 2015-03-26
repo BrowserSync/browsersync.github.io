@@ -39,7 +39,7 @@ gulp.task("crossbow", function () {
     ])
     .pipe(crossbow.stream({
         config: {
-            cwd: "_src",
+            base: "_src",
             prettyUrls: true
         },
         data: {

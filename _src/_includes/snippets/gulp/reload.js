@@ -1,12 +1,3 @@
-// start server
-gulp.task('browser-sync', function() {
-    browserSync({
-        server: {
-            baseDir: "./"
-        }
-    });
-});
-
 // process JS files and return the stream.
 gulp.task('js', function () {
     return gulp.src('js/*js')
@@ -20,7 +11,14 @@ gulp.task('js', function () {
 gulp.task('js-watch', ['js'], browserSync.reload);
 
 // use default task to launch BrowserSync and watch JS files
-gulp.task('default', ['browser-sync'], function () {
+gulp.task('serve', ['js'], function () {
+
+    // Serve files from the root of this project
+    browserSync({
+        server: {
+            baseDir: "./"
+        }
+    });
 
     // add browserSync.reload to the tasks array to make
     // all browsers reload after tasks are complete.

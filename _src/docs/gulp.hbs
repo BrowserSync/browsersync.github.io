@@ -42,9 +42,9 @@ To fix this problem, you can use the [gulp-filter](https://www.npmjs.org/package
 
 {{ inc src="headerlink.html" title="Browser Reloading" slug="gulp-reload" }}
 
-Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you
-can do that easily by adding `.reload` to the array of tasks that will be run when files change. (make sure you `return`
- the stream from your tasks to ensure the browser is reloaded at the correct time)
+Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), but
+you want the reload to happen *after* your tasks. This will be easier in gulp `4.x.x`, but for now you can do the following:
+(make sure you `return` the stream from your tasks to ensure that `browserSync.reload()` is called at the correct time.
 
 {{ hl src="snippets/gulp/reload.js" }}
 

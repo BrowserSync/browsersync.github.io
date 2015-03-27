@@ -20,6 +20,12 @@ server: {
     index: "index.htm"
 }
 
+// Serve files from the app directory, with custom file extension fallbacks
+server: {
+    baseDir: "app",
+    extensions: ["html","json"]
+}
+
 // Since version 1.2.1
 // The key is the url to match
 // The value is which folder to serve (relative to your current working directory)

@@ -8,6 +8,8 @@ url: "http://browsersync.io"
 twitter_username: browsersync
 github_username: shakshane
 
+downloads: "Over 190,000 downloads per month"
+
 # Build settings
 markdown: kramdown
 permalink: pretty

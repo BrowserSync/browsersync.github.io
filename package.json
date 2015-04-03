@@ -28,7 +28,7 @@
     "browser-sync": "^2.1.1",
     "bs-html-injector": "^1.2.1",
     "bs-recipes": "git://github.com/BrowserSync/recipes",
-    "crossbow": "git://github.com/shakyshane/crossbow.js",
+    "crossbow": "^0.4.2",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-copy": "0.0.2",
@@ -44,7 +44,6 @@
     "js-yaml": "^3.2.5",
     "lodash": "^3.0.0",
     "marked": "^0.3.2",
-    "pre-commit": "0.0.9",
     "pretemplater": "^1.1.2",
     "through2": "^0.6.3",
     "vinyl": "^0.4.6"

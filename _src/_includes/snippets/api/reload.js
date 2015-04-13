@@ -7,5 +7,5 @@ browserSync.reload( "styles.css" );
 // multiple files
 browserSync.reload( ["styles.css", "ie.css"] );
 
-// streams support
-browserSync.reload( { stream: true } );
+// Since 2.6.0 - wildcards to reload ALL css files
+browserSync.reload( "*.css" );

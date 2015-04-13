@@ -25,11 +25,51 @@ After install BrowserSync globally, you can run it like this:
 $ browser-sync start <options>
 {{/hl}}
 
-{{inc src="headerlink.html" title="Options" slug="command-line-options" }}
+{{inc src="headerlink.html" title="start options" slug="command-line-options" }}
 
-{{inc src="snippets/commands/options.html" }}
+<table>
+    {{#each startCommands}}
+        <tr>
+            <td>--{{@key}}</td>
+            <td>{{this}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+
 
 {{#loop page.items}}
 {{inc src="headerlink.html" title=this.title slug=this.slug }}
 {{hl src=this.file}}
 {{/loop}}
+
+
+{{inc src="headerlink.html" title="reload options" slug="command-line-options" }}
+
+<table>
+    {{#each reloadCommands}}
+        <tr>
+            <td>--{{@key}}</td>
+            <td>{{this}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+{{inc src="headerlink.html" title="reload over http protocol" slug="command-line-options" }}
+
+{{#hl}}
+$ browser-sync reload
+{{/hl}}
+
+{{inc src="headerlink.html" title="reload over http protocol with port" slug="command-line-options" }}
+
+{{#hl}}
+$ browser-sync reload --port 4000 --files="*.css"
+{{/hl}}
+
+{{inc src="headerlink.html" title="reload over http protocol with full url" slug="command-line-options" }}
+
+{{#hl}}
+$ browser-sync reload --url https://localhost:3000 --files="*.css"
+{{/hl}}
+

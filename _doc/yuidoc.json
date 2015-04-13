@@ -1,8 +1,8 @@
 {
     "project": {},
     "files": {
-        "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js": {
-            "name": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
+        "/Users/shaneobsourne/code/browser-sync/index.js": {
+            "name": "/Users/shaneobsourne/code/browser-sync/index.js",
             "modules": {
                 "BrowserSync": 1
             },
@@ -10,8 +10,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js": {
-            "name": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
+        "/Users/shaneobsourne/code/browser-sync/lib/default-config.js": {
+            "name": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
             "modules": {
                 "BrowserSync.options": 1
             },
@@ -28,7 +28,7 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
+            "file": "/Users/shaneobsourne/code/browser-sync/index.js",
             "line": 4
         },
         "BrowserSync.options": {
@@ -38,20 +38,20 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
+            "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
             "line": 2
         }
     },
     "classes": {},
     "classitems": [{
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 19,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 20,
         "type": "{boolean|EventEmitter}",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 24,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 25,
         "itemtype": "method",
         "name": "browserSync",
         "params": [{
@@ -72,8 +72,8 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 35,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 36,
         "description": "Register a plugin. Must implement at least a 'plugin' method that returns a\ncallable function.",
         "itemtype": "method",
         "name": "use",
@@ -94,14 +94,14 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 51,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 52,
         "description": "The `reload` method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.",
         "itemtype": "method",
         "name": "reload",
         "params": [{
             "name": "arg",
-            "description": "The file or files to be reloaded. For\ndetails and examples of Streams support, please see the [GulpJS]({{site.links.gulp}}) examples",
+            "description": "The file or files to be reloaded.",
             "type": "String|Array|Object",
             "optional": true
         }],
@@ -112,8 +112,27 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
         "line": 61,
+        "description": "The `stream` method returns a transform stream and can act once or on many files.",
+        "itemtype": "method",
+        "name": "stream",
+        "params": [{
+            "name": "opts",
+            "description": "Configuration for the stream method",
+            "type": "Object",
+            "optional": true
+        }],
+        "since": "2.6.0",
+        "return": {
+            "description": "",
+            "type": "*"
+        },
+        "class": "",
+        "module": "BrowserSync"
+    }, {
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 71,
         "description": "Helper method for browser notifications",
         "itemtype": "method",
         "name": "notify",
@@ -130,62 +149,86 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 70,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 80,
         "description": "This method will close any running server, stop file watching & exit the current process.",
         "itemtype": "method",
         "name": "exit",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 77,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 87,
+        "description": "Stand alone file-watcher. Use this along with BrowserSync to create your own, minimal build system",
+        "itemtype": "method",
+        "name": "watch",
+        "params": [{
+            "name": "patterns",
+            "description": "Glob patterns for files to watch",
+            "type": "String"
+        }, {
+            "name": "opts",
+            "description": "Options to be passed to Chokidar - check what's available in [their docs](https://github.com/paulmillr/chokidar#getting-started)",
+            "type": "Object",
+            "optional": true
+        }, {
+            "name": "fn",
+            "description": "Callback function for each event.",
+            "type": "Function",
+            "optional": true
+        }],
+        "since": "2.6.0",
+        "class": "",
+        "module": "BrowserSync"
+    }, {
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 97,
         "description": "Method to pause file change events",
         "itemtype": "method",
         "name": "pause",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 84,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 104,
         "description": "Method to resume paused watchers",
         "itemtype": "method",
         "name": "resume",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 91,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 111,
         "description": "Add properties fo",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 95,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 115,
         "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
         "itemtype": "property",
         "name": "emitter",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 110,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 130,
         "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
         "itemtype": "property",
         "name": "active",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 118,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 138,
         "description": "A simple true/false flag to determine if the current instance is paused",
         "itemtype": "property",
         "name": "paused",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 128,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 148,
         "description": "Event emitter factory",
         "return": {
             "description": "",
@@ -194,8 +237,8 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 138,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 158,
         "description": "Get the singleton's emitter, or a new one.",
         "return": {
             "description": "",
@@ -204,8 +247,8 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 150,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 170,
         "description": "Helper to allow methods to be called on the module export\nbefore there's a running instance",
         "params": [{
             "name": "name",
@@ -219,8 +262,8 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 169,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 189,
         "description": "Create a single instance when module export is used directly via browserSync({});\nThis is mostly for back-compatibility, for also for the nicer api.\nThis will never be removed to ensure we never break user-land, but\nwe should discourage it's use.",
         "return": {
             "description": "",
@@ -229,8 +272,8 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 200,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 220,
         "params": [{
             "name": "prop",
             "description": "",
@@ -243,8 +286,8 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 212,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 232,
         "description": "Get a single instance by name",
         "params": [{
             "name": "name",
@@ -258,8 +301,8 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 229,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 249,
         "description": "Create an instance of BrowserSync",
         "params": [{
             "name": "name",
@@ -279,14 +322,14 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 272,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 296,
         "description": "Reset the state of the module.\n(should only be needed for test environments)",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 287,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 311,
         "description": "Get a single instance by name",
         "params": [{
             "name": "name",
@@ -300,20 +343,20 @@
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 300,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 324,
         "type": "{Array}",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 305,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 329,
         "description": "Create an instance of BrowserSync",
         "type": "{create}",
         "class": "",
         "module": "BrowserSync"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
         "line": 7,
         "description": "BrowserSync includes a user-interface that is accessed via a separate port.\nThe UI allows to controls all devices, push sync updates and much more.",
         "itemtype": "property",
@@ -337,9 +380,9 @@
             "optdefault": "8080"
         }]
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
         "line": 24,
-        "description": "BrowserSync can watch your files as you work. Changes you make will either\nbe injected into the page (CSS & images) or will cause all browsers to do\na full-page refresh. See [isaacs's minimatch](https://github.com/isaacs/minimatch) for more information on glob patterns.",
+        "description": "BrowserSync can watch your files as you work. Changes you make will either\nbe injected into the page (CSS & images) or will cause all browsers to do\na full-page refresh. See [anymatch](https://github.com/es128/anymatch) for more information on glob patterns.",
         "itemtype": "property",
         "name": "files",
         "type": "Array|String",
@@ -347,19 +390,19 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
         "line": 34,
-        "description": "File watching options that get passed along to [Gaze](https://github.com/shama/gaze). Check out the [properties](https://github.com/shama/gaze#properties)\nsection of their docs to see which options they support.\nfor availbable options",
+        "description": "File watching options that get passed along to [Chokidar](https://github.com/paulmillr/chokidar).\nCheck their docs for available options",
         "itemtype": "property",
         "name": "watchOptions",
         "type": "Object",
         "default": "undefined",
-        "since": "1.3.0",
+        "since": "2.6.0",
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 44,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 61,
         "description": "Use the built-in static server for basic HTML/JS/CSS websites.",
         "itemtype": "property",
         "name": "server",
@@ -368,8 +411,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 52,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 69,
         "description": "Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.",
         "itemtype": "property",
         "name": "proxy",
@@ -394,8 +437,8 @@
             "optional": true
         }]
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 63,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 80,
         "itemtype": "property",
         "name": "port",
         "type": "Number",
@@ -403,8 +446,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 72,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 89,
         "description": "Enable https for localhost development. **Note:** Proxy and Tunnel not currently supported.",
         "itemtype": "property",
         "name": "https",
@@ -414,8 +457,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 80,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 97,
         "description": "Clicks, Scrolls & Form inputs on any device will be mirrored to all others.",
         "itemtype": "property",
         "name": "ghostMode",
@@ -461,8 +504,8 @@
             }]
         }]
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 101,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 118,
         "description": "Can be either \"info\", \"debug\", \"warn\", or \"silent\"",
         "itemtype": "property",
         "name": "logLevel",
@@ -471,8 +514,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 109,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 126,
         "description": "Change the console logging prefix. Useful if you're creating your\nown project based on BrowserSync",
         "itemtype": "property",
         "name": "logPrefix",
@@ -482,8 +525,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 119,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 136,
         "itemtype": "property",
         "name": "logConnections",
         "type": "Boolean",
@@ -491,8 +534,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 126,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 143,
         "itemtype": "property",
         "name": "logFileChanges",
         "type": "Boolean",
@@ -500,8 +543,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 133,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 150,
         "description": "Log the snippet to the console when you're in snippet mode (no proxy/server)",
         "itemtype": "property",
         "name": "logSnippet",
@@ -511,8 +554,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 142,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 159,
         "description": "SINCE 1.7.0! You can control how the snippet is injected\nonto each page via a custom regex + function.\nYou can also provide patterns for certain urls\nthat should be ignored from the snippet injection.",
         "itemtype": "property",
         "name": "snippetOptions",
@@ -544,8 +587,19 @@
             "optdefault": "Function"
         }]
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 166,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 183,
+        "description": "Add additional HTML rewriting rules.",
+        "itemtype": "property",
+        "name": "rewriteRules",
+        "since": "2.4.0",
+        "type": "Array|Boolean",
+        "default": "false",
+        "class": "",
+        "module": "BrowserSync.options"
+    }, {
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 192,
         "itemtype": "property",
         "name": "tunnel",
         "type": "String|Boolean",
@@ -553,8 +607,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 172,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 198,
         "description": "Some features of BrowserSync (such as `xip` & `tunnel`) require an internet connection, but if you're\nworking offline, you can reduce start-up time by setting this option to `false`",
         "itemtype": "property",
         "name": "online",
@@ -563,8 +617,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 180,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 206,
         "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, \"local\", \"external\", \"ui\", \"ui-external\" or \"tunnel\"",
         "itemtype": "property",
         "name": "open",
@@ -573,8 +627,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 189,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 215,
         "itemtype": "property",
         "name": "browser",
         "type": "String|Array",
@@ -582,8 +636,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 196,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 222,
         "description": "Requires an internet connection - useful for services such as [Typekit](https://typekit.com/)\nas it allows you to configure domains such as `*.xip.io` in your kit settings",
         "itemtype": "property",
         "name": "xip",
@@ -592,8 +646,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 207,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 233,
         "description": "Reload each browser when BrowserSync is restarted.",
         "itemtype": "property",
         "name": "reloadOnRestart",
@@ -602,8 +656,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 215,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 241,
         "description": "The small pop-over notifications in the browser are not always needed/wanted.",
         "itemtype": "property",
         "name": "notify",
@@ -612,8 +666,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 223,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 249,
         "itemtype": "property",
         "name": "scrollProportionally",
         "type": "Boolean",
@@ -621,8 +675,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 230,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 256,
         "itemtype": "property",
         "name": "scrollThrottle",
         "type": "Number",
@@ -630,8 +684,9 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 237,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 263,
+        "description": "Time, in milliseconds, to wait before\ninstruction browser to reload/inject following a\nfile change event",
         "itemtype": "property",
         "name": "reloadDelay",
         "type": "Number",
@@ -639,8 +694,30 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 244,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 273,
+        "description": "Restrict the frequency in which browser:reload events\ncan be emitted to connected clients",
+        "itemtype": "property",
+        "name": "reloadDebounce",
+        "type": "Number",
+        "default": "0",
+        "since": "2.6.0",
+        "class": "",
+        "module": "BrowserSync.options"
+    }, {
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 283,
+        "description": "User provided plugins",
+        "itemtype": "property",
+        "name": "plugins",
+        "type": "Array",
+        "default": "[]",
+        "since": "2.6.0",
+        "class": "",
+        "module": "BrowserSync.options"
+    }, {
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 292,
         "itemtype": "property",
         "name": "injectChanges",
         "type": "Boolean",
@@ -648,8 +725,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 251,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 299,
         "itemtype": "property",
         "name": "startPath",
         "type": "String|Null",
@@ -657,8 +734,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 258,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 306,
         "description": "Whether to minify client script, or not.",
         "itemtype": "property",
         "name": "minify",
@@ -667,8 +744,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 266,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 314,
         "itemtype": "property",
         "name": "host",
         "type": "String",
@@ -676,8 +753,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 273,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 321,
         "itemtype": "property",
         "name": "codeSync",
         "type": "Boolean",
@@ -685,8 +762,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 280,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 328,
         "itemtype": "property",
         "name": "timestamps",
         "type": "Boolean",
@@ -694,8 +771,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 296,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 344,
         "description": "Alter the script path for complete control over where the BrowserSync\nJavascript is served from. Whatever you return from this function\nwill be used as the script path.",
         "itemtype": "property",
         "name": "scriptPath",
@@ -705,8 +782,8 @@
         "class": "",
         "module": "BrowserSync.options"
     }, {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/lib/default-config.js",
-        "line": 306,
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 354,
         "description": "Configure the Socket.IO path and namespace to avoid collisions. Note: `namespace` can also be a function",
         "itemtype": "property",
         "name": "socket",
@@ -739,75 +816,86 @@
             "optional": true,
             "optdefault": "5000"
         }]
+    }, {
+        "file": "/Users/shaneobsourne/code/browser-sync/lib/default-config.js",
+        "line": 373,
+        "description": "A map of file-extensions -> dom element.\nUseful if you're serving files with unusual file extensions",
+        "itemtype": "property",
+        "name": "tagNames",
+        "class": "",
+        "module": "BrowserSync.options"
     }],
     "warnings": [{
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:24"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:25"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:51"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:52"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:128"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:61"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:138"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:148"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:150"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:158"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:169"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:170"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:200"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:189"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:212"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:220"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:229"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:232"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:287"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:249"
+    }, {
+        "message": "replacing incorrect tag: returns with return",
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:311"
     }, {
         "message": "Missing item type",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:19"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:20"
     }, {
         "message": "Missing item type\nAdd properties fo",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:91"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:111"
     }, {
         "message": "Missing item type\nEvent emitter factory",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:128"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:148"
     }, {
         "message": "Missing item type\nGet the singleton's emitter, or a new one.",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:138"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:158"
     }, {
         "message": "Missing item type\nHelper to allow methods to be called on the module export\nbefore there's a running instance",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:150"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:170"
     }, {
         "message": "Missing item type\nCreate a single instance when module export is used directly via browserSync({});\nThis is mostly for back-compatibility, for also for the nicer api.\nThis will never be removed to ensure we never break user-land, but\nwe should discourage it's use.",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:169"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:189"
     }, {
         "message": "Missing item type",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:200"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:220"
     }, {
         "message": "Missing item type\nGet a single instance by name",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:212"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:232"
     }, {
         "message": "Missing item type\nCreate an instance of BrowserSync",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:229"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:249"
     }, {
         "message": "Missing item type\nReset the state of the module.\n(should only be needed for test environments)",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:272"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:296"
     }, {
         "message": "Missing item type\nGet a single instance by name",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:287"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:311"
     }, {
         "message": "Missing item type",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:300"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:324"
     }, {
         "message": "Missing item type\nCreate an instance of BrowserSync",
-        "line": " /Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js:305"
+        "line": " /Users/shaneobsourne/code/browser-sync/index.js:329"
     }]
 }

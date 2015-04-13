@@ -1,7 +1,7 @@
 [
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 24,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 25,
         "itemtype": "method",
         "name": "browserSync",
         "params": [
@@ -28,15 +28,15 @@
         "snippetpath": "_includes/snippets/api/browserSync.js"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 51,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 52,
         "description": "The `reload` method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.",
         "itemtype": "method",
         "name": "reload",
         "params": [
             {
                 "name": "arg",
-                "description": "The file or files to be reloaded. For\ndetails and examples of Streams support, please see the [GulpJS]({{site.links.gulp}}) examples",
+                "description": "The file or files to be reloaded.",
                 "type": "String | Array | Object",
                 "optional": true
             }
@@ -51,8 +51,32 @@
         "snippetpath": "_includes/snippets/api/reload.js"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
         "line": 61,
+        "description": "The `stream` method returns a transform stream and can act once or on many files.",
+        "itemtype": "method",
+        "name": "stream",
+        "params": [
+            {
+                "name": "opts",
+                "description": "Configuration for the stream method",
+                "type": "Object",
+                "optional": true
+            }
+        ],
+        "since": "2.6.0",
+        "return": {
+            "description": "",
+            "type": "*"
+        },
+        "class": "",
+        "module": "BrowserSync",
+        "preview": ".stream( opts )",
+        "snippetpath": "_includes/snippets/api/stream.js"
+    },
+    {
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 71,
         "description": "Helper method for browser notifications",
         "itemtype": "method",
         "name": "notify",
@@ -75,8 +99,8 @@
         "snippetpath": "_includes/snippets/api/notify.js"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 70,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 80,
         "description": "This method will close any running server, stop file watching & exit the current process.",
         "itemtype": "method",
         "name": "exit",
@@ -87,8 +111,39 @@
         "snippetpath": "_includes/snippets/api/exit.js"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 77,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 87,
+        "description": "Stand alone file-watcher. Use this along with BrowserSync to create your own, minimal build system",
+        "itemtype": "method",
+        "name": "watch",
+        "params": [
+            {
+                "name": "patterns",
+                "description": "Glob patterns for files to watch",
+                "type": "String"
+            },
+            {
+                "name": "opts",
+                "description": "Options to be passed to Chokidar - check what's available in [their docs](https://github.com/paulmillr/chokidar#getting-started)",
+                "type": "Object",
+                "optional": true
+            },
+            {
+                "name": "fn",
+                "description": "Callback function for each event.",
+                "type": "Function",
+                "optional": true
+            }
+        ],
+        "since": "2.6.0",
+        "class": "",
+        "module": "BrowserSync",
+        "preview": ".watch( patterns, opts, fn )",
+        "snippetpath": "_includes/snippets/api/watch.js"
+    },
+    {
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 97,
         "description": "Method to pause file change events",
         "itemtype": "method",
         "name": "pause",
@@ -98,8 +153,8 @@
         "preview": ".pause()"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 84,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 104,
         "description": "Method to resume paused watchers",
         "itemtype": "method",
         "name": "resume",
@@ -109,19 +164,20 @@
         "preview": ".resume()"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 118,
-        "description": "A simple true/false flag to determine if the current instance is paused",
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 115,
+        "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
         "itemtype": "property",
-        "name": "paused",
+        "name": "emitter",
         "class": "",
         "module": "BrowserSync",
         "params": [],
-        "preview": ".paused"
+        "preview": ".emitter",
+        "snippetpath": "_includes/snippets/api/emitter.js"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 110,
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 130,
         "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
         "itemtype": "property",
         "name": "active",
@@ -132,15 +188,14 @@
         "snippetpath": "_includes/snippets/api/active.js"
     },
     {
-        "file": "/Users/shaneobsourne/code/bs-crossbow/node_modules/browser-sync/index.js",
-        "line": 95,
-        "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
+        "file": "/Users/shaneobsourne/code/browser-sync/index.js",
+        "line": 138,
+        "description": "A simple true/false flag to determine if the current instance is paused",
         "itemtype": "property",
-        "name": "emitter",
+        "name": "paused",
         "class": "",
         "module": "BrowserSync",
         "params": [],
-        "preview": ".emitter",
-        "snippetpath": "_includes/snippets/api/emitter.js"
+        "preview": ".paused"
     }
 ]

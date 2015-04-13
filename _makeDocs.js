@@ -1,7 +1,7 @@
 var fs           = require("fs");
 var doc          = "./_doc/yuidoc.json";
 var docGen       = require("./_docgen");
-var opts         = require("browser-sync/lib/cli/opts.json");
+var opts         = require("browser-sync/lib/cli/opts.start.json");
 var pretemplater = require("pretemplater");
 var marked       = require('marked');
 var _            = require("lodash");
@@ -25,7 +25,10 @@ var data = require(doc);
  */
 var apiItems = docGen.prepareClassitems(data.classitems)
     .filter(removeExcluded)
-    .map(previewTweaks);
+    .map(previewTweaks)
+    .sort(function (a, b) {
+        return a.line - b.line;
+    });
 
 fs.writeFileSync("./_doc/api.json", JSON.stringify(apiItems, null, 4));
 

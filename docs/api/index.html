@@ -52,13 +52,15 @@
                         <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
                             <li><a href="#api-browserSync">browserSync( config, cb )</a></li>
                             <li><a href="#api-reload">.reload( arg )</a></li>
+                            <li><a href="#api-stream">.stream( opts )</a></li>
                             <li><a href="#api-notify">.notify( msg, timeout )</a></li>
                             <li><a href="#api-exit">.exit()</a></li>
+                            <li><a href="#api-watch">.watch( patterns, opts, fn )</a></li>
                             <li><a href="#api-pause">.pause()</a></li>
                             <li><a href="#api-resume">.resume()</a></li>
-                            <li><a href="#api-paused">.paused</a></li>
-                            <li><a href="#api-active">.active</a></li>
                             <li><a href="#api-emitter">.emitter</a></li>
+                            <li><a href="#api-active">.active</a></li>
+                            <li><a href="#api-paused">.paused</a></li>
                     </ul>
                 </div>
 
@@ -81,6 +83,7 @@
 </h3>
 
 <p></p>
+
     <ul class="param-list" id="api-config">
         <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
         <li class="type">Type: <span class="color-teal">Object</span>
@@ -99,6 +102,7 @@
 is useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.</p>
 </li>
     </ul>
+
 
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> config = {
     server: {
@@ -122,16 +126,18 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
-                    <p>The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
+                    <p><p>The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
+                    </p>
+
                         <ul class="param-list" id="api-arg">
                             <li class="name"><a href="#api-arg" class="page-anchor">arg</a></li>
                             <li class="type">Type: <span class="color-teal">String | Array | Object</span>
                                 <span class="recede">[optional]</span>
                             </li>
-                            <li class="desc"><p>The file or files to be reloaded. For
-                    details and examples of Streams support, please see the <a href="/docs/gulp">GulpJS</a> examples</p>
+                            <li class="desc"><p>The file or files to be reloaded.</p>
                     </li>
                         </ul>
+
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// browser reload</span>
 browserSync.reload();
@@ -142,8 +148,56 @@ browserSync.reload( <span class="hljs-string">"styles.css"</span> );
 <span class="hljs-comment">// multiple files</span>
 browserSync.reload( [<span class="hljs-string">"styles.css"</span>, <span class="hljs-string">"ie.css"</span>] );
 
-<span class="hljs-comment">// streams support</span>
-browserSync.reload( { stream: <span class="hljs-literal">true</span> } );</code></pre>
+<span class="hljs-comment">// Since 2.6.0 - wildcards to reload ALL css files</span>
+browserSync.reload( <span class="hljs-string">"*.css"</span> );
+</code></pre>
+
+
+                    <h3 id="api-stream" class="section-link">
+                        <a href="#api-stream" class="page-anchor">.stream( opts )</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+                    <p><p>The &#x60;stream&#x60; method returns a transform stream and can act once or on many files.</p>
+                    </p>
+
+                        <ul class="param-list" id="api-opts">
+                            <li class="name"><a href="#api-opts" class="page-anchor">opts</a></li>
+                            <li class="type">Type: <span class="color-teal">Object</span>
+                                <span class="recede">[optional]</span>
+                            </li>
+                            <li class="desc"><p>Configuration for the stream method</p>
+                    </li>
+                        </ul>
+
+                        <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
+
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/styles.scss'</span>)
+        .pipe(sass({includePaths: [<span class="hljs-string">'scss'</span>]}))
+        .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
+        .pipe(browserSync.stream());
+});
+
+<span class="hljs-comment">// Provide `once: true` to restrict reloading to once per stream</span>
+gulp.task(<span class="hljs-string">'templates'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'*.jade'</span>)
+        .pipe(jade())
+        .pipe(gulp.dest(<span class="hljs-string">'app'</span>))
+        .pipe(browserSync.stream({once: <span class="hljs-literal">true</span>}));
+});
+
+<span class="hljs-comment">// Provide filter unwanted files from being reloaded by providing</span>
+<span class="hljs-comment">// a match option</span>
+gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'*.less'</span>)
+        .pipe(jade())
+        .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
+        .pipe(browserSync.stream({match: <span class="hljs-string">"*.css"</span>}));
+});
+
+</code></pre>
 
 
                     <h3 id="api-notify" class="section-link">
@@ -151,7 +205,9 @@ browserSync.reload( { stream: <span class="hljs-literal">true</span> } );</code>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
-                    <p>Helper method for browser notifications</p>
+                    <p><p>Helper method for browser notifications</p>
+                    </p>
+
                         <ul class="param-list" id="api-msg">
                             <li class="name"><a href="#api-msg" class="page-anchor">msg</a></li>
                             <li class="type">Type: <span class="color-teal">String | HTML</span>
@@ -169,6 +225,7 @@ browserSync.reload( { stream: <span class="hljs-literal">true</span> } );</code>
                     </li>
                         </ul>
 
+
 <pre class='highlight'><code class="js">browserSync.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
 
 browserSync.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is supported&lt;/span&gt; too!"</span>);
@@ -182,11 +239,72 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
-                    <p>This method will close any running server, stop file watching &amp; exit the current process.</p>
+                    <p><p>This method will close any running server, stop file watching &amp; exit the current process.</p>
+                    </p>
+
+
 
 <pre class='highlight'><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     browserSync.exit();
 });</code></pre>
+
+
+                    <h3 id="api-watch" class="section-link">
+                        <a href="#api-watch" class="page-anchor">.watch( patterns, opts, fn )</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+                    <p><p>Stand alone file-watcher. Use this along with BrowserSync to create your own, minimal build system</p>
+                    </p>
+
+                        <ul class="param-list" id="api-patterns">
+                            <li class="name"><a href="#api-patterns" class="page-anchor">patterns</a></li>
+                            <li class="type">Type: <span class="color-teal">String</span>
+                                
+                            </li>
+                            <li class="desc"><p>Glob patterns for files to watch</p>
+                    </li>
+                        </ul>
+                        <ul class="param-list" id="api-opts">
+                            <li class="name"><a href="#api-opts" class="page-anchor">opts</a></li>
+                            <li class="type">Type: <span class="color-teal">Object</span>
+                                <span class="recede">[optional]</span>
+                            </li>
+                            <li class="desc"><p>Options to be passed to Chokidar - check what&#x27;s available in <a href="https://github.com/paulmillr/chokidar#getting-started">their docs</a></p>
+                    </li>
+                        </ul>
+                        <ul class="param-list" id="api-fn">
+                            <li class="name"><a href="#api-fn" class="page-anchor">fn</a></li>
+                            <li class="type">Type: <span class="color-teal">Function</span>
+                                <span class="recede">[optional]</span>
+                            </li>
+                            <li class="desc"><p>Callback function for each event.</p>
+                    </li>
+                        </ul>
+
+                        <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
+
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Create a BrowserSync instance</span>
+<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+
+<span class="hljs-comment">// Listen to change events on HTML and reload</span>
+bs.watch(<span class="hljs-string">"*.html"</span>).on(<span class="hljs-string">"change"</span>, bs.reload);
+
+<span class="hljs-comment">// Provide a callback to capture ALL events to CSS</span>
+<span class="hljs-comment">// files - then filter for 'change' and reload all</span>
+<span class="hljs-comment">// css files on the page.</span>
+bs.watch(<span class="hljs-string">"css/*.css"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
+    <span class="hljs-keyword">if</span> (event === <span class="hljs-string">"change"</span>) {
+        bs.reload(<span class="hljs-string">"*.css"</span>);
+    }
+});
+
+<span class="hljs-comment">// Now init the BrowserSync server</span>
+bs.init({
+    server: <span class="hljs-string">"./app"</span>
+});
+
+</code></pre>
 
 
                     <h3 id="api-pause" class="section-link">
@@ -194,7 +312,10 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
-                    <p>Method to pause file change events</p>
+                    <p><p>Method to pause file change events</p>
+                    </p>
+
+
 
 
 
@@ -203,31 +324,11 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
-                    <p>Method to resume paused watchers</p>
+                    <p><p>Method to resume paused watchers</p>
+                    </p>
 
 
 
-                    <h3 id="api-paused" class="section-link">
-                        <a href="#api-paused" class="page-anchor">.paused</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
-
-                    <p>A simple true/false flag to determine if the current instance is paused</p>
-
-
-
-                    <h3 id="api-active" class="section-link">
-                        <a href="#api-active" class="page-anchor">.active</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
-
-                    <p>A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.</p>
-
-<pre class='highlight'><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
-
-browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
-    <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
-});</code></pre>
 
 
                     <h3 id="api-emitter" class="section-link">
@@ -235,8 +336,11 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
-                    <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
+                    <p><p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
                     You can use this to emit your own events, such as changed files, logging etc.</p>
+                    </p>
+
+
 
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;
 
@@ -245,6 +349,35 @@ evt.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><spa
 });
 
 browserSync(config);</code></pre>
+
+
+                    <h3 id="api-active" class="section-link">
+                        <a href="#api-active" class="page-anchor">.active</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+                    <p><p>A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.</p>
+                    </p>
+
+
+
+<pre class='highlight'><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
+
+browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
+});</code></pre>
+
+
+                    <h3 id="api-paused" class="section-link">
+                        <a href="#api-paused" class="page-anchor">.paused</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+                    <p><p>A simple true/false flag to determine if the current instance is paused</p>
+                    </p>
+
+
+
 
 
                 </article>

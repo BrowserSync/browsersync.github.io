@@ -11,7 +11,7 @@ var svgSprite   = require("gulp-svg-sprites");
 var crossbow    = require("crossbow");
 var prettify    = require('gulp-jsbeautifier');
 var yaml        = require('js-yaml');
-var htmlinjector = require("bs-html-injector")
+var htmlinjector = require("bs-html-injector");
 
 
 /**
@@ -23,9 +23,32 @@ gulp.task("default", ["serve", "watch"]);
 /**
  * Build documentation
  */
-gulp.task("docs-build", ["docs"], function (cb) {
+gulp.task("docs-build", function (cb) {
     return cp.spawn("node", ["_makeDocs"], {stdio: "inherit"}).on("close", cb);
 });
+
+function crossbowBuild () {
+    return gulp.src([
+        "_src/*.hbs",
+        "_src/*.html",
+        "_src/docs/*"
+    ])
+        .pipe(crossbow.stream({
+            config: {
+                base: "_src",
+                prettyUrls: true
+            },
+            data: {
+                site:    "file:_config.yml",
+                options: "file:_doc/options.json",
+                api:     "file:_doc/api.json",
+                startCommands: "file:../node_modules/browser-sync/lib/cli/opts.start.json",
+                reloadCommands: "file:../node_modules/browser-sync/lib/cli/opts.reload.json",
+                recipes: require("bs-recipes/manifest.json")
+            }
+        }))
+        .pipe(gulp.dest("./"));
+}
 
 /**
  * Build the Crossbow Site
@@ -57,15 +80,16 @@ gulp.task("crossbow", function () {
  * Wait for crossbow-build, then launch the Server
  */
 gulp.task("serve", ["sass", "crossbow"], function() {
-    browserSync.use(htmlinjector, {
-        excludedTags: ["HTML", "HEAD", "BODY"]
-    });
+    //browserSync.use(htmlinjector, {
+    //    excludedTags: ["HTML", "HEAD", "BODY"]
+    //});
     browserSync({
         files: "css/*.css",
-        open: "ui",
+        open: false,
         server: {
             baseDir: ["./"]
-        }
+        },
+        plugins: ["bs-html-injector"]
     });
 });
 
@@ -124,18 +148,57 @@ gulp.task('sprites', function () {
         .pipe(gulp.dest("img/icons"));
 });
 
+function buildDocs () {
+    console.time("compile");
+    var yuidoc = require("gulp-yuidoc");
+    yuidocs(function () {
+        console.log("created docs from source");
+        cp.spawn("node", ["_makeDocs"], {stdio: "inherit"})
+            .on("close", function () {
+                console.log("Ran node _makeDocs.js");
+                crossbowBuild().on("end", function () {
+                    console.timeEnd("compile");
+                    console.log("Ran Crossbow");
+                    browserSync.notify("<span style='color: magenta'>Crossbow:</span> Injecting new HTML");
+                    htmlinjector();
+                });
+            });
+    });
+}
+
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run crossbow & reload BrowserSync
  */
 gulp.task("watch", function () {
     gulp.watch("scss/**", ["sass"]);
-    gulp.watch(["_src/**", "_config.yml"], ["crossbow", function () {
-        browserSync.notify("<span style='color: magenta'>Crossbow:</span> Injecting new HTML");
-        htmlinjector();
-    }]);
+    var bs1 = browserSync.create();
+    bs1.watch([
+        "_src/**",
+        "_config.yml",
+        "/Users/shaneobsourne/code/browser-sync/index.js",
+        "*.js",
+        "/Users/shaneobsourne/code/browser-sync/lib/default-config.js"
+    ]).on("change", buildDocs);
 });
 
+
+function yuidocs (cb) {
+
+    var yuidoc = require("gulp-yuidoc");
+
+    return gulp.src([
+        "/Users/shaneobsourne/code/browser-sync/index.js",
+        //"./node_modules/browser-sync/index.js",
+        "/Users/shaneobsourne/code/browser-sync/lib/default-config.js"
+    ])
+        .pipe(yuidoc.parser())
+        .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))
+        .pipe(gulp.dest("./_doc"))
+        .on("end", function () {
+             cb();
+        });
+}
 /**
  * Create documentation from the BrowserSync Source code
  */
@@ -143,7 +206,11 @@ gulp.task("docs", function () {
 
     var yuidoc = require("gulp-yuidoc");
 
-    return gulp.src(["./node_modules/browser-sync/index.js", "./node_modules/browser-sync/lib/default-config.js"])
+    return gulp.src([
+        "/Users/shaneobsourne/code/browser-sync/index.js",
+        //"./node_modules/browser-sync/index.js",
+        "./node_modules/browser-sync/lib/default-config.js"
+    ])
         .pipe(yuidoc.parser())
         .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))
         .pipe(gulp.dest("./_doc"));

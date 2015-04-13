@@ -64,6 +64,7 @@
                         <li><a href="#option-logFileChanges">logFileChanges</a></li>
                         <li><a href="#option-logSnippet">logSnippet</a></li>
                         <li><a href="#option-snippetOptions">snippetOptions</a></li>
+                        <li><a href="#option-rewriteRules">rewriteRules</a></li>
                         <li><a href="#option-tunnel">tunnel</a></li>
                         <li><a href="#option-online">online</a></li>
                         <li><a href="#option-open">open</a></li>
@@ -74,6 +75,8 @@
                         <li><a href="#option-scrollProportionally">scrollProportionally</a></li>
                         <li><a href="#option-scrollThrottle">scrollThrottle</a></li>
                         <li><a href="#option-reloadDelay">reloadDelay</a></li>
+                        <li><a href="#option-reloadDebounce">reloadDebounce</a></li>
+                        <li><a href="#option-plugins">plugins</a></li>
                         <li><a href="#option-injectChanges">injectChanges</a></li>
                         <li><a href="#option-startPath">startPath</a></li>
                         <li><a href="#option-minify">minify</a></li>
@@ -82,6 +85,7 @@
                         <li><a href="#option-timestamps">timestamps</a></li>
                         <li><a href="#option-scriptPath">scriptPath</a></li>
                         <li><a href="#option-socket">socket</a></li>
+                        <li><a href="#option-tagNames">tagNames</a></li>
                     </ul>
                 </div>
 
@@ -158,20 +162,26 @@ ui: <span class="hljs-literal">false</span>
 
                     <p>BrowserSync can watch your files as you work. Changes you make will either
                     be injected into the page (CSS &amp; images) or will cause all browsers to do
-                    a full-page refresh. See <a href="https://github.com/isaacs/minimatch">isaacs&#x27;s minimatch</a> for more information on glob patterns.</p>
+                    a full-page refresh. See <a href="https://github.com/es128/anymatch">anymatch</a> for more information on glob patterns.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// single file</span>
 files: <span class="hljs-string">"app/css/style.css"</span>
 
 <span class="hljs-comment">// multiple files</span>
-files: [<span class="hljs-string">"app/css/style.css"</span>, <span class="hljs-string">"app/css/ie.css"</span>]
+files: [<span class="hljs-string">"app/css/style.css"</span>, <span class="hljs-string">"app/js/*.js"</span>]
 
-<span class="hljs-comment">// watch all files under app/css (including sub directories)</span>
-files: <span class="hljs-string">"app/css/**"</span>
-
-<span class="hljs-comment">// multiple globs</span>
-files: [<span class="hljs-string">"app/css/*.css"</span>, <span class="hljs-string">"app/**.*.html"</span>, <span class="hljs-string">"app/js/**/*.js"</span>]</code></pre>
+<span class="hljs-comment">// patterns + 1 with custom callback</span>
+<span class="hljs-comment">// since 2.6.0</span>
+files: [
+    <span class="hljs-string">"wp-content/themes/**/*.css"</span>,
+    {
+        match: [<span class="hljs-string">"wp-content/themes/**/*.php"</span>],
+        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
+            <span class="hljs-comment">/** Custom event handler **/</span>
+        }
+    }
+]</code></pre>
 
 
                     <h3 id="option-watchOptions" class="section-link">
@@ -186,17 +196,31 @@ files: [<span class="hljs-string">"app/css/*.css"</span>, <span class="hljs-stri
                         <li class="default">Default: <span class="color-teal">undefined</span></li>
                     </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 1.3.0</p>
+                    <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-                    <p>File watching options that get passed along to <a href="https://github.com/shama/gaze">Gaze</a>. Check out the <a href="https://github.com/shama/gaze#properties">properties</a>
-                    section of their docs to see which options they support.
-                    for availbable options</p>
+                    <p>File watching options that get passed along to <a href="https://github.com/paulmillr/chokidar">Chokidar</a>.
+                    Check their docs for available options</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Options passed to Gaze</span>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Options passed to Chokidar</span>
 watchOptions: {
-    debounceDelay: <span class="hljs-number">1000</span>
-}</code></pre>
+    ignoreInitial: <span class="hljs-literal">true</span>,
+    ignored: <span class="hljs-string">'*.txt'</span>
+}
+
+<span class="hljs-comment">// options for chokidar with custom callback</span>
+<span class="hljs-comment">// since 2.6.0</span>
+files: [
+    {
+        match: [<span class="hljs-string">"wp-content/themes/**/*.php"</span>],
+        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
+            <span class="hljs-comment">/** Custom event handler **/</span>
+        },
+        options: {
+            ignored: <span class="hljs-string">'*.txt'</span>
+        }
+    }
+]</code></pre>
 
 
                     <h3 id="option-server" class="section-link">
@@ -554,6 +578,25 @@ snippetOptions: {
 }</code></pre>
 
 
+                    <h3 id="option-rewriteRules" class="section-link">
+                        <a href="#option-rewriteRules" class="page-anchor">rewriteRules</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+
+                    <ul class="param-list">
+                        <li class="type">Type: <span class="color-teal">Array | Boolean</span>
+                        </li>
+                        <li class="default">Default: <span class="color-teal">false</span></li>
+                    </ul>
+
+                    <p class="lede warning"><b>Note: </b> requires at least version 2.4.0</p>
+
+                    <p>Add additional HTML rewriting rules.</p>
+
+
+
+
                     <h3 id="option-tunnel" class="section-link">
                         <a href="#option-tunnel" class="page-anchor">tunnel</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
@@ -692,6 +735,8 @@ xip: <span class="hljs-literal">true</span></code></pre>
                     <p>Reload each browser when BrowserSync is restarted.</p>
 
 
+<pre class='highlight'><code class="js"><span class="hljs-comment">// don't auto-reload all browsers following a BrowserSync reload</span>
+reloadOnRestart: <span class="hljs-literal">false</span></code></pre>
 
 
                     <h3 id="option-notify" class="section-link">
@@ -763,23 +808,68 @@ notify: <span class="hljs-literal">false</span></code></pre>
 </ul>
 
 
+<p>Time, in milliseconds, to wait before
+instruction browser to reload/inject following a
+file change event</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Wait for 2 seconds before any browsers should try to inject/reload a file.</span>
 reloadDelay: <span class="hljs-number">2000</span></code></pre>
 
 
-                    <h3 id="option-injectChanges" class="section-link">
-                        <a href="#option-injectChanges" class="page-anchor">injectChanges</a>
+                    <h3 id="option-reloadDebounce" class="section-link">
+                        <a href="#option-reloadDebounce" class="page-anchor">reloadDebounce</a>
                         <a href="#page-top" class="back-to-top">^ TOP</a>
                     </h3>
 
 
                     <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
+                        <li class="type">Type: <span class="color-teal">Number</span>
                         </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
+                        <li class="default">Default: <span class="color-teal">0</span></li>
                     </ul>
+
+                    <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
+
+                    <p>Restrict the frequency in which browser:reload events
+                    can be emitted to connected clients</p>
+
+
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Wait 2 seconds after a reload event before allowing more.</span>
+reloadDebounce: <span class="hljs-number">2000</span></code></pre>
+
+
+                    <h3 id="option-plugins" class="section-link">
+                        <a href="#option-plugins" class="page-anchor">plugins</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+
+                    <ul class="param-list">
+                        <li class="type">Type: <span class="color-teal">Array</span>
+                        </li>
+                        <li class="default">Default: <span class="color-teal">[]</span></li>
+                    </ul>
+
+                    <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
+
+                    <p>User provided plugins</p>
+
+
+<pre class='highlight'><code class="js"><span class="hljs-keyword">as</span></code></pre>
+
+
+<h3 id="option-injectChanges" class="section-link">
+    <a href="#option-injectChanges" class="page-anchor">injectChanges</a>
+    <a href="#page-top" class="back-to-top">^ TOP</a>
+</h3>
+
+
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Boolean</span>
+    </li>
+    <li class="default">Default: <span class="color-teal">true</span></li>
+</ul>
 
 
 
@@ -950,6 +1040,25 @@ socket: {
         <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3003"</span> + namespace;
     }
 }</code></pre>
+
+
+                    <h3 id="option-tagNames" class="section-link">
+                        <a href="#option-tagNames" class="page-anchor">tagNames</a>
+                        <a href="#page-top" class="back-to-top">^ TOP</a>
+                    </h3>
+
+
+                    <ul class="param-list">
+                        <li class="type">Type: <span class="color-teal"></span>
+                        </li>
+                        <li class="default">Default: <span class="color-teal"></span></li>
+                    </ul>
+
+
+                    <p>A map of file-extensions -&gt; dom element.
+                    Useful if you&#x27;re serving files with unusual file extensions</p>
+
+
 
 
 

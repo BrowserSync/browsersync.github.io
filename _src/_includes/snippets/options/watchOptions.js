@@ -1,4 +1,19 @@
-// Options passed to Gaze
+// Options passed to Chokidar
 watchOptions: {
-    debounceDelay: 1000
+    ignoreInitial: true,
+    ignored: '*.txt'
 }
+
+// options for chokidar with custom callback
+// since 2.6.0
+files: [
+    {
+        match: ["wp-content/themes/**/*.php"],
+        fn: function (event, file) {
+            /** Custom event handler **/
+        },
+        options: {
+            ignored: '*.txt'
+        }
+    }
+]

@@ -14,7 +14,8 @@ you access to the public methods detailed below.
 {{#each api}}
 
 {{inc src="_includes/headerlink.html" slug=this.name title=this.preview prefix="api-"}}
-<p>{{this.description}}</p>
+<p>{{#md}}{{compile this.description}}{{/md}}</p>
+
 {{#if this.params.length}}
     {{#loop this.params}}
     <ul class="param-list" id="api-{{this.name}}">
@@ -25,6 +26,10 @@ you access to the public methods detailed below.
         <li class="desc">{{#md}}{{compile this.description }}{{/md}}</li>
     </ul>
     {{/loop}}
+{{/if}}
+
+{{#if this.since}}
+    <p class="lede warning"><b>Note: </b> requires at least version {{ since }}</p>
 {{/if}}
 
 {{#if this.snippetpath}}

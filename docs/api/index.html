@@ -36,6 +36,7 @@
             <li><a href="/docs/command-line" >Command line</a></li>
             <li><a href="/docs/options" >Options</a></li>
             <li><a href="/docs/recipes" >Recipes</a></li>
+            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
         </ul>
     </div>
 </header><!-- .end .site-header -->
@@ -76,46 +77,77 @@
                 you access to the public methods detailed below.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);</code></pre>
+                <p><strong>Pre 2.0.0 syntax</strong><br/>
+                Previously we allowed methods to be called directly on the module export like this:
+                </p>
 
-<h3 id="api-browserSync" class="section-link">
-    <a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a>
-    <a href="#page-top" class="back-to-top">^ TOP</a>
-</h3>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);
 
-<p></p>
+<span class="hljs-comment">// Start the server</span>
+browserSync({server: <span class="hljs-string">"./app"</span>});
 
-    <ul class="param-list" id="api-config">
-        <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
-        <li class="type">Type: <span class="color-teal">Object</span>
-            <span class="recede">[optional]</span>
-        </li>
-        <li class="desc"><p>This is the main configuration for your BrowserSync instance and can contain any of the <a href="/docs/options">available options</a>
- If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the &#x60;snippet&#x60; mode</p>
-</li>
-    </ul>
-    <ul class="param-list" id="api-cb">
-        <li class="name"><a href="#api-cb" class="page-anchor">cb</a></li>
-        <li class="type">Type: <span class="color-teal">Function</span>
-            <span class="recede">[optional]</span>
-        </li>
-        <li class="desc"><p>If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This
-is useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.</p>
-</li>
-    </ul>
+<span class="hljs-comment">// Call methods like reload</span>
+browserSync.reload(<span class="hljs-string">"core.css"</span>);
+</code></pre>
+                <p><strong>Post 2.0.0 syntax (recommended)</strong><br/>
+                Whilst the above is still supported, we now recommend the following instead. Calling <code>.create()</code> means you get
+                a unique reference & allows you to create multiple servers or proxies.
+                </p>
+
+<pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
+<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+
+<span class="hljs-comment">// .init starts the server</span>
+bs.init({
+    server: <span class="hljs-string">"./app"</span>
+});
+
+<span class="hljs-comment">// Now call methods on bs instead of the</span>
+<span class="hljs-comment">// main browserSync module export</span>
+bs.reload(<span class="hljs-string">"*.html"</span>);
+</code></pre>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> config = {
+                <h3 id="api-browserSync" class="section-link">
+                    <a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+                <p></p>
+
+                    <ul class="param-list" id="api-config">
+                        <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
+                        <li class="type">Type: <span class="color-teal">Object</span>
+                            <span class="recede">[optional]</span>
+                        </li>
+                        <li class="desc"><p>This is the main configuration for your BrowserSync instance and can contain any of the <a href="{{site.links.options}}">available options</a>
+                 If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the <code>snippet</code> mode</p>
+                </li>
+                    </ul>
+                    <ul class="param-list" id="api-cb">
+                        <li class="name"><a href="#api-cb" class="page-anchor">cb</a></li>
+                        <li class="type">Type: <span class="color-teal">Function</span>
+                            <span class="recede">[optional]</span>
+                        </li>
+                        <li class="desc"><p>If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This
+                is useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.</p>
+                </li>
+                    </ul>
+
+
+<pre class='highlight'><code class="js"><span class="hljs-comment">// create an instance</span>
+<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+
+<span class="hljs-comment">// with config</span>
+bs.init({
     server: {
         baseDir: <span class="hljs-string">"./"</span>
     }
-};
+});
 
-<span class="hljs-comment">// config only</span>
-browserSync(config);
-
-<span class="hljs-comment">// config + callback</span>
-browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
+<span class="hljs-comment">// with config + callback</span>
+bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
     <span class="hljs-keyword">if</span> (!err) {
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is ready!"</span>);
     }
@@ -127,7 +159,7 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-                <p><p>The &#x60;reload&#x60; method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
+                <p><p>The <code>reload</code> method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.</p>
                 </p>
 
                     <ul class="param-list" id="api-arg">
@@ -141,16 +173,16 @@ browserSync(config, <span class="hljs-function"><span class="hljs-keyword">funct
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// browser reload</span>
-browserSync.reload();
+bs.reload();
 
 <span class="hljs-comment">// single file</span>
-browserSync.reload( <span class="hljs-string">"styles.css"</span> );
+bs.reload(<span class="hljs-string">"styles.css"</span>);
 
 <span class="hljs-comment">// multiple files</span>
-browserSync.reload( [<span class="hljs-string">"styles.css"</span>, <span class="hljs-string">"ie.css"</span>] );
+bs.reload([<span class="hljs-string">"styles.css"</span>, <span class="hljs-string">"ie.css"</span>]);
 
 <span class="hljs-comment">// Since 2.6.0 - wildcards to reload ALL css files</span>
-browserSync.reload( <span class="hljs-string">"*.css"</span> );
+bs.reload(<span class="hljs-string">"*.css"</span>);
 </code></pre>
 
 
@@ -159,7 +191,7 @@ browserSync.reload( <span class="hljs-string">"*.css"</span> );
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-                <p><p>The &#x60;stream&#x60; method returns a transform stream and can act once or on many files.</p>
+                <p><p>The <code>stream</code> method returns a transform stream and can act once or on many files.</p>
                 </p>
 
                     <ul class="param-list" id="api-opts">
@@ -178,7 +210,7 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/styles.scss'</span>)
         .pipe(sass({includePaths: [<span class="hljs-string">'scss'</span>]}))
         .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
-        .pipe(browserSync.stream());
+        .pipe(bs.stream());
 });
 
 <span class="hljs-comment">// Provide `once: true` to restrict reloading to once per stream</span>
@@ -186,16 +218,16 @@ gulp.task(<span class="hljs-string">'templates'</span>, <span class="hljs-functi
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'*.jade'</span>)
         .pipe(jade())
         .pipe(gulp.dest(<span class="hljs-string">'app'</span>))
-        .pipe(browserSync.stream({once: <span class="hljs-literal">true</span>}));
+        .pipe(bs.stream({once: <span class="hljs-literal">true</span>}));
 });
 
 <span class="hljs-comment">// Provide filter unwanted files from being reloaded by providing</span>
 <span class="hljs-comment">// a match option</span>
 gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'*.less'</span>)
-        .pipe(jade())
+        .pipe(less())
         .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
-        .pipe(browserSync.stream({match: <span class="hljs-string">"*.css"</span>}));
+        .pipe(bs.stream({match: <span class="hljs-string">"*.css"</span>}));
 });
 
 </code></pre>
@@ -214,7 +246,7 @@ gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><
                         <li class="type">Type: <span class="color-teal">String | HTML</span>
                             
                         </li>
-                        <li class="desc"><p>Can be a simple message such as &#x27;Connected&#x27; or HTML</p>
+                        <li class="desc"><p>Can be a simple message such as &#39;Connected&#39; or HTML</p>
                 </li>
                     </ul>
                     <ul class="param-list" id="api-timeout">
@@ -227,12 +259,16 @@ gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><
                     </ul>
 
 
-<pre class='highlight'><code class="js">browserSync.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
-browserSync.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is supported&lt;/span&gt; too!"</span>);
+<span class="hljs-comment">// Text message</span>
+bs.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
+
+<span class="hljs-comment">// HTML message</span>
+bs.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is supported&lt;/span&gt; too!"</span>);
 
 <span class="hljs-comment">// Since 1.3.0, specify a timeout</span>
-browserSync.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre>
+bs.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre>
 
 
                 <h3 id="api-exit" class="section-link">
@@ -245,9 +281,16 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
 
 
 
-<pre class='highlight'><code class="js">browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
-    browserSync.exit();
-});</code></pre>
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+
+<span class="hljs-comment">// Start the server</span>
+bs.init({server: <span class="hljs-string">"./app"</span>});
+
+<span class="hljs-comment">// Quit the server after 5 seconds</span>
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    bs.exit();
+}, <span class="hljs-number">5000</span>);
+</code></pre>
 
 
                 <h3 id="api-watch" class="section-link">
@@ -271,7 +314,7 @@ browserSync.notify(<span class="hljs-string">"This message will only last a seco
                         <li class="type">Type: <span class="color-teal">Object</span>
                             <span class="recede">[optional]</span>
                         </li>
-                        <li class="desc"><p>Options to be passed to Chokidar - check what&#x27;s available in <a href="https://github.com/paulmillr/chokidar#getting-started">their docs</a></p>
+                        <li class="desc"><p>Options to be passed to Chokidar - check what&#39;s available in <a href="https://github.com/paulmillr/chokidar#getting-started">their docs</a></p>
                 </li>
                     </ul>
                     <ul class="param-list" id="api-fn">
@@ -303,9 +346,7 @@ bs.watch(<span class="hljs-string">"css/*.css"</span>, <span class="hljs-functio
 <span class="hljs-comment">// Now init the BrowserSync server</span>
 bs.init({
     server: <span class="hljs-string">"./app"</span>
-});
-
-</code></pre>
+});</code></pre>
 
 
                 <h3 id="api-pause" class="section-link">
@@ -343,13 +384,14 @@ bs.init({
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> evt = browserSync.emitter;
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
-evt.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+<span class="hljs-comment">// Listen for the `init` event</span>
+bs.emitter.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is running!"</span>);
 });
 
-browserSync(config);</code></pre>
+bs.init(config);</code></pre>
 
 
                 <h3 id="api-active" class="section-link">
@@ -357,15 +399,20 @@ browserSync(config);</code></pre>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-                <p><p>A simple true/false flag that you can use to determine if there&#x27;s a currently-running BrowserSync instance.</p>
+                <p><p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
                 </p>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// false</span>
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
-browserSync(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
-    <span class="hljs-built_in">console</span>.log(browserSync.active); <span class="hljs-comment">// true</span>
+<span class="hljs-comment">// -&gt; false as .init has not yet been called</span>
+<span class="hljs-built_in">console</span>.log(bs.active);
+
+bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
+
+    <span class="hljs-comment">// -&gt; now true since BS is running now</span>
+    <span class="hljs-built_in">console</span>.log(bs.active);
 });</code></pre>
 
 

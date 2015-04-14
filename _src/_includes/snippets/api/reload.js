@@ -1,11 +1,11 @@
 // browser reload
-browserSync.reload();
+bs.reload();
 
 // single file
-browserSync.reload( "styles.css" );
+bs.reload("styles.css");
 
 // multiple files
-browserSync.reload( ["styles.css", "ie.css"] );
+bs.reload(["styles.css", "ie.css"]);
 
 // Since 2.6.0 - wildcards to reload ALL css files
-browserSync.reload( "*.css" );
+bs.reload("*.css");

@@ -14,17 +14,17 @@ If you would like to run BrowserSync from the command line in any directory, it
 can be installed `globally` with the following command.
 
 
-```bash
+{{#hl lang="bash"}}
 $ npm install -g browser-sync
-```
+{{/hl}}
 
 ####Local Install
 This is the prefered way to use BrowserSync - installing it locally to each project. This
 way the dependency can be added to your package.json file and everyone on your team.
 
-```bash
+{{#hl lang="bash"}}
 $ npm install browser-sync --save-dev
-```
+{{/hl}}
 
 **WARNING - do not use sudo!** If you're running `Mac OSX` and encounter problems when trying to install BrowserSync - either
 globally or locally, it's almost always because you have problems with NPM permissions. Checkout [their docs]({{site.links.npmdocs}})

@@ -1,14 +1,15 @@
-var config = {
+// create an instance
+var bs = require("browser-sync").create();
+
+// with config
+bs.init({
     server: {
         baseDir: "./"
     }
-};
+});
 
-// config only
-browserSync(config);
-
-// config + callback
-browserSync(config, function (err, bs) {
+// with config + callback
+bs.init(config, function (err, bs) {
     if (!err) {
         console.log("BrowserSync is ready!");
     }

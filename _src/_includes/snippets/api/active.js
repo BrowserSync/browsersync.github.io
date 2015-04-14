@@ -1,5 +1,10 @@
-console.log(browserSync.active); // false
+var bs = require("browser-sync").create();
 
-browserSync(config, function (err, bs) {
-    console.log(browserSync.active); // true
+// -> false as .init has not yet been called
+console.log(bs.active);
+
+bs.init(config, function (err, bs) {
+
+    // -> now true since BS is running now
+    console.log(bs.active);
 });

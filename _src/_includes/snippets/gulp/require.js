@@ -1,9 +1,9 @@
 var gulp        = require('gulp');
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();
 
 // Static server
 gulp.task('browser-sync', function() {
-    browserSync({
+    browserSync.init({
         server: {
             baseDir: "./"
         }
@@ -13,7 +13,7 @@ gulp.task('browser-sync', function() {
 // or...
 
 gulp.task('browser-sync', function() {
-    browserSync({
+    browserSync.init({
         proxy: "yourlocal.dev"
     });
 });

@@ -46,7 +46,7 @@
         "since": false,
         "snippetpath": "_includes/snippets/options/files.js",
         "defaultValue": "false",
-        "snippet": "// single file\nfiles: \"app/css/style.css\"\n\n// multiple files\nfiles: [\"app/css/style.css\", \"app/js/*.js\"]\n\n// patterns + 1 with custom callback\n// since 2.6.0\nfiles: [\n    \"wp-content/themes/**/*.css\",\n    {\n        match: [\"wp-content/themes/**/*.php\"],\n        fn: function (event, file) {\n            /** Custom event handler **/\n        }\n    }\n]"
+        "snippet": "// single file\nbrowserSync({\n    files: \"app/css/style.css\"\n});\n\n// multiple files\nbrowserSync({\n    files: [\"app/css/style.css\", \"app/js/*.js\"]\n});\n\n// patterns + 1 with custom callback\n// since 2.6.0\nbrowserSync({\n    files: [\n        \"wp-content/themes/**/*.css\",\n        {\n            match: [\"wp-content/themes/**/*.php\"],\n            fn:    function (event, file) {\n                /** Custom event handler **/\n            }\n        }\n    ]\n});"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -137,7 +137,7 @@
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
         "line": 89,
-        "description": "Enable https for localhost development. **Note:** Proxy and Tunnel not currently supported.",
+        "description": "Enable https for localhost development. **Note** - this is not needed for proxy\noption as it will be inferred from your target url.",
         "itemtype": "property",
         "name": "https",
         "type": "Boolean",
@@ -148,11 +148,11 @@
         "subprops": null,
         "snippetpath": "_includes/snippets/options/https.js",
         "defaultValue": "undefined",
-        "snippet": "// Enable HTTPS for static file server\nhttps: true"
+        "snippet": "// Enable HTTPS for static file server\nbrowserSync({\n    server: \"./app\",\n    https: true\n});\n\n// Enable HTTPS for snippet mode\nbrowserSync({\n    https: true\n});\n"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 97,
+        "line": 98,
         "description": "Clicks, Scrolls & Form inputs on any device will be mirrored to all others.",
         "itemtype": "property",
         "name": "ghostMode",
@@ -215,7 +215,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 118,
+        "line": 119,
         "description": "Can be either \"info\", \"debug\", \"warn\", or \"silent\"",
         "itemtype": "property",
         "name": "logLevel",
@@ -231,7 +231,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 126,
+        "line": 127,
         "description": "Change the console logging prefix. Useful if you're creating your\nown project based on BrowserSync",
         "itemtype": "property",
         "name": "logPrefix",
@@ -247,7 +247,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 136,
+        "line": 137,
         "itemtype": "property",
         "name": "logConnections",
         "type": "Boolean",
@@ -263,7 +263,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 143,
+        "line": 144,
         "itemtype": "property",
         "name": "logFileChanges",
         "type": "Boolean",
@@ -279,7 +279,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 150,
+        "line": 151,
         "description": "Log the snippet to the console when you're in snippet mode (no proxy/server)",
         "itemtype": "property",
         "name": "logSnippet",
@@ -295,7 +295,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 159,
+        "line": 160,
         "description": "SINCE 1.7.0! You can control how the snippet is injected\nonto each page via a custom regex + function.\nYou can also provide patterns for certain urls\nthat should be ignored from the snippet injection.",
         "itemtype": "property",
         "name": "snippetOptions",
@@ -341,7 +341,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 183,
+        "line": 184,
         "description": "Add additional HTML rewriting rules.",
         "itemtype": "property",
         "name": "rewriteRules",
@@ -351,12 +351,13 @@
         "class": "",
         "module": "BrowserSync.options",
         "subprops": null,
+        "snippetpath": "_includes/snippets/options/rewriteRules.js",
         "defaultValue": "false",
-        "snippet": null
+        "snippet": "// replace every occurence of the word BrowserSync with 'kittenz'\nrewriteRules: [\n    {\n        match: /BrowserSync/g,\n        fn: function (match) {\n            return \"shane\";\n        }\n    }\n]"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 192,
+        "line": 193,
         "itemtype": "property",
         "name": "tunnel",
         "type": "String | Boolean",
@@ -372,7 +373,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 198,
+        "line": 199,
         "description": "Some features of BrowserSync (such as `xip` & `tunnel`) require an internet connection, but if you're\nworking offline, you can reduce start-up time by setting this option to `false`",
         "itemtype": "property",
         "name": "online",
@@ -388,7 +389,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 206,
+        "line": 207,
         "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, `local`, `external`, `ui`, `ui-external`, `tunnel` or `false`",
         "itemtype": "property",
         "name": "open",
@@ -400,11 +401,11 @@
         "since": false,
         "snippetpath": "_includes/snippets/options/open.js",
         "defaultValue": "true",
-        "snippet": "// Stop the browser from automatically opening\nopen: false\n\n// Open the localhost URL\nopen: true\n\n// The following availble since v1.3.0\n\n// Open the external URL - must be online.\nopen: \"external\"\n\n// Open the tunnel URL - must also set the `tunnel` option\nopen: \"tunnel\""
+        "snippet": "// Stop the browser from automatically opening\nopen: false\n\n// Open the localhost URL\nopen: \"local\"\n\n// Open the external URL - must be online.\nopen: \"external\"\n\n// Open the UI - since 2.0.0\nopen: \"ui\"\n\n// Open the tunnel URL - must also set the `tunnel` option\nopen: \"tunnel\""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 215,
+        "line": 216,
         "itemtype": "property",
         "name": "browser",
         "type": "String | Array",
@@ -420,7 +421,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 222,
+        "line": 223,
         "description": "Requires an internet connection - useful for services such as [Typekit](https://typekit.com/)\nas it allows you to configure domains such as `*.xip.io` in your kit settings",
         "itemtype": "property",
         "name": "xip",
@@ -436,7 +437,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 233,
+        "line": 234,
         "description": "Reload each browser when BrowserSync is restarted.",
         "itemtype": "property",
         "name": "reloadOnRestart",
@@ -452,7 +453,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 241,
+        "line": 242,
         "description": "The small pop-over notifications in the browser are not always needed/wanted.",
         "itemtype": "property",
         "name": "notify",
@@ -468,7 +469,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 249,
+        "line": 250,
         "itemtype": "property",
         "name": "scrollProportionally",
         "type": "Boolean",
@@ -484,7 +485,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 256,
+        "line": 257,
         "itemtype": "property",
         "name": "scrollThrottle",
         "type": "Number",
@@ -500,7 +501,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 263,
+        "line": 264,
         "description": "Time, in milliseconds, to wait before\ninstruction browser to reload/inject following a\nfile change event",
         "itemtype": "property",
         "name": "reloadDelay",
@@ -516,7 +517,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 273,
+        "line": 274,
         "description": "Restrict the frequency in which browser:reload events\ncan be emitted to connected clients",
         "itemtype": "property",
         "name": "reloadDebounce",
@@ -532,7 +533,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 283,
+        "line": 284,
         "description": "User provided plugins",
         "itemtype": "property",
         "name": "plugins",
@@ -544,11 +545,11 @@
         "subprops": null,
         "snippetpath": "_includes/snippets/options/plugins.js",
         "defaultValue": "[]",
-        "snippet": "as"
+        "snippet": "// First run `npm install bs-html-injector`\n// Then provide the module name\nplugins: [\"bs-html-injector\"]\n\n// If the plugin you are using requires options\n// just as bs-snippet-injector requires a 'file' option,\n// you can pass an object instead like this.\nplugins: [\n    {\n        module: \"bs-snippet-injector\",\n        options: {\n            file: \"./app/index.php\"\n        }\n    }\n]"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 292,
+        "line": 293,
         "itemtype": "property",
         "name": "injectChanges",
         "type": "Boolean",
@@ -564,7 +565,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 299,
+        "line": 300,
         "itemtype": "property",
         "name": "startPath",
         "type": "String | Null",
@@ -580,7 +581,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 306,
+        "line": 307,
         "description": "Whether to minify client script, or not.",
         "itemtype": "property",
         "name": "minify",
@@ -596,7 +597,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 314,
+        "line": 315,
         "itemtype": "property",
         "name": "host",
         "type": "String",
@@ -612,7 +613,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 321,
+        "line": 322,
         "itemtype": "property",
         "name": "codeSync",
         "type": "Boolean",
@@ -628,7 +629,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 328,
+        "line": 329,
         "itemtype": "property",
         "name": "timestamps",
         "type": "Boolean",
@@ -644,7 +645,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 344,
+        "line": 345,
         "description": "Alter the script path for complete control over where the BrowserSync\nJavascript is served from. Whatever you return from this function\nwill be used as the script path.",
         "itemtype": "property",
         "name": "scriptPath",
@@ -660,7 +661,7 @@
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 354,
+        "line": 355,
         "description": "Configure the Socket.IO path and namespace to avoid collisions. Note: `namespace` can also be a function",
         "itemtype": "property",
         "name": "socket",
@@ -705,18 +706,5 @@
         "snippetpath": "_includes/snippets/options/socket.js",
         "defaultValue": null,
         "snippet": "// This will result in something like this in\n// the socket connector code\n// browserSync.io('localhost:3003/browser-sync')\nsocket: {\n    namespace: function (namespace) {\n        return \"localhost:3003\" + namespace;\n    }\n}"
-    },
-    {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "line": 373,
-        "description": "A map of file-extensions -> dom element.\nUseful if you're serving files with unusual file extensions",
-        "itemtype": "property",
-        "name": "tagNames",
-        "class": "",
-        "module": "BrowserSync.options",
-        "subprops": null,
-        "since": false,
-        "defaultValue": null,
-        "snippet": null
     }
 ]

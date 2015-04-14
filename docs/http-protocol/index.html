@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrowserSync Recipes</title>
+    <title>HTTP Protocol</title>
 
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
@@ -35,8 +35,8 @@
             <li><a href="/docs/api" >API</a></li>
             <li><a href="/docs/command-line" >Command line</a></li>
             <li><a href="/docs/options" >Options</a></li>
-            <li><a href="/docs/recipes" class="active">Recipes</a></li>
-            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
+            <li><a href="/docs/recipes" >Recipes</a></li>
+            <li><a href="/docs/http-protocol" class="active">HTTP Protocol</a></li>
         </ul>
     </div>
 </header><!-- .end .site-header -->
@@ -66,32 +66,18 @@
 
             </div>
             <div class="grid__cell three-quarters">
-                <h1 class="page-title">BrowserSync Recipes</h1>
-                <p>We have an <a href="https://github.com/BrowserSync/recipes">official project on Github</a> that contains full
-                working examples of how to use Browser Sync in a number of different ways. Each example
-                can be run separately and is a great way for newcomers to get their heads around
-                the different use-cases that are possible.</p>
-                <h3 id="current-recipes-links-to-github-">Current recipes (links to github)</h3>
-                <ul class="nav nav--stacked">
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/grunt.sass">Grunt Sass</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/grunt.sass.autoprefixer">Grunt Sass Autoprefixer</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/gulp.browserify">Gulp Browserify</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/gulp.jade">Gulp Jade</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/gulp.ruby.sass">Gulp Ruby Sass</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/gulp.sass">Gulp Sass</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/gulp.swig">Gulp Swig</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/gulp.task.sequence">Gulp Task Sequence</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/middleware.css.injection">Middleware Css Injection</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/server">Server</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/server.gzipped.assets">Server Gzipped Assets</a></li>
-                    <li><a href="https://github.com/BrowserSync/recipes/tree/master/recipes/server.middleware">Server Middleware</a></li>
-                </ul>
+                <h1 class="page-title">HTTP Protocol</h1>
+                
 
-                <h3 id="contribute">Contribute</h3>
-                <p>The concept of <strong>recipes</strong>, showing exactly how a feature or use-case works is something
-                we&#39;d like to expand on using feedback &amp; contributions from you, the BrowserSync Users.</p>
-                <p>So if you have a kind of workflow that is not already listed in the recipes, you
-                should send us a pull request so that other people can benefit from what you&#39;ve learnt.</p>
+                <p>Our API is incredibly simple &amp; powerful. You can use it to create your own
+                tiny node program for local development or integrate with other tools. To use it,
+                simply <code>require</code> the BrowserSync module like you would any other. This will give
+                you access to the public methods detailed below.</p>
+
+
+                <p><strong>Pre 2.0.0 syntax</strong><br/>
+                Previously we allowed methods to be called directly on the module export like this:
+                </p>
 
             </div>
         </div>

@@ -36,6 +36,7 @@
             <li><a href="/docs/command-line" >Command line</a></li>
             <li><a href="/docs/options" class="active">Options</a></li>
             <li><a href="/docs/recipes" >Recipes</a></li>
+            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
         </ul>
     </div>
 </header><!-- .end .site-header -->
@@ -86,7 +87,6 @@
                         <li><a href="#option-timestamps">timestamps</a></li>
                         <li><a href="#option-scriptPath">scriptPath</a></li>
                         <li><a href="#option-socket">socket</a></li>
-                        <li><a href="#option-tagNames">tagNames</a></li>
                     </ul>
                 </div>
 
@@ -98,14 +98,6 @@
                 <p>These are all the options that you can configure when using BrowserSync. Create a single object and pass
                 it as the <a href="/docs/api/#api-browserSync">first argument</a> (for GulpJS and normal API usage). If you&#39;re using Grunt, you can
                 still use all of these options, but you need to provide them as detailed in the <a href="/docs/grunt">BrowserSync Grunt Documentation</a></p>
-
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);
-
-<span class="hljs-keyword">var</span> config = {
-    <span class="hljs-comment">/* All config/options here */</span>
-};
-
-browserSync(config);</code></pre>
 
 
                 <h3 id="option-ui" class="section-link">
@@ -166,22 +158,28 @@ ui: <span class="hljs-literal">false</span>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// single file</span>
-files: <span class="hljs-string">"app/css/style.css"</span>
+browserSync({
+    files: <span class="hljs-string">"app/css/style.css"</span>
+});
 
 <span class="hljs-comment">// multiple files</span>
-files: [<span class="hljs-string">"app/css/style.css"</span>, <span class="hljs-string">"app/js/*.js"</span>]
+browserSync({
+    files: [<span class="hljs-string">"app/css/style.css"</span>, <span class="hljs-string">"app/js/*.js"</span>]
+});
 
 <span class="hljs-comment">// patterns + 1 with custom callback</span>
 <span class="hljs-comment">// since 2.6.0</span>
-files: [
-    <span class="hljs-string">"wp-content/themes/**/*.css"</span>,
-    {
-        match: [<span class="hljs-string">"wp-content/themes/**/*.php"</span>],
-        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
-            <span class="hljs-comment">/** Custom event handler **/</span>
+browserSync({
+    files: [
+        <span class="hljs-string">"wp-content/themes/**/*.css"</span>,
+        {
+            match: [<span class="hljs-string">"wp-content/themes/**/*.php"</span>],
+            fn:    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
+                <span class="hljs-comment">/** Custom event handler **/</span>
+            }
         }
-    }
-]</code></pre>
+    ]
+});</code></pre>
 
 
                 <h3 id="option-watchOptions" class="section-link">
@@ -382,11 +380,21 @@ port: <span class="hljs-number">8080</span></code></pre>
 
                 <p class="lede warning"><b>Note: </b> requires at least version 1.3.0</p>
 
-                <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
+                <p>Enable https for localhost development. <strong>Note</strong> - this is not needed for proxy
+                option as it will be inferred from your target url.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Enable HTTPS for static file server</span>
-https: <span class="hljs-literal">true</span></code></pre>
+browserSync({
+    server: <span class="hljs-string">"./app"</span>,
+    https: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-comment">// Enable HTTPS for snippet mode</span>
+browserSync({
+    https: <span class="hljs-literal">true</span>
+});
+</code></pre>
 
 
                 <h3 id="option-ghostMode" class="section-link">
@@ -595,6 +603,15 @@ snippetOptions: {
                 <p>Add additional HTML rewriting rules.</p>
 
 
+<pre class='highlight'><code class="js"><span class="hljs-comment">// replace every occurence of the word BrowserSync with 'kittenz'</span>
+rewriteRules: [
+    {
+        match: <span class="hljs-regexp">/BrowserSync/g</span>,
+        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(match)</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-string">"shane"</span>;
+        }
+    }
+]</code></pre>
 
 
                 <h3 id="option-tunnel" class="section-link">
@@ -665,12 +682,13 @@ online: <span class="hljs-literal">false</span></code></pre>
 open: <span class="hljs-literal">false</span>
 
 <span class="hljs-comment">// Open the localhost URL</span>
-open: <span class="hljs-literal">true</span>
-
-<span class="hljs-comment">// The following availble since v1.3.0</span>
+open: <span class="hljs-string">"local"</span>
 
 <span class="hljs-comment">// Open the external URL - must be online.</span>
 open: <span class="hljs-string">"external"</span>
+
+<span class="hljs-comment">// Open the UI - since 2.0.0</span>
+open: <span class="hljs-string">"ui"</span>
 
 <span class="hljs-comment">// Open the tunnel URL - must also set the `tunnel` option</span>
 open: <span class="hljs-string">"tunnel"</span></code></pre>
@@ -856,20 +874,34 @@ reloadDebounce: <span class="hljs-number">2000</span></code></pre>
                 <p>User provided plugins</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">as</span></code></pre>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// First run `npm install bs-html-injector`</span>
+<span class="hljs-comment">// Then provide the module name</span>
+plugins: [<span class="hljs-string">"bs-html-injector"</span>]
+
+<span class="hljs-comment">// If the plugin you are using requires options</span>
+<span class="hljs-comment">// just as bs-snippet-injector requires a 'file' option,</span>
+<span class="hljs-comment">// you can pass an object instead like this.</span>
+plugins: [
+    {
+        <span class="hljs-built_in">module</span>: <span class="hljs-string">"bs-snippet-injector"</span>,
+        options: {
+            file: <span class="hljs-string">"./app/index.php"</span>
+        }
+    }
+]</code></pre>
 
 
-<h3 id="option-injectChanges" class="section-link">
-    <a href="#option-injectChanges" class="page-anchor">injectChanges</a>
-    <a href="#page-top" class="back-to-top">^ TOP</a>
-</h3>
+                <h3 id="option-injectChanges" class="section-link">
+                    <a href="#option-injectChanges" class="page-anchor">injectChanges</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    </li>
-    <li class="default">Default: <span class="color-teal">true</span></li>
-</ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
 
@@ -1040,25 +1072,6 @@ socket: {
         <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3003"</span> + namespace;
     }
 }</code></pre>
-
-
-                <h3 id="option-tagNames" class="section-link">
-                    <a href="#option-tagNames" class="page-anchor">tagNames</a>
-                    <a href="#page-top" class="back-to-top">^ TOP</a>
-                </h3>
-
-
-                <ul class="param-list">
-                    <li class="type">Type: <span class="color-teal"></span>
-                    </li>
-                    <li class="default">Default: <span class="color-teal"></span></li>
-                </ul>
-
-
-                <p>A map of file-extensions -&gt; dom element.
-                Useful if you&#39;re serving files with unusual file extensions</p>
-
-
 
 
 

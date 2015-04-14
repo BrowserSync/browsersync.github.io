@@ -8,7 +8,7 @@ url: "http://browsersync.io"
 twitter_username: browsersync
 github_username: shakshane
 
-downloads: "Over 190,000 downloads per month"
+downloads: "Approx 180,000 downloads per month"
 
 # Build settings
 markdown: kramdown
@@ -38,6 +38,8 @@ docs-navigation:
     url: "/docs/options"
   - label: "Recipes"
     url: "/docs/recipes"
+  - label: "HTTP Protocol"
+    url: "/docs/http-protocol"
 
 links:
   jh:           "http://www.wearejh.com/"

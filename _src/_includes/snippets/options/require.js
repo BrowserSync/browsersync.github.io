@@ -1,7 +1,5 @@
-var browserSync = require("browser-sync");
+var browserSync = require("browser-sync").create();
 
-var config = {
-    /* All config/options here */
-};
-
-browserSync(config);
+browserSync({
+    /* options here */
+});

@@ -17,4 +17,3 @@ bs.watch("css/*.css", function (event, file) {
 bs.init({
     server: "./app"
 });
-

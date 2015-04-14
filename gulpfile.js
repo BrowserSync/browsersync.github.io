@@ -52,7 +52,7 @@ gulp.task("build", ["sass", "docs"]);
  */
 function crossbowBuild (deferred) {
 
-    return gulp.src([
+    gulp.src([
         "_src/*.hbs",
         "_src/*.html",
         "_src/docs/*"
@@ -73,6 +73,8 @@ function crossbowBuild (deferred) {
     }))
     .pipe(gulp.dest("./"))
     .on("end", deferred.resolve);
+
+    return deferred.promise;
 }
 
 /**
@@ -91,7 +93,7 @@ gulp.task("sass", function () {
         .pipe(minifyCSS({keepBreaks:true}))
         .pipe(rename("core.min.css"))
         .pipe(gulp.dest("css"))
-        .pipe(bs1.stream({match: "*.css"}));
+        .pipe(bs1.stream());
 });
 
 /**
@@ -121,20 +123,36 @@ gulp.task("watch", function () {
     gulp.watch("scss/**", ["sass"]);
     bs1.watch([
         "_src/**",
-        "_config.yml",
-        "/Users/shaneobsourne/code/browser-sync/index.js",
+        "_config.yml"
+    ]).on("change", function () {
+        crossbowBuild(promseq.defer())
+            .then(function () {
+                htmlinjector();
+                bs1.notify("Crossbow built!");
+            })
+            .catch(printError);
+    });
+    bs1.watch([
         "*.js",
-        "/Users/shaneobsourne/code/browser-sync/lib/default-config.js"
+        "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js"
     ]).on("change", function () {
         buildall()
             .then(function () {
                 htmlinjector();
+                bs1.notify("Crossbow built!");
             })
-            .catch(function (err) {
-                console.error(err);
-            })
+            .catch(printError);
     });
 });
+
+/**
+ * @param err
+ */
+function printError(err) {
+    console.error(err);
+    bs1.notify("ERROR: " + err.message);
+}
 
 
 /**

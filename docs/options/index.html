@@ -44,6 +44,7 @@
 <div class="site-body" role="main">
     <section id="top" class="wrapper code-example">
     <div class="container">
+        <article class="doc-wrapper">
         <div class="grid">
             <div class="grid__cell one-quarter">
                 <div class="sticky-nav">
@@ -91,13 +92,12 @@
 
             </div>
             <div class="grid__cell three-quarters">
-                <article class="doc-wrapper">
-                    <h1 class="text--center">BrowserSync options</h1>
+                <h1 class="page-title">BrowserSync options</h1>
+                
 
-
-                    <p>These are all the options that you can configure when using BrowserSync. Create a single object and pass
-                    it as the <a href="/docs/api/#api-browserSync">first argument</a> (for GulpJS and normal API usage). If you&#39;re using Grunt, you can
-                    still use all of these options, but you need to provide them as detailed in the <a href="/docs/grunt">BrowserSync Grunt Documentation</a></p>
+                <p>These are all the options that you can configure when using BrowserSync. Create a single object and pass
+                it as the <a href="/docs/api/#api-browserSync">first argument</a> (for GulpJS and normal API usage). If you&#39;re using Grunt, you can
+                still use all of these options, but you need to provide them as detailed in the <a href="/docs/grunt">BrowserSync Grunt Documentation</a></p>
 
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);
 
@@ -108,25 +108,25 @@
 browserSync(config);</code></pre>
 
 
-                    <h3 id="option-ui" class="section-link">
-                        <a href="#option-ui" class="page-anchor">ui</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-ui" class="section-link">
+                    <a href="#option-ui" class="page-anchor">ui</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Object</span>
-                        <ul class="nav nav--stacked subprops">
-                                <li><b>port</b> - Default: <span class="color-teal">3001</span></li>
-                                <li><b>weinre.port</b> - Default: <span class="color-teal">8080</span></li>
-                        </ul>
-                        </li>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                    <ul class="nav nav--stacked subprops">
+                            <li><b>port</b> - Default: <span class="color-teal">3001</span></li>
+                            <li><b>weinre.port</b> - Default: <span class="color-teal">8080</span></li>
                     </ul>
+                    </li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
 
-                    <p>BrowserSync includes a user-interface that is accessed via a separate port.
-                    The UI allows to controls all devices, push sync updates and much more.</p>
+                <p>BrowserSync includes a user-interface that is accessed via a separate port.
+                The UI allows to controls all devices, push sync updates and much more.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Change the default port</span>
@@ -147,22 +147,22 @@ ui: <span class="hljs-literal">false</span>
 </code></pre>
 
 
-                    <h3 id="option-files" class="section-link">
-                        <a href="#option-files" class="page-anchor">files</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-files" class="section-link">
+                    <a href="#option-files" class="page-anchor">files</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Array | String</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">false</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Array | String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
 
 
-                    <p>BrowserSync can watch your files as you work. Changes you make will either
-                    be injected into the page (CSS &amp; images) or will cause all browsers to do
-                    a full-page refresh. See <a href="https://github.com/es128/anymatch">anymatch</a> for more information on glob patterns.</p>
+                <p>BrowserSync can watch your files as you work. Changes you make will either
+                be injected into the page (CSS &amp; images) or will cause all browsers to do
+                a full-page refresh. See <a href="https://github.com/es128/anymatch">anymatch</a> for more information on glob patterns.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// single file</span>
@@ -184,22 +184,22 @@ files: [
 ]</code></pre>
 
 
-                    <h3 id="option-watchOptions" class="section-link">
-                        <a href="#option-watchOptions" class="page-anchor">watchOptions</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-watchOptions" class="section-link">
+                    <a href="#option-watchOptions" class="page-anchor">watchOptions</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Object</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">undefined</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-                    <p>File watching options that get passed along to <a href="https://github.com/paulmillr/chokidar">Chokidar</a>.
-                    Check their docs for available options</p>
+                <p>File watching options that get passed along to <a href="https://github.com/paulmillr/chokidar">Chokidar</a>.
+                Check their docs for available options</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Options passed to Chokidar</span>
@@ -223,20 +223,20 @@ files: [
 ]</code></pre>
 
 
-                    <h3 id="option-server" class="section-link">
-                        <a href="#option-server" class="page-anchor">server</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-server" class="section-link">
+                    <a href="#option-server" class="page-anchor">server</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Object | Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">false</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object | Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
 
 
-                    <p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
+                <p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Serve files from the app directory</span>
@@ -297,24 +297,24 @@ server: {
 </code></pre>
 
 
-                    <h3 id="option-proxy" class="section-link">
-                        <a href="#option-proxy" class="page-anchor">proxy</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-proxy" class="section-link">
+                    <a href="#option-proxy" class="page-anchor">proxy</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String | Object | Boolean</span>
-                        <ul class="nav nav--stacked subprops">
-                                <li><b>target</b> - Default: <span class="color-teal">undefined</span></li>
-                                <li><b>middleware</b> - Default: <span class="color-teal">undefined</span></li>
-                                <li><b>reqHeaders</b> - Default: <span class="color-teal">undefined</span></li>
-                        </ul>
-                        </li>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Object | Boolean</span>
+                    <ul class="nav nav--stacked subprops">
+                            <li><b>target</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>middleware</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>reqHeaders</b> - Default: <span class="color-teal">undefined</span></li>
                     </ul>
+                    </li>
+                </ul>
 
 
-                    <p>Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.</p>
+                <p>Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Using a vhost-based url</span>
@@ -349,17 +349,17 @@ proxy: {
 </code></pre>
 
 
-                    <h3 id="option-port" class="section-link">
-                        <a href="#option-port" class="page-anchor">port</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-port" class="section-link">
+                    <a href="#option-port" class="page-anchor">port</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Number</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">3000</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Number</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">3000</span></li>
+                </ul>
 
 
 
@@ -368,45 +368,45 @@ proxy: {
 port: <span class="hljs-number">8080</span></code></pre>
 
 
-                    <h3 id="option-https" class="section-link">
-                        <a href="#option-https" class="page-anchor">https</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-https" class="section-link">
+                    <a href="#option-https" class="page-anchor">https</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">undefined</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 1.3.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.3.0</p>
 
-                    <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
+                <p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Enable HTTPS for static file server</span>
 https: <span class="hljs-literal">true</span></code></pre>
 
 
-                    <h3 id="option-ghostMode" class="section-link">
-                        <a href="#option-ghostMode" class="page-anchor">ghostMode</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-ghostMode" class="section-link">
+                    <a href="#option-ghostMode" class="page-anchor">ghostMode</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Object</span>
-                        <ul class="nav nav--stacked subprops">
-                                <li><b>clicks</b> - Default: <span class="color-teal">true</span></li>
-                                <li><b>scroll</b> - Default: <span class="color-teal">true</span></li>
-                                <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
-                        </ul>
-                        </li>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                    <ul class="nav nav--stacked subprops">
+                            <li><b>clicks</b> - Default: <span class="color-teal">true</span></li>
+                            <li><b>scroll</b> - Default: <span class="color-teal">true</span></li>
+                            <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
                     </ul>
+                    </li>
+                </ul>
 
 
-                    <p>Clicks, Scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
+                <p>Clicks, Scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Here you can disable/enable each feature individually</span>
@@ -420,20 +420,20 @@ ghostMode: {
 ghostMode: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-logLevel" class="section-link">
-                        <a href="#option-logLevel" class="page-anchor">logLevel</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-logLevel" class="section-link">
+                    <a href="#option-logLevel" class="page-anchor">logLevel</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">info</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">info</span></li>
+                </ul>
 
 
-                    <p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
+                <p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Show me additional info about the process</span>
@@ -446,22 +446,22 @@ logLevel: <span class="hljs-string">"info"</span>
 logLevel: <span class="hljs-string">"silent"</span></code></pre>
 
 
-                    <h3 id="option-logPrefix" class="section-link">
-                        <a href="#option-logPrefix" class="page-anchor">logPrefix</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-logPrefix" class="section-link">
+                    <a href="#option-logPrefix" class="page-anchor">logPrefix</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">BS</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">BS</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 1.5.1</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.5.1</p>
 
-                    <p>Change the console logging prefix. Useful if you&#x27;re creating your
-                    own project based on BrowserSync</p>
+                <p>Change the console logging prefix. Useful if you&#39;re creating your
+                own project based on BrowserSync</p>
 
 
 <pre class='highlight'><code class="js">logPrefix: <span class="hljs-string">"My Awesome Project"</span>
@@ -471,17 +471,17 @@ logLevel: <span class="hljs-string">"silent"</span></code></pre>
 <span class="hljs-comment">// [My Awesome Project] File changed: "index.html"</span></code></pre>
 
 
-                    <h3 id="option-logConnections" class="section-link">
-                        <a href="#option-logConnections" class="page-anchor">logConnections</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-logConnections" class="section-link">
+                    <a href="#option-logConnections" class="page-anchor">logConnections</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">false</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
 
 
 
@@ -493,17 +493,17 @@ logConnections: <span class="hljs-literal">true</span>
 logConnections: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-logFileChanges" class="section-link">
-                        <a href="#option-logFileChanges" class="page-anchor">logFileChanges</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-logFileChanges" class="section-link">
+                    <a href="#option-logFileChanges" class="page-anchor">logFileChanges</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
 
@@ -515,50 +515,50 @@ logFileChanges: <span class="hljs-literal">true</span>
 logFileChanges: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-logSnippet" class="section-link">
-                        <a href="#option-logSnippet" class="page-anchor">logSnippet</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-logSnippet" class="section-link">
+                    <a href="#option-logSnippet" class="page-anchor">logSnippet</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">: Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">: Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 1.5.2</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.5.2</p>
 
-                    <p>Log the snippet to the console when you&#x27;re in snippet mode (no proxy/server)</p>
+                <p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Don't ever log the snippet</span>
 logSnippet: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-snippetOptions" class="section-link">
-                        <a href="#option-snippetOptions" class="page-anchor">snippetOptions</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-snippetOptions" class="section-link">
+                    <a href="#option-snippetOptions" class="page-anchor">snippetOptions</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Object</span>
-                        <ul class="nav nav--stacked subprops">
-                                <li><b>blacklist</b> - Default: <span class="color-teal">undefined</span></li>
-                                <li><b>whitelist</b> - Default: <span class="color-teal">undefined</span></li>
-                                <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body[^&gt;]*&gt;/i</span></li>
-                                <li><b>rule.fn</b> - Default: <span class="color-teal">Function</span></li>
-                        </ul>
-                        </li>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                    <ul class="nav nav--stacked subprops">
+                            <li><b>blacklist</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>whitelist</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body[^&gt;]*&gt;/i</span></li>
+                            <li><b>rule.fn</b> - Default: <span class="color-teal">Function</span></li>
                     </ul>
+                    </li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
 
-                    <p>SINCE 1.7.0! You can control how the snippet is injected
-                    onto each page via a custom regex + function.
-                    You can also provide patterns for certain urls
-                    that should be ignored from the snippet injection.</p>
+                <p>SINCE 1.7.0! You can control how the snippet is injected
+                onto each page via a custom regex + function.
+                You can also provide patterns for certain urls
+                that should be ignored from the snippet injection.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Customise the placement of the snippet</span>
@@ -578,36 +578,36 @@ snippetOptions: {
 }</code></pre>
 
 
-                    <h3 id="option-rewriteRules" class="section-link">
-                        <a href="#option-rewriteRules" class="page-anchor">rewriteRules</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-rewriteRules" class="section-link">
+                    <a href="#option-rewriteRules" class="page-anchor">rewriteRules</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Array | Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">false</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Array | Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 2.4.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 2.4.0</p>
 
-                    <p>Add additional HTML rewriting rules.</p>
-
-
+                <p>Add additional HTML rewriting rules.</p>
 
 
-                    <h3 id="option-tunnel" class="section-link">
-                        <a href="#option-tunnel" class="page-anchor">tunnel</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String | Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">null</span></li>
-                    </ul>
+                <h3 id="option-tunnel" class="section-link">
+                    <a href="#option-tunnel" class="page-anchor">tunnel</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">null</span></li>
+                </ul>
 
 
 
@@ -620,21 +620,21 @@ tunnel: <span class="hljs-literal">true</span>
 tunnel: <span class="hljs-string">"my-private-site"</span></code></pre>
 
 
-                    <h3 id="option-online" class="section-link">
-                        <a href="#option-online" class="page-anchor">online</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-online" class="section-link">
+                    <a href="#option-online" class="page-anchor">online</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">undefined</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
 
 
-                    <p>Some features of BrowserSync (such as &#x60;xip&#x60; &amp; &#x60;tunnel&#x60;) require an internet connection, but if you&#x27;re
-                    working offline, you can reduce start-up time by setting this option to &#x60;false&#x60;</p>
+                <p>Some features of BrowserSync (such as <code>xip</code> &amp; <code>tunnel</code>) require an internet connection, but if you&#39;re
+                working offline, you can reduce start-up time by setting this option to <code>false</code></p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Will not attempt to determine your network status, assumes you're ONLINE.</span>
@@ -644,21 +644,21 @@ online: <span class="hljs-literal">true</span>
 online: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-open" class="section-link">
-                        <a href="#option-open" class="page-anchor">open</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-open" class="section-link">
+                    <a href="#option-open" class="page-anchor">open</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean | String</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean | String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
-                    <p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
-                    Can be true, &quot;local&quot;, &quot;external&quot;, &quot;ui&quot;, &quot;ui-external&quot; or &quot;tunnel&quot;</p>
+                <p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
+                Can be true, <code>local</code>, <code>external</code>, <code>ui</code>, <code>ui-external</code>, <code>tunnel</code> or <code>false</code></p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Stop the browser from automatically opening</span>
@@ -676,17 +676,17 @@ open: <span class="hljs-string">"external"</span>
 open: <span class="hljs-string">"tunnel"</span></code></pre>
 
 
-                    <h3 id="option-browser" class="section-link">
-                        <a href="#option-browser" class="page-anchor">browser</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-browser" class="section-link">
+                    <a href="#option-browser" class="page-anchor">browser</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String | Array</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">default</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Array</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">default</span></li>
+                </ul>
 
 
 
@@ -698,78 +698,78 @@ browser: <span class="hljs-string">"google chrome"</span>
 browser: [<span class="hljs-string">"google chrome"</span>, <span class="hljs-string">"firefox"</span>]</code></pre>
 
 
-                    <h3 id="option-xip" class="section-link">
-                        <a href="#option-xip" class="page-anchor">xip</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-xip" class="section-link">
+                    <a href="#option-xip" class="page-anchor">xip</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">false</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">false</span></li>
+                </ul>
 
 
-                    <p>Requires an internet connection - useful for services such as <a href="https://typekit.com/">Typekit</a>
-                    as it allows you to configure domains such as &#x60;*.xip.io&#x60; in your kit settings</p>
+                <p>Requires an internet connection - useful for services such as <a href="https://typekit.com/">Typekit</a>
+                as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)</span>
 xip: <span class="hljs-literal">true</span></code></pre>
 
 
-                    <h3 id="option-reloadOnRestart" class="section-link">
-                        <a href="#option-reloadOnRestart" class="page-anchor">reloadOnRestart</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-reloadOnRestart" class="section-link">
+                    <a href="#option-reloadOnRestart" class="page-anchor">reloadOnRestart</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
-                    <p>Reload each browser when BrowserSync is restarted.</p>
+                <p>Reload each browser when BrowserSync is restarted.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// don't auto-reload all browsers following a BrowserSync reload</span>
 reloadOnRestart: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-notify" class="section-link">
-                        <a href="#option-notify" class="page-anchor">notify</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-notify" class="section-link">
+                    <a href="#option-notify" class="page-anchor">notify</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
-                    <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
+                <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Don't show any notifications in the browser.</span>
 notify: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-scrollProportionally" class="section-link">
-                        <a href="#option-scrollProportionally" class="page-anchor">scrollProportionally</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-scrollProportionally" class="section-link">
+                    <a href="#option-scrollProportionally" class="page-anchor">scrollProportionally</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
 
@@ -817,43 +817,43 @@ file change event</p>
 reloadDelay: <span class="hljs-number">2000</span></code></pre>
 
 
-                    <h3 id="option-reloadDebounce" class="section-link">
-                        <a href="#option-reloadDebounce" class="page-anchor">reloadDebounce</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-reloadDebounce" class="section-link">
+                    <a href="#option-reloadDebounce" class="page-anchor">reloadDebounce</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Number</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">0</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Number</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">0</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-                    <p>Restrict the frequency in which browser:reload events
-                    can be emitted to connected clients</p>
+                <p>Restrict the frequency in which browser:reload events
+                can be emitted to connected clients</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Wait 2 seconds after a reload event before allowing more.</span>
 reloadDebounce: <span class="hljs-number">2000</span></code></pre>
 
 
-                    <h3 id="option-plugins" class="section-link">
-                        <a href="#option-plugins" class="page-anchor">plugins</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-plugins" class="section-link">
+                    <a href="#option-plugins" class="page-anchor">plugins</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Array</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">[]</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Array</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">[]</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-                    <p>User provided plugins</p>
+                <p>User provided plugins</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-keyword">as</span></code></pre>
@@ -881,17 +881,17 @@ injectChanges: <span class="hljs-literal">true</span>,
 injectChanges: <span class="hljs-literal">false</span>,</code></pre>
 
 
-                    <h3 id="option-startPath" class="section-link">
-                        <a href="#option-startPath" class="page-anchor">startPath</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-startPath" class="section-link">
+                    <a href="#option-startPath" class="page-anchor">startPath</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String | Null</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">null</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String | Null</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">null</span></li>
+                </ul>
 
 
 
@@ -900,37 +900,37 @@ injectChanges: <span class="hljs-literal">false</span>,</code></pre>
 startPath: <span class="hljs-string">"/info.php"</span></code></pre>
 
 
-                    <h3 id="option-minify" class="section-link">
-                        <a href="#option-minify" class="page-anchor">minify</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-minify" class="section-link">
+                    <a href="#option-minify" class="page-anchor">minify</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
-                    <p>Whether to minify client script, or not.</p>
+                <p>Whether to minify client script, or not.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Don't minify the client-side JS</span>
 minify: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-host" class="section-link">
-                        <a href="#option-host" class="page-anchor">host</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-host" class="section-link">
+                    <a href="#option-host" class="page-anchor">host</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">String</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">null</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">null</span></li>
+                </ul>
 
 
 
@@ -939,17 +939,17 @@ minify: <span class="hljs-literal">false</span></code></pre>
 host: <span class="hljs-string">"192.168.1.1"</span></code></pre>
 
 
-                    <h3 id="option-codeSync" class="section-link">
-                        <a href="#option-codeSync" class="page-anchor">codeSync</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-codeSync" class="section-link">
+                    <a href="#option-codeSync" class="page-anchor">codeSync</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
 
@@ -958,17 +958,17 @@ host: <span class="hljs-string">"192.168.1.1"</span></code></pre>
 codeSync: <span class="hljs-literal">true</span>,</code></pre>
 
 
-                    <h3 id="option-timestamps" class="section-link">
-                        <a href="#option-timestamps" class="page-anchor">timestamps</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-timestamps" class="section-link">
+                    <a href="#option-timestamps" class="page-anchor">timestamps</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Boolean</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">true</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
 
 
 
@@ -977,23 +977,23 @@ codeSync: <span class="hljs-literal">true</span>,</code></pre>
 timestamps: <span class="hljs-literal">false</span></code></pre>
 
 
-                    <h3 id="option-scriptPath" class="section-link">
-                        <a href="#option-scriptPath" class="page-anchor">scriptPath</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-scriptPath" class="section-link">
+                    <a href="#option-scriptPath" class="page-anchor">scriptPath</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Function</span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal">undefined</span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Function</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">undefined</span></li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 1.5.0</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.5.0</p>
 
-                    <p>Alter the script path for complete control over where the BrowserSync
-                    Javascript is served from. Whatever you return from this function
-                    will be used as the script path.</p>
+                <p>Alter the script path for complete control over where the BrowserSync
+                Javascript is served from. Whatever you return from this function
+                will be used as the script path.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This will result in something like</span>
@@ -1010,26 +1010,26 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
 }</code></pre>
 
 
-                    <h3 id="option-socket" class="section-link">
-                        <a href="#option-socket" class="page-anchor">socket</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-socket" class="section-link">
+                    <a href="#option-socket" class="page-anchor">socket</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal">Object</span>
-                        <ul class="nav nav--stacked subprops">
-                                <li><b>path</b> - Default: <span class="color-teal">&quot;/browser-sync/socket.io&quot;</span></li>
-                                <li><b>clientPath</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
-                                <li><b>namespace</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
-                                <li><b>clients.heartbeatTimeout</b> - Default: <span class="color-teal">5000</span></li>
-                        </ul>
-                        </li>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Object</span>
+                    <ul class="nav nav--stacked subprops">
+                            <li><b>path</b> - Default: <span class="color-teal">&quot;/browser-sync/socket.io&quot;</span></li>
+                            <li><b>clientPath</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
+                            <li><b>namespace</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
+                            <li><b>clients.heartbeatTimeout</b> - Default: <span class="color-teal">5000</span></li>
                     </ul>
+                    </li>
+                </ul>
 
-                    <p class="lede warning"><b>Note: </b> requires at least version 1.6.2</p>
+                <p class="lede warning"><b>Note: </b> requires at least version 1.6.2</p>
 
-                    <p>Configure the Socket.IO path and namespace to avoid collisions. Note: &#x60;namespace&#x60; can also be a function</p>
+                <p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This will result in something like this in</span>
@@ -1042,29 +1042,29 @@ socket: {
 }</code></pre>
 
 
-                    <h3 id="option-tagNames" class="section-link">
-                        <a href="#option-tagNames" class="page-anchor">tagNames</a>
-                        <a href="#page-top" class="back-to-top">^ TOP</a>
-                    </h3>
+                <h3 id="option-tagNames" class="section-link">
+                    <a href="#option-tagNames" class="page-anchor">tagNames</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
 
 
-                    <ul class="param-list">
-                        <li class="type">Type: <span class="color-teal"></span>
-                        </li>
-                        <li class="default">Default: <span class="color-teal"></span></li>
-                    </ul>
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal"></span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal"></span></li>
+                </ul>
 
 
-                    <p>A map of file-extensions -&gt; dom element.
-                    Useful if you&#x27;re serving files with unusual file extensions</p>
+                <p>A map of file-extensions -&gt; dom element.
+                Useful if you&#39;re serving files with unusual file extensions</p>
 
 
 
 
 
-                </article>
             </div>
         </div>
+        </article>
     </div>
 
     </section>

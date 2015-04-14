@@ -36,7 +36,7 @@ still use all of these options, but you need to provide them as detailed in the 
 <p class="lede warning"><b>Note: </b> requires at least version {{ since }}</p>
 {{/if}}
 
-{{#md}}{{compile this.description }}{{/md}}
+{{$md inlinesrc=this.description}}
 
 {{#if this.snippetpath}}
 {{hl src=this.snippetpath}}

@@ -33,6 +33,7 @@ h1, .h1 {
     padding-top: $base-spacing;
     @include font-size($h1-size);
 }
+
 h2, .h2 {
     margin-bottom: $base-spacing;
     padding-top: $base-spacing;

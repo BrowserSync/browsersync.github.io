@@ -41,12 +41,10 @@ fs.writeFileSync("./_doc/api.json", JSON.stringify(apiItems, null, 4));
  *
  */
 
-var out = docGen.prepareOptions(data.classitems);
+var out = docGen.prepareOptions(data.classitems)
+    .map(optionsMarkup);
 
 fs.writeFileSync("./_doc/options.json", JSON.stringify(out, null, 4));
-
-var optItems = out
-    .reduce(optionsMarkup, "");
 
 //fs.writeFileSync("./_src/docs/options.md", optTemp({data: optItems}));
 
@@ -126,17 +124,15 @@ function fixDescription(item) {
  * @param item
  * @returns {*}
  */
-function optionsMarkup (combined, item) {
+function optionsMarkup (item) {
 
     item.snippet = getSnippet(item, "options");
 
     if (!item.description) {
         item.description = "";
-    } else {
-        item.description = marked(item.description);
     }
 
-    return combined;
+    return item;
 }
 
 /**

@@ -619,7 +619,7 @@
     }, {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
         "line": 206,
-        "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, \"local\", \"external\", \"ui\", \"ui-external\" or \"tunnel\"",
+        "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, `local`, `external`, `ui`, `ui-external`, `tunnel` or `false`",
         "itemtype": "property",
         "name": "open",
         "type": "Boolean|String",

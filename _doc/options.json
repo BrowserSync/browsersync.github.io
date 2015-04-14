@@ -29,7 +29,8 @@
             }
         ],
         "snippetpath": "_includes/snippets/options/ui.js",
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "snippet": "// Change the default port\nui: {\n    port: 8080\n}\n\n// Change the default weinre port\nui: {\n    port: 8080,\n    weinre: {\n        port: 9090\n    }\n}\n\n// Disable UI completely\nui: false\n"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -44,7 +45,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/files.js",
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "snippet": "// single file\nfiles: \"app/css/style.css\"\n\n// multiple files\nfiles: [\"app/css/style.css\", \"app/js/*.js\"]\n\n// patterns + 1 with custom callback\n// since 2.6.0\nfiles: [\n    \"wp-content/themes/**/*.css\",\n    {\n        match: [\"wp-content/themes/**/*.php\"],\n        fn: function (event, file) {\n            /** Custom event handler **/\n        }\n    }\n]"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -59,7 +61,8 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "snippetpath": "_includes/snippets/options/watchOptions.js",
-        "defaultValue": "undefined"
+        "defaultValue": "undefined",
+        "snippet": "// Options passed to Chokidar\nwatchOptions: {\n    ignoreInitial: true,\n    ignored: '*.txt'\n}\n\n// options for chokidar with custom callback\n// since 2.6.0\nfiles: [\n    {\n        match: [\"wp-content/themes/**/*.php\"],\n        fn: function (event, file) {\n            /** Custom event handler **/\n        },\n        options: {\n            ignored: '*.txt'\n        }\n    }\n]"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -74,7 +77,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/server.js",
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "snippet": "// Serve files from the app directory\nserver: {\n    baseDir: \"app\"\n}\n\n// Serve files from the app directory with directory listing\nserver: {\n    baseDir: \"app\",\n    directory: true\n}\n\n// Multiple base directories\nserver: {\n    baseDir: [\"app\", \"dist\"]\n}\n\n// Serve files from the app directory, with a specific index filename\nserver: {\n    baseDir: \"app\",\n    index: \"index.htm\"\n}\n\n// Since version 1.2.1\n// The key is the url to match\n// The value is which folder to serve (relative to your current working directory)\nserver: {\n    baseDir: \"app\",\n    routes: {\n        \"/bower_components\": \"bower_components\"\n    }\n}\n\n// Custom Middleware\nserver: {\n    baseDir: \"./\",\n    middleware: function (req, res, next) {\n        console.log(\"Hi from middleware\");\n        next();\n    }\n}\n\n// Multiple custom Middlewares\nserver: {\n    baseDir: \"./\",\n    middleware: [\n        function (req, res, next) {\n            console.log(\"Hi from first middleware\");\n            next();\n        },\n        function (req, res, next) {\n            console.log(\"Hi from the second middleware\");\n            next();\n        }\n    ]\n}\n"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -111,7 +115,8 @@
         ],
         "since": false,
         "snippetpath": "_includes/snippets/options/proxy.js",
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "snippet": "// Using a vhost-based url\nproxy: \"local.dev\"\n\n// Using a localhost address with a port\nproxy: \"localhost:8888\"\n\n// Using localhost sub directories\nproxy: \"localhost/site1\"\n\n// With middleware - Requires v2.1.0\nproxy: {\n    target: \"http://yourlocal.dev\",\n    middeware: function (req, res, next) {\n        console.log(req.url);\n        next();\n    }\n}\n\n// With custom request headers - Requires v2.1.0\nproxy: {\n    target: \"localhost:8000\",\n    reqHeaders: function (config) {\n        return {\n            \"host\":            config.urlObj.host,\n            \"accept-encoding\": \"identity\",\n            \"agent\":           false\n        }\n    }\n}\n"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -125,7 +130,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/port.js",
-        "defaultValue": "3000"
+        "defaultValue": "3000",
+        "snippet": "// Use a specific port (instead of the one auto-detected by BrowserSync)\nport: 8080",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -140,7 +147,8 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "snippetpath": "_includes/snippets/options/https.js",
-        "defaultValue": "undefined"
+        "defaultValue": "undefined",
+        "snippet": "// Enable HTTPS for static file server\nhttps: true"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -202,7 +210,8 @@
         ],
         "since": false,
         "snippetpath": "_includes/snippets/options/ghostMode.js",
-        "defaultValue": null
+        "defaultValue": null,
+        "snippet": "// Here you can disable/enable each feature individually\nghostMode: {\n    clicks: true,\n    forms: true,\n    scroll: false\n}\n\n// Or switch them all off in one go\nghostMode: false"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -217,7 +226,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/logLevel.js",
-        "defaultValue": "info"
+        "defaultValue": "info",
+        "snippet": "// Show me additional info about the process\nlogLevel: \"debug\"\n\n// Just show basic info\nlogLevel: \"info\"\n\n// output NOTHING to the commandline\nlogLevel: \"silent\""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -232,7 +242,8 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "snippetpath": "_includes/snippets/options/logPrefix.js",
-        "defaultValue": "BS"
+        "defaultValue": "BS",
+        "snippet": "logPrefix: \"My Awesome Project\"\n\n// [My Awesome Project] Local URL: http://localhost:3000\n// [My Awesome Project] Watching files....\n// [My Awesome Project] File changed: \"index.html\""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -246,7 +257,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/logConnections.js",
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "snippet": "// Log connections\nlogConnections: true\n\n// Don't log connections\nlogConnections: false",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -260,7 +273,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/logFileChanges.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Log information about changed files\nlogFileChanges: true\n\n// Don't log file changes\nlogFileChanges: false",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -275,7 +290,8 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "snippetpath": "_includes/snippets/options/logSnippet.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Don't ever log the snippet\nlogSnippet: false"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -320,7 +336,8 @@
             }
         ],
         "snippetpath": "_includes/snippets/options/snippetOptions.js",
-        "defaultValue": null
+        "defaultValue": null,
+        "snippet": "// Customise the placement of the snippet\n// and ignore certain paths\nsnippetOptions: {\n\n    // Ignore all HTML files within the templates folder\n    ignorePaths: \"templates/*.html\",\n\n    // Provide a custom Regex for inserting the snippet.\n    rule: {\n        match: /<\\/body>/i,\n        fn: function (snippet, match) {\n            return snippet + match;\n        }\n    }\n}"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -334,7 +351,8 @@
         "class": "",
         "module": "BrowserSync.options",
         "subprops": null,
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "snippet": null
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -348,7 +366,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/tunnel.js",
-        "defaultValue": "null"
+        "defaultValue": "null",
+        "snippet": "// Tunnel the BrowserSync server through a random Public URL\n// -> http://randomstring23232.localtunnel.me\ntunnel: true\n\n// Attempt to use the URL \"http://my-private-site.localtunnel.me\"\ntunnel: \"my-private-site\"",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -363,12 +383,13 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/online.js",
-        "defaultValue": "undefined"
+        "defaultValue": "undefined",
+        "snippet": "// Will not attempt to determine your network status, assumes you're ONLINE.\nonline: true\n\n// Will not attempt to determine your network status, assumes you're OFFLINE\nonline: false"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
         "line": 206,
-        "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, \"local\", \"external\", \"ui\", \"ui-external\" or \"tunnel\"",
+        "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, `local`, `external`, `ui`, `ui-external`, `tunnel` or `false`",
         "itemtype": "property",
         "name": "open",
         "type": "Boolean | String",
@@ -378,7 +399,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/open.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Stop the browser from automatically opening\nopen: false\n\n// Open the localhost URL\nopen: true\n\n// The following availble since v1.3.0\n\n// Open the external URL - must be online.\nopen: \"external\"\n\n// Open the tunnel URL - must also set the `tunnel` option\nopen: \"tunnel\""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -392,7 +414,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/browser.js",
-        "defaultValue": "default"
+        "defaultValue": "default",
+        "snippet": "// Open the site in Chrome\nbrowser: \"google chrome\"\n\n// Open the site in Chrome & Firefox\nbrowser: [\"google chrome\", \"firefox\"]",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -407,7 +431,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/xip.js",
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "snippet": "// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)\nxip: true"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -422,7 +447,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/reloadOnRestart.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// don't auto-reload all browsers following a BrowserSync reload\nreloadOnRestart: false"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -437,7 +463,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/notify.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Don't show any notifications in the browser.\nnotify: false"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -451,7 +478,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/scrollProportionally.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "scrollProportionally: false // Sync viewports to TOP position",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -465,7 +494,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/scrollThrottle.js",
-        "defaultValue": "0"
+        "defaultValue": "0",
+        "snippet": "scrollThrottle: 100 // only send scroll events every 100 milliseconds",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -480,7 +511,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/reloadDelay.js",
-        "defaultValue": "0"
+        "defaultValue": "0",
+        "snippet": "// Wait for 2 seconds before any browsers should try to inject/reload a file.\nreloadDelay: 2000"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -495,7 +527,8 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "snippetpath": "_includes/snippets/options/reloadDebounce.js",
-        "defaultValue": "0"
+        "defaultValue": "0",
+        "snippet": "// Wait 2 seconds after a reload event before allowing more.\nreloadDebounce: 2000"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -510,7 +543,8 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "snippetpath": "_includes/snippets/options/plugins.js",
-        "defaultValue": "[]"
+        "defaultValue": "[]",
+        "snippet": "as"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -524,7 +558,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/injectChanges.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Inject CSS changes\ninjectChanges: true,\n\n// Don't try to inject, just do a page refresh\ninjectChanges: false,",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -538,7 +574,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/startPath.js",
-        "defaultValue": "null"
+        "defaultValue": "null",
+        "snippet": "// Open the first browser window at URL + \"/info.php\"\nstartPath: \"/info.php\"",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -553,7 +591,8 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/minify.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Don't minify the client-side JS\nminify: false"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -567,7 +606,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/host.js",
-        "defaultValue": "null"
+        "defaultValue": "null",
+        "snippet": "// Override host detection if you know the correct IP to use\nhost: \"192.168.1.1\"",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -581,7 +622,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/codeSync.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Don't send any file-change events to browsers\ncodeSync: true,",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -595,7 +638,9 @@
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/timestamps.js",
-        "defaultValue": "true"
+        "defaultValue": "true",
+        "snippet": "// Don't append timestamps to injected files\ntimestamps: false",
+        "description": ""
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -610,7 +655,8 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "snippetpath": "_includes/snippets/options/scriptPath.js",
-        "defaultValue": "undefined"
+        "defaultValue": "undefined",
+        "snippet": "// This will result in something like\n// localhost:3002/browser-sync/browser-sync-client.1.6.0.js\nscriptPath: function (path) {\n    return \"localhost:3002\" + path;\n}\n\n// NOTE: Since 2.2.0\n// If you're using <base> in your html, you may need the absolute path to the script\n// http://localhost:3002/browser-sync/browser-sync-client.1.6.0.js\nscriptPath: function (path, port, options) {\n    return options.get(\"absolute\");\n}"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -657,7 +703,8 @@
             }
         ],
         "snippetpath": "_includes/snippets/options/socket.js",
-        "defaultValue": null
+        "defaultValue": null,
+        "snippet": "// This will result in something like this in\n// the socket connector code\n// browserSync.io('localhost:3003/browser-sync')\nsocket: {\n    namespace: function (namespace) {\n        return \"localhost:3003\" + namespace;\n    }\n}"
     },
     {
         "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
@@ -669,6 +716,7 @@
         "module": "BrowserSync.options",
         "subprops": null,
         "since": false,
-        "defaultValue": null
+        "defaultValue": null,
+        "snippet": null
     }
 ]

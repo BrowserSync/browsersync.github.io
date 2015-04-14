@@ -3,102 +3,75 @@
  */
 code, samp {
 
-    @include font-size($mono-size);
+    @include font-size(16px);
     font-family: $mono-font-family;
-    line-height: 1.25;
-    background: #f6f6f6;
-    padding: 0px 3px;
+    //border-radius: 3px;
+    background: $code-bg;
+    padding: 2px 4px;
+    margin: 0 2px;
+    border: 1px solid darken($code-bg, 5%);
     border-radius: 3px;
-    border: 1px solid darken(#f6f6f6, 5%);
 }
 
-pre code {
-    background: $navy;
-    padding: 0px;
-    border: 0;
+pre {
+    padding: $base-spacing;
+    line-height: 1;
+    background: $code-bg;
+    code {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    &.highlight {
+
+        margin-bottom: $base-spacing;
+        margin-left: -$half-spacing;
+        margin-right: -$half-spacing;
+        border: 5px solid darken($code-bg, 2%);
+        border-left-width: 0;
+        border-right-width: 0;
+
+        @include media-query(min, $lap-start) {
+
+            margin-left: 0;
+            //margin-right: -($base-spacing*1.5);
+            border-left-width: 5px;
+            border-right-width: 5px;
+        }
+    }
 }
 
 $spacing: $base-spacing+$half-spacing;
 
 .doc-wrapper {
 
-    background: white;
+    background: $white;
     padding: $half-spacing;
     border-radius: 0px;
 
     @media (min-width: $lap-start) {
         border-radius: 5px;
-        border: 1px solid #CCC;
+        border: 1px solid $silver;
         padding: $spacing $spacing 0;
     }
 
-    h1 {
+    .page-title {
 
         @include font-size(20px);
-        text-align: left;
 
         @media (min-width: $lap-start) {
             @include font-size(34px);
-            margin-bottom: $base-spacing*2;
-            text-align: center;
-        }
-    }
-
-    > pre {
-        margin-left: -$half-spacing;
-        margin-right: -$half-spacing;
-        border-radius: 0;
-        padding: $half-spacing;
-
-        @media (min-width: $lap-start) {
-            padding: $spacing;
-            margin-bottom: $base-spacing*2;
-            margin-left: -$spacing;
-            margin-right: -$spacing;
+            margin-bottom: $base-spacing;
+            padding-bottom: $half-spacing;
+            border-bottom: 1px dashed $silver;
         }
     }
 }
 
-/**
- * The wrapper that is provided by the syntax highlighter
- */
-pre.highlight {
-
-    padding: 0;
-    max-width: $page-width;
-    display: block;
-    white-space: pre;
-    word-wrap: normal;
-
-    background: $navy;
-    padding: $half-spacing;
-    margin-left: -$half-spacing;
-    margin-right: -$half-spacing;
-    margin-bottom: $base-spacing;
-    border: 1px solid lighten($navy, 10%);
-    border-radius: 0;
-
-    margin-top: 40px;
-
-    &:last-child {
-
-        margin-bottom: 0;
-
-        @media (min-width: $lap-start) {
-
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-    }
-
-    @media (min-width: $lap-start) {
-
-        padding: $spacing;
-        margin-left: -$spacing;
-        margin-right: -$spacing;
-        margin-bottom: $base-spacing*2;
-    }
-
+.section-link {
+    padding-bottom: $half-spacing;
+    border-bottom: 1px dashed $silver-lt;
 }
 
 /**
@@ -199,7 +172,6 @@ pre.highlight {
             }
         }
     }
-
 }
 
 /*
@@ -209,7 +181,6 @@ pre.highlight {
 
     list-style: none;
     margin-bottom: $base-spacing;
-    padding-left: $half-spacing;
 
     li {
 
@@ -231,10 +202,7 @@ pre.highlight {
         }
 
         &.type {
-            border-bottom: 1px solid #ebebeb;
-        }
-        &.since {
-            border-bottom: 1px solid #ebebeb;
+            //border-bottom: 1px solid $silver-lt;
         }
 
         &.desc {

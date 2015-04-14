@@ -25,7 +25,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.6.1",
+    "browser-sync": "^2.6.4",
     "bs-html-injector": "^2.0.2",
     "bs-recipes": "git://github.com/BrowserSync/recipes",
     "crossbow": "^0.4.3",

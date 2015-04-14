@@ -1,6 +1,6 @@
 [
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 25,
         "itemtype": "method",
         "name": "browserSync",
@@ -28,7 +28,7 @@
         "snippetpath": "_includes/snippets/api/browserSync.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 52,
         "description": "The `reload` method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.",
         "itemtype": "method",
@@ -51,7 +51,7 @@
         "snippetpath": "_includes/snippets/api/reload.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 61,
         "description": "The `stream` method returns a transform stream and can act once or on many files.",
         "itemtype": "method",
@@ -75,7 +75,7 @@
         "snippetpath": "_includes/snippets/api/stream.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 71,
         "description": "Helper method for browser notifications",
         "itemtype": "method",
@@ -99,7 +99,7 @@
         "snippetpath": "_includes/snippets/api/notify.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 80,
         "description": "This method will close any running server, stop file watching & exit the current process.",
         "itemtype": "method",
@@ -111,7 +111,7 @@
         "snippetpath": "_includes/snippets/api/exit.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 87,
         "description": "Stand alone file-watcher. Use this along with BrowserSync to create your own, minimal build system",
         "itemtype": "method",
@@ -142,7 +142,7 @@
         "snippetpath": "_includes/snippets/api/watch.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 97,
         "description": "Method to pause file change events",
         "itemtype": "method",
@@ -153,7 +153,7 @@
         "preview": ".pause()"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 104,
         "description": "Method to resume paused watchers",
         "itemtype": "method",
@@ -164,7 +164,7 @@
         "preview": ".resume()"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 115,
         "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
         "itemtype": "property",
@@ -176,7 +176,7 @@
         "snippetpath": "_includes/snippets/api/emitter.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 130,
         "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
         "itemtype": "property",
@@ -188,7 +188,7 @@
         "snippetpath": "_includes/snippets/api/active.js"
     },
     {
-        "file": "/Users/shakyshane/Sites/os-browser-sync/index.js",
+        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/index.js",
         "line": 138,
         "description": "A simple true/false flag to determine if the current instance is paused",
         "itemtype": "property",

@@ -14,31 +14,31 @@ code, samp {
 }
 
 pre {
+
     padding: $base-spacing;
     line-height: 1;
     background: $code-bg;
+
+    /* reset previous inline code styles */
     code {
         border: 0;
         padding: 0;
         margin: 0;
     }
 
-    &.highlight {
+    margin-bottom: $base-spacing;
+    margin-left: -$half-spacing;
+    margin-right: -$half-spacing;
+    border: 5px solid darken($code-bg, 2%);
+    border-left-width: 0;
+    border-right-width: 0;
 
-        margin-bottom: $base-spacing;
-        margin-left: -$half-spacing;
-        margin-right: -$half-spacing;
-        border: 5px solid darken($code-bg, 2%);
-        border-left-width: 0;
-        border-right-width: 0;
+    @include media-query(min, $lap-start) {
 
-        @include media-query(min, $lap-start) {
-
-            margin-left: 0;
-            //margin-right: -($base-spacing*1.5);
-            border-left-width: 5px;
-            border-right-width: 5px;
-        }
+        margin-left: 0;
+        //margin-right: -($base-spacing*1.5);
+        border-left-width: 5px;
+        border-right-width: 5px;
     }
 }
 

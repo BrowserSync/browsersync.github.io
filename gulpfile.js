@@ -173,9 +173,10 @@ function yuidocs (deferred) {
     var yuidoc = require("gulp-yuidoc");
 
     return gulp.src([
-        "/Users/shakyshane/Sites/os-browser-sync/index.js",
-        //"./node_modules/browser-sync/index.js",
-        "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js"
+        //"/Users/shakyshane/Sites/os-browser-sync/index.js",
+        //"/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+        "./node_modules/browser-sync/index.js",
+        "./node_modules/browser-sync/lib/default-config.js"
     ])
     .pipe(yuidoc.parser())
     .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))

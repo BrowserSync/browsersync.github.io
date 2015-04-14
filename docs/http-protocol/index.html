@@ -67,17 +67,24 @@
             </div>
             <div class="grid__cell three-quarters">
                 <h1 class="page-title">HTTP Protocol</h1>
-                
+                <p class="lede warning"><b>NOTE:</b> Requires at least v2.6.0</p>
 
-                <p>Our API is incredibly simple &amp; powerful. You can use it to create your own
-                tiny node program for local development or integrate with other tools. To use it,
-                simply <code>require</code> the BrowserSync module like you would any other. This will give
-                you access to the public methods detailed below.</p>
-
-
-                <p><strong>Pre 2.0.0 syntax</strong><br/>
-                Previously we allowed methods to be called directly on the module export like this:
-                </p>
+                <p>In the 2.6.0 release we introduced basic support for reloading browsers &amp;
+                injecting files with command sent over HTTP. The main goal of this is to
+                allow other tools and processes to trigger reloading and other functionality
+                provided by the public API.</p>
+                <p>For example, <code>http://localhost:3000/__browser_sync__?method=reload</code> translates
+                directly into the public API call <code>browserSync.reload();</code></p>
+                <p>You can also pass arguments too, so...</p>
+<pre><code>GET http://localhost:3000/__browser_sync__?method=reload&amp;args=core.min.css
+</code></pre><p>... is equivalent to calling</p>
+<pre><code class="lang-js">browserSync.reload(<span class="hljs-string">"core.min.css"</span>);
+</code></pre>
+                <p>and for multiple arguments, just repeat the <code>args</code> part</p>
+<pre><code>GET http://localhost:3000/__browser_sync__?method=reload&amp;args=core.min.css&amp;args=ie.min.css
+</code></pre><p>... is equivalent to calling</p>
+<pre><code class="lang-js">browserSync.reload([<span class="hljs-string">"core.min.css"</span>, <span class="hljs-string">"ie.min.css"</span>]);
+</code></pre>
 
             </div>
         </div>

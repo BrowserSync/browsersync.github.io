@@ -32,12 +32,6 @@ This site is compiled with Crossbow, which means you need to `build` it before a
  it manually for html changes, run...
  
 ```bash 
-$ gulp crossbow
-```
- 
-... or, for sass/svg/other stuff, just try
- 
-```bash 
 $ gulp build
 ```
 

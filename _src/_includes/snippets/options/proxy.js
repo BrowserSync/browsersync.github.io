@@ -10,7 +10,7 @@ proxy: "localhost/site1"
 // With middleware - Requires v2.1.0
 proxy: {
     target: "http://yourlocal.dev",
-    middeware: function (req, res, next) {
+    middleware: function (req, res, next) {
         console.log(req.url);
         next();
     }

@@ -327,7 +327,7 @@ proxy: <span class="hljs-string">"localhost/site1"</span>
 <span class="hljs-comment">// With middleware - Requires v2.1.0</span>
 proxy: {
     target: <span class="hljs-string">"http://yourlocal.dev"</span>,
-    middeware: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+    middleware: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
         <span class="hljs-built_in">console</span>.log(req.url);
         next();
     }

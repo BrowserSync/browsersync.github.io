@@ -116,7 +116,7 @@
         "since": false,
         "snippetpath": "_includes/snippets/options/proxy.js",
         "defaultValue": "false",
-        "snippet": "// Using a vhost-based url\nproxy: \"local.dev\"\n\n// Using a localhost address with a port\nproxy: \"localhost:8888\"\n\n// Using localhost sub directories\nproxy: \"localhost/site1\"\n\n// With middleware - Requires v2.1.0\nproxy: {\n    target: \"http://yourlocal.dev\",\n    middeware: function (req, res, next) {\n        console.log(req.url);\n        next();\n    }\n}\n\n// With custom request headers - Requires v2.1.0\nproxy: {\n    target: \"localhost:8000\",\n    reqHeaders: function (config) {\n        return {\n            \"host\":            config.urlObj.host,\n            \"accept-encoding\": \"identity\",\n            \"agent\":           false\n        }\n    }\n}\n"
+        "snippet": "// Using a vhost-based url\nproxy: \"local.dev\"\n\n// Using a localhost address with a port\nproxy: \"localhost:8888\"\n\n// Using localhost sub directories\nproxy: \"localhost/site1\"\n\n// With middleware - Requires v2.1.0\nproxy: {\n    target: \"http://yourlocal.dev\",\n    middleware: function (req, res, next) {\n        console.log(req.url);\n        next();\n    }\n}\n\n// With custom request headers - Requires v2.1.0\nproxy: {\n    target: \"localhost:8000\",\n    reqHeaders: function (config) {\n        return {\n            \"host\":            config.urlObj.host,\n            \"accept-encoding\": \"identity\",\n            \"agent\":           false\n        }\n    }\n}\n"
     },
     {
         "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",

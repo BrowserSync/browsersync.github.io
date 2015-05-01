@@ -14,12 +14,11 @@ gulp.task('templates', function () {
         .pipe(bs.stream({once: true}));
 });
 
-// Provide filter unwanted files from being reloaded by providing
-// a match option
+// Provide a filter to stop unwanted files from being reloaded
 gulp.task('less', function () {
     return gulp.src('*.less')
         .pipe(less())
         .pipe(gulp.dest('css'))
-        .pipe(bs.stream({match: "*.css"}));
+        .pipe(bs.stream({match: "**/*.css"}));
 });
 

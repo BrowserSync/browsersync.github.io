@@ -221,13 +221,12 @@ gulp.task(<span class="hljs-string">'templates'</span>, <span class="hljs-functi
         .pipe(bs.stream({once: <span class="hljs-literal">true</span>}));
 });
 
-<span class="hljs-comment">// Provide filter unwanted files from being reloaded by providing</span>
-<span class="hljs-comment">// a match option</span>
+<span class="hljs-comment">// Provide a filter to stop unwanted files from being reloaded</span>
 gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'*.less'</span>)
         .pipe(less())
         .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
-        .pipe(bs.stream({match: <span class="hljs-string">"*.css"</span>}));
+        .pipe(bs.stream({match: <span class="hljs-string">"**/*.css"</span>}));
 });
 
 </code></pre>

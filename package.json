@@ -25,7 +25,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.6.4",
+    "browser-sync": "^2.6.9",
     "bs-html-injector": "^2.0.2",
     "bs-recipes": "git://github.com/BrowserSync/recipes",
     "crossbow": "^0.4.3",
@@ -45,7 +45,7 @@
     "lodash": "^3.6.0",
     "marked": "^0.3.2",
     "pretemplater": "^1.1.2",
-    "prom-seq": "^1.1.0",
+    "prom-seq": "^1.2.0",
     "q": "^1.2.0",
     "through2": "^0.6.5",
     "vinyl": "^0.4.6"

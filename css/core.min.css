@@ -82,16 +82,20 @@ hr{box-sizing:content-box;margin-bottom:24px;border:none;border-bottom:1px solid
 .grid:after,.grid:before{display:table}
 .grid__cell{float:left;padding-left:4%;width:100%}
 @media only screen and (min-width:700px){.one-quarter{width:25%}
-.three-quarters{width:75%}}
+.three-quarters{width:75%}
+}
 @media only screen and (max-width:699px){.palm-2up .grid__cell:nth-child(2n+1),.palm-4up .grid__cell:nth-child(4n+1){clear:left}
 .palm-2up .grid__cell{width:50%}
-.palm-4up .grid__cell{width:25%}}
+.palm-4up .grid__cell{width:25%}
+}
 @media only screen and (min-width:700px)and (max-width:899px){.lap-2up .grid__cell:nth-child(2n+1),.lap-4up .grid__cell:nth-child(4n+1){clear:left}
 .lap-2up .grid__cell{width:50%}
-.lap-4up .grid__cell{width:25%}}
+.lap-4up .grid__cell{width:25%}
+}
 @media only screen and (min-width:900px){.desk-2up .grid__cell:nth-child(2n+1),.desk-4up .grid__cell:nth-child(4n+1){clear:left}
 .desk-2up .grid__cell{width:50%}
-.desk-4up .grid__cell{width:25%}}
+.desk-4up .grid__cell{width:25%}
+}
 .clearfix:after,.container:after,.feature:after,.nav--float:after,.nav--inline:after,.nav:after,.usp:after,.wrapper{clear:both}
 a{color:#da4453;-webkit-transition:border .3s ease,background .3s ease,color .3s ease;transition:border .3s ease,background .3s ease,color .3s ease}
 a:focus,a:hover{color:#000;text-decoration:underline}
@@ -105,13 +109,15 @@ a:focus,a:hover{color:#000;text-decoration:underline}
 .back-to-top{position:absolute;top:12px;right:0;font-size:14px;font-size:.875rem}
 .sticky-nav .lede{display:none}
 @media only screen and (min-width:700px){.back-to-top{top:24px}
-.sticky-nav .lede{display:block}}
+.sticky-nav .lede{display:block}
+}
 .sticky-nav li{display:none}
 .sticky-nav li a{padding:4px 0 4px 6px;display:block;color:#1b2032}
 .sticky-nav li.nav-toggle-btn{display:block}
 .sticky-nav li.nav-toggle-btn a{background:#e1e1e1}
 @media only screen and (min-width:700px){.sticky-nav li{display:block}
-.sticky-nav li.nav-toggle-btn{display:none}}
+.sticky-nav li.nav-toggle-btn{display:none}
+}
 .sticky-nav.active ul li{display:block}
 .commands-list tr{border-bottom:1px solid #f2f2f2}
 .commands-list tr td:first-child{white-space:nowrap;font-weight:700}
@@ -133,7 +139,8 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .h3,h3{padding-top:12px;font-size:18px;font-size:1.125rem}
 .lede{font-size:24px;font-size:1.5rem}
 .wrapper{width:100%;padding-top:24px;padding-bottom:24px}
-@media only screen and (min-width:900px){.wrapper{padding-top:48px;padding-bottom:48px}}
+@media only screen and (min-width:900px){.wrapper{padding-top:48px;padding-bottom:48px}
+}
 .wrapper--alt{background:#f2f2f2}
 .wrapper--dark{background:#1b2032;color:#fff}
 .wrapper--dark a{border-bottom:1px solid rgba(255,255,255,.25);color:#fff}
@@ -143,47 +150,58 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .text--center{text-align:center!important}
 .code-example.docs,.feature__icon,.intro,.section-title,.site-header,.support,h3 i{text-align:center}
 .section-title{padding-top:12px;font-size:24px;font-size:1.5rem}
-@media only screen and (min-width:900px){.section-title{margin-bottom:48px;padding-top:24px;font-weight:400;font-size:36px;font-size:2.25rem}}
+@media only screen and (min-width:900px){.section-title{margin-bottom:48px;padding-top:24px;font-weight:400;font-size:36px;font-size:2.25rem}
+}
 .hook,.intro{padding-top:0}
 .hook,.ronseal{margin:0 auto 24px}
 @media only screen and (min-width:700px){.container{padding-right:24px;padding-left:24px}
-.hook{padding-top:24px}}
-@media only screen and (min-width:900px){.hook{padding-top:48px;font-size:48px;font-size:3rem}}
+.hook{padding-top:24px}
+}
+@media only screen and (min-width:900px){.hook{padding-top:48px;font-size:48px;font-size:3rem}
+}
 .ronseal{font-size:18px;font-size:1.125rem}
-@media only screen and (min-width:900px){.ronseal{font-size:24px;font-size:1.5rem}}
+@media only screen and (min-width:900px){.ronseal{font-size:24px;font-size:1.5rem}
+}
 .cta{margin:0 0 24px}
 .cta .button{border:0!important}
 .cta .stat{display:block;margin-top:12px;font-size:12px;font-size:.75rem}
 @media only screen and (min-width:900px){.cta{margin-bottom:48px}
-.cta .button{padding:18px 36px;font-size:24px;font-size:1.5rem}}
+.cta .button{padding:18px 36px;font-size:24px;font-size:1.5rem}
+}
 .usp{margin-bottom:24px}
 .usp:after,.usp:before{display:table}
 .usp__thumb{border:1px solid #ccc}
 .usp__content{overflow:hidden}
 .usp__content>:last-child{margin-bottom:0}
 @media only screen and (min-width:700px){.usp__thumb{float:left;width:50%}
-.usp__content{padding-left:24px}}
-@media only screen and (min-width:900px){.usp__title{font-size:24px;font-size:1.5rem}}
+.usp__content{padding-left:24px}
+}
+@media only screen and (min-width:900px){.usp__title{font-size:24px;font-size:1.5rem}
+}
 .feature{margin-bottom:24px}
 .feature:after,.feature:before{display:table}
 .feature__thumb{float:left;margin-right:24px;width:100px;border-radius:100%}
-@media only screen and (max-width:699px){.feature__thumb{display:none}}
+@media only screen and (max-width:699px){.feature__thumb{display:none}
+}
 .feature__content{position:relative;padding-left:100px;overflow:hidden}
 .feature__content>:last-child{margin-bottom:0}
 .feature__icon{position:absolute;width:100px;height:100px}
 .feature__icon .icon{font-size:40px;font-size:2.5rem}
-.new{display:inline-block;vertical-align:bottom;margin:0 3px;padding:3px 5px;background:#4FA83D;color:#fff;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;border-radius:2px}
 .new,.support{font-size:12px}
+.new{display:inline-block;vertical-align:bottom;margin:0 3px;padding:3px 5px;background:#4FA83D;color:#fff;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;border-radius:2px}
 .support{position:relative;margin-bottom:24px;padding-top:24px;font-size:.75rem}
 .support:before{position:absolute;top:0;left:50%;width:50%;margin-left:-25%;height:1px;background:#e6e6e6}
 .support li{display:inline;margin:0 12px 0 0}
 .code-example.docs ul li,.docs-nav{display:inline-block}
-@media only screen and (min-width:900px){.support{margin-top:24px;padding-top:48px}}
+@media only screen and (min-width:900px){.support{margin-top:24px;padding-top:48px}
+}
 .logo{margin:0 auto 24px}
-@media only screen and (min-width:900px){.logo{margin-bottom:48px}}
+@media only screen and (min-width:900px){.logo{margin-bottom:48px}
+}
 .quote{margin-bottom:24px}
 .quote>:last-child{margin-bottom:0}
-@media only screen and (min-width:900px){.quote{font-size:18px;font-size:1.125rem}}
+@media only screen and (min-width:900px){.quote{font-size:18px;font-size:1.125rem}
+}
 .quote__source{font-size:12px;font-size:.75rem}
 .quote__source:before{content:"\2014";margin-right:.5em}
 .site-header{padding-top:24px;padding-bottom:48px}
@@ -194,7 +212,8 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .site-nav li{margin:0 12px}
 @media only screen and (min-width:700px){.site-logo{float:left}
 .site-nav{float:right}
-.site-nav li{margin-right:0;margin-left:24px}}
+.site-nav li{margin-right:0;margin-left:24px}
+}
 .docs-nav li{margin:0}
 .docs-nav li:first-child{display:inline-block;margin-bottom:0}
 .docs-nav li a{padding:5px}
@@ -205,26 +224,32 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .credit__thumb:hover{background:#e0180b}
 code,pre,samp{background:#FAFAFA}
 @media only screen and (min-width:700px){.credit__thumb{float:left;margin:0 24px 0 0}
-.credit__content{overflow:hidden}}
+.credit__content{overflow:hidden}
+}
 code,samp{font-size:16px;font-size:1rem;font-family:monospace;padding:2px 4px;margin:0 2px;border:1px solid #ededed;border-radius:3px}
 pre{padding:24px;margin-bottom:24px;margin-left:-12px;margin-right:-12px;border:5px solid #f5f5f5;border-left-width:0;border-right-width:0}
 pre code{border:0;padding:0;margin:0}
-@media only screen and (min-width:700px){pre{margin-left:0;border-left-width:5px;border-right-width:5px}}
+@media only screen and (min-width:700px){pre{margin-left:0;border-left-width:5px;border-right-width:5px}
+}
 .doc-wrapper{background:#fff;padding:12px;border-radius:0}
 .doc-wrapper .page-title{font-size:20px;font-size:1.25rem}
 @media (min-width:700px){.doc-wrapper{border-radius:5px;border:1px solid #ccc;padding:36px 36px 0}
-.doc-wrapper .page-title{font-size:34px;font-size:2.125rem;margin-bottom:24px;padding-bottom:12px;border-bottom:1px dashed #ccc}}
+.doc-wrapper .page-title{font-size:34px;font-size:2.125rem;margin-bottom:24px;padding-bottom:12px;border-bottom:1px dashed #ccc}
+}
 .section-link{padding-bottom:12px;border-bottom:1px dashed #e6e6e6}
 .code-example{background:#F2F2F2;padding-top:0}
 .code-example h2{font-size:32px;font-size:2rem;color:#1b2032}
 .code-example h2,.code-example h3,.code-example p{margin-bottom:24px}
-@media (min-width:700px){.code-example h2,.code-example h2.flush,.code-example h3,.code-example h3.flush,.code-example p,.code-example p.flush{margin-bottom:24px}}
+@media (min-width:700px){.code-example h2,.code-example h2.flush,.code-example h3,.code-example h3.flush,.code-example p,.code-example p.flush{margin-bottom:24px}
+}
 .code-example h2.flush,.code-example h3,.code-example h3.flush,.code-example p.flush{margin-bottom:12px}
-@media (min-width:700px){.code-example{padding-top:24px}}
+@media (min-width:700px){.code-example{padding-top:24px}
+}
 .code-example .container{padding-top:0;padding-left:0;padding-right:0}
 .code-example h3{font-size:22px;font-size:1.375rem;padding-top:12px;position:relative}
 .code-example h3 a{color:#1b2032}
-@media (min-width:700px){.code-example h3{font-size:30px;font-size:1.875rem;padding-top:36px;margin-bottom:24px;border-top:0}}
+@media (min-width:700px){.code-example h3{font-size:30px;font-size:1.875rem;padding-top:36px;margin-bottom:24px;border-top:0}
+}
 .code-example h3 .icon{font-size:20px;font-size:1.25rem;margin-left:6px}
 .code-example h4{font-weight:400;font-size:20px;font-size:1.25rem;color:#256b8d;margin-bottom:24px}
 .code-example.docs ul{margin-bottom:48px}
@@ -253,4 +278,5 @@ h3 i{display:inline-block;margin-right:6px;width:1em}
 .fl{float:left;margin-right:24px}
 .ct{display:block;margin-right:auto;margin-left:auto}
 .player{font-size:0;border:6px solid rgba(0,0,0,.5)}
-@media only screen and (min-width:900px){.player{max-width:700px;margin:0 auto}}
+@media only screen and (min-width:900px){.player{max-width:700px;margin:0 auto}
+}

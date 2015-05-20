@@ -1,6 +1,5 @@
 var gulp        = require("gulp");
 var sass        = require("gulp-ruby-sass");
-var filter      = require('gulp-filter');
 var browserSync = require("browser-sync").create();
 
 // Static Server + watching scss/html files
@@ -14,10 +13,18 @@ gulp.task('serve', ['sass'], function() {
     gulp.watch("app/*.html").on('change', reload);
 });
 
+/**
+ * Compile with gulp-ruby-sass + source maps
+ */
 gulp.task('sass', function () {
-    return gulp.src('scss/**/*.scss')
-        .pipe(sass({sourcemap: true}))
-        .pipe(gulp.dest('css'))// Write the CSS & Source maps
-        .pipe(filter('**/*.css')) // Filtering stream to only css files
-        .pipe(browserSync.reload({stream:true}));
+
+    return sass('app/scss', {sourcemap: true})
+        .on('error', function (err) {
+            console.error('Error!', err.message);
+        })
+        .pipe(sourcemaps.write('./', {
+            includeContent: false,
+            sourceRoot: '/app/scss'
+        }))
+        .pipe(browserSync.stream({match: '**/*.css'}));
 });

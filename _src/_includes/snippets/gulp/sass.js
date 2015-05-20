@@ -1,7 +1,6 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
-var reload      = browserSync.reload;
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
@@ -19,7 +18,7 @@ gulp.task('sass', function() {
     return gulp.src("app/scss/*.scss")
         .pipe(sass())
         .pipe(gulp.dest("app/css"))
-        .pipe(reload({stream: true}));
+        .pipe(browserSync.stream());
 });
 
 gulp.task('default', ['serve']);

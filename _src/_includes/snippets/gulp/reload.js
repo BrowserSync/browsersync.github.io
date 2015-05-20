@@ -1,3 +1,6 @@
+var gulp        = require('gulp');
+var browserSync = require('browser-sync').create();
+
 // process JS files and return the stream.
 gulp.task('js', function () {
     return gulp.src('js/*js')

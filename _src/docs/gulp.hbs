@@ -25,18 +25,17 @@ Then, use them within your `gulpfile.js`:
 
 Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
 all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it's
-*finished* compiling - make sure you call reload *after* `gulp.dest`
+*finished* compiling - make sure you call `.stream()` *after* `gulp.dest`
 
 {{ hl src="snippets/gulp/sass.js" }}
 
-{{ inc src="headerlink.html" title="SASS & Source Maps" slug="gulp-sass-maps" }}
+{{ inc src="headerlink.html" title="Ruby SASS & Source Maps" slug="gulp-sass-maps" }}
 
 If you use [gulp-ruby-sass](https://www.npmjs.org/package/gulp-ruby-sass) with the `sourcemap: true` option, additional `.map`
 files will be generated. These files end up being sent down stream and when `browserSync.reload()` receives them, it will attempt
 a full page reload (as it will not find any `.map` files in the DOM).
 
-To fix this problem, you can use the [gulp-filter](https://www.npmjs.org/package/gulp-filter) package to ensure that only `*.css`
- files ever reach `.reload` - this way you'll still get CSS injecting.
+To fix this problem, use `browserSync.stream({match: '**/*.css'})` as seen in the following example.
 
 {{ hl src="snippets/gulp/sass.maps.js" }}
 

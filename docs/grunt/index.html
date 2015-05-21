@@ -21,6 +21,8 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
+
+    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
 </head>
 
 
@@ -126,7 +128,7 @@
                 the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers
                 (without a page refresh), your config for all three tasks might look something like this:</p>
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This shows a full config file!</span>
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(grunt)</span> </span>{
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
     grunt.initConfig({
         watch: {
             files: <span class="hljs-string">'app/scss/**/*.scss'</span>,

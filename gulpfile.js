@@ -6,14 +6,18 @@ var minifyCSS    = require("gulp-minify-css");
 var rename       = require("gulp-rename");
 var prefix       = require("gulp-autoprefixer");
 var cp           = require("child_process");
-var svgSprite    = require("gulp-svg-sprites");
 var crossbow     = require("crossbow");
 var prettify     = require('gulp-jsbeautifier');
 var yaml         = require('js-yaml');
 var promseq      = require('prom-seq');
-var htmlinjector = require("bs-html-injector");
 var bs1          = browserSync.create();
+var easysvg      = require('easy-svg');
 var buildall     = promseq.create([yuidocs, buildDocs, crossbowBuild]);
+var docsPaths = {
+    index: "./node_modules/browser-sync/index.js",
+    config: "./node_modules/browser-sync/lib/default-config.js"
+};
+
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
@@ -99,19 +103,14 @@ gulp.task("sass", function () {
 /**
  * Only build/serve svgs from the icon set that are actually used in the site.
  */
-gulp.task('sprites', function () {
+gulp.task('svg', function () {
     var sitedata = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
     var usedsvgs = sitedata.icons.map(function (item) {
         return "img/svg/" + item.icon + ".svg";
     });
 
     return gulp.src(usedsvgs)
-        .pipe(svgSprite({
-            baseSize: 16,
-            cssFile: "../../scss/theme/_sprite.scss",
-            svgPath: "../img/icons/svg/sprite.svg",
-            pngPath: "../img/icons/svg/sprite.png"
-        }))
+        .pipe(easysvg.stream())
         .pipe(gulp.dest("img/icons"));
 });
 
@@ -134,13 +133,12 @@ gulp.task("watch", function () {
     });
     bs1.watch([
         "*.js",
-        "/Users/shakyshane/Sites/os-browser-sync/index.js",
-        "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js"
+        docsPaths.index,
+        docsPaths.config
     ]).on("change", function () {
         buildall()
             .then(function () {
-                htmlinjector();
-                bs1.notify("Crossbow built!");
+                bs1.reload();
             })
             .catch(printError);
     });
@@ -173,10 +171,8 @@ function yuidocs (deferred) {
     var yuidoc = require("gulp-yuidoc");
 
     return gulp.src([
-        //"/Users/shakyshane/Sites/os-browser-sync/index.js",
-        //"/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-        "./node_modules/browser-sync/index.js",
-        "./node_modules/browser-sync/lib/default-config.js"
+        docsPaths.index,
+        docsPaths.config
     ])
     .pipe(yuidoc.parser())
     .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))

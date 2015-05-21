@@ -5,7 +5,7 @@
         {{#each site.icons}}
             <li class="grid__cell">
                 <div class="feature">
-                    <div class="feature__icon"><span class="icon {{this.icon}}"></span></div>
+                    <div class="feature__icon"><svg><use xlink:href="/img/icons/icons.svg#svg-{{this.icon}}"></use></svg></div>
                     <div class="feature__content">
                         <h3 class="feature__title">{{this.title}} {{#if this.new}}<span class="new">New</span>{{/if}}</h3>
                         <p>{{this.tagline}}</p>

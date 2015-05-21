@@ -206,12 +206,11 @@
 
 .feature__icon {
     position: absolute;
+    //background: red;
     width: 100px;
     height: 100px;
     text-align: center;
-    .icon {
-        @include font-size(40px);
-    }
+    @include font-size(45px);
 }
 
 

@@ -21,6 +21,8 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
+
+    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
 </head>
 
 
@@ -174,7 +176,7 @@ browserSync({
         <span class="hljs-string">"wp-content/themes/**/*.css"</span>,
         {
             match: [<span class="hljs-string">"wp-content/themes/**/*.php"</span>],
-            fn:    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
+            fn:    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, file</span>) </span>{
                 <span class="hljs-comment">/** Custom event handler **/</span>
             }
         }
@@ -211,7 +213,7 @@ watchOptions: {
 files: [
     {
         match: [<span class="hljs-string">"wp-content/themes/**/*.php"</span>],
-        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
+        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, file</span>) </span>{
             <span class="hljs-comment">/** Custom event handler **/</span>
         },
         options: {
@@ -272,7 +274,7 @@ server: {
 <span class="hljs-comment">// Custom Middleware</span>
 server: {
     baseDir: <span class="hljs-string">"./"</span>,
-    middleware: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+    middleware: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hi from middleware"</span>);
         next();
     }
@@ -282,11 +284,11 @@ server: {
 server: {
     baseDir: <span class="hljs-string">"./"</span>,
     middleware: [
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
             <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hi from first middleware"</span>);
             next();
         },
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
             <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hi from the second middleware"</span>);
             next();
         }
@@ -327,7 +329,7 @@ proxy: <span class="hljs-string">"localhost/site1"</span>
 <span class="hljs-comment">// With middleware - Requires v2.1.0</span>
 proxy: {
     target: <span class="hljs-string">"http://yourlocal.dev"</span>,
-    middleware: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req, res, next)</span> </span>{
+    middleware: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
         <span class="hljs-built_in">console</span>.log(req.url);
         next();
     }
@@ -336,7 +338,7 @@ proxy: {
 <span class="hljs-comment">// With custom request headers - Requires v2.1.0</span>
 proxy: {
     target: <span class="hljs-string">"localhost:8000"</span>,
-    reqHeaders: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(config)</span> </span>{
+    reqHeaders: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
         <span class="hljs-keyword">return</span> {
             <span class="hljs-string">"host"</span>:            config.urlObj.host,
             <span class="hljs-string">"accept-encoding"</span>: <span class="hljs-string">"identity"</span>,
@@ -579,7 +581,7 @@ snippetOptions: {
     <span class="hljs-comment">// Provide a custom Regex for inserting the snippet.</span>
     rule: {
         match: <span class="hljs-regexp">/&lt;\/body&gt;/i</span>,
-        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(snippet, match)</span> </span>{
+        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">snippet, match</span>) </span>{
             <span class="hljs-keyword">return</span> snippet + match;
         }
     }
@@ -607,7 +609,7 @@ snippetOptions: {
 rewriteRules: [
     {
         match: <span class="hljs-regexp">/BrowserSync/g</span>,
-        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(match)</span> </span>{
+        fn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">match</span>) </span>{
             <span class="hljs-keyword">return</span> <span class="hljs-string">'kittenz'</span>;
         }
     }
@@ -1030,14 +1032,14 @@ timestamps: <span class="hljs-literal">false</span></code></pre>
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// This will result in something like</span>
 <span class="hljs-comment">// localhost:3002/browser-sync/browser-sync-client.1.6.0.js</span>
-scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(path)</span> </span>{
+scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path</span>) </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3002"</span> + path;
 }
 
-<span class="hljs-comment">// NOTE: Since 2.2.0</span>
+<span class="hljs-comment">// <span class="hljs-doctag"><span class="hljs-keyword">NOTE</span></span>: Since 2.2.0</span>
 <span class="hljs-comment">// If you're using &lt;base&gt; in your html, you may need the absolute path to the script</span>
 <span class="hljs-comment">// http://localhost:3002/browser-sync/browser-sync-client.1.6.0.js</span>
-scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(path, port, options)</span> </span>{
+scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path, port, options</span>) </span>{
     <span class="hljs-keyword">return</span> options.get(<span class="hljs-string">"absolute"</span>);
 }</code></pre>
 
@@ -1068,7 +1070,7 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
 <span class="hljs-comment">// the socket connector code</span>
 <span class="hljs-comment">// browserSync.io('localhost:3003/browser-sync')</span>
 socket: {
-    namespace: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(namespace)</span> </span>{
+    namespace: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">namespace</span>) </span>{
         <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3003"</span> + namespace;
     }
 }</code></pre>

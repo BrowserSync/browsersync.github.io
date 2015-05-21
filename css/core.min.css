@@ -1,8 +1,6 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 dfn,img{font-style:italic}
 img,legend{border:0}
-body,html,img{max-width:100%}
-.icon.back-in-time:before,.icon.block:before,.icon.book:before,.icon.browser:before,.icon.check:before,.icon.list:before,.icon.merge:before,.icon.network:before,.icon.tablet:before,.icon.text:before,.icon.tv:before{height:1.25em;width:1.25em}
 .grid:after,hr{clear:both}
 .container,.grid,.param-list,.step-list{list-style:none}
 .clearfix,.container,.feature,.grid,.usp{zoom:1}
@@ -18,9 +16,10 @@ b,optgroup,strong{font-weight:700}
 mark{background:#ff0;color:#000}
 small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
-.button,.icon:before{vertical-align:middle}
+.button,svg{vertical-align:middle}
 sup{top:-.5em}
 sub{bottom:-.25em}
+img{max-width:100%}
 svg:not(:root){overflow:hidden}
 figure{margin:1em 40px}
 pre,textarea{overflow:auto}
@@ -46,7 +45,7 @@ ins{border-bottom:1px solid}
 button,input,label,option,select,textarea{cursor:pointer}
 .text-input:active,.text-input:focus,textarea:active,textarea:focus{cursor:text;outline:0}
 .hljs{overflow-x:auto;padding:.5em;background:#fdf6e3;color:#657b83;-webkit-text-size-adjust:none}
-body,html{overflow-x:hidden}
+body,html{max-width:100%;overflow-x:hidden}
 .diff .hljs-header,.hljs-comment,.hljs-doctype,.hljs-javadoc,.hljs-pi,.hljs-template_comment,.lisp .hljs-string{color:#93a1a1}
 .css .hljs-tag,.hljs-addition,.hljs-keyword,.hljs-request,.hljs-status,.hljs-winutils,.method,.nginx .hljs-title{color:#859900}
 .hljs-command,.hljs-dartdoc,.hljs-hexcolor,.hljs-link_url,.hljs-number,.hljs-phpdoc,.hljs-regexp,.hljs-rules .hljs-value,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#2aa198}
@@ -54,7 +53,7 @@ body,html{overflow-x:hidden}
 .hljs-attribute,.hljs-class .hljs-title,.hljs-constant,.hljs-link_reference,.hljs-parent,.hljs-type,.hljs-variable,.lisp .hljs-body,.smalltalk .hljs-number{color:#b58900}
 .clojure .hljs-title,.css .hljs-pseudo,.diff .hljs-change,.hljs-attr_selector,.hljs-cdata,.hljs-header,.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-shebang,.hljs-special,.hljs-subst,.hljs-symbol,.hljs-symbol .hljs-string{color:#cb4b16}
 .hljs-deletion,.hljs-important{color:#dc322f}
-.hljs-link_label{color:#6c71c4}
+.hljs-link_label,.hljs-params{color:#6c71c4}
 .tex .hljs-formula{background:#eee8d5}
 html{overflow-y:scroll;min-height:100%;font:100%/1.5 "Titillium Web","Lucida Grande","Lucida Sans",sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
 .button,pre{line-height:1}
@@ -62,24 +61,9 @@ body{margin:0;background:#fff;color:#333;text-rendering:optimizeLegibility}
 .warning.lede{font-size:14px;font-size:.875rem;color:red}
 hr{box-sizing:content-box;margin-bottom:24px;border:none;border-bottom:1px solid #ccc;padding-bottom:12px;height:1px}
 .grid,.sticky-nav .nav,.sticky-nav .nav--float,.sticky-nav .nav--inline{margin-bottom:0}
-.icon{font-size:16px}
-.icon:before{content:' ';display:inline-block;background-image:url(../img/icons/svg/sprite.svg);background-repeat:no-repeat;background-size:1.25em 15em}
-.feature:after,.feature:before,.grid:after,.grid:before,.support:before,.usp:after,.usp:before{content:""}
-.no-svg .icon:before{background-image:url(../img/icons/svg/sprite.png)}
-.icon.back-in-time:before{background-position:0 0}
-.icon.block:before{background-position:0 -1.25em}
-.icon.book:before{background-position:0 -2.5em}
-.icon.browser:before{background-position:0 -3.75em}
-.icon.check:before{background-position:0 -5em}
-.icon.creative-commons-noncommercial-us:before{background-position:0 -6.25em;width:1.25em;height:1.25em}
-.icon.list:before{background-position:0 -7.5em}
-.icon.merge:before{background-position:0 -8.75em}
-.icon.network:before{background-position:0 -10em}
-.icon.tablet:before{background-position:0 -11.25em}
-.icon.text:before{background-position:0 -12.5em}
-.icon.tv:before{background-position:0 -13.75em}
+svg{display:inline-block;fill:currentColor!important;height:1em;width:1em}
+.grid:after,.grid:before,.nav--float:after,.nav--float:before,.nav--inline:after,.nav--inline:before,.nav:after,.nav:before{content:"";display:table}
 .grid{margin-left:-4%}
-.grid:after,.grid:before{display:table}
 .grid__cell{float:left;padding-left:4%;width:100%}
 @media only screen and (min-width:700px){.one-quarter{width:25%}
 .three-quarters{width:75%}
@@ -101,7 +85,6 @@ a{color:#da4453;-webkit-transition:border .3s ease,background .3s ease,color .3s
 a:focus,a:hover{color:#000;text-decoration:underline}
 .docs-nav li a.active:hover,.docs-nav li a:hover,.wrapper--dark a:hover,a [class*=" icon-"],a [class^=icon-]{text-decoration:none}
 .nav,.nav--float,.nav--inline{zoom:1;margin-left:0;list-style:none}
-.nav--float:after,.nav--float:before,.nav--inline:after,.nav--inline:before,.nav:after,.nav:before{content:"";display:table}
 .nav--float>li.active>a,.nav--inline>li.active>a,.nav>li.active>a{cursor:default}
 .nav--inline>li,.nav--inline>li>a{display:inline-block}
 .nav--float>li{float:left}
@@ -123,7 +106,6 @@ a:focus,a:hover{color:#000;text-decoration:underline}
 .commands-list tr td:first-child{white-space:nowrap;font-weight:700}
 .commands-list td{padding:6px}
 .button{display:inline-block;border:0;padding:12px 24px;width:auto;background:#ccc;color:#da4453;font-weight:700;font-size:16px;font-size:1rem;text-align:center;cursor:pointer;border-radius:3px}
-.h1,.h2,h1,h2{padding-top:24px}
 .button:focus,.button:hover{background:#ccc;color:#000;text-decoration:none}
 .button:active{background:#000;color:#fff}
 .button+.button,.button+a{margin-left:12px}
@@ -131,7 +113,7 @@ a:focus,a:hover{color:#000;text-decoration:underline}
 .button--primary:focus,.button--primary:hover{background:#de5967;color:#fff}
 .button--primary:active{background:#d62f3f;color:#fff}
 address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgroup,ol,p,pre,table,ul{margin-bottom:12px}
-.h1,.h2,h1,h2{margin-bottom:24px}
+.h1,.h2,h1,h2{margin-bottom:24px;padding-top:24px}
 .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1;font-family:"Titillium Web","Lucida Grande","Lucida Sans",sans-serif;-webkit-font-smoothing:antialiased}
 .h1 small,.h2 small,.h3 small,.h4 small,.h5 small,.h6 small,h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-size:inherit;font-weight:400}
 .h1,h1{font-size:36px;font-size:2.25rem}
@@ -165,11 +147,11 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .cta{margin:0 0 24px}
 .cta .button{border:0!important}
 .cta .stat{display:block;margin-top:12px;font-size:12px;font-size:.75rem}
+.feature:after,.feature:before,.usp:after,.usp:before{content:"";display:table}
 @media only screen and (min-width:900px){.cta{margin-bottom:48px}
 .cta .button{padding:18px 36px;font-size:24px;font-size:1.5rem}
 }
 .usp{margin-bottom:24px}
-.usp:after,.usp:before{display:table}
 .usp__thumb{border:1px solid #ccc}
 .usp__content{overflow:hidden}
 .usp__content>:last-child{margin-bottom:0}
@@ -179,18 +161,16 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 @media only screen and (min-width:900px){.usp__title{font-size:24px;font-size:1.5rem}
 }
 .feature{margin-bottom:24px}
-.feature:after,.feature:before{display:table}
 .feature__thumb{float:left;margin-right:24px;width:100px;border-radius:100%}
 @media only screen and (max-width:699px){.feature__thumb{display:none}
 }
 .feature__content{position:relative;padding-left:100px;overflow:hidden}
 .feature__content>:last-child{margin-bottom:0}
-.feature__icon{position:absolute;width:100px;height:100px}
-.feature__icon .icon{font-size:40px;font-size:2.5rem}
+.feature__icon{position:absolute;width:100px;height:100px;font-size:45px;font-size:2.8125rem}
 .new,.support{font-size:12px}
 .new{display:inline-block;vertical-align:bottom;margin:0 3px;padding:3px 5px;background:#4FA83D;color:#fff;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;border-radius:2px}
 .support{position:relative;margin-bottom:24px;padding-top:24px;font-size:.75rem}
-.support:before{position:absolute;top:0;left:50%;width:50%;margin-left:-25%;height:1px;background:#e6e6e6}
+.support:before{content:"";position:absolute;top:0;left:50%;width:50%;margin-left:-25%;height:1px;background:#e6e6e6}
 .support li{display:inline;margin:0 12px 0 0}
 .code-example.docs ul li,.docs-nav{display:inline-block}
 @media only screen and (min-width:900px){.support{margin-top:24px;padding-top:48px}

@@ -21,6 +21,8 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
+
+    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
 </head>
 
 
@@ -147,7 +149,7 @@ bs.init({
 });
 
 <span class="hljs-comment">// with config + callback</span>
-bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
+bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, bs</span>) </span>{
     <span class="hljs-keyword">if</span> (!err) {
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is ready!"</span>);
     }
@@ -206,7 +208,7 @@ bs.reload(<span class="hljs-string">"*.css"</span>);
                     <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
-gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/styles.scss'</span>)
         .pipe(sass({includePaths: [<span class="hljs-string">'scss'</span>]}))
         .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
@@ -214,7 +216,7 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
 });
 
 <span class="hljs-comment">// Provide `once: true` to restrict reloading to once per stream</span>
-gulp.task(<span class="hljs-string">'templates'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'templates'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'*.jade'</span>)
         .pipe(jade())
         .pipe(gulp.dest(<span class="hljs-string">'app'</span>))
@@ -222,7 +224,7 @@ gulp.task(<span class="hljs-string">'templates'</span>, <span class="hljs-functi
 });
 
 <span class="hljs-comment">// Provide a filter to stop unwanted files from being reloaded</span>
-gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'*.less'</span>)
         .pipe(less())
         .pipe(gulp.dest(<span class="hljs-string">'css'</span>))
@@ -286,7 +288,7 @@ bs.notify(<span class="hljs-string">"This message will only last a second"</span
 bs.init({server: <span class="hljs-string">"./app"</span>});
 
 <span class="hljs-comment">// Quit the server after 5 seconds</span>
-setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     bs.exit();
 }, <span class="hljs-number">5000</span>);
 </code></pre>
@@ -336,7 +338,7 @@ bs.watch(<span class="hljs-string">"*.html"</span>).on(<span class="hljs-string"
 <span class="hljs-comment">// Provide a callback to capture ALL events to CSS</span>
 <span class="hljs-comment">// files - then filter for 'change' and reload all</span>
 <span class="hljs-comment">// css files on the page.</span>
-bs.watch(<span class="hljs-string">"css/*.css"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, file)</span> </span>{
+bs.watch(<span class="hljs-string">"css/*.css"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, file</span>) </span>{
     <span class="hljs-keyword">if</span> (event === <span class="hljs-string">"change"</span>) {
         bs.reload(<span class="hljs-string">"*.css"</span>);
     }
@@ -386,7 +388,7 @@ bs.init({
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Listen for the `init` event</span>
-bs.emitter.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+bs.emitter.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is running!"</span>);
 });
 
@@ -408,7 +410,7 @@ bs.init(config);</code></pre>
 <span class="hljs-comment">// -&gt; false as .init has not yet been called</span>
 <span class="hljs-built_in">console</span>.log(bs.active);
 
-bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, bs)</span> </span>{
+bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, bs</span>) </span>{
 
     <span class="hljs-comment">// -&gt; now true since BS is running now</span>
     <span class="hljs-built_in">console</span>.log(bs.active);

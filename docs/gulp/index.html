@@ -21,6 +21,8 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
+
+    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
 </head>
 
 
@@ -81,7 +83,7 @@
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 
 <span class="hljs-comment">// Static server</span>
-gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     browserSync.init({
         server: {
             baseDir: <span class="hljs-string">"./"</span>
@@ -91,7 +93,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
 
 <span class="hljs-comment">// or...</span>
 
-gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     browserSync.init({
         proxy: <span class="hljs-string">"yourlocal.dev"</span>
     });
@@ -111,7 +113,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sass'</span>);
 
 <span class="hljs-comment">// Static Server + watching scss/html files</span>
-gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'sass'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'sass'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
     browserSync.init({
         server: <span class="hljs-string">"./app"</span>
@@ -122,7 +124,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
 });
 
 <span class="hljs-comment">// Compile sass into CSS &amp; auto-inject into browsers</span>
-gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">"app/scss/*.scss"</span>)
         .pipe(sass())
         .pipe(gulp.dest(<span class="hljs-string">"app/css"</span>))
@@ -147,7 +149,7 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Static Server + watching scss/html files</span>
-gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'sass'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'sass'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
     browserSync.init({
         server: <span class="hljs-string">"./app"</span>
@@ -160,10 +162,10 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
 <span class="hljs-comment">/**
  * Compile with gulp-ruby-sass + source maps
  */</span>
-gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
     <span class="hljs-keyword">return</span> sass(<span class="hljs-string">'app/scss'</span>, {sourcemap: <span class="hljs-literal">true</span>})
-        .on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err)</span> </span>{
+        .on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
             <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Error!'</span>, err.message);
         })
         .pipe(sourcemaps.write(<span class="hljs-string">'./'</span>, {
@@ -186,7 +188,7 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 
 <span class="hljs-comment">// process JS files and return the stream.</span>
-gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'js/*js'</span>)
         .pipe(browserify())
         .pipe(uglify())
@@ -198,7 +200,7 @@ gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><sp
 gulp.task(<span class="hljs-string">'js-watch'</span>, [<span class="hljs-string">'js'</span>], browserSync.reload);
 
 <span class="hljs-comment">// use default task to launch BrowserSync and watch JS files</span>
-gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
     <span class="hljs-comment">// Serve files from the root of this project</span>
     browserSync({
@@ -228,7 +230,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
 <span class="hljs-comment">// Save a reference to the `reload` method</span>
 
 <span class="hljs-comment">// Watch scss AND html files, doing different things with each.</span>
-gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
     <span class="hljs-comment">// Serve files from the root of this project</span>
     browserSync.init({

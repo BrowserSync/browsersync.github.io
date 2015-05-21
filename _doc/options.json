@@ -1,6 +1,6 @@
 [
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 7,
         "description": "BrowserSync includes a user-interface that is accessed via a separate port.\nThe UI allows to controls all devices, push sync updates and much more.",
         "itemtype": "property",
@@ -33,7 +33,7 @@
         "snippet": "// Change the default port\nui: {\n    port: 8080\n}\n\n// Change the default weinre port\nui: {\n    port: 8080,\n    weinre: {\n        port: 9090\n    }\n}\n\n// Disable UI completely\nui: false\n"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 24,
         "description": "BrowserSync can watch your files as you work. Changes you make will either\nbe injected into the page (CSS & images) or will cause all browsers to do\na full-page refresh. See [anymatch](https://github.com/es128/anymatch) for more information on glob patterns.",
         "itemtype": "property",
@@ -49,7 +49,7 @@
         "snippet": "// single file\nbrowserSync({\n    files: \"app/css/style.css\"\n});\n\n// multiple files\nbrowserSync({\n    files: [\"app/css/style.css\", \"app/js/*.js\"]\n});\n\n// patterns + 1 with custom callback\n// since 2.6.0\nbrowserSync({\n    files: [\n        \"wp-content/themes/**/*.css\",\n        {\n            match: [\"wp-content/themes/**/*.php\"],\n            fn:    function (event, file) {\n                /** Custom event handler **/\n            }\n        }\n    ]\n});"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 34,
         "description": "File watching options that get passed along to [Chokidar](https://github.com/paulmillr/chokidar).\nCheck their docs for available options",
         "itemtype": "property",
@@ -65,7 +65,7 @@
         "snippet": "// Options passed to Chokidar\nwatchOptions: {\n    ignoreInitial: true,\n    ignored: '*.txt'\n}\n\n// options for chokidar with custom callback\n// since 2.6.0\nfiles: [\n    {\n        match: [\"wp-content/themes/**/*.php\"],\n        fn: function (event, file) {\n            /** Custom event handler **/\n        },\n        options: {\n            ignored: '*.txt'\n        }\n    }\n]"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 61,
         "description": "Use the built-in static server for basic HTML/JS/CSS websites.",
         "itemtype": "property",
@@ -81,7 +81,7 @@
         "snippet": "// Serve files from the app directory\nserver: {\n    baseDir: \"app\"\n}\n\n// Serve files from the app directory with directory listing\nserver: {\n    baseDir: \"app\",\n    directory: true\n}\n\n// Multiple base directories\nserver: {\n    baseDir: [\"app\", \"dist\"]\n}\n\n// Serve files from the app directory, with a specific index filename\nserver: {\n    baseDir: \"app\",\n    index: \"index.htm\"\n}\n\n// Since version 1.2.1\n// The key is the url to match\n// The value is which folder to serve (relative to your current working directory)\nserver: {\n    baseDir: \"app\",\n    routes: {\n        \"/bower_components\": \"bower_components\"\n    }\n}\n\n// Custom Middleware\nserver: {\n    baseDir: \"./\",\n    middleware: function (req, res, next) {\n        console.log(\"Hi from middleware\");\n        next();\n    }\n}\n\n// Multiple custom Middlewares\nserver: {\n    baseDir: \"./\",\n    middleware: [\n        function (req, res, next) {\n            console.log(\"Hi from first middleware\");\n            next();\n        },\n        function (req, res, next) {\n            console.log(\"Hi from the second middleware\");\n            next();\n        }\n    ]\n}\n"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 69,
         "description": "Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.",
         "itemtype": "property",
@@ -119,7 +119,7 @@
         "snippet": "// Using a vhost-based url\nproxy: \"local.dev\"\n\n// Using a localhost address with a port\nproxy: \"localhost:8888\"\n\n// Using localhost sub directories\nproxy: \"localhost/site1\"\n\n// With middleware - Requires v2.1.0\nproxy: {\n    target: \"http://yourlocal.dev\",\n    middleware: function (req, res, next) {\n        console.log(req.url);\n        next();\n    }\n}\n\n// With custom request headers - Requires v2.1.0\nproxy: {\n    target: \"localhost:8000\",\n    reqHeaders: function (config) {\n        return {\n            \"host\":            config.urlObj.host,\n            \"accept-encoding\": \"identity\",\n            \"agent\":           false\n        }\n    }\n}\n"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 80,
         "itemtype": "property",
         "name": "port",
@@ -135,7 +135,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 89,
         "description": "Enable https for localhost development. **Note** - this is not needed for proxy\noption as it will be inferred from your target url.",
         "itemtype": "property",
@@ -151,7 +151,7 @@
         "snippet": "// Enable HTTPS for static file server\nbrowserSync({\n    server: \"./app\",\n    https: true\n});\n\n// Enable HTTPS for snippet mode\nbrowserSync({\n    https: true\n});\n"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 98,
         "description": "Clicks, Scrolls & Form inputs on any device will be mirrored to all others.",
         "itemtype": "property",
@@ -214,7 +214,7 @@
         "snippet": "// Here you can disable/enable each feature individually\nghostMode: {\n    clicks: true,\n    forms: true,\n    scroll: false\n}\n\n// Or switch them all off in one go\nghostMode: false"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 119,
         "description": "Can be either \"info\", \"debug\", \"warn\", or \"silent\"",
         "itemtype": "property",
@@ -230,7 +230,7 @@
         "snippet": "// Show me additional info about the process\nlogLevel: \"debug\"\n\n// Just show basic info\nlogLevel: \"info\"\n\n// output NOTHING to the commandline\nlogLevel: \"silent\""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 127,
         "description": "Change the console logging prefix. Useful if you're creating your\nown project based on BrowserSync",
         "itemtype": "property",
@@ -246,7 +246,7 @@
         "snippet": "logPrefix: \"My Awesome Project\"\n\n// [My Awesome Project] Local URL: http://localhost:3000\n// [My Awesome Project] Watching files....\n// [My Awesome Project] File changed: \"index.html\""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 137,
         "itemtype": "property",
         "name": "logConnections",
@@ -262,7 +262,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 144,
         "itemtype": "property",
         "name": "logFileChanges",
@@ -278,7 +278,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 151,
         "description": "Log the snippet to the console when you're in snippet mode (no proxy/server)",
         "itemtype": "property",
@@ -294,7 +294,7 @@
         "snippet": "// Don't ever log the snippet\nlogSnippet: false"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 160,
         "description": "SINCE 1.7.0! You can control how the snippet is injected\nonto each page via a custom regex + function.\nYou can also provide patterns for certain urls\nthat should be ignored from the snippet injection.",
         "itemtype": "property",
@@ -340,7 +340,7 @@
         "snippet": "// Customise the placement of the snippet\n// and ignore certain paths\nsnippetOptions: {\n\n    // Ignore all HTML files within the templates folder\n    ignorePaths: \"templates/*.html\",\n\n    // Provide a custom Regex for inserting the snippet.\n    rule: {\n        match: /<\\/body>/i,\n        fn: function (snippet, match) {\n            return snippet + match;\n        }\n    }\n}"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 184,
         "description": "Add additional HTML rewriting rules.",
         "itemtype": "property",
@@ -353,10 +353,10 @@
         "subprops": null,
         "snippetpath": "_includes/snippets/options/rewriteRules.js",
         "defaultValue": "false",
-        "snippet": "// replace every occurence of the word BrowserSync with 'kittenz'\nrewriteRules: [\n    {\n        match: /BrowserSync/g,\n        fn: function (match) {\n            return \"shane\";\n        }\n    }\n]"
+        "snippet": "// replace every occurrence of the word BrowserSync with 'kittenz'\nrewriteRules: [\n    {\n        match: /BrowserSync/g,\n        fn: function (match) {\n            return 'kittenz';\n        }\n    }\n]"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 193,
         "itemtype": "property",
         "name": "tunnel",
@@ -372,7 +372,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 199,
         "description": "Some features of BrowserSync (such as `xip` & `tunnel`) require an internet connection, but if you're\nworking offline, you can reduce start-up time by setting this option to `false`",
         "itemtype": "property",
@@ -388,7 +388,7 @@
         "snippet": "// Will not attempt to determine your network status, assumes you're ONLINE.\nonline: true\n\n// Will not attempt to determine your network status, assumes you're OFFLINE\nonline: false"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 207,
         "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, `local`, `external`, `ui`, `ui-external`, `tunnel` or `false`",
         "itemtype": "property",
@@ -404,7 +404,7 @@
         "snippet": "// Stop the browser from automatically opening\nopen: false\n\n// Open the localhost URL\nopen: \"local\"\n\n// Open the external URL - must be online.\nopen: \"external\"\n\n// Open the UI - since 2.0.0\nopen: \"ui\"\n\n// Open the tunnel URL - must also set the `tunnel` option\nopen: \"tunnel\""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 216,
         "itemtype": "property",
         "name": "browser",
@@ -420,7 +420,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 223,
         "description": "Requires an internet connection - useful for services such as [Typekit](https://typekit.com/)\nas it allows you to configure domains such as `*.xip.io` in your kit settings",
         "itemtype": "property",
@@ -436,23 +436,23 @@
         "snippet": "// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)\nxip: true"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 234,
         "description": "Reload each browser when BrowserSync is restarted.",
         "itemtype": "property",
         "name": "reloadOnRestart",
         "type": "Boolean",
-        "default": "true",
+        "default": "false",
         "class": "",
         "module": "BrowserSync.options",
         "subprops": null,
         "since": false,
         "snippetpath": "_includes/snippets/options/reloadOnRestart.js",
-        "defaultValue": "true",
+        "defaultValue": "false",
         "snippet": "// don't auto-reload all browsers following a BrowserSync reload\nreloadOnRestart: false"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 242,
         "description": "The small pop-over notifications in the browser are not always needed/wanted.",
         "itemtype": "property",
@@ -468,7 +468,7 @@
         "snippet": "// Don't show any notifications in the browser.\nnotify: false"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 250,
         "itemtype": "property",
         "name": "scrollProportionally",
@@ -484,7 +484,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 257,
         "itemtype": "property",
         "name": "scrollThrottle",
@@ -500,7 +500,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 264,
         "description": "Time, in milliseconds, to wait before\ninstruction browser to reload/inject following a\nfile change event",
         "itemtype": "property",
@@ -516,7 +516,7 @@
         "snippet": "// Wait for 2 seconds before any browsers should try to inject/reload a file.\nreloadDelay: 2000"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 274,
         "description": "Restrict the frequency in which browser:reload events\ncan be emitted to connected clients",
         "itemtype": "property",
@@ -532,7 +532,7 @@
         "snippet": "// Wait 2 seconds after a reload event before allowing more.\nreloadDebounce: 2000"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 284,
         "description": "User provided plugins",
         "itemtype": "property",
@@ -548,7 +548,7 @@
         "snippet": "// First run `npm install bs-html-injector`\n// Then provide the module name\nplugins: [\"bs-html-injector\"]\n\n// If the plugin you are using requires options\n// just as bs-snippet-injector requires a 'file' option,\n// you can pass an object instead like this.\nplugins: [\n    {\n        module: \"bs-snippet-injector\",\n        options: {\n            file: \"./app/index.php\"\n        }\n    }\n]"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 293,
         "itemtype": "property",
         "name": "injectChanges",
@@ -564,7 +564,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 300,
         "itemtype": "property",
         "name": "startPath",
@@ -580,7 +580,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 307,
         "description": "Whether to minify client script, or not.",
         "itemtype": "property",
@@ -596,7 +596,7 @@
         "snippet": "// Don't minify the client-side JS\nminify: false"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 315,
         "itemtype": "property",
         "name": "host",
@@ -612,7 +612,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 322,
         "itemtype": "property",
         "name": "codeSync",
@@ -628,7 +628,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 329,
         "itemtype": "property",
         "name": "timestamps",
@@ -644,7 +644,7 @@
         "description": ""
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 345,
         "description": "Alter the script path for complete control over where the BrowserSync\nJavascript is served from. Whatever you return from this function\nwill be used as the script path.",
         "itemtype": "property",
@@ -660,7 +660,7 @@
         "snippet": "// This will result in something like\n// localhost:3002/browser-sync/browser-sync-client.1.6.0.js\nscriptPath: function (path) {\n    return \"localhost:3002\" + path;\n}\n\n// NOTE: Since 2.2.0\n// If you're using <base> in your html, you may need the absolute path to the script\n// http://localhost:3002/browser-sync/browser-sync-client.1.6.0.js\nscriptPath: function (path, port, options) {\n    return options.get(\"absolute\");\n}"
     },
     {
-        "file": "/Users/shakyshane/code/bs-website/node_modules/browser-sync/lib/default-config.js",
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 355,
         "description": "Configure the Socket.IO path and namespace to avoid collisions. Note: `namespace` can also be a function",
         "itemtype": "property",

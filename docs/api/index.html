@@ -54,7 +54,9 @@
                     <p class="lede">Jump to...</p>
                     <ul class="nav nav--stacked" id="sticky-nav">
                         <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-                            <li><a href="#api-browserSync">browserSync( config, cb )</a></li>
+                            <li><a href="#api-create">.create( name )</a></li>
+                            <li><a href="#api-get">.get( name )</a></li>
+                            <li><a href="#api-init">.init( config, cb )</a></li>
                             <li><a href="#api-reload">.reload( arg )</a></li>
                             <li><a href="#api-stream">.stream( opts )</a></li>
                             <li><a href="#api-notify">.notify( msg, timeout )</a></li>
@@ -111,12 +113,78 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
 </code></pre>
 
 
-                <h3 id="api-browserSync" class="section-link">
-                    <a href="#api-browserSync" class="page-anchor">browserSync( config, cb )</a>
+                <h3 id="api-create" class="section-link">
+                    <a href="#api-create" class="page-anchor">.create( name )</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-                <p></p>
+                <p><p>Create a Browsersync instance</p>
+                </p>
+
+                    <ul class="param-list" id="api-name">
+                        <li class="name"><a href="#api-name" class="page-anchor">name</a></li>
+                        <li class="type">Type: <span class="color-teal">String</span>
+                            
+                        </li>
+                        <li class="desc"><p>an identifier that can used for retrieval later</p>
+                </li>
+                    </ul>
+
+
+<pre class='highlight'><code class="js"><span class="hljs-comment">// create an unnamed instance</span>
+<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+
+<span class="hljs-comment">// create a named instance</span>
+<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'My server'</span>);
+
+
+<span class="hljs-comment">// create multiple</span>
+<span class="hljs-keyword">var</span> bs1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 1'</span>);
+<span class="hljs-keyword">var</span> bs2 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 2'</span>);</code></pre>
+
+
+                <h3 id="api-get" class="section-link">
+                    <a href="#api-get" class="page-anchor">.get( name )</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+                <p><p>Get a single instance by name. This is useful if you have your
+                build scripts in separate files</p>
+                </p>
+
+                    <ul class="param-list" id="api-name">
+                        <li class="name"><a href="#api-name" class="page-anchor">name</a></li>
+                        <li class="type">Type: <span class="color-teal">String</span>
+                            
+                        </li>
+                        <li class="desc"></li>
+                    </ul>
+
+
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Create an named instance in one file...</span>
+<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'My Server'</span>);
+
+<span class="hljs-comment">// Start the Browsersync server</span>
+bs.init({
+    server: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-comment">// now, retrieve the instance in another file...</span>
+<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).get(<span class="hljs-string">'My server'</span>);
+
+<span class="hljs-comment">// and call any methods on it.</span>
+bs.watch(<span class="hljs-string">'*.html'</span>).on(<span class="hljs-string">'change'</span>, bs.reload);
+</code></pre>
+
+
+                <h3 id="api-init" class="section-link">
+                    <a href="#api-init" class="page-anchor">.init( config, cb )</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+                <p><p>Start the Browsersync service. This will launch a server, proxy or start the snippet
+                mode depending on your use-case.</p>
+                </p>
 
                     <ul class="param-list" id="api-config">
                         <li class="name"><a href="#api-config" class="page-anchor">config</a></li>
@@ -138,21 +206,16 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// create an instance</span>
-<span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
-<span class="hljs-comment">// with config</span>
+<span class="hljs-comment">// Start a Browsersync static file server</span>
 bs.init({
-    server: {
-        baseDir: <span class="hljs-string">"./"</span>
-    }
+    server: <span class="hljs-string">"./app"</span>
 });
 
-<span class="hljs-comment">// with config + callback</span>
-bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, bs</span>) </span>{
-    <span class="hljs-keyword">if</span> (!err) {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"BrowserSync is ready!"</span>);
-    }
+<span class="hljs-comment">// Start a Browsersync proxy</span>
+bs.init({
+    proxy: <span class="hljs-string">"http://www.bbc.co.uk"</span>
 });</code></pre>
 
 

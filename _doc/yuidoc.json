@@ -51,9 +51,40 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 25,
+        "line": 27,
+        "description": "Create a Browsersync instance",
         "itemtype": "method",
-        "name": "browserSync",
+        "name": "create",
+        "params": [{
+            "name": "name",
+            "description": "an identifier that can used for retrieval later",
+            "type": "String"
+        }],
+        "class": "",
+        "module": "BrowserSync"
+    }, {
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
+        "line": 34,
+        "description": "Get a single instance by name. This is useful if you have your\nbuild scripts in separate files",
+        "itemtype": "method",
+        "name": "get",
+        "params": [{
+            "name": "name",
+            "description": "",
+            "type": "String"
+        }],
+        "return": {
+            "description": "",
+            "type": "Object|Boolean"
+        },
+        "class": "",
+        "module": "BrowserSync"
+    }, {
+        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
+        "line": 49,
+        "description": "Start the Browsersync service. This will launch a server, proxy or start the snippet\nmode depending on your use-case.",
+        "itemtype": "method",
+        "name": "init",
         "params": [{
             "name": "config",
             "description": "This is the main configuration for your BrowserSync instance and can contain any of the [available options]({{site.links.options}})\n If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the `snippet` mode",
@@ -73,7 +104,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 36,
+        "line": 61,
         "description": "Register a plugin. Must implement at least a 'plugin' method that returns a\ncallable function.",
         "itemtype": "method",
         "name": "use",
@@ -95,7 +126,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 52,
+        "line": 77,
         "description": "The `reload` method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.",
         "itemtype": "method",
         "name": "reload",
@@ -113,7 +144,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 61,
+        "line": 86,
         "description": "The `stream` method returns a transform stream and can act once or on many files.",
         "itemtype": "method",
         "name": "stream",
@@ -132,7 +163,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 71,
+        "line": 96,
         "description": "Helper method for browser notifications",
         "itemtype": "method",
         "name": "notify",
@@ -150,7 +181,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 80,
+        "line": 105,
         "description": "This method will close any running server, stop file watching & exit the current process.",
         "itemtype": "method",
         "name": "exit",
@@ -158,7 +189,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 87,
+        "line": 112,
         "description": "Stand alone file-watcher. Use this along with BrowserSync to create your own, minimal build system",
         "itemtype": "method",
         "name": "watch",
@@ -182,7 +213,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 97,
+        "line": 122,
         "description": "Method to pause file change events",
         "itemtype": "method",
         "name": "pause",
@@ -190,7 +221,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 104,
+        "line": 129,
         "description": "Method to resume paused watchers",
         "itemtype": "method",
         "name": "resume",
@@ -198,13 +229,13 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 111,
+        "line": 136,
         "description": "Add properties fo",
         "class": "",
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 115,
+        "line": 140,
         "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
         "itemtype": "property",
         "name": "emitter",
@@ -212,7 +243,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 130,
+        "line": 155,
         "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
         "itemtype": "property",
         "name": "active",
@@ -220,7 +251,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 138,
+        "line": 163,
         "description": "A simple true/false flag to determine if the current instance is paused",
         "itemtype": "property",
         "name": "paused",
@@ -228,7 +259,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 148,
+        "line": 173,
         "description": "Event emitter factory",
         "return": {
             "description": "",
@@ -238,7 +269,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 158,
+        "line": 183,
         "description": "Get the singleton's emitter, or a new one.",
         "return": {
             "description": "",
@@ -248,7 +279,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 170,
+        "line": 195,
         "description": "Helper to allow methods to be called on the module export\nbefore there's a running instance",
         "params": [{
             "name": "name",
@@ -263,7 +294,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 189,
+        "line": 214,
         "description": "Create a single instance when module export is used directly via browserSync({});\nThis is mostly for back-compatibility, for also for the nicer api.\nThis will never be removed to ensure we never break user-land, but\nwe should discourage it's use.",
         "return": {
             "description": "",
@@ -273,7 +304,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 220,
+        "line": 245,
         "params": [{
             "name": "prop",
             "description": "",
@@ -287,7 +318,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 232,
+        "line": 257,
         "description": "Get a single instance by name",
         "params": [{
             "name": "name",
@@ -302,7 +333,7 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 249,
+        "line": 274,
         "description": "Create an instance of BrowserSync",
         "params": [{
             "name": "name",
@@ -323,36 +354,14 @@
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 296,
+        "line": 321,
         "description": "Reset the state of the module.\n(should only be needed for test environments)",
         "class": "",
         "module": "BrowserSync"
     }, {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 311,
-        "description": "Get a single instance by name",
-        "params": [{
-            "name": "name",
-            "description": "",
-            "type": "String"
-        }],
-        "return": {
-            "description": "",
-            "type": "Object|Boolean"
-        },
-        "class": "",
-        "module": "BrowserSync"
-    }, {
-        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 324,
+        "line": 336,
         "type": "{Array}",
-        "class": "",
-        "module": "BrowserSync"
-    }, {
-        "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
-        "line": 329,
-        "description": "Create an instance of BrowserSync",
-        "type": "{create}",
         "class": "",
         "module": "BrowserSync"
     }, {
@@ -819,75 +828,69 @@
     }],
     "warnings": [{
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:25"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:34"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:52"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:49"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:61"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:77"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:148"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:86"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:158"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:173"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:170"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:183"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:189"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:195"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:220"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:214"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:232"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:245"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:249"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:257"
     }, {
         "message": "replacing incorrect tag: returns with return",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:311"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:274"
     }, {
         "message": "Missing item type",
         "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:20"
     }, {
         "message": "Missing item type\nAdd properties fo",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:111"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:136"
     }, {
         "message": "Missing item type\nEvent emitter factory",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:148"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:173"
     }, {
         "message": "Missing item type\nGet the singleton's emitter, or a new one.",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:158"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:183"
     }, {
         "message": "Missing item type\nHelper to allow methods to be called on the module export\nbefore there's a running instance",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:170"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:195"
     }, {
         "message": "Missing item type\nCreate a single instance when module export is used directly via browserSync({});\nThis is mostly for back-compatibility, for also for the nicer api.\nThis will never be removed to ensure we never break user-land, but\nwe should discourage it's use.",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:189"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:214"
     }, {
         "message": "Missing item type",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:220"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:245"
     }, {
         "message": "Missing item type\nGet a single instance by name",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:232"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:257"
     }, {
         "message": "Missing item type\nCreate an instance of BrowserSync",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:249"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:274"
     }, {
         "message": "Missing item type\nReset the state of the module.\n(should only be needed for test environments)",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:296"
-    }, {
-        "message": "Missing item type\nGet a single instance by name",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:311"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:321"
     }, {
         "message": "Missing item type",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:324"
-    }, {
-        "message": "Missing item type\nCreate an instance of BrowserSync",
-        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:329"
+        "line": " /Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js:336"
     }]
 }

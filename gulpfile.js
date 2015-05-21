@@ -32,8 +32,7 @@ gulp.task("serve", ["build"], function() {
         open: false,
         server: {
             baseDir: ["./"]
-        },
-        plugins: ["bs-html-injector"]
+        }
     });
 });
 
@@ -125,10 +124,7 @@ gulp.task("watch", function () {
         "_config.yml"
     ]).on("change", function () {
         crossbowBuild(promseq.defer())
-            .then(function () {
-                htmlinjector();
-                bs1.notify("Crossbow built!");
-            })
+            .then(bs1.reload)
             .catch(printError);
     });
     bs1.watch([
@@ -137,9 +133,7 @@ gulp.task("watch", function () {
         docsPaths.config
     ]).on("change", function () {
         buildall()
-            .then(function () {
-                bs1.reload();
-            })
+            .then(bs1.reload)
             .catch(printError);
     });
 });

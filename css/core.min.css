@@ -130,7 +130,7 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 .container{margin:0 auto;padding-right:12px;padding-left:12px;width:auto;max-width:1020px}
 .container--skinny{max-width:800px}
 .text--center{text-align:center!important}
-.code-example.docs,.feature__icon,.intro,.section-title,.site-header,.support,h3 i{text-align:center}
+.banner,.code-example.docs,.feature__icon,.intro,.section-title,.site-header,.support,h3 i{text-align:center}
 .section-title{padding-top:12px;font-size:24px;font-size:1.5rem}
 @media only screen and (min-width:900px){.section-title{margin-bottom:48px;padding-top:24px;font-weight:400;font-size:36px;font-size:2.25rem}
 }
@@ -184,7 +184,7 @@ address,blockquote,details,dl,fieldset,figcaption,figure,h1,h2,h3,h4,h5,h6,hgrou
 }
 .quote__source{font-size:12px;font-size:.75rem}
 .quote__source:before{content:"\2014";margin-right:.5em}
-.site-header{padding-top:24px;padding-bottom:48px}
+.site-header{padding-top:48px;padding-bottom:48px}
 .site-header.alt{padding-top:0;padding-bottom:0}
 .site-header.alt a{border-bottom:0}
 .site-logo{border:0!important;font-weight:700;font-size:24px;font-size:1.5rem}
@@ -258,5 +258,12 @@ h3 i{display:inline-block;margin-right:6px;width:1em}
 .fl{float:left;margin-right:24px}
 .ct{display:block;margin-right:auto;margin-left:auto}
 .player{font-size:0;border:6px solid rgba(0,0,0,.5)}
+.banner__logo{display:inline-block}
+.banner__logo img{width:100px}
 @media only screen and (min-width:900px){.player{max-width:700px;margin:0 auto}
+.banner__logo{position:absolute;top:12px;left:0}
 }
+.banner{max-width:1000px;padding:12px;margin:0 auto;position:relative}
+@media only screen and (min-width:900px){.banner{text-align:left;padding-left:112px}
+}
+.banner__content{padding-top:12px}

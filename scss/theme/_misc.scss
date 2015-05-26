@@ -49,3 +49,38 @@ h3 {
         margin: 0 auto;
     }
 }
+
+.banner {
+    padding-top: $half-spacing;
+    padding-bottom: $half-spacing;
+    text-align: center;
+}
+
+.banner__logo {
+    display: inline-block;
+    img {
+        width: 100px;
+    }
+    @include media-query(min, $desk-start) {
+        position: absolute;
+        top: $half-spacing;
+        left: 0;
+    }
+}
+
+.banner {
+    max-width: $page-width;
+    padding: $half-spacing;
+    margin: 0 auto;
+    position: relative;
+
+    @include media-query(min, $desk-start) {
+        text-align: left;
+        padding-left: 100px + $half-spacing;
+        //min-height: 140px;
+    }
+}
+
+.banner__content {
+    padding-top: $half-spacing;
+}

@@ -11,9 +11,9 @@
     <!-- META -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrowserSync Documentation</title>
+    <title>Browsersync Documentation</title>
 
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
@@ -32,7 +32,6 @@
     <div class="banner">
     <div class="banner__logo">
         <img class="" src="https://thenetawards.com/images/net/net_awards-logo15.svg" alt="">
-
     </div>
     <div class="banner__content">
         <p><b>Pssssst!</b> Browsersync has been nominated for Open Source Project of the Year! <br/>If you use and love this tool as much as we do, please take a moment and <a href="https://thenetawards.com/vote/open-source/browsersync/">vote for us</a> - it will make all the difference. Thank you!</p>
@@ -41,7 +40,7 @@
 </aside>
 <header class="wrapper wrapper--dark site-header alt" role="banner">
     <div class="container">
-        <h1 class="site-title alt"><a href="/">BrowserSync</a> / <span><a href="/docs">documentation</a></span></h1>
+        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
         <ul class="nav--inline docs-nav">
             <li><a href="/docs/gulp" >+ Gulp</a></li>
             <li><a href="/docs/grunt" >+ Grunt</a></li>
@@ -79,8 +78,8 @@
 
             </div>
             <div class="grid__cell three-quarters">
-                <h1 class="page-title">BrowserSync Documentation</h1>
-                <p>Here you can find all the information you&#39;ll need to begin using BrowserSync. We have extensive information covering
+                <h1 class="page-title">Browsersync Documentation</h1>
+                <p>Here you can find all the information you&#39;ll need to begin using Browsersync. We have extensive information covering
                 command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
                 <p><strong>In this section:</strong></p>
                 <ul class="nav nav-stacked">
@@ -97,16 +96,16 @@
 
 
                 <h4 id="global-install">Global Install</h4>
-                <p>If you would like to run BrowserSync from the command line in any directory, it
+                <p>If you would like to run Browsersync from the command line in any directory, it
                 can be installed <code>globally</code> with the following command.</p>
 <p><pre class='highlight'><code class="bash">$ npm install -g browser-sync
 </code></pre></p>
                 <h4 id="local-install">Local Install</h4>
-                <p>This is the prefered way to use BrowserSync - installing it locally to each project. This
+                <p>This is the prefered way to use Browsersync - installing it locally to each project. This
                 way the dependency can be added to your package.json file and everyone on your team.</p>
 <p><pre class='highlight'><code class="bash">$ npm install browser-sync --save-dev
 </code></pre>
-                <strong>WARNING - do not use sudo!</strong> If you&#39;re running <code>Mac OSX</code> and encounter problems when trying to install BrowserSync - either
+                <strong>WARNING - do not use sudo!</strong> If you&#39;re running <code>Mac OSX</code> and encounter problems when trying to install Browsersync - either
                 globally or locally, it&#39;s almost always because you have problems with NPM permissions. Checkout <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">their docs</a>
                 for a guide on how to fix this once and for all - it only takes 2 minutes :)</p>
                 <h3 id="requirements" class="section-link">
@@ -115,7 +114,7 @@
                 </h3>
 
 
-                <p>BrowserSync works by injecting an asynchronous script tag (<code>&lt;script async&gt;...&lt;/script&gt;</code>) right after the <code>&lt;body&gt;</code> tag
+                <p>Browsersync works by injecting an asynchronous script tag (<code>&lt;script async&gt;...&lt;/script&gt;</code>) right after the <code>&lt;body&gt;</code> tag
                 during initial request. In order for this to work properly the <code>&lt;body&gt;</code> tag must be present. Alternatively you
                 can provide a custom rule for the snippet using <a href="/docs/options/#option-snippetOptions">snippetOptions</a></p>
                 <h3 id="windows-users" class="section-link">
@@ -124,8 +123,8 @@
                 </h3>
 
 
-                <p>Having trouble installing BrowserSync on Windows? The most common reason for  <code>npm</code> to throw
-                errors when compiling BrowserSync is that some of the dependencies
+                <p>Having trouble installing Browsersync on Windows? The most common reason for  <code>npm</code> to throw
+                errors when compiling Browsersync is that some of the dependencies
                 (e.g. <a href="https://github.com/TooTallNate/node-gyp">node-gyp</a> need Visual C++ runtime libraries.</p>
                 <p>The way to resolve this is to install <a href="http://www.visualstudio.com/">Visual Studio</a>.
                 At the time of this writing (Feb 2015) the compilation works fine with
@@ -134,7 +133,7 @@
 <pre><code class="lang-bash">npm install -g browser-sync --msvs_version=<span class="hljs-number">2013</span>
 </code></pre>
                 <p>After installation of Visual Studio <code>npm</code> should not throw errors any longer, but only issue warnings.
-                As far as we can tell, they do not impact BrowserSync.</p>
+                As far as we can tell, they do not impact Browsersync.</p>
                 <h3 id="external-url" class="section-link">
                     <a href="#external-url" class="page-anchor">Incorrect External URL</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
@@ -142,10 +141,10 @@
 
 
                 <p>Sometimes, depending on your network, your OS will report multiple external IP addresses. If this happens, currently
-                BrowserSync just picks the first one and hopes for the best.</p>
+                Browsersync just picks the first one and hopes for the best.</p>
                 <p>You could use a tool like <a href="https://github.com/shakyshane/dev-ip">dev-ip</a> to list all possible external URLs on your
                 machine, and then provide the <a href="/docs/options/#option-host">host option</a> in your configuration</p>
-                <p>This site is <a href="https://github.com/BrowserSync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
+                <p>This site is <a href="https://github.com/Browsersync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
 
             </div>
         </div>
@@ -178,7 +177,7 @@
         <div class="credit">
             <a class="credit__thumb" href="http://www.wearejh.com/"><img src="/img/jh-300-trans.png" alt="JH"/></a>
             <div class="credit__content">
-                <p>The BrowserSync project is supported by <a href="http://www.wearejh.com/">JH</a>,
+                <p>The Browsersync project is supported by <a href="http://www.wearejh.com/">JH</a>,
                     with design and development by
                     <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
                     <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
@@ -186,7 +185,7 @@
                     <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
                     For regular information on updates and usage, please follow <a href="https://twitter.com/browsersync">@browsersync</a>.
                 </p>
-                <p>BrowserSync is available for use and modification under the <a href="https://github.com/BrowserSync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
+                <p>Browsersync is available for use and modification under the <a href="https://github.com/Browsersync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
             </div>
             <p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>
         </div>

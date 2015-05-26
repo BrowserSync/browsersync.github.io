@@ -13,7 +13,7 @@ gulp.task('js', function () {
 // reloading browsers
 gulp.task('js-watch', ['js'], browserSync.reload);
 
-// use default task to launch BrowserSync and watch JS files
+// use default task to launch Browsersync and watch JS files
 gulp.task('serve', ['js'], function () {
 
     // Serve files from the root of this project

@@ -11,9 +11,9 @@
     <!-- META -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrowserSync options</title>
+    <title>Browsersync options</title>
 
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
@@ -32,7 +32,6 @@
     <div class="banner">
     <div class="banner__logo">
         <img class="" src="https://thenetawards.com/images/net/net_awards-logo15.svg" alt="">
-
     </div>
     <div class="banner__content">
         <p><b>Pssssst!</b> Browsersync has been nominated for Open Source Project of the Year! <br/>If you use and love this tool as much as we do, please take a moment and <a href="https://thenetawards.com/vote/open-source/browsersync/">vote for us</a> - it will make all the difference. Thank you!</p>
@@ -41,7 +40,7 @@
 </aside>
 <header class="wrapper wrapper--dark site-header alt" role="banner">
     <div class="container">
-        <h1 class="site-title alt"><a href="/">BrowserSync</a> / <span><a href="/docs">documentation</a></span></h1>
+        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
         <ul class="nav--inline docs-nav">
             <li><a href="/docs/gulp" >+ Gulp</a></li>
             <li><a href="/docs/grunt" >+ Grunt</a></li>
@@ -105,12 +104,12 @@
 
             </div>
             <div class="grid__cell three-quarters">
-                <h1 class="page-title">BrowserSync options</h1>
+                <h1 class="page-title">Browsersync options</h1>
                 
 
-                <p>These are all the options that you can configure when using BrowserSync. Create a single object and pass
+                <p>These are all the options that you can configure when using Browsersync. Create a single object and pass
                 it as the <a href="/docs/api/#api-browserSync">first argument</a> (for GulpJS and normal API usage). If you&#39;re using Grunt, you can
-                still use all of these options, but you need to provide them as detailed in the <a href="/docs/grunt">BrowserSync Grunt Documentation</a></p>
+                still use all of these options, but you need to provide them as detailed in the <a href="/docs/grunt">Browsersync Grunt Documentation</a></p>
 
 
                 <h3 id="option-ui" class="section-link">
@@ -130,7 +129,7 @@
 
                 <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
 
-                <p>BrowserSync includes a user-interface that is accessed via a separate port.
+                <p>Browsersync includes a user-interface that is accessed via a separate port.
                 The UI allows to controls all devices, push sync updates and much more.</p>
 
 
@@ -165,7 +164,7 @@ ui: <span class="hljs-literal">false</span>
                 </ul>
 
 
-                <p>BrowserSync can watch your files as you work. Changes you make will either
+                <p>Browsersync can watch your files as you work. Changes you make will either
                 be injected into the page (CSS &amp; images) or will cause all browsers to do
                 a full-page refresh. See <a href="https://github.com/es128/anymatch">anymatch</a> for more information on glob patterns.</p>
 
@@ -325,7 +324,7 @@ server: {
                 </ul>
 
 
-                <p>Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.</p>
+                <p>Proxy an EXISTING vhost. Browsersync will wrap your vhost with a proxy URL to view your site.</p>
 
 
 <pre class='highlight'><code class="js"><span class="hljs-comment">// Using a vhost-based url</span>
@@ -375,7 +374,7 @@ proxy: {
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Use a specific port (instead of the one auto-detected by BrowserSync)</span>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Use a specific port (instead of the one auto-detected by Browsersync)</span>
 port: <span class="hljs-number">8080</span></code></pre>
 
 
@@ -482,7 +481,7 @@ logLevel: <span class="hljs-string">"silent"</span></code></pre>
                 <p class="lede warning"><b>Note: </b> requires at least version 1.5.1</p>
 
                 <p>Change the console logging prefix. Useful if you&#39;re creating your
-                own project based on BrowserSync</p>
+                own project based on Browsersync</p>
 
 
 <pre class='highlight'><code class="js">logPrefix: <span class="hljs-string">"My Awesome Project"</span>
@@ -616,10 +615,10 @@ snippetOptions: {
                 <p>Add additional HTML rewriting rules.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// replace every occurrence of the word BrowserSync with 'kittenz'</span>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// replace every occurrence of the word Browsersync with 'kittenz'</span>
 rewriteRules: [
     {
-        match: <span class="hljs-regexp">/BrowserSync/g</span>,
+        match: <span class="hljs-regexp">/Browsersync/g</span>,
         fn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">match</span>) </span>{
             <span class="hljs-keyword">return</span> <span class="hljs-string">'kittenz'</span>;
         }
@@ -642,7 +641,7 @@ rewriteRules: [
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Tunnel the BrowserSync server through a random Public URL</span>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// Tunnel the Browsersync server through a random Public URL</span>
 <span class="hljs-comment">// -&gt; http://randomstring23232.localtunnel.me</span>
 tunnel: <span class="hljs-literal">true</span>
 
@@ -663,7 +662,7 @@ tunnel: <span class="hljs-string">"my-private-site"</span></code></pre>
                 </ul>
 
 
-                <p>Some features of BrowserSync (such as <code>xip</code> &amp; <code>tunnel</code>) require an internet connection, but if you&#39;re
+                <p>Some features of Browsersync (such as <code>xip</code> &amp; <code>tunnel</code>) require an internet connection, but if you&#39;re
                 working offline, you can reduce start-up time by setting this option to <code>false</code></p>
 
 
@@ -687,7 +686,7 @@ online: <span class="hljs-literal">false</span></code></pre>
                 </ul>
 
 
-                <p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
+                <p>Decide which URL to open automatically when Browsersync starts. Defaults to &quot;local&quot; if none set.
                 Can be true, <code>local</code>, <code>external</code>, <code>ui</code>, <code>ui-external</code>, <code>tunnel</code> or <code>false</code></p>
 
 
@@ -763,10 +762,10 @@ xip: <span class="hljs-literal">true</span></code></pre>
                 </ul>
 
 
-                <p>Reload each browser when BrowserSync is restarted.</p>
+                <p>Reload each browser when Browsersync is restarted.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// don't auto-reload all browsers following a BrowserSync reload</span>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// don't auto-reload all browsers following a Browsersync reload</span>
 reloadOnRestart: <span class="hljs-literal">false</span></code></pre>
 
 
@@ -1036,7 +1035,7 @@ timestamps: <span class="hljs-literal">false</span></code></pre>
 
                 <p class="lede warning"><b>Note: </b> requires at least version 1.5.0</p>
 
-                <p>Alter the script path for complete control over where the BrowserSync
+                <p>Alter the script path for complete control over where the Browsersync
                 Javascript is served from. Whatever you return from this function
                 will be used as the script path.</p>
 
@@ -1119,7 +1118,7 @@ socket: {
         <div class="credit">
             <a class="credit__thumb" href="http://www.wearejh.com/"><img src="/img/jh-300-trans.png" alt="JH"/></a>
             <div class="credit__content">
-                <p>The BrowserSync project is supported by <a href="http://www.wearejh.com/">JH</a>,
+                <p>The Browsersync project is supported by <a href="http://www.wearejh.com/">JH</a>,
                     with design and development by
                     <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
                     <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
@@ -1127,7 +1126,7 @@ socket: {
                     <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
                     For regular information on updates and usage, please follow <a href="https://twitter.com/browsersync">@browsersync</a>.
                 </p>
-                <p>BrowserSync is available for use and modification under the <a href="https://github.com/BrowserSync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
+                <p>Browsersync is available for use and modification under the <a href="https://github.com/Browsersync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
             </div>
             <p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>
         </div>

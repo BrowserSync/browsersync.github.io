@@ -11,9 +11,9 @@
     <!-- META -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrowserSync + Gulp.js</title>
+    <title>Browsersync + Gulp.js</title>
 
     <!-- ICONS -->
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
@@ -32,7 +32,6 @@
     <div class="banner">
     <div class="banner__logo">
         <img class="" src="https://thenetawards.com/images/net/net_awards-logo15.svg" alt="">
-
     </div>
     <div class="banner__content">
         <p><b>Pssssst!</b> Browsersync has been nominated for Open Source Project of the Year! <br/>If you use and love this tool as much as we do, please take a moment and <a href="https://thenetawards.com/vote/open-source/browsersync/">vote for us</a> - it will make all the difference. Thank you!</p>
@@ -41,7 +40,7 @@
 </aside>
 <header class="wrapper wrapper--dark site-header alt" role="banner">
     <div class="container">
-        <h1 class="site-title alt"><a href="/">BrowserSync</a> / <span><a href="/docs">documentation</a></span></h1>
+        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
         <ul class="nav--inline docs-nav">
             <li><a href="/docs/gulp" class="active">+ Gulp</a></li>
             <li><a href="/docs/grunt" >+ Grunt</a></li>
@@ -75,8 +74,8 @@
 
             </div>
             <div class="grid__cell three-quarters">
-                <h1 class="page-title">BrowserSync + Gulp.js</h1>
-                <p>There&#39;s no official BrowserSync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise
+                <h1 class="page-title">Browsersync + Gulp.js</h1>
+                <p>There&#39;s no official Browsersync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise
                 the <a href="/docs/api">API</a> and configure it with <a href="/docs/options">options</a>. The following are some common
                 use-cases as seen in popular projects such as <a href="https://developers.google.com/web/starter-kit/">Google&#39;s web starter kit</a>
                 and many others.</p>
@@ -86,7 +85,7 @@
                 </h3>
 
 
-                <p>First, you&#39;ll need to install BrowserSync &amp; Gulp as development dependencies.</p>
+                <p>First, you&#39;ll need to install Browsersync &amp; Gulp as development dependencies.</p>
 <pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre>
 
 <p>Then, use them within your <code>gulpfile.js</code>:</p>
@@ -116,8 +115,8 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
                 </h3>
 
 
-                <p>Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
-                all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it&#39;s
+                <p>Streams are supported in Browsersync, so you can call reload at specific points during your tasks and
+                all browsers will be informed of the changes. Because Browsersync only cares about your CSS when it&#39;s
                 <em>finished</em> compiling - make sure you call <code>.stream()</code> <em>after</em> <code>gulp.dest</code></p>
 <pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
@@ -210,7 +209,7 @@ gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><sp
 <span class="hljs-comment">// reloading browsers</span>
 gulp.task(<span class="hljs-string">'js-watch'</span>, [<span class="hljs-string">'js'</span>], browserSync.reload);
 
-<span class="hljs-comment">// use default task to launch BrowserSync and watch JS files</span>
+<span class="hljs-comment">// use default task to launch Browsersync and watch JS files</span>
 gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
     <span class="hljs-comment">// Serve files from the root of this project</span>
@@ -283,7 +282,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function">
         <div class="credit">
             <a class="credit__thumb" href="http://www.wearejh.com/"><img src="/img/jh-300-trans.png" alt="JH"/></a>
             <div class="credit__content">
-                <p>The BrowserSync project is supported by <a href="http://www.wearejh.com/">JH</a>,
+                <p>The Browsersync project is supported by <a href="http://www.wearejh.com/">JH</a>,
                     with design and development by
                     <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
                     <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
@@ -291,7 +290,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function">
                     <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
                     For regular information on updates and usage, please follow <a href="https://twitter.com/browsersync">@browsersync</a>.
                 </p>
-                <p>BrowserSync is available for use and modification under the <a href="https://github.com/BrowserSync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
+                <p>Browsersync is available for use and modification under the <a href="https://github.com/Browsersync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
             </div>
             <p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>
         </div>

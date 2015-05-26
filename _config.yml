@@ -1,14 +1,14 @@
 # Site settings
-title: BrowserSync
+title: Browsersync
 tagline: "Time-saving synchronised browser testing."
-description: "BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&rsquo;s wicked-fast and totally free."
+description: "Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&rsquo;s wicked-fast and totally free."
 baseurl: "http://browsersync.io/"
 highlighter: pygments
 url: "http://browsersync.io"
 twitter_username: browsersync
 github_username: shakshane
 
-downloads: "Approx 180,000 downloads per month"
+downloads: "Over 190,000 downloads per month"
 
 # Build settings
 markdown: kramdown
@@ -23,7 +23,7 @@ navigation:
  - label: "Documentation"
    url: /docs
  - label: "Source Code"
-   url: "https://github.com/BrowserSync/browser-sync"
+   url: "https://github.com/Browsersync/browser-sync"
 
 docs-navigation:
   - label: "+ Gulp"
@@ -43,10 +43,10 @@ docs-navigation:
 
 links:
   jh:           "http://www.wearejh.com/"
-  source:       "https://github.com/BrowserSync/browser-sync"
+  source:       "https://github.com/Browsersync/browser-sync"
   twitter:      "https://twitter.com/browsersync"
   npm:          "https://npmjs.org/shakyshane/browser-sync"
-  site-github:  "https://github.com/BrowserSync/browsersync.github.io"
+  site-github:  "https://github.com/Browsersync/browsersync.github.io"
   grunt-github: "https://github.com/shakyShane/grunt-browser-sync"
   docs:         "/docs"
   gulp:         "/docs/gulp"
@@ -54,14 +54,14 @@ links:
   options:      "/docs/options"
   command-line: "/docs/command-line"
   api:          "/docs/api"
-  license:      "https://github.com/BrowserSync/browser-sync/blob/master/LICENSE"
-  issues:       "https://github.com/BrowserSync/browser-sync/issues"
+  license:      "https://github.com/Browsersync/browser-sync/blob/master/LICENSE"
+  issues:       "https://github.com/Browsersync/browser-sync/issues"
   help:         "http://stackoverflow.com/questions/tagged/browser-sync"
-  videos:       "https://github.com/BrowserSync/browser-sync/wiki/Screencasts"
+  videos:       "https://github.com/Browsersync/browser-sync/wiki/Screencasts"
   crossbow:     "https://github.com/shakyShane/crossbow.js"
   npmdocs:      "https://docs.npmjs.com/getting-started/fixing-npm-permissions"
   snippet:      "/docs/options/#option-snippetOptions"
-  recipes:      "https://github.com/BrowserSync/recipes"
+  recipes:      "https://github.com/Browsersync/recipes"
 
 img:
   jh: "/img/jh-300-trans.png"
@@ -110,4 +110,4 @@ icons:
     tagline: "Built on Node.js to support Windows, MacOS and Linux. Setup in less than 5 minutes."
   - title:   "Free to run and reuse"
     icon:    "creative-commons-noncommercial-us"
-    tagline: "BrowserSync is an open source project available to use under the Apache 2.0 License."
+    tagline: "Browsersync is an open source project available to use under the Apache 2.0 License."

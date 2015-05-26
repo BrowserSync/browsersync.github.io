@@ -48,13 +48,13 @@
         "params": [
             {
                 "name": "config",
-                "description": "This is the main configuration for your BrowserSync instance and can contain any of the [available options]({{site.links.options}})\n If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the `snippet` mode",
+                "description": "This is the main configuration for your Browsersync instance and can contain any of the [available options]({{site.links.options}})\n If you do not pass a config an argument for configuration, Browsersync will still run; but it will be in the `snippet` mode",
                 "type": "Object",
                 "optional": true
             },
             {
                 "name": "cb",
-                "description": "If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This\nis useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.",
+                "description": "If you pass a callback function, it will be called when Browsersync has completed all setup tasks and is ready to use. This\nis useful when you need to wait for information (for example: urls, port etc) or perform other tasks synchronously.",
                 "type": "Function",
                 "optional": true
             }
@@ -154,7 +154,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
         "line": 112,
-        "description": "Stand alone file-watcher. Use this along with BrowserSync to create your own, minimal build system",
+        "description": "Stand alone file-watcher. Use this along with Browsersync to create your own, minimal build system",
         "itemtype": "method",
         "name": "watch",
         "params": [
@@ -207,7 +207,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
         "line": 140,
-        "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
+        "description": "The internal Event Emitter used by the running Browsersync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
         "itemtype": "property",
         "name": "emitter",
         "class": "",
@@ -219,7 +219,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/index.js",
         "line": 155,
-        "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
+        "description": "A simple true/false flag that you can use to determine if there's a currently-running Browsersync instance.",
         "itemtype": "property",
         "name": "active",
         "class": "",

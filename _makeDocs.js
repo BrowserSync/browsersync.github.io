@@ -20,11 +20,26 @@ var excluded = [
 
 var data = require(doc);
 
+function renameBranding(item) {
+    if (item.description) {
+        item.description = item.description.replace(/BrowserSync/g, 'Browsersync');
+    }
+    if (item.params) {
+        item.params = item.params.map(function (item) {
+            if (item.description) {
+                item.description = item.description.replace(/BrowserSync/g, 'Browsersync');
+            }
+            return item;
+        })
+    }
+    return item;
+}
 /**
  * Process API
  */
 var apiItems = docGen.prepareClassitems(data.classitems)
     .filter(removeExcluded)
+    .filter(renameBranding)
     .map(previewTweaks)
     .sort(function (a, b) {
         return a.line - b.line;
@@ -42,6 +57,7 @@ fs.writeFileSync("./_doc/api.json", JSON.stringify(apiItems, null, 4));
  */
 
 var out = docGen.prepareOptions(data.classitems)
+    .map(renameBranding)
     .map(optionsMarkup);
 
 fs.writeFileSync("./_doc/options.json", JSON.stringify(out, null, 4));

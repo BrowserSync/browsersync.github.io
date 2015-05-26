@@ -6,22 +6,22 @@
         <ol class="step-list">
             <li class="step">
                 <h3>1. Install Node.js</h3>
-                <p>BrowserSync is a module for Node.js, a platform for fast network applications. There are convenient <a href="http://nodejs.org/download/">installers for MacOS, Windows and Linux</a>.</p>
+                <p>Browsersync is a module for Node.js, a platform for fast network applications. There are convenient <a href="http://nodejs.org/download/">installers for MacOS, Windows and Linux</a>.</p>
             </li>
             <li class="step">
-                <h3>2. Install BrowserSync</h3>
-                <p>The Node.js package manager (npm) is used to install BrowserSync from <a href="https://npmjs.org/package/browser-sync">a repository</a>. Open a terminal window and run the following command:</p>
+                <h3>2. Install Browsersync</h3>
+                <p>The Node.js package manager (npm) is used to install Browsersync from <a href="https://npmjs.org/package/browser-sync">a repository</a>. Open a terminal window and run the following command:</p>
                 <pre><code>npm install -g browser-sync</code></pre>
-                <p>You&rsquo;re telling the package manager to download the BrowserSync files and install them globally so they&rsquo;re available to all your projects.</p>
+                <p>You&rsquo;re telling the package manager to download the Browsersync files and install them globally so they&rsquo;re available to all your projects.</p>
             </li>
             <li class="step">
-                <h3>3. Start BrowserSync</h3>
+                <h3>3. Start Browsersync</h3>
                 <p>A basic use is to watch all CSS files in the <code>css</code> directory and update connected browsers if a change occurs. Navigate your terminal window to a project and run the appropriate command:</p>
                 <h4>Static sites</h4>
-                <p>If you&rsquo;re only using <code>.html</code> files, you&rsquo;ll need to use the <em>server mode</em>. BrowserSync will start a mini-server and provide a URL to view your site.</p>
+                <p>If you&rsquo;re only using <code>.html</code> files, you&rsquo;ll need to use the <em>server mode</em>. Browsersync will start a mini-server and provide a URL to view your site.</p>
                 <pre><code>browser-sync start --server --files "css/*.css"</code></pre>
                 <h4>Dynamic sites</h4>
-                <p>If you&rsquo;re already running a local server with PHP or similar, you&rsquo;ll need to use the <em>proxy mode</em>. BrowserSync will wrap your vhost with a proxy URL to view your site.</p>
+                <p>If you&rsquo;re already running a local server with PHP or similar, you&rsquo;ll need to use the <em>proxy mode</em>. Browsersync will wrap your vhost with a proxy URL to view your site.</p>
                 <pre><code>browser-sync start --proxy "myproject.dev" --files "css/*.css"</code></pre>
             </li>
         </ol>

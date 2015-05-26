@@ -11,6 +11,6 @@ bs.init({
 // with config + callback
 bs.init(config, function (err, bs) {
     if (!err) {
-        console.log("BrowserSync is ready!");
+        console.log("Browsersync is ready!");
     }
 });

@@ -1,4 +1,4 @@
-// Create a BrowserSync instance
+// Create a Browsersync instance
 var bs = require("browser-sync").create();
 
 // Listen to change events on HTML and reload
@@ -13,7 +13,7 @@ bs.watch("css/*.css", function (event, file) {
     }
 });
 
-// Now init the BrowserSync server
+// Now init the Browsersync server
 bs.init({
     server: "./app"
 });

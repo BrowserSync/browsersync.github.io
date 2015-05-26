@@ -10,7 +10,7 @@
 {{inc src="headerlink" title="Installation" slug="installation"}}
 
 ####Global Install
-If you would like to run BrowserSync from the command line in any directory, it
+If you would like to run Browsersync from the command line in any directory, it
 can be installed `globally` with the following command.
 
 
@@ -19,27 +19,27 @@ $ npm install -g browser-sync
 {{/hl}}
 
 ####Local Install
-This is the prefered way to use BrowserSync - installing it locally to each project. This
+This is the prefered way to use Browsersync - installing it locally to each project. This
 way the dependency can be added to your package.json file and everyone on your team.
 
 {{#hl lang="bash"}}
 $ npm install browser-sync --save-dev
 {{/hl}}
 
-**WARNING - do not use sudo!** If you're running `Mac OSX` and encounter problems when trying to install BrowserSync - either
+**WARNING - do not use sudo!** If you're running `Mac OSX` and encounter problems when trying to install Browsersync - either
 globally or locally, it's almost always because you have problems with NPM permissions. Checkout [their docs]({{site.links.npmdocs}})
 for a guide on how to fix this once and for all - it only takes 2 minutes :)
 
 {{inc src="headerlink" title="Requirements" slug="requirements"}}
 
-BrowserSync works by injecting an asynchronous script tag (`<script async>...</script>`) right after the `<body>` tag
+Browsersync works by injecting an asynchronous script tag (`<script async>...</script>`) right after the `<body>` tag
 during initial request. In order for this to work properly the `<body>` tag must be present. Alternatively you
 can provide a custom rule for the snippet using [snippetOptions]({{site.links.snippet}})
 
 {{inc src="headerlink" title="Windows users" slug="windows-users"}}
 
-Having trouble installing BrowserSync on Windows? The most common reason for  `npm` to throw
-errors when compiling BrowserSync is that some of the dependencies
+Having trouble installing Browsersync on Windows? The most common reason for  `npm` to throw
+errors when compiling Browsersync is that some of the dependencies
 (e.g. [node-gyp](https://github.com/TooTallNate/node-gyp) need Visual C++ runtime libraries.
 
 The way to resolve this is to install [Visual Studio](http://www.visualstudio.com/).
@@ -53,13 +53,13 @@ npm install -g browser-sync --msvs_version=2013
 ```
 
 After installation of Visual Studio `npm` should not throw errors any longer, but only issue warnings.
-As far as we can tell, they do not impact BrowserSync.
+As far as we can tell, they do not impact Browsersync.
 
 
 {{inc src="headerlink" title="Incorrect External URL" slug="external-url"}}
 
 Sometimes, depending on your network, your OS will report multiple external IP addresses. If this happens, currently
-BrowserSync just picks the first one and hopes for the best.
+Browsersync just picks the first one and hopes for the best.
 
 You could use a tool like [dev-ip](https://github.com/shakyshane/dev-ip) to list all possible external URLs on your
 machine, and then provide the [host option](/docs/options/#option-host) in your configuration

@@ -2,7 +2,7 @@ var bs = require("browser-sync").create();
 
 // Listen for the `init` event
 bs.emitter.on("init", function () {
-    console.log("BrowserSync is running!");
+    console.log("Browsersync is running!");
 });
 
 bs.init(config);

@@ -1,2 +1,2 @@
-// don't auto-reload all browsers following a BrowserSync reload
+// don't auto-reload all browsers following a Browsersync reload
 reloadOnRestart: false

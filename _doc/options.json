@@ -2,7 +2,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 7,
-        "description": "BrowserSync includes a user-interface that is accessed via a separate port.\nThe UI allows to controls all devices, push sync updates and much more.",
+        "description": "Browsersync includes a user-interface that is accessed via a separate port.\nThe UI allows to controls all devices, push sync updates and much more.",
         "itemtype": "property",
         "name": "ui",
         "type": "Object",
@@ -35,7 +35,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 24,
-        "description": "BrowserSync can watch your files as you work. Changes you make will either\nbe injected into the page (CSS & images) or will cause all browsers to do\na full-page refresh. See [anymatch](https://github.com/es128/anymatch) for more information on glob patterns.",
+        "description": "Browsersync can watch your files as you work. Changes you make will either\nbe injected into the page (CSS & images) or will cause all browsers to do\na full-page refresh. See [anymatch](https://github.com/es128/anymatch) for more information on glob patterns.",
         "itemtype": "property",
         "name": "files",
         "type": "Array | String",
@@ -83,7 +83,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 69,
-        "description": "Proxy an EXISTING vhost. BrowserSync will wrap your vhost with a proxy URL to view your site.",
+        "description": "Proxy an EXISTING vhost. Browsersync will wrap your vhost with a proxy URL to view your site.",
         "itemtype": "property",
         "name": "proxy",
         "type": "String | Object | Boolean",
@@ -131,7 +131,7 @@
         "since": false,
         "snippetpath": "_includes/snippets/options/port.js",
         "defaultValue": "3000",
-        "snippet": "// Use a specific port (instead of the one auto-detected by BrowserSync)\nport: 8080",
+        "snippet": "// Use a specific port (instead of the one auto-detected by Browsersync)\nport: 8080",
         "description": ""
     },
     {
@@ -232,7 +232,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 127,
-        "description": "Change the console logging prefix. Useful if you're creating your\nown project based on BrowserSync",
+        "description": "Change the console logging prefix. Useful if you're creating your\nown project based on Browsersync",
         "itemtype": "property",
         "name": "logPrefix",
         "type": "String",
@@ -353,7 +353,7 @@
         "subprops": null,
         "snippetpath": "_includes/snippets/options/rewriteRules.js",
         "defaultValue": "false",
-        "snippet": "// replace every occurrence of the word BrowserSync with 'kittenz'\nrewriteRules: [\n    {\n        match: /BrowserSync/g,\n        fn: function (match) {\n            return 'kittenz';\n        }\n    }\n]"
+        "snippet": "// replace every occurrence of the word Browsersync with 'kittenz'\nrewriteRules: [\n    {\n        match: /Browsersync/g,\n        fn: function (match) {\n            return 'kittenz';\n        }\n    }\n]"
     },
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
@@ -368,13 +368,13 @@
         "since": false,
         "snippetpath": "_includes/snippets/options/tunnel.js",
         "defaultValue": "null",
-        "snippet": "// Tunnel the BrowserSync server through a random Public URL\n// -> http://randomstring23232.localtunnel.me\ntunnel: true\n\n// Attempt to use the URL \"http://my-private-site.localtunnel.me\"\ntunnel: \"my-private-site\"",
+        "snippet": "// Tunnel the Browsersync server through a random Public URL\n// -> http://randomstring23232.localtunnel.me\ntunnel: true\n\n// Attempt to use the URL \"http://my-private-site.localtunnel.me\"\ntunnel: \"my-private-site\"",
         "description": ""
     },
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 199,
-        "description": "Some features of BrowserSync (such as `xip` & `tunnel`) require an internet connection, but if you're\nworking offline, you can reduce start-up time by setting this option to `false`",
+        "description": "Some features of Browsersync (such as `xip` & `tunnel`) require an internet connection, but if you're\nworking offline, you can reduce start-up time by setting this option to `false`",
         "itemtype": "property",
         "name": "online",
         "type": "Boolean",
@@ -390,7 +390,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 207,
-        "description": "Decide which URL to open automatically when BrowserSync starts. Defaults to \"local\" if none set.\nCan be true, `local`, `external`, `ui`, `ui-external`, `tunnel` or `false`",
+        "description": "Decide which URL to open automatically when Browsersync starts. Defaults to \"local\" if none set.\nCan be true, `local`, `external`, `ui`, `ui-external`, `tunnel` or `false`",
         "itemtype": "property",
         "name": "open",
         "type": "Boolean | String",
@@ -438,7 +438,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 234,
-        "description": "Reload each browser when BrowserSync is restarted.",
+        "description": "Reload each browser when Browsersync is restarted.",
         "itemtype": "property",
         "name": "reloadOnRestart",
         "type": "Boolean",
@@ -449,7 +449,7 @@
         "since": false,
         "snippetpath": "_includes/snippets/options/reloadOnRestart.js",
         "defaultValue": "false",
-        "snippet": "// don't auto-reload all browsers following a BrowserSync reload\nreloadOnRestart: false"
+        "snippet": "// don't auto-reload all browsers following a Browsersync reload\nreloadOnRestart: false"
     },
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
@@ -646,7 +646,7 @@
     {
         "file": "/Users/shakyshane/sites/oss/browsersync.github.io/node_modules/browser-sync/lib/default-config.js",
         "line": 345,
-        "description": "Alter the script path for complete control over where the BrowserSync\nJavascript is served from. Whatever you return from this function\nwill be used as the script path.",
+        "description": "Alter the script path for complete control over where the Browsersync\nJavascript is served from. Whatever you return from this function\nwill be used as the script path.",
         "itemtype": "property",
         "name": "scriptPath",
         "default": "undefined",

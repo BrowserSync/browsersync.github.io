@@ -1,7 +1,7 @@
-// replace every occurrence of the word BrowserSync with 'kittenz'
+// replace every occurrence of the word Browsersync with 'kittenz'
 rewriteRules: [
     {
-        match: /BrowserSync/g,
+        match: /Browsersync/g,
         fn: function (match) {
             return 'kittenz';
         }

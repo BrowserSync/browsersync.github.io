@@ -1,4 +1,4 @@
-// Tunnel the BrowserSync server through a random Public URL
+// Tunnel the Browsersync server through a random Public URL
 // -> http://randomstring23232.localtunnel.me
 tunnel: true
 

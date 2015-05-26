@@ -1,19 +1,19 @@
 ---
 layout: "documentation.hbs"
-title: "BrowserSync + Gulp.js"
+title: "Browsersync + Gulp.js"
 page-label: "gulp"
 sidebar: "gulp-sidebar.hbs"
 markdown: true
 ---
 
-There's no official BrowserSync plugin for Gulp, because it's not needed! You simply `require` the module, utilise
+There's no official Browsersync plugin for Gulp, because it's not needed! You simply `require` the module, utilise
 the [API]({{site.links.api}}) and configure it with [options]({{site.links.options}}). The following are some common
 use-cases as seen in popular projects such as [Google's web starter kit](https://developers.google.com/web/starter-kit/)
 and many others.
 
 {{ inc src="headerlink.html" title="Install" slug="gulp-install" }}
 
-First, you'll need to install BrowserSync & Gulp as development dependencies.
+First, you'll need to install Browsersync & Gulp as development dependencies.
 
 {{ hl src="snippets/gulp/install.txt" lang="html" }}
 
@@ -23,8 +23,8 @@ Then, use them within your `gulpfile.js`:
 
 {{ inc src="headerlink.html" title="SASS + CSS Injecting" slug="gulp-sass-css" }}
 
-Streams are supported in BrowserSync, so you can call reload at specific points during your tasks and
-all browsers will be informed of the changes. Because BrowserSync only cares about your CSS when it's
+Streams are supported in Browsersync, so you can call reload at specific points during your tasks and
+all browsers will be informed of the changes. Because Browsersync only cares about your CSS when it's
 *finished* compiling - make sure you call `.stream()` *after* `gulp.dest`
 
 {{ hl src="snippets/gulp/sass.js" }}

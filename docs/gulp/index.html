@@ -130,7 +130,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
     });
 
     gulp.watch(<span class="hljs-string">"app/scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
-    gulp.watch(<span class="hljs-string">"app/*.html"</span>).on(<span class="hljs-string">'change'</span>, reload);
+    gulp.watch(<span class="hljs-string">"app/*.html"</span>).on(<span class="hljs-string">'change'</span>, browserSync.reload);
 });
 
 <span class="hljs-comment">// Compile sass into CSS &amp; auto-inject into browsers</span>

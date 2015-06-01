@@ -72,7 +72,7 @@ svg{display:inline-block;fill:currentColor!important;height:1em;width:1em}
 .palm-2up .grid__cell{width:50%}
 .palm-4up .grid__cell{width:25%}
 }
-@media only screen and (min-width:700px)and (max-width:899px){.lap-2up .grid__cell:nth-child(2n+1),.lap-4up .grid__cell:nth-child(4n+1){clear:left}
+@media only screen and (min-width:700px) and (max-width:899px){.lap-2up .grid__cell:nth-child(2n+1),.lap-4up .grid__cell:nth-child(4n+1){clear:left}
 .lap-2up .grid__cell{width:50%}
 .lap-4up .grid__cell{width:25%}
 }

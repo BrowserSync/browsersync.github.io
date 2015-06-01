@@ -10,7 +10,7 @@ var crossbow     = require("crossbow");
 var prettify     = require('gulp-jsbeautifier');
 var yaml         = require('js-yaml');
 var promseq      = require('prom-seq');
-var bs1          = browserSync.create();
+var bs           = browserSync.create();
 var easysvg      = require('easy-svg');
 var buildall     = promseq.create([yuidocs, buildDocs, crossbowBuild]);
 var docsPaths = {
@@ -28,7 +28,7 @@ gulp.task("default", ["serve", "watch"]);
  * Wait for crossbow-build, then launch the Server
  */
 gulp.task("serve", ["build"], function() {
-    bs1.init({
+    bs.init({
         open: false,
         server: {
             baseDir: ["./"]
@@ -84,11 +84,11 @@ function crossbowBuild (deferred) {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task("sass", function () {
-    bs1.notify("Compiling SASS...");
+    bs.notify("Compiling SASS...");
     return gulp.src(["scss/core.scss"])
         .pipe(sass())
         .on("error", function(err){
-            bs1.notify(err.message, 3000);
+            bs.notify(err.message, 3000);
             console.log(err.message);
             this.emit("end");
         })
@@ -96,7 +96,7 @@ gulp.task("sass", function () {
         .pipe(minifyCSS({keepBreaks:true}))
         .pipe(rename("core.min.css"))
         .pipe(gulp.dest("css"))
-        .pipe(bs1.stream());
+        .pipe(bs.stream());
 });
 
 /**
@@ -119,21 +119,21 @@ gulp.task('svg', function () {
  */
 gulp.task("watch", function () {
     gulp.watch("scss/**", ["sass"]);
-    bs1.watch([
+    bs.watch([
         "_src/**",
         "_config.yml"
     ]).on("change", function () {
         crossbowBuild(promseq.defer())
-            .then(bs1.reload)
+            .then(bs.reload)
             .catch(printError);
     });
-    bs1.watch([
+    bs.watch([
         "*.js",
         docsPaths.index,
         docsPaths.config
     ]).on("change", function () {
         buildall()
-            .then(bs1.reload)
+            .then(bs.reload)
             .catch(printError);
     });
 });
@@ -143,7 +143,7 @@ gulp.task("watch", function () {
  */
 function printError(err) {
     console.error(err);
-    bs1.notify("ERROR: " + err.message);
+    bs.notify("ERROR: " + err.message);
 }
 
 

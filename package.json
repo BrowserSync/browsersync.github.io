@@ -14,7 +14,7 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "browser-sync": "^2.7.6",
+    "browser-sync": "git://github.com/browsersync/browser-sync",
     "bs-recipes": "git://github.com/BrowserSync/recipes.git",
     "crossbow": "^0.4.5",
     "easy-svg": "^1.0.4",

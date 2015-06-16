@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "description": "The Browsersync website",
   "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
     "test": "gulp build"
   },
   "author": "Shane Osbourne",
   "contributors": [
     "Shinnosuke Watanabe (https://github.com/shinnn)"
   ],
-  "homepage": "https://github.com/BrowserSync/website",
+  "homepage": "https://github.com/BrowserSync/browsersync.github.io",
   "repository": "BrowserSync/browsersync.github.io",
   "license": "ISC",
   "private": true,

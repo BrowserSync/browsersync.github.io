@@ -88,6 +88,7 @@
                         <li><a href="#option-notify">notify</a></li>
                         <li><a href="#option-scrollProportionally">scrollProportionally</a></li>
                         <li><a href="#option-scrollThrottle">scrollThrottle</a></li>
+                        <li><a href="#option-scrollRestoreTechnique">scrollRestoreTechnique</a></li>
                         <li><a href="#option-reloadDelay">reloadDelay</a></li>
                         <li><a href="#option-reloadDebounce">reloadDebounce</a></li>
                         <li><a href="#option-plugins">plugins</a></li>
@@ -565,6 +566,7 @@ logSnippet: <span class="hljs-literal">false</span></code></pre>
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Object</span>
                     <ul class="nav nav--stacked subprops">
+                            <li><b>async</b> - Default: <span class="color-teal">undefined</span></li>
                             <li><b>blacklist</b> - Default: <span class="color-teal">undefined</span></li>
                             <li><b>whitelist</b> - Default: <span class="color-teal">undefined</span></li>
                             <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body[^&gt;]*&gt;/i</span></li>
@@ -575,7 +577,7 @@ logSnippet: <span class="hljs-literal">false</span></code></pre>
 
                 <p class="lede warning"><b>Note: </b> requires at least version 2.0.0</p>
 
-                <p>SINCE 1.7.0! You can control how the snippet is injected
+                <p>You can control how the snippet is injected
                 onto each page via a custom regex + function.
                 You can also provide patterns for certain urls
                 that should be ignored from the snippet injection.</p>
@@ -823,6 +825,23 @@ notify: <span class="hljs-literal">false</span></code></pre>
 
 
 <pre class='highlight'><code class="js">scrollThrottle: <span class="hljs-number">100</span> <span class="hljs-comment">// only send scroll events every 100 milliseconds</span></code></pre>
+
+
+<h3 id="option-scrollRestoreTechnique" class="section-link">
+    <a href="#option-scrollRestoreTechnique" class="page-anchor">scrollRestoreTechnique</a>
+    <a href="#page-top" class="back-to-top">^ TOP</a>
+</h3>
+
+
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">String</span>
+    </li>
+    <li class="default">Default: <span class="color-teal">&#x27;window.name&#x27;</span></li>
+</ul>
+
+
+
+
 
 
 <h3 id="option-reloadDelay" class="section-link">

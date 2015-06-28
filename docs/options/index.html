@@ -1097,14 +1097,19 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
                 <p>Configure the Socket.IO path and namespace &amp; domain to avoid collisions.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// This will result in something like this in</span>
-<span class="hljs-comment">// the socket connector code</span>
-<span class="hljs-comment">// browserSync.io('localhost:3003/browser-sync')</span>
+<pre class='highlight'><code class="js"><span class="hljs-comment">// To change the namespace used by Browsersync</span>
 socket: {
-    namespace: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">namespace</span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3003"</span> + namespace;
-    }
-}</code></pre>
+    namespace: <span class="hljs-string">'/someothername'</span>
+}
+
+<span class="hljs-comment">// By default, Browsersync is configured to use the domain</span>
+<span class="hljs-comment">// of your page in order to connect to socket.io</span>
+<span class="hljs-comment">// eg: location.host + '/browser-sync</span>
+<span class="hljs-comment">// but, should you need to change that, provide the `domain` property</span>
+socket: {
+    domain: <span class="hljs-string">'localhost:3000'</span>
+}
+</code></pre>
 
 
 

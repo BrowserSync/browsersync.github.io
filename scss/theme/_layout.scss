@@ -4,13 +4,6 @@
 .wrapper {
     clear: both;
     width: 100%;
-    padding-top: $base-spacing;
-    padding-bottom: $base-spacing;
-
-    @include media-query(min, $desk-start) {
-        padding-top: 2*$base-spacing;
-        padding-bottom: 2*$base-spacing;
-    }
 }
 
 .wrapper--alt {
@@ -18,7 +11,7 @@
 }
 
 .wrapper--dark {
-    background: $navy;
+    background-size: cover;
     color: $white;
 
     a {
@@ -76,15 +69,15 @@
     }
 }
 
-
-/* Sections
-======================================== */
-
-// Introduction
-
 .intro {
-    padding-top: 0;
+    @include media-query(min, $lap-start) {
+        margin-top: -$header-height;
+        padding-top: $header-height;
+    }
     text-align: center;
+    background: url('../img/bg.jpg') no-repeat;
+    background-size: cover;
+    color: $white;
 }
 
 .hook {

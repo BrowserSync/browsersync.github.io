@@ -104,9 +104,21 @@ gulp.task("sass", function () {
  */
 gulp.task('svg', function () {
     var sitedata = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
-    var usedsvgs = sitedata.icons.map(function (item) {
-        return "img/svg/" + item.icon + ".svg";
-    });
+
+    /**
+     * SVG icons used on the site, but not in yaml
+     * @type {string[]}
+     */
+    var globals  = ['logo', 'github', 'twitter'];
+
+    /**
+     * Create file paths for each
+     * @type {Array}
+     */
+    var usedsvgs = sitedata.icons
+        .map(function (item) { return item.icon; })
+        .concat(globals)
+        .map(function (item) { return "img/svg/" + item + ".svg" });
 
     return gulp.src(usedsvgs)
         .pipe(easysvg.stream())

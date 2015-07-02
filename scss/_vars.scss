@@ -9,14 +9,14 @@ PALETTE
 /**
  * Brand
  */
-$red: #da4453;//#f33;
-$navy: #1b2032;
+$red: #F24747;//#f33;
+$navy: #0F2634;
 $yellow: #e9ac00;
-$teal: #256b8d;//#009882;#5fb342
+$blue-lt: #89BAF4;
+$teal: $blue-lt;
 $bg: #da4453;
 $lime: #D3ED13;
 $code-bg: #FAFAFA;
-
 
 /**
  * Neutrals
@@ -122,5 +122,5 @@ $page-width: 1000px;
 $lap-start: 700px;
 $desk-start: 900px;
 $wide-start: 1100px;
-
 $fa-css-prefix: "icon";
+$header-height: 70px;

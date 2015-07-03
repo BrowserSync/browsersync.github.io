@@ -23,12 +23,12 @@
     border: 0!important;
     font-weight: bold;
     @include font-size(24px);
-    position: relative;
-    top: -2px;
     width: 100%;
     text-align: left;
 
     a {
+        position: relative;
+        top: -2px;
         height: $header-height;
         line-height: $header-height;
     }

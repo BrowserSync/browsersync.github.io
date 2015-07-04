@@ -15,6 +15,7 @@
     @include media-query(min, $lap-start) {
         margin-top: -$header-height;
         padding-top: $header-height*1.5;
+        margin-bottom: $base-spacing*3;
     }
 }
 

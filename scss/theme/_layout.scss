@@ -70,32 +70,35 @@
 .usp {
     @include clearfix();
     margin-bottom: $base-spacing;
+    position: relative;
+    border: 1px solid red;
 }
 
 .usp__thumb {
-    border: 1px solid $silver;
+
+    display: none;
 
     @include media-query(min, $lap-start) {
-        float: left;
-        width: 50%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        display: block;
     }
 }
 
 .usp__content {
-    overflow: hidden;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
 
     @include media-query(min, $lap-start) {
-        padding-left: $base-spacing;
+        width: 46%;
     }
 }
 
 .usp__title {
+    color: $navy;
     @include media-query(min, $desk-start) {
-        @include font-size(24px);
+        padding-top: $base-spacing*3;
+        font-weight: normal;
+        @include font-size(40px);
     }
 }
 

@@ -11,7 +11,9 @@ function icons (deferred, previous, ctx) {
      * // todo -  crossbow plugin to build a manifest of each icon used
      * @type {string[]}
      */
-    var globals  = ['logo', 'github', 'twitter', 'circle-play'];
+    var globals  = [
+        'logo', 'github', 'twitter', 'circle-play', 'apple', 'windows', 'linux'
+    ];
 
     /**
      * Create file paths for each

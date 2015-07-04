@@ -2,11 +2,6 @@
     @include clearfix();
 }
 
-section + section {
-
-    border-top: 1px solid $silver-lt;
-}
-
 hr {
     border-color: $silver;
 }

@@ -1,3 +1,5 @@
+@import "../vars";
+
 .site-header {
 
     text-align: center;
@@ -18,7 +20,7 @@
     }
 }
 
-.site-logo {
+.logo {
 
     border: 0!important;
     font-weight: bold;
@@ -44,5 +46,24 @@
 
     @include media-query(min, $lap-start) {
         width: auto;
+    }
+}
+
+.logo--large {
+    display: none;
+    @include media-query(min, $lap-start) {
+        display: inline-block;
+        width:  140px;
+        height: 140px;
+    }
+}
+
+.site-nav {
+    list-style: none;
+    position: relative;
+    @include clearfix;
+
+    @include media-query(min, $lap-start) {
+        display: flex;
     }
 }

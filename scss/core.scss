@@ -1,18 +1,14 @@
 @charset "UTF-8";
 
-/**
- * Project variables
- */
 @import "vars";
 
-@import "modules/mixins";
-@import "vendor/normalize";
-@import "modules/reset";
+@import "../node_modules/normalize.css/normalize.css";
 
+@import "modules/mixins";
+@import "modules/reset";
 @import "highlighting/solarized_light";
 
 @import "theme/base";
-//@import "theme/sprite";
 @import "theme/icons";
 
 @import "theme/grids";
@@ -21,9 +17,12 @@
 @import "theme/tables";
 @import "theme/buttons";
 @import "theme/headings";
+@import "theme/intro";
 @import "theme/layout";
+
 @import "theme/header";
 @import "theme/footer";
+
 @import "theme/code";
 @import "theme/steps";
 @import "theme/misc";

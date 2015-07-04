@@ -19,7 +19,8 @@
     "browser-sync": "git://github.com/browsersync/browser-sync",
     "bs-recipes": "git://github.com/BrowserSync/recipes.git",
     "crossbow": "^0.4.5",
-    "easy-svg": "^1.0.4",
+    "crossbow-sass": "^1.1.4",
+    "easy-svg": "^1.0.5",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.3.0",
     "gulp-filter": "^2.0.0",
@@ -33,6 +34,7 @@
     "js-yaml": "^3.3.1",
     "lodash": "^3.9.1",
     "marked": "^0.3.2",
+    "normalize.css": "^3.0.3",
     "pretemplater": "^1.1.2",
     "prom-seq": "^1.2.0",
     "q": "^1.4.1"

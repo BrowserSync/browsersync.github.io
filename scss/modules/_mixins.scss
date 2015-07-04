@@ -1,9 +1,4 @@
-/**
- * Output clearfix rules
- *
-   `@include clearfix();`
- *
- */
+
 @mixin clearfix {
     &:before,
     &:after {
@@ -16,12 +11,6 @@
     zoom: 1;
 }
 
-/**
- * Output media query block
- *
-   `@include media-query(min, 640px);`
- *
- */
 @mixin media-query($type, $breakpoint: $lap-start) {
     @if $type == "min" {
         @media only screen and (min-width: $breakpoint) { @content }
@@ -52,35 +41,17 @@
     }
 }
 
-/**
- * Output media query block with min and max limits
- *
-   `@include media-query-bracket(640px, 960px);`
- *
- */
 @mixin media-query-bracket($from: 0, $to: 0) {
     @if $to > $from {
         @media only screen and (min-width: $from) and (max-width: $to - 1px) { @content }
     }
 }
 
-/**
- * Output font size using rem and px fallback
- *
-   `@include font-size(10px);`
- *
- */
 @mixin font-size($font-size){
     font-size: $font-size;
     font-size: ($font-size / $base-font-size)*1rem;
 }
 
-/**
- * Output unstyled list properties
- *
-   `@include list-reset();`
- *
- */
 @mixin list-reset(){
     margin-left: 0;
     list-style: none;

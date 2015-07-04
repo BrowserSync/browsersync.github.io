@@ -1,6 +1,3 @@
-/* General purpose
-======================================== */
-
 .wrapper {
     clear: both;
     width: 100%;
@@ -49,9 +46,6 @@
 }
 
 
-/* Content
-======================================== */
-
 .text--center {
     text-align: center!important;
 }
@@ -66,65 +60,6 @@
         padding-top: $base-spacing;
         font-weight: normal;
         @include font-size(36px);
-    }
-}
-
-.intro {
-    @include media-query(min, $lap-start) {
-        margin-top: -$header-height;
-        padding-top: $header-height;
-    }
-    text-align: center;
-    background: url('../img/bg.jpg') no-repeat;
-    background-size: cover;
-    color: $white;
-}
-
-.hook {
-    margin: 0 auto $base-spacing;
-    padding-top: 0;
-
-    @include media-query(min, $lap-start) {
-        padding-top: $base-spacing;
-    }
-
-    @include media-query(min, $desk-start) {
-        padding-top: 2*$base-spacing;
-        @include font-size(48px);
-    }
-}
-
-.ronseal {
-    margin: 0 auto $base-spacing;
-    @include font-size(18px);
-
-
-    @include media-query(min, $desk-start) {
-        // margin-bottom: 2*$base-spacing;
-        @include font-size(24px);
-    }
-}
-
-.cta {
-    margin: 0 0 $base-spacing;
-
-    .button {
-        border: 0!important;
-    }
-
-    .stat {
-        display: block;
-        margin-top: $half-spacing;
-        @include font-size(12px);
-    }
-
-    @include media-query(min, $desk-start) {
-        margin-bottom: 2*$base-spacing;
-
-        .button {
-            padding: 1.5*$half-spacing 1.5*$base-spacing;
-            @include font-size(24px);
-        }
     }
 }
 
@@ -248,19 +183,6 @@
     @include media-query(min, $desk-start) {
         margin-top: $base-spacing;
         padding-top: 2*$base-spacing;
-    }
-}
-
-
-// User testimony
-
-.users {}
-
-.logo {
-    margin: 0 auto $base-spacing;
-
-    @include media-query(min, $desk-start) {
-        margin-bottom: 2*$base-spacing;
     }
 }
 

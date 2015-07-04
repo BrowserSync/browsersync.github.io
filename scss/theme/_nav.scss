@@ -12,11 +12,16 @@ $small-nav-height: $header-height - 30px;
 
 
     a {
+
         display: inline-block;
         color: white;
         padding: 0 $half-spacing;
         height: $small-nav-height;
-        transition: all .3s;
+        transition: background .3s;
+
+        &:active {
+            transform: scale(0.98);
+        }
 
         @include media-query(min, $lap-start) {
             height: $header-height;

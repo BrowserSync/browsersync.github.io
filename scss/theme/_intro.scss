@@ -10,6 +10,7 @@
     background-size: cover;
     color: $white;
     padding-top: $header-height/2;
+    padding-bottom: $base-spacing;
 
     @include media-query(min, $lap-start) {
         margin-top: -$header-height;
@@ -50,7 +51,10 @@
     display: inline-block;
     color: $white;
 
-    &:hover, &:focus {
+    &:focus {
+        color: $white;
+    }
+    &:hover {
 
         color: $white;
 
@@ -73,25 +77,21 @@
     }
 }
 
-.cta {
-    margin: 0 0 $base-spacing;
+.how-to {
+    font-family: monospace;
+    margin-bottom: $base-spacing;
+}
 
-    .button {
-        border: 0!important;
-    }
+.how-to__command {
+    font-family: monospace;
+    background: rgba(white, .5);
+    padding: $half-spacing + 3px $base-spacing $half-spacing + 3px;
+    border-radius: 5px;
+    color: $black;
+    display: inline-block;
+    line-height: .8;
+}
 
-    .stat {
-        display: block;
-        margin-top: $half-spacing;
-        @include font-size(12px);
-    }
-
-    @include media-query(min, $desk-start) {
-        margin-bottom: 2*$base-spacing;
-
-        .button {
-            padding: 1.5*$half-spacing 1.5*$base-spacing;
-            @include font-size(24px);
-        }
-    }
+.player {
+    display: none;
 }

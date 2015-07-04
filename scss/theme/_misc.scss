@@ -38,17 +38,7 @@ h3 {
     margin-left: auto;
 }
 
-.player {
 
-    font-size: 0;
-
-    border: $half-spacing/2 solid rgba(0,0,0,0.5);
-
-    @include media-query(min, $desk-start) {
-        max-width: 700px;
-        margin: 0 auto;
-    }
-}
 
 .banner {
     padding-top: $half-spacing;

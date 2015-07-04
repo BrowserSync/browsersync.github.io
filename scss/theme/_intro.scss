@@ -27,7 +27,7 @@
     }
 
     @include media-query(min, $desk-start) {
-        padding-top: 2*$base-spacing;
+        padding-top: $base-spacing;
         @include font-size(48px);
     }
 }
@@ -39,6 +39,37 @@
     @include media-query(min, $desk-start) {
         // margin-bottom: 2*$base-spacing;
         @include font-size(20px);
+    }
+}
+
+.video {
+    margin-bottom: $base-spacing;
+}
+
+.video__link {
+    display: inline-block;
+    color: $white;
+
+    &:hover, &:focus {
+
+        color: $white;
+
+        .svg-icon {
+            transform: rotate(360deg)  scale(1.1);
+        }
+    }
+
+    &:active {
+        color: $white;
+        .svg-icon {
+            transform:  rotate(360deg) scale(1);
+        }
+    }
+
+    .svg-icon {
+        transition: all .3s;
+        width: 40px;
+        height: 40px;
     }
 }
 

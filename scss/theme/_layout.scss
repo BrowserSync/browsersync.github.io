@@ -71,7 +71,9 @@
     @include clearfix();
     margin-bottom: $base-spacing;
     position: relative;
-    border: 1px solid red;
+    @include media-query(min, $lap-start) {
+        min-height: 500px;
+    }
 }
 
 .usp__thumb {
@@ -102,6 +104,12 @@
     }
 }
 
+.usp__platforms {
+    margin-top: $base-spacing*2;
+    img {
+        width: 124px;
+    }
+}
 
 // Feature list
 

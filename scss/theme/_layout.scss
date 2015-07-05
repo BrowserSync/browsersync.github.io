@@ -111,60 +111,6 @@
     }
 }
 
-// Feature list
-
-.features {}
-
-.feature {
-    @include clearfix();
-    margin-bottom: $base-spacing;
-}
-
-.feature__thumb {
-    float: left;
-    margin-right: $base-spacing;
-    width: 100px;
-    border-radius: 100%;
-
-    @include media-query(max, $lap-start) {
-        display: none;
-    }
-}
-
-
-
-.feature__content {
-    position: relative;
-    padding-left: 100px;
-    overflow: hidden;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-.feature__title {
-    .svg-icon {
-        color: $red;
-        width: 30px;
-        height: 30px;
-        margin-right: $half-spacing;
-    }
-}
-
-.new {
-    display: inline-block;
-    vertical-align: bottom;
-    margin: 0 3px;
-    padding: 3px 5px;
-    background: #4FA83D;
-    color: white;
-    @include font-size(12px);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 2px;
-}
-
 .support {
     position: relative;
     margin-bottom: $base-spacing;

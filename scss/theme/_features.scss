@@ -6,6 +6,12 @@
     @include media-query(min, $lap-start) {
         margin-top: $base-spacing*3;
     }
+
+    .section-title {
+        margin-bottom: $base-spacing*2;
+        @include media-query(min, $lap-start) {
+        }
+    }
 }
 
 .feature__list {

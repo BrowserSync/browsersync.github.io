@@ -7,15 +7,12 @@
                 <div class="feature__content">
                     <div class="feature__title">
                         {{inc src="icon.hbs" icon=this.icon}}
-                        <h3 class="">{{this.title}} {{#if this.new}}<span class="new">New</span>{{/if}}</h3>
+                        <h3>{{this.title}} {{#if this.new}}<span class="new">New</span>{{/if}}</h3>
                     </div>
                     <p>{{this.tagline}}</p>
                 </div>
             </div>
         {{/each}}
         </div>
-        <aside class="support">
-            <p><strong>Supported browsers:</strong> Chrome, Firefox, Internet Explorer 8+, Safari, Opera, Android, Blackberry, FireFox Mobile, iOS, Opera Mobile, Windows Phone.</p>
-        </aside>
     </div>
 </section>

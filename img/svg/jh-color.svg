@@ -1,0 +1,38 @@
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="1532.5px" height="1532.5px" viewBox="0 0 1532.5 1532.5" enable-background="new 0 0 1532.5 1532.5"
+	 xml:space="preserve">
+<defs>
+</defs>
+<polyline fill="#FFFFFF" points="759.8,787.6 776.1,899.9 821.2,872.1 861.6,857.9 881.6,833.7 888.4,792.8 846.4,772.9
+	819.6,755.6 783.4,751.9 757.7,766.6 "/>
+<g>
+	<defs>
+		<path id="SVGID_1_" d="M931.8,783.7l-189.7-72c-12.2-4.6-20.2,2.1-17.8,14.9l37.4,203.1c2.4,12.8,12.4,16.3,22.3,7.9l152-130
+			C945.9,799.1,944,788.4,931.8,783.7z M797.3,862.7c0,5.8-0.6,10.2-3.4,13.1c-2.3,2.5-5.2,3.8-9.1,3.8c-3.6,0-7.6-0.6-9.6-1.5
+			l-0.9-0.1v-10.4l1.4,0.1c2.5,0.6,3.7,0.7,5.4,0.7c4.5,0,5.2-4.6,5.2-7.3v-69.2h11V862.7z M792.8,779.1c-5,0-9-4-9-9
+			c0-5.1,4-9.3,9-9.3c5.2,0,9.3,4.1,9.3,9.3C802.1,775.2,798,779.1,792.8,779.1z M868.3,849.9h-12v-32.1c0-8.1-2.7-17.9-14.1-17.9
+			c-10.7,0-15.9,9.4-15.9,18.7v31.2h-11v-88h11v37.6c5-6.4,11.5-10.1,20-10.1c7.7,0,13.8,2.6,17.4,7.6c3.2,4.3,4.7,9.3,4.7,17.4
+			V849.9z"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+
+			<image overflow="visible" width="835" height="835" xlink:href="5170E21FA42B2D99.jpg"  transform="matrix(0.4138 0 0 0.4138 648.4655 640.9795)">
+		</image>
+
+			<rect x="876" y="529.8" transform="matrix(0.6372 0.7707 -0.7707 0.6372 1035.1508 -594.0851)" fill="#FA223A" width="545.3" height="545.3"/>
+
+			<rect x="529.8" y="111.2" transform="matrix(0.6372 0.7707 -0.7707 0.6372 586.9542 -479.2012)" fill="#ED1E6F" width="545.3" height="545.3"/>
+
+			<rect x="457.3" y="876" transform="matrix(0.6372 0.7707 -0.7707 0.6372 1150.0347 -145.8885)" fill="#AC1D4E" width="545.3" height="545.3"/>
+
+			<rect x="111.2" y="457.3" transform="matrix(0.6372 0.7707 -0.7707 0.6372 701.8381 -31.0046)" fill="#CE1B6C" width="545.3" height="545.3"/>
+
+			<rect x="385.2" y="860.4" transform="matrix(0.9435 0.3315 -0.3315 0.9435 365.3835 -209.5668)" fill="#941E4D" width="823.6" height="211.9"/>
+	</g>
+</g>
+</svg>

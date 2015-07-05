@@ -1,13 +1,12 @@
 <section class="wrapper features">
     <div class="container">
-        <h2 class="section-title">More features added, still free.</h2>
+        <h3 class="section-title">Awesome Features</h3>
         <ul class="grid lap-2up desk-2up">
         {{#each site.icons}}
             <li class="grid__cell">
                 <div class="feature">
-                    <div class="feature__icon"><svg><use xlink:href="/img/icons/icons.svg#svg-{{this.icon}}"></use></svg></div>
                     <div class="feature__content">
-                        <h3 class="feature__title">{{this.title}} {{#if this.new}}<span class="new">New</span>{{/if}}</h3>
+                        <h3 class="feature__title">{{inc src="icon.hbs" icon=this.icon}}{{this.title}} {{#if this.new}}<span class="new">New</span>{{/if}}</h3>
                         <p>{{this.tagline}}</p>
                     </div>
                 </div>

@@ -70,6 +70,9 @@ videos:
   main: "http://quick.as/embed/az3sxrb"
 
 icons:
+  - title:   "Install and run anywhere"
+    icon:    "check"
+    tagline: "Built on Node.js to support Windows, MacOS and Linux. Setup in less than 5 minutes."
   - title:   "Interaction sync"
     icon:    "merge"
     tagline: "Your scroll, click, refresh and form actions are mirrored between browsers while you test."
@@ -105,9 +108,6 @@ icons:
   - title:   "Serve any local site"
     icon:    "book"
     tagline: "Ready to use with websites running on PHP, ASP, Rails and more. Great with static files too."
-  - title:   "Install and run anywhere"
-    icon:    "check"
-    tagline: "Built on Node.js to support Windows, MacOS and Linux. Setup in less than 5 minutes."
   - title:   "Free to run and reuse"
     icon:    "creative-commons-noncommercial-us"
     tagline: "Browsersync is an open source project available to use under the Apache 2.0 License."

@@ -59,7 +59,7 @@
         margin-bottom: 2*$base-spacing;
         padding-top: $base-spacing;
         font-weight: normal;
-        @include font-size(36px);
+        @include font-size(26px);
     }
 }
 
@@ -143,17 +143,14 @@
     }
 }
 
-.feature__icon {
-    position: absolute;
-    //background: red;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    @include font-size(45px);
+.feature__title {
+    .svg-icon {
+        color: $red;
+        width: 30px;
+        height: 30px;
+        margin-right: $half-spacing;
+    }
 }
-
-
-.feature__title {}
 
 .new {
     display: inline-block;

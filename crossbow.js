@@ -9,11 +9,16 @@ module.exports = {
         "bs-config": {
             server: true
         },
-        tasks: {
+        default: {
             "img/svg/*.svg": ["icons", "bs:reload"],
-            "scss/**": ["sass", "bs:reload:core.min.css"],
-            "_src/**": ["crossbow", "bs:reload"]
-        }
+            "scss/**": ["sass", "bs:reload:core.min.css"]
+        },
+        "crossbow": [
+            {
+                patterns: ["_src/**", "*.yml"],
+                tasks: ["crossbow", "bs:reload"]
+            }
+        ]
     },
     config: {
         "sass": {

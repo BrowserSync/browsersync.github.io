@@ -1,17 +1,7 @@
 // Feature list
 
 .features {
-    margin-top: $base-spacing;
-
-    @include media-query(min, $lap-start) {
-        margin-top: $base-spacing*3;
-    }
-
-    .section-title {
-        margin-bottom: $base-spacing*2;
-        @include media-query(min, $lap-start) {
-        }
-    }
+    @include home-section;
 }
 
 .feature__list {

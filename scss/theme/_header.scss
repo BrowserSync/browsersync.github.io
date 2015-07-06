@@ -53,8 +53,8 @@
     display: none;
     @include media-query(min, $lap-start) {
         display: inline-block;
-        width:  140px;
-        height: 140px;
+        width:  160px;
+        height: 160px;
     }
 }
 

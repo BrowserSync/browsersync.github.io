@@ -1,3 +1,12 @@
+@mixin home-section {
+    padding-top: $base-spacing*2;
+    padding-bottom: $base-spacing*2;
+
+    @include media-query(min, $lap-start) {
+        padding-top: $base-spacing*3;
+        padding-bottom: $base-spacing*3;
+    }
+}
 
 @mixin clearfix {
     &:before,

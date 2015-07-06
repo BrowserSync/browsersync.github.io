@@ -14,7 +14,8 @@
 
     @include media-query(min, $lap-start) {
         margin-top: -$header-height;
-        padding-top: $header-height*1.5;
+        padding-top: $header-height*2;
+        padding-bottom: $base-spacing*3;
         margin-bottom: $base-spacing*3;
     }
 }
@@ -29,19 +30,16 @@
     }
 
     @include media-query(min, $desk-start) {
-        padding-top: $base-spacing;
+        padding-top: $base-spacing*1.5;
         @include font-size(48px);
     }
 }
 
 .ronseal {
     margin: 0 auto $base-spacing;
-    @include font-size(18px);
-
-    @include media-query(min, $desk-start) {
-        // margin-bottom: 2*$base-spacing;
-        @include font-size(20px);
-    }
+    font-style: italic;
+    font-weight: bold;
+    @include font-size(20px);
 }
 
 .video {

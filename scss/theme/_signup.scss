@@ -8,7 +8,7 @@
 
     @include media-query(min, $lap-start) {
         padding-top: $base-spacing*4;
-        padding-bottom: $base-spacing*4;
+        padding-bottom: $base-spacing*3;
     }
 }
 
@@ -33,6 +33,7 @@
         flex: 1;
         margin-right: 2%;
         background: none;
+        color: $white;
         border: 2px solid $white;
         @include media-query(min, $lap-start) {
             max-width: 200px;
@@ -40,5 +41,21 @@
     }
     .form__submit {
 
+    }
+}
+
+.signup__links {
+    font-size: 0;
+    margin-top: $half-spacing;
+    a {
+        display: inline-block;
+        color: $white;
+        font-size: 30px;
+        margin: 0 $half-spacing/3;
+        padding: $half-spacing;
+        border-radius: 3px;
+        &:hover {
+            color: $red;
+        }
     }
 }

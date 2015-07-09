@@ -1,9 +1,13 @@
-<footer class="wrapper wrapper--dark signup" role="contentinfo">
+<footer class="wrapper signup" role="contentinfo">
     <div class="container">
         <p class="signup__title">Stay up to date with the latest features</p>
         <div class="signup__form">
             <input type="text" placeholder="email..." class="input input--text form__email"/>
             <input type="button" value="Signup" class="button button--primary form__submit"/>
+        </div>
+        <div class="signup__links">
+            <a href="{{site.links.source}}" title="Browsersync on Github">{{inc src="icon.hbs" icon="github" class=""}}</a>
+            <a href="{{site.links.twitter}}" title="@Browsersync on Twitter">{{inc src="icon.hbs" icon="twitter" class=""}}</a>
         </div>
     </div>
 </footer><!-- end .site-footer -->

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "The Browsersync website",
   "scripts": {
-    "start": "gulp",
+    "start": "crossbow watch",
     "build": "gulp build",
     "test": "gulp build"
   },
@@ -19,6 +19,7 @@
     "browser-sync": "git://github.com/browsersync/browser-sync",
     "bs-recipes": "git://github.com/BrowserSync/recipes.git",
     "crossbow": "^0.4.5",
+    "crossbow-cli": "^1.1.10",
     "crossbow-sass": "^1.1.4",
     "easy-svg": "^1.0.5",
     "gulp": "^3.8.10",

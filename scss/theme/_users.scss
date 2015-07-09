@@ -40,7 +40,6 @@
 }
 
 .user__person {
-    border: 1px solid red;
     padding-left: 70px;
     position: relative;
     @include media-query(min, $lap-start) {

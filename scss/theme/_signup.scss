@@ -1,0 +1,44 @@
+.signup {
+    background: url('../img/bg.jpg') no-repeat;
+    background-size: cover;
+    color: $white;
+    text-align: center;
+    padding-top: $base-spacing*3;
+    padding-bottom: $base-spacing*3;
+
+    @include media-query(min, $lap-start) {
+        padding-top: $base-spacing*4;
+        padding-bottom: $base-spacing*4;
+    }
+}
+
+.signup__title {
+    @include font-size(24px);
+    margin-bottom: $base-spacing;
+    @include media-query(min, $lap-start) {
+        @include font-size(36px);
+    }
+}
+
+.signup__form {
+    display: flex;
+    justify-content: center;
+
+    @include media-query(min, $lap-start) {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .form__email {
+        flex: 1;
+        margin-right: 2%;
+        background: none;
+        border: 2px solid $white;
+        @include media-query(min, $lap-start) {
+            max-width: 200px;
+        }
+    }
+    .form__submit {
+
+    }
+}

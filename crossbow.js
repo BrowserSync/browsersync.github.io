@@ -7,7 +7,9 @@ module.exports = {
     },
     watch: {
         "bs-config": {
-            server: true
+            server: true,
+            tunnel: true,
+            ghostMode: false
         },
         default: {
             "img/svg/*.svg": ["icons", "bs:reload"],

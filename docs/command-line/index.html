@@ -28,23 +28,43 @@
 
 <body id="page-top">
 
-<header class="wrapper site-header alt" role="banner">
+<header class="wrapper site-header" role="banner">
     <div class="container">
-        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
-        <ul class="nav--inline docs-nav">
-            <li><a href="/docs/gulp" >+ Gulp</a></li>
-            <li><a href="/docs/grunt" >+ Grunt</a></li>
-            <li><a href="/docs/api" >API</a></li>
-            <li><a href="/docs/command-line" class="active">Command line</a></li>
-            <li><a href="/docs/options" >Options</a></li>
-            <li><a href="/docs/recipes" >Recipes</a></li>
-            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
-        </ul>
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item logo">
+                    <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-logo"></use></svg>
+ Browsersync</a>
+                </li>
+                <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
+                <li class="nav__item nav__item--right">
+                    <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+                    <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </header><!-- .end .site-header -->
 
 
 <div class="site-body" role="main">
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                    <li class="fixed-nav__item"><a class="nav-link" href="/docs/gulp" >+ Gulp</a></li>
+                    <li class="fixed-nav__item"><a class="nav-link" href="/docs/grunt" >+ Grunt</a></li>
+                    <li class="fixed-nav__item"><a class="nav-link" href="/docs/api" >API</a></li>
+                    <li class="fixed-nav__item"><a class="nav-link" href="/docs/command-line" class="active">Command line</a></li>
+                    <li class="fixed-nav__item"><a class="nav-link" href="/docs/options" >Options</a></li>
+                    <li class="fixed-nav__item"><a class="nav-link" href="/docs/recipes" >Recipes</a></li>
+                    <li class="fixed-nav__item"><a class="nav-link" href="/docs/http-protocol" >HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
@@ -341,12 +361,12 @@ $ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --
     <div class="container">
         <nav>
             <ul class="site-nav">
-                    <li class="nav__item"><a href="/docs">Documentation</a></li>
-                    <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync">Source Code</a></li>
-                <li class="nav__item"><a href="">Contributions</a></li>
+                <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
                 <li class="nav__item credit__thumb">
                     <span>An open source project by</span>
-                    <a href="http://www.wearejh.com/"><img src="/img/jh-logo-white.png" alt="JH"/></a>
+                    <a href="http://www.wearejh.com/" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
                 </li>
             </ul>
         </nav>

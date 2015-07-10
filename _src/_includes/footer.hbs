@@ -17,12 +17,12 @@
         <nav>
             <ul class="site-nav">
                 {{#each site.navigation}}
-                    <li class="nav__item"><a href="{{this.url}}">{{ this.label }}</a></li>
+                <li class="nav__item"><a href="{{this.url}}" class="nav-link">{{ this.label }}</a></li>
                 {{/each}}
-                <li class="nav__item"><a href="">Contributions</a></li>
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
                 <li class="nav__item credit__thumb">
                     <span>An open source project by</span>
-                    <a href="{{site.links.jh}}"><img src="/img/jh-logo-white.png" alt="JH"/></a>
+                    <a href="{{site.links.jh}}" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
                 </li>
             </ul>
         </nav>

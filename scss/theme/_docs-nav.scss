@@ -1,0 +1,23 @@
+.docs-nav {
+    background: $navy;
+}
+
+.fixed-nav {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+
+    .nav-link {
+        height: 50px;
+        line-height: 50px;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.fixed-nav__item {
+    a {
+        color: $white;
+    }
+}

@@ -24,9 +24,10 @@
     font-size: 0;
     padding-top: $base-spacing;
     a {
+        color: $white;
         margin: 0 $half-spacing;
         &:hover {
-            color: lighten($red, 10%);
+            color: $red;
         }
     }
     .svg-icon {

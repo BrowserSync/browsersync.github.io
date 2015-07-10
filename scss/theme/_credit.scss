@@ -1,0 +1,49 @@
+.credit {
+    background: $navy;
+    //padding-top: $base-spacing;
+    //padding-bottom: $base-spacing;
+
+    .nav__item.logo {
+        position: relative;
+        top: 2px;
+    }
+
+    .site-nav {
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+.credit__thumb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 70px;
+
+    @include media-query(min, $lap-start) {
+        width: auto;
+        flex: 1;
+        justify-content: flex-end;
+    }
+    span {
+        color: $white;
+        display: inline-block;
+    }
+    a {
+        height: 100%;
+        padding: $half-spacing/2 $half-spacing/2 4px;
+        margin-left: $half-spacing;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+    img {
+        height: 60px;
+    }
+}
+
+.credit__content {
+    @include media-query(min, $lap-start) {
+        overflow: hidden;
+    }
+}

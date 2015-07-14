@@ -49,7 +49,6 @@ $spacing: $base-spacing+$half-spacing;
 
     @media (min-width: $lap-start) {
         border-radius: 5px;
-        border: 1px solid $silver;
         padding: $spacing $spacing 0;
     }
 
@@ -73,7 +72,6 @@ $spacing: $base-spacing+$half-spacing;
 
 .code-example {
 
-    background: #F2F2F2;
     padding-top: 0;
 
     h2 {

@@ -31,3 +31,15 @@ $spacing: $base-spacing + $half-spacing;
         width: 65%;
     }
 }
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.one-half {
+    width: 100%;
+    @include media-query(min, $lap-start) {
+        width: 50%;
+    }
+}

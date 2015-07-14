@@ -35,23 +35,10 @@ $small-nav-height: $header-height - 30px;
 
     .nav-link {
         position: relative;
-        &:after {
-            transition: all .3s;
-            content: "";
-            width: 0;
-            height: 1px;
-            background: $red;
-            position: absolute;
-            bottom: 0px;
-            left: 0;
-        }
         &:hover, &:focus {
             color: $white;
             background: rgba(white, .1);
             text-decoration: none;
-            &:after {
-                width: 100%;
-            }
         }
     }
 

@@ -13,7 +13,7 @@ code, samp {
 pre {
 
     padding: $base-spacing;
-    line-height: 1;
+    line-height: 1.4;
     background: $code-bg;
 
     /* reset previous inline code styles */
@@ -24,18 +24,20 @@ pre {
     }
 
     margin-bottom: $base-spacing;
-    margin-left: -$half-spacing;
-    margin-right: -$half-spacing;
-    border: 5px solid darken($code-bg, 2%);
-    border-left-width: 0;
-    border-right-width: 0;
+    //margin-left: -$half-spacing;
+    //margin-right: -$half-spacing;
+    border: 1px solid #E8E8E8;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 
     @include media-query(min, $lap-start) {
 
         margin-left: 0;
+        margin-right: 0;
         //margin-right: -($base-spacing*1.5);
-        border-left-width: 5px;
-        border-right-width: 5px;
+        //border-left-width: 5px;
+        //border-right-width: 5px;
     }
 }
 
@@ -106,13 +108,6 @@ pre {
             @include font-size(20px);
             margin-left: $half-spacing/2;
         }
-    }
-
-    h4 {
-        font-weight: normal;
-        @include font-size(20px);
-        color: $teal;
-        margin-bottom: $base-spacing;
     }
 
     &.docs {
@@ -239,5 +234,31 @@ pre {
 
     @include media-query(min, $lap-start) {
         top: $base-spacing * 2;
+    }
+}
+
+.highlight-header {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    height: 28px;
+    background: #E7E7E7;
+    padding-left: $half-spacing;
+    position: relative;
+    display: flex;
+
+    .circle {
+        margin: auto 0;
+        width: 12px;
+        height: 12px;
+        background: $white;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+
+    .svg-icon {
+        color: #a4a4a4;
+        position: absolute;
+        right: $half-spacing;
+        top: $half-spacing/2;
     }
 }

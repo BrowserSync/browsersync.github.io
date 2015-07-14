@@ -18,7 +18,7 @@
   "devDependencies": {
     "browser-sync": "git://github.com/browsersync/browser-sync",
     "bs-recipes": "git://github.com/BrowserSync/recipes.git",
-    "crossbow": "^0.4.5",
+    "crossbow": "^0.4.6",
     "crossbow-cli": "^1.1.10",
     "crossbow-sass": "^1.1.4",
     "easy-svg": "^1.0.5",

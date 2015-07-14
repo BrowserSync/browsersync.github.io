@@ -39,31 +39,6 @@ pre {
     }
 }
 
-$spacing: $base-spacing+$half-spacing;
-
-.doc-wrapper {
-
-    background: $white;
-    padding: $half-spacing;
-    border-radius: 0px;
-
-    @media (min-width: $lap-start) {
-        border-radius: 5px;
-        padding: $spacing $spacing 0;
-    }
-
-    .page-title {
-
-        @include font-size(20px);
-
-        @media (min-width: $lap-start) {
-            @include font-size(34px);
-            margin-bottom: $base-spacing;
-            padding-bottom: $half-spacing;
-            border-bottom: 1px dashed $silver;
-        }
-    }
-}
 
 .section-link {
     padding-bottom: $half-spacing;
@@ -205,19 +180,64 @@ $spacing: $base-spacing+$half-spacing;
 }
 
 .page-anchor {
+
     color: $navy;
-    .icon {
-        color: darken($lime, 10%);
-        position: relative;
-        top: 1px;
+    position: relative;
+    font-weight: normal;
+
+    &:after {
+        transition: all .3s;
+        content: "";
+        width: 0;
+        height: 1px;
+        background: $navy;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+        text-decoration: none;
+    }
+}
+
+
+.page-title {
+
+    @include font-size(20px);
+    font-weight: normal;
+
+    @media (min-width: $lap-start) {
+        @include font-size(34px);
+        margin-bottom: $base-spacing;
+        padding-bottom: $half-spacing;
+        border-bottom: 1px dashed $silver;
     }
 }
 
 .color-teal {
-    color: $teal;
+    //color: $teal;
 }
 
 .subprops {
     margin-top: $half-spacing;
     padding-left: $half-spacing;
+}
+
+.back-to-top {
+    font-weight: normal;
+    @include font-size(14px);
+    position: absolute;
+    top: $base-spacing - 5px;
+    right: 0;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    @include media-query(min, $lap-start) {
+        top: $base-spacing * 2;
+    }
 }

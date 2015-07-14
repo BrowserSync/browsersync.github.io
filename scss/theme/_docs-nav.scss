@@ -17,8 +17,11 @@
     .nav-link {
         height: 50px;
         line-height: 50px;
-        &:hover {
-            border-bottom: 0;
+
+        &:hover, &:focus {
+            color: $white;
+            background: rgba(white, .1);
+            text-decoration: none;
         }
     }
 }
@@ -32,5 +35,42 @@
     }
     a {
         color: $white;
+    }
+}
+
+.sticky-nav {
+    border-radius: 3px;
+    padding: $half-spacing;
+    border: 1px solid #ECECEC;
+    border-top: 3px solid $red;
+}
+
+.sticky-nav__items {
+    list-style: none;
+    margin-bottom: 0;
+
+    .sticky-nav__item {
+        &:last-child {
+            .nav-link {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+.sticky-nav__item {
+
+    list-style: none;
+
+    .nav-link {
+        color: $navy;
+        width: 100%;
+        height: auto;
+        padding: $half-spacing 0;
+        @include media-query(min, $lap-start) {
+            padding: $half-spacing/3 0;
+        }
+        border-bottom: 1px solid #f9f9f9;
+        position: relative;
     }
 }

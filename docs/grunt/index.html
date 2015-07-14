@@ -67,20 +67,7 @@
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Jump to...</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-                        <li><a href="#grunt-install">Install</a></li>
-                        <li><a href="#grunt-server">Static File Server</a></li>
-                        <li><a href="#grunt-proxy">Proxy</a></li>
-                        <li><a href="#grunt-watch">+ other watch tasks</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">Browsersync + Grunt.js</h1>
                 <p>We have an <a href="https://github.com/shakyShane/grunt-browser-sync">official Plugin</a> for Grunt that makes it easy to incorporate
                 Browsersync into your development workflow. Below are a few examples of common configurations to get you started - use them
@@ -186,29 +173,25 @@
 };</code></pre>
 
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="sticky-nav">
+                    <p class="lede">Jump to...</p>
+                    <ul class="sticky-nav__items" id="sticky-nav">
+                        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                        <li class="sticky-nav__item"><a class="nav-link" href="#grunt-install">Install</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#grunt-server">Static File Server</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#grunt-proxy">Proxy</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#grunt-watch">+ other watch tasks</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
 <footer class="wrapper signup" role="contentinfo">

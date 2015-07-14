@@ -67,21 +67,7 @@
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Jump to...</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-                        <li><a href="#command-line-options">Options</a></li>
-                        <li><a href="#files-example">Files Examples</a></li>
-                        <li><a href="#server-example">Server Examples</a></li>
-                        <li><a href="#proxy-example">Proxy Examples</a></li>
-                        <li><a href="#watching-files-example">Watching files + Server</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">Browsersync Command Line Usage</h1>
                 <p>For <strong>tinkering</strong> or quick examples and playing around, the command-line usage can be quite helpful.
                 After install Browsersync globally, you can run it like this:</p>
@@ -315,29 +301,26 @@ $ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --
 </code></pre>
 
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="sticky-nav">
+                    <p class="lede">Jump to...</p>
+                    <ul class="sticky-nav__items" id="sticky-nav">
+                        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                        <li class="sticky-nav__item"><a class="nav-link" href="#command-line-options">Options</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#files-example">Files Examples</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#server-example">Server Examples</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#proxy-example">Proxy Examples</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#watching-files-example">Watching files + Server</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
 <footer class="wrapper signup" role="contentinfo">

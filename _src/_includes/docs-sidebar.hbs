@@ -1,11 +1,8 @@
 <div class="sticky-nav">
     <p class="lede">Sections</p>
-    <ul class="nav nav--stacked" id="sticky-nav">
-        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-
-        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+    <ul class="sticky-nav__items" id="sticky-nav">
         {{#loop site.docs-navigation}}
-            <li><a href="{{ this.url }}">{{this.label}}</a></li>
+            <li class="sticky-nav__item"><a class="nav-link" href="{{ this.url }}">{{this.label}}</a></li>
         {{/loop}}
         {{#loop site.docs.api}}
         {{/loop}}

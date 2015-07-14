@@ -67,26 +67,7 @@
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Sections</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-
-                        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
-                            <li><a href="/docs/gulp">+ Gulp</a></li>
-                            <li><a href="/docs/grunt">+ Grunt</a></li>
-                            <li><a href="/docs/api">API</a></li>
-                            <li><a href="/docs/command-line">Command line</a></li>
-                            <li><a href="/docs/options">Options</a></li>
-                            <li><a href="/docs/recipes">Recipes</a></li>
-                            <li><a href="/docs/http-protocol">HTTP Protocol</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">HTTP Protocol</h1>
                 <p class="lede warning"><b>NOTE:</b> Requires at least v2.6.0</p>
 
@@ -108,29 +89,27 @@
 </code></pre>
 
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="sticky-nav">
+                    <p class="lede">Sections</p>
+                    <ul class="sticky-nav__items" id="sticky-nav">
+                            <li class="sticky-nav__item"><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="/docs/api">API</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="/docs/options">Options</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
 <footer class="wrapper signup" role="contentinfo">

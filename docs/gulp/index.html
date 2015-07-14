@@ -67,22 +67,7 @@
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Jump to...</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-                        <li><a href="#gulp-install">Install</a></li>
-                        <li><a href="#gulp-sass-css">SASS + CSS Injecting</a></li>
-                        <li><a href="#gulp-sass-maps">SASS & Source Maps</a></li>
-                        <li><a href="#gulp-reload">Browser Reloading</a></li>
-                        <li><a href="#gulp-manual-reload">Manual Reloading</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">Browsersync + Gulp.js</h1>
                 <p>There&#39;s no official Browsersync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise
                 the <a href="/docs/api">API</a> and configure it with <a href="/docs/options">options</a>. The following are some common
@@ -262,29 +247,26 @@ gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function">
     gulp.watch(<span class="hljs-string">"*.html"</span>).on(<span class="hljs-string">"change"</span>, browserSync.reload);
 });</code></pre>
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="sticky-nav">
+                    <p class="lede">Jump to...</p>
+                    <ul class="sticky-nav__items" id="sticky-nav">
+                        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                        <li class="sticky-nav__item"><a class="nav-link" href="#gulp-install">Install</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#gulp-sass-css">SASS + CSS Injecting</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#gulp-sass-maps">SASS & Source Maps</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#gulp-reload">Browser Reloading</a></li>
+                        <li class="sticky-nav__item"><a class="nav-link" href="#gulp-manual-reload">Manual Reloading</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
 <footer class="wrapper signup" role="contentinfo">

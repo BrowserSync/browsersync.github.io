@@ -12,16 +12,8 @@ $small-nav-height: $header-height - 30px;
         transform: scale(0.98);
     }
 
-    @include media-query(min, $lap-start) {
-        height: $header-height;
-        line-height: $header-height;
-    }
-
-    &:hover, &:focus {
-        color: $white;
-        background: rgba(white, .1);
-        text-decoration: none;
-        border-bottom: 1px solid $red;
+    &.mono {
+        font-family: monospace;
     }
 }
 
@@ -41,8 +33,34 @@ $small-nav-height: $header-height - 30px;
         }
     }
 
+    .nav-link {
+        position: relative;
+        &:after {
+            transition: all .3s;
+            content: "";
+            width: 0;
+            height: 1px;
+            background: $red;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+        }
+        &:hover, &:focus {
+            color: $white;
+            background: rgba(white, .1);
+            text-decoration: none;
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+
     @include media-query(min, $lap-start) {
         margin-right: 0;
+        .nav-link {
+            height: $header-height;
+            line-height: $header-height;
+        }
     }
 }
 

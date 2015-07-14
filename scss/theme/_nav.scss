@@ -35,6 +35,12 @@ $small-nav-height: $header-height - 30px;
     margin-right: $half-spacing/2;
     border-bottom: rgba(white, 0);
 
+    &.active {
+        .nav-link {
+            font-weight: bold;
+        }
+    }
+
     @include media-query(min, $lap-start) {
         margin-right: 0;
     }

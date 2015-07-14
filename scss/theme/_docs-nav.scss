@@ -3,8 +3,15 @@
 }
 
 .fixed-nav {
+    border-top: 1px solid lighten($navy, 10%);
+
+    @include media-query(min, $lap-start) {
+        border-top: 0;
+    }
     list-style: none;
-    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 0;
 
     .nav-link {
@@ -17,6 +24,12 @@
 }
 
 .fixed-nav__item {
+    display: inline-block;
+    &.active {
+        .nav-link {
+            font-weight: bold;
+        }
+    }
     a {
         color: $white;
     }

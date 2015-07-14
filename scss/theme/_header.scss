@@ -30,18 +30,14 @@
 
     a {
         position: relative;
-        top: -2px;
         height: $header-height;
-        line-height: $header-height;
+        line-height: $header-height - 4px;
     }
 
     .svg-icon {
         position: relative;
         top: -2px;
         margin-right: $half-spacing/2;
-        @include media-query(min, $lap-start) {
-            display: none;
-        }
     }
 
     @include media-query(min, $lap-start) {

@@ -2,9 +2,7 @@
     <div class="container">
         <ul class="fixed-nav">
             {{#each site.docs-navigation}}
-                <li class="fixed-nav__item"><a class="nav-link" href="{{this.url}}" {{#current this
-                .url}}class="active"{{/current}}>{{
-                this.label}}</a></li>
+            <li class="fixed-nav__item {{#current this.url}}active{{/current}}"><a class="nav-link" href="{{this.url}}">{{this.label}}</a></li>
             {{/each}}
         </ul>
     </div>

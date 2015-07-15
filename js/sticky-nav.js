@@ -31,6 +31,7 @@ function unstick () {
         return;
     }
     docNav.classList.remove('sticky');
+    docNav.classList.remove('open');
     stuck = false;
 }
 
@@ -57,9 +58,28 @@ function listenResize () {
     });
 }
 
+function listenNavOpen () {
+    var elem = $('.nav-expand');
+    elem.addEventListener('click', function () {
+        docNav.classList.toggle('open');
+    });
+    var elem = $('.sticky-nav__items');
+    elem.addEventListener('click', function (evt) {
+        if (evt.target.parentNode.classList.contains('sticky-nav__item')) {
+            console.log('here');
+            unstick();
+        }
+    });
+}
+
+function listenNavClick () {
+
+}
 export default function () {
     setElems();
     setVars();
     listenScroll();
     listenResize();
+    listenNavOpen();
+    listenNavClick();
 }

@@ -1,9 +1,17 @@
-<div class="sticky-nav">
-    <p class="lede">Jump to...</p>
-    <ul class="sticky-nav__items" id="sticky-nav">
-        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
-        {{#loop options}}
-        <li class="sticky-nav__item"><a class="nav-link mono" href="#option-{{this.name}}">{{this.name}}</a></li>
-        {{/loop}}
-    </ul>
+<div class="doc-nav">
+    <span class="nav-expand">
+        <span class="line1"></span>
+        <span class="line2"></span>
+        <span class="line3"></span>
+    </span>
+
+    <div class="sticky-nav">
+        <p class="lede">Jump to...</p>
+        <ul class="sticky-nav__items" id="sticky-nav">
+            <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+            {{#loop options}}
+                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-{{this.name}}">{{this.name}}</a></li>
+            {{/loop}}
+        </ul>
+    </div>
 </div>

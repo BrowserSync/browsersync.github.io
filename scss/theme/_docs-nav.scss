@@ -41,20 +41,27 @@
 .sticky-nav {
     border-radius: 3px;
     padding: $half-spacing;
-    background: rgba($white, .9);
+    background: rgba($white, .99);
     border: 1px solid #ECECEC;
     border-top: 3px solid $red;
     opacity: 0;
     visibility: hidden;
-    position: fixed;
     width: 100%;
+    transition: all .3s;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .open & {
+        opacity: 1;
+        visibility: visible;
+        max-height: 80vh;
+    }
 
     @include media-query(min, $lap-start) {
         position: relative;
         opacity: 1;
         visibility: visible;
     }
-    //transform: translateX(-100%);
 }
 
 .sticky-nav__items {
@@ -118,8 +125,10 @@
     border: 3px solid $navy;
     border-radius: 50%;
     position: absolute;
-    right: 0;
+    right: $half-spacing;
+    top: $half-spacing;
     background: rgba($white, .9);
+    z-index: 1;
 
     @include media-query(min, $lap-start) {
         display: none;
@@ -139,7 +148,26 @@
         display: block;
         background: $navy;
         left: 11px;
-        //border-radius: 50%;
+        transition: all .3s;
+
+        .open & {
+            background: $red;
+        }
+    }
+
+    .open & {
+        border-color: $red;
+        .line2 {
+            opacity: 0;
+        }
+        .line1 {
+            top: 20px;
+            transform: rotate(45deg);
+        }
+        .line3 {
+            top: 21px;
+            transform: rotate(135deg);
+        }
     }
 
     .line1 {

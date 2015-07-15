@@ -66,6 +66,7 @@ function unstick() {
         return;
     }
     docNav.classList.remove('sticky');
+    docNav.classList.remove('open');
     stuck = false;
 }
 
@@ -92,11 +93,29 @@ function listenResize() {
     });
 }
 
+function listenNavOpen() {
+    var elem = (0, _$2['default'])('.nav-expand');
+    elem.addEventListener('click', function () {
+        docNav.classList.toggle('open');
+    });
+    var elem = (0, _$2['default'])('.sticky-nav__items');
+    elem.addEventListener('click', function (evt) {
+        if (evt.target.parentNode.classList.contains('sticky-nav__item')) {
+            console.log('here');
+            unstick();
+        }
+    });
+}
+
+function listenNavClick() {}
+
 exports['default'] = function () {
     setElems();
     setVars();
     listenScroll();
     listenResize();
+    listenNavOpen();
+    listenNavClick();
 };
 
 module.exports = exports['default'];

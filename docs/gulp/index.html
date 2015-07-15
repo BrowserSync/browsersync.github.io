@@ -69,10 +69,13 @@
         <article class="doc-wrapper">
             <div class="three-quarters">
                 <h1 class="page-title">Browsersync + Gulp.js</h1>
+                
+
                 <p>There&#39;s no official Browsersync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise
                 the <a href="/docs/api">API</a> and configure it with <a href="/docs/options">options</a>. The following are some common
                 use-cases as seen in popular projects such as <a href="https://developers.google.com/web/starter-kit/">Google&#39;s web starter kit</a>
                 and many others.</p>
+
                 <h3 id="gulp-install" class="section-link">
                     <a href="#gulp-install" class="page-anchor">Install</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
@@ -80,10 +83,12 @@
 
 
                 <p>First, you&#39;ll need to install Browsersync &amp; Gulp as development dependencies.</p>
-<pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre></div>
 
 <p>Then, use them within your <code>gulpfile.js</code>:</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 
 <span class="hljs-comment">// Static server</span>
@@ -101,7 +106,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
     browserSync.init({
         proxy: <span class="hljs-string">"yourlocal.dev"</span>
     });
-});</code></pre>
+});</code></pre></div>
 
                 <h3 id="gulp-sass-css" class="section-link">
                     <a href="#gulp-sass-css" class="page-anchor">SASS + CSS Injecting</a>
@@ -112,7 +117,8 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
                 <p>Streams are supported in Browsersync, so you can call reload at specific points during your tasks and
                 all browsers will be informed of the changes. Because Browsersync only cares about your CSS when it&#39;s
                 <em>finished</em> compiling - make sure you call <code>.stream()</code> <em>after</em> <code>gulp.dest</code></p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sass'</span>);
 
@@ -136,7 +142,7 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
 });
 
 gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'serve'</span>]);
-</code></pre>
+</code></pre></div>
 
                 <h3 id="gulp-sass-maps" class="section-link">
                     <a href="#gulp-sass-maps" class="page-anchor">Ruby SASS &amp; Source Maps</a>
@@ -148,7 +154,8 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
                 files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
                 a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
                 <p>To fix this problem, use <code>browserSync.stream({match: &#39;**/*.css&#39;})</code> as seen in the following example.</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-ruby-sass"</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
@@ -178,7 +185,7 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
         }))
         .pipe(browserSync.stream({match: <span class="hljs-string">'**/*.css'</span>}));
 });
-</code></pre>
+</code></pre></div>
 
                 <h3 id="gulp-reload" class="section-link">
                     <a href="#gulp-reload" class="page-anchor">Browser Reloading</a>
@@ -189,7 +196,8 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
                 <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), but
                 you want the reload to happen <em>after</em> your tasks. This will be easier in gulp <code>4.x.x</code>, but for now you can do the following:
                 (make sure you <code>return</code> the stream from your tasks to ensure that <code>browserSync.reload()</code> is called at the correct time.</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 
 <span class="hljs-comment">// process JS files and return the stream.</span>
@@ -217,7 +225,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
     <span class="hljs-comment">// add browserSync.reload to the tasks array to make</span>
     <span class="hljs-comment">// all browsers reload after tasks are complete.</span>
     gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js-watch'</span>]);
-});</code></pre>
+});</code></pre></div>
 
                 <h3 id="gulp-manual-reload" class="section-link">
                     <a href="#gulp-manual-reload" class="page-anchor">Manual Reloading</a>
@@ -228,7 +236,8 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
                 <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually
                 by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are
                 changed, the browsers will be reloaded instead.</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 <span class="hljs-keyword">var</span> reload      = browserSync.reload;
 
@@ -245,7 +254,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function">
     });
 
     gulp.watch(<span class="hljs-string">"*.html"</span>).on(<span class="hljs-string">"change"</span>, browserSync.reload);
-});</code></pre>
+});</code></pre></div>
             </div>
             <div class="one-quarter">
 

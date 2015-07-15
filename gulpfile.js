@@ -8,7 +8,7 @@ var yaml         = require('js-yaml');
 var promseq      = require('prom-seq');
 var bs           = browserSync.create();
 
-var buildall     = promseq.create([yuidocs, buildDocs, crossbowBuild]);
+var buildall     = promseq.create([yuidocs, buildDocs]);
 
 var docsPaths = {
     index: "./node_modules/browser-sync/index.js",

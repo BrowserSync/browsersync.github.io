@@ -12,9 +12,9 @@ function crossbowBuild (deferred, resolved, ctx) {
                 base: ctx.get('config.crossbow.base'),
                 prettyUrls: true,
                 highlight: {
-                    //postProcess: function (highlighted, lang) {
-                    //    return '<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div>%s</div>'.replace('%s', highlighted);
-                    //}
+                    postProcess: function (highlighted, lang) {
+                        return '<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div>%s</div>'.replace('%s', highlighted);
+                    }
                 }
             },
             data: {

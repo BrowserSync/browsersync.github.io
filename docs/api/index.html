@@ -81,7 +81,7 @@
                 Previously we allowed methods to be called directly on the module export like this:
                 </p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);
 
 <span class="hljs-comment">// Start the server</span>
@@ -89,13 +89,13 @@ browserSync({server: <span class="hljs-string">"./app"</span>});
 
 <span class="hljs-comment">// Call methods like reload</span>
 browserSync.reload(<span class="hljs-string">"core.css"</span>);
-</code></pre>
+</code></pre></div>
                 <p><strong>Post 2.0.0 syntax (recommended)</strong><br/>
                 Whilst the above is still supported, we now recommend the following instead. Calling <code>.create()</code> means you get
                 a unique reference & allows you to create multiple servers or proxies.
                 </p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// .init starts the server</span>
@@ -106,7 +106,7 @@ bs.init({
 <span class="hljs-comment">// Now call methods on bs instead of the</span>
 <span class="hljs-comment">// main browserSync module export</span>
 bs.reload(<span class="hljs-string">"*.html"</span>);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-create" class="section-link">
@@ -127,7 +127,7 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// create an unnamed instance</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// create an unnamed instance</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// create a named instance</span>
@@ -136,7 +136,7 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
 
 <span class="hljs-comment">// create multiple</span>
 <span class="hljs-keyword">var</span> bs1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 1'</span>);
-<span class="hljs-keyword">var</span> bs2 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 2'</span>);</code></pre>
+<span class="hljs-keyword">var</span> bs2 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 2'</span>);</code></pre></div>
 
 
                 <h3 id="api-get" class="section-link">
@@ -157,7 +157,7 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Create an named instance in one file...</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Create an named instance in one file...</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'My Server'</span>);
 
 <span class="hljs-comment">// Start the Browsersync server</span>
@@ -170,7 +170,7 @@ bs.init({
 
 <span class="hljs-comment">// and call any methods on it.</span>
 bs.watch(<span class="hljs-string">'*.html'</span>).on(<span class="hljs-string">'change'</span>, bs.reload);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-init" class="section-link">
@@ -202,7 +202,7 @@ bs.watch(<span class="hljs-string">'*.html'</span>).on(<span class="hljs-string"
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Start a Browsersync static file server</span>
 bs.init({
@@ -212,7 +212,7 @@ bs.init({
 <span class="hljs-comment">// Start a Browsersync proxy</span>
 bs.init({
     proxy: <span class="hljs-string">"http://www.bbc.co.uk"</span>
-});</code></pre>
+});</code></pre></div>
 
 
                 <h3 id="api-reload" class="section-link">
@@ -233,7 +233,7 @@ bs.init({
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// browser reload</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// browser reload</span>
 bs.reload();
 
 <span class="hljs-comment">// single file</span>
@@ -244,7 +244,7 @@ bs.reload([<span class="hljs-string">"styles.css"</span>, <span class="hljs-stri
 
 <span class="hljs-comment">// Since 2.6.0 - wildcards to reload ALL css files</span>
 bs.reload(<span class="hljs-string">"*.css"</span>);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-stream" class="section-link">
@@ -266,7 +266,7 @@ bs.reload(<span class="hljs-string">"*.css"</span>);
 
                     <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
 gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/styles.scss'</span>)
         .pipe(sass({includePaths: [<span class="hljs-string">'scss'</span>]}))
@@ -290,7 +290,7 @@ gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><
         .pipe(bs.stream({match: <span class="hljs-string">"**/*.css"</span>}));
 });
 
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-notify" class="section-link">
@@ -319,7 +319,7 @@ gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Text message</span>
 bs.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
@@ -328,7 +328,7 @@ bs.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
 bs.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is supported&lt;/span&gt; too!"</span>);
 
 <span class="hljs-comment">// Since 1.3.0, specify a timeout</span>
-bs.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre>
+bs.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre></div>
 
 
                 <h3 id="api-exit" class="section-link">
@@ -341,7 +341,7 @@ bs.notify(<span class="hljs-string">"This message will only last a second"</span
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Start the server</span>
 bs.init({server: <span class="hljs-string">"./app"</span>});
@@ -350,7 +350,7 @@ bs.init({server: <span class="hljs-string">"./app"</span>});
 setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     bs.exit();
 }, <span class="hljs-number">5000</span>);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-watch" class="section-link">
@@ -388,7 +388,7 @@ setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span
 
                     <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Create a Browsersync instance</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Create a Browsersync instance</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Listen to change events on HTML and reload</span>
@@ -406,7 +406,7 @@ bs.watch(<span class="hljs-string">"css/*.css"</span>, <span class="hljs-functio
 <span class="hljs-comment">// Now init the Browsersync server</span>
 bs.init({
     server: <span class="hljs-string">"./app"</span>
-});</code></pre>
+});</code></pre></div>
 
 
                 <h3 id="api-pause" class="section-link">
@@ -444,14 +444,14 @@ bs.init({
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Listen for the `init` event</span>
 bs.emitter.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Browsersync is running!"</span>);
 });
 
-bs.init(config);</code></pre>
+bs.init(config);</code></pre></div>
 
 
                 <h3 id="api-active" class="section-link">
@@ -464,7 +464,7 @@ bs.init(config);</code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// -&gt; false as .init has not yet been called</span>
 <span class="hljs-built_in">console</span>.log(bs.active);
@@ -473,7 +473,7 @@ bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function<
 
     <span class="hljs-comment">// -&gt; now true since BS is running now</span>
     <span class="hljs-built_in">console</span>.log(bs.active);
-});</code></pre>
+});</code></pre></div>
 
 
                 <h3 id="api-paused" class="section-link">

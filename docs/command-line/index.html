@@ -69,10 +69,13 @@
         <article class="doc-wrapper">
             <div class="three-quarters">
                 <h1 class="page-title">Browsersync Command Line Usage</h1>
+                
+
                 <p>For <strong>tinkering</strong> or quick examples and playing around, the command-line usage can be quite helpful.
                 After install Browsersync globally, you can run it like this:</p>
-<pre class='highlight'><code class="bash">$ browser-sync start &lt;options&gt;
-</code></pre>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash">$ browser-sync start &lt;options&gt;
+</code></pre></div>
                 <h3 id="command-line-options" class="section-link">
                     <a href="#command-line-options" class="page-anchor">start options</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
@@ -201,7 +204,7 @@
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-<pre class='highlight'><code class="sh"><span class="hljs-comment"># Single file</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="sh"><span class="hljs-comment"># Single file</span>
 $ browser-sync start --files <span class="hljs-string">"css/core.css"</span>
 
 <span class="hljs-comment"># Single Pattern</span>
@@ -211,26 +214,26 @@ $ browser-sync start --files <span class="hljs-string">"css/*.css"</span>
 $ browser-sync start --files <span class="hljs-string">"css/core.css, css/ie.css"</span>
 
 <span class="hljs-comment"># Multiple Patterns</span>
-$ browser-sync start --files <span class="hljs-string">"css/*.css, *.html"</span></code></pre>
+$ browser-sync start --files <span class="hljs-string">"css/*.css, *.html"</span></code></pre></div>
                 <h3 id="server-example" class="section-link">
                     <a href="#server-example" class="page-anchor">Server Examples</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-<pre class='highlight'><code class="sh"><span class="hljs-comment"># Static server using current directory as the root</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="sh"><span class="hljs-comment"># Static server using current directory as the root</span>
 $ browser-sync start --server
 
 <span class="hljs-comment"># Static server using the 'app' directory as the root</span>
 $ browser-sync start --server app
 
 <span class="hljs-comment"># Static server using current directory as the root with directory listing</span>
-$ browser-sync start --server --directory</code></pre>
+$ browser-sync start --server --directory</code></pre></div>
                 <h3 id="proxy-example" class="section-link">
                     <a href="#proxy-example" class="page-anchor">Proxy Examples</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-<pre class='highlight'><code class="sh"><span class="hljs-comment"># Using a local.dev vhost</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="sh"><span class="hljs-comment"># Using a local.dev vhost</span>
 $ browser-sync start --proxy
 
 <span class="hljs-comment"># Using a local.dev vhost with PORT</span>
@@ -240,18 +243,18 @@ $ browser-sync start --proxy local.dev:<span class="hljs-number">8001</span>
 $ browser-sync start --proxy localhost:<span class="hljs-number">8001</span>
 
 <span class="hljs-comment"># Using a localhost address in a sub-dir</span>
-$ browser-sync start --proxy localhost:<span class="hljs-number">8080</span>/site1</code></pre>
+$ browser-sync start --proxy localhost:<span class="hljs-number">8080</span>/site1</code></pre></div>
                 <h3 id="watching-files-example" class="section-link">
                     <a href="#watching-files-example" class="page-anchor">Watching files + Server</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
-<pre class='highlight'><code class="sh"><span class="hljs-comment"># Watch ALL CSS files for changes with a static server</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="sh"><span class="hljs-comment"># Watch ALL CSS files for changes with a static server</span>
 $ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --server
 
 <span class="hljs-comment"># Watch ALL CSS files for changes with a static server</span>
 <span class="hljs-comment"># using "app" as the base directory</span>
-$ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --server <span class="hljs-string">"app"</span></code></pre>
+$ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --server <span class="hljs-string">"app"</span></code></pre></div>
 
 
                 <h3 id="command-line-options" class="section-link">
@@ -281,24 +284,24 @@ $ browser-sync start --files <span class="hljs-string">"app/css/*.css"</span> --
                 </h3>
 
 
-<pre class='highlight'><code>$ browser-sync reload
-</code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code>$ browser-sync reload
+</code></pre></div>
                 <h3 id="command-line-options" class="section-link">
                     <a href="#command-line-options" class="page-anchor">reload over http protocol with port</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
 
-<pre class='highlight'><code>$ browser-sync reload --port 4000 --files=&quot;*.css&quot;
-</code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code>$ browser-sync reload --port 4000 --files=&quot;*.css&quot;
+</code></pre></div>
                 <h3 id="command-line-options" class="section-link">
                     <a href="#command-line-options" class="page-anchor">reload over http protocol with full url</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
                 </h3>
 
 
-<pre class='highlight'><code>$ browser-sync reload --url https://localhost:3000 --files=&quot;*.css&quot;
-</code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code>$ browser-sync reload --url https://localhost:3000 --files=&quot;*.css&quot;
+</code></pre></div>
 
             </div>
             <div class="one-quarter">

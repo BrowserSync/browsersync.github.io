@@ -41,8 +41,20 @@
 .sticky-nav {
     border-radius: 3px;
     padding: $half-spacing;
+    background: rgba($white, .9);
     border: 1px solid #ECECEC;
     border-top: 3px solid $red;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+
+    @include media-query(min, $lap-start) {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+    }
+    //transform: translateX(-100%);
 }
 
 .sticky-nav__items {
@@ -63,14 +75,80 @@
     list-style: none;
 
     .nav-link {
+
         color: $navy;
         width: 100%;
         height: auto;
         padding: $half-spacing 0;
+        border-bottom: 1px solid #f9f9f9;
+        position: relative;
+
         @include media-query(min, $lap-start) {
             padding: $half-spacing/3 0;
         }
-        border-bottom: 1px solid #f9f9f9;
+    }
+}
+
+.doc-wrapper {
+    position: relative;
+}
+
+.doc-nav {
+    min-height: 50px;
+    position: relative;
+    width: calc(100% - 24px);
+    position: absolute;
+
+    @include media-query(min, $lap-start) {
         position: relative;
+        width: 100%;
+    }
+
+    &.sticky {
+        position: fixed;
+        top: $half-spacing;
+    }
+}
+
+.nav-expand {
+
+    width: 50px;
+    height: 50px;
+    display: block;
+    border: 3px solid $navy;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    background: rgba($white, .9);
+
+    @include media-query(min, $lap-start) {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .line1,
+    .line2,
+    .line3,
+    {
+        position: absolute;
+        width: 22px;
+        height: 3px;
+        display: block;
+        background: $navy;
+        left: 11px;
+        //border-radius: 50%;
+    }
+
+    .line1 {
+        top: 14px;
+    }
+    .line2 {
+        top: 22px;
+    }
+    .line3 {
+        top: 30px;
     }
 }

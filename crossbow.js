@@ -1,9 +1,8 @@
 module.exports = {
     tasks: {
         build: ["crossbow", "sass", "icons"],
-        icons: [
-            "tasks/icons.js"
-        ]
+        icons: ["tasks/icons.js"],
+        js:    ["babel-browserify"]
     },
     watch: {
         "bs-config": {
@@ -11,7 +10,8 @@ module.exports = {
         },
         default: {
             "img/svg/*.svg": ["icons", "bs:reload"],
-            "scss/**": ["sass", "bs:reload:core.min.css"]
+            "scss/**": ["sass", "bs:reload:core.min.css"],
+            "js/*.js": ["js", "bs:reload"],
         },
         "crossbow": [
             {
@@ -35,6 +35,11 @@ module.exports = {
                 "_src/*.html",
                 "_src/docs/*"
             ]
+        },
+        "babel-browserify": {
+            input: 'js/app.js',
+            root: 'js',
+            output: 'js/dist/app.js'
         }
     }
 };

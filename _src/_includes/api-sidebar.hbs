@@ -1,9 +1,15 @@
-<div class="sticky-nav">
-    <p class="lede">Jump to...</p>
-    <ul class="sticky-nav__items" id="sticky-nav">
-        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
-        {{#loop api}}
-            <li class="sticky-nav__item"><a class="nav-link mono" href="#api-{{this.name}}">{{this.preview}}</a></li>
-        {{/loop}}
-    </ul>
+<div class="doc-nav">
+    <span class="nav-expand">
+        {{inc src="icon.hbs" icon="menu" class="open"}}
+        {{inc src="icon.hbs" icon="cross" class="close"}}
+    </span>
+    <div class="sticky-nav">
+        <p class="lede">Jump to...</p>
+        <ul class="sticky-nav__items" id="sticky-nav">
+            <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+            {{#loop api}}
+                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-{{this.name}}">{{this.preview}}</a></li>
+            {{/loop}}
+        </ul>
+    </div>
 </div>

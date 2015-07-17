@@ -35,88 +35,33 @@ var _$ = require('./$');
 
 var _$2 = _interopRequireDefault(_$);
 
-var wrapper = undefined;
-var navPos = undefined;
-var triggerPoint = undefined;
 var docNav = undefined;
-var stuck = false;
-var canStick = false;
-
-function setElems() {
-    wrapper = (0, _$2['default'])('.doc-wrapper');
-    docNav = (0, _$2['default'])('.doc-nav');
-}
-
-function setVars() {
-    canStick = window.innerWidth < 700;
-    navPos = wrapper.getBoundingClientRect();
-    triggerPoint = navPos.top + window.pageYOffset;
-}
-
-function stick() {
-    if (stuck) {
-        return;
-    }
-    docNav.classList.add('sticky');
-    stuck = true;
-}
-
-function unstick() {
-    if (!stuck) {
-        return;
-    }
-    docNav.classList.remove('sticky');
-    docNav.classList.remove('open');
-    stuck = false;
-}
-
-function listenScroll() {
-    document.addEventListener('scroll', function () {
-        if (!canStick) {
-            unstick();
-            return;
-        }
-        if (window.pageYOffset < triggerPoint) {
-            unstick();
-        } else {
-            stick();
-        }
-    });
-}
-
-function listenResize() {
-    window.addEventListener('resize', function () {
-        setVars();
-        if (!canStick) {
-            unstick();
-        }
-    });
-}
 
 function listenNavOpen() {
+
     var elem = (0, _$2['default'])('.nav-expand');
     var hasTouch = ('ontouchstart' in window);
-    if (hasTouch) {
-        elem.addEventListener('touchstart', function (evt) {
-            evt.preventDefault();
-            docNav.classList.toggle('open');
-        });
-    } else {
-        elem.addEventListener('click', function (evt) {
-            docNav.classList.toggle('open');
-        });
+    var event = 'click';
+
+    function toggle(evt) {
+        evt.preventDefault();
+        docNav.classList.toggle('open');
     }
+
+    if (hasTouch) {
+        event = 'touchstart';
+    }
+
+    elem.addEventListener(event, toggle);
 }
 
-function listenNavClick() {}
-
 exports['default'] = function () {
-    setElems();
-    setVars();
-    //listenScroll();
-    listenResize();
-    listenNavOpen();
-    listenNavClick();
+    if (window.location.pathname.slice(0, 5) === '/docs') {
+        docNav = (0, _$2['default'])('.doc-nav');
+        if (docNav) {
+            listenNavOpen();
+        }
+    }
 };
 
 module.exports = exports['default'];

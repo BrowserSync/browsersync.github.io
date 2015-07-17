@@ -9,7 +9,7 @@
         border-top: 0;
     }
     list-style: none;
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 0;
@@ -44,21 +44,23 @@
     background: rgba($white, .99);
     border: 1px solid #ECECEC;
     border-top: 3px solid $red;
-    opacity: 0;
-    visibility: hidden;
+    position: absolute;
     width: 100%;
     transition: opacity .3s;
-    transition-delay: .1s;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
 
     .open & {
+        position: relative;
+        height: auto;
         opacity: 1;
-        visibility: visible;
     }
 
     @include media-query(min, $lap-start) {
         position: relative;
         opacity: 1;
-        visibility: visible;
+        height: auto;
     }
 }
 

@@ -47,14 +47,12 @@
     opacity: 0;
     visibility: hidden;
     width: 100%;
-    transition: all .3s;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    transition: opacity .3s;
+    transition-delay: .1s;
 
     .open & {
         opacity: 1;
         visibility: visible;
-        max-height: 80vh;
     }
 
     @include media-query(min, $lap-start) {
@@ -101,26 +99,25 @@
 }
 
 .doc-nav {
-    min-height: 50px;
+    height: 0;
     position: relative;
-    width: calc(100% - 24px);
-    position: absolute;
+    //width: calc(100% - 24px);
+    //position: absolute;
 
-    @include media-query(min, $lap-start) {
-        position: relative;
-        width: 100%;
+    &.open {
+        height: auto;
     }
 
     &.sticky {
-        position: fixed;
-        top: $half-spacing;
+        //position: fixed;
+        //top: $half-spacing;
     }
 }
 
 .nav-expand {
 
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: block;
     border: 3px solid $navy;
     border-radius: 50%;
@@ -130,6 +127,20 @@
     background: rgba($white, .9);
     z-index: 1;
 
+    .svg-icon {
+        transition: all .2s;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        font-size: 30px;
+
+        &.close {
+            left: 2px;
+            opacity: 0;
+            transform: scale(.5);
+        }
+    }
+
     @include media-query(min, $lap-start) {
         display: none;
     }
@@ -138,45 +149,21 @@
         cursor: pointer;
     }
 
-    .line1,
-    .line2,
-    .line3,
-    {
-        position: absolute;
-        width: 22px;
-        height: 3px;
-        display: block;
-        background: $navy;
-        left: 11px;
-        transition: all .3s;
-
-        .open & {
-            background: $red;
-        }
-    }
-
     .open & {
-        border-color: $red;
-        .line2 {
-            opacity: 0;
-        }
-        .line1 {
-            top: 20px;
-            transform: rotate(45deg);
-        }
-        .line3 {
-            top: 21px;
-            transform: rotate(135deg);
-        }
-    }
 
-    .line1 {
-        top: 14px;
-    }
-    .line2 {
-        top: 22px;
-    }
-    .line3 {
-        top: 30px;
+        border-color: $red;
+        .svg-icon {
+
+            &.open {
+                opacity: 0;
+                transform: scale(.5);
+            }
+
+            &.close {
+                color: $red;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
 }

@@ -60,16 +60,17 @@ function listenResize () {
 
 function listenNavOpen () {
     var elem = $('.nav-expand');
-    elem.addEventListener('click', function () {
-        docNav.classList.toggle('open');
-    });
-    var elem = $('.sticky-nav__items');
-    elem.addEventListener('click', function (evt) {
-        if (evt.target.parentNode.classList.contains('sticky-nav__item')) {
-            console.log('here');
-            unstick();
-        }
-    });
+    let hasTouch = 'ontouchstart' in window;
+    if (hasTouch) {
+        elem.addEventListener('touchstart', function (evt) {
+            evt.preventDefault();
+            docNav.classList.toggle('open');
+        });
+    } else {
+        elem.addEventListener('click', function (evt) {
+            docNav.classList.toggle('open');
+        });
+    }
 }
 
 function listenNavClick () {
@@ -78,7 +79,7 @@ function listenNavClick () {
 export default function () {
     setElems();
     setVars();
-    listenScroll();
+    //listenScroll();
     listenResize();
     listenNavOpen();
     listenNavClick();

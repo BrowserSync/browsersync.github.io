@@ -12,7 +12,7 @@ function icons (deferred, previous, ctx) {
      * @type {string[]}
      */
     var globals  = [
-        'logo', 'github', 'twitter', 'circle-play', 'code'
+        'logo', 'github', 'twitter', 'circle-play', 'code', 'menu', 'list', 'cross'
     ];
 
     /**

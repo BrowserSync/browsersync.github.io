@@ -1,3 +1,4 @@
 .idea
 _doc
 node_modules
+.DS_Store

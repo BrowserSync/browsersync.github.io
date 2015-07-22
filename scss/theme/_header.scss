@@ -28,6 +28,10 @@
     width: 100%;
     text-align: left;
 
+    span {
+        font-weight: normal;
+    }
+
     .nav-link {
         position: relative;
         height: $header-height;
@@ -49,8 +53,8 @@
     display: none;
     @include media-query(min, $lap-start) {
         display: inline-block;
-        width:  160px;
-        height: 160px;
+        width:  120px;
+        height: 120px;
     }
 }
 

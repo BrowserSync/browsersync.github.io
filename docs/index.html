@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
@@ -12,7 +9,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browsersync Documentation</title>
 
     <!-- ICONS -->
@@ -21,53 +18,56 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
-
-    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
+    <!--[if gt IE 9]><!--> <script src="/img/icons/svg4everybody.min.js"></script> <!--<![endif]-->
 </head>
 
 
 <body id="page-top">
+<div class="header-wrap ">
 
-<header class="wrapper wrapper--dark site-header alt" role="banner">
-    <div class="container">
-        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
-        <ul class="nav--inline docs-nav">
-            <li><a href="/docs/gulp" >+ Gulp</a></li>
-            <li><a href="/docs/grunt" >+ Grunt</a></li>
-            <li><a href="/docs/api" >API</a></li>
-            <li><a href="/docs/command-line" >Command line</a></li>
-            <li><a href="/docs/options" >Options</a></li>
-            <li><a href="/docs/recipes" >Recipes</a></li>
-            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
-        </ul>
-    </div>
-</header><!-- .end .site-header -->
+    <header class="wrapper site-header" role="banner">
+        <div class="container">
+            <nav>
+                <ul class="site-nav">
+                    <li class="nav__item logo">
+                        <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-logo"></use></svg>
+     Browser<span>sync</span></a>
+                    </li>
+                    <li class="nav__item active"><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item "><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                    <li class="nav__item nav__item--right">
+                        <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+    </a>
+                        <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- .end .site-header -->
 
+
+
+</div>
 
 <div class="site-body" role="main">
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/api">API</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/options">Options</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Sections</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-
-                        <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
-                            <li><a href="/docs/gulp">+ Gulp</a></li>
-                            <li><a href="/docs/grunt">+ Grunt</a></li>
-                            <li><a href="/docs/api">API</a></li>
-                            <li><a href="/docs/command-line">Command line</a></li>
-                            <li><a href="/docs/options">Options</a></li>
-                            <li><a href="/docs/recipes">Recipes</a></li>
-                            <li><a href="/docs/http-protocol">HTTP Protocol</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">Browsersync Documentation</h1>
                 <p>Here you can find all the information you&#39;ll need to begin using Browsersync. We have extensive information covering
                 command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
@@ -88,13 +88,13 @@
                 <h4 id="global-install">Global Install</h4>
                 <p>If you would like to run Browsersync from the command line in any directory, it
                 can be installed <code>globally</code> with the following command.</p>
-<p><pre class='highlight'><code class="bash">$ npm install -g browser-sync
-</code></pre></p>
+<p><div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash">$ npm install -g browser-sync
+</code></pre></div></p>
                 <h4 id="local-install">Local Install</h4>
                 <p>This is the prefered way to use Browsersync - installing it locally to each project. This
                 way the dependency can be added to your package.json file and everyone on your team.</p>
-<p><pre class='highlight'><code class="bash">$ npm install browser-sync --save-dev
-</code></pre>
+<p><div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash">$ npm install browser-sync --save-dev
+</code></pre></div>
                 <strong>WARNING - do not use sudo!</strong> If you&#39;re running <code>Mac OSX</code> and encounter problems when trying to install Browsersync - either
                 globally or locally, it&#39;s almost always because you have problems with NPM permissions. Checkout <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">their docs</a>
                 for a guide on how to fix this once and for all - it only takes 2 minutes :)</p>
@@ -137,50 +137,74 @@
                 <p>This site is <a href="https://github.com/Browsersync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
 
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="doc-nav">
+                    <span class="nav-expand">
+                        <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
+
+                        <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
+
+                    </span>
+                    <div class="sticky-nav">
+                        <p class="lede">Sections</p>
+                        <ul class="sticky-nav__items" id="sticky-nav">
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/api">API</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/options">Options</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
-<footer class="wrapper wrapper--dark site-footer" role="contentinfo">
+<footer class="wrapper signup" role="contentinfo">
     <div class="container">
-        <div class="credit">
-            <a class="credit__thumb" href="http://www.wearejh.com/"><img src="/img/jh-300-trans.png" alt="JH"/></a>
-            <div class="credit__content">
-                <p>The Browsersync project is supported by <a href="http://www.wearejh.com/">JH</a>,
-                    with design and development by
-                    <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
-                    <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
-                    <a href="https://twitter.com/chris3ailey">Chris Bailey</a> and
-                    <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
-                    For regular information on updates and usage, please follow <a href="https://twitter.com/browsersync">@browsersync</a>.
-                </p>
-                <p>Browsersync is available for use and modification under the <a href="https://github.com/Browsersync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
-            </div>
-            <p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>
+        <p class="signup__title">Stay up to date with the latest features</p>
+        <div class="signup__form">
+            <input type="text" placeholder="Email..." class="input input--text form__email"/>
+            <input type="button" value="Signup" class="button button--primary form__submit"/>
+        </div>
+        <div class="signup__links">
+            <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+            <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
+                <li class="nav__item credit__thumb">
+                    <span>An open source project by</span>
+                    <a href="http://www.wearejh.com/" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--<div class="credit__content">-->
+        <!--<p>as</p>-->
+    <!--</div>-->
+    <!--<p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>-->
+</div>
+
+<script src="/js/dist/app.min.js"></script>
 
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){

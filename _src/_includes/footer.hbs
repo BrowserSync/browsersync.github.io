@@ -1,22 +1,39 @@
-<footer class="wrapper wrapper--dark site-footer" role="contentinfo">
+<footer class="wrapper signup" role="contentinfo">
     <div class="container">
-        <div class="credit">
-            <a class="credit__thumb" href="{{site.links.jh}}"><img src="/img/jh-300-trans.png" alt="JH"/></a>
-            <div class="credit__content">
-                <p>The Browsersync project is supported by <a href="{{site.links.jh}}">JH</a>,
-                    with design and development by
-                    <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
-                    <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
-                    <a href="https://twitter.com/chris3ailey">Chris Bailey</a> and
-                    <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
-                    For regular information on updates and usage, please follow <a href="{{site.links.twitter}}">@browsersync</a>.
-                </p>
-                <p>Browsersync is available for use and modification under the <a href="{{site.links.license}}">Apache 2.0 License</a>.</p>
-            </div>
-            <p>Website built with <a href="{{site.links.crossbow}}">Crossbow.js</a></p>
+        <p class="signup__title">Stay up to date with the latest features</p>
+        <div class="signup__form">
+            <input type="text" placeholder="Email..." class="input input--text form__email"/>
+            <input type="button" value="Signup" class="button button--primary form__submit"/>
+        </div>
+        <div class="signup__links">
+            <a href="{{site.links.source}}" title="Browsersync on Github">{{inc src="icon.hbs" icon="github" class=""}}</a>
+            <a href="{{site.links.twitter}}" title="@Browsersync on Twitter">{{inc src="icon.hbs" icon="twitter" class=""}}</a>
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                {{#each site.navigation}}
+                <li class="nav__item"><a href="{{this.url}}" class="nav-link">{{ this.label }}</a></li>
+                {{/each}}
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
+                <li class="nav__item credit__thumb">
+                    <span>An open source project by</span>
+                    <a href="{{site.links.jh}}" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--<div class="credit__content">-->
+        <!--<p>as</p>-->
+    <!--</div>-->
+    <!--<p>Website built with <a href="{{site.links.crossbow}}">Crossbow.js</a></p>-->
+</div>
+
+<script src="/js/dist/app.min.js"></script>
 
 {{#if_eq site.env "production"}}
     {{inc src="_includes/analytics.hbs" }}

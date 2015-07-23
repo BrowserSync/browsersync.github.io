@@ -1,0 +1,49 @@
+.usp {
+
+    @include clearfix();
+    margin-bottom: $base-spacing;
+    margin-top:    $base-spacing;
+    position: relative;
+
+
+    @include media-query(min, $lap-start) {
+        min-height: 500px;
+    }
+}
+
+.usp__thumb {
+
+    display: none;
+
+    @include media-query(min, $lap-start) {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        display: block;
+        width: 704px;
+        height: 524px;
+    }
+}
+
+.usp__content {
+
+    @include media-query(min, $lap-start) {
+        width: 46%;
+    }
+}
+
+.usp__title {
+    color: $navy;
+    @include media-query(min, $desk-start) {
+        padding-top: $base-spacing*3;
+        font-weight: normal;
+        @include font-size(40px);
+    }
+}
+
+.usp__platforms {
+    margin-top: $base-spacing;
+    img {
+        width: 110px;
+    }
+}

@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html>
-
 {{inc src="head.hbs"}}
 
 <body id="page-top">
+<div class="header-wrap {{#if_eq page.url '/index.src'}}home{{/if_eq}}">
 
-{{inc src="header.hbs"}}
+    {{inc src="header.hbs"}}
+
+    {{#if_eq page.url '/index.src'}}
+
+        {{inc src="home/hero.hbs"}}
+
+        <div class="overlay">
+            <div class="overlay__close">{{inc src="icon.hbs" icon="cross"}}</div>
+            <div class="overlay__content">
+                <div class="overlay__video">
+                    <!--<iframe name='quickcast' src='http://quick.as/embed/az3sxrb' scrolling='no' frameborder='0' width="100%" allowfullscreen></iframe><script src='http://quick.as/embed/script/1.60'></script>-->
+                </div>
+            </div>
+        </div>
+    {{/if_eq}}
+</div>
 
 <div class="site-body" role="main">
     {{ content }}

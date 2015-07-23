@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
@@ -12,7 +9,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browsersync + Gulp.js</title>
 
     <!-- ICONS -->
@@ -21,54 +18,64 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
-
-    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
+    <!--[if gt IE 9]><!--> <script src="/img/icons/svg4everybody.min.js"></script> <!--<![endif]-->
 </head>
 
 
 <body id="page-top">
+<div class="header-wrap ">
 
-<header class="wrapper wrapper--dark site-header alt" role="banner">
-    <div class="container">
-        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
-        <ul class="nav--inline docs-nav">
-            <li><a href="/docs/gulp" class="active">+ Gulp</a></li>
-            <li><a href="/docs/grunt" >+ Grunt</a></li>
-            <li><a href="/docs/api" >API</a></li>
-            <li><a href="/docs/command-line" >Command line</a></li>
-            <li><a href="/docs/options" >Options</a></li>
-            <li><a href="/docs/recipes" >Recipes</a></li>
-            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
-        </ul>
-    </div>
-</header><!-- .end .site-header -->
+    <header class="wrapper site-header" role="banner">
+        <div class="container">
+            <nav>
+                <ul class="site-nav">
+                    <li class="nav__item logo">
+                        <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-logo"></use></svg>
+     Browser<span>sync</span></a>
+                    </li>
+                    <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item "><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                    <li class="nav__item nav__item--right">
+                        <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+    </a>
+                        <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- .end .site-header -->
 
+
+
+</div>
 
 <div class="site-body" role="main">
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                <li class="fixed-nav__item active"><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/api">API</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/options">Options</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Jump to...</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-                        <li><a href="#gulp-install">Install</a></li>
-                        <li><a href="#gulp-sass-css">SASS + CSS Injecting</a></li>
-                        <li><a href="#gulp-sass-maps">SASS & Source Maps</a></li>
-                        <li><a href="#gulp-reload">Browser Reloading</a></li>
-                        <li><a href="#gulp-manual-reload">Manual Reloading</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">Browsersync + Gulp.js</h1>
+                
+
                 <p>There&#39;s no official Browsersync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise
                 the <a href="/docs/api">API</a> and configure it with <a href="/docs/options">options</a>. The following are some common
                 use-cases as seen in popular projects such as <a href="https://developers.google.com/web/starter-kit/">Google&#39;s web starter kit</a>
                 and many others.</p>
+
                 <h3 id="gulp-install" class="section-link">
                     <a href="#gulp-install" class="page-anchor">Install</a>
                     <a href="#page-top" class="back-to-top">^ TOP</a>
@@ -76,10 +83,12 @@
 
 
                 <p>First, you&#39;ll need to install Browsersync &amp; Gulp as development dependencies.</p>
-<pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre></div>
 
 <p>Then, use them within your <code>gulpfile.js</code>:</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 
 <span class="hljs-comment">// Static server</span>
@@ -97,7 +106,7 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
     browserSync.init({
         proxy: <span class="hljs-string">"yourlocal.dev"</span>
     });
-});</code></pre>
+});</code></pre></div>
 
                 <h3 id="gulp-sass-css" class="section-link">
                     <a href="#gulp-sass-css" class="page-anchor">SASS + CSS Injecting</a>
@@ -108,7 +117,8 @@ gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-fun
                 <p>Streams are supported in Browsersync, so you can call reload at specific points during your tasks and
                 all browsers will be informed of the changes. Because Browsersync only cares about your CSS when it&#39;s
                 <em>finished</em> compiling - make sure you call <code>.stream()</code> <em>after</em> <code>gulp.dest</code></p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sass'</span>);
 
@@ -132,7 +142,7 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
 });
 
 gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'serve'</span>]);
-</code></pre>
+</code></pre></div>
 
                 <h3 id="gulp-sass-maps" class="section-link">
                     <a href="#gulp-sass-maps" class="page-anchor">Ruby SASS &amp; Source Maps</a>
@@ -144,7 +154,8 @@ gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string"
                 files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
                 a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
                 <p>To fix this problem, use <code>browserSync.stream({match: &#39;**/*.css&#39;})</code> as seen in the following example.</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
 <span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-ruby-sass"</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
@@ -174,7 +185,7 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
         }))
         .pipe(browserSync.stream({match: <span class="hljs-string">'**/*.css'</span>}));
 });
-</code></pre>
+</code></pre></div>
 
                 <h3 id="gulp-reload" class="section-link">
                     <a href="#gulp-reload" class="page-anchor">Browser Reloading</a>
@@ -185,7 +196,8 @@ gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><
                 <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), but
                 you want the reload to happen <em>after</em> your tasks. This will be easier in gulp <code>4.x.x</code>, but for now you can do the following:
                 (make sure you <code>return</code> the stream from your tasks to ensure that <code>browserSync.reload()</code> is called at the correct time.</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 
 <span class="hljs-comment">// process JS files and return the stream.</span>
@@ -213,7 +225,7 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
     <span class="hljs-comment">// add browserSync.reload to the tasks array to make</span>
     <span class="hljs-comment">// all browsers reload after tasks are complete.</span>
     gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js-watch'</span>]);
-});</code></pre>
+});</code></pre></div>
 
                 <h3 id="gulp-manual-reload" class="section-link">
                     <a href="#gulp-manual-reload" class="page-anchor">Manual Reloading</a>
@@ -224,7 +236,8 @@ gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'
                 <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually
                 by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are
                 changed, the browsers will be reloaded instead.</p>
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
 <span class="hljs-keyword">var</span> reload      = browserSync.reload;
 
@@ -241,52 +254,76 @@ gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function">
     });
 
     gulp.watch(<span class="hljs-string">"*.html"</span>).on(<span class="hljs-string">"change"</span>, browserSync.reload);
-});</code></pre>
+});</code></pre></div>
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="doc-nav">
+                    <span class="nav-expand">
+                        <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
+
+                        <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
+
+                    </span>
+
+                    <div class="sticky-nav">
+                        <p class="lede">Jump to...</p>
+                        <ul class="sticky-nav__items" id="sticky-nav">
+                            <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-install">Install</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-sass-css">SASS + CSS Injecting</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-sass-maps">SASS & Source Maps</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-reload">Browser Reloading</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-manual-reload">Manual Reloading</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
-<footer class="wrapper wrapper--dark site-footer" role="contentinfo">
+<footer class="wrapper signup" role="contentinfo">
     <div class="container">
-        <div class="credit">
-            <a class="credit__thumb" href="http://www.wearejh.com/"><img src="/img/jh-300-trans.png" alt="JH"/></a>
-            <div class="credit__content">
-                <p>The Browsersync project is supported by <a href="http://www.wearejh.com/">JH</a>,
-                    with design and development by
-                    <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
-                    <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
-                    <a href="https://twitter.com/chris3ailey">Chris Bailey</a> and
-                    <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
-                    For regular information on updates and usage, please follow <a href="https://twitter.com/browsersync">@browsersync</a>.
-                </p>
-                <p>Browsersync is available for use and modification under the <a href="https://github.com/Browsersync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
-            </div>
-            <p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>
+        <p class="signup__title">Stay up to date with the latest features</p>
+        <div class="signup__form">
+            <input type="text" placeholder="Email..." class="input input--text form__email"/>
+            <input type="button" value="Signup" class="button button--primary form__submit"/>
+        </div>
+        <div class="signup__links">
+            <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+            <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
+                <li class="nav__item credit__thumb">
+                    <span>An open source project by</span>
+                    <a href="http://www.wearejh.com/" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--<div class="credit__content">-->
+        <!--<p>as</p>-->
+    <!--</div>-->
+    <!--<p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>-->
+</div>
+
+<script src="/js/dist/app.min.js"></script>
 
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){

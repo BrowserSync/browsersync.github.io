@@ -1,24 +1,15 @@
-/* General purpose
-======================================== */
-
 .wrapper {
     clear: both;
     width: 100%;
-    padding-top: $base-spacing;
-    padding-bottom: $base-spacing;
-
-    @include media-query(min, $desk-start) {
-        padding-top: 2*$base-spacing;
-        padding-bottom: 2*$base-spacing;
-    }
 }
 
 .wrapper--alt {
     background: $smoke;
+    border-bottom: 1px solid #EBEBEB;
 }
 
 .wrapper--dark {
-    background: $navy;
+    background-size: cover;
     color: $white;
 
     a {
@@ -56,9 +47,6 @@
 }
 
 
-/* Content
-======================================== */
-
 .text--center {
     text-align: center!important;
 }
@@ -72,162 +60,11 @@
         margin-bottom: 2*$base-spacing;
         padding-top: $base-spacing;
         font-weight: normal;
-        @include font-size(36px);
-    }
-}
-
-
-/* Sections
-======================================== */
-
-// Introduction
-
-.intro {
-    padding-top: 0;
-    text-align: center;
-}
-
-.hook {
-    margin: 0 auto $base-spacing;
-    padding-top: 0;
-
-    @include media-query(min, $lap-start) {
-        padding-top: $base-spacing;
-    }
-
-    @include media-query(min, $desk-start) {
-        padding-top: 2*$base-spacing;
-        @include font-size(48px);
-    }
-}
-
-.ronseal {
-    margin: 0 auto $base-spacing;
-    @include font-size(18px);
-
-
-    @include media-query(min, $desk-start) {
-        // margin-bottom: 2*$base-spacing;
-        @include font-size(24px);
-    }
-}
-
-.cta {
-    margin: 0 0 $base-spacing;
-
-    .button {
-        border: 0!important;
-    }
-
-    .stat {
-        display: block;
-        margin-top: $half-spacing;
-        @include font-size(12px);
-    }
-
-    @include media-query(min, $desk-start) {
-        margin-bottom: 2*$base-spacing;
-
-        .button {
-            padding: 1.5*$half-spacing 1.5*$base-spacing;
-            @include font-size(24px);
-        }
+        @include font-size(26px);
     }
 }
 
 // USP Overview
-
-.overview {}
-
-.usp {
-    @include clearfix();
-    margin-bottom: $base-spacing;
-}
-
-.usp__thumb {
-    border: 1px solid $silver;
-
-    @include media-query(min, $lap-start) {
-        float: left;
-        width: 50%;
-    }
-}
-
-.usp__content {
-    overflow: hidden;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-
-    @include media-query(min, $lap-start) {
-        padding-left: $base-spacing;
-    }
-}
-
-.usp__title {
-    @include media-query(min, $desk-start) {
-        @include font-size(24px);
-    }
-}
-
-
-// Feature list
-
-.features {}
-
-.feature {
-    @include clearfix();
-    margin-bottom: $base-spacing;
-}
-
-.feature__thumb {
-    float: left;
-    margin-right: $base-spacing;
-    width: 100px;
-    border-radius: 100%;
-
-    @include media-query(max, $lap-start) {
-        display: none;
-    }
-}
-
-
-
-.feature__content {
-    position: relative;
-    padding-left: 100px;
-    overflow: hidden;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-.feature__icon {
-    position: absolute;
-    //background: red;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    @include font-size(45px);
-}
-
-
-.feature__title {}
-
-.new {
-    display: inline-block;
-    vertical-align: bottom;
-    margin: 0 3px;
-    padding: 3px 5px;
-    background: #4FA83D;
-    color: white;
-    @include font-size(12px);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 2px;
-}
 
 .support {
     position: relative;
@@ -258,19 +95,6 @@
     }
 }
 
-
-// User testimony
-
-.users {}
-
-.logo {
-    margin: 0 auto $base-spacing;
-
-    @include media-query(min, $desk-start) {
-        margin-bottom: 2*$base-spacing;
-    }
-}
-
 .quote {
     margin-bottom: $base-spacing;
 
@@ -296,5 +120,3 @@
 
 
 // Install instructions
-
-.install {}

@@ -1,9 +1,13 @@
+@import "../vars";
+
 .site-header {
 
     text-align: center;
-    padding-top: $base-spacing*2;
-    padding-bottom: $base-spacing*2;
+    //background: $navy;
 
+    @include media-query(min, $lap-start) {
+        height: $header-height;
+    }
 
     &.alt {
 
@@ -16,65 +20,50 @@
     }
 }
 
-.site-logo {
+.logo {
+
     border: 0!important;
     font-weight: bold;
     @include font-size(24px);
+    width: 100%;
+    text-align: left;
+
+    span {
+        font-weight: normal;
+    }
+
+    .nav-link {
+        position: relative;
+        height: $header-height;
+        line-height: $header-height - 4px;
+    }
+
+    .svg-icon {
+        position: relative;
+        top: -2px;
+        margin-right: $half-spacing/2;
+    }
 
     @include media-query(min, $lap-start) {
-        float: left;
+        width: auto;
+    }
+}
+
+.logo--large {
+    display: none;
+    @include media-query(min, $lap-start) {
+        display: inline-block;
+        width:  120px;
+        height: 120px;
     }
 }
 
 .site-nav {
-    margin: $half-spacing 0 0;
-
-    li {
-        margin: 0 $half-spacing;
-    }
+    list-style: none;
+    position: relative;
+    @include clearfix;
 
     @include media-query(min, $lap-start) {
-        float: right;
-        // margin-top: $half-spacing/2;
-
-        li {
-            margin-right: 0;
-            margin-left: $base-spacing;
-        }
-    }
-}
-
-.docs-nav {
-
-    display: inline-block;
-
-    li {
-
-        margin: 0;
-
-        &:first-child {
-            display: inline-block;
-            margin-bottom: 0;
-        }
-
-        a {
-            padding: 5px;
-
-            &:hover {
-                color: $lime;
-                text-decoration: none;
-
-            }
-
-            &.active {
-
-                color: grey;
-                cursor: default;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
+        display: flex;
     }
 }

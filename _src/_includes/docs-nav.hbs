@@ -1,0 +1,9 @@
+<div class="wrapper docs-nav">
+    <div class="container">
+        <ul class="fixed-nav">
+            {{#each site.docs-navigation}}
+            <li class="fixed-nav__item {{#current this.url}}active{{/current}}"><a class="nav-link" href="{{this.url}}">{{this.label}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

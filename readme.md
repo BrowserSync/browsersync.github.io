@@ -26,12 +26,12 @@ Crossbow to rebuild the site. (in which case, BrowserSync will wait until it's f
 ## Build
 
 This site is compiled with Crossbow, which means you need to `build` it before any
- of your code fixes or typos are displayed on the live site. This is done automatically for you if you 
- use the development environment mentioned above (by running `npm start`) - but if you need to trigger 
- it manually for html changes, run...
+of your code fixes or typos are displayed on the live site. This is done automatically for you if you 
+use the development environment mentioned above (by running `npm start`) - but if you need to trigger 
+it manually for html changes, run...
  
 ```
 $ npm run build
 ```
 
-Once built, commit all the changes and send you PR :)
+Once built, commit all the changes and send your PR :)

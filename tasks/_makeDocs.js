@@ -1,5 +1,5 @@
 var fs           = require("fs");
-var doc          = "./_doc/yuidoc.json";
+var doc          = "../_doc/yuidoc.json";
 var docGen       = require("./_docgen");
 var opts         = require("browser-sync/lib/cli/opts.start.json");
 var pretemplater = require("pretemplater");

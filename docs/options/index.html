@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
@@ -12,7 +9,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browsersync options</title>
 
     <!-- ICONS -->
@@ -21,80 +18,56 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
-
-    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
+    <!--[if gt IE 9]><!--> <script src="/img/icons/svg4everybody.min.js"></script> <!--<![endif]-->
 </head>
 
 
 <body id="page-top">
+<div class="header-wrap ">
 
-<header class="wrapper wrapper--dark site-header alt" role="banner">
-    <div class="container">
-        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
-        <ul class="nav--inline docs-nav">
-            <li><a href="/docs/gulp" >+ Gulp</a></li>
-            <li><a href="/docs/grunt" >+ Grunt</a></li>
-            <li><a href="/docs/api" >API</a></li>
-            <li><a href="/docs/command-line" >Command line</a></li>
-            <li><a href="/docs/options" class="active">Options</a></li>
-            <li><a href="/docs/recipes" >Recipes</a></li>
-            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
-        </ul>
-    </div>
-</header><!-- .end .site-header -->
+    <header class="wrapper site-header" role="banner">
+        <div class="container">
+            <nav>
+                <ul class="site-nav">
+                    <li class="nav__item logo">
+                        <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-logo"></use></svg>
+     Browser<span>sync</span></a>
+                    </li>
+                    <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item "><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                    <li class="nav__item nav__item--right">
+                        <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+    </a>
+                        <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- .end .site-header -->
 
+
+
+</div>
 
 <div class="site-body" role="main">
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/api">API</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                <li class="fixed-nav__item active"><a class="nav-link" href="/docs/options">Options</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Jump to...</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-                        <li><a href="#option-ui">ui</a></li>
-                        <li><a href="#option-files">files</a></li>
-                        <li><a href="#option-watchOptions">watchOptions</a></li>
-                        <li><a href="#option-server">server</a></li>
-                        <li><a href="#option-proxy">proxy</a></li>
-                        <li><a href="#option-port">port</a></li>
-                        <li><a href="#option-https">https</a></li>
-                        <li><a href="#option-ghostMode">ghostMode</a></li>
-                        <li><a href="#option-logLevel">logLevel</a></li>
-                        <li><a href="#option-logPrefix">logPrefix</a></li>
-                        <li><a href="#option-logConnections">logConnections</a></li>
-                        <li><a href="#option-logFileChanges">logFileChanges</a></li>
-                        <li><a href="#option-logSnippet">logSnippet</a></li>
-                        <li><a href="#option-snippetOptions">snippetOptions</a></li>
-                        <li><a href="#option-rewriteRules">rewriteRules</a></li>
-                        <li><a href="#option-tunnel">tunnel</a></li>
-                        <li><a href="#option-online">online</a></li>
-                        <li><a href="#option-open">open</a></li>
-                        <li><a href="#option-browser">browser</a></li>
-                        <li><a href="#option-xip">xip</a></li>
-                        <li><a href="#option-reloadOnRestart">reloadOnRestart</a></li>
-                        <li><a href="#option-notify">notify</a></li>
-                        <li><a href="#option-scrollProportionally">scrollProportionally</a></li>
-                        <li><a href="#option-scrollThrottle">scrollThrottle</a></li>
-                        <li><a href="#option-scrollRestoreTechnique">scrollRestoreTechnique</a></li>
-                        <li><a href="#option-reloadDelay">reloadDelay</a></li>
-                        <li><a href="#option-reloadDebounce">reloadDebounce</a></li>
-                        <li><a href="#option-plugins">plugins</a></li>
-                        <li><a href="#option-injectChanges">injectChanges</a></li>
-                        <li><a href="#option-startPath">startPath</a></li>
-                        <li><a href="#option-minify">minify</a></li>
-                        <li><a href="#option-host">host</a></li>
-                        <li><a href="#option-codeSync">codeSync</a></li>
-                        <li><a href="#option-timestamps">timestamps</a></li>
-                        <li><a href="#option-scriptPath">scriptPath</a></li>
-                        <li><a href="#option-socket">socket</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">Browsersync options</h1>
                 
 
@@ -124,7 +97,7 @@
                 The UI allows to controls all devices, push sync updates and much more.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Change the default port</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Change the default port</span>
 ui: {
     port: <span class="hljs-number">8080</span>
 }
@@ -139,7 +112,7 @@ ui: {
 
 <span class="hljs-comment">// Disable UI completely</span>
 ui: <span class="hljs-literal">false</span>
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="option-files" class="section-link">
@@ -160,7 +133,7 @@ ui: <span class="hljs-literal">false</span>
                 a full-page refresh. See <a href="https://github.com/es128/anymatch">anymatch</a> for more information on glob patterns.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// single file</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// single file</span>
 browserSync({
     files: <span class="hljs-string">"app/css/style.css"</span>
 });
@@ -182,7 +155,7 @@ browserSync({
             }
         }
     ]
-});</code></pre>
+});</code></pre></div>
 
 
                 <h3 id="option-watchOptions" class="section-link">
@@ -203,7 +176,7 @@ browserSync({
                 Check their docs for available options</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Options passed to Chokidar</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Options passed to Chokidar</span>
 watchOptions: {
     ignoreInitial: <span class="hljs-literal">true</span>,
     ignored: <span class="hljs-string">'*.txt'</span>
@@ -221,7 +194,7 @@ files: [
             ignored: <span class="hljs-string">'*.txt'</span>
         }
     }
-]</code></pre>
+]</code></pre></div>
 
 
                 <h3 id="option-server" class="section-link">
@@ -240,7 +213,7 @@ files: [
                 <p>Use the built-in static server for basic HTML/JS/CSS websites.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Serve files from the app directory</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Serve files from the app directory</span>
 server: {
     baseDir: <span class="hljs-string">"app"</span>
 }
@@ -295,7 +268,7 @@ server: {
         }
     ]
 }
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="option-proxy" class="section-link">
@@ -318,7 +291,7 @@ server: {
                 <p>Proxy an EXISTING vhost. Browsersync will wrap your vhost with a proxy URL to view your site.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Using a vhost-based url</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Using a vhost-based url</span>
 proxy: <span class="hljs-string">"local.dev"</span>
 
 <span class="hljs-comment">// Using a localhost address with a port</span>
@@ -347,7 +320,7 @@ proxy: {
         }
     }
 }
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="option-port" class="section-link">
@@ -365,8 +338,8 @@ proxy: {
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Use a specific port (instead of the one auto-detected by Browsersync)</span>
-port: <span class="hljs-number">8080</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Use a specific port (instead of the one auto-detected by Browsersync)</span>
+port: <span class="hljs-number">8080</span></code></pre></div>
 
 
                 <h3 id="option-https" class="section-link">
@@ -387,7 +360,7 @@ port: <span class="hljs-number">8080</span></code></pre>
                 option as it will be inferred from your target url.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Enable HTTPS for static file server</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Enable HTTPS for static file server</span>
 browserSync({
     server: <span class="hljs-string">"./app"</span>,
     https: <span class="hljs-literal">true</span>
@@ -397,7 +370,7 @@ browserSync({
 browserSync({
     https: <span class="hljs-literal">true</span>
 });
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="option-ghostMode" class="section-link">
@@ -420,7 +393,7 @@ browserSync({
                 <p>Clicks, Scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Here you can disable/enable each feature individually</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Here you can disable/enable each feature individually</span>
 ghostMode: {
     clicks: <span class="hljs-literal">true</span>,
     forms: <span class="hljs-literal">true</span>,
@@ -428,7 +401,7 @@ ghostMode: {
 }
 
 <span class="hljs-comment">// Or switch them all off in one go</span>
-ghostMode: <span class="hljs-literal">false</span></code></pre>
+ghostMode: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-logLevel" class="section-link">
@@ -447,14 +420,14 @@ ghostMode: <span class="hljs-literal">false</span></code></pre>
                 <p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Show me additional info about the process</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Show me additional info about the process</span>
 logLevel: <span class="hljs-string">"debug"</span>
 
 <span class="hljs-comment">// Just show basic info</span>
 logLevel: <span class="hljs-string">"info"</span>
 
 <span class="hljs-comment">// output NOTHING to the commandline</span>
-logLevel: <span class="hljs-string">"silent"</span></code></pre>
+logLevel: <span class="hljs-string">"silent"</span></code></pre></div>
 
 
                 <h3 id="option-logPrefix" class="section-link">
@@ -475,11 +448,11 @@ logLevel: <span class="hljs-string">"silent"</span></code></pre>
                 own project based on Browsersync</p>
 
 
-<pre class='highlight'><code class="js">logPrefix: <span class="hljs-string">"My Awesome Project"</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js">logPrefix: <span class="hljs-string">"My Awesome Project"</span>
 
 <span class="hljs-comment">// [My Awesome Project] Local URL: http://localhost:3000</span>
 <span class="hljs-comment">// [My Awesome Project] Watching files....</span>
-<span class="hljs-comment">// [My Awesome Project] File changed: "index.html"</span></code></pre>
+<span class="hljs-comment">// [My Awesome Project] File changed: "index.html"</span></code></pre></div>
 
 
                 <h3 id="option-logConnections" class="section-link">
@@ -497,11 +470,11 @@ logLevel: <span class="hljs-string">"silent"</span></code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Log connections</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Log connections</span>
 logConnections: <span class="hljs-literal">true</span>
 
 <span class="hljs-comment">// Don't log connections</span>
-logConnections: <span class="hljs-literal">false</span></code></pre>
+logConnections: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-logFileChanges" class="section-link">
@@ -519,11 +492,11 @@ logConnections: <span class="hljs-literal">false</span></code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Log information about changed files</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Log information about changed files</span>
 logFileChanges: <span class="hljs-literal">true</span>
 
 <span class="hljs-comment">// Don't log file changes</span>
-logFileChanges: <span class="hljs-literal">false</span></code></pre>
+logFileChanges: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-logSnippet" class="section-link">
@@ -543,8 +516,8 @@ logFileChanges: <span class="hljs-literal">false</span></code></pre>
                 <p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Don't ever log the snippet</span>
-logSnippet: <span class="hljs-literal">false</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Don't ever log the snippet</span>
+logSnippet: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-snippetOptions" class="section-link">
@@ -573,7 +546,7 @@ logSnippet: <span class="hljs-literal">false</span></code></pre>
                 that should be ignored from the snippet injection.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Customise the placement of the snippet</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Customise the placement of the snippet</span>
 <span class="hljs-comment">// and ignore certain paths</span>
 snippetOptions: {
 
@@ -587,7 +560,7 @@ snippetOptions: {
             <span class="hljs-keyword">return</span> snippet + match;
         }
     }
-}</code></pre>
+}</code></pre></div>
 
 
                 <h3 id="option-rewriteRules" class="section-link">
@@ -607,7 +580,7 @@ snippetOptions: {
                 <p>Add additional HTML rewriting rules.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// replace every occurrence of the word Browsersync with 'kittenz'</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// replace every occurrence of the word Browsersync with 'kittenz'</span>
 rewriteRules: [
     {
         match: <span class="hljs-regexp">/Browsersync/g</span>,
@@ -615,7 +588,7 @@ rewriteRules: [
             <span class="hljs-keyword">return</span> <span class="hljs-string">'kittenz'</span>;
         }
     }
-]</code></pre>
+]</code></pre></div>
 
 
                 <h3 id="option-tunnel" class="section-link">
@@ -633,12 +606,12 @@ rewriteRules: [
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Tunnel the Browsersync server through a random Public URL</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Tunnel the Browsersync server through a random Public URL</span>
 <span class="hljs-comment">// -&gt; http://randomstring23232.localtunnel.me</span>
 tunnel: <span class="hljs-literal">true</span>
 
 <span class="hljs-comment">// Attempt to use the URL "http://my-private-site.localtunnel.me"</span>
-tunnel: <span class="hljs-string">"my-private-site"</span></code></pre>
+tunnel: <span class="hljs-string">"my-private-site"</span></code></pre></div>
 
 
                 <h3 id="option-online" class="section-link">
@@ -658,11 +631,11 @@ tunnel: <span class="hljs-string">"my-private-site"</span></code></pre>
                 working offline, you can reduce start-up time by setting this option to <code>false</code></p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Will not attempt to determine your network status, assumes you're ONLINE.</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Will not attempt to determine your network status, assumes you're ONLINE.</span>
 online: <span class="hljs-literal">true</span>
 
 <span class="hljs-comment">// Will not attempt to determine your network status, assumes you're OFFLINE</span>
-online: <span class="hljs-literal">false</span></code></pre>
+online: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-open" class="section-link">
@@ -682,7 +655,7 @@ online: <span class="hljs-literal">false</span></code></pre>
                 Can be true, <code>local</code>, <code>external</code>, <code>ui</code>, <code>ui-external</code>, <code>tunnel</code> or <code>false</code></p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Stop the browser from automatically opening</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Stop the browser from automatically opening</span>
 open: <span class="hljs-literal">false</span>
 
 <span class="hljs-comment">// Open the localhost URL</span>
@@ -695,7 +668,7 @@ open: <span class="hljs-string">"external"</span>
 open: <span class="hljs-string">"ui"</span>
 
 <span class="hljs-comment">// Open the tunnel URL - must also set the `tunnel` option</span>
-open: <span class="hljs-string">"tunnel"</span></code></pre>
+open: <span class="hljs-string">"tunnel"</span></code></pre></div>
 
 
                 <h3 id="option-browser" class="section-link">
@@ -713,11 +686,11 @@ open: <span class="hljs-string">"tunnel"</span></code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Open the site in Chrome</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Open the site in Chrome</span>
 browser: <span class="hljs-string">"google chrome"</span>
 
 <span class="hljs-comment">// Open the site in Chrome &amp; Firefox</span>
-browser: [<span class="hljs-string">"google chrome"</span>, <span class="hljs-string">"firefox"</span>]</code></pre>
+browser: [<span class="hljs-string">"google chrome"</span>, <span class="hljs-string">"firefox"</span>]</code></pre></div>
 
 
                 <h3 id="option-xip" class="section-link">
@@ -737,8 +710,8 @@ browser: [<span class="hljs-string">"google chrome"</span>, <span class="hljs-st
                 as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)</span>
-xip: <span class="hljs-literal">true</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)</span>
+xip: <span class="hljs-literal">true</span></code></pre></div>
 
 
                 <h3 id="option-reloadOnRestart" class="section-link">
@@ -757,8 +730,8 @@ xip: <span class="hljs-literal">true</span></code></pre>
                 <p>Reload each browser when Browsersync is restarted.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// don't auto-reload all browsers following a Browsersync reload</span>
-reloadOnRestart: <span class="hljs-literal">false</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// don't auto-reload all browsers following a Browsersync reload</span>
+reloadOnRestart: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-notify" class="section-link">
@@ -777,8 +750,8 @@ reloadOnRestart: <span class="hljs-literal">false</span></code></pre>
                 <p>The small pop-over notifications in the browser are not always needed/wanted.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Don't show any notifications in the browser.</span>
-notify: <span class="hljs-literal">false</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Don't show any notifications in the browser.</span>
+notify: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-scrollProportionally" class="section-link">
@@ -796,7 +769,7 @@ notify: <span class="hljs-literal">false</span></code></pre>
 
 
 
-<pre class='highlight'><code class="js">scrollProportionally: <span class="hljs-literal">false</span> <span class="hljs-comment">// Sync viewports to TOP position</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js">scrollProportionally: <span class="hljs-literal">false</span> <span class="hljs-comment">// Sync viewports to TOP position</span></code></pre></div>
 
 
 <h3 id="option-scrollThrottle" class="section-link">
@@ -814,7 +787,7 @@ notify: <span class="hljs-literal">false</span></code></pre>
 
 
 
-<pre class='highlight'><code class="js">scrollThrottle: <span class="hljs-number">100</span> <span class="hljs-comment">// only send scroll events every 100 milliseconds</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js">scrollThrottle: <span class="hljs-number">100</span> <span class="hljs-comment">// only send scroll events every 100 milliseconds</span></code></pre></div>
 
 
 <h3 id="option-scrollRestoreTechnique" class="section-link">
@@ -852,8 +825,8 @@ instruction browser to reload/inject following a
 file change event</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Wait for 2 seconds before any browsers should try to inject/reload a file.</span>
-reloadDelay: <span class="hljs-number">2000</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Wait for 2 seconds before any browsers should try to inject/reload a file.</span>
+reloadDelay: <span class="hljs-number">2000</span></code></pre></div>
 
 
                 <h3 id="option-reloadDebounce" class="section-link">
@@ -874,8 +847,8 @@ reloadDelay: <span class="hljs-number">2000</span></code></pre>
                 can be emitted to connected clients</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Wait 2 seconds after a reload event before allowing more.</span>
-reloadDebounce: <span class="hljs-number">2000</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Wait 2 seconds after a reload event before allowing more.</span>
+reloadDebounce: <span class="hljs-number">2000</span></code></pre></div>
 
 
                 <h3 id="option-plugins" class="section-link">
@@ -895,7 +868,7 @@ reloadDebounce: <span class="hljs-number">2000</span></code></pre>
                 <p>User provided plugins</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// First run `npm install bs-html-injector`</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// First run `npm install bs-html-injector`</span>
 <span class="hljs-comment">// Then provide the module name</span>
 plugins: [<span class="hljs-string">"bs-html-injector"</span>]
 
@@ -909,7 +882,7 @@ plugins: [
             file: <span class="hljs-string">"./app/index.php"</span>
         }
     }
-]</code></pre>
+]</code></pre></div>
 
 
                 <h3 id="option-injectChanges" class="section-link">
@@ -927,11 +900,11 @@ plugins: [
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Inject CSS changes</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Inject CSS changes</span>
 injectChanges: <span class="hljs-literal">true</span>,
 
 <span class="hljs-comment">// Don't try to inject, just do a page refresh</span>
-injectChanges: <span class="hljs-literal">false</span>,</code></pre>
+injectChanges: <span class="hljs-literal">false</span>,</code></pre></div>
 
 
                 <h3 id="option-startPath" class="section-link">
@@ -949,8 +922,8 @@ injectChanges: <span class="hljs-literal">false</span>,</code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Open the first browser window at URL + "/info.php"</span>
-startPath: <span class="hljs-string">"/info.php"</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Open the first browser window at URL + "/info.php"</span>
+startPath: <span class="hljs-string">"/info.php"</span></code></pre></div>
 
 
                 <h3 id="option-minify" class="section-link">
@@ -969,8 +942,8 @@ startPath: <span class="hljs-string">"/info.php"</span></code></pre>
                 <p>Whether to minify client script, or not.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Don't minify the client-side JS</span>
-minify: <span class="hljs-literal">false</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Don't minify the client-side JS</span>
+minify: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-host" class="section-link">
@@ -988,8 +961,8 @@ minify: <span class="hljs-literal">false</span></code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Override host detection if you know the correct IP to use</span>
-host: <span class="hljs-string">"192.168.1.1"</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Override host detection if you know the correct IP to use</span>
+host: <span class="hljs-string">"192.168.1.1"</span></code></pre></div>
 
 
                 <h3 id="option-codeSync" class="section-link">
@@ -1007,9 +980,9 @@ host: <span class="hljs-string">"192.168.1.1"</span></code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Don't send any file-change events to browsers</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Don't send any file-change events to browsers</span>
 codeSync: <span class="hljs-literal">false</span>
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="option-timestamps" class="section-link">
@@ -1027,8 +1000,8 @@ codeSync: <span class="hljs-literal">false</span>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Don't append timestamps to injected files</span>
-timestamps: <span class="hljs-literal">false</span></code></pre>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Don't append timestamps to injected files</span>
+timestamps: <span class="hljs-literal">false</span></code></pre></div>
 
 
                 <h3 id="option-scriptPath" class="section-link">
@@ -1050,7 +1023,7 @@ timestamps: <span class="hljs-literal">false</span></code></pre>
                 will be used as the script path.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// This will result in something like</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// This will result in something like</span>
 <span class="hljs-comment">// localhost:3002/browser-sync/browser-sync-client.1.6.0.js</span>
 scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path</span>) </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3002"</span> + path;
@@ -1061,7 +1034,7 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
 <span class="hljs-comment">// http://localhost:3002/browser-sync/browser-sync-client.1.6.0.js</span>
 scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path, port, options</span>) </span>{
     <span class="hljs-keyword">return</span> options.get(<span class="hljs-string">"absolute"</span>);
-}</code></pre>
+}</code></pre></div>
 
 
                 <h3 id="option-socket" class="section-link">
@@ -1087,7 +1060,7 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
                 <p>Configure the Socket.IO path and namespace &amp; domain to avoid collisions.</p>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// To change the namespace used by Browsersync</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// To change the namespace used by Browsersync</span>
 socket: {
     namespace: <span class="hljs-string">'/someothername'</span>
 }
@@ -1099,55 +1072,111 @@ socket: {
 socket: {
     domain: <span class="hljs-string">'localhost:3000'</span>
 }
-</code></pre>
+</code></pre></div>
 
 
 
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="doc-nav">
+
+                    <span class="nav-expand">
+                        <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
+
+                        <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
+
+                    </span>
+
+                    <div class="sticky-nav">
+                        <p class="lede">Jump to...</p>
+                        <ul class="sticky-nav__items" id="sticky-nav">
+                            <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-ui">ui</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-files">files</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-watchOptions">watchOptions</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-server">server</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-proxy">proxy</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-port">port</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-https">https</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-ghostMode">ghostMode</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-logLevel">logLevel</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-logPrefix">logPrefix</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-logConnections">logConnections</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-logFileChanges">logFileChanges</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-logSnippet">logSnippet</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-snippetOptions">snippetOptions</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-rewriteRules">rewriteRules</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-tunnel">tunnel</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-online">online</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-open">open</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-browser">browser</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-xip">xip</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-reloadOnRestart">reloadOnRestart</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-notify">notify</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollProportionally">scrollProportionally</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollThrottle">scrollThrottle</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollRestoreTechnique">scrollRestoreTechnique</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-reloadDelay">reloadDelay</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-reloadDebounce">reloadDebounce</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-plugins">plugins</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-injectChanges">injectChanges</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-startPath">startPath</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-minify">minify</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-host">host</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-codeSync">codeSync</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-timestamps">timestamps</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scriptPath">scriptPath</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-socket">socket</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
-<footer class="wrapper wrapper--dark site-footer" role="contentinfo">
+<footer class="wrapper signup" role="contentinfo">
     <div class="container">
-        <div class="credit">
-            <a class="credit__thumb" href="http://www.wearejh.com/"><img src="/img/jh-300-trans.png" alt="JH"/></a>
-            <div class="credit__content">
-                <p>The Browsersync project is supported by <a href="http://www.wearejh.com/">JH</a>,
-                    with design and development by
-                    <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
-                    <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
-                    <a href="https://twitter.com/chris3ailey">Chris Bailey</a> and
-                    <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
-                    For regular information on updates and usage, please follow <a href="https://twitter.com/browsersync">@browsersync</a>.
-                </p>
-                <p>Browsersync is available for use and modification under the <a href="https://github.com/Browsersync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
-            </div>
-            <p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>
+        <p class="signup__title">Stay up to date with the latest features</p>
+        <div class="signup__form">
+            <input type="text" placeholder="Email..." class="input input--text form__email"/>
+            <input type="button" value="Signup" class="button button--primary form__submit"/>
+        </div>
+        <div class="signup__links">
+            <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+            <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
+                <li class="nav__item credit__thumb">
+                    <span>An open source project by</span>
+                    <a href="http://www.wearejh.com/" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--<div class="credit__content">-->
+        <!--<p>as</p>-->
+    <!--</div>-->
+    <!--<p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>-->
+</div>
+
+<script src="/js/dist/app.min.js"></script>
 
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){

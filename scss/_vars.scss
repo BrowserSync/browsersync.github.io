@@ -1,26 +1,14 @@
-/**
- * VARIABLES
- */
-
-/*================================================================================
-PALETTE
-================================================================================*/
-
-/**
- * Brand
- */
-$red: #da4453;//#f33;
-$navy: #1b2032;
+// Brand
+$red: #F24747;//#f33;
+$navy: #0F2634;
 $yellow: #e9ac00;
-$teal: #256b8d;//#009882;#5fb342
+$blue-lt: #89BAF4;
+$teal: $blue-lt;
 $bg: #da4453;
 $lime: #D3ED13;
-$code-bg: #FAFAFA;
+$code-bg: #FCFCFC;
 
-
-/**
- * Neutrals
- */
+// Neutrals
 $white: #fff;
 $black: #000;
 $grey-dk: lighten($black, 10%); // 1a1a1a
@@ -29,11 +17,9 @@ $grey-lt: lighten($black, 40%); // 666666
 $silver-dk: lighten($black, 60%); // 999999
 $silver: lighten($black, 80%); // cccccc
 $silver-lt: lighten($black, 90%); // e6e6e6
-$smoke: lighten($black, 95%); // f2f2f2
+$smoke: #FBFBFB; // f2f2f2
 
-/**
- * Special
- */
+// Special
 $link: $red;
 $link-hover: $black;
 $alert: #cccc00;
@@ -42,28 +28,18 @@ $failure: #cc0000;
 $facebook: #3B5999;
 $twitter: #00ACEE;
 
-
-/*================================================================================
-TYPOGRAPHY
-================================================================================*/
-
 $sans: "Titillium Web", "Lucida Grande", "Lucida Sans",sans-serif;
 $serif: Georgia, serif;
 $mono: monospace;
 
-
-/**
- * Base
- */
+// Base
 $base-font-size: 16px;
 $base-line-height: 1.5;
 $base-font-family: $sans;
 $base-color: $grey;
 
 
-/**
- * Headings
- */
+// Headings
 $hn-font-weight: 700;
 $hn-line-height: 1;
 $hn-font-family: $sans;
@@ -76,45 +52,29 @@ $h5-size: 16px;
 $h6-size: 16px;
 
 
-/**
- * Fixed width
- */
+// Fixed width
 $mono-size: 18px;
 $mono-line-height: $base-line-height;
 $mono-font-family: $mono;
 
 
-/**
- * Special
- */
+// Special
 $lede-size: 24px;
 $small-size: 12px;
 $micro-size: 10px;
 
 
-/*================================================================================
-LAYOUT
-================================================================================*/
-
 $border-box: true;
 
-/**
- * Spacing
- */
+// Spacing
 $base-spacing: $base-font-size * $base-line-height;
 $half-spacing: ceil($base-spacing / 2);
 
-
-/**
- * Radii
- */
+// Radii
 $base-radius: 5px;
 $half-radius: ceil($base-radius / 2);
 
-
-/**
- * Grids
- */
+// Grids
 $column-width: 80px;
 $gutter-width: 20px;
 $page-width: 1000px;
@@ -122,5 +82,5 @@ $page-width: 1000px;
 $lap-start: 700px;
 $desk-start: 900px;
 $wide-start: 1100px;
-
 $fa-css-prefix: "icon";
+$header-height: 70px;

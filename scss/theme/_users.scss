@@ -1,0 +1,68 @@
+.users {
+    @include home-section;
+}
+
+.user__list {
+    width: 100%;
+    padding-top: $base-spacing;
+
+    + .user__list {
+        margin-top: $base-spacing*2;
+    }
+    @include media-query(min, $lap-start) {
+        display: flex;
+        justify-content: center;
+        padding-top: 0;
+
+        .google {
+            position: relative;
+            top: -5px;
+        }
+        .adobe {
+            position: relative;
+            top: -2px;
+        }
+    }
+}
+
+.user__logo {
+
+    margin-bottom: $base-spacing;
+
+    @include media-query(min, $lap-start) {
+        margin: 0 $base-spacing*1.5;
+    }
+
+    img {
+        margin: 0 auto;
+        max-width: 150px;
+    }
+}
+
+.user__person {
+    padding-left: 70px;
+    position: relative;
+    @include media-query(min, $lap-start) {
+        padding-left: 90px;
+        width: 100%;
+    }
+
+    img {
+        max-width: 50px;
+        @include media-query(min, $lap-start) {
+            max-width: 70px;
+        }
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.person {}
+.person__name {
+    @include font-size(18px);
+    font-weight: bold;
+}
+
+

@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
@@ -12,7 +9,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browsersync API</title>
 
     <!-- ICONS -->
@@ -21,58 +18,56 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
-
-    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
+    <!--[if gt IE 9]><!--> <script src="/img/icons/svg4everybody.min.js"></script> <!--<![endif]-->
 </head>
 
 
 <body id="page-top">
+<div class="header-wrap ">
 
-<header class="wrapper wrapper--dark site-header alt" role="banner">
-    <div class="container">
-        <h1 class="site-title alt"><a href="/">Browsersync</a> / <span><a href="/docs">documentation</a></span></h1>
-        <ul class="nav--inline docs-nav">
-            <li><a href="/docs/gulp" >+ Gulp</a></li>
-            <li><a href="/docs/grunt" >+ Grunt</a></li>
-            <li><a href="/docs/api" class="active">API</a></li>
-            <li><a href="/docs/command-line" >Command line</a></li>
-            <li><a href="/docs/options" >Options</a></li>
-            <li><a href="/docs/recipes" >Recipes</a></li>
-            <li><a href="/docs/http-protocol" >HTTP Protocol</a></li>
-        </ul>
-    </div>
-</header><!-- .end .site-header -->
+    <header class="wrapper site-header" role="banner">
+        <div class="container">
+            <nav>
+                <ul class="site-nav">
+                    <li class="nav__item logo">
+                        <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-logo"></use></svg>
+     Browser<span>sync</span></a>
+                    </li>
+                    <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item "><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                    <li class="nav__item nav__item--right">
+                        <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+    </a>
+                        <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- .end .site-header -->
 
+
+
+</div>
 
 <div class="site-body" role="main">
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                <li class="fixed-nav__item active"><a class="nav-link" href="/docs/api">API</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/options">Options</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
     <section id="top" class="wrapper code-example">
     <div class="container">
         <article class="doc-wrapper">
-        <div class="grid">
-            <div class="grid__cell one-quarter">
-                <div class="sticky-nav">
-                    <p class="lede">Jump to...</p>
-                    <ul class="nav nav--stacked" id="sticky-nav">
-                        <li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>
-                            <li><a href="#api-create">.create( name )</a></li>
-                            <li><a href="#api-get">.get( name )</a></li>
-                            <li><a href="#api-init">.init( config, cb )</a></li>
-                            <li><a href="#api-reload">.reload( arg )</a></li>
-                            <li><a href="#api-stream">.stream( opts )</a></li>
-                            <li><a href="#api-notify">.notify( msg, timeout )</a></li>
-                            <li><a href="#api-exit">.exit()</a></li>
-                            <li><a href="#api-watch">.watch( patterns, opts, fn )</a></li>
-                            <li><a href="#api-pause">.pause()</a></li>
-                            <li><a href="#api-resume">.resume()</a></li>
-                            <li><a href="#api-emitter">.emitter</a></li>
-                            <li><a href="#api-active">.active</a></li>
-                            <li><a href="#api-paused">.paused</a></li>
-                            <li><a href="#api-sockets">.sockets</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="grid__cell three-quarters">
+            <div class="three-quarters">
                 <h1 class="page-title">Browsersync API</h1>
                 
 
@@ -86,7 +81,7 @@
                 Previously we allowed methods to be called directly on the module export like this:
                 </p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
 <span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>);
 
 <span class="hljs-comment">// Start the server</span>
@@ -94,13 +89,13 @@ browserSync({server: <span class="hljs-string">"./app"</span>});
 
 <span class="hljs-comment">// Call methods like reload</span>
 browserSync.reload(<span class="hljs-string">"core.css"</span>);
-</code></pre>
+</code></pre></div>
                 <p><strong>Post 2.0.0 syntax (recommended)</strong><br/>
                 Whilst the above is still supported, we now recommend the following instead. Calling <code>.create()</code> means you get
                 a unique reference & allows you to create multiple servers or proxies.
                 </p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// require the module as normal</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// .init starts the server</span>
@@ -111,7 +106,7 @@ bs.init({
 <span class="hljs-comment">// Now call methods on bs instead of the</span>
 <span class="hljs-comment">// main browserSync module export</span>
 bs.reload(<span class="hljs-string">"*.html"</span>);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-create" class="section-link">
@@ -132,7 +127,7 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// create an unnamed instance</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// create an unnamed instance</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// create a named instance</span>
@@ -141,7 +136,7 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
 
 <span class="hljs-comment">// create multiple</span>
 <span class="hljs-keyword">var</span> bs1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 1'</span>);
-<span class="hljs-keyword">var</span> bs2 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 2'</span>);</code></pre>
+<span class="hljs-keyword">var</span> bs2 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'Server 2'</span>);</code></pre></div>
 
 
                 <h3 id="api-get" class="section-link">
@@ -162,7 +157,7 @@ bs.reload(<span class="hljs-string">"*.html"</span>);
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Create an named instance in one file...</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Create an named instance in one file...</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create(<span class="hljs-string">'My Server'</span>);
 
 <span class="hljs-comment">// Start the Browsersync server</span>
@@ -175,7 +170,7 @@ bs.init({
 
 <span class="hljs-comment">// and call any methods on it.</span>
 bs.watch(<span class="hljs-string">'*.html'</span>).on(<span class="hljs-string">'change'</span>, bs.reload);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-init" class="section-link">
@@ -207,7 +202,7 @@ bs.watch(<span class="hljs-string">'*.html'</span>).on(<span class="hljs-string"
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Start a Browsersync static file server</span>
 bs.init({
@@ -217,7 +212,7 @@ bs.init({
 <span class="hljs-comment">// Start a Browsersync proxy</span>
 bs.init({
     proxy: <span class="hljs-string">"http://www.bbc.co.uk"</span>
-});</code></pre>
+});</code></pre></div>
 
 
                 <h3 id="api-reload" class="section-link">
@@ -238,7 +233,7 @@ bs.init({
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// browser reload</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// browser reload</span>
 bs.reload();
 
 <span class="hljs-comment">// single file</span>
@@ -249,7 +244,7 @@ bs.reload([<span class="hljs-string">"styles.css"</span>, <span class="hljs-stri
 
 <span class="hljs-comment">// Since 2.6.0 - wildcards to reload ALL css files</span>
 bs.reload(<span class="hljs-string">"*.css"</span>);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-stream" class="section-link">
@@ -271,7 +266,7 @@ bs.reload(<span class="hljs-string">"*.css"</span>);
 
                     <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Compile SASS &amp; auto-inject into browsers</span>
 gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'scss/styles.scss'</span>)
         .pipe(sass({includePaths: [<span class="hljs-string">'scss'</span>]}))
@@ -295,7 +290,7 @@ gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><
         .pipe(bs.stream({match: <span class="hljs-string">"**/*.css"</span>}));
 });
 
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-notify" class="section-link">
@@ -324,7 +319,7 @@ gulp.task(<span class="hljs-string">'less'</span>, <span class="hljs-function"><
                     </ul>
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Text message</span>
 bs.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
@@ -333,7 +328,7 @@ bs.notify(<span class="hljs-string">"Compiling, please wait!"</span>);
 bs.notify(<span class="hljs-string">"HTML &lt;span color='green'&gt;is supported&lt;/span&gt; too!"</span>);
 
 <span class="hljs-comment">// Since 1.3.0, specify a timeout</span>
-bs.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre>
+bs.notify(<span class="hljs-string">"This message will only last a second"</span>, <span class="hljs-number">1000</span>);</code></pre></div>
 
 
                 <h3 id="api-exit" class="section-link">
@@ -346,7 +341,7 @@ bs.notify(<span class="hljs-string">"This message will only last a second"</span
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Start the server</span>
 bs.init({server: <span class="hljs-string">"./app"</span>});
@@ -355,7 +350,7 @@ bs.init({server: <span class="hljs-string">"./app"</span>});
 setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     bs.exit();
 }, <span class="hljs-number">5000</span>);
-</code></pre>
+</code></pre></div>
 
 
                 <h3 id="api-watch" class="section-link">
@@ -393,7 +388,7 @@ setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span
 
                     <p class="lede warning"><b>Note: </b> requires at least version 2.6.0</p>
 
-<pre class='highlight'><code class="js"><span class="hljs-comment">// Create a Browsersync instance</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Create a Browsersync instance</span>
 <span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Listen to change events on HTML and reload</span>
@@ -411,7 +406,7 @@ bs.watch(<span class="hljs-string">"css/*.css"</span>, <span class="hljs-functio
 <span class="hljs-comment">// Now init the Browsersync server</span>
 bs.init({
     server: <span class="hljs-string">"./app"</span>
-});</code></pre>
+});</code></pre></div>
 
 
                 <h3 id="api-pause" class="section-link">
@@ -449,14 +444,14 @@ bs.init({
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// Listen for the `init` event</span>
 bs.emitter.on(<span class="hljs-string">"init"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Browsersync is running!"</span>);
 });
 
-bs.init(config);</code></pre>
+bs.init(config);</code></pre></div>
 
 
                 <h3 id="api-active" class="section-link">
@@ -469,7 +464,7 @@ bs.init(config);</code></pre>
 
 
 
-<pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
 
 <span class="hljs-comment">// -&gt; false as .init has not yet been called</span>
 <span class="hljs-built_in">console</span>.log(bs.active);
@@ -478,7 +473,7 @@ bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function<
 
     <span class="hljs-comment">// -&gt; now true since BS is running now</span>
     <span class="hljs-built_in">console</span>.log(bs.active);
-});</code></pre>
+});</code></pre></div>
 
 
                 <h3 id="api-paused" class="section-link">
@@ -506,50 +501,82 @@ bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function<
 
 
             </div>
-        </div>
+            <div class="one-quarter">
+
+                <div class="doc-nav">
+                    <span class="nav-expand">
+                        <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
+
+                        <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
+
+                    </span>
+                    <div class="sticky-nav">
+                        <p class="lede">Jump to...</p>
+                        <ul class="sticky-nav__items" id="sticky-nav">
+                            <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-create">.create( name )</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-get">.get( name )</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-init">.init( config, cb )</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-reload">.reload( arg )</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-stream">.stream( opts )</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-notify">.notify( msg, timeout )</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-exit">.exit()</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-watch">.watch( patterns, opts, fn )</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-pause">.pause()</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-resume">.resume()</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-emitter">.emitter</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-active">.active</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-paused">.paused</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#api-sockets">.sockets</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </article>
     </div>
 
     </section>
 
-
-    <script type="text/javascript">
-        var nav = document.querySelector('.sticky-nav');
-        var toggle = document.querySelector('.nav-toggle-btn');
-        var toggleBtn = toggle.querySelector('a');
-
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            nav.classList.toggle("active");
-            var state = toggle.classList.toggle("active");
-            if (state) {
-                toggleBtn.innerHTML = "Close X";
-            } else {
-                toggleBtn.innerHTML = "Menu";
-            }
-        });
-    </script>
 </div>
 
-<footer class="wrapper wrapper--dark site-footer" role="contentinfo">
+<footer class="wrapper signup" role="contentinfo">
     <div class="container">
-        <div class="credit">
-            <a class="credit__thumb" href="http://www.wearejh.com/"><img src="/img/jh-300-trans.png" alt="JH"/></a>
-            <div class="credit__content">
-                <p>The Browsersync project is supported by <a href="http://www.wearejh.com/">JH</a>,
-                    with design and development by
-                    <a href="https://twitter.com/shaneosbourne">Shane Osbourne</a>,
-                    <a href="https://twitter.com/whatjoesays">Joseph Russell</a>,
-                    <a href="https://twitter.com/chris3ailey">Chris Bailey</a> and
-                    <a href="https://twitter.com/o_chenery">Oliver Chenery</a>.
-                    For regular information on updates and usage, please follow <a href="https://twitter.com/browsersync">@browsersync</a>.
-                </p>
-                <p>Browsersync is available for use and modification under the <a href="https://github.com/Browsersync/browser-sync/blob/master/LICENSE">Apache 2.0 License</a>.</p>
-            </div>
-            <p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>
+        <p class="signup__title">Stay up to date with the latest features</p>
+        <div class="signup__form">
+            <input type="text" placeholder="Email..." class="input input--text form__email"/>
+            <input type="button" value="Signup" class="button button--primary form__submit"/>
+        </div>
+        <div class="signup__links">
+            <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+            <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
         </div>
     </div>
 </footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
+                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
+                <li class="nav__item credit__thumb">
+                    <span>An open source project by</span>
+                    <a href="http://www.wearejh.com/" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--<div class="credit__content">-->
+        <!--<p>as</p>-->
+    <!--</div>-->
+    <!--<p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>-->
+</div>
+
+<script src="/js/dist/app.min.js"></script>
 
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){

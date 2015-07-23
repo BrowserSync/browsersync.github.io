@@ -1,116 +1,78 @@
-.nav {
-    @include clearfix();
-    @include list-reset();
+$small-nav-height: $header-height - 30px;
 
-    > li {
-        + li {
+.nav-link {
 
-        }
+    display: inline-block;
+    color: white;
+    padding: 0 $half-spacing;
+    height: $small-nav-height;
+    transition: background .3s;
 
-        > a {
-            // display: block;
-        }
+    &:active {
+        transform: scale(0.98);
+    }
 
-        &.active > a {
-            cursor: default;
-        }
+    &.mono {
+        font-family: monospace;
     }
 }
 
-/**
- * Horizontal using inline-block
- */
-.nav--inline {
-    @extend .nav;
+.nav__item {
 
-    > li {
-        display: inline-block;
+    display: inline-block;
+    line-height: $small-nav-height;
+    margin: 0;
+    padding: 0;
 
-        > a {
-            display: inline-block;
-        }
-    }
-}
-
-
-/**
- * Horizontal using float
- */
-.nav--float {
-    @extend .nav;
-
-    > li {
-        float: left;
-
-        > a {
-            display: block;
-        }
-    }
-}
-
-.back-to-top {
-    position: absolute;
-    top: $half-spacing;
-    right: 0;
-    @include font-size(14px);
-    @include media-query(min, $lap-start) {
-        top: $base-spacing;
-    }
-}
-
-.sticky-nav {
-
-    //padding: $half-spacing;
-
-    .lede {
-        display: none;
-        @include media-query(min, $lap-start) {
-            display: block;
-        }
-    }
-
-    .nav {
-        margin-bottom: 0;
-    }
-
-    li {
-
-        display: none;
-        //border-bottom: 1px solid lighten($silver-lt;
-
-        a {
-            padding: $half-spacing/3 0;
-            padding-left: $half-spacing/2;
-            display: block;
-            color: $navy;
-
-            //&:hover, &:focus {
-            //    text-decoration: none;
-            //    background: lighten(#e1e1e1, 10%);
-            //}
-        }
-
-        &.nav-toggle-btn {
-            display: block;
-            a {
-                background: #e1e1e1;
-            }
-        }
-
-        @include media-query(min, $lap-start) {
-
-            display: block;
-            &.nav-toggle-btn {
-                display: none;
-            }
-        }
-    }
+    margin-right: $half-spacing/2;
+    border-bottom: rgba(white, 0);
 
     &.active {
-        ul {
-            li {
-                display: block;
-            }
+        .nav-link {
+            font-weight: bold;
         }
+    }
+
+    .nav-link {
+        position: relative;
+        &:hover, &:focus {
+            color: $white;
+            background: rgba(white, .1);
+            text-decoration: none;
+        }
+    }
+
+    @include media-query(min, $lap-start) {
+        margin-right: 0;
+        .nav-link {
+            height: $header-height;
+            line-height: $header-height;
+        }
+    }
+}
+
+.nav__item--right {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0;
+
+    a {
+        height: $header-height;
+        line-height: $header-height;
+    }
+
+
+    @include media-query(min, $lap-start) {
+        position: relative;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .svg-icon {
+        width: $base-spacing;
+        height: $base-spacing;
     }
 }

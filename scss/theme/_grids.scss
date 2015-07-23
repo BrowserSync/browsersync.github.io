@@ -1,90 +1,45 @@
+$spacing: $base-spacing + $half-spacing;
 
-.grid {
-    @include clearfix();
-    @include list-reset();
-    margin-bottom: 0;
-    margin-left: -4%;
-}
+.doc-wrapper {
 
-.grid__cell {
-    float: left;
-    padding-left: 4%;
-    width: 100%;
+    background: $white;
+    padding: $half-spacing;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (min-width: $lap-start) {
+        border-radius: 5px;
+        padding: $spacing $spacing 0;
+    }
 }
 
 .one-quarter {
+    width: 100%;
+    order: 1;
     @include media-query(min, $lap-start) {
-        width: 25%;
+        order: 2;
+        width: 28%;
     }
 }
 .three-quarters {
+    order: 2;
+    width: 100%;
     @include media-query(min, $lap-start) {
-        width: 75%;
+        order: 1;
+        width: 65%;
     }
 }
 
-@include media-query(max, $lap-start) {
-    .palm-2up {
-        .grid__cell {
-            width: 50%;
-
-            &:nth-child(2n+1) {
-                clear: left;
-            }
-        }
-    }
-
-    .palm-4up {
-        .grid__cell {
-            width: 25%;
-
-            &:nth-child(4n+1) {
-                clear: left;
-            }
-        }
-    }
+.grid {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@include media-query-bracket($lap-start, $desk-start) {
-    .lap-2up {
-        .grid__cell {
-            width: 50%;
-
-            &:nth-child(2n+1) {
-                clear: left;
-            }
-        }
-    }
-
-    .lap-4up {
-        .grid__cell {
-            width: 25%;
-
-            &:nth-child(4n+1) {
-                clear: left;
-            }
-        }
-    }
-}
-
-@include media-query(min, $desk-start) {
-    .desk-2up {
-        .grid__cell {
-            width: 50%;
-
-            &:nth-child(2n+1) {
-                clear: left;
-            }
-        }
-    }
-
-    .desk-4up {
-        .grid__cell {
-            width: 25%;
-
-            &:nth-child(4n+1) {
-                clear: left;
-            }
-        }
+.one-half {
+    width: 100%;
+    @include media-query(min, $lap-start) {
+        width: 50%;
     }
 }

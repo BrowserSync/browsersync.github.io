@@ -1,6 +1,3 @@
-/**
- * Base typography styles
- */
 code, samp {
 
     @include font-size(16px);
@@ -16,7 +13,7 @@ code, samp {
 pre {
 
     padding: $base-spacing;
-    line-height: 1;
+    line-height: 1.4;
     background: $code-bg;
 
     /* reset previous inline code styles */
@@ -27,59 +24,31 @@ pre {
     }
 
     margin-bottom: $base-spacing;
-    margin-left: -$half-spacing;
-    margin-right: -$half-spacing;
-    border: 5px solid darken($code-bg, 2%);
-    border-left-width: 0;
-    border-right-width: 0;
+    //margin-left: -$half-spacing;
+    //margin-right: -$half-spacing;
+    border: 1px solid #E8E8E8;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 
     @include media-query(min, $lap-start) {
 
         margin-left: 0;
+        margin-right: 0;
         //margin-right: -($base-spacing*1.5);
-        border-left-width: 5px;
-        border-right-width: 5px;
+        //border-left-width: 5px;
+        //border-right-width: 5px;
     }
 }
 
-$spacing: $base-spacing+$half-spacing;
-
-.doc-wrapper {
-
-    background: $white;
-    padding: $half-spacing;
-    border-radius: 0px;
-
-    @media (min-width: $lap-start) {
-        border-radius: 5px;
-        border: 1px solid $silver;
-        padding: $spacing $spacing 0;
-    }
-
-    .page-title {
-
-        @include font-size(20px);
-
-        @media (min-width: $lap-start) {
-            @include font-size(34px);
-            margin-bottom: $base-spacing;
-            padding-bottom: $half-spacing;
-            border-bottom: 1px dashed $silver;
-        }
-    }
-}
 
 .section-link {
     padding-bottom: $half-spacing;
     border-bottom: 1px dashed $silver-lt;
 }
 
-/**
- * Styles specific to pages that contain docs
- */
 .code-example {
 
-    background: #F2F2F2;
     padding-top: 0;
 
     h2 {
@@ -104,10 +73,6 @@ $spacing: $base-spacing+$half-spacing;
 
             margin-bottom: $half-spacing;
         }
-    }
-
-    @media (min-width: $lap-start) {
-        padding-top: $base-spacing;
     }
 
     .container {
@@ -141,13 +106,6 @@ $spacing: $base-spacing+$half-spacing;
         }
     }
 
-    h4 {
-        font-weight: normal;
-        @include font-size(20px);
-        color: $teal;
-        margin-bottom: $base-spacing;
-    }
-
     &.docs {
         text-align: center;
 
@@ -174,9 +132,6 @@ $spacing: $base-spacing+$half-spacing;
     }
 }
 
-/*
- * Param list
- */
 .param-list {
 
     list-style: none;
@@ -216,19 +171,90 @@ $spacing: $base-spacing+$half-spacing;
 }
 
 .page-anchor {
+
     color: $navy;
-    .icon {
-        color: darken($lime, 10%);
-        position: relative;
-        top: 1px;
+    position: relative;
+    font-weight: normal;
+
+    &:after {
+        transition: all .3s;
+        content: "";
+        width: 0;
+        height: 1px;
+        background: $navy;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+        text-decoration: none;
+    }
+}
+
+
+.page-title {
+
+    @include font-size(20px);
+    font-weight: normal;
+
+    @media (min-width: $lap-start) {
+        @include font-size(34px);
+        margin-bottom: $base-spacing;
+        padding-bottom: $half-spacing;
+        border-bottom: 1px dashed $silver;
     }
 }
 
 .color-teal {
-    color: $teal;
+    //color: $teal;
 }
 
 .subprops {
     margin-top: $half-spacing;
     padding-left: $half-spacing;
+}
+
+.back-to-top {
+    font-weight: normal;
+    @include font-size(14px);
+    position: absolute;
+    top: $base-spacing - 5px;
+    right: 0;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    @include media-query(min, $lap-start) {
+        top: $base-spacing * 2;
+    }
+}
+
+.highlight-header {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    height: 28px;
+    background: #E7E7E7;
+    padding-left: $half-spacing;
+    position: relative;
+    display: flex;
+
+    .circle {
+        margin: auto 0;
+        width: 12px;
+        height: 12px;
+        background: $white;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+
+    .svg-icon {
+        color: #a4a4a4;
+        position: absolute;
+        right: $half-spacing;
+        top: $half-spacing/2;
+    }
 }

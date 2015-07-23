@@ -1,11 +1,26 @@
-<section class="wrapper wrapper--dark intro">
+<section class="wrapper intro">
     <div class="container">
 
+        {{inc src="icon.hbs" icon="logo" class="logo logo--large"}}
+
         <h1 class="hook">{{site.tagline}}</h1>
-        <p class="ronseal">Browsersync makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It&rsquo;s wicked-fast and totally free.</p>
-        <p class="cta"><a class="button button--primary" href="#install">Get Started</a> <span class="stat">{{site.downloads}}</span></p>
+
+        <p class="ronseal">It&rsquo;s wicked-fast and totally free.</p>
+
+        <p class="video">
+            <a class="video__link" href="#">
+                {{inc src="icon.hbs" icon="circle-play"}}
+            </a>
+        </p>
+
+        <p class="how-to"><p class="how-to__command">npm install -g browser-sync</p></p>
+
+        <p class="cta">
+            <a class="button button--primary" href="#install" title="Get Started">Get Started</a>
+        </p>
+
         <div class="player">
-            {{inc src="_includes/video.hbs"}}
+            <p>'bonjour</p>
         </div>
     </div>
 </section>

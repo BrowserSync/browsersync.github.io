@@ -1,19 +1,19 @@
 ---
 layout: "default.hbs"
 ---
+{{inc src="docs-nav.hbs"}}
 <section id="top" class="wrapper code-example">
 {{#if page.sidebar}}
 <div class="container">
     <article class="doc-wrapper">
-    <div class="grid">
-        <div class="grid__cell one-quarter">
-            {{inc src=page.sidebar}}
-        </div>
-        <div class="grid__cell three-quarters">
+        <div class="three-quarters">
             <h1 class="page-title">{{page.title}}</h1>
             {{ content }}
         </div>
-    </div>
+        <div class="one-quarter">
+
+            {{inc src=page.sidebar}}
+        </div>
     </article>
 </div>
 {{else}}
@@ -26,21 +26,3 @@ layout: "default.hbs"
 {{/if}}
 
 </section>
-
-
-<script type="text/javascript">
-    var nav = document.querySelector('.sticky-nav');
-    var toggle = document.querySelector('.nav-toggle-btn');
-    var toggleBtn = toggle.querySelector('a');
-
-    toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        nav.classList.toggle("active");
-        var state = toggle.classList.toggle("active");
-        if (state) {
-            toggleBtn.innerHTML = "Close X";
-        } else {
-            toggleBtn.innerHTML = "Menu";
-        }
-    });
-</script>

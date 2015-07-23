@@ -2,29 +2,8 @@
     @include clearfix();
 }
 
-section + section {
-
-    border-top: 1px solid $silver-lt;
-}
-
 hr {
     border-color: $silver;
-}
-
-h2 {
-    color: $red;
-}
-
-h3 {
-
-    i {
-
-        display: inline-block;
-        margin-right: $half-spacing/2;
-        width: 1em;
-        color: $red;
-        text-align: center;
-    }
 }
 
 .fl {
@@ -38,17 +17,7 @@ h3 {
     margin-left: auto;
 }
 
-.player {
 
-    font-size: 0;
-
-    border: $half-spacing/2 solid rgba(0,0,0,0.5);
-
-    @include media-query(min, $desk-start) {
-        max-width: 700px;
-        margin: 0 auto;
-    }
-}
 
 .banner {
     padding-top: $half-spacing;
@@ -83,4 +52,14 @@ h3 {
 
 .banner__content {
     padding-top: $half-spacing;
+}
+
+[hl] {
+    border: 1px solid red;
+}
+
+
+.nav {
+    margin-left: 0;
+    list-style: none;
 }

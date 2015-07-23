@@ -1,6 +1,6 @@
 module.exports = {
     tasks: {
-        build: ["crossbow", "html-min", "sass", "icons", "js"],
+        build: ["docs", "crossbow", "html-min", "sass", "icons", "js"],
         icons: ["tasks/icons.js"],
         js:    ["babel-browserify", "uglify"]
     },
@@ -50,5 +50,10 @@ module.exports = {
             input: 'index.src/index.html',
             output: 'index.html'
         },
+        "docs": {
+            output: "_doc",
+            index: "node_modules/browser-sync/index.js",
+            config: "node_modules/browser-sync/lib/default-config.js"
+        }
     }
 };

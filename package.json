@@ -4,8 +4,8 @@
   "description": "The Browsersync website",
   "scripts": {
     "start": "crossbow watch",
-    "build": "gulp build",
-    "test": "gulp build"
+    "build": "crossbow run build",
+    "test": "crossbow run build"
   },
   "author": "Shane Osbourne",
   "contributors": [

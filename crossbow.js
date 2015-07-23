@@ -1,6 +1,6 @@
 module.exports = {
     tasks: {
-        build: ["crossbow", "sass", "icons", "js", "html-min"],
+        build: ["crossbow", "html-min", "sass", "icons", "js"],
         icons: ["tasks/icons.js"],
         js:    ["babel-browserify", "uglify"]
     },

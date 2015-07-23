@@ -3,7 +3,7 @@
 .site-header {
 
     text-align: center;
-    background: $navy;
+    //background: $navy;
 
     @include media-query(min, $lap-start) {
         height: $header-height;

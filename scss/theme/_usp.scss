@@ -20,6 +20,8 @@
         left: 50%;
         top: 0;
         display: block;
+        width: 704px;
+        height: 524px;
     }
 }
 
@@ -40,8 +42,8 @@
 }
 
 .usp__platforms {
-    margin-top: $base-spacing*2;
+    margin-top: $base-spacing;
     img {
-        width: 124px;
+        width: 110px;
     }
 }

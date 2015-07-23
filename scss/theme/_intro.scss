@@ -31,7 +31,7 @@
     }
 
     @include media-query(min, $desk-start) {
-        padding-top: $base-spacing*1.5;
+        padding-top: $base-spacing;
         @include font-size(48px);
     }
 }
@@ -59,14 +59,14 @@
         color: $white;
 
         .svg-icon {
-            transform: rotate(360deg)  scale(1.1);
+            transform: scale(1.2);
         }
     }
 
     &:active {
         color: $white;
         .svg-icon {
-            transform:  rotate(360deg) scale(1);
+            transform: scale(1);
         }
     }
 

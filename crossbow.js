@@ -1,12 +1,13 @@
 module.exports = {
     tasks: {
-        build: ["crossbow", "sass", "icons"],
+        build: ["crossbow", "sass", "icons", "js", "html-min"],
         icons: ["tasks/icons.js"],
-        js:    ["babel-browserify"]
+        js:    ["babel-browserify", "uglify"]
     },
     watch: {
         "bs-config": {
-            server: true
+            server: true,
+            middleware: require('compression')()
         },
         default: {
             "img/svg/*.svg": ["icons", "bs:reload"],
@@ -16,7 +17,7 @@ module.exports = {
         "crossbow": [
             {
                 patterns: ["_src/**", "*.yml"],
-                tasks: ["crossbow", "bs:reload"]
+                tasks: ["crossbow", "html-min", "bs:reload"]
             }
         ]
     },
@@ -40,6 +41,14 @@ module.exports = {
             input: 'js/app.js',
             root: 'js',
             output: 'js/dist/app.js'
-        }
+        },
+        "uglify": {
+            input: 'js/dist/app.js',
+            output: 'js/dist/app.min.js',
+        },
+        "html-min": {
+            input: 'index.src/index.html',
+            output: 'index.html'
+        },
     }
 };

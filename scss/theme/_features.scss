@@ -15,7 +15,8 @@
 
 .feature__item {
     //padding-left: $base-spacing;
-    width: 49%;
+    width: 100%;
+
     @include media-query(min, $lap-start) {
         width: 31%;
     }

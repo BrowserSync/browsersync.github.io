@@ -9,7 +9,7 @@
     position: relative;
 
     &.home {
-        background: url('../img/bg.jpg') no-repeat;
+        background: $navy url('../img/bg.jpg') no-repeat;
         background-size: cover;
     }
 }

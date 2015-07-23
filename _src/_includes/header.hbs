@@ -3,12 +3,10 @@
         <nav>
             <ul class="site-nav">
                 <li class="nav__item logo">
-                    <a href="/" class="nav-link">{{inc src="icon.hbs" icon="logo" class=""}} {{site.title}}</a>
+                    <a href="/" class="nav-link">{{inc src="icon.hbs" icon="logo" class=""}} Browser<span>sync</span></a>
                 </li>
                 {{#each site.navigation}}
-                <li class="nav__item {{#current this.url}}active{{/current}}"><a href="{{this.url}}" class="nav-link">{{ this
-                .label
-                }}</a></li>
+                <li class="nav__item {{#current this.url}}active{{/current}}"><a href="{{this.url}}" class="nav-link">{{this.label}}</a></li>
                 {{/each}}
                 <li class="nav__item nav__item--right">
                     <a href="{{site.links.source}}" class="nav-link" title="Browsersync on Github">{{inc src="icon.hbs"
@@ -20,3 +18,4 @@
         </nav>
     </div>
 </header><!-- .end .site-header -->
+

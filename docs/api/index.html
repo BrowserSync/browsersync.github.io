@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
@@ -21,8 +18,7 @@
     <!-- CSS Includes (PRODUCTION) -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
     <link rel="stylesheet" href="/css/core.min.css"/>
-
-    <!--[if lt IE 10]><script src="/img/icons/svg4everybody.min.js"></script><![endif]-->
+    <!--[if gt IE 9]><!--> <script src="/img/icons/svg4everybody.min.js"></script> <!--<![endif]-->
 </head>
 
 
@@ -35,7 +31,7 @@
                 <ul class="site-nav">
                     <li class="nav__item logo">
                         <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-logo"></use></svg>
-     Browsersync</a>
+     Browser<span>sync</span></a>
                     </li>
                     <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
                     <li class="nav__item "><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
@@ -49,6 +45,7 @@
             </nav>
         </div>
     </header><!-- .end .site-header -->
+
 
 
 </div>
@@ -547,7 +544,7 @@ bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function<
     <div class="container">
         <p class="signup__title">Stay up to date with the latest features</p>
         <div class="signup__form">
-            <input type="text" placeholder="email..." class="input input--text form__email"/>
+            <input type="text" placeholder="Email..." class="input input--text form__email"/>
             <input type="button" value="Signup" class="button button--primary form__submit"/>
         </div>
         <div class="signup__links">
@@ -579,7 +576,7 @@ bs.init(config, <span class="hljs-function"><span class="hljs-keyword">function<
     <!--<p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>-->
 </div>
 
-<script src="/js/dist/app.js"></script>
+<script src="/js/dist/app.min.js"></script>
 
     <script>
         !function(s,y,n,c,I,t){s.GoogleAnalyticsObject=c,s[c]||(s[c]=function(){

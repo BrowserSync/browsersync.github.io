@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-
 {{inc src="head.hbs"}}
 
 <body id="page-top">
-<div class="header-wrap {{#if_eq page.url '/'}}home{{/if_eq}}">
+<div class="header-wrap {{#if_eq page.url '/index.src'}}home{{/if_eq}}">
 
     {{inc src="header.hbs"}}
 
-    {{#if_eq page.url '/'}}
+    {{#if_eq page.url '/index.src'}}
 
         {{inc src="home/hero.hbs"}}
 

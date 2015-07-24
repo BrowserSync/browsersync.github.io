@@ -1,10 +1,14 @@
 <footer class="wrapper signup" role="contentinfo">
     <div class="container">
         <p class="signup__title">Stay up to date with the latest features</p>
-        <div class="signup__form">
-            <input type="text" placeholder="Email..." class="input input--text form__email"/>
-            <input type="button" value="Signup" class="button button--primary form__submit"/>
-        </div>
+        <form action="{{site.mailchimp.url}}" method="GET">
+            <div class="signup__form">
+                <input type="hidden" name="u" value="{{site.mailchimp.u}}"/>
+                <input type="hidden" name="id" value="{{site.mailchimp.id}}"/>
+                <input type="text" placeholder="Email..." name="MERGE0" class="input input--text form__email"/>
+                <input type="submit" value="Signup" class="button button--primary form__submit"/>
+            </div>
+        </form>
         <div class="signup__links">
             <a href="{{site.links.source}}" title="Browsersync on Github">{{inc src="icon.hbs" icon="github" class=""}}</a>
             <a href="{{site.links.twitter}}" title="@Browsersync on Twitter">{{inc src="icon.hbs" icon="twitter" class=""}}</a>
@@ -17,9 +21,8 @@
         <nav>
             <ul class="site-nav">
                 {{#each site.navigation}}
-                <li class="nav__item"><a href="{{this.url}}" class="nav-link">{{ this.label }}</a></li>
+                <li class="nav__item {{#current this.url}}active{{/current}}"><a href="{{this.url}}" class="nav-link">{{ this.label }}</a></li>
                 {{/each}}
-                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
                 <li class="nav__item credit__thumb">
                     <span>An open source project by</span>
                     <a href="{{site.links.jh}}" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
@@ -27,10 +30,6 @@
             </ul>
         </nav>
     </div>
-    <!--<div class="credit__content">-->
-        <!--<p>as</p>-->
-    <!--</div>-->
-    <!--<p>Website built with <a href="{{site.links.crossbow}}">Crossbow.js</a></p>-->
 </div>
 
 <script src="/js/dist/app.min.js"></script>

@@ -8,22 +8,27 @@ url: "http://browsersync.io"
 twitter_username: browsersync
 github_username: shakshane
 
-downloads: "Over 190,000 downloads per month"
-
-# Build settings
-markdown: kramdown
-permalink: pretty
-
 # Assets
 cssFile: "/css/core.min.css"
+
+mailchimp:
+    url: "http://browsersync.us11.list-manage.com/subscribe"
+    u: "fe62ed4e9f3fa1d6efb09da31"
+    id: "22216352ac"
 
 env: "production"
 
 navigation:
  - label: "Documentation"
-   url: /docs
+   url: "/docs"
  - label: "Source Code"
    url: "https://github.com/Browsersync/browser-sync"
+
+footer-navigation:
+ - label: "Documentation"
+   url: "/docs"
+ - label: "Brand Assets"
+   url: "/brand-assets"
 
 docs-navigation:
   - label: "+ Gulp"
@@ -97,15 +102,3 @@ icons:
   - title:   "URL history"
     icon:    "list"
     tagline: "Records your test URLs so you can push them back out to all devices with a single click."
-#  - title:   "Remote inspector"
-#    icon:    "tablet"
-#    tagline: "Remotely tweak and debug web pages that are running on connected devices."
-#  - title:   "URL tunneling"
-#    icon:    "network"
-#    tagline: "Create a secure public URL to share your local sites with any internet-connected device."
-#  - title:   "Browser support"
-#    icon:    "browser"
-#    tagline: "Instantly sync between your desktop, tablet and phone. Perfect for coding responsive designs."
-#  - title:   "Serve any local site"
-#    icon:    "book"
-#    tagline: "Ready to use with websites running on PHP, ASP, Rails and more. Great with static files too."

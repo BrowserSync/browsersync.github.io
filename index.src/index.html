@@ -334,10 +334,14 @@
 <footer class="wrapper signup" role="contentinfo">
     <div class="container">
         <p class="signup__title">Stay up to date with the latest features</p>
-        <div class="signup__form">
-            <input type="text" placeholder="Email..." class="input input--text form__email"/>
-            <input type="button" value="Signup" class="button button--primary form__submit"/>
-        </div>
+        <form action="http://browsersync.us11.list-manage.com/subscribe" method="GET">
+            <div class="signup__form">
+                <input type="hidden" name="u" value="fe62ed4e9f3fa1d6efb09da31"/>
+                <input type="hidden" name="id" value="22216352ac"/>
+                <input type="text" placeholder="Email..." name="MERGE0" class="input input--text form__email"/>
+                <input type="submit" value="Signup" class="button button--primary form__submit"/>
+            </div>
+        </form>
         <div class="signup__links">
             <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
 </a>
@@ -351,9 +355,8 @@
     <div class="container">
         <nav>
             <ul class="site-nav">
-                <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
-                <li class="nav__item"><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
-                <li class="nav__item"><a href="" class="nav-link">Contributions</a></li>
+                <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item "><a href="https://github.com/Browsersync/browser-sync" class="nav-link">Source Code</a></li>
                 <li class="nav__item credit__thumb">
                     <span>An open source project by</span>
                     <a href="http://www.wearejh.com/" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
@@ -361,10 +364,6 @@
             </ul>
         </nav>
     </div>
-    <!--<div class="credit__content">-->
-        <!--<p>as</p>-->
-    <!--</div>-->
-    <!--<p>Website built with <a href="https://github.com/shakyShane/crossbow.js">Crossbow.js</a></p>-->
 </div>
 
 <script src="/js/dist/app.min.js"></script>

@@ -18,7 +18,7 @@
   "devDependencies": {
     "browser-sync": "git://github.com/browsersync/browser-sync.git",
     "bs-recipes": "git://github.com/BrowserSync/recipes.git",
-    "compression": "^1.5.1",
+    "compression": "^1.5.2",
     "crossbow": "^0.4.6",
     "crossbow-babel-browserify": "^1.0.3",
     "crossbow-cli": "^1.1.10",
@@ -30,7 +30,7 @@
     "html-minifier": "^0.7.2",
     "js-yaml": "^3.3.1",
     "lodash": "^3.10.0",
-    "marked": "^0.3.2",
+    "marked": "^0.3.5",
     "normalize.css": "^3.0.3",
     "prom-seq": "^1.3.0",
     "uglify-js": "^2.4.24"

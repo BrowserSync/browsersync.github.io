@@ -283,8 +283,10 @@ server: {
                     <li class="type">Type: <span class="color-teal">String | Object | Boolean</span>
                     <ul class="nav nav--stacked subprops">
                             <li><b>target</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>ws</b> - Default: <span class="color-teal">undefined</span></li>
                             <li><b>middleware</b> - Default: <span class="color-teal">undefined</span></li>
                             <li><b>reqHeaders</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>proxyRes</b> - Default: <span class="color-teal">undefined</span></li>
                     </ul>
                     </li>
                 </ul>
@@ -301,6 +303,12 @@ proxy: <span class="hljs-string">"localhost:8888"</span>
 
 <span class="hljs-comment">// Using localhost sub directories</span>
 proxy: <span class="hljs-string">"localhost/site1"</span>
+
+<span class="hljs-comment">// When your app also uses web sockets</span>
+proxy: {
+    target: <span class="hljs-string">"http://yourlocal.dev"</span>,
+    ws: <span class="hljs-literal">true</span>
+}
 
 <span class="hljs-comment">// With middleware - Requires v2.1.0</span>
 proxy: {
@@ -322,6 +330,17 @@ proxy: {
         }
     }
 }
+
+<span class="hljs-comment">// Modify the server response after it's returned from the proxy</span>
+proxy: {
+    target: <span class="hljs-string">"http://yourlocal.dev"</span>,
+    proxyRes: [
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res, req</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(res.headers);
+            next();
+        }
+    ]
+}
 </code></pre></div>
 
 
@@ -342,6 +361,35 @@ proxy: {
 
 <div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Use a specific port (instead of the one auto-detected by Browsersync)</span>
 port: <span class="hljs-number">8080</span></code></pre></div>
+
+
+                <h3 id="option-serveStatic" class="section-link">
+                    <a href="#option-serveStatic" class="page-anchor">serveStatic</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Array</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">[]</span></li>
+                </ul>
+
+                <p class="lede warning"><b>Note: </b> requires at least version 2.8.0</p>
+
+                <p>Add additional directories from which static
+                files should be served. Should only be used in <code>proxy</code> or <code>snippet</code>
+                mode.</p>
+
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> bs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
+
+<span class="hljs-comment">// Run in proxy mode with static files also served</span>
+<span class="hljs-comment">// from current directory + ./app/css</span>
+bs.init({
+    proxy: <span class="hljs-string">"http://www.bbc.co.uk"</span>,
+    serveStatic: [<span class="hljs-string">'.'</span>, <span class="hljs-string">'./app/css'</span>]
+});</code></pre></div>
 
 
                 <h3 id="option-https" class="section-link">
@@ -805,6 +853,9 @@ notify: <span class="hljs-literal">false</span></code></pre></div>
 </ul>
 
 
+<p>Decide which technique should be used to restore
+scroll position following a reload.
+Can be <code>window.name</code> or <code>cookie</code></p>
 
 
 
@@ -1052,6 +1103,7 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
                             <li><b>clientPath</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
                             <li><b>namespace</b> - Default: <span class="color-teal">&quot;/browser-sync&quot;</span></li>
                             <li><b>domain</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>port</b> - Default: <span class="color-teal">undefined</span></li>
                             <li><b>clients.heartbeatTimeout</b> - Default: <span class="color-teal">5000</span></li>
                     </ul>
                     </li>
@@ -1100,6 +1152,7 @@ socket: {
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-server">server</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-proxy">proxy</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-port">port</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-serveStatic">serveStatic</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-https">https</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-ghostMode">ghostMode</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-logLevel">logLevel</a></li>

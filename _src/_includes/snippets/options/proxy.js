@@ -7,6 +7,12 @@ proxy: "localhost:8888"
 // Using localhost sub directories
 proxy: "localhost/site1"
 
+// When your app also uses web sockets
+proxy: {
+    target: "http://yourlocal.dev",
+    ws: true
+}
+
 // With middleware - Requires v2.1.0
 proxy: {
     target: "http://yourlocal.dev",
@@ -26,4 +32,15 @@ proxy: {
             "agent":           false
         }
     }
+}
+
+// Modify the server response after it's returned from the proxy
+proxy: {
+    target: "http://yourlocal.dev",
+    proxyRes: [
+        function (res, req) {
+            console.log(res.headers);
+            next();
+        }
+    ]
 }

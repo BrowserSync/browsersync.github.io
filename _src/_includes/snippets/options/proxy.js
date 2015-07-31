@@ -8,6 +8,7 @@ proxy: "localhost:8888"
 proxy: "localhost/site1"
 
 // When your app also uses web sockets
+// NOTE: requires 2.8.1 or above
 proxy: {
     target: "http://yourlocal.dev",
     ws: true

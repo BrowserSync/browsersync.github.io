@@ -21,8 +21,8 @@ env: "production"
 navigation:
  - label: "Documentation"
    url: "/docs"
- - label: "Source Code"
-   url: "https://github.com/Browsersync/browser-sync"
+ - label: "Community"
+   url: "https://browsersync.herokuapp.com/"
 
 footer-navigation:
  - label: "Documentation"

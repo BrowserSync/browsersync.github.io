@@ -67,6 +67,7 @@ links:
   npmdocs:      "https://docs.npmjs.com/getting-started/fixing-npm-permissions"
   snippet:      "/docs/options/#option-snippetOptions"
   recipes:      "https://github.com/Browsersync/recipes"
+  slack:        "https://browsersync.herokuapp.com"
 
 img:
   jh: "/img/jh-300-trans.png"

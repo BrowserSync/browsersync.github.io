@@ -307,7 +307,7 @@ proxy: <span class="hljs-string">"localhost:8888"</span>
 proxy: <span class="hljs-string">"localhost/site1"</span>
 
 <span class="hljs-comment">// When your app also uses web sockets</span>
-<span class="hljs-comment">// <span class="hljs-doctag"><span class="hljs-keyword">NOTE</span></span>: requires 2.8.1 or above</span>
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> requires 2.8.1 or above</span>
 proxy: {
     target: <span class="hljs-string">"http://yourlocal.dev"</span>,
     ws: <span class="hljs-literal">true</span>
@@ -1085,7 +1085,7 @@ scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</spa
     <span class="hljs-keyword">return</span> <span class="hljs-string">"localhost:3002"</span> + path;
 }
 
-<span class="hljs-comment">// <span class="hljs-doctag"><span class="hljs-keyword">NOTE</span></span>: Since 2.2.0</span>
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Since 2.2.0</span>
 <span class="hljs-comment">// If you're using &lt;base&gt; in your html, you may need the absolute path to the script</span>
 <span class="hljs-comment">// http://localhost:3002/browser-sync/browser-sync-client.1.6.0.js</span>
 scriptPath: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path, port, options</span>) </span>{

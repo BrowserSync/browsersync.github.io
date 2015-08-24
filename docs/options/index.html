@@ -423,7 +423,15 @@ browserSync({
 browserSync({
     https: <span class="hljs-literal">true</span>
 });
-</code></pre></div>
+
+<span class="hljs-comment">// Enable HTTPS mode with custom certificates</span>
+browserSync({
+    server: <span class="hljs-string">"./app"</span>,
+    https: {
+        key: <span class="hljs-string">"path-to-custom.key"</span>,
+        cert: <span class="hljs-string">"path-to-custom.crt"</span>
+    }
+});</code></pre></div>
 
 
                 <h3 id="option-ghostMode" class="section-link">

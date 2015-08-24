@@ -8,3 +8,12 @@ browserSync({
 browserSync({
     https: true
 });
+
+// Enable HTTPS mode with custom certificates
+browserSync({
+    server: "./app",
+    https: {
+        key: "path-to-custom.key",
+        cert: "path-to-custom.crt"
+    }
+});

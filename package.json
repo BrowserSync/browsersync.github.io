@@ -5,6 +5,7 @@
   "scripts": {
     "start": "crossbow watch",
     "build": "crossbow run build",
+    "docs": "crossbow run docs",
     "test": "crossbow run build"
   },
   "author": "Shane Osbourne",

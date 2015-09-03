@@ -17,7 +17,7 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "browser-sync": "git://github.com/browsersync/browser-sync.git",
+    "browser-sync": "git://github.com/BrowserSync/browser-sync.git",
     "bs-recipes": "git://github.com/BrowserSync/recipes.git",
     "compression": "^1.5.2",
     "crossbow": "^0.4.7",

@@ -871,22 +871,73 @@ Can be <code>window.name</code> or <code>cookie</code></p>
 
 
 
-<h3 id="option-reloadDelay" class="section-link">
-    <a href="#option-reloadDelay" class="page-anchor">reloadDelay</a>
+<h3 id="option-scrollElements" class="section-link">
+    <a href="#option-scrollElements" class="page-anchor">scrollElements</a>
     <a href="#page-top" class="back-to-top">^ TOP</a>
 </h3>
 
 
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span>
+    <li class="type">Type: <span class="color-teal">Array</span>
     </li>
-    <li class="default">Default: <span class="color-teal">0</span></li>
+    <li class="default">Default: <span class="color-teal">[]</span></li>
 </ul>
 
+<p class="lede warning"><b>Note: </b> requires at least version 2.9.0</p>
 
-<p>Time, in milliseconds, to wait before
-instruction browser to reload/inject following a
-file change event</p>
+<p>Sync the scroll position of any element
+on the page. Add any amount of CSS selectors</p>
+
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Sync the scrollTop position of the element .scroller</span>
+<span class="hljs-comment">// in addition to the window scroll</span>
+scrollElements: [<span class="hljs-string">'.scroller'</span>]
+</code></pre></div>
+
+
+                <h3 id="option-scrollElementMapping" class="section-link">
+                    <a href="#option-scrollElementMapping" class="page-anchor">scrollElementMapping</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Array</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">[]</span></li>
+                </ul>
+
+                <p class="lede warning"><b>Note: </b> requires at least version 2.9.0</p>
+
+                <p>Sync the scroll position of any element
+                on the page - where any scrolled element
+                will cause all others to match scroll position.
+                This is helpful when a breakpoint alters which element
+                is actually scrolling</p>
+
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Sync the scrollTop position between different elements</span>
+<span class="hljs-comment">// useful if your scroll container changes based on a breakpoint</span>
+scrollElementMapping: [<span class="hljs-string">'.scroller-mobile'</span>, <span class="hljs-string">'.scroller'</span>]
+</code></pre></div>
+
+
+                <h3 id="option-reloadDelay" class="section-link">
+                    <a href="#option-reloadDelay" class="page-anchor">reloadDelay</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Number</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">0</span></li>
+                </ul>
+
+
+                <p>Time, in milliseconds, to wait before
+                instruction browser to reload/inject following a
+                file change event</p>
 
 
 <div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Wait for 2 seconds before any browsers should try to inject/reload a file.</span>
@@ -1183,6 +1234,8 @@ socket: {
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollProportionally">scrollProportionally</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollThrottle">scrollThrottle</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollRestoreTechnique">scrollRestoreTechnique</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollElements">scrollElements</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollElementMapping">scrollElementMapping</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-reloadDelay">reloadDelay</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-reloadDebounce">reloadDebounce</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-plugins">plugins</a></li>

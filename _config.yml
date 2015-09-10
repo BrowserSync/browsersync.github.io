@@ -87,7 +87,7 @@ icons:
     tagline: "Easily integrated with task runners like Grunt and Gulp, or included in other Node projects."
   - title:   "Network Throttle"
     icon:    "time-slot"
-    tagline: "Test your website against a slower connection. Even when deviced are connected to wifi."
+    tagline: "Test your website against a slower connection. Even when devices are connected to wifi."
   - title:   "Interaction sync"
     icon:    "merge"
     tagline: "Your scroll, click, refresh and form actions are mirrored between browsers while you test."

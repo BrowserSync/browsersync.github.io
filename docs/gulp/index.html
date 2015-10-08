@@ -220,7 +220,7 @@ gulp.task(<span class="hljs-string">'js-watch'</span>, [<span class="hljs-string
 gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
     <span class="hljs-comment">// Serve files from the root of this project</span>
-    browserSync({
+    browserSync.init({
         server: {
             baseDir: <span class="hljs-string">"./"</span>
         }

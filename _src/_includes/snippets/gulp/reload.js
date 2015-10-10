@@ -17,7 +17,7 @@ gulp.task('js-watch', ['js'], browserSync.reload);
 gulp.task('serve', ['js'], function () {
 
     // Serve files from the root of this project
-    browserSync({
+    browserSync.init({
         server: {
             baseDir: "./"
         }

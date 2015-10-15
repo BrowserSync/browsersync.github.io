@@ -61,28 +61,65 @@
 }
 
 .brand--name{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include media-query(min, $lap-start) {
+        display: flex;
+        align-items: center;
+        align-content: center;
+    }
 }
 
 .name__item {
-    position: relative;
-    flex: 1;
-    margin-left: $base-spacing*2;
-    
+    width: 60%;
+    margin: $base-spacing auto 0;
+
     &:first-child {
-        margin: 0;
+        margin-top: 0;
+        margin-left: auto;
     }
-    
+
+    @include media-query(min, $lap-start) {
+        flex: 1;
+        margin-left: $base-spacing*2;
+        margin-top: 0
+    ;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
     img {
         width: 100%;
     }
 }
 
-.brand-typeface{
-    .item {
+.brand--typeface{
+    @include media-query(min, $lap-start) {
+        display: flex;
+        padding: $header-height;
+    }
+}
 
+.typeface__item {
+    text-align: center;
+    margin: $base-spacing*2 auto 0;
+    width: 60%;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include media-query(min, $lap-start) {
+        flex: 1;
+        margin-left: $base-spacing*4;
+        margin-top: 0;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    img {
+        width: 100%;
+        margin-bottom: $base-spacing;
     }
 }
 

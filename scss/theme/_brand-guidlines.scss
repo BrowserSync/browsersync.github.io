@@ -158,8 +158,23 @@
     }
 }
 
-.brand-restrictions{
-
+.brand--restrictions{
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.restriction__item {
+    //border: 1px solid;
+    width: 33.33%;
+    margin-bottom: $base-spacing;
+
+    @include media-query(min, $lap-start) {
+        width: 16.666%;
+    }
+
+    img {
+        width: 50%;
+        margin-bottom: $base-spacing;
+    }
+}
 

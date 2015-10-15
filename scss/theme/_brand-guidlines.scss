@@ -62,10 +62,22 @@
 
 .brand--name{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .name__item {
     position: relative;
+    flex: 1;
+    margin-left: $base-spacing*2;
+    
+    &:first-child {
+        margin: 0;
+    }
+    
+    img {
+        width: 100%;
+    }
 }
 
 .brand-typeface{

@@ -1,13 +1,15 @@
 .brand-rule{
-    .item {
-
-    }
+    font-weight: normal;
 }
 
-.brand-desc{
-    .item {
+.brand-desc {
 
-    }
+}
+
+.brand-asset {
+    border-bottom: 1px dashed $silver;
+    padding: $header-height 0;
+    margin-bottom: $header-height;
 }
 
 .brand-evolution{
@@ -16,9 +18,45 @@
     }
 }
 
-.brand-colours{
-    .item {
+.brand--colours{
+    @include media-query(min, $lap-start) {
+        display: flex;
+    }
 
+    .item {
+        padding: $base-spacing;
+        position: relative;
+        color: $white;
+        
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:nth-child(2) {
+            color: #6D6D6D;
+            border: 1px solid #CCCCCC;
+        }
+
+        @include media-query(min, $lap-start) {
+            flex-grow: 1;
+            height: 140px;
+            margin-left: $base-spacing;
+            padding: $half-spacing;
+        }
+        
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.brand-hex {
+    float: right;
+    @include media-query(min, $lap-start) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: $half-spacing;
     }
 }
 

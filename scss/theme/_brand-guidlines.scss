@@ -1,5 +1,6 @@
 .brand-rule{
     font-weight: normal;
+    padding: 0;
 }
 
 .brand-desc {
@@ -129,14 +130,36 @@
     }
 }
 
-.brand-spacing{
-    .item {
+.brand--spacing{
+    @include media-query(min, $lap-start) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 
+.spacing__item {
+    margin-top: $base-spacing*2;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include media-query(min, $lap-start) {
+        margin-left: $base-spacing*4;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+    
+    img {
+        margin: 0 auto;
     }
 }
 
 .brand-restrictions{
-    .item {
 
-    }
 }
+
+

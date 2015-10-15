@@ -161,20 +161,35 @@
 .brand--restrictions{
     display: flex;
     flex-wrap: wrap;
+    margin-left: -$base-spacing;
 }
 
 .restriction__item {
-    //border: 1px solid;
     width: 33.33%;
     margin-bottom: $base-spacing;
+    text-align: center;
+    padding-left: $base-spacing;
 
     @include media-query(min, $lap-start) {
         width: 16.666%;
     }
 
-    img {
-        width: 50%;
-        margin-bottom: $base-spacing;
+    figure {
+        margin: 0 0 $base-spacing 0;
+        width: 100%;
+        padding-bottom: 100%;
+        border: 1px solid $silver-lt;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%;
+            margin: 0 auto;
+        }
     }
 }
 

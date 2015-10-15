@@ -2,17 +2,9 @@ var fs           = require("fs");
 var doc          = "../_doc/yuidoc.json";
 var docGen       = require("./_docgen");
 var opts         = require("browser-sync/lib/cli/opts.start.json");
-var pretemplater = require("pretemplater");
 var marked       = require('marked');
 var _            = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
-
-function getTemplate(name) {
-
-    var source   = fs.readFileSync("./_src/_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
-    var template = pretemplater(source);
-    return  _.template(template);
-}
 
 var excluded = [
     "use"
@@ -94,29 +86,6 @@ function previewTweaks(item) {
         item.preview = item.preview.replace(".", "");
     }
     return item;
-}
-
-/**
- * Build the markup for each item
- * @param combined
- * @param item
- * @returns {*}
- */
-function buildMarkup (combined, item) {
-
-    item.snippet = getSnippet(item, "api") || false;
-
-    if (!item.description) {
-        item.description = "";
-    } else {
-        item.description = marked(item.description);
-    }
-
-    if (item.params) {
-        item.params = item.params.map(fixDescription);
-    }
-
-    return combined + getTemplate("api")(item);
 }
 
 /**

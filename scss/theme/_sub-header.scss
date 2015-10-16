@@ -1,14 +1,18 @@
 .sub-header {
     background: $navy;
-    color: $white
+    color: $white;
+    margin-bottom: $header-height;
+
 }
 
 .sub-header__intro {
-
+    width: 65%;
+    padding: $header-height 0;
 }
 
 .sub-header__title {
 font-weight: normal;
+    padding: 0;
 }
 
 .sub-header__desc {
@@ -17,5 +21,5 @@ font-weight: normal;
 }
 
 .sub-header__cta {
-    margin-bottom: $base-spacing*2;
+    margin: 0;
 }

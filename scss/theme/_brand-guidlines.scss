@@ -1,4 +1,7 @@
-.brand-rule{
+.brand-asset-wrapper {
+    //padding: 0 $half-spacing;
+}
+.brand-rule {
     font-weight: normal;
     padding: 0;
 }
@@ -58,6 +61,7 @@
 }
 
 .brand--colours{
+    margin-left: -$base-spacing;
     @include media-query(min, $lap-start) {
         display: flex;
     }
@@ -68,10 +72,6 @@
     position: relative;
     color: $white;
 
-    &:first-child {
-        margin-left: 0;
-    }
-
     &:nth-child(2) {
         color: #6D6D6D;
         border: 1px solid #CCCCCC;
@@ -79,7 +79,7 @@
 
     @include media-query(min, $lap-start) {
         flex-grow: 1;
-        height: 140px;
+        height: 160px;
         margin-left: $base-spacing;
         padding: $half-spacing;
     }

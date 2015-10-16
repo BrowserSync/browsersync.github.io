@@ -21,10 +21,10 @@ title: "Browsersync - Brand Assets"
             <p class="brand-desc">The Logo… Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
         </div>
         <div class="brand-asset brand--evolution">
-            <div class="evolution__item"><figure class="evolution__image"><img src="../img/evo-1.svg"/><figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
-            <div class="evolution__item"><figure class="evolution__image"><img src="../img/evo-2.svg"/><figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
-            <div class="evolution__item"><figure class="evolution__image"><img src="../img/evo-3.svg"/><figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
-            <div class="evolution__item"><figure class="evolution__image"><img src="../img/evo-4.svg"/><figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="evo-1" class="evo-img evo-1"}}<figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="evo-2" class="evo-img evo-2"}}<figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="evo-3" class="evo-img evo-3"}}<figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="logo" class="evo-img evo-4"}}<figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
         </div>
 
         <div class="three-quarters">
@@ -61,9 +61,9 @@ title: "Browsersync - Brand Assets"
             <p class="brand-desc">The Logo… Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
         </div>
         <div class="brand-asset brand--typeface">
-            <div class="typeface__item"><img src="../img/typeface-reg.svg"/><p>Regular</p></div>
-            <div class="typeface__item"><img src="../img/typeface-bold.svg"/><p>Semi bold</p></div>
-            <div class="typeface__item"><img src="../img/typeface-thin.svg"/><p>Thin</p></div>
+            <div class="typeface__item">{{inc src="icon.hbs" icon="typeface-reg" class="typeface__img"}}<p>Regular</p></div>
+            <div class="typeface__item">{{inc src="icon.hbs" icon="typeface-bold" class="typeface__img"}}<p>Semi bold</p></div>
+            <div class="typeface__item">{{inc src="icon.hbs" icon="typeface-thin" class="typeface__img"}}<p>Thin</p></div>
         </div>
 
         <div class="three-quarters">
@@ -71,10 +71,22 @@ title: "Browsersync - Brand Assets"
             <p class="brand-desc">The Logo… Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
         </div>
         <div class="brand-asset brand--usage">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
+            <div class="usage__item">
+                <figure class="usage__image usage--light">{{inc src="icon.hbs" icon="logo" class=""}}</figure>
+                <p class="usage__desc">Logo on light background<br>Download as <a href="#">svg</a>, <a href="#">png</a> or <a href="#">jpg</a></p>
+            </div>
+            <div class="usage__item">
+                <figure class="usage__image usage--dark">{{inc src="icon.hbs" icon="logo" class=""}}</figure>
+                <p class="usage__desc">Logo on dark background<br><a href="#">svg</a>, <a href="#">png</a> or <a href="#">jpg</a></p>
+            </div>
+            <div class="usage__item">
+                <figure class="usage__image usage--light">{{inc src="icon.hbs" icon="wordmark" class=""}}</figure>
+                <p class="usage__desc">Wordmark on light background<br><a href="#">svg</a>, <a href="#">png</a> or <a href="#">jpg</a></p>
+            </div>
+            <div class="usage__item">
+                <figure class="usage__image usage--dark">{{inc src="icon.hbs" icon="wordmark" class=""}}</figure>
+                <p class="usage__desc">Wordmark on dark background<br><a href="#">svg</a>, <a href="#">png</a> or <a href="#">jpg</a></p>
+            </div>
         </div>
 
         <div class="three-quarters">
@@ -96,27 +108,27 @@ title: "Browsersync - Brand Assets"
         </div>
         <div class="brand-asset brand--restrictions">
             <div class="restriction__item">
-                <figure class="restriction__image"><img src="../img/restrictions/logo-rotate.svg"/></figure>
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-rotate" class="restriction-1"}}</figure>
                 <p>Rotate</p>
             </div>
             <div class="restriction__item">
-                <figure class="restriction__image"><img src="../img/restrictions/logo-recolour.svg"/></figure>
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-recolour" class="restriction-2"}}</figure>
                 <p>Recolour</p>
             </div>
             <div class="restriction__item">
-                <figure class="restriction__image"><img src="../img/restrictions/logo-distort.svg"/></figure>
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-distort" class="restriction-3"}}</figure>
                 <p>Distort</p>
             </div>
             <div class="restriction__item">
-                <figure class="restriction__image"><img src="../img/restrictions/logo-alter.svg"/></figure>
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-alter" class="restriction-4"}}</figure>
                 <p>Alter</p>
             </div>
             <div class="restriction__item">
-                <figure class="restriction__image"><img src="../img/restrictions/logo-multiply.svg"/></figure>
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-multiply" class="restriction-5"}}</figure>
                 <p>Multiply</p>
             </div>
             <div class="restriction__item">
-                <figure class="restriction__image"><img src="../img/restrictions/logo-outline.svg"/></figure>
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-outline" class="restriction-6"}}</figure>
                 <p>Outline</p>
             </div>
         </div>

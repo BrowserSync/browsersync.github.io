@@ -73,6 +73,7 @@
     padding: $base-spacing;
     position: relative;
     color: $white;
+    margin-left: $base-spacing;
 
     &:nth-child(2) {
         color: #6D6D6D;
@@ -82,7 +83,6 @@
     @include media-query(min, $lap-start) {
         flex-grow: 1;
         height: 160px;
-        margin-left: $base-spacing;
         padding: $half-spacing;
     }
 }
@@ -102,32 +102,28 @@
 }
 
 .brand--name {
+    margin-left: -$base-spacing;
+
     @include media-query(min, $lap-start) {
         display: flex;
         align-items: center;
-        align-content: center;
     }
 }
 
 .name__item {
-    width: 60%;
-    margin: $base-spacing auto 0;
-
-    &:first-child {
-        margin-top: 0;
-        margin-left: auto;
-    }
+    padding-left: $base-spacing;
 
     @include media-query(min, $lap-start) {
         flex: 1;
-        margin-left: $base-spacing*2;
-        margin-top: 0;
-        &:first-child {
-            margin-left: 0;
-        }
     }
+
     img {
-        width: 100%;
+        width: 70%;
+        margin: 0 auto;
+
+        @include media-query(min, $lap-start) {
+            width: 100%;
+        }
     }
 }
 

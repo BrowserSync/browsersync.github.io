@@ -250,7 +250,6 @@
 .restriction__item {
     width: 50%;
     margin-bottom: $base-spacing;
-    text-align: center;
     padding-left: $base-spacing;
     position: relative;
     
@@ -287,18 +286,8 @@
 }
 
 .restriction-cross {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: $failure;
-    color: $white;
+    color: $failure;
     width: 1.5em;
     height: 1.5em;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4px;
-    z-index: 1;
 }
 

@@ -152,10 +152,7 @@
     }
 }
 
-.brand-usage {
-    .item {
-
-    }
+.brand--usage {
 }
 
 .brand--spacing {
@@ -167,17 +164,14 @@
 }
 
 .spacing__item {
-    margin-top: $base-spacing*2;
 
-    &:first-child {
-        margin-top: 0;
+    &:nth-child(2) {
+        margin-top: $base-spacing*4;
     }
 
     @include media-query(min, $lap-start) {
-        margin-left: $base-spacing*4;
-
-        &:first-child {
-            margin: 0;
+        &:nth-child(2) {
+            margin-left: $base-spacing*4;
         }
     }
 
@@ -201,23 +195,23 @@
     @include media-query(min, $lap-start) {
         width: 16.666%;
     }
+}
 
-    figure {
-        margin: 0 0 $base-spacing 0;
-        width: 100%;
-        padding-bottom: 100%;
-        border: 1px solid $silver-lt;
-        position: relative;
+.restriction__image {
+    margin: 0 0 $base-spacing 0;
+    width: 100%;
+    padding-bottom: 100%;
+    border: 1px solid $silver-lt;
+    position: relative;
 
-        img {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40%;
-            margin: 0 auto;
-        }
+    img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        margin: 0 auto;
     }
 }
 

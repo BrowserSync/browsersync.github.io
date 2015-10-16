@@ -62,7 +62,6 @@
     list-style: none;
     position: relative;
     @include clearfix;
-    border-bottom: 1px solid rgba($white, 0.1);
 
     @include media-query(min, $lap-start) {
         display: flex;

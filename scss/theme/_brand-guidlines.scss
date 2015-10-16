@@ -1,8 +1,8 @@
 .brand-asset-wrapper {
-    //padding: 0 $half-spacing;
+    padding: 0 $half-spacing;
     
     .three-quarters {
-        margin: 0 auto;
+        //margin: 0 auto;
     }
 }
 
@@ -19,6 +19,11 @@
     border-bottom: 1px dashed $silver;
     padding: $header-height 0;
     margin-bottom: $header-height;
+    
+    &:last-child {
+        border: none;
+        margin-bottom: 0;
+    }
 }
 
 .brand--evolution {
@@ -33,9 +38,9 @@
     text-align: center;
     padding-left: $base-spacing;
 
-    //@include media-query(min, $lap-start) {
-    //    width: 25%;
-    //}
+    @include media-query(min, $lap-start) {
+        width: 25%;
+    }
 }
 
 .evolution__image {
@@ -60,6 +65,10 @@
     &.evo-4 {
         color: $red;
     }
+
+    &.evo-1 {
+        width: 40%;
+    }
 }
 
 .evolution__fig {
@@ -74,9 +83,9 @@
 .brand--colours {
     margin-left: -$base-spacing;
 
-    //@include media-query(min, $lap-start) {
-    //    display: flex;
-    //}
+    @include media-query(min, $lap-start) {
+        display: flex;
+    }
 }
 
 .colour__item {
@@ -90,11 +99,11 @@
         border: 1px solid #CCCCCC;
     }
 
-    //@include media-query(min, $lap-start) {
-    //    flex-grow: 1;
-    //    height: 160px;
-    //    padding: $half-spacing;
-    //}
+    @include media-query(min, $lap-start) {
+        flex-grow: 1;
+        height: 160px;
+        padding: $half-spacing;
+    }
 }
 
 .colour__desc {
@@ -103,44 +112,40 @@
 
 .colour__hex {
     float: right;
-    //@include media-query(min, $lap-start) {
-    //    position: absolute;
-    //    bottom: 0;
-    //    left: 0;
-    //    padding: $half-spacing;
-    //}
+    @include media-query(min, $lap-start) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: $half-spacing;
+    }
 }
 
 .brand--name {
     margin-left: -$base-spacing;
 
-    //@include media-query(min, $lap-start) {
-    //    display: flex;
-    //    align-items: center;
-    //}
+    @include media-query(min, $lap-start) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .name__item {
     padding-left: $base-spacing;
 
-    //@include media-query(min, $lap-start) {
-    //    flex: 1;
-    //}
+    @include media-query(min, $lap-start) {
+        flex: 1;
+    }
 
     img {
-        width: 70%;
+        width: 80%;
         margin: 0 auto;
-
-        //@include media-query(min, $lap-start) {
-        //    width: 100%;
-        //}
     }
 }
 
 .brand--typeface {
-    //@include media-query(min, $lap-start) {
-    //    display: flex;
-    //}
+    @include media-query(min, $lap-start) {
+        display: flex;
+    }
 }
 
 .typeface__item {
@@ -151,10 +156,10 @@
         margin: 0;
     }
 
-    //@include media-query(min, $lap-start) {
-    //    flex: 1;
-    //    margin: 0;
-    //}
+    @include media-query(min, $lap-start) {
+        flex: 1;
+        margin: 0;
+    }
 }
 
 .typeface__img {
@@ -175,9 +180,9 @@
     padding-left: $base-spacing;
     margin-bottom: $base-spacing;
 
-    //@include media-query(min, $lap-start) {
-    //    width: 25%;
-    //}
+    @include media-query(min, $lap-start) {
+        width: 25%;
+    }
 
     .svg-icon {
         width: 100%;
@@ -222,11 +227,7 @@
 }
 
 .brand--spacing {
-    //@include media-query(min, $lap-start) {
-    //    display: flex;
-    //    justify-content: space-between;
-    //    align-items: center;
-    //}
+
 }
 
 .spacing__item {
@@ -234,12 +235,6 @@
     &:nth-child(2) {
         margin-top: $base-spacing*4;
     }
-
-    //@include media-query(min, $lap-start) {
-    //    &:nth-child(2) {
-    //        margin-left: $base-spacing*4;
-    //    }
-    //}
 
     img {
         margin: 0 auto;
@@ -253,14 +248,18 @@
 }
 
 .restriction__item {
-    width: 33.33%;
+    width: 50%;
     margin-bottom: $base-spacing;
     text-align: center;
     padding-left: $base-spacing;
-
-    //@include media-query(min, $lap-start) {
-    //    width: 16.666%;
-    //}
+    position: relative;
+    
+    @include media-query(min, $lap-start){
+        width: 33.33%;
+    }
+    @include media-query(min, $desk-start){
+        width: 16.66%;
+    }
 }
 
 .restriction__image {
@@ -285,5 +284,21 @@
             color: $yellow;
         }
     }
+}
+
+.restriction-cross {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: $failure;
+    color: $white;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    z-index: 1;
 }
 

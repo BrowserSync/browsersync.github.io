@@ -1,6 +1,7 @@
 .brand-asset-wrapper {
     //padding: 0 $half-spacing;
 }
+
 .brand-rule {
     font-weight: normal;
     padding: 0;
@@ -16,7 +17,7 @@
     margin-bottom: $header-height;
 }
 
-.brand--evolution{
+.brand--evolution {
     display: flex;
     flex-wrap: wrap;
     margin-left: -$base-spacing;
@@ -60,8 +61,9 @@
     }
 }
 
-.brand--colours{
+.brand--colours {
     margin-left: -$base-spacing;
+
     @include media-query(min, $lap-start) {
         display: flex;
     }
@@ -83,10 +85,10 @@
         margin-left: $base-spacing;
         padding: $half-spacing;
     }
+}
 
-    p {
-        margin: 0;
-    }
+.colour__desc {
+    margin: 0;
 }
 
 .colour__hex {
@@ -99,7 +101,7 @@
     }
 }
 
-.brand--name{
+.brand--name {
     @include media-query(min, $lap-start) {
         display: flex;
         align-items: center;
@@ -119,8 +121,7 @@
     @include media-query(min, $lap-start) {
         flex: 1;
         margin-left: $base-spacing*2;
-        margin-top: 0
-    ;
+        margin-top: 0;
         &:first-child {
             margin-left: 0;
         }
@@ -130,7 +131,7 @@
     }
 }
 
-.brand--typeface{
+.brand--typeface {
     @include media-query(min, $lap-start) {
         display: flex;
         padding: $header-height;
@@ -162,13 +163,13 @@
     }
 }
 
-.brand-usage{
+.brand-usage {
     .item {
 
     }
 }
 
-.brand--spacing{
+.brand--spacing {
     @include media-query(min, $lap-start) {
         display: flex;
         justify-content: space-between;
@@ -190,13 +191,13 @@
             margin: 0;
         }
     }
-    
+
     img {
         margin: 0 auto;
     }
 }
 
-.brand--restrictions{
+.brand--restrictions {
     display: flex;
     flex-wrap: wrap;
     margin-left: -$base-spacing;

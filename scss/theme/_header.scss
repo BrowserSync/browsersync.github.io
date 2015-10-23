@@ -40,8 +40,10 @@
 
     .svg-icon {
         position: relative;
-        top: -2px;
+        top: -4px;
         margin-right: $half-spacing/2;
+        height: 30px;
+        width: 140px;
     }
 
     @include media-query(min, $lap-start) {

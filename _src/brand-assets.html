@@ -1,9 +1,138 @@
 ---
-layout: "documentation.hbs"
+layout: "default.hbs"
 page-label: "Branding"
 title: "Browsersync - Brand Assets"
-sidebar: "branding-sidebar.hbs"
 ---
 
-<p><b>Large Logo</b> (png)</p>
-<img src="/img/logo-inline.png" alt=""/>
+<section class="sub-header">
+    <div class="container">
+        <div class="sub-header__intro">
+            <h1 class="sub-header__title">Browsersync Brand Assets</h1>
+            <p class="sub-header__desc">Thank you for you interest in Browsersync, these brand assets and guidlines will show you how to best use our logo, take the time to familiarize yourself with them and please use responsibly. You can download all of our assets by using the button bellow.  </p>
+            <p class="sub-header__cta"><a class="button button--primary" href="../brand-assets/brand-assets.zip" title="download">Download all assets<span class="zip"> Zip 113 KB</span></a></p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section class="brand-asset-wrapper">
+        <div class="three-quarters">
+            <h2 class="brand-rule">Logo Evolution</h2>
+            <p class="brand-desc">The foundation and concept of the Browsersync logo (fig 1) was to demonstrate Browsersyncs awesome testing ability across different devices, screen sizes and web browsers. It was the a case of refining this concept into something simple, legible and memorable (fig 2-4). </p>
+        </div>
+        <div class="brand-asset brand--evolution">
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="evo-1" class="evo-img evo-1"}}<figcaption class="evolution__fig">Fig 1</figcaption></figure></div>
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="evo-2" class="evo-img evo-2"}}<figcaption class="evolution__fig">Fig 2</figcaption></figure></div>
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="evo-3" class="evo-img evo-3"}}<figcaption class="evolution__fig">Fig 3</figcaption></figure></div>
+            <div class="evolution__item"><figure class="evolution__image">{{inc src="icon.hbs" icon="logo" class="evo-img evo-4"}}<figcaption class="evolution__fig">Fig 4</figcaption></figure></div>
+        </div>
+
+        <div class="three-quarters">
+            <h2 class="brand-rule">Brand Colours</h2>
+        </div>
+        <div class="brand-asset brand--colours">
+            <div class="colour__item" style="background-color: #F24747;">
+                <p class="colour__desc">Red <span class="colour__hex">#F24747</span></p>
+            </div>
+            <div class="colour__item" style="background-color: #FFFFFF;">
+                <p class="colour__desc">White <span class="colour__hex">#FFFFF</span></p>
+            </div>
+            <div class="colour__item" style="background-color: #0F2634;">
+                <p class="colour__desc">Blue <span class="colour__hex">#0F2634</span></p>
+            </div>
+            <div class="colour__item" style="background-color: #6D6D6D;">
+                <p class="colour__desc">Grey <span class="colour__hex">#6D6D6D</span></p>
+            </div>
+        </div>
+
+        <div class="three-quarters">
+            <h2 class="brand-rule">Browsersync name</h2>
+            <p class="brand-desc">Browsersync (previously BrowserSync) is now 1 word, capital B, and nothing else.</p>
+        </div>
+        <div class="brand-asset brand--name">
+            <div class="name__item"><img src="../img/bs-name.svg"/></div>
+            <div class="name__item"><img src="../img/bs-name-camelcase.svg"/></div>
+            <div class="name__item"><img src="../img/bs-name-space.svg"/></div>
+        </div>
+
+        <div class="three-quarters">
+            <h2 class="brand-rule">Typeface</h2>
+            <p class="brand-desc">Titillium has been selected for its modern, technical appearance and is used for the logo type and heading.
+                Open sans was selected for its friendly appearance and is used for body text.
+                The characteristics of both fonts represent Browsersync's technical but friendly nature.</p>
+        </div>
+        <div class="brand-asset brand--typeface">
+            <div class="typeface__item">{{inc src="icon.hbs" icon="typeface-reg" class="typeface__img"}}<p>Regular</p></div>
+            <div class="typeface__item">{{inc src="icon.hbs" icon="typeface-bold" class="typeface__img"}}<p>Semi bold</p></div>
+            <div class="typeface__item">{{inc src="icon.hbs" icon="typeface-thin" class="typeface__img"}}<p>Thin</p></div>
+        </div>
+
+        <div class="three-quarters">
+            <h2 class="brand-rule">Logo Usage</h2>
+            <p>To increase legibility it is important to have a strong contrast between the logo and the background on which it sits -
+                for light backgrounds use the primary red and for darker backgrounds, use white.</p>
+        </div>
+        <div class="brand-asset brand--usage">
+            <div class="usage__item">
+                <figure class="usage__image usage--light">{{inc src="icon.hbs" icon="logo" class=""}}</figure>
+                <p class="usage__desc">Logo on light background<br>Download as <a href="../brand-assets/logo-red.svg">svg</a>, <a href="../brand-assets/logo-red.eps">eps</a>, <a href="../brand-assets/logo-red.png">png</a> or <a href="../brand-assets/logo-red.jpg">jpg</a></p>
+            </div>
+            <div class="usage__item">
+                <figure class="usage__image usage--dark">{{inc src="icon.hbs" icon="logo" class=""}}</figure>
+                <p class="usage__desc">Logo on dark background<br><a href="../brand-assets/logo-white.svg">svg</a>, <a href="../brand-assets/logo-white.eps">eps</a> or <a href="../brand-assets/logo-white.png">png</a></p>
+            </div>
+            <div class="usage__item">
+                <figure class="usage__image usage--light">{{inc src="icon.hbs" icon="wordmark" class=""}}</figure>
+                <p class="usage__desc">Wordmark on light background<br><a href="../brand-assets/wordmark-red.svg">svg</a>, <a href="../brand-assets/wordmark-red.eps">eps</a>, <a href="../brand-assets/wordmark-red.png">png</a> or <a href="../brand-assets/wordmark-red.jpg">jpg</a></p>
+            </div>
+            <div class="usage__item">
+                <figure class="usage__image usage--dark">{{inc src="icon.hbs" icon="wordmark" class=""}}</figure>
+                <p class="usage__desc">Wordmark on dark background<br><a href="../brand-assets/wordmark-white.svg">svg</a>, <a href="../brand-assets/wordmark-white.eps">eps</a> or <a href="../brand-assets/wordmark-white.png">png</a></p>
+            </div>
+        </div>
+
+        <div class="three-quarters">
+            <h2 class="brand-rule">Minimum Logo Spacing</h2>
+            <p class="brand-desc">As shown in the images below, X equals half of the logos total width. This width is the minimum amount of space used to surround the logo.</p>
+        </div>
+        <div class="brand-asset brand--spacing">
+            <div class="spacing__item">
+                <img src="../img/logo-grid.svg"/>
+            </div>
+            <div class="spacing__item">
+                <img src="../img/wordmark-grid.svg"/>
+            </div>
+        </div>
+
+        <div class="three-quarters">
+            <h2 class="brand-rule">Restrictions</h2>
+            <p class="brand-desc">Our brand is important to us and we are happy for you to use it respectively and responsively for projects that relate to or use Browsersync. However if you do use it, please do not do any of the following:</p>
+        </div>
+        <div class="brand-asset brand--restrictions">
+            <div class="restriction__item">
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-rotate" class="restriction-1"}}</figure>
+                <p>{{inc src="icon.hbs" icon="cross" class="restriction-cross"}} Rotate</p>
+            </div>
+            <div class="restriction__item">
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-recolour" class="restriction-2"}}</figure>
+                <p>{{inc src="icon.hbs" icon="cross" class="restriction-cross"}} Recolour</p>
+            </div>
+            <div class="restriction__item">
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-distort" class="restriction-3"}}</figure>
+                <p>{{inc src="icon.hbs" icon="cross" class="restriction-cross"}} Distort</p>
+            </div>
+            <div class="restriction__item">
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-alter" class="restriction-4"}}</figure>
+                <p>{{inc src="icon.hbs" icon="cross" class="restriction-cross"}} Alter</p>
+            </div>
+            <div class="restriction__item">
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-multiply" class="restriction-5"}}</figure>
+                <p>{{inc src="icon.hbs" icon="cross" class="restriction-cross"}} Multiply</p>
+            </div>
+            <div class="restriction__item">
+                <figure class="restriction__image">{{inc src="icon.hbs" icon="logo-outline" class="restriction-6"}}</figure>
+                <p>{{inc src="icon.hbs" icon="cross" class="restriction-cross"}} Outline</p>
+            </div>
+        </div>
+</section>
+</div>

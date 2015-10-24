@@ -12,8 +12,11 @@ function icons (deferred, previous, ctx) {
      * @type {string[]}
      */
     var globals  = [
-        'logo', 'github', 'twitter', 'circle-play', 'code', 'menu', 'list', 'cross',
-        'slack'
+        'logo', 'wordmark', 'github', 'twitter', 'circle-play', 'code', 'menu', 'list', 'cross',
+        'slack',
+        'evo-1', 'evo-2', 'evo-3',
+        'typeface-reg', 'typeface-bold', 'typeface-thin',
+        'logo-rotate','logo-recolour','logo-distort','logo-alter', 'logo-multiply', 'logo-outline'
     ];
 
     /**

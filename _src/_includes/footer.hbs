@@ -21,7 +21,7 @@
     <div class="container">
         <nav>
             <ul class="site-nav">
-                {{#each site.navigation}}
+                {{#each site.footer-navigation}}
                 <li class="nav__item {{#current this.url}}active{{/current}}"><a href="{{this.url}}" class="nav-link">{{ this.label }}</a></li>
                 {{/each}}
                 <li class="nav__item credit__thumb">

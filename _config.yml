@@ -27,6 +27,8 @@ navigation:
 footer-navigation:
  - label: "Documentation"
    url: "/docs"
+ - label: "Community"
+   url: "https://browsersync.herokuapp.com/"
  - label: "Brand Assets"
    url: "/brand-assets"
 

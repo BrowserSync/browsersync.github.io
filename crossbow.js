@@ -9,25 +9,23 @@ module.exports = {
             server: true,
             middleware: require('compression')()
         },
-        default: {
-            "img/svg/*.svg": ["icons", "bs:reload"],
-            "scss/**": ["sass", "bs:reload:core.min.css"],
-            "js/*.js": ["js", "bs:reload"],
-        },
-        "crossbow": [
-            {
-                patterns: ["_src/**", "*.yml"],
-                tasks: ["crossbow", "html-min", "bs:reload"]
+        tasks: {
+            default: {
+                "img/svg/*.svg": ["icons", "bs:reload"],
+                "scss/**":       ["sass", "bs:reload:core.min.css"],
+                "js/*.js":       ["js", "bs:reload"],
+                "_src/**:*.yml": ["crossbow", "html-min", "bs:reload"]
             }
-        ]
+        }
     },
     config: {
         "sass": {
             "input": "scss/core.scss",
             "output": "css/core.min.css"
         },
-        "easy-svg": {
-            "yml": "_config.yml"
+        "icons": {
+            "yml": "_config.yml",
+            "output": "img/icons"
         },
         "crossbow": {
             "base": "_src",

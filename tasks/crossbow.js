@@ -1,15 +1,15 @@
 var crossbow = require('crossbow');
 
-function crossbowBuild (deferred, resolved, ctx) {
+function crossbowBuild (obs, opts, ctx) {
 
-    var input = ctx.get('config.crossbow.input').map(function (item) {
+    var input = opts.input.map(function (item) {
         return ctx.resolve(item);
     });
 
-    ctx.vfs.src(input)
+    return ctx.vfs.src(input)
         .pipe(crossbow.stream({
             config: {
-                base: ctx.get('config.crossbow.base'),
+                base: opts.base,
                 prettyUrls: true,
                 highlight: {
                     postProcess: function (highlighted, lang) {
@@ -26,10 +26,7 @@ function crossbowBuild (deferred, resolved, ctx) {
                 recipes:        "file:../node_modules/bs-recipes/manifest.json"
             }
         }))
-        .pipe(ctx.vfs.dest(ctx.opts.cwd))
-        .on("end", deferred.resolve)
-        .on('error', deferred.reject);
-
+        .pipe(ctx.vfs.dest(ctx.opts.cwd));
 }
 
 module.exports.tasks = [crossbowBuild];

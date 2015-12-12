@@ -1,15 +1,15 @@
 var UglifyJS = require("uglify-js");
 
-function uglify (deferred, previous, ctx) {
+function uglify (obs, opts, ctx) {
 
     if (ctx.trigger.type === 'command') {
-        var result = UglifyJS.minify(ctx.path.make('uglify.input'));
-        ctx.file.write('uglify.output', result.code);
+        var result = UglifyJS.minify(ctx.path.make(opts.input));
+        ctx.file.write(opts.output, result.code);
     } else {
         console.log(ctx.trigger.type);
     }
 
-    deferred.resolve();
+    obs.done();
 }
 
 module.exports.tasks = [uglify];

@@ -1,17 +1,16 @@
 var minify = require('html-minifier').minify;
 
-function htmlmin (deferred, previous, ctx) {
+function htmlmin (obs, opts, ctx) {
 
-    var result = minify(ctx.file.read('html-min.input'), {
+    var result = minify(ctx.file.read(opts.input), {
         removeAttributeQuotes: false,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
         removeComments: true
     });
 
-    ctx.file.write('html-min.output', result);
-
-    deferred.resolve();
+    ctx.file.write(opts.output, result);
+    obs.done();
 }
 
 module.exports.tasks = [htmlmin];

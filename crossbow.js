@@ -1,27 +1,59 @@
 module.exports = {
     tasks: {
-        build: ["docs", "crossbow", "html-min", "sass", "icons", "js"],
-        icons: ["tasks/icons.js"],
-        js:    ["babel-browserify", "uglify"]
+        deploy: ["build", "rsync", "$shell open https://browsersync.io"],
+        rsync:  ["$shell rsync -pazv ./public/ root@178.62.0.17:/usr/share/nginx/browsersync --delete"],
+        build:  ["docs", "crossbow", "html-min", "sass", "icons", "cp"],
+        cp:     ["copy:css:font:img:assets:js"],
+        icons:  ["tasks/icons.js"],
+        js:     ["babel-browserify", "uglify"]
     },
     watch: {
         "bs-config": {
-            server: true,
+            server: {
+                baseDir: ['public'],
+                https: true,
+                routes: {
+                    '/js': './js',
+                    '/img': './img',
+                    '/css': './css',
+                    '/brand-assets': './brand-assets'
+                }
+            },
             middleware: require('compression')()
         },
-        default: {
-            "img/svg/*.svg": ["icons", "bs:reload"],
-            "scss/**": ["sass", "bs:reload:core.min.css"],
-            "js/*.js": ["js", "bs:reload"],
-        },
-        "crossbow": [
-            {
-                patterns: ["_src/**", "*.yml"],
-                tasks: ["crossbow", "html-min", "bs:reload"]
+        tasks: {
+            "default": {
+                "before":        ["docs", "crossbow", "sass"],
+                "img/svg/*.svg": ["icons", "bs:reload"],
+                "scss/**":       ["sass", "bs:reload:core.min.css"],
+                "js/*.js":       ["js", "bs:reload"],
+                "_src/**:*.yml": ["crossbow", "html-min", "bs:reload"]
             }
-        ]
+        }
     },
     config: {
+        "copy": {
+            css: {
+                input: 'css/**',
+                output: 'public/css'
+            },
+            font: {
+                input: 'fonts/**',
+                output: 'public/fonts'
+            },
+            img: {
+                input: 'img/**',
+                output: 'public/img'
+            },
+            js: {
+                input: 'js/**',
+                output: 'public/js'
+            },
+            assets: {
+                input: 'brand-assets/**',
+                output: 'public/brand-assets'
+            }
+        },
         "sass": {
             "input": "scss/core.scss",
             "output": "css/core.min.css"
@@ -31,6 +63,7 @@ module.exports = {
         },
         "crossbow": {
             "base": "_src",
+            "output": "public",
             "input": [
                 "_src/*.hbs",
                 "_src/*.html",
@@ -47,8 +80,8 @@ module.exports = {
             output: 'js/dist/app.min.js',
         },
         "html-min": {
-            input: 'index.src/index.html',
-            output: 'index.html'
+            input: 'public/index.src/index.html',
+            output: 'public/index.html'
         },
         "docs": {
             output: "_doc",

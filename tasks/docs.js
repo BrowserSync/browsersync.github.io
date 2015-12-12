@@ -6,8 +6,8 @@ var yuidoc   = require("gulp-yuidoc");
  * Run the node program to pre-construct the docs
  * @param deferred
  */
-function buildDocs (deferred) {
-    cp.spawn("node", ["tasks/_makeDocs"], {stdio: "inherit"}).on("close", deferred.resolve);
+function buildDocs (obs, opts, ctx) {
+    return cp.spawn("node", ["tasks/_makeDocs"], {stdio: "inherit"}).on('close', obs.done.bind(obs));
 }
 
 /**
@@ -15,16 +15,15 @@ function buildDocs (deferred) {
  * @param deferred
  * @returns {*|{results}|{clear, results}|{selectionChange}}
  */
-function yuidocs (deferred, previous, ctx) {
+function yuidocs (obs, opts, ctx) {
 
     return ctx.vfs.src([
-        ctx.path.make('docs.index'),
-        ctx.path.make('docs.config')
+        opts.index,
+        opts.config
     ])
-        .pipe(yuidoc.parser())
-        .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))
-        .pipe(ctx.vfs.dest(ctx.config.docs.output))
-        .on("end", deferred.resolve);
+    .pipe(yuidoc.parser())
+    .pipe(prettify({mode: 'VERIFY_AND_WRITE'}))
+    .pipe(ctx.vfs.dest(opts.output))
 }
 
 module.exports.tasks = [yuidocs, buildDocs];

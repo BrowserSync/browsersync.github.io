@@ -1,8 +1,8 @@
 module.exports = {
     tasks: {
-        deploy: ["build", "rsync", "$shell open https://browsersync.io"],
+        deploy: ["build", "cp", "rsync", "$shell open https://browsersync.io"],
         rsync:  ["$shell rsync -pazv ./public/ root@178.62.0.17:/usr/share/nginx/browsersync --delete"],
-        build:  ["docs", "crossbow", "html-min", "sass", "icons", "cp"],
+        build:  ["docs", "crossbow", "html-min", "sass", "icons"],
         cp:     ["copy:css:font:img:assets:js"],
         icons:  ["tasks/icons.js"],
         js:     ["babel-browserify", "uglify"]
@@ -23,7 +23,7 @@ module.exports = {
         },
         tasks: {
             "default": {
-                "before":        ["docs", "crossbow", "sass"],
+                "before":        ["build"],
                 "img/svg/*.svg": ["icons", "bs:reload"],
                 "scss/**":       ["sass", "bs:reload:core.min.css"],
                 "js/*.js":       ["js", "bs:reload"],

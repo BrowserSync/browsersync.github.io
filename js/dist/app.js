@@ -116,7 +116,7 @@ function listVideoClose() {
         evt.preventDefault();
         overlay.classList.remove('open');
         setTimeout(function () {
-            video.innerHTML = "";
+            video.innerHTML = '';
             var script = document.getElementById('quickcast-vid');
             script.parentNode.removeChild(script);
         }, 300);

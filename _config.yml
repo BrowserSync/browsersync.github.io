@@ -12,7 +12,7 @@ github_username: shakshane
 cssFile: "/css/core.min.css"
 
 mailchimp:
-    url: "http://browsersync.us11.list-manage.com/subscribe"
+    url: "https://browsersync.us11.list-manage.com/subscribe"
     u: "fe62ed4e9f3fa1d6efb09da31"
     id: "22216352ac"
 

@@ -73,7 +73,7 @@
         <article class="doc-wrapper">
             <div class="three-quarters">
                 <h1 class="page-title">Browsersync options</h1>
-                
+
 
                 <p>These are all the options that you can configure when using Browsersync. Create a single object and pass
                 it as the <a href="/docs/api/#api-browserSync">first argument</a> (for GulpJS and normal API usage). If you&#39;re using Grunt, you can
@@ -1030,6 +1030,44 @@ injectChanges: <span class="hljs-literal">false</span>,</code></pre></div>
 
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">String | Null</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">null</span></li>
+                </ul>
+
+
+
+                <div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Open the first browser window at URL + "/info.php"</span>
+                    startPath: <span class="hljs-string">"/info.php"</span></code></pre></div>
+
+
+                <h3 id="option-minify" class="section-link">
+                    <a href="#option-minify" class="page-anchor">minify</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">Boolean</span>
+                    </li>
+                    <li class="default">Default: <span class="color-teal">true</span></li>
+                </ul>
+
+
+                <p>Whether to minify client script, or not.</p>
+
+
+                <div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Don't minify the client-side JS</span>
+                    minify: <span class="hljs-literal">false</span></code></pre></div>
+
+
+                <h3 id="option-host" class="section-link">
+                    <a href="#option-host" class="page-anchor">host</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <ul class="param-list">
+                    <li class="type">Type: <span class="color-teal">String</span>
                     </li>
                     <li class="default">Default: <span class="color-teal">null</span></li>
                 </ul>

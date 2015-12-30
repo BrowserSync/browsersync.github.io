@@ -632,16 +632,22 @@ snippetOptions: {
 
                 <ul class="param-list">
                     <li class="type">Type: <span class="color-teal">Array | Boolean</span>
+                    <ul class="nav nav--stacked subprops">
+                            <li><b>match</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>fn</b> - Default: <span class="color-teal">undefined</span></li>
+                            <li><b>replace</b> - Default: <span class="color-teal">undefined</span></li>
+                    </ul>
                     </li>
-                    <li class="default">Default: <span class="color-teal">false</span></li>
                 </ul>
 
                 <p class="lede warning"><b>Note: </b> requires at least version 2.4.0</p>
 
-                <p>Add additional HTML rewriting rules.</p>
+                <p>Add additional HTML rewriting rules.  Replacements may be provided by a callback or a string.  See
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter">String.prototype.replace()</a>
+                for details.</p>
 
 
-<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// replace every occurrence of the word Browsersync with 'kittenz'</span>
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Replace every occurrence of the word Browsersync with 'kittenz'</span>
 rewriteRules: [
     {
         match: <span class="hljs-regexp">/Browsersync/g</span>,
@@ -649,7 +655,16 @@ rewriteRules: [
             <span class="hljs-keyword">return</span> <span class="hljs-string">'kittenz'</span>;
         }
     }
-]</code></pre></div>
+]
+
+<span class="hljs-comment">// Also accepts a string as a replacement</span>
+rewriteRules: [
+    {
+        match: <span class="hljs-regexp">/(cats|kitten[sz]) are mediocre/g</span>,
+        replace: <span class="hljs-string">"$1 are excellent"</span>
+    }
+]
+</code></pre></div>
 
 
                 <h3 id="option-tunnel" class="section-link">

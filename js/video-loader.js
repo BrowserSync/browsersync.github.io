@@ -7,12 +7,12 @@ let video;
 let hasVideo = false;
 
 function iframe () {
-    return `<iframe name='quickcast' src='http://quick.as/embed/az3sxrb' scrolling='no' frameborder='0' width="100%" allowfullscreen></iframe>`;
+    return `<iframe name='quickcast' src='https://quick.as/embed/az3sxrb' scrolling='no' frameborder='0' width="100%" allowfullscreen></iframe>`;
 }
 
 function script () {
     let elem = document.createElement('script');
-    elem.src = 'http://quick.as/embed/script/1.60';
+    elem.src = 'https://quick.as/embed/script/1.60';
     elem.id  = 'quickcast-vid';
     document.body.appendChild(elem);
 }

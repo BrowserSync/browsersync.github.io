@@ -1,11 +1,14 @@
 module.exports = {
     tasks: {
         deploy: ["build", "cp", "rsync", "$shell open https://browsersync.io"],
+        test:   ["build", "cp", "$shell browser-sync start --server public --https"],
         rsync:  ["$shell rsync -pazv ./public/ root@178.62.0.17:/usr/share/nginx/browsersync --delete"],
-        build:  ["docs", "crossbow", "html-min", "sass", "icons"],
+        build:  ["docs", "crossbow", "html-min", "sass", "icons", "build-js"],
         cp:     ["copy:css:font:img:assets:js"],
         icons:  ["tasks/icons.js"],
-        js:     ["babel-browserify", "uglify"]
+        "build-js": ['jss', 'uglify'],
+        jss:    ["$shell ./node_modules/.bin/browserify js/app.js -o js/dist/app.js -d -t [ babelify --presets [ es2015 ] ]"],
+        uglify: ["$shell ./node_modules/.bin/uglifyjs js/dist/app.js > js/dist/app.min.js"]
     },
     watch: {
         "bs-config": {
@@ -26,7 +29,7 @@ module.exports = {
                 "before":        ["build"],
                 "img/svg/*.svg": ["icons", "bs:reload"],
                 "scss/**":       ["sass", "bs:reload:core.min.css"],
-                "js/*.js":       ["js", "bs:reload"],
+                "js/*.js":       ["build-js", "uglify", "bs:reload"],
                 "_src/**:*.yml": ["crossbow", "html-min", "bs:reload"]
             }
         }
@@ -69,11 +72,6 @@ module.exports = {
                 "_src/*.html",
                 "_src/docs/*"
             ]
-        },
-        "babel-browserify": {
-            input: 'js/app.js',
-            root: 'js',
-            output: 'js/dist/app.js'
         },
         "uglify": {
             input: 'js/dist/app.js',

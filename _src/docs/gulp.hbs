@@ -27,6 +27,9 @@ Then, use them within your `gulpfile.js`:
 
 {{ hl src="snippets/gulp/require.js" }}
 
+Be sure to pass a callback to the task to ensure it [supports async](https://github.com/gulpjs/gulp/blob/master/docs/API.md#async-task-support)
+so that the `browserSync` [server](/docs/options/#option-server) stays running.
+
 {{ inc src="headerlink.html" title="SASS + CSS Injecting" slug="gulp-sass-css" }}
 
 {{#md}}

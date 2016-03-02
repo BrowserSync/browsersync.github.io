@@ -39,7 +39,7 @@ proxy: {
 proxy: {
     target: "http://yourlocal.dev",
     proxyRes: [
-        function (res, req) {
+        function (res, req, next) {
             console.log(res.headers);
             next();
         }

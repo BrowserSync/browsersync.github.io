@@ -1,5 +1,5 @@
-module.exports.tasks = [
-    function (obs, opts, ctx) {
-    	return ctx.vfs.src(opts.input).pipe(ctx.vfs.dest(opts.output));
-    }
-];
+var vfs = require('vinyl-fs');
+
+module.exports = function (opts) {
+    return vfs.src(opts.input).pipe(vfs.dest(opts.output));
+};

@@ -1,14 +1,16 @@
+const js = 'js/dist/app.js';
+const jsdist = 'js/dist/app.min.js';
 module.exports = {
     tasks: {
         deploy: ["build", "cp", "rsync", "$shell open https://browsersync.io"],
-        test:   ["build", "cp", "$shell browser-sync start --server public --https"],
+        test:   ["build", "cp", "@shell browser-sync start --server public --https"],
         rsync:  ["$shell rsync -pazv ./public/ root@178.62.0.17:/usr/share/nginx/browsersync --delete"],
         build:  ["docs", "crossbow", "html-min", "sass", "icons", "build-js"],
-        cp:     ["copy:css:font:img:assets:js"],
+        cp:     ["copy:*"],
         icons:  ["tasks/icons.js"],
-        "build-js": ['jss', 'uglify'],
-        jss:    ["$shell ./node_modules/.bin/browserify js/app.js -o js/dist/app.js -d -t [ babelify --presets [ es2015 ] ]"],
-        uglify: ["$shell ./node_modules/.bin/uglifyjs js/dist/app.js > js/dist/app.min.js"]
+        "build-js": ['js', 'uglify'],
+        js:     ["@npm browserify js/app.js -o js/dist/app.js -d -t [ babelify --presets [ es2015 ] ]"],
+        uglify: `@npm uglifyjs ${js} > ${jsdist}`
     },
     watch: {
         "bs-config": {
@@ -62,8 +64,9 @@ module.exports = {
             "input": "scss/core.scss",
             "output": "css/core.min.css"
         },
-        "easy-svg": {
-            "yml": "_config.yml"
+        "tasks/icons.js": {
+            "yml": "_config.yml",
+            "output": "img/icons"
         },
         "crossbow": {
             "base": "_src",

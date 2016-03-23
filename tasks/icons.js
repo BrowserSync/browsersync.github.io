@@ -1,10 +1,11 @@
 var yaml    = require('js-yaml');
 var read    = require('fs').readFileSync;
 var easysvg = require('easy-svg');
+var vfs     = require('vinyl-fs');
 
-function icons (obs, opts, ctx) {
+function icons (opts) {
 
-    var sitedata = yaml.safeLoad(read(ctx.config['easy-svg'].yml, 'utf8'));
+    var sitedata = yaml.safeLoad(read(opts.yml, 'utf8'));
 
     /**
      * SVG icons used on the site, but not in yaml
@@ -28,9 +29,9 @@ function icons (obs, opts, ctx) {
         .concat(globals)
         .map(function (item) { return "img/svg/" + item + ".svg" });
 
-    return ctx.vfs.src(usedsvgs)
+    return vfs.src(usedsvgs)
         .pipe(easysvg.stream())
-        .pipe(ctx.vfs.dest("img/icons"));
+        .pipe(vfs.dest(opts.output));
 }
 
 module.exports.tasks = [icons];

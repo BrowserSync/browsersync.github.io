@@ -1,14 +1,57 @@
 ---
 layout: "documentation.hbs"
 title: "Browsersync Recipes"
-sidebar: "docs-sidebar.hbs"
+sidebar: "recipe-sidebar.hbs"
 markdown: true
 ---
 
-We have an [official project on Github]({{site.links.recipes}}) that contains full
-working examples of how to use Browser Sync in a number of different ways. Each example
-can be run separately and is a great way for newcomers to get their heads around
-the different use-cases that are possible.
+Recipes are stand-alone examples of how to use Browsersync alongside many
+other popular tools. Each example can be run separately and is a great way
+for newcomers and pros alike to get their heads around the different use-cases that are possible.
+
+### Recipe command
+If you have Browsersync installed globally (via the `-g` flag), then you have access to the
+`recipe` command. Run it and you'll see a list of the available recipes that can be installed.
+
+```sh
+$ browser-sync recipe
+```
+Example output:
+```
+[BS] No recipe name provided!
+[BS] Install one of the following with browser-sync recipe <name>
+
+    grunt.html.injection
+    grunt.sass
+    grunt.sass.autoprefixer
+    ...
+    ...
+
+```
+
+Once you've chosen a recipe to use, such as `grunt.sass.autoprefixer` simply run the following
+command to copy the files into a new directory with the same name.
+
+```sh
+$ browser-sync recipe grunt.sass.autoprefixer
+```
+
+Next, cd into that directory and run `npm install` as you would any other project. Then just
+run `npm start` and you're good to go.
+
+```
+$ cd grunt.sass.autoprefixer
+$ npm i && npm start
+```
+
+## Custom output directory
+By default, `browser-sync recipe <name>` will create the directory `<name>`. So in the above example
+it will create the folder `grunt.sass.autoprefixer`. If you want to call it something else, pass the output
+flag.
+
+```sh
+$ browser-sync recipe grunt.sass.autoprefixer --output my-project
+```
 
 ### Current recipes (links to github)
 

@@ -1,0 +1,15 @@
+<div class="doc-nav">
+    <span class="nav-expand">
+        {{inc src="icon.hbs" icon="menu" class="open"}}
+        {{inc src="icon.hbs" icon="cross" class="close"}}
+    </span>
+    <div class="sticky-nav">
+        <p class="lede">Recipe names</p>
+        <p>Use these with the <code>recipe</code> command. Eg: <code>browser-sync recipe webpack.babel</code></p>
+        <ul class="sticky-nav__items" id="sticky-nav">
+            {{#each recipes}}
+                <li class="sticky-nav__item"><code>{{this.dir}}</code></li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

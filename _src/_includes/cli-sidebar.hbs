@@ -6,12 +6,8 @@
     <div class="sticky-nav">
         <p class="lede">Jump to...</p>
         <ul class="sticky-nav__items" id="sticky-nav">
-            <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
             {{#each site.cliCommands}}
-            <li class="sticky-nav__item"><a class="nav-link" href="#{{this.name}}-options"><code>{{this.name}}</code> options</a></li>
-            {{#if this.options}}
-                <li class="sticky-nav__item"><a class="nav-link" href="#{{this.name}}-examples"><code>{{this.name}}</code> examples</a></li>
-            {{/if}}
+            <li class="sticky-nav__item"><a class="nav-link" href="#{{this.name}}"><code>$ browser-sync {{this.name}}</code></a></li>
             {{/each}}
         </ul>
     </div>

@@ -12,6 +12,7 @@ module.exports = {
     },
     watch: {
         "bs-config": {
+            online: false,
             server: {
                 baseDir: ['public'],
                 https: true,

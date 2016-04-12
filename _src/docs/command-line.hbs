@@ -29,8 +29,10 @@ $ browser-sync reload              Send a reload event over HTTP protocol
 $ browser-sync recipe [name]       Generate the files for a recipe
 ```
 
-## Help (requires v2.12.1)
+{{/md}}
 
+{{inc src="headerlink.html" title="Help" slug="help" }}
+{{#md}}
 For help running a certain command, type `$ browser-sync <command> --help`, for example:
 
 ```bash
@@ -42,7 +44,7 @@ $ brower-sync recipe --help
 ```
 {{/md}}
 
-{{inc src="headerlink.html" title="$ browser-sync start - options" slug="start-options" }}
+{{inc src="headerlink.html" title="$ browser-sync start" slug="start" }}
 
 <table class="commands-list">
     {{#each startCommands}}
@@ -60,8 +62,9 @@ $ brower-sync recipe --help
     {{/each}}
 </table>
 
-{{inc src="headerlink.html" title="$ browser-sync start - examples" slug="start-examples" }}
 {{#hl lang="bash"}}
+# Examples
+
 # Start a server from the `app` directory, watching all files
 $ browser-sync start --server 'app' --files 'app'
 
@@ -79,7 +82,7 @@ $ browser-sync start --config 'conf/browser-sync.js'
 $ browser-sync start --config 'conf/browser-sync.js' --port 4000
 {{/hl}}
 
-{{inc src="headerlink.html" title="$ browser-sync recipe - options" slug="recipe-options" }}
+{{inc src="headerlink.html" title="$ browser-sync recipe" slug="recipe" }}
 
 <table class="commands-list">
     {{#each recipeCommands}}
@@ -90,9 +93,9 @@ $ browser-sync start --config 'conf/browser-sync.js' --port 4000
     {{/each}}
 </table>
 
-{{inc src="headerlink.html" title="$ browser-sync recipe - examples" slug="recipe-examples" }}
-
 {{#hl lang="bash"}}
+# Examples
+
 # List all available recipes
 $ browser-sync recipe ls
 
@@ -103,7 +106,7 @@ $ browser-sync recipe 'gulp.sass'
 $ browser-sync recipe 'gulp.sass' -o 'my-project'
 {{/hl}}
 
-{{inc src="headerlink.html" title="$ browser-sync reload - options" slug="reload-options" }}
+{{inc src="headerlink.html" title="$ browser-sync reload" slug="reload" }}
 
 <table class="commands-list">
     {{#each reloadCommands}}
@@ -114,21 +117,22 @@ $ browser-sync recipe 'gulp.sass' -o 'my-project'
     {{/each}}
 </table>
 
-{{inc src="headerlink.html" title="$ browser-sync reload - examples" slug="reload-examples" }}
+{{#hl lang="bash"}}
+# Examples
 
-{{#hl}}
+# Reload assuming standard address of http://localhost:3000
 $ browser-sync reload
-{{/hl}}
 
-{{inc src="headerlink.html" title="reload over http protocol with port" slug="command-line-options" }}
-
-{{#hl}}
+# Reload assuming standard address of http://localhost:3000
 $ browser-sync reload --port 4000 --files="*.css"
+
+# Reload assuming standard address of http://localhost:3000
+$ browser-sync reload --url https://localhost:3000 --files="*.css"
 {{/hl}}
 
-{{inc src="headerlink.html" title="reload over http protocol with full url" slug="command-line-options" }}
+{{inc src="headerlink.html" title="$ browser-sync init" slug="init" }}
 
 {{#hl}}
-$ browser-sync reload --url https://localhost:3000 --files="*.css"
+$ browser-sync init
 {{/hl}}
 

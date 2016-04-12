@@ -13,3 +13,7 @@ plugins: [
         }
     }
 ]
+
+// Shorthand for bs-html-injector + files: ["*.html"] option
+// NOTE: requires v2.12.1
+plugins: ["bs-html-injector?files[]=*.html"]

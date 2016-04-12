@@ -2,7 +2,7 @@
 rewriteRules: [
     {
         match: /Browsersync/g,
-        fn: function (match) {
+        fn: function (req, res, match) {
             return 'kittenz';
         }
     }

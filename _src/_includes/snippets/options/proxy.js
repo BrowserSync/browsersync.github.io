@@ -14,25 +14,19 @@ proxy: {
     ws: true
 }
 
-// With middleware - Requires v2.1.0
 proxy: {
     target: "http://yourlocal.dev",
-    middleware: function (req, res, next) {
-        console.log(req.url);
-        next();
-    }
 }
 
-// With custom request headers - Requires v2.1.0
+// Modify the server request before it hits your application
+// NOTE: requires v2.12.1
 proxy: {
-    target: "localhost:8000",
-    reqHeaders: function (config) {
-        return {
-            "host":            config.urlObj.host,
-            "accept-encoding": "identity",
-            "agent":           false
+    target: "http://yourlocal.dev",
+    proxyReq: [
+        function (proxyReq) {
+            proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
         }
-    }
+    ]
 }
 
 // Modify the server response after it's returned from the proxy

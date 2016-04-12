@@ -8,6 +8,16 @@ url: "http://browsersync.io"
 twitter_username: browsersync
 github_username: shakshane
 
+cliCommands:
+    - name: start
+      options: true
+    - name: recipe
+      options: true
+    - name: reload
+      options: true
+    - name: init
+      options: false
+
 # Assets
 cssFile: "/css/core.min.css"
 

@@ -7,11 +7,12 @@
         <p class="lede">Jump to...</p>
         <ul class="sticky-nav__items" id="sticky-nav">
             <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
-            <li class="sticky-nav__item"><a class="nav-link" href="#command-line-options">Options</a></li>
-            <li class="sticky-nav__item"><a class="nav-link" href="#files-example">Files Examples</a></li>
-            <li class="sticky-nav__item"><a class="nav-link" href="#server-example">Server Examples</a></li>
-            <li class="sticky-nav__item"><a class="nav-link" href="#proxy-example">Proxy Examples</a></li>
-            <li class="sticky-nav__item"><a class="nav-link" href="#watching-files-example">Watching files + Server</a></li>
+            {{#each site.cliCommands}}
+            <li class="sticky-nav__item"><a class="nav-link" href="#{{this.name}}-options"><code>{{this.name}}</code> options</a></li>
+            {{#if this.options}}
+                <li class="sticky-nav__item"><a class="nav-link" href="#{{this.name}}-examples"><code>{{this.name}}</code> examples</a></li>
+            {{/if}}
+            {{/each}}
         </ul>
     </div>
 </div>

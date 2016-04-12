@@ -19,45 +19,102 @@ markdown: false
 ---
 
 {{#md}}
-For **tinkering** or quick examples and playing around, the command-line usage can be quite helpful.
-After install Browsersync globally, you can run it like this:
+First, either install Browsersync globally, or locally to your project (if you're using npm scripts)
+and then run one of the following commands
+
+```
+$ browser-sync start [options]     Start Browsersync
+$ browser-sync init                Create a configuration file
+$ browser-sync reload              Send a reload event over HTTP protocol
+$ browser-sync recipe [name]       Generate the files for a recipe
+```
+
+## Help (requires v2.12.1)
+
+For help running a certain command, type `$ browser-sync <command> --help`, for example:
+
+```bash
+# Get help for the start command only
+$ brower-sync start --help
+
+# Get help for the recipe command only
+$ brower-sync recipe --help
+```
 {{/md}}
 
-{{#hl lang="bash" }}
-$ browser-sync start <options>
-{{/hl}}
-
-{{inc src="headerlink.html" title="start options" slug="command-line-options" }}
+{{inc src="headerlink.html" title="$ browser-sync start - options" slug="start-options" }}
 
 <table class="commands-list">
     {{#each startCommands}}
         <tr>
-            <td>--{{@key}}</td>
-            <td>{{this}}</td>
+            <td>--{{@key}}{{#if this.alias}},
+                    {{#if_eq this.alias 'ss'}}
+                        --ss
+                    {{else}}
+                        -{{this.alias}}
+                    {{/if_eq}}
+                {{/if}}
+            </td>
+            <td>{{this.desc}}</td>
         </tr>
     {{/each}}
 </table>
 
+{{inc src="headerlink.html" title="$ browser-sync start - examples" slug="start-examples" }}
+{{#hl lang="bash"}}
+# Start a server from the `app` directory, watching all files
+$ browser-sync start --server 'app' --files 'app'
 
+# Start a server from the `app` & `.tmp` directories (short hand)
+# (requires 2.12.1)
+$ browser-sync start -s 'app' '.tmp' -files 'app' '.tmp'
 
-{{#loop page.items}}
-{{inc src="headerlink.html" title=this.title slug=this.slug }}
-{{hl src=this.file}}
-{{/loop}}
+# Proxy a PHP app + serve static files & watch them
+$ browser-sync start --proxy 'mylocal.dev' --serveStatic 'public' --files 'public'
 
+# Start Browsersync from a config file
+$ browser-sync start --config 'conf/browser-sync.js'
 
-{{inc src="headerlink.html" title="reload options" slug="command-line-options" }}
+# Start Browsersync from a config file with overriding flags
+$ browser-sync start --config 'conf/browser-sync.js' --port 4000
+{{/hl}}
+
+{{inc src="headerlink.html" title="$ browser-sync recipe - options" slug="recipe-options" }}
+
+<table class="commands-list">
+    {{#each recipeCommands}}
+        <tr>
+            <td>--{{@key}}, -{{this.alias}}</td>
+            <td>{{this.desc}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+{{inc src="headerlink.html" title="$ browser-sync recipe - examples" slug="recipe-examples" }}
+
+{{#hl lang="bash"}}
+# List all available recipes
+$ browser-sync recipe ls
+
+# Copy files for gulp.sass recipe
+$ browser-sync recipe 'gulp.sass'
+
+# Copy files for gulp.sass recipe into custom output directory
+$ browser-sync recipe 'gulp.sass' -o 'my-project'
+{{/hl}}
+
+{{inc src="headerlink.html" title="$ browser-sync reload - options" slug="reload-options" }}
 
 <table class="commands-list">
     {{#each reloadCommands}}
         <tr>
-            <td>--{{@key}}</td>
-            <td>{{this}}</td>
+            <td>--{{@key}}, -{{this.alias}}</td>
+            <td>{{this.desc}}</td>
         </tr>
     {{/each}}
 </table>
 
-{{inc src="headerlink.html" title="reload over http protocol" slug="command-line-options" }}
+{{inc src="headerlink.html" title="$ browser-sync reload - examples" slug="reload-examples" }}
 
 {{#hl}}
 $ browser-sync reload

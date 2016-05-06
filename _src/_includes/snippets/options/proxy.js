@@ -23,7 +23,7 @@ proxy: {
 proxy: {
     target: "http://yourlocal.dev",
     proxyReq: [
-        function (proxyReq) {
+        function(proxyReq) {
             proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
         }
     ]
@@ -33,9 +33,8 @@ proxy: {
 proxy: {
     target: "http://yourlocal.dev",
     proxyRes: [
-        function (res, req, next) {
-            console.log(res.headers);
-            next();
+        function(proxyRes, req, res) {
+            console.log(proxyRes.headers);
         }
     ]
 }

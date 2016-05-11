@@ -4,40 +4,27 @@ module.exports = {
     tasks: {
         deploy: ["build", "cp", "rsync", "$shell open https://browsersync.io"],
         test:   ["build", "cp", "@shell browser-sync start --server public --https"],
-        rsync:  ["$shell rsync -pazv ./public/ root@178.62.0.17:/usr/share/nginx/browsersync --delete"],
-        build:  ["docs", "crossbow", "html-min", "sass", "icons", "build-js"],
+        rsync:  ["@sh rsync -pazv ./public/ root@178.62.0.17:/usr/share/nginx/browsersync --delete"],
+        build:  ["docs", "crossbow", "html-min", "sassprod", "icons", "build-js"],
         cp:     ["copy:*"],
         icons:  ["tasks/icons.js"],
         "build-js": ['js', 'uglify'],
         js:     ["@npm browserify js/app.js -o js/dist/app.js -d -t [ babelify --presets [ es2015 ] ]"],
-        uglify: `@npm uglifyjs ${js} > ${jsdist}`
+        uglify: `@npm uglifyjs ${js} > ${jsdist}`,
+        html:  ['crossbow'],
+        sass:  'node_modules/crossbow-sass/index.js',
+        sassprod: 'node_modules/crossbow-sass/index.js --production'
     },
     watch: {
-        "bs-config": {
-            online: false,
-            server: {
-                baseDir: ['public'],
-                https: true,
-                routes: {
-                    '/js': './js',
-                    '/img': './img',
-                    '/css': './css',
-                    '/brand-assets': './brand-assets'
-                }
-            },
-            middleware: require('compression')()
-        },
-        tasks: {
-            "default": {
-                "before":        ["build"],
-                "img/svg/*.svg": ["icons", "bs:reload"],
-                "scss/**":       ["sass", "bs:reload:core.min.css"],
-                "js/*.js":       ["build-js", "uglify", "bs:reload"],
-                "_src/**:*.yml": ["crossbow", "html-min", "bs:reload"]
-            }
+        "default": {
+            "before":        ["build"],
+            "img/svg/*.svg": ["icons", "bs:reload"],
+            "scss/**":       ["sass", "bs:reload"],
+            "js/*.js":       ["build-js", "uglify", "bs:reload"],
+            "_src/**:*.yml": ["crossbow", "html-min", "bs:reload"]
         }
     },
-    config: {
+    options: {
         "copy": {
             css: {
                 input: 'css/**',
@@ -60,9 +47,9 @@ module.exports = {
                 output: 'public/brand-assets'
             }
         },
-        "sass": {
+        "node_modules/crossbow-sass/index.js": {
             "input": "scss/core.scss",
-            "output": "css/core.min.css"
+            "output": "css"
         },
         "tasks/icons.js": {
             "yml": "_config.yml",
@@ -79,7 +66,7 @@ module.exports = {
         },
         "uglify": {
             input: 'js/dist/app.js',
-            output: 'js/dist/app.min.js',
+            output: 'js/dist/app.min.js'
         },
         "html-min": {
             input: 'public/index.src/index.html',

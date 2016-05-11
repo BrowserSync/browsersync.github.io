@@ -1,16 +1,17 @@
 var minify = require('html-minifier').minify;
+var write = require('fs').writeFileSync;
+var read = require('fs').readFileSync;
 
-function htmlmin (obs, opts, ctx) {
+function htmlmin (opts) {
 
-    var result = minify(ctx.file.read(opts.input), {
+    var result = minify(read(opts.input, 'utf8'), {
         removeAttributeQuotes: false,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
         removeComments: true
     });
 
-    ctx.file.write(opts.output, result);
-    obs.done();
+    write(opts.output, result);
 }
 
 module.exports.tasks = [htmlmin];

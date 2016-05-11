@@ -1,12 +1,15 @@
 var crossbow = require('crossbow');
+var resolve = require('path').resolve;
+var vfs = require('vinyl-fs');
 
-function crossbowBuild (obs, opts, ctx) {
+function crossbowBuild (opts, ctx, done) {
 
     var input = opts.input.map(function (item) {
-        return ctx.resolve(item);
+        return resolve(item);
     });
 
-    return ctx.vfs.src(input)
+
+    return vfs.src(input)
         .pipe(crossbow.stream({
             config: {
                 base: opts.base,
@@ -27,7 +30,7 @@ function crossbowBuild (obs, opts, ctx) {
                 recipes:        "file:../node_modules/bs-recipes/manifest.json"
             }
         }))
-        .pipe(ctx.vfs.dest(opts.output));
+        .pipe(vfs.dest(opts.output));
 
 }
 

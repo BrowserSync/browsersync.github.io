@@ -63,11 +63,15 @@ cb.task('build', ["docs", "crossbow", "html-min", "sassprod", "icons", "js"]);
 /**
  * Serve Tasks
  */
+
 cb.task('serve', ['templates'], function () {
     bs.init({
         server: ['./', 'public'],
         logFileChanges: false,
         open: false
     });
-    cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()]);
+    cb.watch(['_src/**', '*.yml'], ['templates', function browsersyncReload() {
+        bs.reload();
+    }], {block: true})
+    cb.watch(['scss'], ['sass', () => bs.reload(['core.css', 'core.min.css'])]);
 });

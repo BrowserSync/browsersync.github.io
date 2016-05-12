@@ -25,7 +25,7 @@
     "bs-recipes": "1.2.0",
     "compression": "^1.5.2",
     "crossbow": "^0.4.7",
-    "crossbow-cli": "3.0.10",
+    "crossbow-cli": "3.0.11",
     "crossbow-sass": "4.0.0",
     "easy-svg": "^1.0.5",
     "gulp": "^3.9.0",

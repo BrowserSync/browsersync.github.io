@@ -1,11 +1,15 @@
 var cb = require('crossbow-cli');
 var bs = require('browser-sync').create();
+
 /**
- * JS Vars
+ * Set ENV vars that will be available to scripts
  */
-const JS_ENTRY = 'js/app.js';
-const JS_BUNDLE  = 'public/js/app.js';
-const JS_MIN   = 'public/js/app.min.js';
+cb.env({
+    JS_ENTRY :'js/app.js',
+    JS_BUNDLE :'public/js/app.js',
+    JS_MIN :'public/js/app.min.js',
+    AUTH: 'root@178.62.0.17'
+});
 
 /**
  * HTML templates
@@ -28,16 +32,37 @@ cb.task('build-css', {
  */
 cb.task('build-js', {
     description: 'Build production ready JS',
-    tasks: ['browserify', `uglify`]
+    tasks: [
+        '@npm browserify $JS_ENTRY -o $JS_BUNDLE -d -t [ babelify --presets [ es2015 ] ]',
+        '@npm uglifyjs $JS_BUNDLE > $JS_MIN'
+    ]
 });
-
-cb.task('browserify', `@npm browserify ${JS_ENTRY} -o ${JS_BUNDLE} -d -t [ babelify --presets [ es2015 ] ]`);
-cb.task('uglify', `@npm uglifyjs ${JS_BUNDLE} > ${JS_MIN}`);
 
 /**
  * Build for production
  */
-cb.task('build', ["docs", "crossbow", "html-min", "build-css", "icons", "js"]);
+cb.task('build-all', {
+    description: 'Run all build tasks',
+    tasks: ["_html", "build-css", "icons", "build-js"],
+    runMode: 'parallel'
+});
+
+/**
+ * Group helper for all HTML related tasks
+ */
+cb.task('_html', ["docs", "templates", "html-min"]);
+cb.task('rsync', {
+    adaptor: 'sh',
+    command: 'rsync -ra public public-html $AUTH:/usr/share/nginx/bs2 --delete'
+});
+
+/**
+ * Deploy to production
+ */
+cb.task('deploy', {
+    description: 'Build & Deploy the website to Digital Ocean',
+    tasks: ['build-all', 'rsync'],
+});
 
 /**
  *
@@ -47,16 +72,18 @@ cb.task('docker', '@sh docker-compose -f docker-compose-dev.yaml up -d');
 /**
  * Serve Tasks
  */
-
-cb.task('serve', ['templates', 'build-css', 'docker'], function () {
-    bs.init({
-        proxy: '0.0.0.0:8080',
-        logFileChanges: false,
-        open: false
-    });
-    cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
-    cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
-    cb.watch(['js'], ['build-js', () => bs.reload()]);
+cb.task('serve', {
+    description: 'Build HTML/CSS then launch Docker + Browsersync',
+    tasks: ['templates', 'build-css', 'docker', function () {
+        bs.init({
+            proxy: '0.0.0.0:8080',
+            logFileChanges: false,
+            open: false
+        });
+        cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
+        cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
+        cb.watch(['js'], ['build-js', () => bs.reload()]);
+    }]
 });
 
 cb.options({
@@ -66,7 +93,7 @@ cb.options({
     },
     crossbow: {
         base: "_src",
-        output: "dist",
+        output: "public-html",
         input: [
             "_src/*.hbs",
             "_src/*.html",
@@ -74,19 +101,19 @@ cb.options({
         ]
     },
     "html-min": {
-        input: 'dist/index.src/index.html',
-        output: 'dist/index.html'
+        input: 'public-html/index.src/index.html',
+        output: 'public-html/index.html'
     },
     "node_modules/crossbow-sass/index.js": {
         "input": "scss/core.scss",
         "output": "css"
     },
     /**
-     * tasks/icons.JS_ENTRY
+     * tasks/icons.js
      */
     "icons": {
         "yml": "_config.yml",
-        "output": "img/icons"
+        "output": "public/img/icons"
     },
     "docs": {
         output: "_doc",

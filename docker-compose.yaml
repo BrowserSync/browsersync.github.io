@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx:
+    container_name: bs-static
+    image: nginx:latest
+    ports:
+      - 80
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf

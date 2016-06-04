@@ -75,7 +75,7 @@ links:
   issues:       "https://github.com/Browsersync/browser-sync/issues"
   help:         "http://stackoverflow.com/questions/tagged/browser-sync"
   videos:       "https://github.com/Browsersync/browser-sync/wiki/Screencasts"
-  crossbow:     "https://github.com/shakyShane/crossbow.js"
+  crossbow:     "https://github.com/shakyShane/crossbow.JS_ENTRY"
   npmdocs:      "https://docs.npmjs.com/getting-started/fixing-npm-permissions"
   snippet:      "/docs/options/#option-snippetOptions"
   recipes:      "https://github.com/Browsersync/recipes"
@@ -90,7 +90,7 @@ videos:
 icons:
   - title:   "Install and run anywhere"
     icon:    "check"
-    tagline: "Built on Node.js to support Windows, MacOS and Linux. Setup in less than 5 minutes."
+    tagline: "Built on Node.JS_ENTRY to support Windows, MacOS and Linux. Setup in less than 5 minutes."
   - title:   "Free to run and reuse"
     icon:    "creative-commons-noncommercial-us"
     tagline: "Browsersync is an open source project available to use under the Apache 2.0 License."

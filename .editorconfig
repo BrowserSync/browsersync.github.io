@@ -8,7 +8,7 @@ indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{css,scss,js}]
+[*.{css,scss,JS_ENTRY}]
 indent_size = 4
 
 [*.md]

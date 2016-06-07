@@ -50,7 +50,7 @@ cb.task('build-all', {
 /**
  * Group helper for all HTML related tasks
  */
-cb.task('_html', ["docs", "templates", "html-min"]);
+cb.task('_html', ["docs", "templates", "html-min", "merkle --dir public-html"]);
 cb.task('rsync', {
     adaptor: 'sh',
     command: 'rsync -ra public public-html $AUTH:/usr/share/nginx/bs2 --delete'

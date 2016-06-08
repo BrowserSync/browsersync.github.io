@@ -8,7 +8,6 @@ function crossbowBuild (opts, ctx, done) {
         return resolve(item);
     });
 
-
     return vfs.src(input)
         .pipe(crossbow.stream({
             config: {

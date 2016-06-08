@@ -33,8 +33,9 @@ cb.task('build-css', {
 cb.task('build-js', {
     description: 'Build production ready JS',
     tasks: [
-        '@npm browserify $JS_ENTRY -o $JS_BUNDLE -d -t [ babelify --presets [ es2015 ] ]',
-        '@npm uglifyjs $JS_BUNDLE > $JS_MIN'
+        // '@npm browserify $JS_ENTRY -o $JS_BUNDLE -d -t [ babelify --presets [ es2015 ] ]',
+        // '@npm uglifyjs $JS_BUNDLE > $JS_MIN'
+        '@npm browserify js/app.js -d -t [ babelify --presets [ es2015 ] ] | uglifyjs -cm > public/js/app.min.js'
     ]
 });
 
@@ -43,14 +44,22 @@ cb.task('build-js', {
  */
 cb.task('build-all', {
     description: 'Run all build tasks',
-    tasks: ["_html", "build-css", "icons", "build-js"],
-    runMode: 'parallel'
+    tasks: ["_html", "build-css", "icons", "_merkle", "build-sw"]
+});
+
+/**
+ * Build service worker file
+ */
+cb.task('build-sw', {
+    description: 'Build service worker file',
+    tasks: ["sw"]
 });
 
 /**
  * Group helper for all HTML related tasks
  */
-cb.task('_html', ["docs", "templates", "html-min", "merkle --dir public-html"]);
+cb.task('_merkle', ["merkle --dir public", "merkle --dir public-html"]);
+cb.task('_html', ["docs", "templates", "html-min", "_merkle"]);
 cb.task('rsync', {
     adaptor: 'sh',
     command: 'rsync -ra public public-html $AUTH:/usr/share/nginx/bs2 --delete'
@@ -75,11 +84,6 @@ cb.task('docker', '@sh docker-compose -f docker-compose-dev.yaml up -d');
 cb.task('serve', {
     description: 'Build HTML/CSS then launch Docker + Browsersync',
     tasks: ['templates', 'build-css', 'docker', function () {
-        bs.init({
-            proxy: '0.0.0.0:8080',
-            logFileChanges: false,
-            open: false
-        });
         cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
         cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
         cb.watch(['js'], ['build-js', () => bs.reload()]);

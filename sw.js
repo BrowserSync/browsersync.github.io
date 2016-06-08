@@ -1,4 +1,4 @@
-var staticCacheName = 'bs-f6edbebd29182c3b5603d507c6800176e04dac3d4072cfc85a3c14b4e6f4f14c';
+var staticCacheName = 'bs-40dcec7c168eba0f6edda99fc404aff24e50ab0e230c56bcd74b765f283b55d4';
 var files = [
     "/brand-assets",
     "/docs/api",

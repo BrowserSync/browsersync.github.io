@@ -7,7 +7,7 @@ module.exports = function (opts, ctx, done) {
     var allowed = ['.html', '.css', '.js', '.svg', '.png', '.jpg', '.gif'];
     var excludedDir = ['img/svg', 'index.src'];
     var excludedFiles = ['urls.json', '.DS_Store'];
-    var sw = fs.readFileSync('sw-template.js', 'utf8');
+    var sw = fs.readFileSync('sw/sw-template.js', 'utf8');
 
     var tree = walk(m['public-html'].tree, [])
         .concat(walk(m['public'].tree, []))
@@ -55,7 +55,7 @@ module.exports = function (opts, ctx, done) {
 
     function writeTemplate(files, cache) {
 
-        fs.writeFileSync('sw.js',
+        fs.writeFileSync('sw/sw.js',
             sw
                 .replace(/\/\*\* cache-paths \*\*\//, `var files = ${JSON.stringify(files, null, 4)};`)
                 .replace(/\/\*\* cache \*\*\//, cache)

@@ -44,7 +44,7 @@ cb.task('build-js', {
  */
 cb.task('build-all', {
     description: 'Run all build tasks',
-    tasks: ["_html", "build-css", "icons", "_merkle", "build-sw"]
+    tasks: ["_html", "build-css", "build-js", "icons", "_merkle", "build-sw"]
 });
 
 /**
@@ -59,7 +59,7 @@ cb.task('build-sw', {
  * Group helper for all HTML related tasks
  */
 cb.task('_merkle', ["merkle --dir public", "merkle --dir public-html"]);
-cb.task('_html', ["docs", "templates", "html-min", "_merkle"]);
+cb.task('_html', ["docs", "templates", "html-min"]);
 cb.task('rsync', {
     adaptor: 'sh',
     command: 'rsync -ra public public-html $AUTH:/usr/share/nginx/bs2 --delete'

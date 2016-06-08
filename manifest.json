@@ -108,11 +108,11 @@
         ]
       }
     ],
-    "date": "June 8th 2016, 4:42:11 pm"
+    "date": "June 8th 2016, 5:26:29 pm"
   },
   "public": {
     "path": "public",
-    "hash": "88d261ed106b67f37923f88ddcc5f243712a39eba6d521c99e9f844c9f8dd3b7",
+    "hash": "2e84e438e22f0bcc3771c15211a41ffc1e62091f6e52030a5f7ec8e28dcd1b6e",
     "tree": [
       {
         "path": "brand-assets",
@@ -1766,7 +1766,7 @@
       },
       {
         "path": "js",
-        "hash": "3d79d85091af87a3380ede631c38cd04950f05908a716ae29566eaa0ec59ef08",
+        "hash": "d2c300969644f3620b049d9ffd2bb3c4c2f46f0eb5edc67506505cee9cbf799d",
         "tree": [
           {
             "path": "js/app.js",
@@ -1774,11 +1774,11 @@
           },
           {
             "path": "js/app.min.js",
-            "hash": "a83a133533c248c5cc10286a6213a9b15b583d9043fcaa72c0d85ca8286b8e7e"
+            "hash": "c454080cc58f766161aa1406fefac972f66efededb3d054c39dbfa11bd537a6e"
           }
         ]
       }
     ],
-    "date": "June 8th 2016, 5:23:48 pm"
+    "date": "June 8th 2016, 5:36:04 pm"
   }
 }

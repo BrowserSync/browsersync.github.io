@@ -112,7 +112,7 @@
   },
   "public": {
     "path": "public",
-    "hash": "acf452d959a977a932a3cbe0f8e15f31d09a683346334c548b3fe23cfcb2ded3",
+    "hash": "54cd74c3661fc7a1bff58821c906600fc8669b1b3e5ff5845cc9fb382a9cfd13",
     "tree": [
       {
         "path": "brand-assets",
@@ -1780,13 +1780,13 @@
       },
       {
         "path": "sw-template.js",
-        "hash": "6a6139be4251129daca23fd6ee1f1fe45c63882a84fc430e2aac6820c58a897e"
+        "hash": "6d1cc06a9fa56ea11a18ffbc1a538e4a64a06790c5ce7e145e354c6cffa993ac"
       },
       {
         "path": "sw.js",
-        "hash": "0ccd32039a16a09b9a389916503e2d38da1af5e1dc691b788c2978a9ca45e7fe"
+        "hash": "a027d4bd062e8b42cec5035b3c107ba7c670e21ffbe74d78164e26246535d8b1"
       }
     ],
-    "date": "June 8th 2016, 4:27:09 pm"
+    "date": "June 8th 2016, 5:15:59 pm"
   }
 }

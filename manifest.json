@@ -1,7 +1,7 @@
 {
   "public-html": {
     "path": "public-html",
-    "hash": "39e6c5e6b903acbccc011d5a4f723d0a7111897ba9a164d38306230eee1b4855",
+    "hash": "fdb333845c026bf88f7a1bf9cc23b6a02e5f6f7ffaa06b7aac25152d727d93ad",
     "tree": [
       {
         "path": "brand-assets",
@@ -15,7 +15,7 @@
       },
       {
         "path": "docs",
-        "hash": "19dbe1d8de665f386e1ed91fdacfe41ea8d6d80df74273318681026641fb4ce4",
+        "hash": "968fa0e8fa0aacfe73d7c20c0ad84e1e8259d1e1e0791d9d916b59ef301ebd45",
         "tree": [
           {
             "path": "docs/api",
@@ -73,11 +73,11 @@
           },
           {
             "path": "docs/options",
-            "hash": "22ed072990a46676556a296d10e098dd7c9dd0de0e6b54391d9d13e1790aa703",
+            "hash": "237a161a6244bdf3122ac0ccdce7195f98d09666d2c439fbbb9204de14d4b894",
             "tree": [
               {
                 "path": "docs/options/index.html",
-                "hash": "3595237ef880b04c969ade9f24a1eaa3d5f0734d95d32a2044544edaa730fd9f"
+                "hash": "39e62822e230bba7af6c7939ca15d9446c343c0c86f078b8487d034b21c0acf8"
               }
             ]
           },
@@ -90,6 +90,16 @@
                 "hash": "e4908f65a639f7ae7078eaf6fd7ad0491f6b668da44ff958ae6e1f3d0e03a4ea"
               }
             ]
+          }
+        ]
+      },
+      {
+        "path": "fallback",
+        "hash": "1063e84608275e35023be77fe80ee62ea99b13250c99687f6a9f2c8fdb02414e",
+        "tree": [
+          {
+            "path": "fallback/index.html",
+            "hash": "4b29154f58d96be071f61d91851f8a1d948e50627e745a4222c68f74584952e3"
           }
         ]
       },
@@ -108,6 +118,6 @@
         ]
       }
     ],
-    "date": "June 7th 2016, 4:05:38 pm"
+    "date": "June 16th 2016, 4:31:46 pm"
   }
 }

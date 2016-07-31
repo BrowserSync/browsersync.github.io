@@ -1,7 +1,7 @@
 {
   "public-html": {
     "path": "public-html",
-    "hash": "32a7dd995c46d7f971ac6d7706eab8a52e81dff22673ff3998973857c840d62f",
+    "hash": "7739a5ba40816cd005288e764c6255957bd597463b49c4ebfb6cbbdb38667a60",
     "tree": [
       {
         "path": "brand-assets",
@@ -15,7 +15,7 @@
       },
       {
         "path": "docs",
-        "hash": "c22dddb44bf19f6170e06de2576591b6fe87e43731ccdea1c703f1e0b51b084b",
+        "hash": "4799aba422517683eb1a4017c0e51c331a1256be4c9ad928640dc0b17138bebd",
         "tree": [
           {
             "path": "docs/api",
@@ -49,11 +49,11 @@
           },
           {
             "path": "docs/gulp",
-            "hash": "c5b95d3a4e70fc788d3090e45c85031cb0175f857628b04febeabb1680dbea8f",
+            "hash": "a2282895a8c1d9d8ea87adf97405c6b580843977c884f23116caf2295f8d9d5a",
             "tree": [
               {
                 "path": "docs/gulp/index.html",
-                "hash": "332ff5f2c935e016606a5f8340040686d467987e0ce8baa4e9bef610445a90c2"
+                "hash": "d03afc1edbcf7c4ed80d72b83cf7579874b4ccd5413aeec6753eabbf8a0e17af"
               }
             ]
           },
@@ -118,6 +118,6 @@
         ]
       }
     ],
-    "date": "July 31st 2016, 9:51:06 pm"
+    "date": "July 31st 2016, 9:57:15 pm"
   }
 }

@@ -1,4 +1,4 @@
-var cb = require('crossbow-cli');
+var cb = require('crossbow');
 var bs = require('browser-sync').create();
 
 /**

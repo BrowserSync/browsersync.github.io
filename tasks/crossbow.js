@@ -1,4 +1,4 @@
-var crossbow = require('crossbow');
+var crossbow = require('crossbow-sites');
 var resolve = require('path').resolve;
 var vfs = require('vinyl-fs');
 

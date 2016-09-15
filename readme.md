@@ -35,3 +35,24 @@ $ npm run build
 ```
 
 Once built, commit all the changes and send your PR :)
+
+<!--crossbow-docs-start-->
+## Crossbow tasks
+
+The following tasks have been defined by this project's Crossbow configuration.
+Run any of them in the following way
+ 
+```shell
+$ crossbow run <taskname>
+```
+|Task name|Description|
+|---|---|
+|<pre>`templates`</pre>|Build HTML Templates|
+|<pre>`build-css`</pre>|Build dev + production CSS|
+|<pre>`build-js`</pre>|Build production ready JS|
+|<pre>`build-all`</pre>|Run all build tasks|
+|<pre>`rsync`</pre>|**Alias for:**<br>- `@sh rsync -ra public public-html $AUTH:/usr/share/nginx/bs2 --delete`|
+|<pre>`deploy`</pre>|Build & Deploy the website to Digital Ocean|
+|<pre>`docker`</pre>|**Alias for:**<br>- `@sh docker-compose -f docker-compose-dev.yaml up -d`|
+|<pre>`serve`</pre>|Build HTML/CSS then launch Docker + Browsersync|
+<!--crossbow-docs-end-->

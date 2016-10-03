@@ -43,3 +43,13 @@ $spacing: $base-spacing + $half-spacing;
         width: 50%;
     }
 }
+
+.algolia-autocomplete {
+    width: 100%;
+
+    .ds-dropdown-menu.ds-dropdown-menu {
+        max-width: none;
+        width: 100%;
+    }
+}
+

@@ -101,6 +101,11 @@
 }
 
 .doc-nav {
+    display: none;
+
+    @include media-query(min, $lap-start) {
+        display: block;
+    }
     height: 0;
     position: relative;
     //width: calc(100% - 24px);

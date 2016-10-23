@@ -53,7 +53,7 @@ cb.task('build-all', {
 cb.task('_html', ["docs", "templates", "html-min", "merkle --dir public-html"]);
 cb.task('rsync', {
     adaptor: 'sh',
-    command: 'rsync -ra public public-html $AUTH:~/dist --delete'
+    command: 'rsync -ra public public-html default.conf run.sh $AUTH:~/dist --delete'
 });
 
 /**

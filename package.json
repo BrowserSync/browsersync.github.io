@@ -4,7 +4,7 @@
   "description": "The Browsersync website",
   "scripts": {
     "start": "crossbow run serve",
-    "build": "crossbow run build",
+    "build-all": "crossbow run build-all",
     "deploy": "crossbow run deploy",
     "docs": "crossbow run docs",
     "test": "crossbow run build"

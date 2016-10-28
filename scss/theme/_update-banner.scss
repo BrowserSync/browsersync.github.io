@@ -1,0 +1,21 @@
+.update-banner {
+    background: $red;
+    text-align: center;
+    padding: $half-spacing 0;
+    display: none;
+
+    p {
+        margin-bottom:0;
+    }
+    a {
+        color: $white;
+        text-decoration: underline;
+        &:active, &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.update-banner--active {
+    display: block;
+}

@@ -32,9 +32,14 @@
 @import "theme/brand-guidlines";
 
 @import "theme/header";
+@import "theme/update-banner";
 @import "theme/sub-header";
 @import "theme/footer";
 
 @import "theme/code";
 @import "theme/steps";
 @import "theme/misc";
+
+.hidden {
+    display: none!important;
+}

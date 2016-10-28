@@ -1,6 +1,6 @@
 var cb = require('crossbow');
 var bs = require('browser-sync').create();
-
+var pkg = require('./package.json');
 /**
  * Set ENV vars that will be available to scripts
  */
@@ -75,15 +75,61 @@ cb.task('docker', '@sh docker-compose -f docker-compose-dev.yaml up -d');
 cb.task('serve', {
     description: 'Build HTML/CSS then launch Docker + Browsersync',
     tasks: ['templates', 'build-css', 'docker', function () {
-        bs.init({
-            proxy: '0.0.0.0:8080',
-            logFileChanges: false,
-            open: false
-        });
+        // bs.init({
+        //     proxy: '0.0.0.0:8080',
+        //     logFileChanges: false,
+        //     open: false
+        // });
         cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
         cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
         cb.watch(['js'], ['build-js', () => bs.reload()]);
     }]
+});
+/**
+ * Copy SW scripts
+ */
+cb.task('copy-sw', function () {
+    var vfs = require('vinyl-fs');
+    return vfs.src(['node_modules/sw-toolbox/sw-toolbox.js', 'public/js/runtime-caching.js'])
+        .pipe(vfs.dest('public/js/sw'));
+});
+
+cb.task('service-worker', ['copy-sw'], function () {
+    const swPrecache = require('sw-precache');
+    const rootDir = 'public';
+
+    return swPrecache.write('public/sw.js', {
+        // Used to avoid cache conflicts when serving on localhost.
+        cacheId: pkg.name || 'web-starter-kit',
+        // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
+        importScripts: [
+            'js/sw/sw-toolbox.js',
+            'js/sw/runtime-caching.js'
+        ],
+        staticFileGlobs: [
+            // Add/remove glob patterns to match your directory setup.
+            `${rootDir}/js/**/*.js`,
+            `${rootDir}/img/jh-logo-white.png`,
+            `${rootDir}/img/icons/icons.svg`,
+            `${rootDir}/img/bg.jpg`
+        ],
+        dynamicUrlToDependencies: {
+            "/": ["public-html/index.html"],
+            "/brand-assets": ["public-html/brand-assets/index.html"],
+            "/docs/api": ["public-html/docs/api/index.html"],
+            "/docs/command-line": ["public-html/docs/command-line/index.html"],
+            "/docs/grunt": ["public-html/docs/grunt/index.html"],
+            "/docs/gulp": ["public-html/docs/gulp/index.html"],
+            "/docs/http-protocol": ["public-html/docs/http-protocol/index.html"],
+            "/docs": ["public-html/docs/index.html"],
+            "/docs/options": ["public-html/docs/options/index.html"],
+            "/docs/recipes": ["public-html/docs/recipes/index.html"],
+        },
+        // Translates a static file path to the relative URL that it's served from.
+        // This is '/' rather than path.sep because the paths returned from
+        // glob always use '/'.
+        stripPrefix: rootDir + '/'
+    });
 });
 
 cb.options({
@@ -108,9 +154,6 @@ cb.options({
         "input": "scss/core.scss",
         "output": "css"
     },
-    /**
-     * tasks/icons.js
-     */
     "icons": {
         "yml": "_config.yml",
         "output": "public/img/icons"

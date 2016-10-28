@@ -1987,6 +1987,25 @@ h3, .h3 {
       display: -ms-flexbox;
       display: flex; } }
 
+.update-banner {
+  background: #F24747;
+  text-align: center;
+  padding: 12px 0;
+  display: none; }
+
+.update-banner p {
+    margin-bottom: 0; }
+
+.update-banner a {
+    color: #fff;
+    text-decoration: underline; }
+
+.update-banner a:active, .update-banner a:hover {
+      text-decoration: none; }
+
+.update-banner--active {
+  display: block; }
+
 .sub-header {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background: #0F2634;
@@ -2306,5 +2325,8 @@ hr {
 .nav {
   margin-left: 0;
   list-style: none; }
+
+.hidden {
+  display: none !important; }
 
 /*# sourceMappingURL=core.css.map */

@@ -5,7 +5,8 @@
             <div class="signup__form">
                 <input type="hidden" name="u" value="{{site.mailchimp.u}}"/>
                 <input type="hidden" name="id" value="{{site.mailchimp.id}}"/>
-                <input type="text" placeholder="Email..." name="MERGE0" class="input input--text form__email"/>
+                <label for="email-input" class="hidden">Email Address</label>
+                <input type="text" placeholder="Email..." name="MERGE0" class="input input--text form__email" id="email-input"/>
                 <input type="submit" value="Signup" class="button button--primary form__submit"/>
             </div>
         </form>

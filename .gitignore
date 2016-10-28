@@ -5,3 +5,4 @@ node_modules
 /public-html
 /dist
 /sites-available
+/letsencrypt

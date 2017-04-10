@@ -19,6 +19,17 @@ server: {
     index: "index.htm"
 }
 
+// The static file server is based on expressjs/serve-static, 
+// so we inherit all of their options, like trying a default extension
+// when one isn't specified
+// https://github.com/expressjs/serve-static
+server: {
+    baseDir: "app",
+    serveStaticOptions: {
+        extensions: ["html"]
+    }
+}
+
 // Since version 1.2.1
 // The key is the url to match
 // The value is which folder to serve (relative to your current working directory)

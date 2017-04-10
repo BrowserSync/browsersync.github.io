@@ -43,5 +43,6 @@
     "sw-toolbox": "^3.4.0",
     "uglify-js": "^2.4.24",
     "vinyl-fs": "2.4.3"
-  }
+  },
+  "dependencies": {}
 }

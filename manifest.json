@@ -1,7 +1,7 @@
 {
   "public-html": {
     "path": "public-html",
-    "hash": "8bb5e8d12a760e18f42d4c332f3fe98b5c8f7f8bbcb59604a2bc40136cf0ec9f",
+    "hash": "46dfa2f1a8e15c8ba4cc3505c70756b3d24560bd57e0e9a0f952e867188c6565",
     "tree": [
       {
         "path": "brand-assets",
@@ -15,7 +15,7 @@
       },
       {
         "path": "docs",
-        "hash": "4d73c33cb33e7453d1b9bc84163ceb58929b8f6e4783416088e5319f14a4cde1",
+        "hash": "25ca9669bcfa78af874536792f4d05b9e5f0b9699aa5f878f745e53688d2749e",
         "tree": [
           {
             "path": "docs/api",
@@ -29,11 +29,11 @@
           },
           {
             "path": "docs/command-line",
-            "hash": "b603489cd4459a8b15d94d759eb9151b55b2825a98b9c1437be0df4900473e6b",
+            "hash": "39d93d5c3266c17550dc6aa05bb99a002c99bfce9d827551268506233a8ec5a6",
             "tree": [
               {
                 "path": "docs/command-line/index.html",
-                "hash": "37cd22a1bc640091be5382a110c71e8228406258d77c17cd8c5ba53f9ab655a7"
+                "hash": "c803cc0964b46ed3f4f9724474386e040ad947fd5040232425ccb8065315876a"
               }
             ]
           },
@@ -49,11 +49,11 @@
           },
           {
             "path": "docs/gulp",
-            "hash": "966f873a69afa6e6dbf9f84432f7f0dc6ada80b98f45cb27f4e276df56efce43",
+            "hash": "933fc62a0e5e1f28971f3ec55d28ba51d0f30f5647e3eef5aef9c4f18a13c0e4",
             "tree": [
               {
                 "path": "docs/gulp/index.html",
-                "hash": "6a9936ed4fd455596937e2bad2ad0e3ab4f61f35a7d5557b3a9706cdef41a3c7"
+                "hash": "cdbca2d5d90e7a04cbb40d6ab2568d19e57748208f6f9d500a7309792a50eac6"
               }
             ]
           },
@@ -73,11 +73,11 @@
           },
           {
             "path": "docs/options",
-            "hash": "a9e94b7383d76bb1b12ff3bd7289ecb5867de5c792d8d0de1a01bbe1d0ac720b",
+            "hash": "5a40e79f7f64af078cee8e8d8acac66b607e747f1a3f3656d545ac11b2b89538",
             "tree": [
               {
                 "path": "docs/options/index.html",
-                "hash": "ea2f5e219084a235f862cfbae0859f271df314821b9c2f5f370b0a4bcece7c22"
+                "hash": "c8afdc4119ff516b396b09015dd0fc27a77c4b2998b07eb2a7d4b1aa0d928dc4"
               }
             ]
           },
@@ -108,6 +108,6 @@
         ]
       }
     ],
-    "date": "April 10th 2017, 12:06:46 pm"
+    "date": "April 10th 2017, 12:39:54 pm"
   }
 }

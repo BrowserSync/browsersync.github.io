@@ -75,14 +75,14 @@ cb.task('docker', '@sh docker-compose -f docker-compose-dev.yaml up -d');
 cb.task('serve', {
     description: 'Build HTML/CSS then launch Docker + Browsersync',
     tasks: ['templates', 'build-css', 'docker', function () {
-        // bs.init({
-        //     proxy: '0.0.0.0:8080',
-        //     logFileChanges: false,
-        //     open: false
-        // });
-        cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
-        cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
-        cb.watch(['js'], ['build-js', () => bs.reload()]);
+        bs.init({
+            proxy: '0.0.0.0:8080',
+            logFileChanges: false,
+            open: false
+        });
+        // cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
+        // cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
+        // cb.watch(['js'], ['build-js', () => bs.reload()]);
     }]
 });
 /**

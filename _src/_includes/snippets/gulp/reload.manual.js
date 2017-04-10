@@ -5,7 +5,7 @@ var reload      = browserSync.reload;
 // Save a reference to the `reload` method
 
 // Watch scss AND html files, doing different things with each.
-gulp.task('serve', function () {
+gulp.task('serve', function (async) {
 
     // Serve files from the root of this project
     browserSync.init({

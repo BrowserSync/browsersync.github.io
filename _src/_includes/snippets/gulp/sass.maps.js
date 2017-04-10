@@ -3,7 +3,7 @@ var sass        = require("gulp-ruby-sass");
 var browserSync = require("browser-sync").create();
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass'], function(async) {
 
     browserSync.init({
         server: "./app"

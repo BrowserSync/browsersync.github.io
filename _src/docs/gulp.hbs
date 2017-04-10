@@ -54,7 +54,9 @@ To fix this problem, use `browserSync.stream({match: '**/*.css'})` as seen in th
 {{#md}}
 Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), but
 you want the reload to happen *after* your tasks. This will be easier in gulp `4.x.x`, but for now you can do the following
-(make sure you `return` the stream from your tasks to ensure that `browserSync.reload()` is called at the correct time):
+(make sure you `return` the stream from your tasks to ensure that `browserSync.reload()` is called at the correct time).
+
+If you are using gulp `4.x.x` now, then you can [follow this documentation](https://github.com/gulpjs/gulp/blob/4.0/docs/recipes/minimal-browsersync-setup-with-gulp4.md).
 {{/md}}
 
 {{ hl src="snippets/gulp/reload.js" }}

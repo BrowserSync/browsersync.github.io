@@ -3,7 +3,7 @@ var bs = require('browser-sync').create();
 // Run in proxy mode with static files also served
 // from current directory + ./app/css
 bs.init({
-    proxy: "http://www.bbc.co.uk",
+    proxy: 'http://www.bbc.co.uk',
     serveStatic: ['.', './app/css']
 });
 
@@ -11,7 +11,7 @@ bs.init({
 // from a local ./tmp directory
 // NOTE: requires 2.17.0
 bs.init({
-    proxy: "http://www.bbc.co.uk",
+    proxy: 'http://www.bbc.co.uk',
     serveStatic: [{
         route: '/assets',
         dir: 'tmp'
@@ -22,7 +22,7 @@ bs.init({
 // from a local ./tmp directory
 // NOTE: requires 2.17.0
 bs.init({
-    proxy: "http://www.bbc.co.uk",
+    proxy: 'http://www.bbc.co.uk',
     serveStatic: [{
         route: ['/assets', '/content'],
         dir: 'tmp'
@@ -33,7 +33,7 @@ bs.init({
 // from either the ./tmp or ./app directory
 // NOTE: requires 2.17.0
 bs.init({
-    proxy: "http://www.bbc.co.uk",
+    proxy: 'http://www.bbc.co.uk',
     serveStatic: [{
         route: '/assets',
         dir: ['./tmp', './app']

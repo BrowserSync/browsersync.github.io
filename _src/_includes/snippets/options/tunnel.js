@@ -3,4 +3,4 @@
 tunnel: true
 
 // Attempt to use the URL "http://my-private-site.localtunnel.me"
-tunnel: "my-private-site"
+tunnel: 'my-private-site'

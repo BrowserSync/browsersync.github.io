@@ -12,6 +12,6 @@ rewriteRules: [
 rewriteRules: [
     {
         match: /(cats|kitten[sz]) are mediocre/g,
-        replace: "$1 are excellent"
+        replace: '$1 are excellent'
     }
 ]

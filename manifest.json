@@ -1,93 +1,93 @@
 {
   "public-html": {
     "path": "public-html",
-    "hash": "12ddf57b274dabafed3becf382588e6344f0db593851cb1346cbc94d02fd272d",
+    "hash": "f1ff2d671748e71adcfbfd164ff9222c273aa6ea66dc02103e5d0c925735b278",
     "tree": [
       {
         "path": "brand-assets",
-        "hash": "d72602d9d87836b7407dad9ec4e1916ff7861097f9eb86c67409cf7bf1f99334",
+        "hash": "87607c322456881b7f1c300f6707e27d55d061bb19035db0f6f77966c1125b9a",
         "tree": [
           {
             "path": "brand-assets/index.html",
-            "hash": "d0af63823a911265c83ce12cdce58eabfd20a88d0e618eec85cc4fcaee15be4d"
+            "hash": "688ea5a0f4e5dd3d7590b7e86e3b2e0824873781ae50d8b04bb19cbe67c744be"
           }
         ]
       },
       {
         "path": "docs",
-        "hash": "a5b048e675185c37b726f62c2d6c7c6a56f3397be8e32c491b2e8cfcdac529ba",
+        "hash": "ee43f5b11a82488e78456405f705349342f6c822403d21232cf5feac7f943a9f",
         "tree": [
           {
             "path": "docs/api",
-            "hash": "eed1038fbf33818d7af892c53ad0266f0a43023479f09b34a664338c95346d21",
+            "hash": "a5dbe171837d3814b5c94ccab77a283233b7afc4d8e412fb4f17d52f4a52ad30",
             "tree": [
               {
                 "path": "docs/api/index.html",
-                "hash": "65ae6ccd5a206d2a38c8b5e9cca1912bdf75a46a709086b2b57f2b31b1a03ca3"
+                "hash": "45d6f24be21561606d30cdc17800e444e3ae4250a77fd0cd3b41fbceb85ba85e"
               }
             ]
           },
           {
             "path": "docs/command-line",
-            "hash": "39d93d5c3266c17550dc6aa05bb99a002c99bfce9d827551268506233a8ec5a6",
+            "hash": "7d7416a8b313240a00c8f71f101cae634dd9f3766dce767907a651fcd397e5dc",
             "tree": [
               {
                 "path": "docs/command-line/index.html",
-                "hash": "c803cc0964b46ed3f4f9724474386e040ad947fd5040232425ccb8065315876a"
+                "hash": "c16a747b8e282a4698c57d231c144840f958fa5c8ae3c4e086880d0f6e1b7f20"
               }
             ]
           },
           {
             "path": "docs/grunt",
-            "hash": "3ff959724b15f8775f394cd99b619b042dc353cad848781fe26fc54377b2a203",
+            "hash": "c7b19a0e830c1b3e18b2561649e56bfe0f71d3b9db5eceb0d14cdd5f09887898",
             "tree": [
               {
                 "path": "docs/grunt/index.html",
-                "hash": "e6270ac1df228cffe3a210a0c6a57086f19de2272ada431443370da03a6b8aeb"
+                "hash": "df334c886e9785840d3e0834e2a14641353eb61e69587baff207f2b5008f064c"
               }
             ]
           },
           {
             "path": "docs/gulp",
-            "hash": "933fc62a0e5e1f28971f3ec55d28ba51d0f30f5647e3eef5aef9c4f18a13c0e4",
+            "hash": "a476c11315c9e1e27b1f3d4470e641b7710dc79132a483689c206cceafaa97a1",
             "tree": [
               {
                 "path": "docs/gulp/index.html",
-                "hash": "cdbca2d5d90e7a04cbb40d6ab2568d19e57748208f6f9d500a7309792a50eac6"
+                "hash": "9944caf62eedcaa9d9612707ef0e89556a22d951f50d7d948802c3f10563f132"
               }
             ]
           },
           {
             "path": "docs/http-protocol",
-            "hash": "6cf09de8ec8fe893dc4665d99eb0a0e25b31bc29a05558e89a997a50ad3c4368",
+            "hash": "c68e2ab1a0b4213d0044368b5365cc13fefac6c9629d0902d634ca57d30f3378",
             "tree": [
               {
                 "path": "docs/http-protocol/index.html",
-                "hash": "8b558c4aedf3992732e993503d075bdc72cf6adf870b4933cb8a894199e1087c"
+                "hash": "fbb086e29f3420f761db1216e4af6d8bf8b418ff15c1055ba976a53b7a7eadab"
               }
             ]
           },
           {
             "path": "docs/index.html",
-            "hash": "9451a4401060853143c41f0923257740479ec343187f80d7b2e6af9caa7ad8ee"
+            "hash": "41ce9793b9ae873f1f8ad1ebc3cebe4cb88f8ff7d733e940cff8907bb52dabdc"
           },
           {
             "path": "docs/options",
-            "hash": "626522cbb3912c55e9aae20f6a95e6a9c83e2b519436b4a57de4b26b35565c05",
+            "hash": "2fd938cbe46901a2911f7749d3791fa04113fa11fb94fd9b9805747810e81c22",
             "tree": [
               {
                 "path": "docs/options/index.html",
-                "hash": "7d0a8b859c7db81e4febe7709f45ca115eb4d39bdbeb41606ea0bba7008b13aa"
+                "hash": "542dd80f5e160ad9589c1a4282904b0736c4508dec7d5e215a927e39fa79f0a7"
               }
             ]
           },
           {
             "path": "docs/recipes",
-            "hash": "7f05bbf52d38278a3bf3c28c3acdfa0d11a4e075948264cfdf1f3fe956f3a28e",
+            "hash": "e71fad1e5e8a3c625860021faeee41e3961d725e8992f5718b07c346a3fff06f",
             "tree": [
               {
                 "path": "docs/recipes/index.html",
-                "hash": "f84c4251df5c1a4fedbdc1ba500b8e87feb8234b6876a6711991189f91422b16"
+                "hash": "1eeb86602f1aed6e9bfbbffb4e8139e575f85b19c7f423c7518fb15b68d8d7cb"
               }
             ]
           }
@@ -95,19 +95,19 @@
       },
       {
         "path": "index.html",
-        "hash": "8fbc71f57fe7416c6a0421c73ee58a291413c9ad5c3d88d67b20f1aba011fb93"
+        "hash": "2a706b6c5e3db265a71470c6f32c7c2303ada47a0ec216f6325e0a9bd3dc7f3a"
       },
       {
         "path": "index.src",
-        "hash": "bbc8a34a6cf67d1e1cac53609f0f7c6321d445b0add5c90e55255c36f97b6b94",
+        "hash": "d5fd6acfee7ce61f5582025f4c09fe1a4398a60fc2fb9cd414c129fc672ca372",
         "tree": [
           {
             "path": "index.src/index.html",
-            "hash": "cdc256fdcd4642d134d0b28c2ce47d12479ff9ce51cfdc3d5b35574801a1f334"
+            "hash": "c4d9b0e1a33eef5ff44e66208fe2bc65305b90e89e0cd0e25f640cfd0c0cc0ca"
           }
         ]
       }
     ],
-    "date": "April 10th 2017, 12:51:22 pm"
+    "date": "June 18th 2017, 6:47:19 pm"
   }
 }

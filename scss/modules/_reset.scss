@@ -1,7 +1,4 @@
 @if $border-box == true {
-    /**
-
-    */
     * {
         &,
         &:before,
@@ -37,7 +34,6 @@ img{
     font-style:italic;
 }
 
-
 label,
 input,
 textarea,
@@ -46,11 +42,11 @@ select,
 option{
     cursor:pointer;
 }
-    .text-input:active,
-    .text-input:focus,
-    textarea:active,
-    textarea:focus{
-        cursor:text;
-        outline:none;
-    }
 
+.text-input:active,
+.text-input:focus,
+textarea:active,
+textarea:focus{
+    cursor:text;
+    outline:none;
+}

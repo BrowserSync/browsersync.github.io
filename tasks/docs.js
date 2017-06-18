@@ -1,14 +1,14 @@
-var cp       = require("child_process");
+var cp       = require('child_process');
 var prettify = require('gulp-jsbeautifier');
-var yuidoc   = require("gulp-yuidoc");
-var vfs      = require("vinyl-fs");
+var yuidoc   = require('gulp-yuidoc');
+var vfs      = require('vinyl-fs');
 
 /**
  * Run the node program to pre-construct the docs
  * @param deferred
  */
 function buildDocs (opts, ctx, done) {
-    cp.spawn("node", ["tasks/_makeDocs"], {stdio: "inherit"}).on('close', done);
+    cp.spawn('node', ['tasks/_makeDocs'], {stdio: 'inherit'}).on('close', done);
 }
 
 /**

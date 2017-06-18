@@ -1,5 +1,5 @@
 var options = {
-    proxy: "mylocal.dev"
+    proxy: 'mylocal.dev'
 };
 
 browserSync(options);

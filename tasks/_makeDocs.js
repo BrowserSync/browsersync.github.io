@@ -1,13 +1,13 @@
-var fs           = require("fs");
-var doc          = "../_doc/yuidoc.json";
-var docGen       = require("./_docgen");
-var opts         = require("browser-sync/lib/cli/opts.start.json");
+var fs           = require('fs');
+var doc          = '../_doc/yuidoc.json';
+var docGen       = require('./_docgen');
+var opts         = require('browser-sync/lib/cli/opts.start.json');
 var marked       = require('marked');
-var _            = require("lodash");
+var _            = require('lodash');
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
 var excluded = [
-    "use"
+    'use'
 ];
 
 var data = require(doc);
@@ -37,11 +37,11 @@ var apiItems = docGen.prepareClassitems(data.classitems)
         return a.line - b.line;
     });
 
-fs.writeFileSync("./_doc/api.json", JSON.stringify(apiItems, null, 4));
+fs.writeFileSync('./_doc/api.json', JSON.stringify(apiItems, null, 4));
 
-//var compiledApi .reduce(buildMarkup, "");
+//var compiledApi .reduce(buildMarkup, '');
 
-//fs.writeFileSync("./_src/docs/api.md", mdTemp({data: compiledApi}));
+//fs.writeFileSync('./_src/docs/api.md', mdTemp({data: compiledApi}));
 
 /**
  * Process OPTIONS
@@ -52,9 +52,9 @@ var out = docGen.prepareOptions(data.classitems)
     .map(renameBranding)
     .map(optionsMarkup);
 
-fs.writeFileSync("./_doc/options.json", JSON.stringify(out, null, 4));
+fs.writeFileSync('./_doc/options.json', JSON.stringify(out, null, 4));
 
-//fs.writeFileSync("./_src/docs/options.md", optTemp({data: optItems}));
+//fs.writeFileSync('./_src/docs/options.md', optTemp({data: optItems}));
 
 
 /**
@@ -64,7 +64,7 @@ fs.writeFileSync("./_doc/options.json", JSON.stringify(out, null, 4));
  * @returns {string}
  */
 function getSnippetPath(name, path) {
-    return "./_src/_includes/snippets/%p/%s.js".replace("%s", name).replace("%p", path);
+    return './_src/_includes/snippets/%p/%s.js'.replace('%s', name).replace('%p', path);
 }
 
 /**
@@ -82,8 +82,8 @@ function removeExcluded(item) {
  * @returns {*}
  */
 function previewTweaks(item) {
-    if (item.name === "browserSync") {
-        item.preview = item.preview.replace(".", "");
+    if (item.name === 'browserSync') {
+        item.preview = item.preview.replace('.', '');
     }
     return item;
 }
@@ -97,7 +97,7 @@ function fixDescription(item) {
     if (item.description) {
         item.description = marked(item.description);
     } else {
-        item.description = "";
+        item.description = '';
     }
 
     return item;
@@ -111,10 +111,10 @@ function fixDescription(item) {
  */
 function optionsMarkup (item) {
 
-    item.snippet = getSnippet(item, "options");
+    item.snippet = getSnippet(item, 'options');
 
     if (!item.description) {
-        item.description = "";
+        item.description = '';
     }
 
     return item;
@@ -135,7 +135,7 @@ function getSnippet(item, type) {
         var snippetPath = getSnippetPath(item.name, type);
 
         if (fs.existsSync(snippetPath)) {
-            snippet = fs.readFileSync(snippetPath, "utf-8");
+            snippet = fs.readFileSync(snippetPath, 'utf-8');
         }
 
     } catch (e) {

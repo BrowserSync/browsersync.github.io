@@ -1,4 +1,4 @@
-var bs = require("browser-sync").create();
+var bs = require('browser-sync').create();
 
 // -> false as .init has not yet been called
 console.log(bs.active);

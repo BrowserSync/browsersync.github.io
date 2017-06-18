@@ -1,14 +1,14 @@
 /**
  * Copyright 2016 Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/","178c997736beead42547d6a9c07bbd5b"],["/brand-assets","7782e2cfe79b0e28b076e5b06e4b40d2"],["/docs","bc1e2a78db68237c83a3e6182b1a2b5a"],["/docs/api","a1b47b00903f45cb86cd61e024172777"],["/docs/command-line","199636540d0d61b3dd08184d41a603d3"],["/docs/grunt","fdd9871d65272fbbd202f4b06373f603"],["/docs/gulp","7bdc96074c404fa21f914e4ae3f138fa"],["/docs/http-protocol","fa6a362b133486f42725834cc6cf8c1f"],["/docs/options","a8bf8db051d3f18960ea6bc72fd84bb7"],["/docs/recipes","2c774f97add6fbcfa66fd6652894dddc"],["img/bg.jpg","f75e7f9489cd69d1625e5326665f247b"],["img/icons/icons.svg","86529e19edf7701732f28c13ebcf0b4e"],["img/jh-logo-white.png","303c4cc32022c6b31b8f3c4f14fcd435"],["js/app.js","d58434e4e88caa11158fe40bf2ed71f4"],["js/app.min.js","55c627bb50bc98891515b73f93388ecb"],["js/runtime-caching.js","ad2e8543849df6dd102787fe270c1c32"],["js/sw/runtime-caching.js","ad2e8543849df6dd102787fe270c1c32"],["js/sw/sw-toolbox.js","e7e54a466864d42dcccc8c3f80a91d1f"]];
+var precacheConfig = [['/','178c997736beead42547d6a9c07bbd5b'],['/brand-assets','7782e2cfe79b0e28b076e5b06e4b40d2'],['/docs','bc1e2a78db68237c83a3e6182b1a2b5a'],['/docs/api','a1b47b00903f45cb86cd61e024172777'],['/docs/command-line','199636540d0d61b3dd08184d41a603d3'],['/docs/grunt','fdd9871d65272fbbd202f4b06373f603'],['/docs/gulp','7bdc96074c404fa21f914e4ae3f138fa'],['/docs/http-protocol','fa6a362b133486f42725834cc6cf8c1f'],['/docs/options','a8bf8db051d3f18960ea6bc72fd84bb7'],['/docs/recipes','2c774f97add6fbcfa66fd6652894dddc'],['img/bg.jpg','f75e7f9489cd69d1625e5326665f247b'],['img/icons/icons.svg','86529e19edf7701732f28c13ebcf0b4e'],['img/jh-logo-white.png','303c4cc32022c6b31b8f3c4f14fcd435'],['js/app.js','d58434e4e88caa11158fe40bf2ed71f4'],['js/app.min.js','55c627bb50bc98891515b73f93388ecb'],['js/runtime-caching.js','ad2e8543849df6dd102787fe270c1c32'],['js/sw/runtime-caching.js','ad2e8543849df6dd102787fe270c1c32'],['js/sw/sw-toolbox.js','e7e54a466864d42dcccc8c3f80a91d1f']];
 var cacheName = 'sw-precache-v2-browser-sync-website-' + (self.registration ? self.registration.scope : '');
 
 
@@ -140,10 +140,10 @@ self.addEventListener('install', function(event) {
         );
       });
     }).then(function() {
-      
+
       // Force the SW to transition from installing -> active state
       return self.skipWaiting();
-      
+
     })
   );
 });
@@ -163,9 +163,9 @@ self.addEventListener('activate', function(event) {
         );
       });
     }).then(function() {
-      
+
       return self.clients.claim();
-      
+
     })
   );
 });
@@ -224,11 +224,4 @@ self.addEventListener('fetch', function(event) {
   }
 });
 
-
-
-
-
-
-
-importScripts("js/sw/sw-toolbox.js","js/sw/runtime-caching.js");
-
+importScripts('js/sw/sw-toolbox.js','js/sw/runtime-caching.js');

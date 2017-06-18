@@ -5,7 +5,7 @@ var browserSync = require('browser-sync').create();
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: './'
         }
     });
 });
@@ -14,6 +14,6 @@ gulp.task('browser-sync', function() {
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "yourlocal.dev"
+        proxy: 'yourlocal.dev'
     });
 });

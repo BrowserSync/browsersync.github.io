@@ -1,5 +1,5 @@
 // Open the site in Chrome
-browser: "google chrome"
+browser: 'google chrome'
 
 // Open the site in Chrome & Firefox
-browser: ["google chrome", "firefox"]
+browser: ['google chrome', 'firefox']

@@ -12,7 +12,7 @@ middleware: [
 // NOTE: requires v2.12.1
 middleware: [
     {
-        route: "/api",
+        route: '/api',
         handle: function (req, res, next) {
             // handle any requests at /api
         }
@@ -22,9 +22,9 @@ middleware: [
 // Per-route + global middleware
 // NOTE: requires v2.12.1
 middleware: [
-    require("compression")(), // global
+    require('compression')(), // global
     {
-        route: "/api", // per-route
+        route: '/api', // per-route
         handle: function (req, res, next) {
             // handle any requests at /api
         }

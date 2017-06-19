@@ -4,7 +4,7 @@ browserSync: {
     },
     options: {
         server: {
-            baseDir: "./"
+            baseDir: './'
         }
     }
 }

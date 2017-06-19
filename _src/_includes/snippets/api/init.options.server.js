@@ -1,6 +1,6 @@
 var options = {
     server: {
-        baseDir: "app"
+        baseDir: 'app'
     },
     port: 8000,
     tunnel: true

@@ -27,7 +27,7 @@ function icons (opts) {
     var usedsvgs = sitedata.icons
         .map(function (item) { return item.icon; })
         .concat(globals)
-        .map(function (item) { return "public/img/svg/" + item + ".svg" });
+        .map(function (item) { return 'public/img/svg/' + item + '.svg' });
 
     return vfs.src(usedsvgs)
         .pipe(easysvg.stream())

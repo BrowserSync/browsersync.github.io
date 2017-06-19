@@ -1,4 +1,4 @@
-var browserSync = require("browser-sync").create();
+var browserSync = require('browser-sync').create();
 
 browserSync({
     /* options here */

@@ -21,13 +21,13 @@ function crossbowBuild (opts, ctx, done) {
                 }
             },
             data: {
-                site:           "file:_config.yml",
-                options:        "file:_doc/options.json",
-                api:            "file:_doc/api.json",
-                startCommands:  "file:../node_modules/browser-sync/lib/cli/opts.start.json",
-                reloadCommands: "file:../node_modules/browser-sync/lib/cli/opts.reload.json",
-                recipeCommands: "file:../node_modules/browser-sync/lib/cli/opts.recipe.json",
-                recipes:        "file:../node_modules/bs-recipes/manifest.json"
+                site:           'file:_config.yml',
+                options:        'file:_doc/options.json',
+                api:            'file:_doc/api.json',
+                startCommands:  'file:../node_modules/browser-sync/lib/cli/opts.start.json',
+                reloadCommands: 'file:../node_modules/browser-sync/lib/cli/opts.reload.json',
+                recipeCommands: 'file:../node_modules/browser-sync/lib/cli/opts.recipe.json',
+                recipes:        'file:../node_modules/bs-recipes/manifest.json'
             }
         }))
         .pipe(vfs.dest(opts.output));

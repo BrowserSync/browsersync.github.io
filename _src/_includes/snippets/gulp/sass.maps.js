@@ -1,16 +1,16 @@
-var gulp        = require("gulp");
-var sass        = require("gulp-ruby-sass");
-var browserSync = require("browser-sync").create();
+var gulp        = require('gulp');
+var sass        = require('gulp-ruby-sass');
+var browserSync = require('browser-sync').create();
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        server: "./app"
+        server: './app'
     });
 
-    gulp.watch("app/scss/*.scss", ['sass']);
-    gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch('app/scss/*.scss', ['sass']);
+    gulp.watch('app/*.html').on('change', browserSync.reload);
 });
 
 /**

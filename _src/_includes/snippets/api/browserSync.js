@@ -1,16 +1,16 @@
 // create an instance
-var bs = require("browser-sync").create();
+var bs = require('browser-sync').create();
 
 // with config
 bs.init({
     server: {
-        baseDir: "./"
+        baseDir: './'
     }
 });
 
 // with config + callback
 bs.init(config, function (err, bs) {
     if (!err) {
-        console.log("Browsersync is ready!");
+        console.log('Browsersync is ready!');
     }
 });

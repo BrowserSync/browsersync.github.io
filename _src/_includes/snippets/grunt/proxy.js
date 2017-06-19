@@ -4,7 +4,7 @@ browserSync: {
             src : 'assets/css/style.css'
         },
         options: {
-            proxy: "local.dev"
+            proxy: 'local.dev'
         }
     }
 }

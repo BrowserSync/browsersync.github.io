@@ -1,8 +1,8 @@
 // Show me additional info about the process
-logLevel: "debug"
+logLevel: 'debug'
 
 // Just show basic info
-logLevel: "info"
+logLevel: 'info'
 
 // output NOTHING to the commandline
-logLevel: "silent"
+logLevel: 'silent'

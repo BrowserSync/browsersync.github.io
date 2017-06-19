@@ -1,6 +1,6 @@
 // Enable HTTPS for static file server
 browserSync({
-    server: "./app",
+    server: './app',
     https: true
 });
 
@@ -11,9 +11,9 @@ browserSync({
 
 // Enable HTTPS mode with custom certificates
 browserSync({
-    server: "./app",
+    server: './app',
     https: {
-        key: "path-to-custom.key",
-        cert: "path-to-custom.crt"
+        key: 'path-to-custom.key',
+        cert: 'path-to-custom.crt'
     }
 });

@@ -14,7 +14,7 @@ bs.init({
 bs.init({
     files: [
         {
-            match: ["wp-content/themes/**/*.php"],
+            match: ['wp-content/themes/**/*.php'],
             fn: function (event, file) {
                 /** Custom event handler **/
             },

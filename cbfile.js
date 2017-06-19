@@ -43,14 +43,14 @@ cb.task('build-js', {
  */
 cb.task('build-all', {
     description: 'Run all build tasks',
-    tasks: ["_html", "build-css", "icons", "build-js"],
+    tasks: ['_html', 'build-css', 'icons', 'build-js'],
     runMode: 'parallel'
 });
 
 /**
  * Group helper for all HTML related tasks
  */
-cb.task('_html', ["docs", "templates", "html-min", "merkle --dir public-html"]);
+cb.task('_html', ['docs', 'templates', 'html-min', 'merkle --dir public-html']);
 cb.task('rsync', {
     adaptor: 'sh',
     command: 'rsync -ra public public-html default.conf run.sh $AUTH:~/dist --delete'
@@ -114,16 +114,16 @@ cb.task('service-worker', ['copy-sw'], function () {
             `${rootDir}/img/bg.jpg`
         ],
         dynamicUrlToDependencies: {
-            "/": ["public-html/index.html"],
-            "/brand-assets": ["public-html/brand-assets/index.html"],
-            "/docs/api": ["public-html/docs/api/index.html"],
-            "/docs/command-line": ["public-html/docs/command-line/index.html"],
-            "/docs/grunt": ["public-html/docs/grunt/index.html"],
-            "/docs/gulp": ["public-html/docs/gulp/index.html"],
-            "/docs/http-protocol": ["public-html/docs/http-protocol/index.html"],
-            "/docs": ["public-html/docs/index.html"],
-            "/docs/options": ["public-html/docs/options/index.html"],
-            "/docs/recipes": ["public-html/docs/recipes/index.html"],
+            '/': ['public-html/index.html'],
+            '/brand-assets': ['public-html/brand-assets/index.html'],
+            '/docs/api': ['public-html/docs/api/index.html'],
+            '/docs/command-line': ['public-html/docs/command-line/index.html'],
+            '/docs/grunt': ['public-html/docs/grunt/index.html'],
+            '/docs/gulp': ['public-html/docs/gulp/index.html'],
+            '/docs/http-protocol': ['public-html/docs/http-protocol/index.html'],
+            '/docs': ['public-html/docs/index.html'],
+            '/docs/options': ['public-html/docs/options/index.html'],
+            '/docs/recipes': ['public-html/docs/recipes/index.html'],
         },
         // Translates a static file path to the relative URL that it's served from.
         // This is '/' rather than path.sep because the paths returned from
@@ -133,34 +133,34 @@ cb.task('service-worker', ['copy-sw'], function () {
 });
 
 cb.options({
-    "crossbow-sass": {
+    'crossbow-sass': {
         input: 'scss/core.scss',
         output: 'public/css'
     },
     crossbow: {
-        base: "_src",
-        output: "public-html",
+        base: '_src',
+        output: 'public-html',
         input: [
-            "_src/*.hbs",
-            "_src/*.html",
-            "_src/docs/*"
+            '_src/*.hbs',
+            '_src/*.html',
+            '_src/docs/*'
         ]
     },
-    "html-min": {
+    'html-min': {
         input: 'public-html/index.src/index.html',
         output: 'public-html/index.html'
     },
-    "node_modules/crossbow-sass/index.js": {
-        "input": "scss/core.scss",
-        "output": "css"
+    'node_modules/crossbow-sass/index.js': {
+        'input': 'scss/core.scss',
+        'output': 'css'
     },
-    "icons": {
-        "yml": "_config.yml",
-        "output": "public/img/icons"
+    'icons': {
+        'yml': '_config.yml',
+        'output': 'public/img/icons'
     },
-    "docs": {
-        output: "_doc",
-        index: "node_modules/browser-sync/index.js",
-        config: "node_modules/browser-sync/lib/default-config.js"
+    'docs': {
+        output: '_doc',
+        index: 'node_modules/browser-sync/index.js',
+        config: 'node_modules/browser-sync/lib/default-config.js'
     }
 });

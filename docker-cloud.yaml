@@ -1,4 +1,5 @@
 nginx:
+  # shakyShane/le-nginx on github
   image: shakyshane/test-nginx
   links:
     - letsencrypt

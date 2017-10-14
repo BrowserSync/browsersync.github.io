@@ -8,7 +8,8 @@ cb.env({
     JS_ENTRY :'js/app.js',
     JS_BUNDLE :'public/js/app.js',
     JS_MIN :'public/js/app.min.js',
-    AUTH: 'root@178.62.0.17'
+    AUTH: 'root@178.62.0.17',
+    DOCKER_HUB_NAME: 'shakyshane/bs-website'
 });
 
 /**
@@ -51,17 +52,21 @@ cb.task('build-all', {
  * Group helper for all HTML related tasks
  */
 cb.task('_html', ["docs", "templates", "html-min", "merkle --dir public-html"]);
-cb.task('rsync', {
+cb.task('docker-build', {
     adaptor: 'sh',
-    command: 'rsync -ra public public-html default.conf run.sh $AUTH:~/dist --delete'
+    command: 'docker build . -t $DOCKER_HUB_NAME'
+});
+cb.task('docker-push', {
+    adaptor: 'sh',
+    command: 'docker push $DOCKER_HUB_NAME'
 });
 
 /**
  * Deploy to production
  */
 cb.task('deploy', {
-    description: 'Build & Deploy the website to Digital Ocean',
-    tasks: ['build-all', 'rsync'],
+    description: 'Build & Deploy the website to Docker Hub',
+    tasks: ['docker-build', 'docker-push'],
 });
 
 /**

@@ -1,9 +1,13 @@
 # Stage 1 - the build process
-FROM node:7.10 as build-deps
+FROM node:8 as build-deps
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn
 COPY . ./
+WORKDIR /usr/src/app/node_modules/browser-sync
+RUN yarn
+RUN ./node_modules/.bin/tsc
+WORKDIR /usr/src/app
 RUN yarn build-all
 
 # Stage 2 - the production environment

@@ -64,16 +64,24 @@ $ browser-sync recipe --help
 
 {{#hl lang="bash"}}
 # Examples
-
 # Start a server from the `app` directory, watching all files
 $ browser-sync start --server 'app' --files 'app'
+
+# As above, but with version >= 2.23.0
+$ browser-sync app -w
 
 # Start a server from the `app` & `.tmp` directories (short hand)
 # (requires 2.12.1)
 $ browser-sync start -s 'app' '.tmp' -f 'app' '.tmp'
 
+# As above, but with version >= 2.23.0
+$ browser-sync 'app' '.tmp' -w
+
 # Proxy a PHP app + serve static files & watch them
 $ browser-sync start --proxy 'mylocal.dev' --serveStatic 'public' --files 'public'
+
+# As above, but with version >= 2.23.0
+$ browser-sync 'http://mylocal.dev' 'public' -w
 
 # Start Browsersync from a config file
 $ browser-sync start --config 'conf/browser-sync.js'

@@ -90,6 +90,19 @@ cb.task('serve', {
         // cb.watch(['js'], ['build-js', () => bs.reload()]);
     }]
 });
+
+cb.task('dev', {
+    description: 'Launch a development server',
+    tasks: ['build-all', function () {
+        bs.init({
+            server: ['public', 'public-html'],
+            port: 9000,
+        });
+        // cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
+        // cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
+        // cb.watch(['js'], ['build-js', () => bs.reload()]);
+    }]
+})
 /**
  * Copy SW scripts
  */
@@ -165,7 +178,7 @@ cb.options({
     },
     "docs": {
         output: "_doc",
-        index: "node_modules/browser-sync/index.js",
-        config: "node_modules/browser-sync/lib/default-config.js"
+        index: "node_modules/browser-sync/dist/index.js",
+        config: "node_modules/browser-sync/dist/default-config.js"
     }
 });

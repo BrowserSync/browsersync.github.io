@@ -1,7 +1,7 @@
 {
   "public-html": {
     "path": "public-html",
-    "hash": "12ddf57b274dabafed3becf382588e6344f0db593851cb1346cbc94d02fd272d",
+    "hash": "8e84d6c27a4091c34667c9d628e27194f898a2b4b36691ace30bde6bf93c2399",
     "tree": [
       {
         "path": "brand-assets",
@@ -15,7 +15,7 @@
       },
       {
         "path": "docs",
-        "hash": "a5b048e675185c37b726f62c2d6c7c6a56f3397be8e32c491b2e8cfcdac529ba",
+        "hash": "d39be093b4afcbdda0fd7c846d91244797d812fd8c61f1d462a66aaefbca2795",
         "tree": [
           {
             "path": "docs/api",
@@ -29,11 +29,11 @@
           },
           {
             "path": "docs/command-line",
-            "hash": "39d93d5c3266c17550dc6aa05bb99a002c99bfce9d827551268506233a8ec5a6",
+            "hash": "d7310d9f9bfcc330469a74bcbcb7d9656a515647f850586236048f4c7c5fd63b",
             "tree": [
               {
                 "path": "docs/command-line/index.html",
-                "hash": "c803cc0964b46ed3f4f9724474386e040ad947fd5040232425ccb8065315876a"
+                "hash": "69cb41c54b5eb4002cc9eb8292bfffc8c83247d6cbb26ae5a3069d38239513ea"
               }
             ]
           },
@@ -73,11 +73,11 @@
           },
           {
             "path": "docs/options",
-            "hash": "626522cbb3912c55e9aae20f6a95e6a9c83e2b519436b4a57de4b26b35565c05",
+            "hash": "3c7c8e31257f267052a60bd53f1aaa552091d459ae01495f55602bc60ba8545a",
             "tree": [
               {
                 "path": "docs/options/index.html",
-                "hash": "7d0a8b859c7db81e4febe7709f45ca115eb4d39bdbeb41606ea0bba7008b13aa"
+                "hash": "498b6e8ef752910215cf4d15728b6433f0aafd770f9e832e82d44b279a0eb935"
               }
             ]
           },
@@ -108,6 +108,6 @@
         ]
       }
     ],
-    "date": "April 10th 2017, 12:51:22 pm"
+    "date": "December 29th 2017, 3:32:13 pm"
   }
 }

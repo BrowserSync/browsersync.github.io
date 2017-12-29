@@ -1,7 +1,7 @@
 var fs           = require("fs");
 var doc          = "../_doc/yuidoc.json";
 var docGen       = require("./_docgen");
-var opts         = require("browser-sync/lib/cli/opts.start.json");
+var opts         = require("browser-sync/cli-options/opts.start.json");
 var marked       = require('marked');
 var _            = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;

@@ -13,7 +13,6 @@ RUN yarn build-all
 # Stage 2 - the production environment
 FROM nginx:1.12-alpine
 COPY --from=build-deps /usr/src/app/public /usr/share/nginx/html/public
-COPY --from=build-deps /usr/src/app/public-html /usr/share/nginx/html/public-html
 COPY ./.docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

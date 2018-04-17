@@ -51,7 +51,7 @@ cb.task('build-all', {
 /**
  * Group helper for all HTML related tasks
  */
-cb.task('_html', ["docs", "templates", "html-min"]);
+cb.task('_html', ["docs", "templates", "html-min", "service-worker"]);
 cb.task('docker-build', {
     adaptor: 'sh',
     command: 'docker build . -t $DOCKER_HUB_NAME'

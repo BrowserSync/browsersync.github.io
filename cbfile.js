@@ -51,7 +51,7 @@ cb.task('build-all', {
 /**
  * Group helper for all HTML related tasks
  */
-cb.task('_html', ["docs", "templates", "html-min", "merkle --dir public-html"]);
+cb.task('_html', ["docs", "templates", "html-min"]);
 cb.task('docker-build', {
     adaptor: 'sh',
     command: 'docker build . -t $DOCKER_HUB_NAME'
@@ -79,9 +79,9 @@ cb.task('docker', '@sh docker-compose -f docker-compose-dev.yaml up -d');
  */
 cb.task('serve', {
     description: 'Build HTML/CSS then launch Docker + Browsersync',
-    tasks: ['templates', 'build-css', 'docker', function () {
+    tasks: ['templates', 'build-css', function () {
         bs.init({
-            proxy: '0.0.0.0:8080',
+            server: ['public'],
             logFileChanges: false,
             open: false
         });
@@ -95,7 +95,7 @@ cb.task('dev', {
     description: 'Launch a development server',
     tasks: ['build-all', function () {
         bs.init({
-            server: ['public', 'public-html'],
+            server: ['public'],
             port: 9000,
         });
         // cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
@@ -132,16 +132,16 @@ cb.task('service-worker', ['copy-sw'], function () {
             `${rootDir}/img/bg.jpg`
         ],
         dynamicUrlToDependencies: {
-            "/": ["public-html/index.html"],
-            "/brand-assets": ["public-html/brand-assets/index.html"],
-            "/docs/api": ["public-html/docs/api/index.html"],
-            "/docs/command-line": ["public-html/docs/command-line/index.html"],
-            "/docs/grunt": ["public-html/docs/grunt/index.html"],
-            "/docs/gulp": ["public-html/docs/gulp/index.html"],
-            "/docs/http-protocol": ["public-html/docs/http-protocol/index.html"],
-            "/docs": ["public-html/docs/index.html"],
-            "/docs/options": ["public-html/docs/options/index.html"],
-            "/docs/recipes": ["public-html/docs/recipes/index.html"],
+            "/": ["public/index.html"],
+            "/brand-assets": ["public/brand-assets/index.html"],
+            "/docs/api": ["public/docs/api/index.html"],
+            "/docs/command-line": ["public/docs/command-line/index.html"],
+            "/docs/grunt": ["public/docs/grunt/index.html"],
+            "/docs/gulp": ["public/docs/gulp/index.html"],
+            "/docs/http-protocol": ["public/docs/http-protocol/index.html"],
+            "/docs": ["public/docs/index.html"],
+            "/docs/options": ["public/docs/options/index.html"],
+            "/docs/recipes": ["public/docs/recipes/index.html"],
         },
         // Translates a static file path to the relative URL that it's served from.
         // This is '/' rather than path.sep because the paths returned from
@@ -157,7 +157,7 @@ cb.options({
     },
     crossbow: {
         base: "_src",
-        output: "public-html",
+        output: "public",
         input: [
             "_src/*.hbs",
             "_src/*.html",
@@ -165,8 +165,8 @@ cb.options({
         ]
     },
     "html-min": {
-        input: 'public-html/index.src/index.html',
-        output: 'public-html/index.html'
+        input: 'public/index.src/index.html',
+        output: 'public/index.html'
     },
     "node_modules/crossbow-sass/index.js": {
         "input": "scss/core.scss",

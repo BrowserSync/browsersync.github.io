@@ -33,8 +33,9 @@ Once built, commit all the changes and send your pull request :)
 <!--crossbow-docs-start-->
 ## Crossbow tasks
 
-The following tasks have been defined by this project's Crossbow configuration. Run any of them in the following way
-
+The following tasks have been defined by this project's Crossbow configuration.
+Run any of them in the following way
+ 
 ```shell
 $ crossbow run <taskname>
 ```
@@ -44,8 +45,12 @@ $ crossbow run <taskname>
 |<pre>`build-css`</pre>|Build dev + production CSS|
 |<pre>`build-js`</pre>|Build production ready JS|
 |<pre>`build-all`</pre>|Run all build tasks|
-|<pre>`rsync`</pre>|**Alias for:**<br>- `@sh rsync -ra public public-html $AUTH:/usr/share/nginx/bs2 --delete`|
-|<pre>`deploy`</pre>|Build & Deploy the website to Digital Ocean|
+|<pre>`docker-build`</pre>|**Alias for:**<br>- `@sh docker build . -t $DOCKER_HUB_NAME`|
+|<pre>`docker-push`</pre>|**Alias for:**<br>- `@sh docker push $DOCKER_HUB_NAME`|
+|<pre>`deploy`</pre>|Build & Deploy the website to Docker Hub|
 |<pre>`docker`</pre>|**Alias for:**<br>- `@sh docker-compose -f docker-compose-dev.yaml up -d`|
 |<pre>`serve`</pre>|Build HTML/CSS then launch Docker + Browsersync|
+|<pre>`dev`</pre>|Launch a development server|
+|<pre>`copy-sw`</pre>|**Alias for:**<br>- `[Function: _inline_fn_6_]`|
+|<pre>`service-worker`</pre>|**Alias for:**<br>- `copy-sw`<br>- `service-worker_internal_fn_0`|
 <!--crossbow-docs-end-->

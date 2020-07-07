@@ -31,7 +31,7 @@ server: {
 }
 
 // Since version 1.2.1
-// The key is the url to match
+// The key is the url to match (can't match any existing file yet)
 // The value is which folder to serve (relative to your current working directory)
 server: {
     baseDir: "app",

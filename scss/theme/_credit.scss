@@ -7,8 +7,15 @@
     }
 
     .site-nav {
-        text-align: center;
+        display: flex;
         margin-bottom: 0;
+        justify-content: center;
+    }
+
+    .prev {
+        margin-top: 10px;
+        text-align: center;
+        color: $white;
     }
 }
 

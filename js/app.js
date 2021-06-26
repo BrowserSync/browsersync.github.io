@@ -3,7 +3,10 @@ import stickyNav from './sticky-nav';
 
 stickyNav();
 //videoLoader();
-registerServiceWorker();
+if (window.location.origin.indexOf('http://localhost') === 0) {
+} else {
+    registerServiceWorker();
+}
 
 function showUpdateButton () {
     var refreshing;

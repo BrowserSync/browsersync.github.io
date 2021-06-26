@@ -1,7 +1,6 @@
 .jh {
     padding: ($base-spacing*2) 0;
-    background: url("../img/jh-bg.jpg") no-repeat top center;
-    background-size: cover;
+    background: $navy;
     text-align: center;
     color: white;
 
@@ -24,6 +23,11 @@
 
 .jh__title {
     margin-top: $half-spacing;
+}
+
+.jh__text {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .jh__links {

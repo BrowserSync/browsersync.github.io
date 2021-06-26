@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/","178c997736beead42547d6a9c07bbd5b"],["/brand-assets","7782e2cfe79b0e28b076e5b06e4b40d2"],["/docs","659287e154e16a092188d9af2957e61e"],["/docs/api","a1b47b00903f45cb86cd61e024172777"],["/docs/command-line","6e1d13d972b57237839d346267916b9c"],["/docs/grunt","fdd9871d65272fbbd202f4b06373f603"],["/docs/gulp","6d707898330c6d79153b4733c3362e77"],["/docs/http-protocol","fa6a362b133486f42725834cc6cf8c1f"],["/docs/options","cb1506258e1481d89d2bcc9810b159b6"],["/docs/recipes","2c774f97add6fbcfa66fd6652894dddc"],["img/bg.jpg","f75e7f9489cd69d1625e5326665f247b"],["img/icons/icons.svg","86529e19edf7701732f28c13ebcf0b4e"],["img/jh-logo-white.png","303c4cc32022c6b31b8f3c4f14fcd435"],["js/app.js","d58434e4e88caa11158fe40bf2ed71f4"],["js/app.min.js","55c627bb50bc98891515b73f93388ecb"],["js/runtime-caching.js","ad2e8543849df6dd102787fe270c1c32"],["js/sw/runtime-caching.js","ad2e8543849df6dd102787fe270c1c32"],["js/sw/sw-toolbox.js","e7e54a466864d42dcccc8c3f80a91d1f"]];
+var precacheConfig = [["/","293210017d75eae3d495110b2f45408f"],["/brand-assets","a6bb7a095fab63ea1ff24929cd762217"],["/docs","e4baf3ff017dbee90b36637e97174749"],["/docs/api","36e62e78ec7d1552616ee7557ccfdc54"],["/docs/command-line","0dc7fa1adbec5222b9f01e21738e4f73"],["/docs/grunt","0806ab0b272e452626095e52b0c8b4bd"],["/docs/gulp","44ff6f73f1641e20b9bda8dc09dfa7c2"],["/docs/http-protocol","514b47b3e71103e1d1a43b5a54b568b7"],["/docs/options","8a96c8505f19601da4d03325941a5b81"],["/docs/recipes","af84b8fe29191ca79203a56aee0cf624"],["img/bg.jpg","f75e7f9489cd69d1625e5326665f247b"],["img/icons/icons.svg","86529e19edf7701732f28c13ebcf0b4e"],["img/jh-logo-white.png","303c4cc32022c6b31b8f3c4f14fcd435"],["js/app.js","fe20db323809851100c023cfb434ed8f"],["js/app.min.js","63ee952d158c058f9e0c86cc22be13a0"],["js/runtime-caching.js","ad2e8543849df6dd102787fe270c1c32"],["js/sw/runtime-caching.js","ad2e8543849df6dd102787fe270c1c32"],["js/sw/sw-toolbox.js","e7e54a466864d42dcccc8c3f80a91d1f"]];
 var cacheName = 'sw-precache-v2-browser-sync-website-' + (self.registration ? self.registration.scope : '');
 
 
@@ -45,7 +45,7 @@ var ignoreUrlParametersMatching = [/^utm_/];
 
 
 
-var addDirectoryIndex = function (originalUrl, index) {
+var addDirectoryIndex = function(originalUrl, index) {
     var url = new URL(originalUrl);
     if (url.pathname.slice(-1) === '/') {
       url.pathname += index;
@@ -53,7 +53,7 @@ var addDirectoryIndex = function (originalUrl, index) {
     return url.toString();
   };
 
-var createCacheKey = function (originalUrl, paramName, paramValue,
+var createCacheKey = function(originalUrl, paramName, paramValue,
                            dontCacheBustUrlsMatching) {
     // Create a new URL object to avoid modifying originalUrl.
     var url = new URL(originalUrl);
@@ -69,7 +69,7 @@ var createCacheKey = function (originalUrl, paramName, paramValue,
     return url.toString();
   };
 
-var isPathWhitelisted = function (whitelist, absoluteUrlString) {
+var isPathWhitelisted = function(whitelist, absoluteUrlString) {
     // If the whitelist is empty, then consider all URLs to be whitelisted.
     if (whitelist.length === 0) {
       return true;
@@ -82,7 +82,7 @@ var isPathWhitelisted = function (whitelist, absoluteUrlString) {
     });
   };
 
-var stripIgnoredUrlParameters = function (originalUrl,
+var stripIgnoredUrlParameters = function(originalUrl,
     ignoreUrlParametersMatching) {
     var url = new URL(originalUrl);
 

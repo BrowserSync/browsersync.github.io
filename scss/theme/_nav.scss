@@ -61,9 +61,6 @@ $small-nav-height: $header-height - 30px;
     a {
         height: $header-height;
         line-height: $header-height;
-        &:last-child {
-            display: none;
-        }
     }
 
     @include media-query(min, $lap-start) {
@@ -71,11 +68,6 @@ $small-nav-height: $header-height - 30px;
         flex: 1;
         display: flex;
         justify-content: flex-end;
-        a{
-            &:last-child {
-                display: block;
-            }
-        }
     }
 
     .svg-icon {

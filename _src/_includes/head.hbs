@@ -22,7 +22,11 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- CSS Includes (PRODUCTION) -->
+{{#if_eq site.env "production"}}
     <style>{{inc src="public/css/core.min.css"}}</style>
+{{else}}
+    <link rel="stylesheet" href="/css/core.css"/>
+{{/if_eq}}
 
     <!--[if gt IE 9]>
     <script src="/img/icons/svg4everybody.min.js"></script>

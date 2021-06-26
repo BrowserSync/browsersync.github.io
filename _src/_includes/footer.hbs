@@ -1,19 +1,9 @@
 <footer class="wrapper signup" role="contentinfo">
     <div class="container">
-        <p class="signup__title">Stay up to date with the latest features</p>
-        <form action="{{site.mailchimp.url}}" method="GET">
-            <div class="signup__form">
-                <input type="hidden" name="u" value="{{site.mailchimp.u}}"/>
-                <input type="hidden" name="id" value="{{site.mailchimp.id}}"/>
-                <label for="email-input" class="hidden">Email Address</label>
-                <input type="text" placeholder="Email..." name="MERGE0" class="input input--text form__email" id="email-input"/>
-                <input type="submit" value="Signup" class="button button--primary form__submit"/>
-            </div>
-        </form>
+        <p class="signup__title">Reach out on Twitter or Github</p>
         <div class="signup__links">
-            <a href="{{site.links.source}}" title="Browsersync on Github">{{inc src="icon.hbs" icon="github" class=""}}</a>
             <a href="{{site.links.twitter}}" title="@Browsersync on Twitter">{{inc src="icon.hbs" icon="twitter" class=""}}</a>
-            <a href="{{site.links.slack}}" title="Browsersync Slack Team">{{inc src="icon.hbs" icon="slack" class=""}}</a>
+            <a href="{{site.links.source}}" title="Browsersync on Github">{{inc src="icon.hbs" icon="github" class=""}}</a>
         </div>
     </div>
 </footer><!-- end .site-footer -->
@@ -25,16 +15,14 @@
                 {{#each site.footer-navigation}}
                 <li class="nav__item {{#current this.url}}active{{/current}}"><a href="{{this.url}}" class="nav-link">{{ this.label }}</a></li>
                 {{/each}}
-                <li class="nav__item credit__thumb">
-                    <span>An open source project by</span>
-                    <a href="{{site.links.jh}}" class="nav-link"><img src="/img/jh-logo-white.png" alt="JH"/></a>
-                </li>
             </ul>
         </nav>
     </div>
 </div>
+<div class="credit">
+    <div class="container">
+        <p class="prev"><small>Previously supported by <a href="https://wearejh.com/">JH</a></small></p>
+    </div>
+</div>
 
 <script src="/js/app.min.js"></script>
-{{#if_eq site.env "production"}}
-    {{inc src="_includes/analytics.hbs" }}
-{{/if_eq}}

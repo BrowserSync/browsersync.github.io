@@ -31,14 +31,14 @@ env: "production"
 navigation:
  - label: "Documentation"
    url: "/docs"
- - label: "Community"
-   url: "https://browsersync.herokuapp.com/"
+# - label: "Community"
+#   url: "https://browsersync.herokuapp.com/"
 
 footer-navigation:
  - label: "Documentation"
    url: "/docs"
- - label: "Community"
-   url: "https://browsersync.herokuapp.com/"
+# - label: "Community"
+#   url: "https://browsersync.herokuapp.com/"
  - label: "Brand Assets"
    url: "/brand-assets"
 
@@ -80,6 +80,7 @@ links:
   snippet:      "/docs/options/#option-snippetOptions"
   recipes:      "https://github.com/Browsersync/recipes"
   slack:        "https://browsersync.herokuapp.com"
+  dependants:   "https://github.com/BrowserSync/browser-sync/network/dependents?package_id=UGFja2FnZS0xMzgxNjkyNg%3D%3D"
 
 img:
   jh: "/img/jh-300-trans.png"

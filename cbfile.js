@@ -79,15 +79,15 @@ cb.task('docker', '@sh docker-compose -f docker-compose-dev.yaml up -d');
  */
 cb.task('serve', {
     description: 'Build HTML/CSS then launch Docker + Browsersync',
-    tasks: ['templates', 'build-css', function () {
+    tasks: ['templates', 'docs', 'build-css', function () {
         bs.init({
             server: ['public'],
             logFileChanges: false,
             open: false
         });
-        // cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
-        // cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
-        // cb.watch(['js'], ['build-js', () => bs.reload()]);
+        cb.watch(['_src/**', '*.yml'], ['templates', () => bs.reload()], {block: true});
+        cb.watch(['scss'], ['build-css', () => bs.reload(['core.css', 'core.min.css'])]);
+        cb.watch(['js'], ['build-js', () => bs.reload()]);
     }]
 });
 
@@ -162,7 +162,7 @@ cb.options({
             "_src/*.hbs",
             "_src/*.html",
             "_src/docs/*"
-        ]
+        ],
     },
     "html-min": {
         input: 'public/index.src/index.html',

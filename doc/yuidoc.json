@@ -554,7 +554,7 @@
         "itemtype": "property",
         "name": "open",
         "type": "Boolean|String",
-        "default": "true",
+        "default": "local",
         "class": "",
         "module": "BrowserSync.options"
     }, {

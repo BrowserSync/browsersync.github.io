@@ -9,7 +9,7 @@ markdown: false
 {{#md}}
 There's no official Browsersync plugin for Gulp, because it's not needed! You simply `require` the module, utilise
 the [API]({{site.links.api}}) and configure it with [options]({{site.links.options}}). The following are some common
-use-cases as seen in popular projects such as [Google's web starter kit](https://developers.google.com/web/starter-kit/)
+use-cases as seen in popular projects such as [Google's web starter kit](https://github.com/google/web-starter-kit)
 and many others.
 {{/md}}
 
@@ -56,7 +56,7 @@ Sometimes you might just want to reload the page completely (for example, after 
 you want the reload to happen *after* your tasks. This will be easier in gulp `4.x.x`, but for now you can do the following
 (make sure you `return` the stream from your tasks to ensure that `browserSync.reload()` is called at the correct time).
 
-If you are using gulp `4.x.x` now, then you can [follow this documentation](https://github.com/gulpjs/gulp/blob/4.0/docs/recipes/minimal-browsersync-setup-with-gulp4.md).
+If you are using gulp `4.x.x` now, then you can [follow this documentation](https://github.com/gulpjs/gulp/blob/master/docs/recipes/minimal-browsersync-setup-with-gulp4.md).
 {{/md}}
 
 {{ hl src="snippets/gulp/reload.js" }}

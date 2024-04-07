@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js ffly" lang="en"> <!--<![endif]-->
+<head>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browsersync + Gulp.js</title>
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=qAqkxQaJm0">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=qAqkxQaJm0" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=qAqkxQaJm0" sizes="16x16">
+    <link rel="manifest" href="/manifest.json?v=qAqkxQaJm0">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=qAqkxQaJm0" color="#f24747">
+    <link rel="shortcut icon" href="/favicon.ico?v=qAqkxQaJm0">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/css/core.css">
+
+    <!--[if gt IE 9]>
+    <script src="/img/icons/svg4everybody.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+</head>
+
+
+<body id="page-top">
+<div class="header-wrap ">
+
+    <div class="update-banner">
+        <p>Update available - <a href="" id="update">click here to reload</a></p>
+    </div>
+    <header class="wrapper site-header" role="banner">
+        <div class="container">
+            <nav>
+                <ul class="site-nav">
+                    <li class="nav__item logo">
+                        <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-wordmark"></use></svg>
+    </a>
+                    </li>
+                    <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item nav__item--right">
+                        <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+    </a>
+                        <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- .end .site-header -->
+
+
+
+</div>
+
+<div class="site-body" role="main">
+
+
+
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                <li class="fixed-nav__item active"><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/api">API</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/options">Options</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
+    <section id="top" class="wrapper code-example">
+    <div class="container">
+        <article class="doc-wrapper">
+            <div class="three-quarters">
+                <input class="input input--text doc-search" type="text" id="search-input" placeholder="Search docs...">
+                <h1 class="page-title">Browsersync + Gulp.js</h1>
+
+
+                <p>There&#39;s no official Browsersync plugin for Gulp, because it&#39;s not needed! You simply <code>require</code> the module, utilise
+                the <a href="/docs/api">API</a> and configure it with <a href="/docs/options">options</a>. The following are some common
+                use-cases as seen in popular projects such as <a href="https://developers.google.com/web/starter-kit/">Google&#39;s web starter kit</a>
+                and many others.</p>
+
+                <h3 id="gulp-install" class="section-link">
+                    <a href="#gulp-install" class="page-anchor">Install</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>First, you&#39;ll need to install Browsersync &amp; Gulp as development dependencies.</p>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="html">$ npm install browser-sync gulp --save-dev</code></pre></div>
+
+<p>Then, use them within your <code>gulpfile.js</code>:</p>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
+
+<span class="hljs-comment">// Static server</span>
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    browserSync.init({
+        server: {
+            baseDir: <span class="hljs-string">"./"</span>
+        }
+    });
+});
+
+<span class="hljs-comment">// or...</span>
+
+gulp.task(<span class="hljs-string">'browser-sync'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    browserSync.init({
+        proxy: <span class="hljs-string">"yourlocal.dev"</span>
+    });
+});</code></pre></div>
+
+                <h3 id="gulp-sass-css" class="section-link">
+                    <a href="#gulp-sass-css" class="page-anchor">SASS + CSS Injecting</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>Streams are supported in Browsersync, so you can call reload at specific points during your tasks and
+                all browsers will be informed of the changes. Because Browsersync only cares about your CSS when it&#39;s
+                <em>finished</em> compiling - make sure you call <code>.stream()</code> <em>after</em> <code>gulp.dest</code></p>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
+<span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sass'</span>);
+
+<span class="hljs-comment">// Static Server + watching scss/html files</span>
+gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'sass'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+    browserSync.init({
+        server: <span class="hljs-string">"./app"</span>
+    });
+
+    gulp.watch(<span class="hljs-string">"app/scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
+    gulp.watch(<span class="hljs-string">"app/*.html"</span>).on(<span class="hljs-string">'change'</span>, browserSync.reload);
+});
+
+<span class="hljs-comment">// Compile sass into CSS &amp; auto-inject into browsers</span>
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">"app/scss/*.scss"</span>)
+        .pipe(sass())
+        .pipe(gulp.dest(<span class="hljs-string">"app/css"</span>))
+        .pipe(browserSync.stream());
+});
+
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'serve'</span>]);
+</code></pre></div>
+
+                <h3 id="gulp-sass-maps" class="section-link">
+                    <a href="#gulp-sass-maps" class="page-anchor">Ruby SASS &amp; Source Maps</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>If you use <a href="https://www.npmjs.org/package/gulp-ruby-sass">gulp-ruby-sass</a> with the <code>sourcemap: true</code> option, additional <code>.map</code>
+                files will be generated. These files end up being sent down stream and when <code>browserSync.reload()</code> receives them, it will attempt
+                a full page reload (as it will not find any <code>.map</code> files in the DOM).</p>
+                <p>To fix this problem, use <code>browserSync.stream({match: &#39;**/*.css&#39;})</code> as seen in the following example.</p>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
+<span class="hljs-keyword">var</span> sass        = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-ruby-sass"</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browser-sync"</span>).create();
+
+<span class="hljs-comment">// Static Server + watching scss/html files</span>
+gulp.task(<span class="hljs-string">'serve'</span>, [<span class="hljs-string">'sass'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+    browserSync.init({
+        server: <span class="hljs-string">"./app"</span>
+    });
+
+    gulp.watch(<span class="hljs-string">"app/scss/*.scss"</span>, [<span class="hljs-string">'sass'</span>]);
+    gulp.watch(<span class="hljs-string">"app/*.html"</span>).on(<span class="hljs-string">'change'</span>, browserSync.reload);
+});
+
+<span class="hljs-comment">/**
+ * Compile with gulp-ruby-sass + source maps
+ */</span>
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+    <span class="hljs-keyword">return</span> sass(<span class="hljs-string">'app/scss'</span>, {sourcemap: <span class="hljs-literal">true</span>})
+        .on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+            <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Error!'</span>, err.message);
+        })
+        .pipe(sourcemaps.write(<span class="hljs-string">'./'</span>, {
+            includeContent: <span class="hljs-literal">false</span>,
+            sourceRoot: <span class="hljs-string">'/app/scss'</span>
+        }))
+        .pipe(browserSync.stream({match: <span class="hljs-string">'**/*.css'</span>}));
+});
+</code></pre></div>
+
+                <h3 id="gulp-reload" class="section-link">
+                    <a href="#gulp-reload" class="page-anchor">Browser Reloading</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), but
+                you want the reload to happen <em>after</em> your tasks. This will be easier in gulp <code>4.x.x</code>, but for now you can do the following
+                (make sure you <code>return</code> the stream from your tasks to ensure that <code>browserSync.reload()</code> is called at the correct time).</p>
+                <p>If you are using gulp <code>4.x.x</code> now, then you can <a href="https://github.com/gulpjs/gulp/blob/4.0/docs/recipes/minimal-browsersync-setup-with-gulp4.md">follow this documentation</a>.</p>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
+
+<span class="hljs-comment">// process JS files and return the stream.</span>
+gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'js/*js'</span>)
+        .pipe(browserify())
+        .pipe(uglify())
+        .pipe(gulp.dest(<span class="hljs-string">'dist/js'</span>));
+});
+
+<span class="hljs-comment">// create a task that ensures the `js` task is complete before</span>
+<span class="hljs-comment">// reloading browsers</span>
+gulp.task(<span class="hljs-string">'js-watch'</span>, [<span class="hljs-string">'js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">done</span>) </span>{
+    browserSync.reload();
+    done();
+});
+
+<span class="hljs-comment">// use default task to launch Browsersync and watch JS files</span>
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+    <span class="hljs-comment">// Serve files from the root of this project</span>
+    browserSync.init({
+        server: {
+            baseDir: <span class="hljs-string">"./"</span>
+        }
+    });
+
+    <span class="hljs-comment">// add browserSync.reload to the tasks array to make</span>
+    <span class="hljs-comment">// all browsers reload after tasks are complete.</span>
+    gulp.watch(<span class="hljs-string">"js/*.js"</span>, [<span class="hljs-string">'js-watch'</span>]);
+});
+</code></pre></div>
+
+                <h3 id="gulp-manual-reload" class="section-link">
+                    <a href="#gulp-manual-reload" class="page-anchor">Manual Reloading</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>If the streams support doesn&#39;t suit your needs, you can fire the reload method manually
+                by wrapping it in a task. This example will compile &amp; auto-inject CSS just as before, but when HTML files are
+                changed, the browsers will be reloaded instead.</p>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-keyword">var</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
+<span class="hljs-keyword">var</span> reload      = browserSync.reload;
+
+<span class="hljs-comment">// Save a reference to the `reload` method</span>
+
+<span class="hljs-comment">// Watch scss AND html files, doing different things with each.</span>
+gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+    <span class="hljs-comment">// Serve files from the root of this project</span>
+    browserSync.init({
+        server: {
+            baseDir: <span class="hljs-string">"./"</span>
+        }
+    });
+
+    gulp.watch(<span class="hljs-string">"*.html"</span>).on(<span class="hljs-string">"change"</span>, reload);
+});
+</code></pre></div>
+
+            </div>
+            <div class="one-quarter">
+                <div class="doc-nav">
+                    <span class="nav-expand">
+                        <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
+
+                        <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
+
+                    </span>
+
+                    <div class="sticky-nav">
+                        <p class="lede">Jump to...</p>
+                        <ul class="sticky-nav__items" id="sticky-nav">
+                            <!--<li class="nav-toggle-btn"><a href="#sticky-nav">Menu</a></li>-->
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-install">Install</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-sass-css">SASS + CSS Injecting</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-sass-maps">SASS & Source Maps</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-reload">Browser Reloading</a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#gulp-manual-reload">Manual Reloading</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+    </section>
+
+
+</div>
+
+<footer class="wrapper signup" role="contentinfo">
+    <div class="container">
+        <p class="signup__title">Reach out on Twitter or Github</p>
+        <div class="signup__links">
+            <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
+            <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+        </div>
+    </div>
+</footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item "><a href="/brand-assets" class="nav-link">Brand Assets</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="credit">
+    <div class="container">
+        <p class="prev"><small>Previously supported by <a href="https://wearejh.com/">JH</a></small></p>
+    </div>
+</div>
+
+<script src="/js/app.min.js"></script>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+        apiKey: 'a5c2ad2440b6b5c621ecff9023de9154',
+        indexName: 'browsersync',
+        inputSelector: '#search-input',
+        debug: false // Set debug to true if you want to inspect the dropdown
+    });
+    </script>
+
+
+</body>
+</html>

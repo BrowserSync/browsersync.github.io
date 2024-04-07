@@ -2,7 +2,6 @@
 _doc
 node_modules
 .DS_Store
-/public/**/*.html
 /dist
 /sites-available
 /letsencrypt

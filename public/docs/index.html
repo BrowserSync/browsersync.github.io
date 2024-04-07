@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js ffly" lang="en"> <!--<![endif]-->
+<head>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browsersync Documentation</title>
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=qAqkxQaJm0">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=qAqkxQaJm0" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=qAqkxQaJm0" sizes="16x16">
+    <link rel="manifest" href="/manifest.json?v=qAqkxQaJm0">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=qAqkxQaJm0" color="#f24747">
+    <link rel="shortcut icon" href="/favicon.ico?v=qAqkxQaJm0">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/css/core.css">
+
+    <!--[if gt IE 9]>
+    <script src="/img/icons/svg4everybody.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+</head>
+
+
+<body id="page-top">
+<div class="header-wrap ">
+
+    <div class="update-banner">
+        <p>Update available - <a href="" id="update">click here to reload</a></p>
+    </div>
+    <header class="wrapper site-header" role="banner">
+        <div class="container">
+            <nav>
+                <ul class="site-nav">
+                    <li class="nav__item logo">
+                        <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-wordmark"></use></svg>
+    </a>
+                    </li>
+                    <li class="nav__item active"><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item nav__item--right">
+                        <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+    </a>
+                        <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- .end .site-header -->
+
+
+
+</div>
+
+<div class="site-body" role="main">
+
+
+
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/api">API</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/options">Options</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
+    <section id="top" class="wrapper code-example">
+    <div class="container">
+        <article class="doc-wrapper">
+            <div class="three-quarters">
+                <input class="input input--text doc-search" type="text" id="search-input" placeholder="Search docs...">
+                <h1 class="page-title">Browsersync Documentation</h1>
+                <p>Here you can find all the information you&#39;ll need to begin using Browsersync. We have extensive information covering
+                command-line usage, the API, Grunt/Gulp integrations and all available options.</p>
+                <p><strong>In this section:</strong></p>
+                <ul class="nav nav-stacked">
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#windows-users">Windows Users</a></li>
+                    <li><a href="#external-url">Incorrect external url</a></li>
+                </ul>
+
+                <h3 id="installation" class="section-link">
+                    <a href="#installation" class="page-anchor">Installation</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <h4 id="global-install">Global Install</h4>
+                <p>If you would like to run Browsersync from the command line in any directory, it
+                can be installed <code>globally</code> with the following command.</p>
+<p><div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash">$ npm install -g browser-sync
+</code></pre></div></p>
+                <h4 id="local-install">Local Install</h4>
+                <p>This is the prefered way to use Browsersync - installing it locally to each project. This
+                way the dependency can be added to your package.json file and everyone on your team.</p>
+<p><div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash">$ npm install browser-sync --save-dev
+</code></pre></div>
+                <strong>WARNING - do not use sudo!</strong> If you&#39;re running <code>Mac OSX</code> and encounter problems when trying to install Browsersync - either
+                globally or locally, it&#39;s almost always because you have problems with npm permissions. Checkout <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">their docs</a>
+                for a guide on how to fix this once and for all - it only takes 2 minutes :)</p>
+                <h3 id="requirements" class="section-link">
+                    <a href="#requirements" class="page-anchor">Requirements</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>Browsersync works by injecting an asynchronous script tag (<code>&lt;script async&gt;...&lt;/script&gt;</code>) right after the <code>&lt;body&gt;</code> tag
+                during initial request. In order for this to work properly the <code>&lt;body&gt;</code> tag must be present. Alternatively you
+                can provide a custom rule for the snippet using <a href="/docs/options/#option-snippetOptions">snippetOptions</a></p>
+                <h3 id="windows-users" class="section-link">
+                    <a href="#windows-users" class="page-anchor">Windows users</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>Having trouble installing Browsersync on Windows? The most common reason for  <code>npm</code> to throw
+                errors when compiling Browsersync is that some of the dependencies
+                (e.g. <a href="https://github.com/TooTallNate/node-gyp">node-gyp</a> need Visual C++ runtime libraries.</p>
+                <p>The way to resolve this is to install <a href="http://www.visualstudio.com/">Visual Studio</a>.
+                At the time of this writing (Feb 2015) the compilation works fine with
+                <a href="http://www.visualstudio.com/en-us/news/vs2013-update4-rc-vs.aspx">Visual Studio 2013 Update 4</a>.
+                You can then tell <code>npm</code> which version of Visual Studio you are using by the following command:</p>
+<pre><code class="lang-bash">npm install -g browser-sync --msvs_version=2013
+</code></pre>
+                <p>After installation of Visual Studio <code>npm</code> should not throw errors any longer, but only issue warnings.
+                As far as we can tell, they do not impact Browsersync.</p>
+                <h3 id="external-url" class="section-link">
+                    <a href="#external-url" class="page-anchor">Incorrect External URL</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <p>Sometimes, depending on your network, your OS will report multiple external IP addresses. If this happens, currently
+                Browsersync just picks the first one and hopes for the best.</p>
+                <p>You could use a tool like <a href="https://github.com/shakyshane/dev-ip">dev-ip</a> to list all possible external URLs on your
+                machine, and then provide the <a href="/docs/options/#option-host">host option</a> in your configuration</p>
+                <p>This site is <a href="https://github.com/Browsersync/browsersync.github.io">open source on Github</a> &amp; we welcome corrections/improvements.</p>
+
+            </div>
+            <div class="one-quarter">
+                <div class="doc-nav">
+                    <span class="nav-expand">
+                        <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
+
+                        <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
+
+                    </span>
+                    <div class="sticky-nav">
+                        <p class="lede">Sections</p>
+                        <ul class="sticky-nav__items" id="sticky-nav">
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/api">API</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/options">Options</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                                <li class="sticky-nav__item"><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+    </section>
+
+
+</div>
+
+<footer class="wrapper signup" role="contentinfo">
+    <div class="container">
+        <p class="signup__title">Reach out on Twitter or Github</p>
+        <div class="signup__links">
+            <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
+            <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+        </div>
+    </div>
+</footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item active"><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item "><a href="/brand-assets" class="nav-link">Brand Assets</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="credit">
+    <div class="container">
+        <p class="prev"><small>Previously supported by <a href="https://wearejh.com/">JH</a></small></p>
+    </div>
+</div>
+
+<script src="/js/app.min.js"></script>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+        apiKey: 'a5c2ad2440b6b5c621ecff9023de9154',
+        indexName: 'browsersync',
+        inputSelector: '#search-input',
+        debug: false // Set debug to true if you want to inspect the dropdown
+    });
+    </script>
+
+
+</body>
+</html>

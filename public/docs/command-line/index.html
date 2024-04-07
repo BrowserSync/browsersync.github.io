@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js ffly" lang="en"> <!--<![endif]-->
+<head>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browsersync Command Line Usage</title>
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=qAqkxQaJm0">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=qAqkxQaJm0" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=qAqkxQaJm0" sizes="16x16">
+    <link rel="manifest" href="/manifest.json?v=qAqkxQaJm0">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=qAqkxQaJm0" color="#f24747">
+    <link rel="shortcut icon" href="/favicon.ico?v=qAqkxQaJm0">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/css/core.css">
+
+    <!--[if gt IE 9]>
+    <script src="/img/icons/svg4everybody.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+</head>
+
+
+<body id="page-top">
+<div class="header-wrap ">
+
+    <div class="update-banner">
+        <p>Update available - <a href="" id="update">click here to reload</a></p>
+    </div>
+    <header class="wrapper site-header" role="banner">
+        <div class="container">
+            <nav>
+                <ul class="site-nav">
+                    <li class="nav__item logo">
+                        <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-wordmark"></use></svg>
+    </a>
+                    </li>
+                    <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item nav__item--right">
+                        <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+    </a>
+                        <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- .end .site-header -->
+
+
+
+</div>
+
+<div class="site-body" role="main">
+
+
+
+    <div class="wrapper docs-nav">
+        <div class="container">
+            <ul class="fixed-nav">
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/api">API</a></li>
+                <li class="fixed-nav__item active"><a class="nav-link" href="/docs/command-line">Command line</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/options">Options</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+            </ul>
+        </div>
+    </div>
+    <section id="top" class="wrapper code-example">
+    <div class="container">
+        <article class="doc-wrapper">
+            <div class="three-quarters">
+                <input class="input input--text doc-search" type="text" id="search-input" placeholder="Search docs...">
+                <h1 class="page-title">Browsersync Command Line Usage</h1>
+
+
+                <p>First, either install Browsersync globally, or locally to your project (if you&#39;re using npm scripts)
+                and then run one of the following commands</p>
+<pre><code>$ browser-sync start [options]     Start Browsersync
+$ browser-sync init                Create a configuration file
+$ browser-sync reload              Send a reload event over HTTP protocol
+$ browser-sync recipe [name]       Generate the files for a recipe
+</code></pre>
+                <h3 id="help" class="section-link">
+                    <a href="#help" class="page-anchor">Command Help (since 2.12.0)</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+                <p>For help running a certain command, type <code>$ browser-sync &lt;command&gt; --help</code>, for example:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Get help for the start command only</span>
+$ browser-sync start --help
+
+<span class="hljs-comment"># Get help for the recipe command only</span>
+$ browser-sync recipe --help
+</code></pre>
+
+                <h3 id="start" class="section-link">
+                    <a href="#start" class="page-anchor">$ browser-sync start</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <table class="commands-list">
+                        <tr>
+                            <td>--server,
+                                        -s
+                            </td>
+                            <td>Run a Local server (uses your cwd as the web root)</td>
+                        </tr>
+                        <tr>
+                            <td>--cwd            </td>
+                            <td>Working directory</td>
+                        </tr>
+                        <tr>
+                            <td>--json            </td>
+                            <td>If true, certain logs will output as json only</td>
+                        </tr>
+                        <tr>
+                            <td>--serveStatic,
+                                        --ss
+                            </td>
+                            <td>Directories to serve static files from</td>
+                        </tr>
+                        <tr>
+                            <td>--port            </td>
+                            <td>Specify a port to use</td>
+                        </tr>
+                        <tr>
+                            <td>--proxy,
+                                        -p
+                            </td>
+                            <td>Proxy an existing server</td>
+                        </tr>
+                        <tr>
+                            <td>--ws            </td>
+                            <td>Proxy mode only - enable websocket proxying</td>
+                        </tr>
+                        <tr>
+                            <td>--browser,
+                                        -b
+                            </td>
+                            <td>Choose which browser should be auto-opened</td>
+                        </tr>
+                        <tr>
+                            <td>--watch,
+                                        -w
+                            </td>
+                            <td>Watch files</td>
+                        </tr>
+                        <tr>
+                            <td>--ignore            </td>
+                            <td>Ignore patterns for file watchers</td>
+                        </tr>
+                        <tr>
+                            <td>--files,
+                                        -f
+                            </td>
+                            <td>File paths to watch</td>
+                        </tr>
+                        <tr>
+                            <td>--index            </td>
+                            <td>Specify which file should be used as the index page</td>
+                        </tr>
+                        <tr>
+                            <td>--plugins            </td>
+                            <td>Load Browsersync plugins</td>
+                        </tr>
+                        <tr>
+                            <td>--extensions            </td>
+                            <td>Specify file extension fallbacks</td>
+                        </tr>
+                        <tr>
+                            <td>--startPath            </td>
+                            <td>Specify the start path for the opened browser</td>
+                        </tr>
+                        <tr>
+                            <td>--single            </td>
+                            <td>If true, the connect-history-api-fallback middleware will be added</td>
+                        </tr>
+                        <tr>
+                            <td>--https            </td>
+                            <td>Enable SSL for local development</td>
+                        </tr>
+                        <tr>
+                            <td>--directory            </td>
+                            <td>Show a directory listing for the server</td>
+                        </tr>
+                        <tr>
+                            <td>--xip            </td>
+                            <td>Use xip.io domain routing</td>
+                        </tr>
+                        <tr>
+                            <td>--tunnel            </td>
+                            <td>Use a public URL</td>
+                        </tr>
+                        <tr>
+                            <td>--open            </td>
+                            <td>Choose which URL is auto-opened (local, external or tunnel), or provide a url</td>
+                        </tr>
+                        <tr>
+                            <td>--cors            </td>
+                            <td>Add Access Control headers to every request</td>
+                        </tr>
+                        <tr>
+                            <td>--config,
+                                        -c
+                            </td>
+                            <td>Specify a path to a configuration file</td>
+                        </tr>
+                        <tr>
+                            <td>--host            </td>
+                            <td>Specify a hostname to use</td>
+                        </tr>
+                        <tr>
+                            <td>--listen            </td>
+                            <td>Specify a hostname bind to (this will prevent binding to all interfaces)</td>
+                        </tr>
+                        <tr>
+                            <td>--logLevel            </td>
+                            <td>Set the logger output level (silent, info or debug)</td>
+                        </tr>
+                        <tr>
+                            <td>--reload-delay            </td>
+                            <td>Time in milliseconds to delay the reload event following file changes</td>
+                        </tr>
+                        <tr>
+                            <td>--reload-debounce            </td>
+                            <td>Restrict the frequency in which browser:reload events can be emitted to connected clients</td>
+                        </tr>
+                        <tr>
+                            <td>--ui-port            </td>
+                            <td>Specify a port for the UI to use</td>
+                        </tr>
+                        <tr>
+                            <td>--watchEvents            </td>
+                            <td>Specify which file events to respond to</td>
+                        </tr>
+                        <tr>
+                            <td>--no-notify            </td>
+                            <td>Disable the notify element in browsers</td>
+                        </tr>
+                        <tr>
+                            <td>--no-open            </td>
+                            <td>Don&#x27;t open a new browser window</td>
+                        </tr>
+                        <tr>
+                            <td>--no-snippet            </td>
+                            <td>Disable the snippet injection</td>
+                        </tr>
+                        <tr>
+                            <td>--no-online            </td>
+                            <td>Force offline usage</td>
+                        </tr>
+                        <tr>
+                            <td>--no-ui            </td>
+                            <td>Don&#x27;t start the user interface</td>
+                        </tr>
+                        <tr>
+                            <td>--no-ghost-mode            </td>
+                            <td>Disable Ghost Mode</td>
+                        </tr>
+                        <tr>
+                            <td>--no-inject-changes            </td>
+                            <td>Reload on every file change</td>
+                        </tr>
+                        <tr>
+                            <td>--no-reload-on-restart            </td>
+                            <td>Don&#x27;t auto-reload all browsers following a restart</td>
+                        </tr>
+                </table>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash"><span class="hljs-comment"># Examples</span>
+<span class="hljs-comment"># Start a server from the `app` directory, watching all files</span>
+$ browser-sync start --server <span class="hljs-string">'app'</span> --files <span class="hljs-string">'app'</span>
+
+<span class="hljs-comment"># As above, but with version &gt;= 2.23.0</span>
+$ browser-sync app -w
+
+<span class="hljs-comment"># Start a server from the `app` &amp; `.tmp` directories (short hand)</span>
+<span class="hljs-comment"># (requires 2.12.1)</span>
+$ browser-sync start <span class="hljs-_">-s</span> <span class="hljs-string">'app'</span> <span class="hljs-string">'.tmp'</span> <span class="hljs-_">-f</span> <span class="hljs-string">'app'</span> <span class="hljs-string">'.tmp'</span>
+
+<span class="hljs-comment"># As above, but with version &gt;= 2.23.0</span>
+$ browser-sync <span class="hljs-string">'app'</span> <span class="hljs-string">'.tmp'</span> -w
+
+<span class="hljs-comment"># Proxy a PHP app + serve static files &amp; watch them</span>
+$ browser-sync start --proxy <span class="hljs-string">'mylocal.dev'</span> --serveStatic <span class="hljs-string">'public'</span> --files <span class="hljs-string">'public'</span>
+
+<span class="hljs-comment"># As above, but with version &gt;= 2.23.0</span>
+$ browser-sync <span class="hljs-string">'http://mylocal.dev'</span> <span class="hljs-string">'public'</span> -w
+
+<span class="hljs-comment"># Start Browsersync from a config file</span>
+$ browser-sync start --config <span class="hljs-string">'conf/browser-sync.js'</span>
+
+<span class="hljs-comment"># Start Browsersync from a config file with overriding flags</span>
+$ browser-sync start --config <span class="hljs-string">'conf/browser-sync.js'</span> --port 4000
+</code></pre></div>
+                <h3 id="recipe" class="section-link">
+                    <a href="#recipe" class="page-anchor">$ browser-sync recipe</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <table class="commands-list">
+                        <tr>
+                            <td>--output, -o</td>
+                            <td>Specify an output directory</td>
+                        </tr>
+                </table>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash"><span class="hljs-comment"># Examples</span>
+
+<span class="hljs-comment"># List all available recipes</span>
+$ browser-sync recipe ls
+
+<span class="hljs-comment"># Copy files for gulp.sass recipe</span>
+$ browser-sync recipe <span class="hljs-string">'gulp.sass'</span>
+
+<span class="hljs-comment"># Copy files for gulp.sass recipe into custom output directory</span>
+$ browser-sync recipe <span class="hljs-string">'gulp.sass'</span> -o <span class="hljs-string">'my-project'</span>
+</code></pre></div>
+                <h3 id="reload" class="section-link">
+                    <a href="#reload" class="page-anchor">$ browser-sync reload</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+                <table class="commands-list">
+                        <tr>
+                            <td>--files, -f</td>
+                            <td>File paths to reload</td>
+                        </tr>
+                        <tr>
+                            <td>--port, -p</td>
+                            <td>Target a running instance by port number</td>
+                        </tr>
+                        <tr>
+                            <td>--url, -u</td>
+                            <td>Provide the full the url to the running Browsersync instance</td>
+                        </tr>
+                </table>
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="bash"><span class="hljs-comment"># Examples</span>
+
+<span class="hljs-comment"># Reload assuming standard address of http://localhost:3000</span>
+$ browser-sync reload
+
+<span class="hljs-comment"># Reload all css files, where Browsersync is running at http://localhost:4000</span>
+$ browser-sync reload --port 4000 --files=<span class="hljs-string">"*.css"</span>
+
+<span class="hljs-comment"># Reload all css files, where Browsersync is running at https://localhost:3000</span>
+$ browser-sync reload --url https://localhost:3000 --files=<span class="hljs-string">"*.css"</span>
+</code></pre></div>
+                <h3 id="init" class="section-link">
+                    <a href="#init" class="page-anchor">$ browser-sync init</a>
+                    <a href="#page-top" class="back-to-top">^ TOP</a>
+                </h3>
+
+
+<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code>$ browser-sync init
+</code></pre></div>
+
+            </div>
+            <div class="one-quarter">
+                <div class="doc-nav">
+                    <span class="nav-expand">
+                        <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
+
+                        <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
+
+                    </span>
+                    <div class="sticky-nav">
+                        <p class="lede">Jump to...</p>
+                        <ul class="sticky-nav__items" id="sticky-nav">
+                            <li class="sticky-nav__item"><a class="nav-link" href="#start"><code>$ browser-sync start</code></a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#recipe"><code>$ browser-sync recipe</code></a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#reload"><code>$ browser-sync reload</code></a></li>
+                            <li class="sticky-nav__item"><a class="nav-link" href="#init"><code>$ browser-sync init</code></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+    </section>
+
+
+</div>
+
+<footer class="wrapper signup" role="contentinfo">
+    <div class="container">
+        <p class="signup__title">Reach out on Twitter or Github</p>
+        <div class="signup__links">
+            <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
+</a>
+            <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
+</a>
+        </div>
+    </div>
+</footer><!-- end .site-footer -->
+
+<div class="credit">
+    <div class="container">
+        <nav>
+            <ul class="site-nav">
+                <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item "><a href="/brand-assets" class="nav-link">Brand Assets</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="credit">
+    <div class="container">
+        <p class="prev"><small>Previously supported by <a href="https://wearejh.com/">JH</a></small></p>
+    </div>
+</div>
+
+<script src="/js/app.min.js"></script>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+        apiKey: 'a5c2ad2440b6b5c621ecff9023de9154',
+        indexName: 'browsersync',
+        inputSelector: '#search-input',
+        debug: false // Set debug to true if you want to inspect the dropdown
+    });
+    </script>
+
+
+</body>
+</html>

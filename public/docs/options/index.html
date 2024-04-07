@@ -1039,7 +1039,7 @@ tunnel: <span class="hljs-string">"my-private-site"</span></code></pre></div>
                 </ul>
 
 
-                <p>Some features of Browsersync (such as <code>xip</code> &amp; <code>tunnel</code>) require an internet connection, but if you&#39;re
+                <p>Some features of Browsersync (such as <code>tunnel</code>) require an internet connection, but if you&#39;re
                 working offline, you can reduce start-up time by setting this option to <code>false</code></p>
 
 
@@ -1120,29 +1120,6 @@ browser: [<span class="hljs-string">"google chrome"</span>, <span class="hljs-st
                 <p class="lede warning"><b>Note: </b> requires at least version 2.16.0</p>
 
                 <p>Add HTTP access control (CORS) headers to assets served by Browsersync.</p>
-
-
-
-
-                <h3 id="option-xip" class="section-link">
-                    <a href="#option-xip" class="page-anchor">xip</a>
-                    <a href="#page-top" class="back-to-top">^ TOP</a>
-                </h3>
-
-
-                <ul class="param-list">
-                    <li class="type">Type: <span class="color-teal">Boolean</span>
-                    </li>
-                    <li class="default">Default: <span class="color-teal">false</span></li>
-                </ul>
-
-
-                <p>Requires an internet connection - useful for services such as <a href="https://typekit.com/">Typekit</a>
-                as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
-
-
-<div class="highlight-block"><div class="highlight-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span><svg class="svg-icon "><use xlink:href="/img/icons/icons.svg#svg-code"></use></svg></div><pre class='highlight'><code class="js"><span class="hljs-comment">// Append '.xip.io' to the hostname. (eg: http://192.168.0.4.xip.io:3002)</span>
-xip: <span class="hljs-literal">true</span></code></pre></div>
 
 
                 <h3 id="option-reloadOnRestart" class="section-link">
@@ -1694,7 +1671,6 @@ socket: {
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-open">open</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-browser">browser</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-cors">cors</a></li>
-                                <li class="sticky-nav__item"><a class="nav-link mono" href="#option-xip">xip</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-reloadOnRestart">reloadOnRestart</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-notify">notify</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link mono" href="#option-scrollProportionally">scrollProportionally</a></li>

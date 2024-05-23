@@ -1,0 +1,5 @@
+servers:
+- bind_address: 0.0.0.0:3000
+  routes:
+  - path: /
+    dir: public

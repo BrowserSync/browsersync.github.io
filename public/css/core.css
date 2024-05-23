@@ -641,6 +641,30 @@ a [class*=" icon-"] {
 .nav-link.mono {
     font-family: monospace;
 }
+.live-logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    position: relative;
+    svg {
+        position: relative;
+        top: 2px;
+    }
+}
+.badge {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    white-space: nowrap;
+    color: red;
+    line-height: 1;
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 8px
+}
+
 .nav__item {
     display: inline-block;
     line-height: 40px;
@@ -648,6 +672,7 @@ a [class*=" icon-"] {
     padding: 0;
     margin-right: 6px;
     border-bottom: rgba(255, 255, 255, 0);
+    position: relative;
 }
 .nav__item.active .nav-link {
     font-weight: bold;
@@ -2311,4 +2336,3 @@ hr {
 .hidden {
     display: none !important;
 }
-/*# sourceMappingURL=core.css.map */

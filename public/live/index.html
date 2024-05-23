@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&amp;rsquo;s wicked-fast and totally free.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTTP Protocol</title>
+    <title>Browsersync LIVE (alpha)</title>
 
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=qAqkxQaJm0">
@@ -26,15 +26,11 @@
     <!--[if gt IE 9]>
     <script src="/img/icons/svg4everybody.min.js"></script>
     <![endif]-->
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
-
 </head>
 
 
 <body id="page-top">
 <div class="header-wrap ">
-
     <div class="update-banner">
         <p>Update available - <a href="" id="update">click here to reload</a></p>
     </div>
@@ -44,9 +40,9 @@
                 <ul class="site-nav">
                     <li class="nav__item logo">
                         <a href="/" class="nav-link"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-wordmark"></use></svg>
-    </a>
+                        </a>
                     </li>
-                    <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                    <li class="nav__item"><a href="/docs" class="nav-link">Documentation</a></li>
                     <li class=nav__item>
                         <a href=/live class="nav-link">
                             <span class="live-logo">
@@ -62,9 +58,9 @@
                     </li>
                     <li class="nav__item nav__item--right">
                         <a href="https://github.com/Browsersync/browser-sync" class="nav-link" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
-    </a>
+                        </a>
                         <a href="https://twitter.com/browsersync" class="nav-link" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
-    </a>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -88,47 +84,68 @@
                 <li class="fixed-nav__item "><a class="nav-link" href="/docs/command-line">Command line</a></li>
                 <li class="fixed-nav__item "><a class="nav-link" href="/docs/options">Options</a></li>
                 <li class="fixed-nav__item "><a class="nav-link" href="/docs/recipes">Recipes</a></li>
-                <li class="fixed-nav__item active"><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
+                <li class="fixed-nav__item "><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
             </ul>
         </div>
     </div>
     <section id="top" class="wrapper code-example">
-    <div class="container">
-        <article class="doc-wrapper">
-            <div class="three-quarters">
-                <input class="input input--text doc-search" type="text" id="search-input" placeholder="Search docs...">
-                <h1 class="page-title">HTTP Protocol</h1>
-                <p class="lede warning"><b>NOTE:</b> Requires at least v2.6.0</p>
-
-                <p>In the 2.6.0 release we introduced basic support for reloading browsers &amp;
-                injecting files with command sent over HTTP. The main goal of this is to
-                allow other tools and processes to trigger reloading and other functionality
-                provided by the public API.</p>
-                <p>For example, <code>http://localhost:3000/__browser_sync__?method=reload</code> translates
-                directly into the public API call <code>browserSync.reload();</code></p>
-                <p>You can also pass arguments too, so...</p>
-<pre><code>GET http://localhost:3000/__browser_sync__?method=reload&amp;args=core.min.css
-</code></pre><p>... is equivalent to calling</p>
-<pre><code class="lang-js">browserSync.reload(<span class="hljs-string">"core.min.css"</span>);
-</code></pre>
-                <p>and for multiple arguments, just repeat the <code>args</code> part</p>
-<pre><code>GET http://localhost:3000/__browser_sync__?method=reload&amp;args=core.min.css&amp;args=ie.min.css
-</code></pre><p>... is equivalent to calling</p>
-<pre><code class="lang-js">browserSync.reload([<span class="hljs-string">"core.min.css"</span>, <span class="hljs-string">"ie.min.css"</span>]);
-</code></pre>
-
-            </div>
-            <div class="one-quarter">
-                <div class="doc-nav">
+        <div class="container">
+            <article class="doc-wrapper">
+                <div class="three-quarters">
+                    <input class="input input--text doc-search" type="text" id="search-input" placeholder="Search docs...">
+                    <h1 class="page-title">Browsersync LIVE (alpha)</h1>
+                    <p>A new tool that combines all your favourite features from Browsersync with a host of new ones, such as:</p>
+                    <ul>
+                        <li><strong>Smaller, lighter, faster</strong> - less dependencies means a smaller footprint
+                            in your node_modules folder and because it's built as a native 🦀 binary it starts faster
+                            and consume much less memory.
+                        </li>
+                        <li>
+                            <strong>Live configuration updates</strong> - tweak your local setup and have everything update without
+                            needing to stop/start any terminal sessions. This includes servers, files watchers, proxies, etc.
+                        </li>
+                        <li>
+                            <strong>Powerful debugging tools</strong> - configure things like fake server delays, additional headers,
+                            and response modifications all on a per-route basis. This allows you to recreate hard-to-replicate
+                            bugs such as race conditions when assets load in at different times.
+                        </li>
+                        <li>
+                            <strong>Website in a file</strong> - every wanted to quickly test out a new HTML, CSS or JS feature, but
+                            didn't want to create multiple files on disk to fully emulate a server? Browsersync LIVE allows you to specify
+                            multiple server routes in a single file, along with their response bodies. This can be used for prototyping, tests
+                            and even for demonstration purposes (since Markdown is supported)
+                        </li>
+                        <li>
+                            <strong>Record proxy responses to disk</strong> - thanks to a brand-new a implementation of the Browsersync Proxy, you
+                            can now hand off certain requests to a different backend (like an API server) and have any response
+                            bodies recorded (along with their original chunk sizes, latency timings etc.
+                        </li>
+                        <li>
+                            <strong>Playback recorded responses</strong> - when working with remote LLM's, local development can end up costing
+                            a lot of money in terms of API usage - not to mention the difficulty in reproducing bugs and flows
+                            encountered with the streaming responses. Browsersync LIVE can not only record responses, but it can play them
+                            back when you choose to. This way you can accurately reproduce scenarios locally without continuously calling the
+                            remote API. Coupled with the Live Configuration updates that are supported in all features, this
+                            enables a productive workflow where you initially let the requests through to a 3rd party, but then
+                            play them back once you've recorded enough.
+                        </li>
+                        <li><strong>Plus much more...</strong> - Join the discussion if you're interested <a
+                            href="https://github.com/BrowserSync/browser-sync/discussions/2069">GitHub discussion</a></li>
+                    </ul>
+                    <br>
+                    <br>
+                </div>
+                <div class="one-quarter">
+                    <div class="doc-nav">
                     <span class="nav-expand">
                         <svg class="svg-icon open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-menu"></use></svg>
 
                         <svg class="svg-icon close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-cross"></use></svg>
 
                     </span>
-                    <div class="sticky-nav">
-                        <p class="lede">Sections</p>
-                        <ul class="sticky-nav__items" id="sticky-nav">
+                        <div class="sticky-nav">
+                            <p class="lede">Sections</p>
+                            <ul class="sticky-nav__items" id="sticky-nav">
                                 <li class="sticky-nav__item"><a class="nav-link" href="/docs/gulp">+ Gulp</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link" href="/docs/grunt">+ Grunt</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link" href="/docs/api">API</a></li>
@@ -136,13 +153,13 @@
                                 <li class="sticky-nav__item"><a class="nav-link" href="/docs/options">Options</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link" href="/docs/recipes">Recipes</a></li>
                                 <li class="sticky-nav__item"><a class="nav-link" href="/docs/http-protocol">HTTP Protocol</a></li>
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-            </div>
-        </article>
-    </div>
+                </div>
+            </article>
+        </div>
 
     </section>
 
@@ -154,9 +171,9 @@
         <p class="signup__title">Reach out on Twitter or Github</p>
         <div class="signup__links">
             <a href="https://twitter.com/browsersync" title="@Browsersync on Twitter"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-twitter"></use></svg>
-</a>
+            </a>
             <a href="https://github.com/Browsersync/browser-sync" title="Browsersync on Github"><svg class="svg-icon "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/icons/icons.svg#svg-github"></use></svg>
-</a>
+            </a>
         </div>
     </div>
 </footer><!-- end .site-footer -->
@@ -165,21 +182,8 @@
     <div class="container">
         <nav>
             <ul class="site-nav">
-                <li class="nav__item "><a href="/docs" class="nav-link">Documentation</a></li>
+                <li class="nav__item active"><a href="/docs" class="nav-link">Documentation</a></li>
                 <li class="nav__item "><a href="/brand-assets" class="nav-link">Brand Assets</a></li>
-                <li class="nav__item">
-                    <a href=/live class="nav-link">
-                        <span class="live-logo">
-                            <svg width="16" height="16">
-                                <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" fill="lightgreen"/>
-                            </svg>
-                            <span>
-                                LIVE
-                            </span>
-                            <span class="badge">alpha</span>
-                        </span>
-                    </a>
-                </li>
             </ul>
         </nav>
     </div>
@@ -191,20 +195,7 @@
 </div>
 
 <script src="/js/app.min.js"></script>
-
-
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-    <script type="text/javascript">
-    docsearch({
-        apiKey: 'a5c2ad2440b6b5c621ecff9023de9154',
-        indexName: 'browsersync',
-        inputSelector: '#search-input',
-        debug: false // Set debug to true if you want to inspect the dropdown
-    });
-    </script>
-
 
 </body>
 </html>
